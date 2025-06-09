@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=3 format=3 uid="uid://csusu4a31htq1"]
+
+[ext_resource type="PackedScene" uid="uid://ehb4w8qwxc47" path="res://PlayerScript/PlayerClassPrefab/Scp173.tscn" id="1_iet7l"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="1_tkp5v"]
+
+[resource]
+script = ExtResource("1_tkp5v")
+puppet_class_name = "SCP-173"
+speed = 20.0
+prefab = ExtResource("1_iet7l")
+spawn_point_group = "Scp173Spawn"
+initial_amount = 1
+automatic = true
+footstep_sounds = {}
+fraction = 2
+apply_height_bugfix = false
+enable_wander = false
+health = Array[float]([10000.0])
+team = 0
+enable_avoidance = false
+spawn_on_start = true

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://dkqbvsmvr5dgc"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_ldvwe"]
+
+[resource]
+script = ExtResource("1_ldvwe")
+internal_name = "task_162"
+public_name = "TASK_162_TOUCH"
+required_group = &"cont1_162"
+metadata/_custom_type_script = "uid://2412583x8gql"

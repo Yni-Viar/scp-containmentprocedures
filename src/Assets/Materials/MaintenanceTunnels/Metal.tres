@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://5dkh77ls84l2"]
+
+[ext_resource type="Texture2D" uid="uid://b5s2cgf51xjr8" path="res://Assets/Materials/SLMaterials/Tile_HCZConcrete_Double_Albedo.png" id="1_7k1vm"]
+[ext_resource type="Texture2D" uid="uid://dh74dyjdpq2s8" path="res://Assets/Materials/SLMaterials/Tile_HCZConcrete_Double_Normal.png" id="2_ph1ym"]
+
+[resource]
+albedo_texture = ExtResource("1_7k1vm")
+normal_enabled = true
+normal_texture = ExtResource("2_ph1ym")

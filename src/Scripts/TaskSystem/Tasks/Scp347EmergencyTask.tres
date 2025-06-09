@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://ckkfxehq5qga5"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_2onvk"]
+
+[resource]
+script = ExtResource("1_2onvk")
+internal_name = "task_347_emergency"
+public_name = "TASK_347_CATCH"
+required_room = ""
+metadata/_custom_type_script = "uid://2412583x8gql"

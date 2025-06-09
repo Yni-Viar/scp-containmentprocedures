@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkrtanjptmkus"]
+
+[node name="Debug" type="Node3D"]
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63313, -0.906235, 0.424868)
+visible = false
+height = 15.15
+vertices = PackedVector3Array(-12.3054, 0, -0.28902, -12.3054, 0, -9.88588, -3.24589, 0, -9.90977, -3.1926, 0, -0.317273)
+avoidance_enabled = false
+
+[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32644, -0.906235, 5.16207)
+visible = false
+height = 15.15
+vertices = PackedVector3Array(-1.34803, 0, -0.122129, -1.32549, 0, -7.06681, 2.60764, 0, -7.15231, 2.54849, 0, -0.153553)
+avoidance_enabled = false

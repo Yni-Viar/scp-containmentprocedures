@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://doborvycad2fa"]
+
+[ext_resource type="Shader" uid="uid://brj627vhf8mjw" path="res://Shaders/ScanShader/scan.gdshader" id="1_hj6vq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hj6vq")
+shader_parameter/shift = Vector3(0, 0, 0)
+shader_parameter/time_shift_scale = Vector3(0, 0, 0)
+shader_parameter/scan_color = Color(1, 0.627986, 0.571351, 1)
+shader_parameter/scan_line_width = 0.42
+shader_parameter/scan_line_size = 0.05

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://c5nxkybg7wvao"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_nynet"]
+
+[resource]
+script = ExtResource("1_nynet")
+internal_name = "task_ci"
+public_name = "TASK_CI_INVASION"
+required_group = ""
+metadata/_custom_type_script = "uid://2412583x8gql"

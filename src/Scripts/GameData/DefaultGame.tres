@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="GameData" load_steps=22 format=3 uid="uid://kakqpi6wi07u"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_teai8"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="1_uwdlv"]
+[ext_resource type="Script" uid="uid://cgv4yjj6gyjc1" path="res://Scripts/GameData/GameData.gd" id="2_2kq0r"]
+[ext_resource type="Resource" uid="uid://cdvadpe1bwmkp" path="res://PlayerScript/PlayerClassResources/Scientist.tres" id="2_iio3u"]
+[ext_resource type="Resource" uid="uid://c8pms1lfwn1s8" path="res://PlayerScript/PlayerClassResources/ScientistProtagonist.tres" id="3_4lkqw"]
+[ext_resource type="Resource" uid="uid://dtxvxmwsol0hf" path="res://PlayerScript/PlayerClassResources/Guard.tres" id="3_qajj2"]
+[ext_resource type="Resource" uid="uid://csusu4a31htq1" path="res://PlayerScript/PlayerClassResources/Scp173.tres" id="4_cj51b"]
+[ext_resource type="Resource" uid="uid://b78x487lxutqy" path="res://PlayerScript/PlayerClassResources/Scp650.tres" id="5_ujd5j"]
+[ext_resource type="Resource" uid="uid://nydi02ml4weh" path="res://PlayerScript/PlayerClassResources/Scientist650.tres" id="6_qajj2"]
+[ext_resource type="Resource" uid="uid://l23gxmbiwbrh" path="res://PlayerScript/PlayerClassResources/DClass.tres" id="7_ujd5j"]
+[ext_resource type="Resource" uid="uid://6j3kwox735os" path="res://PlayerScript/PlayerClassResources/GuardOfDClass.tres" id="8_jbef1"]
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="10_jbef1"]
+[ext_resource type="Resource" uid="uid://4mdgfhansx8s" path="res://PlayerScript/PlayerClassResources/Scp266.tres" id="11_o5qps"]
+[ext_resource type="Resource" uid="uid://gy7ixps5jwwq" path="res://PlayerScript/PlayerClassResources/Scp347.tres" id="12_0coki"]
+[ext_resource type="Resource" uid="uid://dkqbvsmvr5dgc" path="res://Scripts/TaskSystem/Tasks/Scp162Task.tres" id="14_r6dwf"]
+[ext_resource type="Resource" uid="uid://cdlwr1y5gkw5" path="res://Scripts/TaskSystem/Tasks/Scp173Task.tres" id="15_0coki"]
+[ext_resource type="Resource" uid="uid://uv6b74j6cpsr" path="res://Scripts/TaskSystem/Tasks/Scp812Task.tres" id="16_60025"]
+[ext_resource type="Resource" uid="uid://gu8sp1ix4rd0" path="res://Scripts/TaskSystem/Tasks/Scp266Task.tres" id="17_qyy85"]
+[ext_resource type="Resource" uid="uid://kt10qm1d2rht" path="res://PlayerScript/PlayerClassResources/MtfAgent.tres" id="18_0lfxp"]
+[ext_resource type="Resource" uid="uid://bl0x4f4crcrxt" path="res://Scripts/TaskSystem/Tasks/Scp347Task.tres" id="19_60025"]
+[ext_resource type="Resource" uid="uid://br4pxad71a6v3" path="res://PlayerScript/PlayerClassResources/ChaosTrooper.tres" id="19_om1ka"]
+
+[resource]
+script = ExtResource("2_2kq0r")
+player_class = Array[ExtResource("1_uwdlv")]([ExtResource("3_4lkqw")])
+puppet_classes = Array[ExtResource("1_uwdlv")]([ExtResource("2_iio3u"), ExtResource("3_qajj2"), ExtResource("4_cj51b"), ExtResource("5_ujd5j"), ExtResource("6_qajj2"), ExtResource("7_ujd5j"), ExtResource("8_jbef1"), ExtResource("11_o5qps"), ExtResource("12_0coki")])
+tasks = Array[ExtResource("10_jbef1")]([ExtResource("14_r6dwf"), ExtResource("15_0coki"), ExtResource("17_qyy85"), ExtResource("16_60025"), ExtResource("19_60025")])
+items = Array[ExtResource("1_teai8")]([])
+wave_puppet_classes = Array[ExtResource("1_uwdlv")]([ExtResource("18_0lfxp"), ExtResource("19_om1ka")])
+metadata/_custom_type_script = "uid://cgv4yjj6gyjc1"

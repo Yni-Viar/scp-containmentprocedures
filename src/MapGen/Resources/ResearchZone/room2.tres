@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapGenRoom" load_steps=5 format=3 uid="uid://cjkhvveue1tae"]
+
+[ext_resource type="Texture2D" uid="uid://bdohqm7yw00if" path="res://Assets/HUD/room2_90.png" id="1_5rc8x"]
+[ext_resource type="Texture2D" uid="uid://8etimuikkbyb" path="res://Assets/HUD/room2.png" id="2_gbqpg"]
+[ext_resource type="PackedScene" uid="uid://d3qxohfm6q0fv" path="res://Assets/Rooms/room2/room2.tscn" id="3_p6l4w"]
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="4_1karm"]
+
+[resource]
+script = ExtResource("4_1karm")
+name = "room2"
+prefab = ExtResource("3_p6l4w")
+icon_0_degrees = ExtResource("1_5rc8x")
+icon_90_degrees = ExtResource("2_gbqpg")
+icon_180_degrees = ExtResource("1_5rc8x")
+icon_270_degrees = ExtResource("2_gbqpg")
+spawn_chance = 20.0
+door_type = -1
+guaranteed_spawn = false

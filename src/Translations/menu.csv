@@ -1,0 +1,9 @@
+keys,en,ru
+CUSTOM_SEED,Map Generator seed,Зерно генератора карт
+CUSTOM_ENEMYTYPE_0,Do not spawn enemies,Противники не появляются
+CUSTOM_ENEMYTYPE_1,Spawn enemies,Противники появляются
+CUSTOM_ENEMYTYPE_LABEL,Enemy spawn,Появление противников
+PLAY,Play,Играть
+CREDITS,Credits,Титры
+CUSTOM_ENEMYTYPE_RAND,Randomize enemy spawn,Случайное появление противников
+TIME_LIMITED,Time limited game,Игра ограничена по времени

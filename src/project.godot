@@ -1,0 +1,110 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="SCP: Containment Procedures"
+config/description="A Facility simulator"
+config/version="1.0.0"
+config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
+run/main_scene="uid://b25hrjnoos5me"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="SCPContPr"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://ca78sce3pl6wl"
+config/icon="uid://c7yat1lfp8emn"
+
+[autoload]
+
+ResourceStorage="*res://Scripts/ResourceStorage.gd"
+Settings="*res://Scripts/Settings.gd"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://InventorySystem/": "yellow",
+"res://MapGen/": "teal",
+"res://PlayerScript/": "red",
+"res://Scenes/": "orange",
+"res://Scripts/": "green",
+"res://Shaders/": "pink",
+"res://Sounds/": "purple",
+"res://Translations/": "gray",
+"res://UI/": "orange"
+}
+
+[global_group]
+
+ScientistSpawn=""
+GeneratorSpawn=""
+Players=""
+DisableLevers=""
+Scp650Spawn=""
+PlayerSpawn=""
+GuardSpawn=""
+Scp173Spawn=""
+Scientist650Spawn=""
+DClassSpawn=""
+GuardOfDClassSpawn=""
+Scp347Spawn=""
+Scp266Spawn=""
+WaveSpawn=""
+ReflectionProbe="Reflection Probes"
+
+[input]
+
+look={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(132, 8),"global_position":Vector2(141, 56),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+scroll_up={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(167, 15),"global_position":Vector2(176, 63),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+scroll_down={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(248, 4),"global_position":Vector2(257, 52),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(69, 14),"global_position":Vector2(78, 62),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/android/enable_pan_and_scale_gestures=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Translations/menu.en.translation", "res://Translations/menu.ru.translation", "res://Translations/game.en.translation", "res://Translations/game.ru.translation", "res://Translations/finishgame.en.translation", "res://Translations/finishgame.ru.translation")
+
+[physics]
+
+common/physics_ticks_per_second=30
+common/physics_jitter_fix=0.0
+3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

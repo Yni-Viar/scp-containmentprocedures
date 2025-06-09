@@ -1,0 +1,193 @@
+[gd_scene load_steps=6 format=3 uid="uid://b25hrjnoos5me"]
+
+[ext_resource type="Script" uid="uid://nuv64h1g048i" path="res://Scripts/MainMenu.gd" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://calm8y36ivn5q" path="res://UI/MainMenu/mainmenubackground.png" id="2_idohh"]
+[ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="2_syfuq"]
+[ext_resource type="Texture2D" uid="uid://cl0fdkqxf4660" path="res://UI/playbutton.png" id="4_idohh"]
+[ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="5_idohh"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kf3n")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_idohh")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.115
+anchor_top = 0.796
+anchor_right = 0.115
+anchor_bottom = 0.796
+offset_left = -100.48
+offset_top = -43.808
+offset_right = 35.52
+offset_bottom = 92.192
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_syfuq")
+texture_normal = ExtResource("4_idohh")
+
+[node name="GameSettings" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.821
+anchor_right = 0.333
+anchor_bottom = 0.821
+offset_left = -191.616
+offset_top = -84.008
+offset_right = 192.384
+offset_bottom = 107.992
+alignment = 1
+
+[node name="Seed" type="LineEdit" parent="GameSettings"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+placeholder_text = "CUSTOM_SEED"
+
+[node name="TimeLimited" type="CheckBox" parent="GameSettings"]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+button_pressed = true
+text = "TIME_LIMITED"
+
+[node name="EnemyType" type="Label" parent="GameSettings"]
+visible = false
+layout_mode = 2
+text = "CUSTOM_ENEMYTYPE_LABEL"
+
+[node name="CiSpawn" type="OptionButton" parent="GameSettings"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+selected = 0
+item_count = 3
+popup/item_0/text = "CUSTOM_ENEMYTYPE_RAND"
+popup/item_0/id = 0
+popup/item_1/text = "CUSTOM_ENEMYTYPE_0"
+popup/item_1/id = 1
+popup/item_2/text = "CUSTOM_ENEMYTYPE_1"
+popup/item_2/id = 2
+
+[node name="CreditsContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.611
+anchor_top = 0.099
+anchor_right = 1.007
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_top = -0.152008
+offset_right = -8.06409
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_syfuq")
+
+[node name="CreditsLabel" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+text = "Godot Engine:
+Copyright (c) 2014-present Godot Engine contributors 
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+Licensed under MIT License.
+-------------------------
+Map generation by Yni (the author).
+Room models (but not textures) by Yni (the author)
+-------------------------
+Camera Gimbal by kidscancode (MIT License).
+-------------------------
+Scanning Shader by Yui Kinomoto @arlez80 (MIT License)
+-------------------------
+Scientist and guard models are made
+by PurpleGoop and rigged by DrPri
+Room textures by Foodeater / Jamie
+Model and textures license - CC-BY-SA 4.0
+------------------------
+Light Containment Zone Ambient by Jacek \"Fragik\" Rogal
+Licensed under CC-BY-SA 4.0
+------------------------
+SCP-173 (version 2) - Aruspice (model, textures),
+Shakles (rig, animation), PixelPuffin (concept art)
+Licensed under SCP-Wiki CC-BY-SA 3.0
+------------------------
+SCP-650 - Shadowscale(model, textures)
+Licensed under SCP-Wiki CC-BY-SA 3.0
+------------------------
+Crowbar and power generator models
+used from PolyHaven.
+SCP-347 model is made using Makehuman model.
+(License - CC0)
+------------------------
+Mentioned SCP objects:
+SCP-162 by Dr Gears
+SCP-173 by Moto42
+SCP-266 by Dr Kondraki
+SCP-347 by yellowdrakex
+SCP-650 by Dr Talson
+SCP-812 by HK-016
+(Licensed under CC-BY-SA 3.0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme = ExtResource("2_syfuq")
+toggle_mode = true
+text = "CREDITS"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.099
+anchor_right = 0.056
+anchor_bottom = 0.099
+offset_left = -0.512001
+offset_top = -0.152008
+offset_right = 375.488
+offset_bottom = 132.848
+theme_override_fonts/font = ExtResource("5_idohh")
+theme_override_font_sizes/font_size = 64
+text = "SCP: Containment
+Procedures"
+
+[node name="LawRegulation" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.5
+anchor_right = 0.167
+anchor_bottom = 0.5
+offset_left = -64.384
+offset_top = -68.0
+offset_right = 63.616
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="toggled" from="GameSettings/TimeLimited" to="." method="_on_time_limited_toggled"]
+[connection signal="item_selected" from="GameSettings/CiSpawn" to="." method="_on_ci_spawn_item_selected"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

@@ -1,0 +1,10 @@
+keys,en,ru
+TASK_162_TOUCH,"Order Class-D to go to SCP-162\nIf there are no Class-D, do it yourself.","Прикажите Классу-Д идти к SCP-162\nЕсли Класс-Д отсутствует, сделайте это сами."
+TASK_173_CLEAN,"Order Class-D to clean SCP-173 room\nIf there are no Class-D, do it yourself.","Прикажите Классу-Д очищать комнату SCP-173\nЕсли Класс-Д отсутствует, сделайте это сами."
+TASK_812_RESEARCH,"Test water composition, taken from SCP-812","Проверьте состав воды из SCP-812"
+TASK_347_CATCH,DO NOT LET SCP-347 ESCAPE!!!\nTake SCP-347 from the exit.,НЕ ПОЗВОЛЯЙТЕ SCP-347 СБЕЖАТЬ!!!\nУтащите SCP-347 подальше от выхода.
+TASK_266_TEST,"Order Class-D to test SCP-266 temperature.\nIf there are no Class-D, do it yourself.","Прикажите Классу-Д проверить температуру SCP-266.\nЕсли Класс-Д отсутствует, сделайте это сами."
+TASK_347_PASS,Find SCP-347 and lead her to MTF\nto transport to another facility,Найдите SCP-347 и приведите ее к МОГ\nдля перевозки в другой комплекс
+BACK_TO_MENU,Main menu,Главное меню
+TASK_CI_INVASION,Chaos Insurgency invaded the facility!\nCall MTF to destroy the threat.,Повстанцы Хаоса вторглись в комплекс!\nВызовите МОГ чтобы их уничтожить.
+SECONDS_LEFT,Work time\nends in\n,Рабочее время\nзакончится через\n

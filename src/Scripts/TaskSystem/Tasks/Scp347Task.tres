@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://bl0x4f4crcrxt"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_gomdx"]
+
+[resource]
+script = ExtResource("1_gomdx")
+internal_name = "task_347"
+public_name = "TASK_347_PASS"
+required_group = &"Scp347Spawn"
+metadata/_custom_type_script = "uid://2412583x8gql"

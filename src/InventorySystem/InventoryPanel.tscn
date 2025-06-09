@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjurcf2sdk1t5"]
+
+[ext_resource type="Texture2D" uid="uid://kf35v0d3x7sw" path="res://Assets/HUD/Touch/delete.png" id="2_2q7fl"]
+[ext_resource type="Script" uid="uid://dhau6ydwatg13" path="res://InventorySystem/TileInventory/Inventory.gd" id="2_itdby"]
+[ext_resource type="Script" uid="uid://cvd8dat16rme3" path="res://InventorySystem/TileInventory/DeleteHelper.gd" id="3_nrxg5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pln65"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.501961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Inventory" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -196.0
+offset_right = 192.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pln65")
+script = ExtResource("2_itdby")
+
+[node name="Delete" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -164.0
+offset_right = -64.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_2q7fl")
+script = ExtResource("3_nrxg5")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://cdlwr1y5gkw5"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_4c56u"]
+
+[resource]
+script = ExtResource("1_4c56u")
+internal_name = "task_173"
+public_name = "TASK_173_CLEAN"
+required_group = &"Scp173Spawn"
+metadata/_custom_type_script = "uid://2412583x8gql"

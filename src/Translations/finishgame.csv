@@ -1,0 +1,7 @@
+keys,en,ru
+GAME_WIN,YOU WIN,Победа!
+GAME_OVER,YOU LOSE,Поражение!
+GAME_WIN_1,You did all tasks. The Foundation is proud of you!,Вы выполнили все задачи. Фонд гордится Вами!
+GAME_OVER_1,You died. What a pity...,Вы умерли. Какая досада...
+GAME_OVER_2,You let SCPs escape. You will be demoted to Class-D personnel.,Вы позволили SCP выйти. Вы будете понижены до Класса Д.
+GAME_OVER_3,You did not finish all the task in a work day.,Вы не успели сделать все задачи в рабочее время.
