@@ -8,6 +8,9 @@ func _ready() -> void:
 	$SSAO.button_pressed = Settings.setting_res.ssao
 	$Music/MusicVolume.value = Settings.setting_res.music_volume
 	$Tonemapper.selected = Settings.setting_res.tonemapper
+	if OS.get_name() == "Web":
+		$Tonemapper.hide()
+		$FoldableContainer2.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

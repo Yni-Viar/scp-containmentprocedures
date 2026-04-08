@@ -15,7 +15,3 @@ icon_0_degrees = ExtResource("1_ewcmx")
 icon_90_degrees = ExtResource("4_6lsu0")
 icon_180_degrees = ExtResource("2_l2ahw")
 icon_270_degrees = ExtResource("3_7cmne")
-spawn_chance = 20.0
-door_type = -1
-guaranteed_spawn = false
-double_room_ids = Array[int]([])

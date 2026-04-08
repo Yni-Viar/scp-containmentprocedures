@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=13 format=3 uid="uid://descjyc44enul"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=15 format=3 uid="uid://descjyc44enul"]
 
 [ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="1_vm53m"]
 [ext_resource type="Resource" uid="uid://d0nfhacpkxpv2" path="res://MapGen/Resources/PersonnelZone/room2_checkpoint.tres" id="2_i4ybs"]
 [ext_resource type="Resource" uid="uid://dlganlemvxqwq" path="res://MapGen/Resources/PersonnelZone/room2C.tres" id="3_mv67c"]
 [ext_resource type="Resource" uid="uid://doc72gxtl6efq" path="res://MapGen/Resources/PersonnelZone/room4.tres" id="4_5aamo"]
 [ext_resource type="Resource" uid="uid://bokvroo0o05ab" path="res://MapGen/Resources/PersonnelZone/room1.tres" id="5_3fjsb"]
+[ext_resource type="Resource" uid="uid://dork82h5oc788" path="res://MapGen/Resources/PersonnelZone/cont1_446.tres" id="6_mexgx"]
 [ext_resource type="Resource" uid="uid://doyfoja8s3oa1" path="res://MapGen/Resources/PersonnelZone/room2_personnel_offices.tres" id="6_w33yf"]
 [ext_resource type="Resource" uid="uid://c80v0cuq24nwr" path="res://MapGen/Resources/PersonnelZone/room2_large.tres" id="7_jjw32"]
 [ext_resource type="Resource" uid="uid://068ca70gvy1y" path="res://MapGen/Resources/PersonnelZone/room2.tres" id="8_2qgq8"]
+[ext_resource type="Resource" uid="uid://27nmactra764" path="res://MapGen/Resources/PersonnelZone/room2_wc.tres" id="8_lcijo"]
 [ext_resource type="Resource" uid="uid://chialr4s66u2m" path="res://MapGen/Resources/PersonnelZone/cont2_067_1223.tres" id="9_omj2g"]
 [ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="10_o8o37"]
 [ext_resource type="Resource" uid="uid://5giemu7rx4c6" path="res://MapGen/Resources/PersonnelZone/room3.tres" id="11_o2e4c"]
@@ -16,8 +18,9 @@
 [resource]
 script = ExtResource("10_o8o37")
 endrooms = Array[ExtResource("1_vm53m")]([ExtResource("5_3fjsb")])
+endrooms_single = Array[ExtResource("1_vm53m")]([ExtResource("6_mexgx")])
 hallways = Array[ExtResource("1_vm53m")]([ExtResource("7_jjw32"), ExtResource("8_2qgq8")])
-hallways_single = Array[ExtResource("1_vm53m")]([ExtResource("6_w33yf"), ExtResource("9_omj2g")])
+hallways_single = Array[ExtResource("1_vm53m")]([ExtResource("8_lcijo"), ExtResource("6_w33yf"), ExtResource("9_omj2g")])
 checkpoint_hallway = Array[ExtResource("1_vm53m")]([ExtResource("2_i4ybs")])
 corners = Array[ExtResource("1_vm53m")]([ExtResource("3_mv67c")])
 trooms = Array[ExtResource("1_vm53m")]([ExtResource("11_o2e4c")])

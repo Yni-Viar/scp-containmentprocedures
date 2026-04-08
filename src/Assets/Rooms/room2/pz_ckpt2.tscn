@@ -183,7 +183,8 @@ mesh = SubResource("TextMesh_yt1ha")
 script = ExtResource("10_14xjv")
 waypoints_and_groups = Dictionary[String, String]({
 "SCP-067": "Scp067Spawn",
-"SCP-1223": "Scp1223Spawn"
+"SCP-1223": "Scp1223Spawn",
+"SCP-446": "Scp446Spawn"
 })
 
 [node name="Seasonal" type="Node3D" parent="."]

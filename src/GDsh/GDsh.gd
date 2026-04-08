@@ -71,20 +71,20 @@ func call_command(command: String, args: Array = []):
 ## [param function] is associated callable ([b]MUST[/b] have [param args] [Array] parameter)[br]
 ## [param short_desc] is description showed in commands list[br]
 ## [param description] is full description that showed when [code]help <name>[/code] used
-func add_command(name: String, function: Callable, short_desc = "", description = ""):
-	commands[name] = {
+func add_command(cmd_name: String, function: Callable, short_desc = "", description = ""):
+	commands[cmd_name] = {
 		"callable": function,
 		"short_desc": short_desc,
 		"description": description
 	}
 
 ## Returns [code]true[/code] if given command exists
-func has_command(name: String) -> bool:
-	return name in commands
+func has_command(cmd_name: String) -> bool:
+	return cmd_name in commands
 
 ## Removes command. Returns [code]true[/code] if success
-func remove_command(name: String) -> bool:
-	return commands.erase(name)
+func remove_command(cmd_name: String) -> bool:
+	return commands.erase(cmd_name)
 
 ## Returns dictionary with version information
 func get_version_info():

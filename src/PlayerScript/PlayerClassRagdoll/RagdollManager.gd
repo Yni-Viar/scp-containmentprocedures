@@ -43,6 +43,9 @@ func _ready():
 		await get_tree().create_timer(seconds_before_despawn).timeout
 		despawn()
 	elif type == ObjectType.ragdoll:
+		if OS.get_name() == "Web":
+			get_node(armature_name + "/Skeleton3D/PhysicalBoneSimulator3D").physical_bones_stop_simulation()
+			return
 		var timer: Timer = Timer.new()
 		add_child(timer)
 		timer.timeout.connect(check_distance)

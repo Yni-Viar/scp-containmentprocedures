@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=22 format=3 uid="uid://o7dvqel7sfbm"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=21 format=3 uid="uid://o7dvqel7sfbm"]
 
 [ext_resource type="PackedScene" uid="uid://dm4apurgx8m7m" path="res://Assets/Doors/mt_door.tscn" id="1_d5akv"]
 [ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_sh8pc"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://d0so8w0byu3rf" path="res://MapGen/Resources/MaintenanceZone/room4.tres" id="6_1fk1t"]
 [ext_resource type="Resource" uid="uid://d0en6563qst02" path="res://MapGen/Resources/MaintenanceZone/room1.tres" id="7_uwkbe"]
 [ext_resource type="Resource" uid="uid://bgvcokfa5iie5" path="res://MapGen/Resources/MaintenanceZone/exit1_gateb.tres" id="8_vht2k"]
-[ext_resource type="Resource" uid="uid://i7dv4g0tnkdn" path="res://MapGen/Resources/MaintenanceZone/cont1_446.tres" id="9_axf4q"]
 [ext_resource type="Resource" uid="uid://bw58osyjan7h8" path="res://MapGen/Resources/MaintenanceZone/cont1_023.tres" id="10_dos3h"]
 [ext_resource type="Resource" uid="uid://cmcap7nf4h15i" path="res://MapGen/Resources/MaintenanceZone/cont1_249.tres" id="10_fgb1r"]
 [ext_resource type="Resource" uid="uid://0kdbhka5yv2n" path="res://MapGen/Resources/MaintenanceZone/Lite/cont1_812.tres" id="11_nnytr"]
@@ -25,7 +24,7 @@
 [resource]
 script = ExtResource("18_qqobd")
 endrooms = Array[ExtResource("2_sh8pc")]([ExtResource("7_uwkbe")])
-endrooms_single = Array[ExtResource("2_sh8pc")]([ExtResource("8_vht2k"), ExtResource("10_fgb1r"), ExtResource("9_axf4q"), ExtResource("10_dos3h")])
+endrooms_single = Array[ExtResource("2_sh8pc")]([ExtResource("8_vht2k"), ExtResource("10_fgb1r"), ExtResource("10_dos3h")])
 endrooms_single_large = Array[ExtResource("2_sh8pc")]([ExtResource("11_nnytr")])
 hallways = Array[ExtResource("2_sh8pc")]([ExtResource("13_nkg10"), ExtResource("14_pn8dw"), ExtResource("16_fgb1r")])
 hallways_single = Array[ExtResource("2_sh8pc")]([ExtResource("15_8bbsw"), ExtResource("17_ps2nh"), ExtResource("18_v2mi3")])

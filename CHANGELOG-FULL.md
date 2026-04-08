@@ -3,19 +3,24 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v7.0.0 ("Expansion update part 3", WIP)
+## v7.0.0 ("Expansion update part 3", 2026.04.08)
 ### New zone
-- [x] New Personnel Zone - SCP-067 and SCP-1223 will spawn now here!
-- [x] Re-introduce custom Scientist's offices.
-- [x] Increase max Reflection Probes amount (since there can be more than 64 rooms)
+- New Personnel Zone.
+- Some SCP changed their place:
+  - SCP-266 is now in Maintenance Zone, instead of Research Zone.
+  - SCP-446 and SCP-1223 are now in Personnel Zone instead of Maintenance Zone.
+  - SCP-067 is now in Personnel Zone, instead of Research Zone.
+- Re-introduce custom Scientist's offices.
+- Increased max Reflection Probes amount (since there can be more than 64 rooms)
 
 ### New SCP
-- [x] SCP-018 (fun fact: it's item ID is 18th)
-- [ ] SCP-261
+- SCP-018 (fun fact: it's item ID is 18th)
 
 ### Misc
-- [x] Reworked Settings subwindow - now long infomation is hidden in foldable containers.
-- [x] \[Technical\] Player now spawns in NPC node - fixed inventory not working, whilke spawned outside Surface Zone.
+- \[Lite version only\] Tonemap settings are hidden, since they caused lags.
+- \[Web\] disable ragdoll updating if it is persistent (used in SCP-446)
+- Reworked Settings subwindow - now long infomation is hidden in foldable containers.
+- \[Technical\] Player now spawns in NPC node - fixed inventory not working, while spawned outside Surface Zone.
 
 ## v6.1.0 ("Forgotten memories" update, 2026.03.30)
 ### New SCP
