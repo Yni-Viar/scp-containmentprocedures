@@ -3,6 +3,11 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.0.1 (2026.04.10)
+
+- Optimized animations.
+- \[Web version only\] Restored tonemap settings, but only linear and Reinhardt tonemap can be applied on the Web.
+
 ## v7.0.0 ("Expansion update part 3", 2026.04.08)
 ### New zone
 - New Personnel Zone.
@@ -17,8 +22,8 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - SCP-018 (fun fact: it's item ID is 18th)
 
 ### Misc
-- \[Lite version only\] Tonemap settings are hidden, since they caused lags.
-- \[Web\] disable ragdoll updating if it is persistent (used in SCP-446)
+- \[Web version only\] Tonemap settings are hidden, since they caused lags.
+- \[Web version only\] disable ragdoll updating if it is persistent (used in SCP-446)
 - Reworked Settings subwindow - now long infomation is hidden in foldable containers.
 - \[Technical\] Player now spawns in NPC node - fixed inventory not working, while spawned outside Surface Zone.
 

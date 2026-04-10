@@ -52,7 +52,7 @@ func on_start_human():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	# Change animation state
-	if has_animtree:
+	if has_animtree && !get_parent().get_parent().optimizator_paused:
 		match state:
 			States.IDLE:
 				if !get_node("AnimationTree").get("parameters/state_machine/blend_amount") - 0.00001 < -1:
