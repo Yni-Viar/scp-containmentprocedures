@@ -1,5 +1,7 @@
 # SCP: Continued Procedures
 
+[Available on GameJolt](https://gamejolt.com/games/scpcontpr/998566)
+
 ## Requirements to build
 
 The project uses Godot 4.5.2 as a base.
