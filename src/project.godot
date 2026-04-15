@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="SCP: Continued Procedures"
 config/description="A Facility simulator"
-config/version="7.0.1"
+config/version="7.0.2"
 config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
 run/main_scene="uid://b25hrjnoos5me"
 config/use_custom_user_dir=true
