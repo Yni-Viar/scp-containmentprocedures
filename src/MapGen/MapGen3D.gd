@@ -120,12 +120,6 @@ var size_y: int
 var double_room_shapes: Array[Array]
 
 var room_count: Dictionary[String, PackedInt32Array] = {
-# single rooms
-	"room1_count": PackedInt32Array([0]),
-	"room2_count": PackedInt32Array([0]),
-	"room2c_count": PackedInt32Array([0]),
-	"room3_count": PackedInt32Array([0]),
-	"room4_count": PackedInt32Array([0]),
 # large rooms
 	"room1l_count": PackedInt32Array([0]),
 	"room2l_count": PackedInt32Array([0]),
@@ -254,7 +248,6 @@ func spawn_rooms() -> void:
 						# Checkpoint room spawn
 						mapgen[n][o].resource = rooms[zone_index].checkpoint_hallway[rng.randi_range(0, rooms[zone_index].checkpoint_hallway.size() - 1)]
 						selected_room = rooms[zone_index].checkpoint_hallway[rng.randi_range(0, rooms[zone_index].checkpoint_hallway.size() - 1)].prefab
-						room_count["room2_count"][zone_index] += 1
 					elif large_rooms && mapgen[n][o].large && rooms[zone_index].hallways_single_large.size() > 0 && room_count["room2l_count"][zone_index] < rooms[zone_index].hallways_single_large.size():
 						# Large rooms spawn, when large_rooms enabled
 						selected_room = rooms[zone_index].hallways_single_large[room_count["room2l_count"][zone_index]].prefab
@@ -376,12 +369,11 @@ func room_select(type: RoomTypes, zone_index: int, n: int, o: int) -> void:
 	
 	if single_room_data != null:
 		var spawn_chance = rng.randf_range(0.0, single_room_data.spawn_chance + room_data.spawn_chance)
-		if (room_count[keyword][zone_index] < rooms_single.size() && spawn_chance < single_room_data.spawn_chance) || single_room_data.guaranteed_spawn:
+		if spawn_chance < single_room_data.spawn_chance || single_room_data.guaranteed_spawn:
 			# Single rooms spawn
 			mapgen[n][o].resource = single_room_data
+			selected_room = mapgen[n][o].resource.prefab
 			rooms_single.erase(single_room_data)
-			room_count[keyword][zone_index] += 1
-			selected_room = single_room_data.prefab
 		else:
 			# Generic room spawn
 			mapgen[n][o].resource = room_data
