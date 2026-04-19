@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://b7jrivpaerxxl" path="res://PlayerScript/PlayerClassRagdoll/Scp446.tscn" id="20_7rfet"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_6571d"]
-vertices = PackedVector3Array(8.272253, -0.7602061, -7.4373083, 8.272253, -0.7602061, -8.937308, 7.772253, -0.7602061, -7.9373083, -0.72774696, -0.7602061, 9.062692, -0.47774696, -0.7602061, 9.812692, 0.27225304, -0.7602061, 9.812692, 0.52225304, -0.7602061, 9.062692, 0.77225304, -0.7602061, -7.9373083, -4.977747, -0.7602061, -6.6873083, -4.977747, -0.7602061, -2.9373083, 4.272253, -0.7602061, -0.9373083, 4.272253, -0.7602061, -4.6873083, 6.022253, -0.7602061, -7.4373083, 6.022253, -0.7602061, -0.18730831, 5.772253, -0.7602061, -0.6873083, 5.772253, -0.7602061, 1.0626917, 8.022253, -0.7602061, 0.8126917, 8.022253, -0.7602061, -0.18730831, 5.772253, -0.7602061, 7.8126917, -8.227747, -0.7602061, -2.9373083, -8.227747, -0.7602061, 9.312692, 8.022253, -0.7602061, 9.312692, 8.022253, -0.7602061, 8.062692, 5.772253, -0.7602061, -4.9373083, -8.227747, -0.7602061, -8.937308, -8.227747, -0.7602061, -6.6873083, 0.52225304, -0.7602061, -8.937308)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(11, 10, 7), PackedInt32Array(7, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(0, 12, 2), PackedInt32Array(2, 12, 7), PackedInt32Array(13, 15, 14), PackedInt32Array(14, 15, 10), PackedInt32Array(17, 16, 13), PackedInt32Array(13, 16, 15), PackedInt32Array(10, 15, 18), PackedInt32Array(9, 10, 19), PackedInt32Array(19, 10, 18), PackedInt32Array(19, 18, 3), PackedInt32Array(19, 3, 20), PackedInt32Array(22, 21, 18), PackedInt32Array(18, 21, 6), PackedInt32Array(23, 11, 12), PackedInt32Array(12, 11, 7), PackedInt32Array(25, 24, 8), PackedInt32Array(8, 24, 26), PackedInt32Array(8, 26, 7), PackedInt32Array(18, 6, 3)]
+vertices = PackedVector3Array(5.772253, -0.76257825, 1.0626917, 8.022253, -0.76257825, 0.8126917, 8.022253, -0.76257825, -0.18730831, 5.772253, -0.76257825, -0.4373083, 0.77225304, -0.76257825, -7.9373083, 5.772253, -0.76257825, -7.1873083, 8.272253, -0.76257825, -7.4373083, 8.272253, -0.76257825, -7.9373083, -8.227747, -0.76257825, -8.937308, -8.227747, -0.76257825, -6.6873083, -4.977747, -0.76257825, -6.6873083, 0.52225304, -0.76257825, -8.937308, -8.227747, -0.76257825, -2.9373083, -8.227747, -0.76257825, 0.5626917, -6.227747, -0.76257825, 0.8126917, -4.977747, -0.76257825, -2.9373083, -6.227747, -0.76257825, 3.3126917, 5.772253, -0.76257825, 3.0626917, -0.72774696, -0.76257825, 9.062692, -0.47774696, -0.76257825, 9.812692, 0.27225304, -0.76257825, 9.812692, 0.52225304, -0.76257825, 9.062692, 5.772253, -0.76257825, 7.8126917, -6.227747, -0.76257825, 7.5626917, -8.227747, -0.76257825, 7.8126917, -8.227747, -0.76257825, 9.312692, 8.022253, -0.76257825, 9.312692, 8.022253, -0.76257825, 8.062692)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 3, 0), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 4), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(10, 11, 4), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(4, 5, 3), PackedInt32Array(14, 15, 16), PackedInt32Array(16, 15, 4), PackedInt32Array(16, 4, 0), PackedInt32Array(16, 0, 17), PackedInt32Array(15, 10, 4), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 22), PackedInt32Array(22, 18, 17), PackedInt32Array(17, 18, 23), PackedInt32Array(17, 23, 16), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 18), PackedInt32Array(27, 26, 22), PackedInt32Array(22, 26, 21)]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6t2n4"]
 _surfaces = [{
@@ -211,12 +211,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.44
 [node name="Table2" parent="NavigationRegion3D/Props" instance=ExtResource("7_artvd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.4474835, 0, -3.844198)
 
-[node name="Chair" parent="NavigationRegion3D/Props" instance=ExtResource("8_151rl")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3412127, -1.2602081, -1.8702822)
-
-[node name="Chair2" parent="NavigationRegion3D/Props" instance=ExtResource("8_151rl")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3412127, -1.2602081, -3.799917)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Props" groups=["Scp446Spawn"]]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, -9.147747, 2.500237, -5.226003)
 visibility_range_end = 64.0
@@ -245,6 +239,15 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.47
 transform = Transform3D(1.7433563, 0, -3.0481812e-07, 0, 1.7433563, 0, 3.0481812e-07, 0, 1.7433563, -4.4983845, 3.322934, -9.928591)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_151rl")
+
+[node name="Couch" parent="NavigationRegion3D/Props" instance=ExtResource("19_i76mg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.008919, -1.2343371, 4.1465254)
+
+[node name="SCP-446" parent="NavigationRegion3D/Props" instance=ExtResource("20_7rfet")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.6238537, -1.0139104, -3.4984126)
+
+[node name="FireExtinguisher" parent="NavigationRegion3D/Props" instance=ExtResource("12_1kipi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.446401, -0.64267474, -9.250343)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2540207, 0)
@@ -314,15 +317,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.35
 [node name="ChristmasLights3" parent="Seasonal/Christmas" instance=ExtResource("11_3a1ju")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.499985, -3.671037, -9.107866)
 
-[node name="FireExtinguisher" parent="." instance=ExtResource("12_1kipi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.446401, -0.64267474, -9.250343)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2602061, 0)
 shape = SubResource("ConcavePolygonShape3D_vbow6")
 
-[node name="Couch" parent="." instance=ExtResource("19_i76mg")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.008919, -1.2343371, 4.1465254)
+[node name="Chair" parent="." instance=ExtResource("8_151rl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3412127, -1.2602081, -1.8702822)
 
-[node name="SCP-446" parent="." instance=ExtResource("20_7rfet")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.6238537, -1.0139104, -3.4984126)
+[node name="Chair2" parent="." instance=ExtResource("8_151rl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3412127, -1.2602081, -3.799917)

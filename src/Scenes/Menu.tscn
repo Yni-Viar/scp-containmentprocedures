@@ -173,6 +173,20 @@ layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "ZEN_MODE"
 
+[node name="Credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme = ExtResource("2_syfuq")
+toggle_mode = true
+text = "CREDITS"
+
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -282,8 +296,9 @@ Shadowscale (model, textures),
 Shakles (rig, animation)
 License: SCP-Wiki CC-BY-SA 3.0
 -----------------------
-Crowbar and power generator models
-used from PolyHaven.
+Alternate SCP-005 is made by
+aruspice (https://sketchfab.com/vtomioka)
+License: CC-BY-4.0
 -----------------------
 SCP-347 model is made using Makehuman model.
 (License - CC0)
@@ -475,5 +490,6 @@ text = "LITE_VERSION_WARNING"
 [connection signal="text_changed" from="GameSettings/Seed" to="." method="_on_seed_text_changed"]
 [connection signal="toggled" from="GameSettings/TimeLimited" to="." method="_on_time_limited_toggled"]
 [connection signal="toggled" from="GameSettings/ZenMode" to="." method="_on_zen_mode_toggled"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="close_requested" from="Tutorial" to="Tutorial" method="_on_close_requested"]
 [connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]

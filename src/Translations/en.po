@@ -235,14 +235,10 @@ msgstr ""
 "Call MTF to destroy the threat."
 
 msgid "TASK_914_EXP_1"
-msgstr ""
-"Refine a PDA in SCP-914, by setting\n"
-"on Coarse"
+msgstr "Refine a PDA in SCP-914 on Coarse"
 
 msgid "TASK_914_EXP_2"
-msgstr ""
-"Refine a PDA in SCP-914, by setting\n"
-"on Rough"
+msgstr "Refine a PDA in SCP-914 on Rough"
 
 msgid "TASK_914_EXP_3"
 msgstr ""
@@ -392,3 +388,6 @@ msgstr "[i] NOTE"
 
 msgid "GAME_OVER_5"
 msgstr "You started SCP-018 containment breach. You will be demoted to Class-D personnel."
+
+msgid "TASK_914_EXP_5"
+msgstr "Refine SCP-005 in SCP-914 on 1:1"

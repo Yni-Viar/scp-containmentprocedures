@@ -9,7 +9,6 @@
 [resource]
 script = ExtResource("1_mk5wd")
 internal_name = "multiple_task_914"
-required_group = &"Scp914"
 required_groups = Array[String](["Scp914"])
 sub_tasks = Array[ExtResource("1_mk5wd")]([ExtResource("2_t3f85"), ExtResource("3_5xug8"), ExtResource("4_md4mp"), ExtResource("5_n8lpl")])
 metadata/_custom_type_script = "uid://2412583x8gql"

@@ -9,7 +9,7 @@ func interact(player: Node3D):
 		if player.get_node("PlayerModel").get_child_count() > 0:
 			var puppet: BasePuppetScript = player.get_node("PlayerModel").get_child(0)
 			if puppet is HumanPuppetScript:
-				if puppet.current_item == 15:
+				if puppet.current_item == 15 || puppet.current_item == 18:
 					player.global_position = get_tree().root.get_node("Game/PD_basement/spawnpoint").global_position
 					return
 		

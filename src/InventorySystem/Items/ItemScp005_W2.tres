@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://2g8ucn5i0coc"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_l4tcr"]
+[ext_resource type="Texture2D" uid="uid://cnyqdm7ok36vq" path="res://InventorySystem/Items/Res/scp005_variant2.png" id="2_l4tcr"]
+
+[resource]
+script = ExtResource("1_l4tcr")
+id = 18
+name = "SCP-005"
+texture_tiled = ExtResource("2_l4tcr")
+pickable_path = "res://InventorySystem/Items/ItemScp005_W2.tscn"
+size = Vector2i(1, 1)
+action_method_name = "action_take"
+action_args = [18]
+upgrade_rough = Array[int]([3])
+upgrade_coarse = Array[int]([3])
+upgrade_one_to_one = Array[int]([15])
+upgrade_fine = Array[int]([15, 18])
+upgrade_very_fine = Array[int]([15, 18])

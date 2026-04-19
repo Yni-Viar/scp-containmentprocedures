@@ -3,8 +3,7 @@ extends VisionScpPuppetScript
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name Scp173PuppetScript
 
-@export var scp_173_variations: Dictionary[PackedScene, int] = {}
-var scp_173_current_id: int
+
 @export var invincibility: bool = false
 @export var blink_timer_default: float = 4.7
 var blink_timer: float = blink_timer_default
@@ -19,8 +18,8 @@ func on_start() -> void:
 	raycast = get_parent().get_parent().get_node("RayCastLow")
 	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
 	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
-	spawn_scp_variation()
-	set_face()
+	#spawn_scp_variation()
+	#set_face()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,38 +62,9 @@ func scp_173_movement():
 		get_parent().get_parent().get_node("WalkSounds").play()
 		movement_reset = true
 
-## Spawn SCP-173 variation. If there no one, despawn.
-func spawn_scp_variation() -> void:
-	if scp_173_variations.is_empty():
-		get_parent().get_parent().health_manage(-16777216)
-	scp_173_current_id = rng.randi_range(0, scp_173_variations.size() - 1)
-	var scp_173: Node3D = scp_173_variations.keys()[scp_173_current_id].instantiate()
-	add_child(scp_173, true)
-
-## Set face on spawn
-func set_face():
-	match scp_173_current_id:
-		0:
-			var tex: ShaderMaterial = load("res://Assets/Materials/Scp173Our.tres")
-			match Settings.current_season:
-				Settings.Season.CHRISTMAS:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/OriginalModels/Scp173/Faces/FaceF1.png"))
-				Settings.Season.HALLOWEEN:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/OriginalModels/Scp173/Faces/FaceH1.png"))
-				_:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/OriginalModels/Scp173/Faces/Face" + str(rng.randi_range(1, scp_173_variations.values()[scp_173_current_id])) + ".png"))
-			get_node("Scp173Entity/Cube").set_surface_override_material(0, tex)
-		1:
-			var tex: ShaderMaterial = load("res://Assets/Materials/Optional/Scp173Unity.tres")
-			match Settings.current_season:
-				Settings.Season.CHRISTMAS:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_F1.png"))
-				Settings.Season.HALLOWEEN:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_H1.png"))
-				_:
-					tex.set_shader_parameter("albedo_b", load("res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_" + str(rng.randi_range(1, scp_173_variations.values()[scp_173_current_id])) + ".png"))
-			get_node("Scp173Entity/SCP173_Rig/Skeleton3D/scp173_MESH").set_surface_override_material(0, tex)
-		
-
 #func on_action_area_body_exited(body: Node3D):
 	#pass
+
+
+func _on_scp_173_spawner_item_not_found() -> void:
+	get_parent().get_parent().health_manage(-16777216)

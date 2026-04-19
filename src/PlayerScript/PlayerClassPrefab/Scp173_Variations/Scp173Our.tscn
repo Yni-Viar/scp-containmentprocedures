@@ -1,9 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://c4rswab7pvvnc"]
+[gd_scene load_steps=16 format=4 uid="uid://c4rswab7pvvnc"]
 
+[ext_resource type="Script" uid="uid://cj1asomajykvp" path="res://PlayerScript/PlayerClassScript/Outfits/Outfits.gd" id="1_jj4fc"]
 [ext_resource type="Texture2D" uid="uid://dkkj1vvr8rlvl" path="res://Assets/OriginalModels/Scp173/Scp173Statue_base.png" id="1_qreyh"]
+[ext_resource type="Texture2D" uid="uid://iinmnr6e6psw" path="res://Assets/OriginalModels/Scp173/Faces/Face1.png" id="2_8gq43"]
 [ext_resource type="Texture2D" uid="uid://t8hxjv4mx0jk" path="res://Assets/OriginalModels/Scp173/Scp173Statue_rough.png" id="2_170pv"]
 [ext_resource type="Texture2D" uid="uid://smn2wl0ij24r" path="res://Assets/OriginalModels/Scp173/Scp173Statue_nor.png" id="3_6wncs"]
+[ext_resource type="Texture2D" uid="uid://cco4f1d5uovd3" path="res://Assets/OriginalModels/Scp173/Faces/Face2.png" id="3_f6lav"]
+[ext_resource type="Texture2D" uid="uid://b5ag75d1g1jdv" path="res://Assets/OriginalModels/Scp173/Faces/Face3.png" id="4_1aau7"]
 [ext_resource type="Material" uid="uid://ce5ys7xj8et2j" path="res://Assets/Materials/Scp173Our.tres" id="4_170pv"]
+[ext_resource type="Texture2D" uid="uid://dv0f0jdqck6r5" path="res://Assets/OriginalModels/Scp173/Faces/FaceF1.png" id="5_jixg5"]
+[ext_resource type="Texture2D" uid="uid://coa6gnh6xctvh" path="res://Assets/OriginalModels/Scp173/Faces/FaceH1.png" id="6_pin2b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_av5cd"]
 resource_name = "Statue173"
@@ -84,7 +90,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2ykju")
 
-[node name="Scp173Entity" type="Node3D"]
+[node name="Scp173Entity" type="Node3D" node_paths=PackedStringArray("mesh_to_override")]
+script = ExtResource("1_jj4fc")
+shader_material = ExtResource("4_170pv")
+regular_outfits = Array[Texture2D]([ExtResource("2_8gq43"), ExtResource("3_f6lav"), ExtResource("4_1aau7")])
+christmas_outfits = Array[Texture2D]([ExtResource("5_jixg5")])
+halloween_outfits = Array[Texture2D]([ExtResource("6_pin2b")])
+mesh_to_override = NodePath("Cube")
 
 [node name="BézierCurve" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0268288, 0.99964, 7.45058e-08, -0.997363, -0.0267676, -0.0674619, -0.0674376, -0.00180999, 0.997722, -0.253405, 0.592466, -0.226752)

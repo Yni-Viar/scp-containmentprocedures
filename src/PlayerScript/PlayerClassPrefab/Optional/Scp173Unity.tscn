@@ -1,6 +1,19 @@
-[gd_scene load_steps=22 format=4 uid="uid://bryvc4gi6dhiq"]
+[gd_scene load_steps=35 format=4 uid="uid://bryvc4gi6dhiq"]
 
+[ext_resource type="Script" uid="uid://cj1asomajykvp" path="res://PlayerScript/PlayerClassScript/Outfits/Outfits.gd" id="1_05nad"]
+[ext_resource type="Texture2D" uid="uid://1sgnh0lopypb" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_1.png" id="2_6qfg3"]
 [ext_resource type="Material" uid="uid://btwehtaoe7lay" path="res://Assets/Materials/Optional/Scp173Unity.tres" id="2_pdwvq"]
+[ext_resource type="Texture2D" uid="uid://bslcxjod2ci7m" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_2.png" id="3_vip3u"]
+[ext_resource type="Texture2D" uid="uid://bt56825m8o1yg" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_3.png" id="4_jbfjg"]
+[ext_resource type="Texture2D" uid="uid://drjk3xxvjr36k" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_4.png" id="5_vadtg"]
+[ext_resource type="Texture2D" uid="uid://drcf5l0dpjpxw" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_5.png" id="6_nhfpw"]
+[ext_resource type="Texture2D" uid="uid://c7xkvmd2cwu3u" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_6.png" id="7_t0t6d"]
+[ext_resource type="Texture2D" uid="uid://drpyqvqwjwn64" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_7.png" id="8_tjgc0"]
+[ext_resource type="Texture2D" uid="uid://cej3o1ip5l0c" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_8.png" id="9_wwrrp"]
+[ext_resource type="Texture2D" uid="uid://c00xkyud44kls" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_9.png" id="10_wn7hd"]
+[ext_resource type="Texture2D" uid="uid://cuy3i7881j5lf" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_10.png" id="11_qvtnx"]
+[ext_resource type="Texture2D" uid="uid://b0uyxenwrx7os" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_F1.png" id="12_feiim"]
+[ext_resource type="Texture2D" uid="uid://c6joi71rurcwh" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_H1.png" id="13_gvewn"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bi7xt"]
 resource_name = "SCP_173_Untitled"
@@ -4989,7 +5002,13 @@ _data = {
 &"173_TPose": SubResource("Animation_eupdp")
 }
 
-[node name="Scp173Entity" type="Node3D"]
+[node name="Scp173Entity" type="Node3D" node_paths=PackedStringArray("mesh_to_override")]
+script = ExtResource("1_05nad")
+shader_material = ExtResource("2_pdwvq")
+regular_outfits = Array[Texture2D]([ExtResource("2_6qfg3"), ExtResource("3_vip3u"), ExtResource("4_jbfjg"), ExtResource("5_vadtg"), ExtResource("6_nhfpw"), ExtResource("7_t0t6d"), ExtResource("8_tjgc0"), ExtResource("9_wwrrp"), ExtResource("10_wn7hd"), ExtResource("11_qvtnx")])
+christmas_outfits = Array[Texture2D]([ExtResource("12_feiim")])
+halloween_outfits = Array[Texture2D]([ExtResource("13_gvewn")])
+mesh_to_override = NodePath("SCP173_Rig/Skeleton3D/scp173_MESH")
 
 [node name="SCP173_Rig" type="Node3D" parent="."]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)

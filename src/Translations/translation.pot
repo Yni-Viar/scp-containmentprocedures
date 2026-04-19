@@ -305,3 +305,6 @@ msgstr ""
 
 msgid "GAME_OVER_5"
 msgstr ""
+
+msgid "TASK_914_EXP_5"
+msgstr ""

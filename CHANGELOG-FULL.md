@@ -3,6 +3,15 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.0.4 (2026.04.19)
+
+- \[Full version\] New task - SCP-914-005 cross-experiment (is treated separately from other 914 tasks - both tasks can spawn simultaneously)
+- SCP-005 will always spawn, if it's spawn room exists
+- Added second SCP-005 instance (only retrievable through SCP-914 or from debug terminal)
+- \[Technical\] Added new backend for spawning items, defining array. SCP-173 is using this feature now.
+- \[Technical\] \[Lite version\] Removed SCP-173 Lite class, SCP-173 is used instead (with new feature).
+- Restore credits button (was accidently deleted at 6.1.0 release)
+
 ## v7.0.3 (2026.04.17)
 
 - \[Map Generator\] Updated to v12.0.2
