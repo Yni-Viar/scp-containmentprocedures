@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bioti3gaqj0t8"]
+[gd_scene load_steps=35 format=4 uid="uid://bioti3gaqj0t8"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_lwtf3"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_r8il1"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="16_abfkj"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="19_53a8x"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="20_42cx5"]
-[ext_resource type="PackedScene" uid="uid://cxavw2cnspqkh" path="res://InventorySystem/Items/ItemScp005_W1.tscn" id="20_fg4rw"]
+[ext_resource type="Script" uid="uid://dcghct5q7tn0u" path="res://Scripts/Triggers/Scp005SpawnTrigger.gd" id="20_crjl6"]
+[ext_resource type="Script" uid="uid://cbro31t8tbaub" path="res://Scripts/ItemSequence.gd" id="20_fg4rw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_2ywj7"]
 vertices = PackedVector3Array(-0.6880207, -0.77039003, -6.2962, -3.9380207, -0.77039003, -6.2962, -3.9380207, -0.77039003, -5.2962, -0.4380207, -0.77039003, -5.0462, -4.6880207, -0.77039003, -5.0462, -4.6880207, -0.77039003, 0.7038002, -3.6880207, -0.77039003, 0.7038002, -3.4380207, -0.77039003, 1.7038002, 2.0619793, -0.77039003, 1.7038002, 2.0619793, -0.77039003, -5.0462, 4.0619793, -0.77039003, 2.4538002, 3.5619793, -0.77039003, 2.7038002, 7.3119793, -0.77039003, 3.9538002, 7.5619793, -0.77039003, 3.4538002, 8.561979, -0.77039003, 3.4538002, 8.561979, -0.77039003, -6.2962, 4.0619793, -0.77039003, -6.2962, 2.0619793, -0.77039003, 2.4538002, 2.5619793, -0.77039003, 2.7038002, -4.1880207, -0.77039003, 4.2038, -6.9380207, -0.77039003, 4.2038, -6.9380207, -0.77039003, 9.7038, 2.5619793, -0.77039003, 9.7038, 6.0619793, -0.77039003, 9.7038, 6.3119793, -0.77039003, 8.9538, 7.3119793, -0.77039003, 8.9538)
@@ -348,11 +349,19 @@ transform = Transform3D(1, 0, 1.172251e-07, 0, 1, 0, -1.172251e-07, 0, 1, 7.0429
 
 [node name="Scp005" type="Node3D" parent="." groups=["Scp005"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.143924, 1.7019128, -6.1351323)
+script = ExtResource("20_crjl6")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Scp005"]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -2.4702077, 0.31983817, 1.4180541)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_fg4rw")
 
-[node name="Scp005" parent="Scp005" instance=ExtResource("20_fg4rw")]
+[node name="Scp005" type="Marker3D" parent="Scp005"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068760395, -0.103205204, 0.08665085)
+script = ExtResource("20_fg4rw")
+items = Dictionary[String, int]({
+"res://InventorySystem/Items/ItemScp005_W1.tscn": 0,
+"res://InventorySystem/Items/ItemScp005_W2.tscn": 2
+})
+
+[connection signal="item_not_found" from="Scp005/Scp005" to="Scp005" method="_on_scp_005_item_not_found"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0v3c37qhrinl"]
+[gd_scene load_steps=4 format=3 uid="uid://d0v3c37qhrinl"]
 
 [ext_resource type="Script" uid="uid://cbro31t8tbaub" path="res://Scripts/ItemSequence.gd" id="1_aua4k"]
-[ext_resource type="PackedScene" uid="uid://cxavw2cnspqkh" path="res://InventorySystem/Items/ItemScp005.tscn" id="2_aua4k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aua4k"]
 
@@ -18,11 +17,16 @@ items = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Scp173_Variations/Scp173Our.tscn": 0
 })
 
+[node name="Scp005" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068760395, -0.103205204, 0.08665085)
+script = ExtResource("1_aua4k")
+items = Dictionary[String, int]({
+"res://InventorySystem/Items/ItemScp005_W1.tscn": 0,
+"res://InventorySystem/Items/ItemScp005_W2.tscn": 2
+})
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.52413607, -5.177474)
-
-[node name="Scp005" parent="." instance=ExtResource("2_aua4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2166771, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.0102148, 0, 0, 0, 1, 0, 0, 0, 1.6393661, 0, -0.71099526, 0)

@@ -20,10 +20,10 @@ extends Node
 var version = {
 	"major": 0,
 	"minor": 0,
-	"patch": 3,
+	"patch": 4,
 	"status": "",
-	"build": "",
-	"year": 2022
+	"build": "scp_cont_pr",
+	"year": 2026
 }
 
 ## The list of commands that can be executed along with associated callables
@@ -41,7 +41,7 @@ var commands = {
 	"gdfetch": {
 		"callable": gdfetch,
 		"short_desc": "Display system information",
-		"description": "Analogue of neofetch but shows Engine's stuff"
+		"description": "Analogue of neofetch but shows Engine's stuff. Not available at Web version."
 	},
 	"clear": {
 		"callable": clear,
@@ -114,6 +114,9 @@ func echo(args: Array):
 
 ## Built-in command
 func gdfetch(args: Array):
+	if OS.get_name() == "Web":
+		return "Cannot view system info on Web platform for security reasons."
+	
 	var r = ""
 	var logo_mini = """     _    _
 _  _| |__| |_  _

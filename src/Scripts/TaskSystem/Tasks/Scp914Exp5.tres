@@ -6,5 +6,5 @@
 script = ExtResource("1_770wk")
 internal_name = "task_914_exp_5"
 public_name = "TASK_914_EXP_5"
-required_groups = Array[String](["Scp914", "RZ_cont1_testroom"])
+required_groups = Array[String](["Scp914", "Scp005"])
 metadata/_custom_type_script = "uid://2412583x8gql"

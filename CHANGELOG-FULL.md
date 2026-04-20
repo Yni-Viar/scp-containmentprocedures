@@ -3,6 +3,11 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.0.5 (2026.04.20)
+
+- \[Lite version\] Second SCP-005 instance now randomly spawns, if spawn room exists (in full version, only first instance is spawned due to presence of SCP-914-005 task)
+- \[Web platform\] Fixed security issues with debug console.
+
 ## v7.0.4 (2026.04.19)
 
 - \[Full version\] New task - SCP-914-005 cross-experiment (is treated separately from other 914 tasks - both tasks can spawn simultaneously)

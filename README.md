@@ -33,7 +33,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
-|SCP-005|⁉️, since 6.0.0|⁉️, since 6.0.0|❓ Only used for specific usage, since there is no locked doors|
+|SCP-005|❓, since 6.0.0/7.0.4|✅, since 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
 |SCP-018|✅, since 7.0.0|✅, since 7.0.0|✅ Full|
 |SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
 |SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
@@ -57,7 +57,6 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
 
 #### Availability
-⁉️ - Hidden - not always spawn.
 ✅ - Available.
 ❓ - Partial availability.
 ❌ - Unavailable.
