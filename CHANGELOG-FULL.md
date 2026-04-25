@@ -3,6 +3,10 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.0.6 (2026.04.25)
+
+- Updated SCP-458 model again.
+
 ## v7.0.5 (2026.04.20)
 
 - \[Lite version\] Second SCP-005 instance now randomly spawns, if spawn room exists (in full version, only first instance is spawned due to presence of SCP-914-005 task)
