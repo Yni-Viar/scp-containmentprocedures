@@ -1,25 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ehb4w8qwxc47"]
+[gd_scene load_steps=3 format=3 uid="uid://ehb4w8qwxc47"]
 
 [ext_resource type="Script" uid="uid://c3kn53huxivav" path="res://PlayerScript/PlayerClassScript/Scp173PuppetScript.gd" id="1_b0s8h"]
-[ext_resource type="PackedScene" uid="uid://bryvc4gi6dhiq" path="res://PlayerScript/PlayerClassPrefab/Optional/Scp173Unity.tscn" id="2_jhsed"]
-[ext_resource type="PackedScene" uid="uid://c4rswab7pvvnc" path="res://PlayerScript/PlayerClassPrefab/Scp173_Variations/Scp173Our.tscn" id="3_bfo3e"]
 [ext_resource type="Script" uid="uid://cbro31t8tbaub" path="res://Scripts/ItemSequence.gd" id="4_bfo3e"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_b0s8h")
-scp_173_variations = Dictionary[PackedScene, int]({
-ExtResource("3_bfo3e"): 3,
-ExtResource("2_jhsed"): 10
-})
-invincibility = null
-blink_timer_default = null
 armature_name = "SCP173_Rig"
-state = null
 enable_vision_scan = true
-vision_class_detect = null
-fixed_prefab = null
-christmas_suits = null
-halloween_suits = null
 
 [node name="Scp173Spawner" type="Marker3D" parent="."]
 script = ExtResource("4_bfo3e")

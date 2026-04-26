@@ -8,7 +8,16 @@ class_name Scp173PuppetScript
 @export var blink_timer_default: float = 4.7
 var blink_timer: float = blink_timer_default
 var is_blinking: bool = false
-var current_human: Node3D
+var current_human: Node3D:
+	set(val):
+		if current_human == null: 
+			if val != null:
+				on_first_human_watches()
+		elif val != null:
+			if current_human.get_path() != val.get_path():
+				on_human_watches()
+		current_human = val
+		
 var raycast: RayCast3D
 var player_direction: Vector3
 var movement_reset: bool = false
@@ -32,7 +41,7 @@ func _physics_process(delta: float) -> void:
 			var collider = raycast.get_collider()
 			if collider is MovableNpc:
 				if collider.fraction == 0:
-					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/NeckSnap.ogg")
+					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
 					get_parent().get_parent().get_node("InteractSound").play()
 					collider.health_manage(-16777216)
 					active_puppets.erase(current_human)
@@ -47,12 +56,13 @@ func scp_173_blink(delta: float):
 		is_blinking = true
 		movement_reset = false
 		# Navigate to the human near you
-		if active_puppets.size() > 0 && !active_puppets.has(current_human):
-			current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
+		if active_puppets.size() > 0:
+			if !active_puppets.has(current_human):
+				current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
 			current_human = null
-		await get_tree().create_timer(0.3).timeout
 		blink_timer = blink_timer_default
+		await get_tree().create_timer(0.3).timeout
 		is_blinking = false
 ## Movement control
 func scp_173_movement():
@@ -68,3 +78,13 @@ func scp_173_movement():
 
 func _on_scp_173_spawner_item_not_found() -> void:
 	get_parent().get_parent().health_manage(-16777216)
+
+## Plays trigger sound
+func on_first_human_watches() -> void:
+	get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/SCPSL/173_Encounter.ogg")
+	get_parent().get_parent().get_node("InteractSound").play()
+
+## Plays trigger sound
+func on_human_watches() -> void:
+	get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/SCPSL/173_Its_Still_Here_Ambient.ogg")
+	get_parent().get_parent().get_node("InteractSound").play()

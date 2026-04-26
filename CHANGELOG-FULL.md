@@ -3,6 +3,14 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.0.7 (2026.04.26)
+
+- SCP-173 will chase the first human it sees, so... it's now harder to clean SCP-173 chamber 🙂
+- Added more sounds for SCP-173:
+  - first sound plays when first human comes.
+  - second sound plays when someone lefts SCP-173 vision.
+- Added missing sound credits.
+
 ## v7.0.6 (2026.04.25)
 
 - Updated SCP-458 model again.
