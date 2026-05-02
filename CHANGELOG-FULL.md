@@ -7,7 +7,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ### New SCPs
 - [ ] SCP-080
 - [ ] SCP-261
-- [ ] SCP-2028
+- [x] SCP-2028
 
 ### Other changes
 - [x] Restored SSAO (use fallback in Mobile and Compatibility in Godot 4.5 and lower, else use native shader)

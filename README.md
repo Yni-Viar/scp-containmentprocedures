@@ -55,6 +55,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
 |SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
 |SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
+|SCP-2028|✅, since 7.1.0|✅, since 7.1.0|✅ Full|
 
 #### Availability
 ✅ - Available.
