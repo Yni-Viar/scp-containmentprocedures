@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://2i1t0bjg1q4t"]
+
+[ext_resource type="Shader" uid="uid://hk554f44nepm" path="res://Shaders/GlitchyViewShader/glitchy_view.gdshader" id="1_q8ws8"]
+
+[sub_resource type="Gradient" id="Gradient_og4yi"]
+offsets = PackedFloat32Array(0.6015625, 0.6425781, 0.6738281, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.3864425, 0.8025916, 0.98502976, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vgv1g"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_otkm4"]
+noise = SubResource("FastNoiseLite_vgv1g")
+color_ramp = SubResource("Gradient_og4yi")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_q8ws8")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_otkm4")

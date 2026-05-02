@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://0hlfp08poq4a"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="2_5ri5f"]
+[ext_resource type="Texture2D" uid="uid://bt8de474m1dra" path="res://InventorySystem/Items/Res/scp2028.png" id="2_tqgew"]
+
+[resource]
+script = ExtResource("2_5ri5f")
+id = 19
+name = "SCP-2028"
+texture_tiled = ExtResource("2_tqgew")
+pickable_path = "res://InventorySystem/Items/ItemScp2028.tscn"
+size = Vector2i(2, 2)
+action_node_path = "Game"
+action_method_name = "dialogue"
+action_args = ["SCP2028_EMPTY"]
+upgrade_rough = Array[int]([3])
+upgrade_coarse = Array[int]([7, 3])
+upgrade_one_to_one = Array[int]([16])
+upgrade_fine = Array[int]([16, 12])
+upgrade_very_fine = Array[int]([16])

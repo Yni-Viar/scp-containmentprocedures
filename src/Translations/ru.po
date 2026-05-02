@@ -421,3 +421,9 @@ msgid "TASK_914_EXP_5"
 msgstr ""
 "Переработайте SCP-005 в\n"
 "SCP-914 на 1:1"
+
+msgid "SCP2028_EMPTY"
+msgstr "К счастью, этот экземляр SCP-2028 пуст."
+
+msgid "SCP2028_NIGHTMARE"
+msgstr "Я вижу эхо кошмара..."

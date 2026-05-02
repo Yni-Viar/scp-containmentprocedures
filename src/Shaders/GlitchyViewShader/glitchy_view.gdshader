@@ -1,18 +1,19 @@
 shader_type spatial;
+// Made by Yni
+// Licensed under CC0
 render_mode unshaded;
 
-//Made by Yni
-//License: CC0
-
+uniform sampler2D noise_texture;
 uniform sampler2D screen_texture: hint_screen_texture;
-uniform sampler2D noise_texture: source_color, repeat_enable;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	vec4 noise = texture(noise_texture, SCREEN_UV + vec2(TIME * 0.1, 0.0));
+	vec4 noise = texture(noise_texture, SCREEN_UV);
+	noise += sin(TIME / 2.0) - 1.0;
+	//noise = clamp(noise, 0.0, 1.0);
 	ALBEDO = noise.rgb;
 	ALPHA = noise.a;
 }

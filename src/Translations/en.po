@@ -391,3 +391,9 @@ msgstr "You started SCP-018 containment breach. You will be demoted to Class-D p
 
 msgid "TASK_914_EXP_5"
 msgstr "Refine SCP-005 in SCP-914 on 1:1"
+
+msgid "SCP2028_EMPTY"
+msgstr "Fortunately, this SCP-2028 instance is empty."
+
+msgid "SCP2028_NIGHTMARE"
+msgstr "I see the echoes of a nightmare..."

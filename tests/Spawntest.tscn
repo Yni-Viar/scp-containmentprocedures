@@ -25,6 +25,15 @@ items = Dictionary[String, int]({
 "res://InventorySystem/Items/ItemScp005_W2.tscn": 2
 })
 
+[node name="Scp2028" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43444747, 0.1244943, 0.08665085)
+script = ExtResource("1_aua4k")
+items = Dictionary[String, int]({
+"empty": 0,
+"res://InventorySystem/Items/ItemScp2028.tscn": 0,
+"res://InventorySystem/Items/ItemScp2028Nightmare.tscn": 0
+})
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.52413607, -5.177474)
 

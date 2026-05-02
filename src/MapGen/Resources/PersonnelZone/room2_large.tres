@@ -13,4 +13,3 @@ icon_0_degrees = ExtResource("1_q6g6l")
 icon_90_degrees = ExtResource("2_ubfy8")
 icon_180_degrees = ExtResource("1_q6g6l")
 icon_270_degrees = ExtResource("2_ubfy8")
-spawn_chance = 40.0

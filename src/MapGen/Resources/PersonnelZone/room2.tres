@@ -13,4 +13,4 @@ icon_0_degrees = ExtResource("1_hw5fc")
 icon_90_degrees = ExtResource("2_onrh7")
 icon_180_degrees = ExtResource("1_hw5fc")
 icon_270_degrees = ExtResource("2_onrh7")
-spawn_chance = 30.0
+spawn_chance = 10.0

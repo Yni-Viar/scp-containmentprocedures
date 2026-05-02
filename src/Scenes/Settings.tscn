@@ -59,11 +59,9 @@ layout_mode = 2
 text = "REFLECTION_PROBE_WARNING"
 
 [node name="HSeparator2" type="HSeparator" parent="ScrollContainer/SettingsUI"]
-visible = false
 layout_mode = 2
 
 [node name="SSAO" type="CheckButton" parent="ScrollContainer/SettingsUI"]
-visible = false
 layout_mode = 2
 text = "SSAO"
 

@@ -1,36 +1,74 @@
-[gd_scene load_steps=22 format=3 uid="uid://by5c7g15ljuta"]
+[gd_scene load_steps=28 format=3 uid="uid://by5c7g15ljuta"]
 
 [ext_resource type="Script" uid="uid://coqykxns1k055" path="res://PlayerScript/StaticPlayer.gd" id="1_cfg1l"]
-[ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="2_1a04n"]
-[ext_resource type="Texture2D" uid="uid://cr0oagcm5dgan" path="res://Assets/HUD/cold_overlay.png" id="3_j77eh"]
+[ext_resource type="Shader" uid="uid://hk554f44nepm" path="res://Shaders/GlitchyViewShader/glitchy_view.gdshader" id="2_5utjn"]
+[ext_resource type="Shader" uid="uid://bjmvvola6t0oj" path="res://Shaders/CustomSSAOShader/ssao_iq.gdshader" id="2_og4yi"]
+[ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="3_5utjn"]
+[ext_resource type="Material" uid="uid://cjngsev1fqdgw" path="res://Shaders/OverlayMaterials/Cold.tres" id="3_vgv1g"]
 [ext_resource type="Texture2D" uid="uid://cud3twtuug3gj" path="res://Assets/HUD/electro_overlay.png" id="4_e2rmt"]
-[ext_resource type="Shader" uid="uid://dbo22jkxqiaku" path="res://Shaders/AnaglyphShader/anaglyph.gdshader" id="4_ovyo4"]
 [ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/NormalEdgeDetectShader/edgedetect.gdshader" id="5_7jsl5"]
-[ext_resource type="Shader" uid="uid://db216jx0bk1fi" path="res://Shaders/AmnesiaShader/amnesia.gdshader" id="6_7jsl5"]
+[ext_resource type="Material" uid="uid://btfdohj827k1j" path="res://Shaders/OverlayMaterials/StereoGlasses.tres" id="6_og4yi"]
 [ext_resource type="Script" uid="uid://bynn400brwg3m" path="res://Scripts/LightDetector.gd" id="7_831vx"]
+[ext_resource type="Material" uid="uid://y3l4ispo2pxn" path="res://Shaders/OverlayMaterials/Amnesia.tres" id="8_vgv1g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j77eh"]
 radius = 32.0
 height = 96.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j77eh"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_otkm4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lasx5"]
+noise = SubResource("FastNoiseLite_otkm4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejqts"]
 render_priority = 0
-shader = ExtResource("2_1a04n")
-shader_parameter/overlay = ExtResource("3_j77eh")
-shader_parameter/multiplier = 1.0
+shader = ExtResource("2_og4yi")
+shader_parameter/noise = SubResource("NoiseTexture2D_lasx5")
+shader_parameter/power_of_ao = 8.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_jpt06"]
+material = SubResource("ShaderMaterial_ejqts")
+size = Vector2(2, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_cfg1l"]
-material = SubResource("ShaderMaterial_j77eh")
+material = ExtResource("3_vgv1g")
 size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2rmt"]
 render_priority = 0
-shader = ExtResource("2_1a04n")
+shader = ExtResource("3_5utjn")
 shader_parameter/overlay = ExtResource("4_e2rmt")
 shader_parameter/multiplier = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_otkm4"]
 material = SubResource("ShaderMaterial_e2rmt")
+size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_e2rmt"]
+material = ExtResource("6_og4yi")
+size = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_og4yi"]
+offsets = PackedFloat32Array(0.16992188, 0.6015625, 0.6425781, 0.6738281, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0.3864425, 0.8025916, 0.98502976, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vgv1g"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_otkm4"]
+noise = SubResource("FastNoiseLite_vgv1g")
+color_ramp = SubResource("Gradient_og4yi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lasx5"]
+render_priority = 0
+shader = ExtResource("2_5utjn")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_otkm4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ejqts"]
+material = SubResource("ShaderMaterial_lasx5")
+size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vgv1g"]
+material = ExtResource("8_vgv1g")
 size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5utjn"]
@@ -40,32 +78,6 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_og4yi"]
 material = SubResource("ShaderMaterial_5utjn")
-size = Vector2(2, 2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_831vx"]
-render_priority = 0
-shader = ExtResource("4_ovyo4")
-shader_parameter/red_shift = 2.0
-shader_parameter/blue_shift = -2.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_e2rmt"]
-material = SubResource("ShaderMaterial_831vx")
-size = Vector2(2, 2)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_831vx"]
-frequency = 0.0058
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e2rmt"]
-noise = SubResource("FastNoiseLite_831vx")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_og4yi"]
-render_priority = 0
-shader = ExtResource("6_7jsl5")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_e2rmt")
-
-[sub_resource type="QuadMesh" id="QuadMesh_vgv1g"]
-material = SubResource("ShaderMaterial_og4yi")
 size = Vector2(2, 2)
 
 [node name="StaticPlayer" type="Node3D"]
@@ -97,34 +109,46 @@ shape = SubResource("CapsuleShape3D_j77eh")
 
 [node name="Overlays" type="Node3D" parent="Head/Camera3D"]
 
+[node name="SSAOFallbackOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.030004501)
+visible = false
+mesh = SubResource("QuadMesh_jpt06")
+skeleton = NodePath("../..")
+
 [node name="ColdOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016798973, -0.043239594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.035)
 visible = false
 mesh = SubResource("QuadMesh_cfg1l")
 skeleton = NodePath("../..")
 
 [node name="ElectrocuteOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016798973, -0.043239594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
 visible = false
 mesh = SubResource("QuadMesh_otkm4")
 skeleton = NodePath("../..")
 
-[node name="EgdeDetectOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016798973, -0.036518097)
-visible = false
-mesh = SubResource("QuadMesh_og4yi")
-skeleton = NodePath("../..")
-
 [node name="StereoGlassesOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05500126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.045001984)
 visible = false
 mesh = SubResource("QuadMesh_e2rmt")
 skeleton = NodePath("../..")
 
+[node name="NightmareContainedOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+visible = false
+mesh = SubResource("QuadMesh_ejqts")
+skeleton = NodePath("../ColdOverlay")
+
 [node name="AmnesiaVisionOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.061725616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
 visible = false
 mesh = SubResource("QuadMesh_vgv1g")
+
+[node name="EgdeDetectOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -0.06)
+visible = false
+mesh = SubResource("QuadMesh_og4yi")
+skeleton = NodePath("../..")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(256, 256)

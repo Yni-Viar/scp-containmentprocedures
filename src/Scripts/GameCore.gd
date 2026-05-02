@@ -59,7 +59,11 @@ func _ready() -> void:
 	# Apply settings
 	# Enable or disable glow
 	$WorldEnvironment.environment.glow_enabled = Settings.setting_res.glow
-	$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
+	# Enable SSAO in OpenGL only in Godot 4.6
+	if RenderingServer.get_current_rendering_method() == "forward_plus" || \
+	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
+	  Engine.get_version_info()["minor"] >= 6):
+		$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
 	$WorldEnvironment.environment.tonemap_mode = Settings.setting_res.tonemapper
 	if Settings.setting_res.tonemapper != Environment.TONE_MAPPER_LINEAR || \
 	 Settings.setting_res.tonemapper != Environment.TONE_MAPPER_AGX:
@@ -232,7 +236,7 @@ func cutscene_anim(reverse: bool = false):
 	else:
 		$AnimationPlayer.play("cutscene")
 
-## Dialogue system (used in 067 and 1223)
+## Dialogue system (used in 067, 1223 and 2028)
 func dialogue(text: String):
 	$UI/Dialogue.text = text
 	for i in text.length():

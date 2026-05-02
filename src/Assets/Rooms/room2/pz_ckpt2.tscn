@@ -184,6 +184,7 @@ script = ExtResource("10_14xjv")
 waypoints_and_groups = Dictionary[String, String]({
 "SCP-067": "Scp067Spawn",
 "SCP-1223": "Scp1223Spawn",
+"SCP-2028": "Scp2028",
 "SCP-446": "Scp446Spawn"
 })
 

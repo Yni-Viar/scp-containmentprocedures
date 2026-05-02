@@ -25,6 +25,14 @@ const RAY_LENGTH = 512
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Head/Camera3D.current = true
+	
+	# OpenGL Compatibility renderer supports SSAO since Godot 4.6
+	# As for May 2026, we stay on 4.5 just because it is the most stable\
+	# Godot release.
+	if Settings.setting_res.ssao && RenderingServer.get_current_rendering_method() == "mobile" || \
+	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
+	  Engine.get_version_info()["minor"] < 6):
+		$Head/Camera3D/Overlays/SSAOFallbackOverlay.show()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -252,6 +260,13 @@ func apply_overlay(effect: String, strength: float):
 				current_overlays.append(effect)
 			else:
 				$Head/Camera3D/Overlays/ElectrocuteOverlay.hide()
+				current_overlays.erase(effect)
+		"Scp2028":
+			if strength >= 0.375:
+				$Head/Camera3D/Overlays/NightmareContainedOverlay.show()
+				current_overlays.append(effect)
+			else:
+				$Head/Camera3D/Overlays/NightmareContainedOverlay.hide()
 				current_overlays.erase(effect)
 		_:
 			for node in $Head/Camera3D/Overlays.get_children():

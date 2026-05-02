@@ -209,6 +209,11 @@ func effect_manager_start(effect: String, strength: float):
 			get_tree().root.get_node("Game").dialogue("SCP067_DLG3")
 			await get_tree().create_timer(1.0).timeout
 			get_parent().get_parent().get_node("StatusEffects").remove_status_effect(get_parent().get_parent().get_node("StatusEffects").get_status_effect_index("Scp067"))
+		"Scp2028":
+			get_tree().root.get_node("Game").dialogue("SCP2028_NIGHTMARE")
+			hold_item(20)
+			
+	
 	effect_manager_start_custom(effect, strength)
 
 func effect_manager_start_custom(effect: String, strength: float):
@@ -241,6 +246,8 @@ func effect_manager_destroy(effect: String, strength: float):
 				get_tree().root.get_node("Game").cutscene_anim(true)
 				get_tree().root.get_node("Game/FoundationTask").do_task("task_067")
 			scp_067_affected = false
+		"Scp2028":
+			hold_item(-1)
 	effect_manager_destroy_custom(effect, strength)
 
 func effect_manager_destroy_custom(effect: String, strength: float):

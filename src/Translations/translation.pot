@@ -308,3 +308,9 @@ msgstr ""
 
 msgid "TASK_914_EXP_5"
 msgstr ""
+
+msgid "SCP2028_EMPTY"
+msgstr ""
+
+msgid "SCP2028_NIGHTMARE"
+msgstr ""

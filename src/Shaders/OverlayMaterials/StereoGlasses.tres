@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://btfdohj827k1j"]
+
+[ext_resource type="Shader" uid="uid://dbo22jkxqiaku" path="res://Shaders/AnaglyphShader/anaglyph.gdshader" id="1_my0uv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_my0uv")
+shader_parameter/red_shift = 2.0
+shader_parameter/blue_shift = -2.0

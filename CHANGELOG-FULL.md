@@ -3,6 +3,17 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v7.1.0 (Sweet Dreams update, W.I.P)
+### New SCPs
+- [ ] SCP-080
+- [ ] SCP-261
+- [ ] SCP-2028
+
+### Other changes
+- [x] Restored SSAO (use fallback in Mobile and Compatibility in Godot 4.5 and lower, else use native shader)
+- [x] Overlay shaders started to use alpha channel (Performance will be worse, but it is necessary to support overlapping)
+- [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
+
 ## v7.0.7 (2026.04.26)
 
 - SCP-173 will chase the first human it sees, so... it's now harder to clean SCP-173 chamber 🙂

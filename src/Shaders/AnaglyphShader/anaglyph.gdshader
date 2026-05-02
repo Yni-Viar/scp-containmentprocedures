@@ -18,5 +18,6 @@ void fragment() {
 	float g = texture(screen_texture, uvs + vec2((1.0 / VIEWPORT_SIZE) * blue_shift), 0.0).g;
 	float b = texture(screen_texture, uvs + vec2((1.0 / VIEWPORT_SIZE) * blue_shift), 0.0).b;
 
-	ALBEDO = (final_texture.rgb + vec3(r, g, b)) / 2.0;
+	ALBEDO = vec3(r, g, b);
+	ALPHA = 0.5;
 }

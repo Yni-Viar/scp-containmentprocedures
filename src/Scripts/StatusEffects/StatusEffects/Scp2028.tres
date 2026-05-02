@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=6 format=3 uid="uid://ds43lxdn780le"]
+
+[ext_resource type="Script" uid="uid://dcmkhvqt24ups" path="res://Scripts/StatusEffects/StatusEffectCommand.gd" id="1_vo60x"]
+[ext_resource type="Script" uid="uid://c4fqc7mfbrm1o" path="res://Scripts/StatusEffects/StatusEffect.gd" id="2_7pycv"]
+
+[sub_resource type="Resource" id="Resource_2718k"]
+script = ExtResource("1_vo60x")
+action_node_path = "StaticPlayer"
+action_method_name = "apply_overlay"
+player_only = true
+metadata/_custom_type_script = "uid://dcmkhvqt24ups"
+
+[sub_resource type="Resource" id="Resource_1tesf"]
+script = ExtResource("1_vo60x")
+action_node_path = "PlayerModel/Puppet"
+action_method_name = "effect_manager_destroy"
+metadata/_custom_type_script = "uid://dcmkhvqt24ups"
+
+[sub_resource type="Resource" id="Resource_k2qvc"]
+script = ExtResource("1_vo60x")
+action_node_path = "PlayerModel/Puppet"
+action_method_name = "effect_manager_start"
+metadata/_custom_type_script = "uid://dcmkhvqt24ups"
+
+[resource]
+script = ExtResource("2_7pycv")
+effect_name = "Scp2028"
+start_command = Array[ExtResource("1_vo60x")]([SubResource("Resource_2718k"), SubResource("Resource_k2qvc")])
+destroy_command = Array[ExtResource("1_vo60x")]([SubResource("Resource_2718k"), SubResource("Resource_1tesf")])
+metadata/_custom_type_script = "uid://c4fqc7mfbrm1o"

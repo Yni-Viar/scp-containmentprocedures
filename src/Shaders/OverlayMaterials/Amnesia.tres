@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://y3l4ispo2pxn"]
+
+[ext_resource type="Shader" uid="uid://db216jx0bk1fi" path="res://Shaders/AmnesiaShader/amnesia.gdshader" id="1_vex1j"]
+
+[sub_resource type="Gradient" id="Gradient_vex1j"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_831vx"]
+frequency = 0.0058
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e2rmt"]
+noise = SubResource("FastNoiseLite_831vx")
+color_ramp = SubResource("Gradient_vex1j")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vex1j")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_e2rmt")
