@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://xvc6f7tchh3v"]
+
+[ext_resource type="Shader" uid="uid://cgwl6uyvafgwy" path="res://Shaders/S4AO_Godot_Fallback/s4ao_inc.gdshader" id="1_6hxkd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_6hxkd")
+shader_parameter/ssao_strength = 2.0
+shader_parameter/ssao_radius = 0.5

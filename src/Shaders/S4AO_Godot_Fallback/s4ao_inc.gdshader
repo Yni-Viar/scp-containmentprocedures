@@ -1,0 +1,96 @@
+// S4AO (Stupid Simple Screen Space Ambient Occlusion) - Jonathan Dummer (O1S)
+/**************************************************************************/
+/*                         This file is part of:                          */
+/*                             GODOT ENGINE                               */
+/*                        https://godotengine.org                         */
+/**************************************************************************/
+/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
+/*                                                                        */
+/* Permission is hereby granted, free of charge, to any person obtaining  */
+/* a copy of this software and associated documentation files (the        */
+/* "Software"), to deal in the Software without restriction, including    */
+/* without limitation the rights to use, copy, modify, merge, publish,    */
+/* distribute, sublicense, and/or sell copies of the Software, and to     */
+/* permit persons to whom the Software is furnished to do so, subject to  */
+/* the following conditions:                                              */
+/*                                                                        */
+/* The above copyright notice and this permission notice shall be         */
+/* included in all copies or substantial portions of the Software.        */
+/*                                                                        */
+/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        */
+/* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     */
+/* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. */
+/* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY   */
+/* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,   */
+/* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE      */
+/* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+/**************************************************************************/
+// The sample_width should be even, else the midpoint is at SCREEN_UV.
+// Takes sample_width^2 samples in a grid, with the corners notched.
+shader_type spatial;
+render_mode unshaded;
+
+#if defined(USE_SSAO_LOW)
+const int sample_width = 2;
+#elif defined(USE_SSAO_HIGH)
+const int sample_width = 6;
+#else
+const int sample_width = 4;
+#endif
+const int notch_01 = int(sample_width > 3); // Set to 1 to skip the corner samples, 0 to include them.
+const float sample_mid = (float(sample_width) - 1.0) * 0.50001; // Can't be exactly 0.5 in case sample_width is odd.
+#if defined(USE_SSAO_LOW)
+const float inv_half_width = 1.0 / sample_mid; // The 2x2 sampling looks wider as all samples are at radius.
+#else
+const float inv_half_width = 1.7 / sample_mid; // Bake in the 1.7 scale for the random rotation.
+#endif
+const float average_samples = 1.0 / float(sample_width * sample_width - 4 * notch_01); //  1 / number_of_samples
+const float ssao_falloff_frac = 0.25;
+
+const vec2 ssao_prn_UV = vec2(
+	1.087f * ((1.0f + sqrt(5.0f)) / 2.0f), 1.087f * ((9.0f + sqrt(221.0f)) / 10.0f)
+);
+
+uniform float ssao_strength = 2.0;
+uniform float ssao_radius = 0.5;
+uniform sampler2D depth_buffer: hint_depth_texture;
+uniform sampler2D screen_texture: hint_screen_texture;
+
+// Perform the SSAO.
+void fragment() {
+	float depth = texture(depth_buffer, SCREEN_UV).r;
+	float radius = max(1e-4f, depth * ssao_radius);
+	float inv_falloff = 1.0f / max(1e-4f, depth * ssao_falloff_frac);
+	// Random 2D rotation per pixel (+/-45 deg, with 0 having a lower probability).
+	// The random cosine vector is vec2( 0.5, -0.5 to +0.5 ) and *1.7 makes the average length ~ 1.
+	vec2 rcos = (inv_half_width * radius) * vec2(0.5f, fract(dot(SCREEN_UV, ssao_prn_UV)) - 0.5f);
+	vec2 rsin = rcos.yx * vec2(-1, 1); // Perpendicular to the random cosine vector.
+	// Grab the samples and determine the occlusion.
+	float occlusion = 0.0f;
+	vec2 base_duv = -sample_mid * rsin;
+	for (int j = sample_width; --j >= 0;) {
+#if defined(USE_SSAO_LOW)
+		// Low quality uses 2x2 samples, no notching.
+		vec2 duv = -sample_mid * rcos + base_duv;
+		for (int i = sample_width; --i >= 0;) {
+#else
+		//	Will uses 4x4 or 6x6 samples, with the corners notched out.
+		int o = /*notch_01 &*/ int((j <= 0) || (j >= (sample_width - 1))); // Notch corners of the grid.
+		vec2 duv = (float(o) - sample_mid) * rcos + base_duv;
+		for (int i = sample_width - o - o; --i >= 0;) {
+#endif
+			float dz = texture(depth_buffer, SCREEN_UV + duv).r - depth;
+			float validity = smoothstep(1.0f, 0.0f, dz * inv_falloff);
+			occlusion += normalize(vec3(duv, dz)).z * validity; // How 'directly overhead' is it?
+			duv += rcos; // March along the rcos direction with i.
+		}
+		base_duv += rsin; // March along the rsin direction with j.
+	}
+	// Adjust the occlusion for intensity, and # samples.
+	occlusion *= ssao_strength * average_samples;
+	occlusion = clamp(1.0f - occlusion, 0.0f, 1.0f);
+	vec3 color = texture(screen_texture, SCREEN_UV).rgb;
+	color *= occlusion * occlusion;
+	ALBEDO = color;
+}

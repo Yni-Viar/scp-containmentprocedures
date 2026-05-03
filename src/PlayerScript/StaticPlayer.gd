@@ -32,6 +32,10 @@ func _ready() -> void:
 	if Settings.setting_res.ssao && RenderingServer.get_current_rendering_method() == "mobile" || \
 	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
 	  Engine.get_version_info()["minor"] < 6):
+		# Make SSAO even more performant (but uglier) in Lite version
+		# Recommended to remove after upgrading to 4.6 and newer versions.
+		if OS.has_feature("Lite"):
+			$Head/Camera3D/Overlays/SSAOFallbackOverlay.mesh.surface_set_material(0, "res://Shaders/OverlayMaterials/ssao_fallback_low.tres")
 		$Head/Camera3D/Overlays/SSAOFallbackOverlay.show()
 
 func _input(event: InputEvent) -> void:

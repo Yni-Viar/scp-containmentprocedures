@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://by5c7g15ljuta"]
+[gd_scene load_steps=25 format=3 uid="uid://by5c7g15ljuta"]
 
 [ext_resource type="Script" uid="uid://coqykxns1k055" path="res://PlayerScript/StaticPlayer.gd" id="1_cfg1l"]
 [ext_resource type="Shader" uid="uid://hk554f44nepm" path="res://Shaders/GlitchyViewShader/glitchy_view.gdshader" id="2_5utjn"]
-[ext_resource type="Shader" uid="uid://bjmvvola6t0oj" path="res://Shaders/CustomSSAOShader/ssao_iq.gdshader" id="2_og4yi"]
+[ext_resource type="Material" uid="uid://6kmquyr4ttab" path="res://Shaders/OverlayMaterials/ssao_fallback.tres" id="2_og4yi"]
 [ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="3_5utjn"]
 [ext_resource type="Material" uid="uid://cjngsev1fqdgw" path="res://Shaders/OverlayMaterials/Cold.tres" id="3_vgv1g"]
 [ext_resource type="Texture2D" uid="uid://cud3twtuug3gj" path="res://Assets/HUD/electro_overlay.png" id="4_e2rmt"]
@@ -15,19 +15,8 @@
 radius = 32.0
 height = 96.0
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_otkm4"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lasx5"]
-noise = SubResource("FastNoiseLite_otkm4")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejqts"]
-render_priority = 0
-shader = ExtResource("2_og4yi")
-shader_parameter/noise = SubResource("NoiseTexture2D_lasx5")
-shader_parameter/power_of_ao = 8.0
-
 [sub_resource type="QuadMesh" id="QuadMesh_jpt06"]
-material = SubResource("ShaderMaterial_ejqts")
+material = ExtResource("2_og4yi")
 size = Vector2(2, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_cfg1l"]
@@ -110,7 +99,7 @@ shape = SubResource("CapsuleShape3D_j77eh")
 [node name="Overlays" type="Node3D" parent="Head/Camera3D"]
 
 [node name="SSAOFallbackOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.030004501)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0001495108, 0.001127243, -0.029940605)
 visible = false
 mesh = SubResource("QuadMesh_jpt06")
 skeleton = NodePath("../..")

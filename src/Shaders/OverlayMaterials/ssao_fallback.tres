@@ -1,14 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://6kmquyr4ttab"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://6kmquyr4ttab"]
 
-[ext_resource type="Shader" uid="uid://bjmvvola6t0oj" path="res://Shaders/CustomSSAOShader/ssao_iq.gdshader" id="1_m1xsa"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_otkm4"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lasx5"]
-noise = SubResource("FastNoiseLite_otkm4")
+[ext_resource type="Shader" uid="uid://cgwl6uyvafgwy" path="res://Shaders/S4AO_Godot_Fallback/s4ao_inc.gdshader" id="1_m1xsa"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_m1xsa")
-shader_parameter/noise = SubResource("NoiseTexture2D_lasx5")
-shader_parameter/power_of_ao = 8.0
+shader_parameter/ssao_strength = 2.0
+shader_parameter/ssao_radius = 0.5

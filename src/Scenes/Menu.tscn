@@ -235,17 +235,14 @@ License: GPL3 / MIT License / CC-BY-SA 3.0-4.0
 -------------------------
 Third-party credits
 -------------------------
-Godot Engine:
+Godot Engine, SSAO fallback shader
+and various code snippets:
 Copyright (c) 2014-present Godot Engine contributors 
 Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 License: MIT License.
 -------------------------
 Camera Gimbal by kidscancode 
 License: MIT License.
--------------------------
-SSAO fallback shader
-Copyright © 2014 Inigo Quilez
-Licensed under MIT License
 -------------------------
 Scanning Shader by Yui Kinomoto @arlez80 
 License: MIT License
