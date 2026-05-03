@@ -99,42 +99,42 @@ shape = SubResource("CapsuleShape3D_j77eh")
 [node name="Overlays" type="Node3D" parent="Head/Camera3D"]
 
 [node name="SSAOFallbackOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0001495108, 0.001127243, -0.029940605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.035)
 visible = false
 mesh = SubResource("QuadMesh_jpt06")
 skeleton = NodePath("../..")
 
 [node name="ColdOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
 visible = false
 mesh = SubResource("QuadMesh_cfg1l")
 skeleton = NodePath("../..")
 
 [node name="ElectrocuteOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.045)
 visible = false
 mesh = SubResource("QuadMesh_otkm4")
 skeleton = NodePath("../..")
 
 [node name="StereoGlassesOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.045001984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
 visible = false
 mesh = SubResource("QuadMesh_e2rmt")
 skeleton = NodePath("../..")
 
 [node name="NightmareContainedOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
 visible = false
 mesh = SubResource("QuadMesh_ejqts")
 skeleton = NodePath("../ColdOverlay")
 
 [node name="AmnesiaVisionOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06)
 visible = false
 mesh = SubResource("QuadMesh_vgv1g")
 
 [node name="EgdeDetectOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -0.06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.065)
 visible = false
 mesh = SubResource("QuadMesh_og4yi")
 skeleton = NodePath("../..")
