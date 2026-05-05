@@ -38,14 +38,14 @@ msgstr ""
 "You need to do tasks.\n"
 "Some tasks require to come close to the subject of testing (812, partly 938).\n"
 "Some tasks require to bring Class-D (162, 173, 266, 522, 939, partly 938).\n"
-"Some tasks require to bring something to special place (347, 914).\n"
+"Some tasks require to bring object/item to special place (347, 914).\n"
 "Some tasks require to come with special item (791).\n"
 "Some tasks require to interact or use subject of testing (023, 067, 249)."
 
 msgid "HELP_EVENTS"
 msgstr ""
 "Also the game has events.\n"
-"There are only three events implemented right now - Chaos Insurgency invasion and SCP-023 critical stateю\n"
+"There are only three events implemented right now - Chaos Insurgency invasion and SCP-023 critical state.\n"
 "For the first one, you need to call MTF (maybe more then one time), just when they appear.\n"
 "For SCP-023 - if you round took long (> 2 minutes), you need to go to Maintenance Zone and go to SCP-023, replacing his \"eyes\" as soon, as possible."
 
@@ -53,7 +53,7 @@ msgid "CASUAL_MODE"
 msgstr "Play"
 
 msgid "STORY_MODE"
-msgstr "???"
+msgstr "Story mode (in development)"
 
 msgid "HELP_BUTTON"
 msgstr "Hint"
@@ -397,3 +397,22 @@ msgstr "Fortunately, this SCP-2028 instance is empty."
 
 msgid "SCP2028_NIGHTMARE"
 msgstr "I see the echoes of a nightmare..."
+
+msgid "HELP_SPOILERS_AHEAD"
+msgstr "If you are stuck, type in `Seed` label: spoilers"
+
+msgid "SCP261_DO_NOT_POWEROFF"
+msgstr ""
+"SCP-261 should be always\n"
+"connected to power supply!"
+
+msgid "GODOT_RD_STATE"
+msgstr ""
+"This game only supports OpenGL (Compatibility) renderer,\n"
+"because other renderers in Godot have lightmap limitation, leading to glitches while playing this game\n"
+"(see https://github.com/godotengine/godot-proposals/issues/12577 for more information)\n"
+"If you launched this game without additional commands and see this message,\n"
+"please, report a bug to https://github.com/Yni-Viar/scp-continued-procedures/issues"
+
+msgid "ATTENTION"
+msgstr "Attention!"

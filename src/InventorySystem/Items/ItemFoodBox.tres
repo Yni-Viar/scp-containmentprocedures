@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b7w4gv0ultd2g"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_5vb5i"]
+[ext_resource type="Texture2D" uid="uid://d05qrwq2pf52b" path="res://InventorySystem/Items/Res/foodbox.png" id="2_5vb5i"]
+
+[resource]
+script = ExtResource("1_5vb5i")
+id = 21
+name = "Food box"
+texture_tiled = ExtResource("2_5vb5i")
+pickable_path = "res://InventorySystem/Items/ItemFoodBox.tscn"
+size = Vector2i(2, 1)
+upgrade_one_to_one = Array[int]([21])
+upgrade_fine = Array[int]([9, 4])
+upgrade_very_fine = Array[int]([9])

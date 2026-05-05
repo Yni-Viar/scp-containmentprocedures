@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b25hrjnoos5me"]
+[gd_scene load_steps=22 format=3 uid="uid://b25hrjnoos5me"]
 
 [ext_resource type="Script" uid="uid://nuv64h1g048i" path="res://Scripts/MainMenu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://calm8y36ivn5q" path="res://UI/MainMenu/mainmenubackground.png" id="2_idohh"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
 [ext_resource type="PackedScene" uid="uid://b4tymm7axdu4r" path="res://UI/MainMenu/easter_egg.tscn" id="12_a8aa6"]
+[ext_resource type="Texture2D" uid="uid://b3huhsmj8qtv8" path="res://UI/MainMenu/StoryMode/MainStory.png" id="12_dsmso"]
 [ext_resource type="AudioStream" uid="uid://dyjre5u8dtce6" path="res://Sounds/Music/Original/SCP_MainMenu_WIP.ogg" id="12_qki4b"]
+[ext_resource type="Texture2D" uid="uid://m3f2djuc8pr0" path="res://UI/MainMenu/StoryMode/GenericStory.png" id="13_t8p2w"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p2w"]
@@ -38,8 +40,11 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="Gradient" id="Gradient_a8aa6"]
+colors = PackedColorArray(0, 0, 0, 1, 0.27387273, 0.27387273, 0.27387273, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_krje8"]
+frequency = 0.0031
+fractal_lacunarity = 2.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dd46u"]
 width = 1152
@@ -128,6 +133,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 
 [node name="HelpButton" type="Button" parent="HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
@@ -141,15 +147,12 @@ vertical_icon_alignment = 0
 
 [node name="GameSettings" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.382
-anchor_top = 0.874
-anchor_right = 0.382
-anchor_bottom = 0.874
-offset_left = -432.064
-offset_top = -70.352
-offset_right = -112.064
-offset_bottom = 76.648
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -174.0
+offset_right = 320.0
+grow_vertical = 0
 alignment = 1
 
 [node name="Info" type="Label" parent="GameSettings"]
@@ -201,6 +204,20 @@ offset_bottom = 63.696
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_sjh0l")
+
+[node name="Info2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "HELP_SPOILERS_AHEAD"
+horizontal_alignment = 2
 
 [node name="CreditsContainer" type="Panel" parent="."]
 visible = false
@@ -468,7 +485,52 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_dd46u")
 expand_mode = 1
 
+[node name="ScrollContainer" type="ScrollContainer" parent="StoryUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -184.0
+offset_right = 574.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StoryUI/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="MainStory" type="Button" parent="StoryUI/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+text = "STORY_MAIN"
+icon = ExtResource("12_dsmso")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="EasterEggActivator" type="Button" parent="StoryUI/ScrollContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+text = "???"
+icon = ExtResource("13_t8p2w")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
 [node name="EasterEgg" parent="StoryUI" instance=ExtResource("12_a8aa6")]
+visible = false
 layout_mode = 1
 
 [node name="Back" type="TextureButton" parent="StoryUI"]
@@ -502,5 +564,5 @@ text = "LITE_VERSION_WARNING"
 [connection signal="toggled" from="GameSettings/TimeLimited" to="." method="_on_time_limited_toggled"]
 [connection signal="toggled" from="GameSettings/ZenMode" to="." method="_on_zen_mode_toggled"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="close_requested" from="Tutorial" to="Tutorial" method="_on_close_requested"]
+[connection signal="pressed" from="StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator" to="." method="_on_easter_egg_activator_pressed"]
 [connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]

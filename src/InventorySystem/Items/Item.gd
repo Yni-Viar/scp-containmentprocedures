@@ -45,3 +45,6 @@ enum Usage {NORMAL, ONE_TIME, ONE_TIME_DROP}
 @export var upgrade_one_to_one: Array[int] = []
 @export var upgrade_fine: Array[int] = []
 @export var upgrade_very_fine: Array[int] = []
+@export_group("Custom properties")
+## Custom properties of the item, such as SCP-261 different food.
+@export var custom_properties: Array[String] = []

@@ -164,8 +164,48 @@ func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
 
 ## GDsh command, that describes beta features.
 func beta_mode_features(args: Array):
-	return """Beta features
-	There are no experimental features right now.
+	return """Beta features:
+	
+	- Story mode UI.
+	
 	To enable beta features, write in Seed input following text:
 	[b]feature_beta[/b]
 	"""
+
+## Creates dialogue window
+## Text is message to show, title is window title and button_actions (optional, only used ingame) is used for choices.
+func dialogue_window(text: String, title: String = "", fixed_size: bool = true, button_actions: Array[CommandResource] = []):
+	# Create window
+	var window: BaseWindow = BaseWindow.new()
+	window.deletable = true
+	window.theme = load("res://UITheme.tres")
+	if !title.is_empty():
+		window.title = title
+	window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN
+	window.unresizable = fixed_size
+	window.size = Vector2i(640, 320)
+	# Create UI for dialogue
+	var ui: Control = Control.new()
+	ui.size = Vector2(640, 320)
+	window.add_child(ui)
+	# Create message
+	var message_label: RichTextLabel = RichTextLabel.new()
+	message_label.size = Vector2(640, 276)
+	message_label.text = text
+	ui.add_child(message_label)
+	# If ingame
+	if get_tree().root.get_node_or_null("Game") != null:
+		# Add scroll container for buttons
+		var scroll_container: ScrollContainer = ScrollContainer.new()
+		scroll_container.size = Vector2(640, 44)
+		scroll_container.position = Vector2(0, 276)
+		ui.add_child(scroll_container)
+		# Add horizontal contaier for buttons
+		var hbox_container: HBoxContainer = HBoxContainer.new()
+		scroll_container.add_child(hbox_container)
+		# Add buttons
+		for action in button_actions:
+			var button: DialogueButton = DialogueButton.new()
+			button.action = action
+			hbox_container.add_child(button)
+	add_child(window)

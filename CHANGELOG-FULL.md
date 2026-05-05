@@ -6,12 +6,19 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ## v7.1.0 (Sweet Dreams update, W.I.P)
 ### New SCPs
 - [ ] SCP-080
-- [ ] SCP-261
+- [ ] SCP-261 (uses new windowed dialogues feature)
 - [x] SCP-2028
 
-### Other changes
-- [x] Restored SSAO (use fallback in Mobile and Compatibility in Godot 4.5 and lower, else use native shader)
+### Rendering overhaul
+- [x] Restored SSAO (use fallback in ~~Mobile and~~ Compatibility in Godot 4.5, else use native shader)
 - [x] Overlay shaders started to use alpha channel (Performance will be worse, but it is necessary to support overlapping)
+
+### Windowed dialogues
+- [x] Added dialogue support through windows
+
+### Other changes
+- [x] Show warning when launched (uses new windowed dialogues feature)
+- [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
 - [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
 
 ## v7.0.7 (2026.04.26)

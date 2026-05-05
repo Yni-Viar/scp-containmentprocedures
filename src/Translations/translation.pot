@@ -314,3 +314,15 @@ msgstr ""
 
 msgid "SCP2028_NIGHTMARE"
 msgstr ""
+
+msgid "HELP_SPOILERS_AHEAD"
+msgstr ""
+
+msgid "SCP261_DO_NOT_POWEROFF"
+msgstr ""
+
+msgid "GODOT_RD_STATE"
+msgstr ""
+
+msgid "ATTENTION"
+msgstr ""

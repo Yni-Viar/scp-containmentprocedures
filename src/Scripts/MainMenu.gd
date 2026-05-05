@@ -6,6 +6,10 @@ extends Control
 func _enter_tree() -> void:
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
+	
+	if RenderingServer.get_current_rendering_method() != "gl_compatibility":
+		Settings.dialogue_window("GODOT_RD_STATE", "ATTENTION")
+	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():
 		# Easy bit-field checking
@@ -59,10 +63,7 @@ func _on_time_limited_toggled(toggled_on: bool) -> void:
 
 
 func _on_help_button_pressed() -> void:
-	if $GameSettings/Seed.text.to_lower() == "spoilers":
-		$Tutorial.show()
-	else:
-		$SpoilersAhead.show()
+	$Tutorial.show()
 
 
 func _on_zen_mode_toggled(toggled_on: bool) -> void:
@@ -87,12 +88,12 @@ func _on_enable_sound_toggled(toggled_on: bool) -> void:
 
 func _on_story_mode_pressed() -> void:
 	$StoryUI.show()
-	$StoryUI/CanvasLayer.show()
 
 
 func _on_story_back_pressed() -> void:
 	$StoryUI.hide()
-	$StoryUI/CanvasLayer.hide()
+	$StoryUI/ScrollContainer.show()
+	$StoryUI/EasterEgg.hide()
 
 
 func _on_settings_button_pressed() -> void:
@@ -102,8 +103,16 @@ func _on_settings_button_pressed() -> void:
 func _on_seed_text_changed(new_text: String) -> void:
 	if new_text.to_lower() == "feature_beta":
 		Settings.beta_mode = true
-		$GameSettings/Seed.text = ""
-	if new_text.to_lower() == "yenjeai":
 		$HBoxContainer/StoryMode.show()
-	elif $HBoxContainer/StoryMode.visible:
-		$HBoxContainer/StoryMode.hide()
+		$GameSettings/Seed.text = ""
+	if new_text.to_lower() == "spoilers":
+		$HBoxContainer/HelpButton.show()
+	if new_text.to_lower() == "yenjeai":
+		$StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.show()
+	elif $StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.visible:
+		$StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.hide()
+
+
+func _on_easter_egg_activator_pressed() -> void:
+	$StoryUI/ScrollContainer.hide()
+	$StoryUI/EasterEgg.show()

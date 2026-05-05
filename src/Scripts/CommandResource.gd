@@ -9,3 +9,6 @@ class_name CommandResource
 @export var action_method_name: String = ""
 ## Arguments
 @export var action_args: Array = []
+@export_group("Dialogue properties")
+## Button name
+@export var name: String = ""

@@ -1,9 +1,14 @@
 extends Window
 ## Made by Yni, licensed under MIT License.
+class_name BaseWindow
+
+@export var deletable: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Compatibility with older behaviour
+	if !close_requested.is_connected(_on_close_requested):
+		close_requested.connect(_on_close_requested)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,4 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_close_requested() -> void:
-	hide()
+	if deletable:
+		queue_free()
+	else:
+		hide()
