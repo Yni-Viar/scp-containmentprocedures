@@ -17,7 +17,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Added dialogue support through windows
 
 ### Other changes
-- [x] Show warning when launched (uses new windowed dialogues feature)
+- [x] Show warning on start, if the game is not using OpenGL/Compatibility backend. (uses new windowed dialogues feature)
 - [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
 - [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
 
