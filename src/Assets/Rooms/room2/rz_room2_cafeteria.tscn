@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d2a6247rdmoxn"]
+[gd_scene load_steps=29 format=4 uid="uid://d2a6247rdmoxn"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_xskox"]
 [ext_resource type="PackedScene" uid="uid://cqhhycwdvhaq6" path="res://Assets/ExternalModels/hanging_light.tscn" id="2_r01di"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="4_e6an4"]
 [ext_resource type="PackedScene" uid="uid://cogri7pfu6a1e" path="res://Assets/OriginalModels/box.tscn" id="5_o4j40"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="6_o4j40"]
+[ext_resource type="PackedScene" uid="uid://bwam1h1au10qe" path="res://Assets/OriginalModels/hikkan_fridge.tscn" id="7_ifj3o"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="7_jnpji"]
 [ext_resource type="PackedScene" uid="uid://cfndj31p6k1c0" path="res://InventorySystem/Items/ItemScp458.tscn" id="8_v27n1"]
 [ext_resource type="PackedScene" uid="uid://cnfe34rn7msn7" path="res://InventorySystem/Items/ItemScp109.tscn" id="9_emcbe"]
@@ -18,10 +19,11 @@
 [ext_resource type="LightmapGIData" uid="uid://bivwpwbf0kiy" path="res://Assets/Rooms/room2/Lm/rz_room2_cafeteria.lmbake" id="14_jnpji"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="16_e6an4"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="19_jnpji"]
+[ext_resource type="PackedScene" uid="uid://oc54c554sken" path="res://InventorySystem/Items/ItemScp2471.tscn" id="20_emcbe"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_swyoh"]
-vertices = PackedVector3Array(-3.79078, -0.7695668, -8.259081, -6.54078, -0.7695668, -8.259081, -6.54078, -0.7695668, -4.509081, 2.20922, -0.7695668, -9.259081, 3.45922, -0.7695668, -9.759081, -3.54078, -0.7695668, -9.759081, 2.45922, -0.7695668, -6.009081, 2.20922, -0.7695668, -4.259081, 2.45922, -0.7695668, -5.009081, 8.95922, -0.7695668, -5.009081, 8.95922, -0.7695668, -6.009081, -8.79078, -0.7695668, 6.240919, -7.04078, -0.7695668, 6.240919, -6.79078, -0.7695668, 2.990919, -6.79078, -0.7695668, -2.759081, -8.79078, -0.7695668, -2.759081, 2.45922, -0.7695668, 1.2409191, 8.95922, -0.7695668, 1.2409191, 8.95922, -0.7695668, -1.5090809, 2.45922, -0.7695668, -1.5090809, -4.04078, -0.7695668, 2.990919, 2.20922, -0.7695668, 2.740919, 3.45922, -0.7695668, 9.740919, 3.45922, -0.7695668, 8.990919, 2.20922, -0.7695668, 8.740919, -3.54078, -0.7695668, 9.740919, -3.54078, -0.7695668, 3.240919, 2.45922, -0.7695668, 5.490919, 8.95922, -0.7695668, 5.490919, 8.95922, -0.7695668, 4.740919, 2.45922, -0.7695668, 4.740919, -8.54078, 1.4804332, 7.240919, -8.54078, 1.4804332, 7.990919, -7.29078, 1.4804332, 7.990919, -7.29078, 1.4804332, 7.240919)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(6, 7, 3), PackedInt32Array(3, 7, 0), PackedInt32Array(0, 7, 2), PackedInt32Array(6, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(16, 7, 19), PackedInt32Array(20, 13, 14), PackedInt32Array(16, 21, 7), PackedInt32Array(7, 21, 20), PackedInt32Array(7, 20, 14), PackedInt32Array(7, 14, 2), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(26, 20, 21), PackedInt32Array(30, 29, 27), PackedInt32Array(27, 29, 28), PackedInt32Array(30, 27, 21), PackedInt32Array(21, 27, 24), PackedInt32Array(21, 24, 26), PackedInt32Array(26, 24, 25), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32)]
+vertices = PackedVector3Array(-8.79078, -0.7695668, 3.490919, -8.04078, -0.7695668, 3.490919, -7.79078, -0.7695668, -0.009080887, -8.79078, -0.7695668, -0.7590809, 2.20922, -0.7695668, -1.7590809, 2.45922, -0.7695668, -5.009081, 2.45922, -0.7695668, -6.009081, -6.29078, -0.7695668, -1.0090809, -5.04078, -0.7695668, -0.009080887, -3.79078, -0.7695668, -8.259081, -6.54078, -0.7695668, -8.259081, 2.20922, -0.7695668, -9.259081, 3.45922, -0.7695668, -9.759081, -3.54078, -0.7695668, -9.759081, 8.95922, -0.7695668, -5.009081, 8.95922, -0.7695668, -6.009081, -8.54078, 1.2304332, -3.009081, -8.54078, 1.2304332, -1.7590809, -7.29078, 1.2304332, -1.7590809, -7.29078, 1.2304332, -3.009081, 2.70922, -0.7695668, 1.2409191, 8.95922, -0.7695668, 1.2409191, 8.95922, -0.7695668, -1.5090809, -4.54078, -0.7695668, 0.24091911, -4.54078, -0.7695668, 0.9909191, 3.45922, -0.7695668, 9.740919, 3.45922, -0.7695668, 8.990919, 2.20922, -0.7695668, 8.740919, -3.79078, -0.7695668, 7.990919, -3.54078, -0.7695668, 9.740919, -4.54078, -0.7695668, 6.990919, -6.79078, -0.7695668, 7.240919, -6.79078, -0.7695668, 7.990919, 2.45922, -0.7695668, 5.490919, 2.45922, -0.7695668, 4.740919, 2.20922, -0.7695668, 1.4909191, 8.95922, -0.7695668, 5.490919, 8.95922, -0.7695668, 4.740919)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(3, 7, 2), PackedInt32Array(2, 7, 8), PackedInt32Array(7, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(8, 9, 6), PackedInt32Array(8, 6, 4), PackedInt32Array(11, 13, 12), PackedInt32Array(13, 11, 9), PackedInt32Array(9, 11, 6), PackedInt32Array(6, 15, 5), PackedInt32Array(5, 15, 14), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 4, 24), PackedInt32Array(24, 4, 20), PackedInt32Array(20, 4, 22), PackedInt32Array(20, 22, 21), PackedInt32Array(8, 4, 23), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 29), PackedInt32Array(27, 29, 28), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 28), PackedInt32Array(34, 33, 27), PackedInt32Array(28, 30, 27), PackedInt32Array(27, 30, 34), PackedInt32Array(34, 30, 35), PackedInt32Array(35, 30, 24), PackedInt32Array(24, 20, 35), PackedInt32Array(34, 37, 33), PackedInt32Array(33, 37, 36)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uv1va"]
 emission_enabled = true
@@ -36,6 +38,12 @@ depth = 0.01
 [sub_resource type="TextMesh" id="TextMesh_bnx53"]
 material = SubResource("StandardMaterial3D_uv1va")
 text = "458 ||| 109"
+font = ExtResource("7_jnpji")
+depth = 0.01
+
+[sub_resource type="TextMesh" id="TextMesh_bd56m"]
+material = SubResource("StandardMaterial3D_uv1va")
+text = "2471"
 font = ExtResource("7_jnpji")
 depth = 0.01
 
@@ -199,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933182, -0.22546124, 2.9017
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933182, -0.22546124, 7.3303933)
 
 [node name="box2" parent="NavigationRegion3D/Props" instance=ExtResource("5_o4j40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9938517, 0.10749507, 7.8235116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.991447, -0.24593556, -2.314077)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Props" groups=["Scp109_261_458_spawn"]]
 transform = Transform3D(1.2079664e-06, 0, -16, 0, 16, 0, 16, 0, 1.2079664e-06, 9.9959135, 4.9804115, 0.04077673)
@@ -211,26 +219,31 @@ transform = Transform3D(-6.4895823e-07, -0.3653808, 3.983277, -5.952809e-08, 3.9
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_bnx53")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Props"]
+transform = Transform3D(-4.0000005, 0, 3.4969108e-07, 0, 4.0000005, 0, -3.4969113e-07, 0, -3.9999998, -8.625322, 1.5262935, 10.189968)
+visibility_range_end = 64.0
+mesh = SubResource("TextMesh_bd56m")
+
 [node name="Table5" parent="NavigationRegion3D/Props" instance=ExtResource("4_e6an4")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.335748, -0.23509157, 6.6512423)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2684364, -0.23509157, 3.652409)
 
 [node name="Table7" parent="NavigationRegion3D/Props" instance=ExtResource("4_e6an4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.372391, -0.22812235, -6.4487634)
 
-[node name="Scp458" parent="NavigationRegion3D/Props" instance=ExtResource("8_v27n1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.427478, 0.370759, -5.6859803)
-
-[node name="ItemScp109" parent="NavigationRegion3D/Props" instance=ExtResource("9_emcbe")]
-transform = Transform3D(-4.47035e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.47035e-08, -8.274553, 0.55743945, -8.052276)
-
-[node name="ScientistPoint" type="Marker3D" parent="NavigationRegion3D/Props" groups=["ScientistPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1049685, -0.78577, -2.9533048)
+[node name="Table8" parent="NavigationRegion3D/Props" instance=ExtResource("4_e6an4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.4988165, -0.22812235, 7.0499434)
 
 [node name="ScientistPoint2" type="Marker3D" parent="NavigationRegion3D/Props" groups=["ScientistPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1049685, -0.78577, -6.8944817)
 
 [node name="ScientistPoint3" type="Marker3D" parent="NavigationRegion3D/Props" groups=["ScientistPoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1049685, -0.78577, -0.44669867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0317974, -0.78577, 7.795749)
+
+[node name="FridgeSimple" parent="NavigationRegion3D/Props" instance=ExtResource("7_ifj3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3222394, 0.29390895, 9.534537)
+
+[node name="FridgeSimple2" parent="NavigationRegion3D/Props" instance=ExtResource("7_ifj3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8848705, 0.29390895, 9.534537)
 
 [node name="Cube_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)
@@ -277,14 +290,29 @@ visible = false
 script = ExtResource("9_ifj3o")
 current_season = 6
 
-[node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
-transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 5.142168, -1.2581564, 0.60461664)
-
 [node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
-transform = Transform3D(0.5, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.5, -4.232005, -1.2581564, -5.369106)
+transform = Transform3D(0.5, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.5, -6.2022133, -1.2581564, -8.397106)
 
 [node name="Pumpkin3" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
-transform = Transform3D(-0.70710677, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.70710677, -4.232005, -1.2581564, 5.457357)
+transform = Transform3D(-0.70710677, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.70710677, -6.3422623, -1.2581564, -3.8615603)
+
+[node name="Pumpkin4" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(0.5, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.5, -4.698973, -1.2581564, 1.2792912)
+
+[node name="Pumpkin5" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(-0.70710677, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.70710677, -4.839022, -1.2581564, 5.814837)
+
+[node name="Pumpkin6" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1617496, -1.2581564, 7.4469595)
+
+[node name="Pumpkin7" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1617496, -1.2581564, 3.2195187)
+
+[node name="Pumpkin8" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1617496, -1.2581564, -2.49903)
+
+[node name="Pumpkin9" parent="Seasonal/Halloween" instance=ExtResource("10_emcbe")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1617496, -1.2581564, -7.390648)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
@@ -298,7 +326,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6993923, 0.14377522, 0.716
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5500507, 0.14377522, 0.71636677)
 
 [node name="laptop" parent="." instance=ExtResource("16_e6an4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.197695, 0.2330761, 4.7796764)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.130383, 0.2330761, 2.5567222)
 
 [node name="Chair2" parent="." instance=ExtResource("19_jnpji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4278293, -1.2193711, 0.9911825)
@@ -327,3 +355,30 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)
 shape = SubResource("ConcavePolygonShape3D_jnpji")
+
+[node name="Scp458" parent="." instance=ExtResource("8_v27n1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.427478, 0.370759, -5.6859803)
+
+[node name="ItemScp109" parent="." instance=ExtResource("9_emcbe")]
+transform = Transform3D(-4.47035e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.47035e-08, -8.274553, 0.55743945, -8.052276)
+
+[node name="Cookie" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.189932, 0.24004579, 8.874401)
+
+[node name="Cookie2" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.189932, 0.24004579, 8.336146)
+
+[node name="Cookie3" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7656593, 0.24004555, 7.7748055)
+
+[node name="Cookie4" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.184213, 0.24004555, 4.2388687)
+
+[node name="Cookie5" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.748919, 0.24004555, 4.5552616)
+
+[node name="Cookie6" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.018372, 0.24004531, 4.2830987)
+
+[node name="Cookie7" parent="." instance=ExtResource("20_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.692072, 0.24004531, 4.5003676)
