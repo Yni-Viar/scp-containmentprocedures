@@ -192,7 +192,7 @@ func effect_manager_start(effect: String, strength: float):
 				secondary_state = SecondaryState.NONE
 		"Scp067":
 			if !get_parent().get_parent().get_node("UI/Inventory/Inventory").has_item(7):
-				get_tree().root.get_node("Game").dialogue("SCP067_CANT_USE")
+				get_tree().root.get_node("Game").advanced_dialogue(["SCP067_CANT_USE"])
 				await get_tree().create_timer(1.0).timeout
 				get_parent().get_parent().get_node("StatusEffects").remove_status_effect(get_parent().get_parent().get_node("StatusEffects").get_status_effect_index("Scp067"))
 				return
@@ -200,17 +200,17 @@ func effect_manager_start(effect: String, strength: float):
 			get_parent().get_parent().movement_freeze = true
 			get_tree().root.get_node("Game").cutscene_anim()
 			await get_tree().create_timer(3.0).timeout
-			get_tree().root.get_node("Game").dialogue("SCP067_DLG1")
+			get_tree().root.get_node("Game").advanced_dialogue(["SCP067_DLG1"])
 			await get_tree().create_timer(3.5).timeout
-			get_tree().root.get_node("Game").dialogue("SCP067_DLG2")
+			get_tree().root.get_node("Game").advanced_dialogue(["SCP067_DLG2"])
 			get_parent().get_parent().get_node("UI/Inventory/Inventory").item_remove_by_id(7, false)
 			get_parent().get_parent().get_node("UI/Inventory/Inventory").add_item(13)
 			await get_tree().create_timer(3.0).timeout
-			get_tree().root.get_node("Game").dialogue("SCP067_DLG3")
+			get_tree().root.get_node("Game").advanced_dialogue(["SCP067_DLG3"])
 			await get_tree().create_timer(1.0).timeout
 			get_parent().get_parent().get_node("StatusEffects").remove_status_effect(get_parent().get_parent().get_node("StatusEffects").get_status_effect_index("Scp067"))
 		"Scp2028":
-			get_tree().root.get_node("Game").dialogue("SCP2028_NIGHTMARE")
+			get_tree().root.get_node("Game").advanced_dialogue(["SCP2028_NIGHTMARE", "SCP2028_NIGHTMARE2", "SCP2028_NIGHTMARE3"])
 			hold_item(20)
 			
 	

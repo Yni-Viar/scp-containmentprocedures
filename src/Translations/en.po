@@ -416,3 +416,22 @@ msgstr ""
 
 msgid "ATTENTION"
 msgstr "Attention!"
+
+msgid "SCP2028_NIGHTMARE2"
+msgstr "This nightmare is so real!"
+
+msgid "SCP2028_NIGHTMARE3"
+msgstr ""
+"The glitches of this nightmare say,\n"
+"that something not good will happen..."
+
+msgid "SCP2471_NOTE"
+msgstr "You will be bitten by SCP-939..."
+
+msgid "SCP2471_NOTE2"
+msgstr ""
+"Our life is so short -\n"
+"we were baked, then we were eaten..."
+
+msgid "SCP2471_NOTE3"
+msgstr "You will see nightmares with SCP-2028..."

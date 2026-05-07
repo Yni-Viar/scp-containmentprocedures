@@ -449,3 +449,22 @@ msgstr ""
 
 msgid "ATTENTION"
 msgstr "Внимание!"
+
+msgid "SCP2028_NIGHTMARE2"
+msgstr "Кошмар настолько реален!"
+
+msgid "SCP2028_NIGHTMARE3"
+msgstr ""
+"Глюки этого кошмара говорят,\n"
+"чт о что-то нехорошее случиться..."
+
+msgid "SCP2471_NOTE"
+msgstr "Вы будете покусаны SCP-939..."
+
+msgid "SCP2471_NOTE2"
+msgstr ""
+"Наша жизнь коротка - \n"
+"мы были испечены и нас съели..."
+
+msgid "SCP2471_NOTE3"
+msgstr "Ты увидишь кошмары с SCP-2028..."

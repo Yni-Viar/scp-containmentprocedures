@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameData" load_steps=58 format=3 uid="uid://dyehnsh4i881t"]
+[gd_resource type="Resource" script_class="GameData" load_steps=60 format=3 uid="uid://dyehnsh4i881t"]
 
 [ext_resource type="PackedScene" uid="uid://cymiuku05au2f" path="res://Assets/Rooms/ScientistsRooms/Protagonist.tscn" id="1_qrvya"]
 [ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="2_hd4oy"]
@@ -31,8 +31,10 @@
 [ext_resource type="Resource" uid="uid://0hlfp08poq4a" path="res://InventorySystem/Items/ItemScp2028.tres" id="23_jb36v"]
 [ext_resource type="Resource" uid="uid://l23gxmbiwbrh" path="res://PlayerScript/PlayerClassResources/DClass.tres" id="24_6xl8l"]
 [ext_resource type="Resource" uid="uid://c1jhrygeycjqr" path="res://InventorySystem/Items/ItemScp2028Nightmare.tres" id="24_8pvwt"]
+[ext_resource type="Resource" uid="uid://b7w4gv0ultd2g" path="res://InventorySystem/Items/ItemFoodBox.tres" id="25_n5lx3"]
 [ext_resource type="Resource" uid="uid://6j3kwox735os" path="res://PlayerScript/PlayerClassResources/GuardOfDClass.tres" id="25_nu8hi"]
 [ext_resource type="Resource" uid="uid://4mdgfhansx8s" path="res://PlayerScript/PlayerClassResources/Scp266.tres" id="26_68ufo"]
+[ext_resource type="Resource" uid="uid://263c7io4oerh" path="res://InventorySystem/Items/ItemScp2471.tres" id="26_qgtcu"]
 [ext_resource type="Resource" uid="uid://gy7ixps5jwwq" path="res://PlayerScript/PlayerClassResources/Scp347.tres" id="27_664pd"]
 [ext_resource type="Resource" uid="uid://csusu4a31htq1" path="res://PlayerScript/PlayerClassResources/Scp173.tres" id="27_tj2fd"]
 [ext_resource type="Resource" uid="uid://b3lx3vafmkc7e" path="res://PlayerScript/PlayerClassResources/Scp023.tres" id="28_g8hwl"]
@@ -63,7 +65,7 @@ script = ExtResource("31_83647")
 player_class = Array[ExtResource("17_wsa7g")]([ExtResource("18_ekw8c")])
 puppet_classes = Array[ExtResource("17_wsa7g")]([ExtResource("19_lbwi6"), ExtResource("20_4kh50"), ExtResource("27_tj2fd"), ExtResource("22_mo866"), ExtResource("23_fwmua"), ExtResource("24_6xl8l"), ExtResource("25_nu8hi"), ExtResource("26_68ufo"), ExtResource("27_664pd"), ExtResource("28_g8hwl"), ExtResource("29_eg4uf"), ExtResource("30_16ex4")])
 tasks = Array[ExtResource("38_3xmvy")]([ExtResource("40_87n82"), ExtResource("39_dflbg"), ExtResource("49_6v7pd"), ExtResource("42_ooljx"), ExtResource("48_8xrgr"), ExtResource("43_4lqm6"), ExtResource("44_uhard")])
-items = Array[ExtResource("2_hd4oy")]([ExtResource("3_ty3px"), ExtResource("4_2wd2w"), ExtResource("5_3hq41"), ExtResource("6_qpkht"), ExtResource("7_3t8y6"), ExtResource("8_jsita"), ExtResource("9_8wseb"), ExtResource("10_ckcpx"), ExtResource("11_3yr73"), ExtResource("12_kolsf"), ExtResource("13_j6ft1"), ExtResource("14_qvie4"), ExtResource("15_s4i38"), ExtResource("16_h7qmj"), ExtResource("16_ooljx"), ExtResource("17_ooljx"), ExtResource("18_vwyj5"), ExtResource("21_o7hre"), ExtResource("22_tj2fd"), ExtResource("23_jb36v"), ExtResource("24_8pvwt")])
+items = Array[ExtResource("2_hd4oy")]([ExtResource("3_ty3px"), ExtResource("4_2wd2w"), ExtResource("5_3hq41"), ExtResource("6_qpkht"), ExtResource("7_3t8y6"), ExtResource("8_jsita"), ExtResource("9_8wseb"), ExtResource("10_ckcpx"), ExtResource("11_3yr73"), ExtResource("12_kolsf"), ExtResource("13_j6ft1"), ExtResource("14_qvie4"), ExtResource("15_s4i38"), ExtResource("16_h7qmj"), ExtResource("16_ooljx"), ExtResource("17_ooljx"), ExtResource("18_vwyj5"), ExtResource("21_o7hre"), ExtResource("22_tj2fd"), ExtResource("23_jb36v"), ExtResource("24_8pvwt"), ExtResource("25_n5lx3"), ExtResource("26_qgtcu")])
 wave_puppet_classes = Array[ExtResource("17_wsa7g")]([ExtResource("51_epo78"), ExtResource("52_8g85e")])
 custom_scientists_offices = Array[PackedScene]([ExtResource("1_qrvya"), ExtResource("2_o7hre")])
 status_effects = Dictionary[String, ExtResource("32_12mq7")]({

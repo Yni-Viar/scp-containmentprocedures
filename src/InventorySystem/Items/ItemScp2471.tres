@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://263c7io4oerh"]
+
+[ext_resource type="Script" uid="uid://iymwo0l3bo4a" path="res://Scripts/CommandResource.gd" id="1_rvk05"]
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="2_2kdk7"]
+[ext_resource type="Texture2D" uid="uid://dwmw7ipktvybg" path="res://InventorySystem/Items/Res/scp2471.png" id="3_rvk05"]
+
+[sub_resource type="Resource" id="Resource_2kdk7"]
+script = ExtResource("1_rvk05")
+action_method_name = "health_manage"
+action_args = [10.0, 3]
+metadata/_custom_type_script = "uid://iymwo0l3bo4a"
+
+[resource]
+script = ExtResource("2_2kdk7")
+id = 22
+name = "SCP-2471"
+texture_tiled = ExtResource("3_rvk05")
+pickable_path = "res://InventorySystem/Items/ItemScp2471.tscn"
+usage = 1
+action_node_path = "Game"
+action_method_name = "advanced_dialogue"
+action_args = [["SCP2471_NOTE", "SCP2471_NOTE2", "SCP2471_NOTE3"], SubResource("Resource_2kdk7")]
+upgrade_rough = Array[int]([3])
+upgrade_coarse = Array[int]([10])
+upgrade_one_to_one = Array[int]([22])
+upgrade_fine = Array[int]([9, 22])
+upgrade_very_fine = Array[int]([9])

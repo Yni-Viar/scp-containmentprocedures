@@ -7,8 +7,8 @@
 [sub_resource type="Resource" id="Resource_7kmrd"]
 script = ExtResource("1_42mcn")
 action_node_path = "Game"
-action_method_name = "dialogue"
-action_args = ["FORGOTTEN_BY_1223"]
+action_method_name = "advanced_dialogue"
+action_args = [["FORGOTTEN_BY_1223"]]
 metadata/_custom_type_script = "uid://iymwo0l3bo4a"
 
 [resource]

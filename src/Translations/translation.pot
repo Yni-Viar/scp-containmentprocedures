@@ -326,3 +326,18 @@ msgstr ""
 
 msgid "ATTENTION"
 msgstr ""
+
+msgid "SCP2028_NIGHTMARE2"
+msgstr ""
+
+msgid "SCP2028_NIGHTMARE3"
+msgstr ""
+
+msgid "SCP2471_NOTE"
+msgstr ""
+
+msgid "SCP2471_NOTE2"
+msgstr ""
+
+msgid "SCP2471_NOTE3"
+msgstr ""

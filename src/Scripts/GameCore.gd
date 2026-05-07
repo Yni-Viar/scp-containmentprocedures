@@ -236,18 +236,25 @@ func cutscene_anim(reverse: bool = false):
 	else:
 		$AnimationPlayer.play("cutscene")
 
-## Dialogue system (used in 067, 1223 and 2028)
+## Dialogue system from 7.0 and earlier.
+## @deprecated This function may be removed in 9.0, please, use advanced_dialogue([text]) as replacement.
 func dialogue(text: String):
-	$UI/Dialogue.text = text
-	for i in text.length():
+	advanced_dialogue([text])
+
+## Dialogue system (used in 067, 1223, 2028 and 2471)
+func advanced_dialogue(random_text: Array, command_after: CommandResource = null):
+	$UI/Dialogue.text = random_text[rng.randi_range(0, random_text.size() - 1)]
+	for i in $UI/Dialogue.text.length():
 		$UI/Dialogue.visible_characters = i
 		await get_tree().physics_frame
 	$UI/Dialogue.visible_characters = -1
+	if command_after != null:
+		protagonist._call_function(command_after.action_node_path, command_after.action_method_name, command_after.action_args)
 	await get_tree().create_timer(2.0).timeout
 	$UI/Dialogue.text = ""
 
 ## Shows image (6.0 version)
-## @deprecated Use show_image function
+## @deprecated This function may be removed in 9.0, please use show_image function
 func showable(resource_path: String):
 	show_image([resource_path])
 
@@ -283,10 +290,13 @@ func call_mtf():
 func _on_game_over_timer_timeout() -> void:
 	finish_game(false, "GAME_OVER_3")
 
-
+## GDSh command
+## Adds item
 func add_item(args: Array):
 	get_node($StaticPlayer.target_puppet_path).call("_call_function", "UI/Inventory/Inventory", "add_item", [int(args[0])])
 
+## GDSh command
+## Spawns NPC near you (make sure you run away, if it is hostile)
 func spawn_npc(args: Array):
 	if args.size() > 0:
 		if args[0].is_valid_int() && int(args[0]) < gamedata.puppet_classes.size():
@@ -295,6 +305,8 @@ func spawn_npc(args: Array):
 			npc.position = protagonist.global_position - protagonist.global_transform.basis.z * 4
 			$NPCs.add_child(npc)
 
+## GDSh command
+## Adds available task
 func add_task(args: Array):
 	if args.size() > 0:
 		$FoundationTask.add_task(args[0])

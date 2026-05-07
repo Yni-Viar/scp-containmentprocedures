@@ -3,12 +3,18 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v7.1.0 (Sweet Dreams update, W.I.P)
+## v8.0.0 ("Dreams of dark future", W.I.P)
+### Self-learning NPCs (probably)
+- [ ] Self-learning NPCs (may be cancelled)
+
+### Storage Sub-zone
+- [ ] Storage sub-zone
+
 ### New SCPs
 - [ ] SCP-080
 - [ ] SCP-261 (uses new windowed dialogues feature)
 - [x] SCP-2028
-- [ ] SCP-2471
+- [x] SCP-2471
 
 ### Rendering overhaul
 - [x] Restored SSAO (use fallback in ~~Mobile and~~ Compatibility in Godot 4.5, else use native shader)
@@ -18,6 +24,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Added dialogue support through windows
 
 ### Other changes
+- [x] \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
 - [x] Show warning on start, if the game is not using OpenGL/Compatibility backend. (uses new windowed dialogues feature)
 - [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
 - [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.

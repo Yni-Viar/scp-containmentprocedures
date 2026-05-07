@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://c6colwusu4hxv"]
+[gd_scene load_steps=13 format=4 uid="uid://c6colwusu4hxv"]
 
+[ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_hil2r"]
 [ext_resource type="Texture2D" uid="uid://bvjrqhug00ygt" path="res://Assets/OriginalModels/Scp261FoodBox/FoodBox_Plastic017A_2K-PNG_Roughness.png" id="1_paofa"]
 [ext_resource type="Texture2D" uid="uid://bi7edjc504srp" path="res://Assets/OriginalModels/Scp261FoodBox/FoodBox_Plastic017A_2K-PNG_NormalGL.png" id="2_bicql"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="2_hil2r"]
@@ -105,6 +106,8 @@ size = Vector3(1.2902832, 1, 1.2421265)
 
 [node name="FoodBox" type="RigidBody3D"]
 collision_layer = 8
+script = ExtResource("1_hil2r")
+item_id = 21
 
 [node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

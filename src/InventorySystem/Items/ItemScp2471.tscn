@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://oc54c554sken"]
+[gd_scene load_steps=10 format=4 uid="uid://oc54c554sken"]
 
+[ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_p7vhq"]
 [ext_resource type="Texture2D" uid="uid://bairb7yr6i5i" path="res://Assets/ExternalModels/AmbientCG_CC0/Cookie/3DCookie001_LQ-2K-PNG_Color.png" id="1_xi1g4"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="2_o7vat"]
 [ext_resource type="Texture2D" uid="uid://bx811sftsshd6" path="res://Assets/ExternalModels/AmbientCG_CC0/Cookie/3DCookie001_LQ-2K-PNG_NormalGL.png" id="2_ovypc"]
@@ -60,6 +61,8 @@ radius = 0.083984375
 [node name="Cookie" type="RigidBody3D"]
 collision_layer = 8
 continuous_cd = true
+script = ExtResource("1_p7vhq")
+item_id = 22
 
 [node name="3DCookie001_LQ-2K-PNG" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0)
