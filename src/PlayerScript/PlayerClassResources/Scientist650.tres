@@ -22,3 +22,6 @@ team = 1
 enable_avoidance = false
 enable_ik = false
 ragdoll_prefab = ExtResource("2_iqd40")
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})

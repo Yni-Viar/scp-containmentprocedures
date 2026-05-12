@@ -35,9 +35,6 @@ var showable_res: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	RenderingServer.viewport_set_measure_render_time(get_tree().root.get_viewport_rid(), true)
-	GDsh.add_command("add_item", add_item, "Adds item to your inventory")
-	GDsh.add_command("spawn_npc", spawn_npc, "Spawns a NPC in front of you")
-	GDsh.add_command("add_task", add_task, "Adds task manually, if it is possible to complete.")
 	ci_timer = rng.randf_range(30.0, 32.0)
 	if OS.has_feature("Lite"):
 		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
@@ -95,8 +92,8 @@ func _process(delta: float) -> void:
 			mtf_cooldown -= delta
 	if time_limited && protagonist != null:
 		# Hunger and thirst mechanic
-		protagonist.health_manage(-delta * 0.1, 2)
-		protagonist.health_manage(-delta * 0.05, 3)
+		protagonist.health_manage(-delta * 0.25, 2)
+		protagonist.health_manage(-delta * 0.1875, 3)
 
 
 func _on_facility_generator_generated() -> void:
@@ -210,7 +207,7 @@ func despawn_wave(wave_type: int):
 				node.add_child(vfxspawn)
 				node.queue_free()
 
-## Personal office spawner
+## Personnel office spawner
 func spawn_offices(default_office_path: String, spawn_group: String):
 	var all_available_offices: Array[Node] = get_tree().get_nodes_in_group(spawn_group)
 	all_available_offices.shuffle()
@@ -289,24 +286,3 @@ func call_mtf():
 
 func _on_game_over_timer_timeout() -> void:
 	finish_game(false, "GAME_OVER_3")
-
-## GDSh command
-## Adds item
-func add_item(args: Array):
-	get_node($StaticPlayer.target_puppet_path).call("_call_function", "UI/Inventory/Inventory", "add_item", [int(args[0])])
-
-## GDSh command
-## Spawns NPC near you (make sure you run away, if it is hostile)
-func spawn_npc(args: Array):
-	if args.size() > 0:
-		if args[0].is_valid_int() && int(args[0]) < gamedata.puppet_classes.size():
-			var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
-			npc.puppet_class = gamedata.puppet_classes[int(args[0])]
-			npc.position = protagonist.global_position - protagonist.global_transform.basis.z * 4
-			$NPCs.add_child(npc)
-
-## GDSh command
-## Adds available task
-func add_task(args: Array):
-	if args.size() > 0:
-		$FoundationTask.add_task(args[0])

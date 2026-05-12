@@ -191,3 +191,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7944759, -0.6225068, -2.812
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 shape = SubResource("ConcavePolygonShape3D_nw4xx")
+
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.267661, -0.78576905, 0.010486603)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32151508, -0.78577, 2.873436)

@@ -682,5 +682,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.084796, -0.78577095, 5.039
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81052, 0)
 shape = SubResource("ConcavePolygonShape3D_dgdjd")
 
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.786644, -0.78577095, -17.259403)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97482, -0.78577095, 8.425119)
+
 [connection signal="body_entered" from="NavigationRegion3D/Scp812/Scp812Trigger" to="." method="_on_scp_812_trigger_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Scp812/Scp812Trigger" to="." method="_on_scp_812_trigger_body_exited"]

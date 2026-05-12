@@ -20,3 +20,6 @@ wandering_system = 1
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 1
 ragdoll_prefab = ExtResource("2_exppa")
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})

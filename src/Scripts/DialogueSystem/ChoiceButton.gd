@@ -7,7 +7,7 @@ class_name DialogueButton
 ## Command to do
 @export var action: CommandResource
 ## Path to dialogue (optional)
-@export var dlg_path: NodePath
+@export var dlg_host: BaseWindow
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +22,5 @@ func _process(delta: float) -> void:
 func _on_click():
 	if get_tree().root.get_node_or_null("Game") != null:
 		get_tree().root.get_node("Game").protagonist._call_function(action.action_node_path, action.action_method_name, action.action_args)
-		if get_node_or_null(dlg_path) != null:
-			if get_node(dlg_path) is BaseWindow:
-				get_node(dlg_path).close_requested.emit()
+		if dlg_host != null:
+			dlg_host.queue_free()

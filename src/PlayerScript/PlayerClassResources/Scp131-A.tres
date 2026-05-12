@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dg1mhd0yoqjnb"]
+
+[ext_resource type="PackedScene" uid="uid://dydmr2ip8qg0u" path="res://PlayerScript/PlayerClassPrefab/Scp131A.tscn" id="1_2isih"]
+[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="1_nvoro"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_2isih"]
+
+[resource]
+script = ExtResource("2_2isih")
+puppet_class_name = "SCP-131"
+prefab = ExtResource("1_2isih")
+spawn_point_group = "Scp131ASpawn"
+initial_amount = 1
+interacting_action = 1
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Scp173/Move1.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Scp173/Move1.ogg")
+}
+apply_height_bugfix = false
+wandering_system = 1
+enable_wander = false
+health = Array[float]([400.0])
+team = 1
+enable_avoidance = false
+enable_ik = false
+ragdoll_prefab = ExtResource("1_nvoro")
+can_ride = false

@@ -21,3 +21,6 @@ team = 1
 spawn_on_start = false
 ragdoll_prefab = ExtResource("2_7qjna")
 disable_move_on_slide = true
+start_money = Dictionary[String, int]({
+"DOLLARS": 2000
+})

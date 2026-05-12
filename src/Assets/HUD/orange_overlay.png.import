@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvjrqhug00ygt"
-path.s3tc="res://.godot/imported/FoodBox_Plastic017A_2K-PNG_Roughness.png-daa06ae424d8704440e2d6b2f37b1762.s3tc.ctex"
-path.etc2="res://.godot/imported/FoodBox_Plastic017A_2K-PNG_Roughness.png-daa06ae424d8704440e2d6b2f37b1762.etc2.ctex"
+uid="uid://don0hjs7dssi1"
+path.s3tc="res://.godot/imported/orange_overlay.png-b0cc48b020c771ed89e01b268720d64e.s3tc.ctex"
+path.etc2="res://.godot/imported/orange_overlay.png-b0cc48b020c771ed89e01b268720d64e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "17c26740ee26aea5436ff0c28effbaad"
-}
 
 [deps]
 
-source_file="res://Assets/OriginalModels/Scp261FoodBox/FoodBox_Plastic017A_2K-PNG_Roughness.png"
-dest_files=["res://.godot/imported/FoodBox_Plastic017A_2K-PNG_Roughness.png-daa06ae424d8704440e2d6b2f37b1762.s3tc.ctex", "res://.godot/imported/FoodBox_Plastic017A_2K-PNG_Roughness.png-daa06ae424d8704440e2d6b2f37b1762.etc2.ctex"]
+source_file="res://Assets/HUD/orange_overlay.png"
+dest_files=["res://.godot/imported/orange_overlay.png-b0cc48b020c771ed89e01b268720d64e.s3tc.ctex", "res://.godot/imported/orange_overlay.png-b0cc48b020c771ed89e01b268720d64e.etc2.ctex"]
 
 [params]
 
@@ -41,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=512
+process/size_limit=0
 detect_3d/compress_to=0

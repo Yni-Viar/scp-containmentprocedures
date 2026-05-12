@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://d2a6247rdmoxn"]
+[gd_scene load_steps=30 format=4 uid="uid://d2a6247rdmoxn"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_xskox"]
 [ext_resource type="PackedScene" uid="uid://cqhhycwdvhaq6" path="res://Assets/ExternalModels/hanging_light.tscn" id="2_r01di"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="16_e6an4"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="19_jnpji"]
 [ext_resource type="PackedScene" uid="uid://oc54c554sken" path="res://InventorySystem/Items/ItemScp2471.tscn" id="20_emcbe"]
+[ext_resource type="PackedScene" uid="uid://c6colwusu4hxv" path="res://InventorySystem/Items/ItemFoodBox.tscn" id="21_emcbe"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_swyoh"]
 vertices = PackedVector3Array(-8.79078, -0.7695668, 3.490919, -8.04078, -0.7695668, 3.490919, -7.79078, -0.7695668, -0.009080887, -8.79078, -0.7695668, -0.7590809, 2.20922, -0.7695668, -1.7590809, 2.45922, -0.7695668, -5.009081, 2.45922, -0.7695668, -6.009081, -6.29078, -0.7695668, -1.0090809, -5.04078, -0.7695668, -0.009080887, -3.79078, -0.7695668, -8.259081, -6.54078, -0.7695668, -8.259081, 2.20922, -0.7695668, -9.259081, 3.45922, -0.7695668, -9.759081, -3.54078, -0.7695668, -9.759081, 8.95922, -0.7695668, -5.009081, 8.95922, -0.7695668, -6.009081, -8.54078, 1.2304332, -3.009081, -8.54078, 1.2304332, -1.7590809, -7.29078, 1.2304332, -1.7590809, -7.29078, 1.2304332, -3.009081, 2.70922, -0.7695668, 1.2409191, 8.95922, -0.7695668, 1.2409191, 8.95922, -0.7695668, -1.5090809, -4.54078, -0.7695668, 0.24091911, -4.54078, -0.7695668, 0.9909191, 3.45922, -0.7695668, 9.740919, 3.45922, -0.7695668, 8.990919, 2.20922, -0.7695668, 8.740919, -3.79078, -0.7695668, 7.990919, -3.54078, -0.7695668, 9.740919, -4.54078, -0.7695668, 6.990919, -6.79078, -0.7695668, 7.240919, -6.79078, -0.7695668, 7.990919, 2.45922, -0.7695668, 5.490919, 2.45922, -0.7695668, 4.740919, 2.20922, -0.7695668, 1.4909191, 8.95922, -0.7695668, 5.490919, 8.95922, -0.7695668, 4.740919)
@@ -382,3 +383,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.018372, 0.24004531, 4.2830
 
 [node name="Cookie7" parent="." instance=ExtResource("20_emcbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.692072, 0.24004531, 4.5003676)
+
+[node name="FoodBox" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.196992, 0.49270678, -7.395454)
+
+[node name="FoodBox2" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2608843, 0.49270582, -7.3992405)
+
+[node name="FoodBox3" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.052884, 0.49270678, 2.9776714)
+
+[node name="FoodBox4" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8728676, 0.49270678, -3.1242054)
+
+[node name="FoodBox5" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9638875, 0.49270678, -3.003132)
+
+[node name="FoodBox6" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9840739, 0.49270654, 3.0723128)
+
+[node name="FoodBox7" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.224184, 0.49270678, 7.2272778)
+
+[node name="FoodBox8" parent="." instance=ExtResource("21_emcbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1678033, 0.49270678, 7.3835654)
+
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0093117, -0.78577, 7.6008396)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.054324, -0.78577, -2.5060058)

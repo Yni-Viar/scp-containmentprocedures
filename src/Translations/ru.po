@@ -468,3 +468,9 @@ msgstr ""
 
 msgid "SCP2471_NOTE3"
 msgstr "Ты увидишь кошмары с SCP-2028..."
+
+msgid "SCP261_CHOICE"
+msgstr "Выберите количество Йенов для оплаты SCP-261."
+
+msgid "SCP261_EAT"
+msgstr "Съели бы Вы {SCP261_SUBJECT}?"

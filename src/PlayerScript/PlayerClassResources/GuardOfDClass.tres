@@ -20,3 +20,6 @@ enable_wander = false
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 1
 ragdoll_prefab = ExtResource("2_1cx7q")
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})

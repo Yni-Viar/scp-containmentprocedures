@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://by5c7g15ljuta"]
+[gd_scene load_steps=29 format=3 uid="uid://by5c7g15ljuta"]
 
 [ext_resource type="Script" uid="uid://coqykxns1k055" path="res://PlayerScript/StaticPlayer.gd" id="1_cfg1l"]
 [ext_resource type="Shader" uid="uid://hk554f44nepm" path="res://Shaders/GlitchyViewShader/glitchy_view.gdshader" id="2_5utjn"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cud3twtuug3gj" path="res://Assets/HUD/electro_overlay.png" id="4_e2rmt"]
 [ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/NormalEdgeDetectShader/edgedetect.gdshader" id="5_7jsl5"]
 [ext_resource type="Material" uid="uid://btfdohj827k1j" path="res://Shaders/OverlayMaterials/StereoGlasses.tres" id="6_og4yi"]
+[ext_resource type="Material" uid="uid://c2768cnm2bxyr" path="res://Shaders/OverlayMaterials/Scp261Orange.tres" id="6_otkm4"]
 [ext_resource type="Script" uid="uid://bynn400brwg3m" path="res://Scripts/LightDetector.gd" id="7_831vx"]
+[ext_resource type="Material" uid="uid://gw1nl3f4bpjf" path="res://Shaders/OverlayMaterials/Scp261KleinBottle.tres" id="7_lasx5"]
 [ext_resource type="Material" uid="uid://y3l4ispo2pxn" path="res://Shaders/OverlayMaterials/Amnesia.tres" id="8_vgv1g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j77eh"]
@@ -31,6 +33,14 @@ shader_parameter/multiplier = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_otkm4"]
 material = SubResource("ShaderMaterial_e2rmt")
+size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ukt2"]
+material = ExtResource("6_otkm4")
+size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n5xyg"]
+material = ExtResource("7_lasx5")
 size = Vector2(2, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_e2rmt"]
@@ -104,6 +114,12 @@ visible = false
 mesh = SubResource("QuadMesh_jpt06")
 skeleton = NodePath("../..")
 
+[node name="TintOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.040000916)
+visible = false
+mesh = SubResource("QuadMesh_cfg1l")
+skeleton = NodePath("../..")
+
 [node name="ColdOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
 visible = false
@@ -116,25 +132,37 @@ visible = false
 mesh = SubResource("QuadMesh_otkm4")
 skeleton = NodePath("../..")
 
-[node name="StereoGlassesOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+[node name="Scp261OrangeOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+visible = false
+mesh = SubResource("QuadMesh_6ukt2")
+skeleton = NodePath("../..")
+
+[node name="Scp261KleinBottleOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
+visible = false
+mesh = SubResource("QuadMesh_n5xyg")
+skeleton = NodePath("../..")
+
+[node name="StereoGlassesOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06)
 visible = false
 mesh = SubResource("QuadMesh_e2rmt")
 skeleton = NodePath("../..")
 
 [node name="NightmareContainedOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.065)
 visible = false
 mesh = SubResource("QuadMesh_ejqts")
 skeleton = NodePath("../ColdOverlay")
 
 [node name="AmnesiaVisionOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07)
 visible = false
 mesh = SubResource("QuadMesh_vgv1g")
 
 [node name="EgdeDetectOverlay" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.075)
 visible = false
 mesh = SubResource("QuadMesh_og4yi")
 skeleton = NodePath("../..")

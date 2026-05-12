@@ -1,6 +1,7 @@
-[gd_scene load_steps=48 format=3 uid="uid://6l8r5fy0ymqt"]
+[gd_scene load_steps=49 format=3 uid="uid://6l8r5fy0ymqt"]
 
 [ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_7lihs"]
+[ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
 [ext_resource type="Script" uid="uid://bu7shnqhd7um8" path="res://MapGen/MapGen3D.gd" id="3_2irst"]
 [ext_resource type="PackedScene" uid="uid://by5c7g15ljuta" path="res://PlayerScript/StaticPlayer.tscn" id="3_bf53h"]
 [ext_resource type="Script" uid="uid://brnmrs6xlpyic" path="res://Scripts/UI.gd" id="6_dahhg"]
@@ -123,6 +124,9 @@ texture = ExtResource("23_i4lct")
 [node name="Game" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_7lihs")
+
+[node name="GDShCommands" type="Node3D" parent="."]
+script = ExtResource("2_umnjm")
 
 [node name="StaticPlayer" parent="." instance=ExtResource("3_bf53h")]
 

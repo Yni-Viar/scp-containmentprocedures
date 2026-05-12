@@ -23,3 +23,7 @@ health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 1
 puppet_navigation_layers = 3
 ragdoll_prefab = ExtResource("2_h41ua")
+start_items = Array[int]([7])
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})

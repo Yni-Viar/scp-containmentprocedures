@@ -1,10 +1,10 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cjngsev1fqdgw"]
 
 [ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="1_s64w5"]
-[ext_resource type="Texture2D" uid="uid://cr0oagcm5dgan" path="res://Assets/HUD/cold_overlay.png" id="2_0kb5w"]
+[ext_resource type="Texture2D" uid="uid://cr0oagcm5dgan" path="res://Assets/HUD/cold_overlay.png" id="2_s64w5"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_s64w5")
-shader_parameter/overlay = ExtResource("2_0kb5w")
+shader_parameter/overlay = ExtResource("2_s64w5")
 shader_parameter/multiplier = 1.0

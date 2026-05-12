@@ -272,6 +272,20 @@ func apply_overlay(effect: String, strength: float):
 			else:
 				$Head/Camera3D/Overlays/NightmareContainedOverlay.hide()
 				current_overlays.erase(effect)
+		"Scp261Orange":
+			if strength >= 0.375:
+				$Head/Camera3D/Overlays/Scp261OrangeOverlay.show()
+				current_overlays.append(effect)
+			else:
+				$Head/Camera3D/Overlays/Scp261OrangeOverlay.hide()
+				current_overlays.erase(effect)
+		"Scp261KleinBottle":
+			if strength >= 0.375:
+				$Head/Camera3D/Overlays/Scp261KleinBottleOverlay.show()
+				current_overlays.append(effect)
+			else:
+				$Head/Camera3D/Overlays/Scp261KleinBottleOverlay.hide()
+				current_overlays.erase(effect)
 		_:
 			for node in $Head/Camera3D/Overlays.get_children():
 				node.hide()

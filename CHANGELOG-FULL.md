@@ -3,7 +3,7 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v8.0.0 ("Dreams of dark future", W.I.P)
+## v8.0.0 ("Expansion update part 4", W.I.P)
 ### Self-learning NPCs (probably)
 - [ ] Self-learning NPCs (may be cancelled)
 
@@ -11,8 +11,8 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [ ] Storage sub-zone
 
 ### New SCPs
-- [ ] SCP-080
-- [ ] SCP-261 (uses new windowed dialogues feature)
+- [x] SCP-131
+- [x] SCP-261 (uses new windowed dialogues feature)
 - [x] SCP-2028
 - [x] SCP-2471
 
@@ -24,6 +24,10 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Added dialogue support through windows
 
 ### Other changes
+- [x] Added second cafeteria in Personnel Zone
+- [x] Reworked Credits menu, using Hikkan approach.
+- [x] \[Hard mode\] Increased hunger and thirst meter drain
+- [x] \[Technical\] Implemented combined health type for humans - you can heal, feed and drink by specifying -1 health_type.
 - [x] \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
 - [x] Show warning on start, if the game is not using OpenGL/Compatibility backend. (uses new windowed dialogues feature)
 - [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)

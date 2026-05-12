@@ -20,3 +20,6 @@ health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 1
 spawn_on_start = false
 ragdoll_prefab = ExtResource("2_hnrfu")
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})

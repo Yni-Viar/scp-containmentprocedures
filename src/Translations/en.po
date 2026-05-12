@@ -435,3 +435,9 @@ msgstr ""
 
 msgid "SCP2471_NOTE3"
 msgstr "You will see nightmares with SCP-2028..."
+
+msgid "SCP261_CHOICE"
+msgstr "Choose amount of Yens to pay SCP-261."
+
+msgid "SCP261_EAT"
+msgstr "Would you eat {SCP261_SUBJECT}?"

@@ -341,3 +341,9 @@ msgstr ""
 
 msgid "SCP2471_NOTE3"
 msgstr ""
+
+msgid "SCP261_CHOICE"
+msgstr ""
+
+msgid "SCP261_EAT"
+msgstr ""

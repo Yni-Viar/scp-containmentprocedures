@@ -326,3 +326,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.34
 
 [node name="Chair2" parent="." instance=ExtResource("8_151rl")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.3412127, -1.2602081, -3.799917)
+
+[node name="ScientistPoint" type="Marker3D" parent="." groups=["ScientistPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1375027, -0.78577, -2.6776285)
+
+[node name="ScientistPoint2" type="Marker3D" parent="." groups=["ScientistPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3835154, -0.78577, -4.6837516)
+
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.188442, -0.78577, -0.7881341)
+
+[node name="Entityspawn3" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31751442, -0.78577, -8.201117)

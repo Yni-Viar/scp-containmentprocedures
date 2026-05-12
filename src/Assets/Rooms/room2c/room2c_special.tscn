@@ -430,3 +430,9 @@ current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("11_tsku5")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 1.739676, -0.59264135, 1.3319478)
+
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.267661, -0.78576905, 0.010486603)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32151508, -0.78577, 2.873436)

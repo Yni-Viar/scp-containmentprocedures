@@ -632,6 +632,12 @@ transform = Transform3D(0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710
 [node name="ScientistPoint" type="Marker3D" parent="." groups=["ScientistPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5090532, -0.78577095, -10.52786)
 
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.62853, -0.78577095, 6.3904276)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97482, -0.78577095, 8.425119)
+
 [node name="ScientistPoint2" type="Marker3D" parent="." groups=["ScientistPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5090532, -0.78577095, 5.039664)
 

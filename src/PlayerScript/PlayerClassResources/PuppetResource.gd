@@ -49,3 +49,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var disable_move_on_slide: bool = false
 ## Can NPCs ride the elevator?
 @export var can_ride: bool = true
+## Start items in inventory
+@export var start_items: Array[int] = []
+## Start money
+@export var start_money: Dictionary[String, int]

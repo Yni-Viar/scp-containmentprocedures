@@ -207,5 +207,6 @@ func dialogue_window(text: String, title: String = "", fixed_size: bool = true, 
 		for action in button_actions:
 			var button: DialogueButton = DialogueButton.new()
 			button.action = action
+			button.dlg_host = window
 			hbox_container.add_child(button)
 	add_child(window)

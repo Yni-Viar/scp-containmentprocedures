@@ -33,30 +33,40 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
-|SCP-005|❓, since 6.0.0/7.0.4|✅, since 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
-|SCP-018|✅, since 7.0.0|✅, since 7.0.0|✅ Full|
-|SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
-|SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
-|SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
-|SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
-|SCP-178|✅, since 5.2.0|❌, 3d help wanted|✅ Full|
-|SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
-|SCP-266|✅, since 1.0.0|❌, 5.7.x only, removed in 5.8.0|✅ Full|
-|SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, removed in 6.0.0|❓ Partial|
-|SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ None|
-|SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
-|SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
-|SCP-649|⛄, since 5.5.0|⛄, since 5.7.0|✅ Full|
-|SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\)|
-|SCP-686|✅, since 5.1.0|✅, since 5.7.0|❓ Partial \(hidden NSFW parts\)|
-|SCP-791|✅, since 6.0.0|❌|📃 Task only|
-|SCP-812|✅, since 1.0.0|✅, since 5.7.0|✅ Full|
-|SCP-914|✅, since 2.0.0|❌, 5.7.x only, removed in 5.8.0|❓ Process only items|
-|SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
-|SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
-|SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
-|SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-005|❓, since 6.0.0/7.0.4|✅, since 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
+|🟡SCP-018|✅, since 7.0.0|✅, since 7.0.0|✅ Full|
+|🟡SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
+|🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
+|🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
+|🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
+|🟡SCP-178|✅, since 5.2.0|❌, 3d help wanted|✅ Full|
+|🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
+|🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, removed in 5.8.0|✅ Full|
+|🟡SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, removed in 6.0.0|❓ Partial|
+|🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Only available via SCP-261|
+|🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ None|
+|🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
+|🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
+|🟢SCP-649|⛄, since 5.5.0|⛄, since 5.7.0|✅ Full|
+|🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\)|
+|🟢SCP-686|✅, since 5.1.0|✅, since 5.7.0|❓ Partial \(hidden NSFW parts\)|
+|🟢SCP-791|✅, since 6.0.0|❌|📃 Task only|
+|🟡SCP-812|✅, since 1.0.0|✅, since 5.7.0|✅ Full|
+|🟢SCP-914|✅, since 2.0.0|❌, 5.7.x only, removed in 5.8.0|❓ Process only items|
+|🔴SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
+|🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
+|🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
+|🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+
+#### Object class
+🟢 - Safe
+🟡 - Euclid
+🟠 - Euclid/Potentially Keter
+🔴 - Keter
+<!-- 🟣 - Thaumiel -->
+<!-- 🔵 - Esoteric -->
 
 #### Availability
 ✅ - Available.

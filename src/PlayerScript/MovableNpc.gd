@@ -38,6 +38,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var health: Array[float] = []
 @export var current_health: Array[float] = []
 @export var movement_freeze: bool = false
+@export var money: Dictionary[String, int] = {}
 
 @export var wandering_system: WanderingSystem = WanderingSystem.NONE:
 	set(val):
@@ -113,7 +114,11 @@ func _ready() -> void:
 	_nav_agent.navigation_layers = puppet_class.puppet_navigation_layers
 	current_health = health.duplicate()
 	wandering_rotator = rng.randi_range(-15, 15)
+	for item_id in puppet_class.start_items:
+		$UI/Inventory/Inventory.add_item(item_id)
+	money = puppet_class.start_money
 	$PlayerModel.add_child(puppet_mesh)
+	
 	
 	if spawn_on_start:
 		NavigationServer3D.map_changed.connect(on_map_updated)
@@ -226,6 +231,11 @@ func set_target_position(target_position: Vector3) -> void:
 func health_manage(health_to_add: float, health_type: int = 0):
 	if health_type >= current_health.size() || health_type >= health.size():
 		print("Invalid parameter - wrong health type")
+	elif health_type == -1 && puppet_class.fraction == 0:
+		health_manage(health_to_add, 0)
+		health_manage(health_to_add, 2)
+		health_manage(health_to_add, 3)
+		return
 	if current_health[health_type] + health_to_add <= health[health_type]:
 		current_health[health_type] += health_to_add
 	else:
@@ -253,12 +263,23 @@ func _call_function(node_path: String, method_caller: String, amount: Array):
 		"StaticPlayer":
 			get_tree().root.get_node("Game/StaticPlayer").callv(method_caller, amount)
 		_:
-			if !node_path.is_empty():
-				var safety_circus = node_path.get_slice("/", 0)
-				# For safety circus
-				get_child(get_node(safety_circus).get_index()).get_node(node_path.trim_prefix(safety_circus + "/")).callv(method_caller, amount)
+			# First entity from group
+			if node_path.begins_with("SingleGroup:") && node_path != "SingleGroup:":
+				if get_tree().has_group(node_path.get_slice(":", 1)):
+					get_tree().get_first_node_in_group(node_path.get_slice(":", 1)).callv(method_caller, amount)
+			# All entities from group
+			elif node_path.begins_with("Group:") && node_path != "Group:":
+				if get_tree().has_group(node_path.get_slice(":", 1)):
+					for entity in get_tree().get_nodes_in_group(node_path.get_slice(":", 1)):
+						entity.callv(method_caller, amount)
 			else:
-				callv(method_caller, amount)
+				# MovableNpcs and children
+				if !node_path.is_empty():
+					var safety_circus = node_path.get_slice("/", 0)
+					# For safety circus
+					get_child(get_node(safety_circus).get_index()).get_node(node_path.trim_prefix(safety_circus + "/")).callv(method_caller, amount)
+				else:
+					callv(method_caller, amount)
 
 func action_take(index: int):
 	if puppet_class.fraction == 0 && get_node_or_null("PlayerModel/Puppet") != null:

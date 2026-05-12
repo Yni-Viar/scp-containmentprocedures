@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=4 format=3 uid="uid://8w5evo6p3hmj"]
+
+[ext_resource type="Script" uid="uid://dcmkhvqt24ups" path="res://Scripts/StatusEffects/StatusEffectCommand.gd" id="1_448xv"]
+[ext_resource type="Script" uid="uid://c4fqc7mfbrm1o" path="res://Scripts/StatusEffects/StatusEffect.gd" id="2_26w3q"]
+
+[sub_resource type="Resource" id="Resource_2718k"]
+script = ExtResource("1_448xv")
+action_node_path = "StaticPlayer"
+action_method_name = "apply_overlay"
+player_only = true
+metadata/_custom_type_script = "uid://dcmkhvqt24ups"
+
+[resource]
+script = ExtResource("2_26w3q")
+effect_name = "Scp261KleinBottle"
+start_command = Array[ExtResource("1_448xv")]([SubResource("Resource_2718k")])
+destroy_command = Array[ExtResource("1_448xv")]([SubResource("Resource_2718k")])
+metadata/_custom_type_script = "uid://c4fqc7mfbrm1o"

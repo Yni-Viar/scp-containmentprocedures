@@ -1,20 +1,20 @@
 [gd_scene load_steps=13 format=4 uid="uid://c6colwusu4hxv"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_hil2r"]
-[ext_resource type="Texture2D" uid="uid://bvjrqhug00ygt" path="res://Assets/OriginalModels/Scp261FoodBox/FoodBox_Plastic017A_2K-PNG_Roughness.png" id="1_paofa"]
-[ext_resource type="Texture2D" uid="uid://bi7edjc504srp" path="res://Assets/OriginalModels/Scp261FoodBox/FoodBox_Plastic017A_2K-PNG_NormalGL.png" id="2_bicql"]
+[ext_resource type="Texture2D" uid="uid://bvjrqhug00ygt" path="res://Assets/OriginalModels/FoodBox/FoodBox_Plastic017A_2K-PNG_Roughness.png" id="1_paofa"]
+[ext_resource type="Texture2D" uid="uid://bi7edjc504srp" path="res://Assets/OriginalModels/FoodBox/FoodBox_Plastic017A_2K-PNG_NormalGL.png" id="2_bicql"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="2_hil2r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m01yb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hil2r"]
 render_priority = 0
 shader = ExtResource("2_hil2r")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0, 1, 0, 1)
 shader_parameter/outline_width = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn08b"]
 resource_name = "Material.001"
-next_pass = SubResource("ShaderMaterial_m01yb")
-albedo_color = Color(0.32144105, 0.90633965, 0.23940884, 1)
+next_pass = SubResource("ShaderMaterial_hil2r")
+albedo_color = Color(0.10066097, 0.54191893, 0, 1)
 metallic_texture = ExtResource("1_paofa")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("1_paofa")
@@ -58,8 +58,8 @@ shadow_mesh = SubResource("ArrayMesh_2xqew")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwv2u"]
 resource_name = "Material"
-next_pass = SubResource("ShaderMaterial_m01yb")
-albedo_color = Color(0.9063355, 0.5122501, 0.006116601, 1)
+next_pass = SubResource("ShaderMaterial_hil2r")
+albedo_color = Color(0.94578433, 1, 0.005238007, 1)
 metallic_texture = ExtResource("1_paofa")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("1_paofa")
@@ -102,7 +102,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7iq7w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_paofa"]
-size = Vector3(1.2902832, 1, 1.2421265)
+size = Vector3(0.64834595, 0.5107727, 0.62722397)
 
 [node name="FoodBox" type="RigidBody3D"]
 collision_layer = 8
@@ -110,7 +110,7 @@ script = ExtResource("1_hil2r")
 item_id = 21
 
 [node name="Mesh" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="Mesh"]
 mesh = SubResource("ArrayMesh_58kyp")
@@ -121,5 +121,5 @@ mesh = SubResource("ArrayMesh_vvk04")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0037841797, 0, 0.0018615723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002593994, -4.5776367e-05, 0.0008029938)
 shape = SubResource("BoxShape3D_paofa")

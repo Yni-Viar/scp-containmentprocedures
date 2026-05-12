@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://gw1nl3f4bpjf"]
+
+[ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="1_ut6ba"]
+[ext_resource type="Texture2D" uid="uid://c0ow5l4hbf83s" path="res://Assets/HUD/klein_bottle_overlay.png" id="2_ut6ba"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ut6ba")
+shader_parameter/overlay = ExtResource("2_ut6ba")
+shader_parameter/multiplier = 1.0

@@ -1,11 +1,248 @@
 extends InteractableStatic
+## SCP-261 script
+## Made by Yni, licensed under GPLv3.
+
+@export var meals: Dictionary = {
+	"lowest_1": {
+		"Corn": ["health:20.0:3"],
+		"Apple seed": ["message:You received 100 apple seeds"],
+		"Artifical Coffee drink": ["health:5.0:3", "message:Such an disgusting drink"],
+		"American air": ["message:It is an usual air"]
+	},
+	"lowest_2": {
+		"Disease Curer": ["health:100.0:0"],
+		"Eetmees": ["health:15.0:3"],
+	},
+	"lowest_3": {
+		"Beefy fedora hat": ["health:30.0:3"],
+		"Penguin bottle with liquid": ["health:-2.0:0", "health:2.0:2"]
+	},
+	"low_1": {
+		"Instant Ramen": ["health:30.0:3"],
+		"A banana": ["health:45.0:3"],
+		"BEEF!": ["health:5.0:3", "message:It was a raw meat..."],
+		"Apple seed": ["message:You received 300 apple seeds"]
+	},
+	"low_2": {
+		"Applexplosion": ["health:-2.5:0", "health:5.0:3"],
+		"Minty fish": ["health:1.0:3", "health:-1.0:0", "message:It was difficult to chew and has unpleasant taste."]
+	},
+	"low_3": {
+		"TASTE ME!!!": ["health:-100.0:0"],
+		"Chicken Candy Can": ["health:70.0:3"]
+	},
+	"mid_1": {
+		"An usual cookie" : ["health:15.0:3"],
+		"Green Apple Frosting": ["health:25.0:3"],
+		"Hazelnut in chocolate": ["health:20.0:3"],
+		"Candy Pistol": ["health:-1.0:0", "health:15.0:3"],
+		"Apple seed": ["message:You received 500 apple seeds"],
+		"X-treme chips": ["health:50.0:3", "message:You want to climb mountains"]
+	},
+	"mid_2": {
+		"Spice Bomb": ["health:-5.0:0"],
+		"Hardtack": ["health:10.0:3"]
+	},
+	"mid_3": {
+		"Water with creatures": ["health:10.0:2"],
+		"SCP-417 fruit": ["health:-200.0:0"]
+	},
+	"high_1": {
+		"Fruit drink": ["health:30.0:2"],
+		"Can with flying insects": ["health:-5.0:0", "health:10.0:3"],
+		"Apple seed": ["message:You received 700 apple seeds"],
+		"Box jellyfish meat": ["health:-150.0:0"]
+	},
+	"high_2": {
+		"Edible Chess set": ["health:20.0:3"],
+		"Nipples": ["health:15.0:3", "message:Tastes, like pork"]
+	},
+	"high_3": {
+		"Human Breast milk (Chocolate flavored)": ["health:50.0:0", "health:50.0:2", "health:50.0:3", "message:I think the boob-shaped container was a nice touch."],
+		"Edible bacon shirt": ["health:70.0:3"]
+	},
+	"highest_1": {
+		"Candy Robots": ["health:5.0:3"],
+		"Six-legged blue turtle": ["health:-120.0:0"],
+		"Rat on stick": ["health:30.0:3"],
+		"Apple seed": ["message:You received 1000 apple seeds"],
+		"Pythia's choice": ["health:-100.0:0"]
+	},
+	"highest_2": {
+		"Orange Radiation": ["effect:Scp261Orange"],
+		"Demon's chips": ["health:-100.0:0"],
+		"Philosopher's scone": ["health:100.0:0", "health:100.0:2", "health:100.0:3"]
+	},
+	"highest_3": {
+		"Unknown steel canister": ["health:-110.0:0"],
+		"Klein wine bottle": ["effect:Scp261KleinBottle"]
+	}
+}
+@export_group("DON'T TOUCH - AUTOMATIC")
+## Iterations for same SCP-261
+@export var _iterations: int = 0
+## Current category
+@export var current_category: String
+## Current food
+@export var current_item: String
+## To determine current iteration
+@export var prev_category: String
+## SCP-261 choice buttons
+var base_buttons: Array[CommandResource] = []
+## Eating buttons
+var eat_buttons: Array[CommandResource] = []
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if OS.get_name() != "Web":
+		if !FileAccess.file_exists("user://Scp261.json"):
+			var result_json: String = JSON.stringify(meals)
+			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
+			file.store_string(result_json)
+		else:
+			JSON.stringify(meals)
+			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.READ)
+			meals = JSON.parse_string(file.get_as_text())
+	base_buttons.resize(5)
+	# For retrieving drink
+	for i in range(5):
+		var command_resource: CommandResource = CommandResource.new()
+		command_resource.action_node_path = "SingleGroup:Scp261"
+		command_resource.action_method_name = "scp_261"
+		command_resource.action_args = [i+1]
+		match i:
+			0:
+				command_resource.name = "100¥"
+			1:
+				command_resource.name = "300¥"
+			2:
+				command_resource.name = "500¥"
+			3:
+				command_resource.name = "700¥"
+			4:
+				command_resource.name = "1000¥"
+		base_buttons[i] = command_resource
+	# For eating products from SCP-261
+	eat_buttons.resize(2)
+	for i in range(2):
+		var command_resource: CommandResource = CommandResource.new()
+		match i:
+			0:
+				command_resource.action_node_path = "SingleGroup:Scp261"
+				command_resource.action_method_name = "scp_261_item_eat"
+				command_resource.name = "YES"
+			1:
+				command_resource.action_node_path = "SingleGroup:Scp261"
+				command_resource.action_method_name = "scp_261_free"
+				command_resource.name = "NO"
+		eat_buttons[i] = command_resource
 
+## Show dialogue
+func interact(player: Node3D):
+	super.interact(player)
+	if player is MovableNpc:
+		if player.is_player && player.money.has("YEN"):
+			Settings.dialogue_window("SCP261_CHOICE", "SCP-261", true, base_buttons)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## Main SCP-261 function
+func scp_261(value: int):
+	if prev_category.get_slice("_", 0) != current_category.get_slice("_", 0):
+		_iterations = 0
+	prev_category = current_category
+	match value:
+		1: #lowest
+			if get_tree().root.get_node("Game").protagonist.money["YEN"] >= 100:
+				get_tree().root.get_node("Game").protagonist.money["YEN"] -= 100
+			else:
+				return
+			match _iterations / 2:
+				0:
+					current_category = "lowest_1"
+					current_item = meals["lowest_1"].keys().pick_random()
+				1:
+					current_category = "lowest_2"
+					current_item = meals["lowest_2"].keys().pick_random()
+				_:
+					current_category = "lowest_3"
+					current_item = meals["lowest_3"].keys().pick_random()
+		2: #low
+			if get_tree().root.get_node("Game").protagonist.money["YEN"] >= 300:
+				get_tree().root.get_node("Game").protagonist.money["YEN"] -= 300
+			else:
+				return
+			match _iterations / 2:
+				0:
+					current_category = "low_1"
+					current_item = meals["low_1"].keys().pick_random()
+				1:
+					current_category = "low_2"
+					current_item = meals["low_2"].keys().pick_random()
+				_:
+					current_category = "low_3"
+					current_item = meals["low_3"].keys().pick_random()
+		3: #mid
+			if get_tree().root.get_node("Game").protagonist.money["YEN"] >= 500:
+				get_tree().root.get_node("Game").protagonist.money["YEN"] -= 500
+			else:
+				return
+			match _iterations / 2:
+				0:
+					current_category = "mid_1"
+					current_item = meals["mid_1"].keys().pick_random()
+				1:
+					current_category = "mid_2"
+					current_item = meals["mid_2"].keys().pick_random()
+				_:
+					current_category = "mid_3"
+					current_item = meals["mid_3"].keys().pick_random()
+		4: #high
+			if get_tree().root.get_node("Game").protagonist.money["YEN"] >= 700:
+				get_tree().root.get_node("Game").protagonist.money["YEN"] -= 700
+			else:
+				return
+			match _iterations / 2:
+				0:
+					current_category = "high_1"
+					current_item = meals["high_1"].keys().pick_random()
+				1:
+					current_category = "high_2"
+					current_item = meals["high_2"].keys().pick_random()
+				_:
+					current_category = "high_3"
+					current_item = meals["high_3"].keys().pick_random()
+		5: #highest
+			if get_tree().root.get_node("Game").protagonist.money["YEN"] >= 1000:
+				get_tree().root.get_node("Game").protagonist.money["YEN"] -= 1000
+			else:
+				return
+			match _iterations / 2:
+				0:
+					current_category = "highest_1"
+					current_item = meals["highest_1"].keys().pick_random()
+				1:
+					current_category = "highest_2"
+					current_item = meals["highest_2"].keys().pick_random()
+				_:
+					current_category = "highest_3"
+					current_item = meals["highest_3"].keys().pick_random()
+		_:
+			printerr("Cannot choose food")
+	_iterations += 1
+	Settings.dialogue_window(tr("SCP261_EAT").format({SCP261_SUBJECT=current_item}), "SCP-261", true, eat_buttons)
+
+func scp_261_item_eat():
+	for item in meals[current_category][current_item]:
+		match item.get_slice(":", 0):
+			"health":
+				var health_to_add: String = item.get_slice(":", 1)
+				var health_type: String = item.get_slice(":", 2)
+				if health_to_add.is_valid_float() && health_type.is_valid_int():
+					get_tree().root.get_node("Game").protagonist._call_function("", "health_manage", [health_to_add.to_float(), health_type.to_int()])
+			"message":
+				get_tree().root.get_node("Game").protagonist._call_function("Game", "advanced_dialogue", [[item.get_slice(":", 1)]])
+			"effect":
+				get_tree().root.get_node("Game").protagonist.get_node("StatusEffects").apply_status_effect(item.get_slice(":", 1), 1.0, 15.0)
+
+func scp_261_free():
+	return

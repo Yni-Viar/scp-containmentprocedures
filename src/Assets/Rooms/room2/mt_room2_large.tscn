@@ -400,3 +400,12 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.78
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.742433, 0.31404257, 4.6533623)
 script = ExtResource("15_j3fxc")
 item = ExtResource("16_j7vhe")
+
+[node name="ScientistPoint" type="Marker3D" parent="." groups=["ScientistPoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3628597, -0.7857695, -2.476914)
+
+[node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9949887, -0.78577, 6.3840423)
+
+[node name="Entityspawn2" type="Marker3D" parent="." groups=["Scp131ASpawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6171293, -0.78577, -0.55598783)
