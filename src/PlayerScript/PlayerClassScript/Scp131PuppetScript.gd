@@ -2,6 +2,7 @@ extends BasePuppetScript
 
 @export_group("DO NOT TOUCH!")
 @export var looking_at_target: bool = false
+@export var elapsed_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func on_start():
@@ -32,4 +33,16 @@ func _physics_process(delta: float) -> void:
 		
 		if active_puppets[index].puppet_class.fraction != 3:
 			get_parent().get_parent().look_at(looking_object.global_position)
+			get_parent().get_parent().get_node("RayCast3D").look_at(looking_object.global_position)
+			elapsed_time += delta
+			if elapsed_time > 2.0:
+				if active_puppets.has(get_parent().get_parent().get_node("RayCast3D").get_collider()):
+					get_parent().get_parent().wandering = false
+					get_parent().get_parent().follow_target = ""
+				else:
+					elapsed_time = 0.0
+		else:
+			elapsed_time = 0.0
 		looking_at_target = true
+	else:
+		elapsed_time = 0.0

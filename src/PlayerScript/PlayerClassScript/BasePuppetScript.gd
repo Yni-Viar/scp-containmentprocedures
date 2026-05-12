@@ -19,7 +19,8 @@ enum States {IDLE, WALKING, RUNNING, SPECIAL1, SPECIAL2, SPECIAL3, SPECIAL4}
 @export var christmas_suits: Dictionary[NodePath, Array]
 ## Format: NodePath: [[material_index, material], ...]
 @export var halloween_suits: Dictionary[NodePath, Array]
-var active_puppets: Array[Node3D] = []
+@export_group("DO NOT TOUCH")
+@export var active_puppets: Array[Node3D] = []
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 

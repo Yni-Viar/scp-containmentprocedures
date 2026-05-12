@@ -210,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933182, -0.22546124, 7.3303
 [node name="box2" parent="NavigationRegion3D/Props" instance=ExtResource("5_o4j40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.991447, -0.24593556, -2.314077)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Props" groups=["Scp109_261_458_spawn"]]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Props" groups=["RZ_Cafeteria"]]
 transform = Transform3D(1.2079664e-06, 0, -16, 0, 16, 0, 16, 0, 1.2079664e-06, 9.9959135, 4.9804115, 0.04077673)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_ifj3o")
