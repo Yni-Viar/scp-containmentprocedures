@@ -3,6 +3,11 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Settings.feature_legality_checker("no_neural_ai"):
+		$GameplayLabel.queue_free()
+		$AI.queue_free()
+	else:
+		$AI.button_pressed = Settings.setting_res.ai_enabled
 	$Glow.button_pressed = Settings.setting_res.glow
 	$BasicReflection.button_pressed = Settings.setting_res.reflection_probe
 	$SSAO.button_pressed = Settings.setting_res.ssao
@@ -39,4 +44,9 @@ func _on_ssao_toggled(toggled_on: bool) -> void:
 
 func _on_tonemapper_item_selected(index: int) -> void:
 	Settings.setting_res.tonemapper = index as Environment.ToneMapper
+	Settings.save_resource(Settings.setting_res)
+
+
+func _on_ai_toggled(toggled_on: bool) -> void:
+	Settings.setting_res.ai_enabled = toggled_on
 	Settings.save_resource(Settings.setting_res)

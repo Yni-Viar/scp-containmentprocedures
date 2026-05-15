@@ -64,7 +64,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i4iqf")
 
-[node name="Scp005" type="RigidBody3D"]
+[node name="Scp005" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 freeze = true
 continuous_cd = true

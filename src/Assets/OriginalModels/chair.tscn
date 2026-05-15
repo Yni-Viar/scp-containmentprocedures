@@ -52,7 +52,6 @@ shadow_mesh = SubResource("ArrayMesh_2wfap")
 size = Vector3(1.010498, 2.112854, 1.0254822)
 
 [node name="Chair" type="RigidBody3D"]
-mass = 5.0
 freeze = true
 
 [node name="Cube" type="MeshInstance3D" parent="."]

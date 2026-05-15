@@ -53,3 +53,5 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var start_items: Array[int] = []
 ## Start money
 @export var start_money: Dictionary[String, int]
+## Enables AI (if it is available and enabled)
+@export var enable_advanced_ai: bool = false

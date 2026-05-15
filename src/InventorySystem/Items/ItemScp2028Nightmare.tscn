@@ -106,7 +106,7 @@ radius = 0.49950024
 height = 0.102890015
 radius = 0.33007813
 
-[node name="Scp2028" type="RigidBody3D"]
+[node name="Scp2028" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 script = ExtResource("1_80arm")
 item_id = 20

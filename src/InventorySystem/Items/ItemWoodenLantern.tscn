@@ -189,7 +189,7 @@ shadow_mesh = SubResource("ArrayMesh_8tap6")
 [sub_resource type="BoxShape3D" id="BoxShape3D_tms6n"]
 size = Vector3(0.335693, 0.807159, 0.340088)
 
-[node name="wooden_lantern" type="RigidBody3D"]
+[node name="wooden_lantern" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 script = ExtResource("1_pwn81")
 item_id = 1

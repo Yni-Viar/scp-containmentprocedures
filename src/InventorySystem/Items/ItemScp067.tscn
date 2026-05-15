@@ -112,7 +112,7 @@ shadow_mesh = SubResource("ArrayMesh_pt7go")
 height = 0.5574951
 radius = 0.03955078
 
-[node name="Scp067" type="RigidBody3D"]
+[node name="Scp067" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 freeze = true
 continuous_cd = true

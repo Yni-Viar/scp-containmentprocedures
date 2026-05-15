@@ -338,7 +338,7 @@ shadow_mesh = SubResource("ArrayMesh_pf3qx")
 height = 0.674034
 radius = 0.247559
 
-[node name="scp983" type="RigidBody3D"]
+[node name="scp983" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 freeze = true
 script = ExtResource("1_0wg1b")

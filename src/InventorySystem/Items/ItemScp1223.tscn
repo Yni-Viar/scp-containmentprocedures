@@ -101,7 +101,7 @@ size = Vector3(0.44439697, 0.012512207, 0.20111084)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ssw3"]
 size = Vector3(0.0256958, 0.1541748, 0.14971924)
 
-[node name="Scp1223" type="RigidBody3D"]
+[node name="Scp1223" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 script = ExtResource("1_ij1on")
 item_id = 16

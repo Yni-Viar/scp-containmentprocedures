@@ -70,7 +70,7 @@ shadow_mesh = SubResource("ArrayMesh_et8x6")
 radius = 0.06347656
 height = 0.45059204
 
-[node name="ItemBeaker" type="RigidBody3D" node_paths=PackedStringArray("mesh_with_liquid")]
+[node name="ItemBeaker" type="RigidBody3D" node_paths=PackedStringArray("mesh_with_liquid") groups=["ImportantItem", "Item"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 8
 freeze = true

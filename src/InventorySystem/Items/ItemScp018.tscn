@@ -81,7 +81,7 @@ radius = 0.125
 [sub_resource type="SphereShape3D" id="SphereShape3D_lacva"]
 radius = 0.25
 
-[node name="Scp018" type="RigidBody3D"]
+[node name="Scp018" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 physics_material_override = SubResource("PhysicsMaterial_lacva")
 continuous_cd = true

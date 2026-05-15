@@ -104,7 +104,7 @@ shadow_mesh = SubResource("ArrayMesh_7iq7w")
 [sub_resource type="BoxShape3D" id="BoxShape3D_paofa"]
 size = Vector3(0.64834595, 0.5107727, 0.62722397)
 
-[node name="FoodBox" type="RigidBody3D"]
+[node name="FoodBox" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 script = ExtResource("1_hil2r")
 item_id = 21

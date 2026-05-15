@@ -1397,7 +1397,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.680949, 5.9460025, -20.23
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.435137, 6.681233, -14.126583)
 
 [node name="DocSpawn" type="Marker3D" parent="NavigationRegion3D/Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.527723, 0.5895283, -9.9819355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.527723, 0.5895283, -7.4448543)
 script = ExtResource("14_j878u")
 item = ExtResource("15_pde0x")
 

@@ -27,6 +27,19 @@ custom_minimum_size = Vector2(768, 0)
 layout_mode = 2
 script = ExtResource("3_mjqtt")
 
+[node name="GameplayLabel" type="Label" parent="ScrollContainer/SettingsUI"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mjqtt")
+theme_override_font_sizes/font_size = 32
+text = "GAMEPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AI" type="CheckButton" parent="ScrollContainer/SettingsUI"]
+layout_mode = 2
+button_pressed = true
+text = "NEURAL_AI"
+
 [node name="GraphicsLabel" type="Label" parent="ScrollContainer/SettingsUI"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
@@ -201,6 +214,7 @@ text = "DEBUG_CONSOLE"
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="toggled" from="ScrollContainer/SettingsUI/AI" to="ScrollContainer/SettingsUI" method="_on_ai_toggled"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/Glow" to="ScrollContainer/SettingsUI" method="_on_glow_toggled"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/BasicReflection" to="ScrollContainer/SettingsUI" method="_on_basic_reflection_toggled"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/SSAO" to="ScrollContainer/SettingsUI" method="_on_ssao_toggled"]

@@ -35,6 +35,7 @@ var update_timer = 1.0
 # Called when the node enters the scene tree for the first time.
 func on_start():
 	raycast = get_parent().get_parent().get_node("RayCast3D")
+		
 	if get_node_or_null("AnimationTree") != null:
 		get_node("AnimationTree").active = true
 		has_animtree = true
@@ -124,11 +125,7 @@ func _physics_process(delta: float) -> void:
 			for entity in vision_entity:
 				entity.watching_puppets.clear()
 			vision_entity.clear()
-		#else:
-			#_on_raycast_update(collider.get_path())
-	## Cuffed players mechanic
-	#if cuffed_players.size() > 0:
-		#target_follow(delta)
+	
 	on_update_human(delta)
 
 func on_update_human(delta: float):

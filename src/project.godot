@@ -46,7 +46,7 @@ run/main_run_args="-l en"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/ai_algorithms/plugin.cfg")
 
 [file_customization]
 
@@ -62,7 +62,8 @@ folder_colors={
 "res://Sounds/": "purple",
 "res://Test/": "gray",
 "res://Translations/": "gray",
-"res://UI/": "orange"
+"res://UI/": "orange",
+"res://addons/": "pink"
 }
 
 [filesystem]
@@ -102,6 +103,8 @@ WavePointLower=""
 OfficeSpawn=""
 Scp131ASpawn=""
 Scp131BSpawn=""
+Item=""
+ImportantItem=""
 
 [input]
 

@@ -54,7 +54,7 @@ shadow_mesh = SubResource("ArrayMesh_2uhs1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_hugkd"]
 size = Vector3(0.363037, 0.0301514, 0.533447)
 
-[node name="doc" type="RigidBody3D"]
+[node name="doc" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 freeze = true
 continuous_cd = true

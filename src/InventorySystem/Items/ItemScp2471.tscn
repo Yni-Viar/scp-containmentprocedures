@@ -58,7 +58,7 @@ shadow_mesh = SubResource("ArrayMesh_ggqeq")
 height = 0.048065186
 radius = 0.083984375
 
-[node name="Cookie" type="RigidBody3D"]
+[node name="Cookie" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 continuous_cd = true
 script = ExtResource("1_p7vhq")

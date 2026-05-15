@@ -22,7 +22,7 @@ size = Vector3(0.25, 0.25, 0.25)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ygjl2"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="ItemCube" type="RigidBody3D"]
+[node name="ItemCube" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
 script = ExtResource("1_3exxu")
 item_id = 3

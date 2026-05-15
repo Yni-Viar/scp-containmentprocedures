@@ -15,8 +15,21 @@ const DATA_COMPATIBILITY: String = "6.0.0"
 ## Game's data compatibility for modding.
 const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.
+## Available flags:
+## generic_XX, where XX is country id
+## no_halloween - disables Halloween for this region
+## no_neural_ai - disables AI interactions
 const LEGAL_REQ_REGIONS: Dictionary[String, PackedStringArray] = {
 	"ru_RU": ["generic_ru"]
+}
+
+const PLATFORM_REQS: Dictionary[String, PackedStringArray] = {
+	"Web": ["no_neural_ai"]
+}
+
+var features: Dictionary[String, bool] = {
+	"no_halloween": false,
+	"no_neural_ai": false
 }
 ## Touchscreen check
 var touchscreen: bool = false
@@ -40,6 +53,15 @@ func _init():
 	audio_settings(1, setting_res.music_volume)
 	# Set the region (needed for obeying contries' laws)
 	region = OS.get_locale()
+	if legal_req:
+		var l_requirements: Array = LEGAL_REQ_REGIONS[region]
+		for req in l_requirements:
+			features[req] = true
+	
+	if PLATFORM_REQS.has(OS.get_name()):
+		var platform_requirements: Array = PLATFORM_REQS[OS.get_name()]
+		for req in platform_requirements:
+			features[req] = true
 
 func _ready() -> void:
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
@@ -103,11 +125,13 @@ func season_checker():
 			print("Date not available")
 			current_season = Season.NONE
 
+## Initial region checking
 func is_legal_req() -> bool:
 	return LEGAL_REQ_REGIONS.has(region)
 
+## Check if the feature is enabled
 func feature_legality_checker(feature: String) -> bool:
-	return LEGAL_REQ_REGIONS[region].has(feature)
+	return features[feature]
 
 ## Set audio.
 func audio_settings(bus: int, val: float):

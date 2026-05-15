@@ -232,22 +232,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9612637, -1.0920794, 0.945
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5213547, -1.0920794, 0.94512177)
 
 [node name="DocSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.509265, 0.33510625, -5.1008253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1314607, 0.33510625, -5.3352404)
 script = ExtResource("12_4d7p5")
 item = ExtResource("13_qdybe")
 
 [node name="DocSpawn2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4178495, 0.33510625, 0.5035901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9102826, 0.33510625, 0.5035901)
 script = ExtResource("12_4d7p5")
 item = ExtResource("13_qdybe")
 
 [node name="DocSpawn3" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6233063, 0.33510625, 6.8605466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82432, 0.33510625, 6.8605466)
 script = ExtResource("12_4d7p5")
 item = ExtResource("13_qdybe")
 
 [node name="DocSpawn4" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.442005, 0.33510625, 6.8605466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1688712, 0.33510625, 6.8605466)
 script = ExtResource("12_4d7p5")
 item = ExtResource("13_qdybe")
 

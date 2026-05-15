@@ -38,3 +38,5 @@ enum InputMethod {KB, MB, JP}
 @export var ssao: bool = false
 ## Tonemapper
 @export var tonemapper: Environment.ToneMapper = Environment.TONE_MAPPER_LINEAR
+## AI enabled
+@export var ai_enabled: bool = false

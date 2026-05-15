@@ -12,7 +12,8 @@ class_name MovableNpc
 ## Generic wander is MovableNpc wander implementation
 ## Special wander is limited wander - just moving from point to point.
 ## If they leave containment chamber, wandering system will be switched to generic wander.
-enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
+## AI wander cannot be selected by-default, as it requires AI to be enabled.
+enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER, AI_WANDER}
 
 
 ## Speed
@@ -97,6 +98,13 @@ var optimizator_paused: bool = true
 
 var puppet_mesh: BasePuppetScript
 
+## AI variables
+## Make Variant at first because of legal uncertainity
+var nn
+var time_alive: float = 0.0
+var nn_iterator: int = 3
+var nn_current_item: Node3D
+
 @onready var walk_sounds = $WalkSounds
 # Begin Godot Demo code (MIT License)
 @onready var _nav_agent := $NavigationAgent3D as NavigationAgent3D
@@ -119,12 +127,20 @@ func _ready() -> void:
 	money = puppet_class.start_money
 	$PlayerModel.add_child(puppet_mesh)
 	
-	
 	if spawn_on_start:
 		NavigationServer3D.map_changed.connect(on_map_updated)
 	else:
 		wandering_ready = true
 	
+	if !Settings.feature_legality_checker("no_neural_ai") && \
+	   Settings.setting_res.ai_enabled && !is_player && puppet_class.enable_advanced_ai:
+		nn = NeuralNetwork.new(21, 10, 1) as NeuralNetwork
+		for additional_raycast in $NNRay.get_children():
+			nn.raycasts.append(additional_raycast)
+		if wandering_system != WanderingSystem.NONE:
+			wandering_system = WanderingSystem.AI_WANDER
+	else:
+		$NNRay.queue_free()
 	if _nav_agent.avoidance_enabled:
 		_nav_agent.velocity_computed.connect(move_pawn)
 
@@ -328,14 +344,55 @@ func wander(delta: float):
 				else:
 					rotate_y(deg_to_rad(wandering_rotator * delta * 2))
 		WanderingSystem.LIMITED_WANDER:
+			# If timer < 0
 			if wandering && idle && special_wandering_timer < 0:
+				# Walk to random static point
 				if get_tree().get_node_count_in_group(special_wandering_group) > 0:
 					set_target_position(get_tree().get_nodes_in_group(special_wandering_group)[rng.randi_range(0, get_tree().get_node_count_in_group(special_wandering_group) - 1)].global_position)
 					special_wandering_timer = 5.0
 				else:
 					wandering_system = WanderingSystem.GENERIC_WANDER
 			elif !optimizator_paused && idle:
-				special_wandering_timer -= get_physics_process_delta_time()
+				special_wandering_timer -= delta
+		WanderingSystem.AI_WANDER:
+			if !Settings.feature_legality_checker("no_neural_ai") && \
+			   Settings.setting_res.ai_enabled && !is_player && puppet_class.enable_advanced_ai:
+				time_alive += delta
+				
+				if wandering && special_wandering_timer < 0:
+					if idle && (nn_iterator == 3 || nn_current_item == null):
+						if get_tree().get_node_count_in_group("Item") > 0:
+							nn_current_item = get_tree().get_nodes_in_group("Item")[rng.randi_range(0, get_tree().get_node_count_in_group("Item") - 1)]
+							while get_tree().get_nodes_in_group("ImportantItem").has(nn_current_item):
+								nn_current_item = get_tree().get_nodes_in_group("Item")[rng.randi_range(0, get_tree().get_node_count_in_group("Item") - 1)]
+							set_target_position(nn_current_item.global_position)
+							special_wandering_timer = 5.0
+							nn_iterator = 0
+						else:
+							wandering_system = WanderingSystem.GENERIC_WANDER
+					elif idle:
+						var addition_arg: Array = []
+						for raycast in $NNRay.get_children():
+							if raycast.get_collision_point().distance_squared_to(nn_current_item.global_position) > 0.5:
+								addition_arg = [0.0]
+							else:
+								addition_arg = [1.0]
+								break
+						var prediction = nn.get_prediction_from_raycasts(addition_arg)
+						if prediction[0] > 0.5 && $RayCastLow.get_collider() is not Pickable:
+							$RayCastLow.look_at(nn_current_item.global_position)
+							if !get_tree().get_nodes_in_group("ImportantItem").has(nn_current_item):
+								$UI/Inventory/Inventory.add_item(nn_current_item.item_id)
+								nn_current_item.queue_free()
+							nn_iterator = 3
+						else:
+							nn_iterator += 1
+						special_wandering_timer = 1.0
+						
+				elif !optimizator_paused && idle:
+					special_wandering_timer -= delta
+			else:
+				wandering_system = WanderingSystem.GENERIC_WANDER
 
 func on_map_updated(map: RID):
 	wandering_ready = true
