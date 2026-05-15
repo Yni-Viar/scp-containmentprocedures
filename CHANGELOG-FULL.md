@@ -4,8 +4,8 @@ This list contains all features, added in the game, or will be added in upcoming
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ## v8.0.0 ("Expansion update part 4", W.I.P)
-### Self-learning NPCs (probably)
-- [ ] Self-learning NPCs (may be cancelled)
+### Self-learning NPCs
+- [x] Self-learning NPCs (currently it affect only picking items)
 
 ### Storage Sub-zone
 - [ ] Storage sub-zone
