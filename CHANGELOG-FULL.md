@@ -33,6 +33,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
 - [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
 - [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
+- [x] \[Debug console\] Fixed spawn_npc and add_item commands accepting incorrect values ~~(and introduce new easter egg)~~
 
 ## v7.0.7 (2026.04.26)
 

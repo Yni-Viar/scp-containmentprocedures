@@ -20,7 +20,7 @@ const SECONDARY_STATE_ALIAS: Dictionary[SecondaryState, String] = {
 @export var resistance_scp178: bool = false
 @export var resistance_scp686: bool = false
 @export var torso_node_path: NodePath
-@export var current_item: int
+@export var current_item: int = 0
 
 var scp_067_affected: bool = false
 

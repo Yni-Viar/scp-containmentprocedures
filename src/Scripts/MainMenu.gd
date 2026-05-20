@@ -40,7 +40,8 @@ func _on_credits_pressed() -> void:
 func play():
 	Settings.loader("res://Scenes/Game.tscn", {
 		"map_seed": hash($GameSettings/Seed.text) if !$GameSettings/Seed.text.is_empty() else -1,
-		"time_limited": $GameSettings/TimeLimited.button_pressed
+		"time_limited": $GameSettings/TimeLimited.button_pressed,
+		"map_seed_name": $GameSettings/Seed.text if !$GameSettings/Seed.text.is_empty() else "random"
 	})
 	
 	#$FakeLoadingScreen.show()

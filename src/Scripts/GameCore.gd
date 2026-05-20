@@ -28,6 +28,8 @@ var mtf_cooldown: float = 35.0:
 			$UI/HBoxContainer/CallMtfButton.disabled = false
 ## Protagonist tracker
 var protagonist: MovableNpc
+## Map seed public name
+var map_seed_name: String
 
 
 var showable_res: String = ""
