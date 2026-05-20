@@ -38,3 +38,7 @@ func _physics_process(delta):
 			$Sound.playing = !$Sound.playing
 			counter = 0
 			transition = false
+
+
+func _on_visibility_changed() -> void:
+	enabled = visible

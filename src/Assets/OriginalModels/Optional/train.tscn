@@ -5533,3 +5533,5 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.042259235, 0.48207638, -15
 visibility_range_end = 128.0
 mesh = SubResource("ArrayMesh_sirc4")
 skeleton = NodePath("")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
