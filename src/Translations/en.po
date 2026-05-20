@@ -166,12 +166,7 @@ msgid "LOUNGE"
 msgstr "Lounge"
 
 msgid "EZ_RZ_SIGN"
-msgstr ""
-"←\n"
-"Entrance Subzone\n"
-"Gate A\n"
-"Personal rooms\n"
-"Lounge"
+msgstr "↓ Gate A"
 
 msgid "SUBL_938_SIGN"
 msgstr ""
@@ -408,11 +403,12 @@ msgstr ""
 
 msgid "GODOT_RD_STATE"
 msgstr ""
-"This game only supports OpenGL (Compatibility) renderer,\n"
-"because other renderers in Godot have lightmap limitation, leading to glitches while playing this game\n"
-"(see https://github.com/godotengine/godot-proposals/issues/12577 for more information)\n"
-"If you launched this game without additional commands and see this message,\n"
-"please, report a bug to https://github.com/Yni-Viar/scp-continued-procedures/issues"
+"No lighting is support on all renderers\n"
+"Lightmap lighting is supported only in OpenGL Compatibility renderer\n"
+"(because of Godot limitation, see\n"
+"https://github.com/godotengine/godot-proposals/issues/12577 for more information)\n"
+"Real-time lighting is supported in Forward+ renderer and only on PCs, because\n"
+"of performance and rendering reasons."
 
 msgid "ATTENTION"
 msgstr "Attention!"
@@ -441,3 +437,30 @@ msgstr "Choose amount of Yens to pay SCP-261."
 
 msgid "SCP261_EAT"
 msgstr "Would you eat {SCP261_SUBJECT}?"
+
+msgid "GAMEPLAY"
+msgstr "Gameplay"
+
+msgid "NEURAL_AI"
+msgstr "Enable neural AI for NPC (used to pick items)"
+
+msgid "LIGHTING_TYPE"
+msgstr "Lighting type"
+
+msgid "LIGHTING_NONE"
+msgstr "No lighting (fastest)"
+
+msgid "LIGHTING_LIGHTMAP"
+msgstr "Lightmap lighting (moderate)"
+
+msgid "LIGHTING_REALTIME"
+msgstr "Real-time lighting (slowest)"
+
+msgid "RENDERER_SELECT"
+msgstr "Renderer type"
+
+msgid "TONEMAPPER_SELECT"
+msgstr "Tonemapper"
+
+#~ msgid "RENDERER_BACKEND_SELECT"
+#~ msgstr "Select your rendering backend"

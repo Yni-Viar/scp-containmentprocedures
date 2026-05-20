@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://81u64yfs2trj"]
+[gd_scene load_steps=22 format=4 uid="uid://81u64yfs2trj"]
 
+[ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="1_t03an"]
 [ext_resource type="Texture2D" uid="uid://dy8wd5af816w8" path="res://Assets/OriginalModels/StreetLamp/StreetLamp_Pillar_base.png" id="1_uwnd8"]
 [ext_resource type="Texture2D" uid="uid://d2rra5xk7i5l5" path="res://Assets/OriginalModels/StreetLamp/StreetLamp_Pillar_metal-StreetLamp_Pillar_rough.png" id="2_t03an"]
 [ext_resource type="Texture2D" uid="uid://cd4g810c56l57" path="res://Assets/OriginalModels/StreetLamp/StreetLamp_Pillar_nor.png" id="3_xn3og"]
@@ -154,6 +155,7 @@ height = 7.6569824
 radius = 0.30273438
 
 [node name="StreetLamp" type="Node3D"]
+script = ExtResource("1_t03an")
 
 [node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, 0.6234379, 0)

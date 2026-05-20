@@ -7,9 +7,6 @@ func _enter_tree() -> void:
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
 	
-	if RenderingServer.get_current_rendering_method() != "gl_compatibility":
-		Settings.dialogue_window("GODOT_RD_STATE", "ATTENTION")
-	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():
 		# Easy bit-field checking

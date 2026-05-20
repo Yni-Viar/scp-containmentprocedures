@@ -46,11 +46,12 @@ func _ready():
 		if OS.get_name() == "Web":
 			get_node(armature_name + "/Skeleton3D/PhysicalBoneSimulator3D").physical_bones_stop_simulation()
 			return
-		var timer: Timer = Timer.new()
-		add_child(timer)
-		timer.timeout.connect(check_distance)
-		timer.wait_time = 2.0
-		timer.start()
+		else:
+			var timer: Timer = Timer.new()
+			add_child(timer)
+			timer.timeout.connect(check_distance)
+			timer.wait_time = 2.0
+			timer.start()
 
 func set_state(s):
 	if get_node("AnimationPlayer").current_animation != s:

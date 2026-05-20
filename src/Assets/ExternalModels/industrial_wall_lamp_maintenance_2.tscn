@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://div1sqhrlu8et"]
+[gd_scene load_steps=13 format=4 uid="uid://div1sqhrlu8et"]
 
+[ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="1_80mfj"]
 [ext_resource type="Texture2D" uid="uid://d20f2cnlootqj" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_diff_2k.jpg" id="1_hn02r"]
 [ext_resource type="Texture2D" uid="uid://clamhl4keqtms" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_emissive_2k.jpg" id="2_80mfj"]
 [ext_resource type="Texture2D" uid="uid://dpyr1p84higf0" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_arm_2k.jpg" id="3_hdbd5"]
@@ -95,6 +96,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6n2r2")
 
 [node name="industrial_wall_lamp" type="Node3D"]
+script = ExtResource("1_80mfj")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

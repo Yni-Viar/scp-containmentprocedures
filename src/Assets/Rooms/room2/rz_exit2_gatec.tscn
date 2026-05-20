@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpyr1p84higf0" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_arm_2k.jpg" id="4_sjxj1"]
 [ext_resource type="Texture2D" uid="uid://dm3meiue50u10" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_nor_gl_2k.jpg" id="5_67355"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="5_a7c55"]
+[ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="5_vh0jy"]
 [ext_resource type="Texture2D" uid="uid://brxtgl2ekhirf" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_diff_2k.jpg" id="6_0oerq"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="6_f028w"]
 [ext_resource type="Texture2D" uid="uid://dtltp2a8q46ak" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_arm_2k.jpg" id="7_a7c55"]
@@ -25,40 +26,6 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_shvc4"]
 vertices = PackedVector3Array(-4.118932, -0.8415327, 5.9914074, -4.868932, -0.8415327, 6.2414074, -4.868932, -0.8415327, 8.241407, -3.3689318, -0.8415327, 8.741407, 3.8810682, -0.8415327, 9.491407, 3.6310682, -0.8415327, -9.758593, -4.118932, -0.8415327, -9.508593, -3.1189318, -0.8415327, 9.741407, -5.868932, -0.8415327, 5.9914074, -9.118932, -0.8415327, 8.241407, -5.868932, -9.591533, -5.7585926, -4.868932, -9.591533, -6.0085926, -4.868932, -9.591533, -8.258593, -9.118932, -9.591533, -8.258593, -5.868932, -1.5915327, 4.5226574, -5.868932, -8.841533, -4.2898426, -9.118932, -9.591533, -5.5085926, -9.118932, -0.8415327, 5.4914074, -6.873907, -6.0915327, -1.2616177, -3.8689318, -9.591533, -5.7585926, 1.6310682, -9.591533, -8.258593, -3.8689318, -9.591533, 2.4914074, 1.6310682, -9.591533, 2.4914074, 2.1310682, -9.591533, 8.741407, 2.1310682, -9.591533, 4.7414074, 1.6310682, -9.591533, 4.4914074, -3.8689318, -9.591533, 8.741407, 8.881068, -9.591533, 8.741407, 8.881068, -9.591533, 4.7414074)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 6), PackedInt32Array(4, 6, 5), PackedInt32Array(4, 7, 3), PackedInt32Array(1, 2, 8), PackedInt32Array(8, 2, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(9, 17, 8), PackedInt32Array(8, 17, 14), PackedInt32Array(14, 18, 15), PackedInt32Array(15, 16, 10), PackedInt32Array(10, 16, 13), PackedInt32Array(16, 18, 17), PackedInt32Array(17, 18, 14), PackedInt32Array(18, 16, 15), PackedInt32Array(11, 12, 19), PackedInt32Array(19, 12, 20), PackedInt32Array(21, 19, 22), PackedInt32Array(22, 19, 20), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 26), PackedInt32Array(25, 26, 21), PackedInt32Array(21, 22, 25), PackedInt32Array(28, 27, 24), PackedInt32Array(24, 27, 23)]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_8i1vp"]
-_surfaces = [{
-"aabb": AABB(-9.868932, -10.952195, -10.258593, 19.397345, 16.082424, 20.494232),
-"format": 34896613377,
-"index_count": 186,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAwAFAAQAAgAGAAAAAgAHAAYABwAIAAYABwAJAAgACgAIAAkACgAJAAsACwAMAAoACwANAAwADQAOAAwADQAPAA4AEAAOAA8AEAAPABEAEQASABAAEQATABIAEwAUABIAEwAVABQAFgAUABUAFgAVABcAFwAYABYAFwAZABgAGgAYABkAGgAbABgAGAAbABwAGwAdABwAGwAeAB0AHwAeABsAGgAfABsAHwAgAB4AIQAgAB8AHwAaACEAIQAiACAAIQAaACMAGgAkACMAGgAlACQAJgAkACUAJgAlACcAKAAmACcAKAAnACkAKgAoACkAKgApACsALAAqACsALAArAC0ALgAsAC0ALgAtAC8AMAAuAC8AMAAvADEAMgAwADEAMgAxADMANAAyADMANAAzADUANQA2ADQANQA3ADYAOAA5ADoAOAA7ADkAOgA8ADgAOgA9ADwAPQA+ADwAPQA/AD4A"),
-"name": "Walls",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 64,
-"vertex_data": PackedByteArray("GESBjGftAAAsRP//+f8AABhE6v9n7QAALERtjPn/AABoTf////8AAGhNbYz//wAAPjyBjG7tAAA+POr/bu0AAPMAgYyh7QAA8wDq/6HtAADfAJWMhMcAAN8A1v+ExwAAKQAAAO07AAApAEFz7TsAAAAAAABHEQAAAABBc0cRAABLOwAAExEAAEs7QXMTEQAAUkcAAAwRAABSR0FzDBEAANCeAADZEAAA0J5Bc9kQAAD5ngAAgDsAAPmeQXOAOwAASJ8AAL20AABIn0FzvbQAANX/QXOFtAAAbcwqM6O0AABtzAgAo7QAAG3MCABjswAAbcwqM2OzAADS5iozlLQAANLmKjNUswAA0uYIAJS0AADS5ggAVLMAANX/AACFtAAA/v8AAAr1AAD//0FzCvUAAHKfAABC9QAAcp9Bc0L1AAD0RwAAdfUAAPRHQXN19QAAykcAAPC0AADKR0Fz8LQAAHtHAACzOwAAe0dBc7M7AAB0OwAAujsAAHQ7QXO6OwAAKzyVjFHHAAArPNb/UccAAAVElYxKxwAABUTW/0rHAADxQ6mMZAAAAPFDwv9kAAAALU2pjCIAAAAtTcL/IgAAAI+8c4wAAAAA6bb+/xEAAACUvP7/AAAAAOS2c4wRAAAAjLxtjND/AACMvP//0P8AAOe2bYzS/wAA57b//9L/AAA=")
-}, {
-"aabb": AABB(-9.868932, -3.7114494, -10.258593, 19.397345, 8.841679, 20.494232),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAwABAAAAAQAEAAIABQABAAMAAQAFAAYABgAFAAcABgAHAAgAAQAGAAkAAQAJAAoAAQALAAQACwAMAAQACwANAAwACwAOAA0ACwAPAA4ADwAQAA4ADwARABAADwASABEADwATABIAEwAUABIAEwAVABQAEwAWABUAEwAXABYAFwAYABYAFwAZABgAGAAaABYAGAAbABoA"),
-"name": "Ceiling",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 28,
-"vertex_data": PackedByteArray("LET+//n/AAAFRLX/SscAABhE2v9n7QAAaE3/////AAA+PNr/bu0AAOe2///S/wAA6bb9/xEAAACMvP//0P8AAJS8/f8AAAAALU2R/yIAAADxQ5H/ZAAAACs8tf9RxwAA8wDa/6HtAADfALX/hMcAACkAAADtOwAAdDsAALo7AAAAAAAARxEAAEs7AAATEQAAUkcAAAwRAAB7RwAAszsAANCeAADZEAAA+Z4AAIA7AABInwAAvbQAAMpHAADwtAAAcp8AAEL1AAD0RwAAdfUAANX/AACFtAAA//8AAAr1AAA=")
-}, {
-"aabb": AABB(-9.868932, -10.952195, -10.258593, 19.397343, 8.83675, 20.494232),
-"format": 34896613377,
-"index_count": 90,
-"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMABAAFAAMABAAGAAUABQAHAAMABQAIAAcACAAJAAcACAAKAAkACQALAAcACQAMAAsADAANAAsADAAOAA0ADQAPAAsADQAQAA8AEAARAA8AEAASABEAEAATABIAEAAUABMAFQAUABAAFQAWABQAFQAXABYAFQAYABcAAQAZABoAAAAZAAEAGQAAABsAGwAAABwAGwAcAB0AGQAbAB4AGQAeAB8A"),
-"name": "Floor",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 32,
-"vertex_data": PackedByteArray("BUTa/0rHAAAsRJH/+f8AABhEtf9n7QAAKzza/1HHAAA+PLX/bu0AAN8A2v+ExwAA8wC1/6HtAAB0OwAAujsAACkAAADtOwAASzsAABMRAAAAAAAARxEAAHtHAACzOwAAUkcAAAwRAAD5ngAAgDsAANCeAADZEAAAykcAAPC0AABInwAAvbQAAPRHAAB19QAAcp8AAEL1AAD//wAACvUAANX/AACFtAAAbcwPAKO0AADS5g8AlLQAANLmDwBUswAAbcwPAGOzAADntpH/0v8AAGhNkf///wAA5Lac/xEAAADxQ///ZAAAAC1N//8iAAAAj7yc/wAAAACMvJH/0P8AAA==")
-}]
-blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f028w"]
 resource_name = "rz_exit2_gatec_Cube_001"
@@ -98,7 +65,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("5+CWwDC1B8ByRLZAWIKWwHhWCMB+vSNB1rKWwPAGCMAM9AtBVFt/QHhWCMCKiyNBVh6AwHhWCMAuxSNByEx/QCg+CMBrDSTBZhGXwHRjB8AboyPBZq2AwHRjB8Cl9yPBpGSNQCg+CMAyIyTBXl2NQHhWCMD6iCNBfrypwPAGCMAE/QtBytgcwTC1B8AK2bZAj+qpwDC1B8BgVrZAi8AcwfAGCMBYPgxB1rKWwPAGCMAM9AtB5+CWwDC1B8ByRLZAcLUdwTE8L8GKwa7AsgmswDE8L8FYRA7BSKarwDE8L8ExRK/AJecdwTE8L8G8AQ7BnXyOwDE8L8EgVq/AB+COwDE8L8FPTQ7B2E8LQDE8L8HH2K/ACIkKQDE8L8Gijg7BEL2NwDE8L8EGQYdA8M4MQDE8L8FgvoZAOleNwDE8L8FIRRZBnJoNQDE8L8H2AxZBX3QYQTE8L8E6vBVBc0EYQTE8L8HqLoZAytgcwTC1B8AK2bZASKarwDE8L8ExRK/Aj+qpwDC1B8BgVrZAcLUdwTE8L8GKwa7AyN2zQOgzL8HEe4ZAc0EYQTE8L8HqLoZA8M4MQDE8L8FgvoZAht3zQOgzL8FYVYZAyN2zQOgzL8HEe4ZAht3zQOgzL8GOIYNAht3zQOgzL8FYVYZAyN2zQOgzL8H6R4NAJIDM/9r/7L8kgMz/2v/svySAzP/a/+u/JIDM/9r/7L8kgMz/2v/svySAzP/a/+y/JIDM/9r/7L8kgMz/2v/svySAzP/a/+y/JIDM/9r/7L8AgMf//v/+v/9/yP/+//+//3/I//7//7//f8j//v//vwCAx//+//6//3/I//7//7//f/3//v//v/9//f/+//+/AID9//7//r8AgP3//v/+vwCA/f/+//6//3/9//7//7//f/3//v//v/9//f/+//+//3/9//7//7//f/3//v//v/9//f/+//+/AID9//7//r8AgP3//v/+v/9//f/+//+/ZEfN/5//LcBkR83/n/8twGRHzf+f/y3AZEfN/5//LcBMgAKA/v8lwEyAAoD//yXATIACgP7/JcBMgAKA///Yv/9//f/+//+//3/9//7//7//f/3//v//v/9//f/+//+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_8i1vp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64xcy"]
 resource_name = "industrial_wall_lamp"
@@ -229,6 +195,7 @@ skeleton = NodePath("")
 
 [node name="industrial_wall_lamp3" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7367163, 4.1110063, 4.5850825)
+script = ExtResource("5_vh0jy")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="NavigationRegion3D/Props/industrial_wall_lamp3"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -246,6 +213,7 @@ distance_fade_begin = 24.0
 
 [node name="industrial_wall_lamp7" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.07053, -5.5707655, 9.442701)
+script = ExtResource("5_vh0jy")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="NavigationRegion3D/Props/industrial_wall_lamp7"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -263,6 +231,7 @@ distance_fade_begin = 24.0
 
 [node name="industrial_wall_lamp5" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.825149, 0.36493862, 0.92535925)
+script = ExtResource("5_vh0jy")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="NavigationRegion3D/Props/industrial_wall_lamp5"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -280,6 +249,7 @@ distance_fade_begin = 24.0
 
 [node name="industrial_wall_lamp6" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.825149, -5.445199, -7.157577)
+script = ExtResource("5_vh0jy")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="NavigationRegion3D/Props/industrial_wall_lamp6"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -297,6 +267,7 @@ distance_fade_begin = 24.0
 
 [node name="industrial_wall_lamp4" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7367163, 4.1110063, 9.526293)
+script = ExtResource("5_vh0jy")
 
 [node name="industrial_wall_lamp" type="MeshInstance3D" parent="NavigationRegion3D/Props/industrial_wall_lamp4"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -342,7 +313,7 @@ origin_offset = Vector3(0, 5.045, 0)
 box_projection = true
 interior = true
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
+[node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0

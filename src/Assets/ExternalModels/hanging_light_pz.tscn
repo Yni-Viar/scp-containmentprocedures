@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnsd7dsduynvo"]
+[gd_scene load_steps=9 format=4 uid="uid://bnsd7dsduynvo"]
 
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="1_6t8mk"]
+[ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="1_603ui"]
 [ext_resource type="Texture2D" uid="uid://blt4sp0nvls3t" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_Emissive.png" id="2_603ui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mnq1"]
@@ -83,6 +84,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0qi7h")
 
 [node name="Light2" type="Node3D"]
+script = ExtResource("1_603ui")
 
 [node name="Cube_176" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

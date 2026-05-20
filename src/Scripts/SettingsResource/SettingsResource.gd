@@ -5,6 +5,10 @@ class_name SettingsResource
 ## KeyBoard, MouseButton, JoyPad
 enum InputMethod {KB, MB, JP}
 
+enum Lighting {NONE, LIGHTMAP, REALTIME}
+
+enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
+
 ## Music
 @export var music: float = 1.0
 ## Sound
@@ -40,3 +44,7 @@ enum InputMethod {KB, MB, JP}
 @export var tonemapper: Environment.ToneMapper = Environment.TONE_MAPPER_LINEAR
 ## AI enabled
 @export var ai_enabled: bool = false
+## Lighting
+@export var lighting: Lighting = Lighting.LIGHTMAP
+## Rendering
+@export var renderer: Renderer = Renderer.OPENGL

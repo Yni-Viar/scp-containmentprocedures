@@ -75,6 +75,13 @@ func _ready() -> void:
 			else:
 				node.show()
 	
+	if Settings.setting_res.lighting != SettingsResource.Lighting.LIGHTMAP:
+		if Settings.setting_res.lighting == SettingsResource.Lighting.NONE:
+			$WorldEnvironment.environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+			$WorldEnvironment.environment.ambient_light_color = Color(0.5, 0.5, 0.5)
+		for node in get_tree().get_nodes_in_group("Lightmap"):
+			if node is LightmapGI:
+				node.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

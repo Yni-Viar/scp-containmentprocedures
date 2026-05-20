@@ -64,6 +64,7 @@ func _init():
 			features[req] = true
 
 func _ready() -> void:
+	change_renderer()
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
 	season_checker()
 	GDsh.add_command("beta_mode_features", beta_mode_features, "List current beta features.")
@@ -234,3 +235,20 @@ func dialogue_window(text: String, title: String = "", fixed_size: bool = true, 
 			button.dlg_host = window
 			hbox_container.add_child(button)
 	add_child(window)
+
+## Works ONLY on PCs
+func change_renderer():
+	if OS.get_name() != "Web" && OS.get_name() != "Android":# && !Engine.is_editor_hint():
+		match Settings.setting_res.renderer:
+			0:
+				if RenderingServer.get_current_rendering_method() != "gl_compatibility":
+					OS.set_restart_on_exit(true, ["--rendering-method", "gl_compatibility"])
+					get_tree().quit()
+			1:
+				if RenderingServer.get_current_rendering_method() != "mobile":
+					OS.set_restart_on_exit(true, ["--rendering-method", "mobile"])
+					get_tree().quit()
+			2:
+				if RenderingServer.get_current_rendering_method() != "forward_plus":
+					OS.set_restart_on_exit(true, ["--rendering-method", "forward_plus"])
+					get_tree().quit()

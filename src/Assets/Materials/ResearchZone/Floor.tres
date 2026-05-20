@@ -5,6 +5,5 @@
 
 [resource]
 resource_name = "Floor"
-shading_mode = 2
 albedo_texture = ExtResource("1_jxwjq")
 roughness_texture = ExtResource("3_j1bss")

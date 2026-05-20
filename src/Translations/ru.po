@@ -171,12 +171,7 @@ msgid "LOUNGE"
 msgstr "Комната отдыха"
 
 msgid "EZ_RZ_SIGN"
-msgstr ""
-"←\n"
-"Входная подзона\n"
-"Выход А\n"
-"Личные комнаты\n"
-"Комната отдыха"
+msgstr "↓ Выход А"
 
 msgid "SUBL_938_SIGN"
 msgstr ""
@@ -439,13 +434,13 @@ msgstr ""
 
 msgid "GODOT_RD_STATE"
 msgstr ""
-"Эта игра поддерживает только рендер с помощью OpenGL / Compatibility,\n"
-"поскольку остальные рендеры имеют ограничение на количество световых карт,\n"
-"приводя к глюкам во время игры.\n"
-"(больше деталей здесь https://github.com/godotengine/godot-proposals/issues/12577 (НА АНГЛИЙСКОМ!!!))\n"
-"Если Вы запустили игру без дополнительных команд и видите это сообщение,\n"
-"пожалуйста, отправьте баг-репорт НА АНГЛИЙСКОМ в\n"
-" https://github.com/Yni-Viar/scp-continued-procedures/issues"
+"Выключенное освещение поддерживается на всех отрисовщиках.\n"
+"Световые карты поддерживаются только в отрисовщике OpenGL\n"
+"(из-за ограничения Godot, больше деталей по этой ссылке (НА АНГЛИЙСКОМ!!!)\n"
+"https://github.com/godotengine/godot-proposals/issues/12577\n"
+"Реальное освещение поддерживается только в отрисовщике Forward+\n"
+"и только на ПК из-за проблем с производительностью или отсутствием\n"
+"данного отрисовщика."
 
 msgid "ATTENTION"
 msgstr "Внимание!"
@@ -474,3 +469,29 @@ msgstr "Выберите количество Йенов для оплаты SCP
 
 msgid "SCP261_EAT"
 msgstr "Съели бы Вы {SCP261_SUBJECT}?"
+
+msgid "GAMEPLAY"
+msgstr "Геймплей"
+
+msgid "NEURAL_AI"
+msgstr ""
+"Включить нейронный ИИ для NPC\n"
+"(для подбирания предметов)"
+
+msgid "LIGHTING_TYPE"
+msgstr "Тип освещения"
+
+msgid "LIGHTING_NONE"
+msgstr "Выключить освещение (наибыстрейший)"
+
+msgid "LIGHTING_LIGHTMAP"
+msgstr "Световая карта (средне)"
+
+msgid "LIGHTING_REALTIME"
+msgstr "Реальное освещение (самый медленный)"
+
+msgid "RENDERER_SELECT"
+msgstr "Выбор отрисовщика"
+
+msgid "TONEMAPPER_SELECT"
+msgstr "Тонирование"

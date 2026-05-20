@@ -347,3 +347,27 @@ msgstr ""
 
 msgid "SCP261_EAT"
 msgstr ""
+
+msgid "GAMEPLAY"
+msgstr ""
+
+msgid "NEURAL_AI"
+msgstr ""
+
+msgid "LIGHTING_TYPE"
+msgstr ""
+
+msgid "LIGHTING_NONE"
+msgstr ""
+
+msgid "LIGHTING_LIGHTMAP"
+msgstr ""
+
+msgid "LIGHTING_REALTIME"
+msgstr ""
+
+msgid "RENDERER_SELECT"
+msgstr ""
+
+msgid "TONEMAPPER_SELECT"
+msgstr ""

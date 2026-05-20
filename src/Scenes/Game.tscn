@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://6l8r5fy0ymqt"]
+[gd_scene load_steps=50 format=3 uid="uid://6l8r5fy0ymqt"]
 
 [ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_7lihs"]
 [ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
@@ -120,6 +120,8 @@ color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyesh"]
 texture = ExtResource("23_i4lct")
+
+[sub_resource type="BoxMesh" id="BoxMesh_umnjm"]
 
 [node name="Game" type="Node3D"]
 process_mode = 1
@@ -772,6 +774,9 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 100.0
 show_percentage = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_umnjm")
 
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
 [connection signal="task_done" from="FoundationTask" to="UI" method="_on_foundation_task_task_done"]

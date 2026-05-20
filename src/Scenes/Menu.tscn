@@ -270,6 +270,18 @@ layout_mode = 2
 text = "Camera Gimbal by kidscancode 
 License: MIT License."
 
+[node name="FoldableContainer16" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+layout_mode = 2
+folded = true
+title = "Neural Network AI"
+
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer16"]
+visible = false
+layout_mode = 2
+text = "Copyright (c) 2022 Ryash
+Uses portions of code by Greaby
+License: MIT License."
+
 [node name="FoldableContainer3" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
 layout_mode = 2
 folded = true

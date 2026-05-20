@@ -8,7 +8,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Self-learning NPCs (currently it affect only picking items)
 
 ### Storage Sub-zone
-- [ ] Storage sub-zone
+- [x] Storage sub-zone
 
 ### New SCPs
 - [x] SCP-131
@@ -17,7 +17,9 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] SCP-2471
 
 ### Rendering overhaul
-- [x] Restored SSAO (use fallback in ~~Mobile and~~ Compatibility in Godot 4.5, else use native shader)
+- [x] Restored SSAO (use fallback in Mobile and Compatibility (in Godot 4.5), else use native shader)
+- [x] Added experimental support for RenderingDevice renderers (PC only).
+- [x] Lighting overhaul - 3 lighting modes are available - disabled lights (fastest performance, but bad quality), lightmap mode (from older versions, moderate performance and available only in OpenGL renderer) and realtime (only Forward+, worst performance)
 - [x] Overlay shaders started to use alpha channel (Performance will be worse, but it is necessary to support overlapping)
 
 ### Windowed dialogues
@@ -29,7 +31,6 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] \[Hard mode\] Increased hunger and thirst meter drain
 - [x] \[Technical\] Implemented combined health type for humans - you can heal, feed and drink by specifying -1 health_type.
 - [x] \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
-- [x] Show warning on start, if the game is not using OpenGL/Compatibility backend. (uses new windowed dialogues feature)
 - [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
 - [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
 

@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="4_26vda"]
 [ext_resource type="PackedScene" uid="uid://53puk7j21cif" path="res://Assets/OriginalModels/scp_162.tscn" id="5_tbpx5"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="6_5wsgw"]
+[ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="7_b8xcb"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="7_q2nps"]
 [ext_resource type="Texture2D" uid="uid://blt4sp0nvls3t" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_Emissive.png" id="8_yv4jn"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="14_dra1o"]
@@ -19,41 +20,6 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_6571d"]
 vertices = PackedVector3Array(-3.9339895, -0.7695668, -5.53589, -2.9339895, -0.7695668, -5.53589, -2.9339895, -0.7695668, -6.28589, -7.9339895, -0.7695668, -6.28589, -4.9339895, -0.7695668, 4.21411, -4.9339895, -0.7695668, -4.28589, -7.9339895, -0.7695668, 9.714109, -3.9339895, -0.7695668, 9.714109, -3.6839895, -0.7695668, 5.71411, 8.31601, -0.7695668, -1.0358901, 9.31601, -0.7695668, -1.2858901, 9.31601, -0.7695668, -6.28589, 6.3160105, -0.7695668, -4.78589, 6.3160105, -0.7695668, 4.46411, 8.31601, -0.7695668, 4.46411, 5.5660105, -0.7695668, -5.53589, -3.4339895, -0.7695668, -0.2858901, -1.4339895, -0.7695668, -0.2858901, -1.4339895, -0.7695668, -1.2858901, -3.1839895, -0.7695668, -4.03589, -0.6839895, -0.7695668, -2.28589, 0.5660105, -0.7695668, -2.78589, 2.3160105, -0.7695668, -2.53589, 3.0660105, -0.7695668, -0.2858901, 4.8160105, -0.7695668, -0.035890102, 4.8160105, -0.7695668, -4.03589, 0.31601048, -0.5195668, -0.035890102, 1.0660105, -0.7695668, -0.035890102, 0.8160105, -0.7695668, -0.7858901, 0.31601048, -0.7695668, -0.7858901, 2.5660105, -0.7695668, -0.035890102, 2.5660105, -0.7695668, 1.2141099, -1.4339895, -0.7695668, 0.9641099, -3.1839895, -0.7695668, 3.71411, 0.8160105, -0.7695668, 2.21411, 4.8160105, -0.7695668, 3.71411, 1.5660105, -0.7695668, 2.21411, 4.8160105, -0.7695668, 5.96411, 8.31601, -0.7695668, 9.714109)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 3), PackedInt32Array(3, 4, 6), PackedInt32Array(3, 0, 5), PackedInt32Array(8, 7, 4), PackedInt32Array(4, 7, 6), PackedInt32Array(9, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(14, 13, 9), PackedInt32Array(9, 13, 12), PackedInt32Array(1, 2, 15), PackedInt32Array(15, 2, 11), PackedInt32Array(11, 12, 15), PackedInt32Array(18, 17, 16), PackedInt32Array(18, 16, 20), PackedInt32Array(20, 16, 19), PackedInt32Array(21, 20, 19), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(22, 21, 25), PackedInt32Array(25, 21, 19), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(30, 23, 31), PackedInt32Array(31, 23, 24), PackedInt32Array(17, 32, 16), PackedInt32Array(16, 32, 33), PackedInt32Array(36, 35, 34), PackedInt32Array(34, 35, 33), PackedInt32Array(33, 32, 34), PackedInt32Array(31, 24, 36), PackedInt32Array(36, 24, 35), PackedInt32Array(13, 14, 37), PackedInt32Array(37, 14, 38), PackedInt32Array(8, 37, 7), PackedInt32Array(7, 37, 38)]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_t0yle"]
-_surfaces = [{
-"aabb": AABB(-8.66106, -2.13023, -7.02231, 18.6685, 9.26073, 17.2633),
-"format": 34896613377,
-"index_count": 66,
-"index_data": PackedByteArray("AAAOAAIADgAFAAIADgAPAAUADQAFAA8ADQAPAAwADgAHAA8ADwAHAAgADwAIAAwADgABAAcADAAIAAsADAALAAkACQALAAQAEAABAA4AAAAQAA4AEAADAAEAAAARABAAEQADABAAEQAEAAMACQAEABEAAAAGABEACQARAAYACQAGAAoA"),
-"lods": [0.00708383, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAQAFAAIAAAAGAAQAAQAHAAUABQAHAAgACQAEAAYACQAGAAoACQALAAQADAALAAkADAAIAAsABQAIAAwADQAFAAwA")],
-"name": "Walls",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 18,
-"vertex_data": PackedByteArray("AgBoADgAAADw////AAAAAPH/JAADAAAAAACU/zUAAAAHAP3/+/8AAP//AAC//wAACQAAAP//AAD8//3/vP8AAGOu/f+y/wAA3T+zyOr/AADdPwAA6v8AANs//f/n/wAAZq6zyLX/AABmrgAAtf8AAPP/tcgDAAAA//+zyL//AAACAEvIOAAAAAkAs8j+/wAA")
-}, {
-"aabb": AABB(-8.6603, -2.13023, -7.02147, 18.6678, 0.0147831, 17.2624),
-"format": 34896613377,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAwABAAAAAQADAAQAAQAEAAUA"),
-"name": "Floor",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 6,
-"vertex_data": PackedByteArray("//8AAL//AAAAAP//NQAAAPH/TFkAAAAAZa4AALX/AADbPwAA6v8AAAcAAAD//wAA")
-}, {
-"aabb": AABB(-8.66106, 7.11545, -7.02231, 18.6678, 0.0150576, 17.2624),
-"format": 34896613377,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAQAAAAMAAwAAAAQAAQADAAUA"),
-"name": "Ceiling",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 6,
-"vertex_data": PackedByteArray("Za5X+7X/AAAHAFf7//8AANs/V/vq/wAA8////wAAAAD//1f7v/8AAAAAAAA1AAAA")
-}]
-blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0rp3e"]
 resource_name = "cont1_162_Cube_001"
@@ -93,7 +59,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("6suBQNYq5ECshyNBh4sKwdYq5ECC1yNBmCWAwNYq5EDawCNBag0gQRQt5EDFtuDAahsgQdYq5EB2kiNBspMKwbqx40BnRODADIAXAPD/+T8MgBcA8P/5PwyAFwDw//k/DIAXAPD/+T8MgBcA8P/5PwyAFwDw//k/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_t0yle")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cq7tl"]
 resource_name = "Material"
@@ -271,6 +236,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.4465
 
 [node name="Light" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.430338, 4.979539, 6.1380315)
+script = ExtResource("7_b8xcb")
 
 [node name="Cube_176" type="MeshInstance3D" parent="NavigationRegion3D/Props/Light"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -293,6 +259,7 @@ spot_angle = 67.042114
 
 [node name="Light2" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9715805, 4.979539, 6.1380315)
+script = ExtResource("7_b8xcb")
 
 [node name="Cube_176" type="MeshInstance3D" parent="NavigationRegion3D/Props/Light2"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -315,6 +282,7 @@ spot_angle = 67.042114
 
 [node name="Light3" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.430338, 4.979539, -3.2337162)
+script = ExtResource("7_b8xcb")
 
 [node name="Cube_176" type="MeshInstance3D" parent="NavigationRegion3D/Props/Light3"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -337,6 +305,7 @@ spot_angle = 67.042114
 
 [node name="Light4" type="Node3D" parent="NavigationRegion3D/Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9715805, 4.979539, -3.2337162)
+script = ExtResource("7_b8xcb")
 
 [node name="Cube_176" type="MeshInstance3D" parent="NavigationRegion3D/Props/Light4"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -395,7 +364,7 @@ shape = SubResource("BoxShape3D_rvhuw")
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
+[node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
