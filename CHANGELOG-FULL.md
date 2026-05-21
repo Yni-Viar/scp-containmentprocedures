@@ -11,11 +11,12 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ### Storage Sub-zone
 - [x] Storage sub-zone
 
-### New SCPs
+### New (and reworked) SCPs
 - [x] SCP-131
 - [x] SCP-261 (uses new windowed dialogues feature)
 - [x] SCP-2028
 - [x] SCP-2471
+- [x] Reworked SCP-812 task + added sounds.
 
 ### Rendering overhaul
 - [x] Restored SSAO (use fallback in Mobile and Compatibility (in Godot 4.5), else use native shader)

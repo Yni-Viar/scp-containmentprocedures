@@ -208,7 +208,7 @@ msgid "TASK_173_CLEAN"
 msgstr "Order Class-D to clean SCP-173 chamber."
 
 msgid "TASK_812_RESEARCH"
-msgstr "Test water composition, taken from SCP-812."
+msgstr "Check SCP-812 is properly closed."
 
 msgid "TASK_347_CATCH"
 msgstr ""

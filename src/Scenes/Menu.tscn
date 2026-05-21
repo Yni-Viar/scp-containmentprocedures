@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
 [ext_resource type="PackedScene" uid="uid://b4tymm7axdu4r" path="res://UI/MainMenu/easter_egg.tscn" id="12_a8aa6"]
 [ext_resource type="Texture2D" uid="uid://b3huhsmj8qtv8" path="res://UI/MainMenu/StoryMode/MainStory.png" id="12_dsmso"]
-[ext_resource type="AudioStream" uid="uid://dyjre5u8dtce6" path="res://Sounds/Music/Original/SCP_MainMenu_WIP.ogg" id="12_qki4b"]
 [ext_resource type="Texture2D" uid="uid://m3f2djuc8pr0" path="res://UI/MainMenu/StoryMode/GenericStory.png" id="13_t8p2w"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
+[ext_resource type="AudioStream" uid="uid://6eaqqqa6f7pc" path="res://Sounds/Music/Original/facility_drone.ogg" id="16_dsmso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p2w"]
 content_margin_left = 2.0
@@ -679,7 +679,7 @@ grow_vertical = 0
 texture_normal = ExtResource("14_dsmso")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_qki4b")
+stream = ExtResource("16_dsmso")
 volume_db = -8.226
 autoplay = true
 bus = &"Music"

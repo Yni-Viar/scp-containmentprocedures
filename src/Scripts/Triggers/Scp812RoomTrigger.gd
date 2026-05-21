@@ -2,7 +2,7 @@ extends RoomPrefab
 ## SCP-812 trigger script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 
-var flowing = false
+@export var flowing = false
 
 @onready var waterflow: MeshInstance3D = $WaterFlow
 
@@ -23,12 +23,27 @@ func flow():
 	$Waterfall2.emitting = flowing
 	$Waterfall3.emitting = flowing
 	waterflow.visible = flowing
-	get_tree().root.get_node("Game/FoundationTask").do_task("task_812")
 
+func open_sound():
+	var sound: AudioStream = load("res://Sounds/Environment/Scp812/deleted_user_7146007__opening-old-garage-door.ogg")
+	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
+	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
+	$WaterfallSound.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($WaterfallSound, "volume_db", 0.0, 1.0)
+
+func close_sound():
+	var sound: AudioStream = load("res://Sounds/Environment/Scp812/deleted_user_7146007__locking-old-garage-door.ogg")
+	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
+	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($WaterfallSound, "volume_db", -20.0, 1.0)
+	tween.finished.connect(disable_waterfall_sound)
 
 func _on_scp_812_trigger_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
+			open_sound()
 			if !flowing:
 				$AnimationPlayer.play("open_waterflow")
 				flowing = true
@@ -37,6 +52,11 @@ func _on_scp_812_trigger_body_entered(body: Node3D) -> void:
 func _on_scp_812_trigger_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
+			close_sound()
 			if flowing:
 				$AnimationPlayer.play_backwards("open_waterflow")
+				get_tree().root.get_node("Game/FoundationTask").do_task("task_812")
 				flowing = false
+
+func disable_waterfall_sound():
+	$WaterfallSound.stop()

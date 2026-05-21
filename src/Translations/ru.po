@@ -215,7 +215,7 @@ msgstr ""
 "камеру содержания SCP-173."
 
 msgid "TASK_812_RESEARCH"
-msgstr "Проверьте состав воды из SCP-812."
+msgstr "Проверьте, правильно ли закрыт SCP-812."
 
 msgid "TASK_347_CATCH"
 msgstr ""
