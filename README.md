@@ -1,26 +1,6 @@
 # SCP: Continued Procedures
 
 [Available on GameJolt](https://gamejolt.com/games/scpcontpr/998566)
-
-## Requirements to build
-
-The project uses Godot 4.5.2 as a base.
-Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
-
-### Building regular version
-
-1. Project->Export
-2. Choose your platform (e.g. Windows/Linux/Android)
-3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`
-
-### Building lite version (for Web)
-**In Lite version, some components are missing:**
-There are no SCP-178 (may be reinstated in later update), *SCP: Unity* SCP-173 model, SCP-266 (spawnable), SCP-347 (spawnable), SCP-791, SCP-938 (spawnable), SCP-914.
-1. Project->Export
-2. Choose your platform (e.g. Web)
-3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`
-4. Navigate to Features tab and type in "Custom (comma separated)": `Lite`
-
 ## About
 
 Do your daily job at Site-[REDACTED].
@@ -81,13 +61,32 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 📃 - SCP object is implemented only for a task
 ❌ - SCP object is not compatible with SCP article
 
-## Why this name?
-- It is a recursive acronym - **S**CP: **C**ontinued **P**rocedures
-
 ## Note to Google Android users:
 Please, check [tutorial to install apps without Google verification (effective since Sep 2026)](https://android-developers.googleblog.com/2026/03/android-developer-verification.html), since I don't plan to give all data and pay a fee to Google.
 
 We **do not** distribute dangerous things in this app!
+
+## Requirements to build
+
+The project uses Godot 4.5.2 as a base.
+Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
+
+### Building regular version
+
+1. Project->Export
+2. Choose your platform (e.g. Windows/Linux/Android)
+3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`
+
+### Building lite version (for Web)
+**In Lite version, some components are missing:**
+There are no SCP-178 (may be reinstated in later update), *SCP: Unity* SCP-173 model, SCP-266 (spawnable), SCP-347 (spawnable), SCP-791, SCP-938 (spawnable), SCP-914.
+1. Project->Export
+2. Choose your platform (e.g. Web)
+3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`
+4. Navigate to Features tab and type in "Custom (comma separated)": `Lite`
+
+## Why this name?
+- It is a recursive acronym - **S**CP: **C**ontinued **P**rocedures
 
 ## License:
 The game is based on SCP Foundation community.
