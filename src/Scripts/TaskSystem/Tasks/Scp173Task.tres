@@ -7,5 +7,4 @@ script = ExtResource("1_4c56u")
 internal_name = "task_173"
 public_name = "TASK_173_CLEAN"
 required_groups = Array[String](["Scp173Spawn"])
-priority = 1
 metadata/_custom_type_script = "uid://2412583x8gql"

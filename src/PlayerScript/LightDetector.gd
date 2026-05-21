@@ -6,7 +6,7 @@ var time_to_update: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Settings.setting_res.reflection_probe || Settings.setting_res.lighting == SettingsResource.Lighting.NONE:
+	if Settings.setting_res.reflection_probe || Settings.setting_res.lighting != SettingsResource.Lighting.LIGHTMAP:
 		$LightDetector.current = false
 		set_process(false)
 	else:
@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 
 func pause_rendering():
 	var color: float = await light_detect()
-	get_tree().root.get_viewport().world_3d.environment.background_color = Color(color, color, color)
+	get_tree().root.get_viewport().world_3d.environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	get_tree().root.get_viewport().world_3d.environment.ambient_light_color = Color(color, color, color)
 	render_target_update_mode = SubViewport.UPDATE_DISABLED
 
 func light_detect() -> float:

@@ -6,6 +6,5 @@
 script = ExtResource("1_ldvwe")
 internal_name = "task_162"
 public_name = "TASK_162_TOUCH"
-required_group = &"cont1_162"
-required_groups = Array[String](["cont1_162"])
+required_groups = Array[String](["cont1_162", "DClassSpawn"])
 metadata/_custom_type_script = "uid://2412583x8gql"

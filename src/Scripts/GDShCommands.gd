@@ -31,7 +31,7 @@ func spawn_npc(args: Array):
 				get_parent().get_node("NPCs").add_child(npc)
 			elif int(args[0]) == -1:
 				if get_parent().map_seed_name.to_lower() == "hikkan":
-					# Hikkan / Hikkikomori (OMORI?! - I love OMORI fandom! - thank you, OMOCAT for this wonderful game!)
+					# Hikkan / Hikkiko
 					# What I have written? - Yni
 					var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
 					npc.puppet_class = load("res://PlayerScript/PlayerClassResources/EasterEgg/Hikkan.tres")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://bb74t7caf7imp"]
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://bb74t7caf7imp"]
 
 [ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_vekpt"]
 
@@ -6,6 +6,5 @@
 script = ExtResource("1_vekpt")
 internal_name = "task_522"
 public_name = "TASK_522_BODY"
-required_group = &"Scp522"
 required_groups = Array[String](["Scp522", "DClassSpawn"])
 metadata/_custom_type_script = "uid://2412583x8gql"

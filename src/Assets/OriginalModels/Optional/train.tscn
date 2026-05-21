@@ -4756,7 +4756,7 @@ shadow_mesh = SubResource("ArrayMesh_b0l0n")
 [node name="MetrowagonAlike_post_release_2" type="PathFollow3D"]
 script = ExtResource("1_tpf08")
 enable_interact = false
-speed = 0.05
+speed = 0.1
 
 [node name="Mesh" type="StaticBody3D" parent="."]
 

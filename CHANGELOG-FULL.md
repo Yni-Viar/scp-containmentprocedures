@@ -6,6 +6,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ## v8.0.0 ("Expansion update part 4", W.I.P)
 ### Self-learning NPCs
 - [x] Self-learning NPCs (currently it affect only picking items)
+  - Available for PC and Android, Web version is still experimental.
 
 ### Storage Sub-zone
 - [x] Storage sub-zone
@@ -26,6 +27,8 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Added dialogue support through windows
 
 ### Other changes
+- [x] Fixed (finally) legacy code, that allowed to complete SCP-162, SCP-173 and SCP-266 tasks without Class-D
+- [x] Fixed Chaos Insurgent could not move after arrival to facility.
 - [x] Added second cafeteria in Personnel Zone
 - [x] Reworked Credits menu, using Hikkan approach.
 - [x] \[Hard mode\] Increased hunger and thirst meter drain

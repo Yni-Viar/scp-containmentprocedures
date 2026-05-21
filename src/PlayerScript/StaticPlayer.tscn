@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/NormalEdgeDetectShader/edgedetect.gdshader" id="5_7jsl5"]
 [ext_resource type="Material" uid="uid://btfdohj827k1j" path="res://Shaders/OverlayMaterials/StereoGlasses.tres" id="6_og4yi"]
 [ext_resource type="Material" uid="uid://c2768cnm2bxyr" path="res://Shaders/OverlayMaterials/Scp261Orange.tres" id="6_otkm4"]
-[ext_resource type="Script" uid="uid://bynn400brwg3m" path="res://Scripts/LightDetector.gd" id="7_831vx"]
+[ext_resource type="Script" uid="uid://bynn400brwg3m" path="res://PlayerScript/LightDetector.gd" id="7_831vx"]
 [ext_resource type="Material" uid="uid://gw1nl3f4bpjf" path="res://Shaders/OverlayMaterials/Scp261KleinBottle.tres" id="7_lasx5"]
 [ext_resource type="Material" uid="uid://y3l4ispo2pxn" path="res://Shaders/OverlayMaterials/Amnesia.tres" id="8_vgv1g"]
 

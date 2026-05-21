@@ -6,6 +6,10 @@ func _ready() -> void:
 	if Settings.feature_legality_checker("no_neural_ai"):
 		$GameplayLabel.queue_free()
 		$AI.queue_free()
+	elif OS.get_name() == "Web":
+		$GameplayLabel.hide()
+		$AI.hide()
+		$AI.button_pressed = Settings.setting_res.ai_enabled
 	else:
 		$AI.button_pressed = Settings.setting_res.ai_enabled
 	$Renderer.selected = Settings.setting_res.renderer
@@ -89,3 +93,9 @@ func _on_renderer_item_selected(index: int) -> void:
 func _on_lighting_item_selected(index: int) -> void:
 	Settings.setting_res.lighting = index as SettingsResource.Lighting
 	Settings.save_resource(Settings.setting_res)
+
+
+func _on_settings_visibility_changed() -> void:
+	if OS.get_name() == "Web" && Settings.beta_mode:
+		$GameplayLabel.show()
+		$AI.show()

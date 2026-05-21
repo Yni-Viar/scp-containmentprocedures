@@ -8,7 +8,7 @@ var people_count: int = 0
 
 func _physics_process(delta: float) -> void:
 	if people_count > 0:
-		counter_task += delta * 0.5 * people_count
+		counter_task += delta * people_count
 		if counter_task > 1.0:
 			get_tree().root.get_node("Game/FoundationTask").do_task("task_173")
 			set_process(false)
@@ -18,13 +18,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
-		if body.puppet_class.team > 2 && get_tree().get_node_count_in_group("DClassSpawn") > 0:
-			people_count += 1
-		elif body.fraction == 0:
+		if body.puppet_class.team >= 2:
 			people_count += 1
 
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
-		if body.fraction == 0:
+		if body.puppet_class.team >= 2:
 			people_count -= 1

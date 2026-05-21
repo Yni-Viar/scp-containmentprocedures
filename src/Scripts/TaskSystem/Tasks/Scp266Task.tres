@@ -6,6 +6,5 @@
 script = ExtResource("1_6y4kh")
 internal_name = "task_266"
 public_name = "TASK_266_TEST"
-required_group = &"Scp266Spawn"
-required_groups = Array[String](["Scp266Spawn"])
+required_groups = Array[String](["Scp266Spawn", "DClassSpawn"])
 metadata/_custom_type_script = "uid://2412583x8gql"

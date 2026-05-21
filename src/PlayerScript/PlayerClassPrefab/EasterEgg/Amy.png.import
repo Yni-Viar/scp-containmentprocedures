@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddtvowq74yly3"
-path.s3tc="res://.godot/imported/Amy.png-bb12ab288a2a8b3f4b16d98a87179672.s3tc.ctex"
-path.etc2="res://.godot/imported/Amy.png-bb12ab288a2a8b3f4b16d98a87179672.etc2.ctex"
+path.s3tc="res://.godot/imported/Amy.png-b35c446dcbd13eeb500a8f047a6e3005.s3tc.ctex"
+path.etc2="res://.godot/imported/Amy.png-b35c446dcbd13eeb500a8f047a6e3005.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/ExternalModels/ScientistOfficeProps/YniViar/HikkanHuman/Amy.png"
-dest_files=["res://.godot/imported/Amy.png-bb12ab288a2a8b3f4b16d98a87179672.s3tc.ctex", "res://.godot/imported/Amy.png-bb12ab288a2a8b3f4b16d98a87179672.etc2.ctex"]
+source_file="res://PlayerScript/PlayerClassPrefab/EasterEgg/Amy.png"
+dest_files=["res://.godot/imported/Amy.png-b35c446dcbd13eeb500a8f047a6e3005.s3tc.ctex", "res://.godot/imported/Amy.png-b35c446dcbd13eeb500a8f047a6e3005.etc2.ctex"]
 
 [params]
 
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=1024
 detect_3d/compress_to=0

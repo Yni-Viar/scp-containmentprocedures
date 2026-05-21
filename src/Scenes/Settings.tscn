@@ -258,6 +258,7 @@ text = "DEBUG_CONSOLE"
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="visibility_changed" from="." to="ScrollContainer/SettingsUI" method="_on_settings_visibility_changed"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/AI" to="ScrollContainer/SettingsUI" method="_on_ai_toggled"]
 [connection signal="item_selected" from="ScrollContainer/SettingsUI/Renderer" to="ScrollContainer/SettingsUI" method="_on_renderer_item_selected"]
 [connection signal="item_selected" from="ScrollContainer/SettingsUI/Lighting" to="ScrollContainer/SettingsUI" method="_on_lighting_item_selected"]

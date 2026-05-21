@@ -24,7 +24,6 @@ const LEGAL_REQ_REGIONS: Dictionary[String, PackedStringArray] = {
 }
 
 const PLATFORM_REQS: Dictionary[String, PackedStringArray] = {
-	"Web": ["no_neural_ai"]
 }
 
 var features: Dictionary[String, bool] = {
@@ -192,6 +191,7 @@ func beta_mode_features(args: Array):
 	return """Beta features:
 	
 	- Story mode UI.
+	- Neural AI for Web platform
 	
 	To enable beta features, write in Seed input following text:
 	[b]feature_beta[/b]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://bq08en0w43pj6"]
 
 [ext_resource type="Script" uid="uid://5x5lp57ou4s8" path="res://PlayerScript/PlayerClassScript/HumanPuppetScript.gd" id="1_s3ntj"]
-[ext_resource type="Texture2D" uid="uid://ddtvowq74yly3" path="res://Assets/ExternalModels/ScientistOfficeProps/YniViar/HikkanHuman/Amy.png" id="2_s3ntj"]
+[ext_resource type="Texture2D" uid="uid://ddtvowq74yly3" path="res://PlayerScript/PlayerClassPrefab/EasterEgg/Amy.png" id="2_s3ntj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3j03"]
 resource_name = "Material.001"
