@@ -371,3 +371,9 @@ msgstr ""
 
 msgid "TONEMAPPER_SELECT"
 msgstr ""
+
+msgid "TASK_914_EXP_6"
+msgstr ""
+
+msgid "TASK_914_EXP_7"
+msgstr ""

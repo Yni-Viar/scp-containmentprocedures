@@ -133,7 +133,7 @@ quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("8_s8obg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://lg83pkwn3bcv"]
+
+[ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="1_llhls"]
+[ext_resource type="Texture2D" uid="uid://cud3twtuug3gj" path="res://Assets/HUD/electro_overlay.png" id="2_bum3a"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_llhls")
+shader_parameter/overlay = ExtResource("2_bum3a")
+shader_parameter/multiplier = 1.0

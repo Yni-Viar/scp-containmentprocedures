@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://b4gcxjwso3yyi"]
 
-[ext_resource type="PackedScene" uid="uid://dv0jixnd3msvd" path="res://PlayerScript/PlayerClassPrefab/Agent.tscn" id="1_5cy13"]
+[ext_resource type="PackedScene" uid="uid://dv0jixnd3msvd" path="res://PlayerScript/PlayerClassPrefab/Optional/Agent.tscn" id="1_5cy13"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_2i1ww"]
-[ext_resource type="PackedScene" uid="uid://b4s62t53mnodx" path="res://PlayerScript/PlayerClassRagdoll/Agent.tscn" id="2_hnrfu"]
+[ext_resource type="PackedScene" uid="uid://b4s62t53mnodx" path="res://PlayerScript/PlayerClassRagdoll/Optional/Agent.tscn" id="2_hnrfu"]
 
 [resource]
 script = ExtResource("2_2i1ww")

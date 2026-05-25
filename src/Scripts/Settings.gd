@@ -10,7 +10,7 @@ signal settings_saved
 
 ## Migrated from Globals.
 ## Game's data compatibility for modding.
-const DATA_COMPATIBILITY: String = "6.0.0"
+const DATA_COMPATIBILITY: String = "8.0.0"
 ## Migrated from Globals.
 ## Game's data compatibility for modding.
 const CURRENT_STAGE: Stages = Stages.dev
@@ -64,6 +64,8 @@ func _init():
 
 func _ready() -> void:
 	change_renderer()
+	if OS.get_name() == "Web":
+		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
 	season_checker()
 	GDsh.add_command("beta_mode_features", beta_mode_features, "List current beta features.")

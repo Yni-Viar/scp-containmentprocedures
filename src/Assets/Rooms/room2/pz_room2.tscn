@@ -123,7 +123,7 @@ quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("8_uu0ma")
 
 [node name="Seasonal" type="Node3D" parent="."]

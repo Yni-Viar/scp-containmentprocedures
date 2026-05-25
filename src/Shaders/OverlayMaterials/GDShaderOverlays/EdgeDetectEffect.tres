@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GDShaderCompositorResource" load_steps=2 format=3 uid="uid://dt2s3mhkfqu0v"]
+
+[ext_resource type="Script" uid="uid://cehby8ygncffm" path="res://Scripts/GDShaderCompositor/GDShaderCompositorResource.gd" id="1_4b8ut"]
+
+[resource]
+script = ExtResource("1_4b8ut")
+shader_path = "res://Shaders/OverlayShaders/NormalEdgeDetectShader/edgedetect.gdshaderinc"
+shader_callable = "edgedetect_simple(SCREEN_TEXTURE, SCREEN_UV, VIEWPORT_SIZE)"
+shader_variables = Dictionary[String, Variant]({
+"line_color": Color(1, 1, 1, 1)
+})
+replace_screen_texture = true
+metadata/_custom_type_script = "uid://cehby8ygncffm"

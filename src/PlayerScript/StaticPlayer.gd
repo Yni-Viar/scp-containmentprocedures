@@ -18,8 +18,6 @@ var prev_x_coordinate: float = 0
 var scroll_factor: float = 1.0
 var transition: NodePath
 
-var current_overlays: Array[String] = []
-
 const RAY_LENGTH = 512
 
 # Called when the node enters the scene tree for the first time.
@@ -29,14 +27,12 @@ func _ready() -> void:
 	# OpenGL Compatibility renderer supports SSAO since Godot 4.6
 	# As for May 2026, we stay on 4.5 just because it is the most stable\
 	# Godot release.
-	if Settings.setting_res.ssao && RenderingServer.get_current_rendering_method() == "mobile" || \
+	if Settings.setting_res.ssao && (RenderingServer.get_current_rendering_method() == "mobile" || \
 	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
-	  Engine.get_version_info()["minor"] < 6):
+	  Engine.get_version_info()["minor"] < 6)):
 		# Make SSAO even more performant (but uglier) in Lite version
 		# Recommended to remove after upgrading to 4.6 and newer versions.
-		if OS.has_feature("Lite"):
-			$Head/Camera3D/Overlays/SSAOFallbackOverlay.mesh.surface_set_material(0, "res://Shaders/OverlayMaterials/ssao_fallback_low.tres")
-		$Head/Camera3D/Overlays/SSAOFallbackOverlay.show()
+		$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(1)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -234,59 +230,48 @@ func _on_optimizator_body_exited(body: Node3D) -> void:
 func apply_overlay(effect: String, strength: float):
 	match effect:
 		"Frozen":
-			$Head/Camera3D/Overlays/ColdOverlay.show()
-			$Head/Camera3D/Overlays/ColdOverlay.mesh.surface_get_material(0).set_shader_parameter("multiplier", strength)
-			current_overlays.append(effect)
+			if strength > 0.03125:
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Cold")
+				$Head/Camera3D/Overlays/TintCompositor.apply_strength("Cold", strength)
+			else:
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Cold", true)
 		"EdgeVision":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/EgdeDetectOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(0)
 			else:
-				$Head/Camera3D/Overlays/StereoGlassesOverlay.show()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(0, true)
 		"Scp178":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/StereoGlassesOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(4)
 			else:
-				$Head/Camera3D/Overlays/StereoGlassesOverlay.show()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(4, true)
 		"Amnesia":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/AmnesiaVisionOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(2)
 			else:
-				$Head/Camera3D/Overlays/AmnesiaVisionOverlay.hide()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(2, true)
 		"Electrocuted":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/ElectrocuteOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Electrocute")
 			else:
-				$Head/Camera3D/Overlays/ElectrocuteOverlay.hide()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Electrocute", true)
 		"Scp2028":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/NightmareContainedOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(3)
 			else:
-				$Head/Camera3D/Overlays/NightmareContainedOverlay.hide()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(3, true)
 		"Scp261Orange":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/Scp261OrangeOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261Orange")
 			else:
-				$Head/Camera3D/Overlays/Scp261OrangeOverlay.hide()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261Orange", true)
 		"Scp261KleinBottle":
 			if strength >= 0.375:
-				$Head/Camera3D/Overlays/Scp261KleinBottleOverlay.show()
-				current_overlays.append(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261KleinBottle")
 			else:
-				$Head/Camera3D/Overlays/Scp261KleinBottleOverlay.hide()
-				current_overlays.erase(effect)
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261KleinBottle", true)
 		_:
-			for node in $Head/Camera3D/Overlays.get_children():
-				node.hide()
-			current_overlays.clear()
+			printerr("Since v8.0.0, GDShader and Tint compositors replaced legacy shader system.")
+
+func overlay_system():
+	pass

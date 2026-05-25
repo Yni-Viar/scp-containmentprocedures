@@ -216,7 +216,7 @@ msgstr ""
 "Take SCP-347 from the exit."
 
 msgid "TASK_266_TEST"
-msgstr "Order Class-D to test SCP-266 temperature."
+msgstr "Order Class-D to check SCP-266 temperature."
 
 msgid "TASK_347_PASS"
 msgstr ""
@@ -461,6 +461,12 @@ msgstr "Renderer type"
 
 msgid "TONEMAPPER_SELECT"
 msgstr "Tonemapper"
+
+msgid "TASK_914_EXP_6"
+msgstr "Refine a food box on Very fine"
+
+msgid "TASK_914_EXP_7"
+msgstr "Refine a food box on Very fine"
 
 #~ msgid "RENDERER_BACKEND_SELECT"
 #~ msgstr "Select your rendering backend"

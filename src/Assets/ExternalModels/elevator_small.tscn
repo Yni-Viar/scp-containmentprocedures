@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cqset7w3gmd5"]
+[gd_scene load_steps=48 format=4 uid="uid://cqset7w3gmd5"]
 
 [ext_resource type="Script" uid="uid://blproyl2vump2" path="res://Scripts/ElevatorSystem/ElevatorSystem.gd" id="1_cs2rt"]
 [ext_resource type="Texture2D" uid="uid://dymcum0c1ufle" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_ExitWall_unbake_BaseColor.png" id="2_g6v4j"]
@@ -123,6 +123,9 @@ size = Vector3(4.19281, 4.6832886, 0.31854248)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1psn"]
 size = Vector3(0.3569336, 4.705353, 4.8031006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmvo3"]
+size = Vector3(4.1987915, 0.73828125, 4.830078)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_olfai"]
 size = Vector3(4.0132117, 5.41353, 4.825823)
@@ -351,6 +354,10 @@ shape = SubResource("BoxShape3D_jpt57")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9162598, -0.31111145, 0.0021362305)
 shape = SubResource("BoxShape3D_w1psn")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007171631, -3.014626, 0)
+shape = SubResource("BoxShape3D_fmvo3")
 
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973238, -2.1565657, 0)

@@ -39,6 +39,8 @@ enum Usage {NORMAL, ONE_TIME, ONE_TIME_DROP}
 @export var status_effect_destroyable: bool = true
 ## Status effect will be applied, after status_effect_timer seconds. Note, that values below 0.325 will apply status effect instantly.
 @export var status_effect_timer: float = 0.0
+## Status effect will be removed after second usage click
+@export var status_effect_toggleable: bool = true
 @export_group("SCP-914")
 @export var upgrade_rough: Array[int] = []
 @export var upgrade_coarse: Array[int] = []

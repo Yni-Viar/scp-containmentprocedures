@@ -24,6 +24,7 @@ action_args = [["res://Assets/HUD/Scp1223/1223_parabellum.png", "res://Assets/HU
 status_effect = "Amnesia"
 status_effect_duration = 1.0
 status_effect_timer = 1.0
+status_effect_toggleable = false
 upgrade_rough = Array[int]([3])
 upgrade_coarse = Array[int]([7, 3])
 upgrade_one_to_one = Array[int]([16])

@@ -233,7 +233,7 @@ func effect_manager_destroy(effect: String, strength: float):
 	match effect:
 		"Scp178":
 			if !resistance_scp178:
-				get_tree().root.get_node("Game/StaticPlayer").apply_overlay("", 0.0)
+				get_tree().root.get_node("Game/StaticPlayer").apply_overlay("Scp178", 0.0)
 				get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").set_cull_mask_value(20, false)
 				for node in get_node(armature_name + "/Skeleton3D/HeadAttachment/Marker3D").get_children():
 					node.queue_free()

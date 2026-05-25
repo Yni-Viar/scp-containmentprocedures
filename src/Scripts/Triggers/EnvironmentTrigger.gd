@@ -2,14 +2,21 @@ extends Area3D
 ## Switches environment
 ## Made by Yni, licensed under MIT License.
 
-@export var env: Environment
-
+## Must be file name WITHOUT path, _HQ/_LQ postfixes and extensions (like ".tres")
+## Only needs env name from res://Assets/Environment/ folder
+@export var env_name: String
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
-			apply_environment(env)
+			if env_name == null || env_name.is_empty():
+				printerr("Environment not specified")
+				return
+			if OS.get_name() != "Web" && OS.get_name() != "Android":
+				apply_environment(load("res://Assets/Environment/" + env_name + "_HQ.tres"))
+			else:
+				apply_environment(load("res://Assets/Environment/" + env_name + "_LQ.tres"))
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://bcuxste3wvmc3"]
+[gd_scene load_steps=111 format=4 uid="uid://bcuxste3wvmc3"]
 
 [ext_resource type="Script" uid="uid://tj70l2lup8er" path="res://Scripts/Seasonal/SurfaceZone.gd" id="1_d2mmy"]
 [ext_resource type="Texture2D" uid="uid://8u71sh4knsq" path="res://Assets/ExternalModels/SCP/PopPopIcard/SZ_Wall1_BaseColor.png" id="1_xx08g"]
@@ -56,7 +56,6 @@
 [ext_resource type="Script" uid="uid://7ag6n6s5rw1m" path="res://Scripts/ElevatorSystem/ElevatorFloor.gd" id="47_dn0m7"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="47_iq5d8"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="47_xfk1r"]
-[ext_resource type="Environment" uid="uid://bq77iihnojanc" path="res://Assets/Environment/Outside.tres" id="48_a1e01"]
 [ext_resource type="Script" uid="uid://bufye8a550ay6" path="res://Scripts/Triggers/ElevatorTrigger.gd" id="48_dn0m7"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="48_sx3v1"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="49_sx3v1"]
@@ -1176,7 +1175,7 @@ size = Vector3(14.11232, 10.803436, 15.807465)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("45_g5h47")
-env = ExtResource("48_a1e01")
+env_name = "Outside"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwitchEnvironmentTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48788452, 14.56739, -3.9844666)

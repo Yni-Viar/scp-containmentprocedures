@@ -35,9 +35,10 @@ const vec2 ssao_prn_UV = vec2(
 	1.087f * ((1.0f + sqrt(5.0f)) / 2.0f), 1.087f * ((9.0f + sqrt(221.0f)) / 10.0f)
 );
 
-uniform float ssao_strength = 1.0;
+uniform float ssao_strength = 2.0;
 uniform float ssao_radius = 0.5;
 uniform sampler2D depth_buffer: hint_depth_texture;
+uniform sampler2D screen_texture: hint_screen_texture;
 
 const mediump float ssao_falloff_frac = 0.25;
 
@@ -60,6 +61,8 @@ void fragment() {
 	// Adjust the occlusion for intensity, and # samples.
 	occlusion = 1.0f - clamp(occlusion * 0.5f * ssao_strength, 0.0f, 1.0f);
 	
+	//vec3 color = texture(screen_texture, SCREEN_UV).rgb;
+	//color *= occlusion * occlusion;
 	ALBEDO = vec3(0.0);
-	ALPHA = 1.0f - occlusion * occlusion;
+	ALPHA = 1.0 - occlusion * occlusion;
 }

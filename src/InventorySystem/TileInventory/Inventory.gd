@@ -100,15 +100,16 @@ func use_item(item: InventorySlot):
 		if game_data.items[item.item_id].status_effect_timer > 0.375:
 			await get_tree().create_timer(game_data.items[item.item_id].status_effect_timer).timeout
 		var status_effect: StatusEffectManager = get_node(get_tree().root.get_node("Game/StaticPlayer").target_puppet_path + "/StatusEffects")
-		# If the status effect is destroyable or is queued, turn off it, else effect will be turned on.
-		if game_data.items[item.item_id].status_effect_destroyable && (status_effect.get_status_effect_index(game_data.items[item.item_id].status_effect) != -1 || hold_on_status_effect.has(game_data.items[item.item_id].status_effect)):
+		# If the status effect is (destroyable and toggleable) or is queued, turn it off, else effect will be turned on.
+		if game_data.items[item.item_id].status_effect_destroyable && (status_effect.get_status_effect_index(game_data.items[item.item_id].status_effect) != -1 && game_data.items[item.item_id].status_effect_toggleable  \
+		  || hold_on_status_effect.has(game_data.items[item.item_id].status_effect)):
 			if hold_on_status_effect.has(game_data.items[item.item_id].status_effect):
 				hold_on_status_effect.erase(game_data.items[item.item_id].status_effect)
 			status_effect.apply_status_effect(game_data.items[item.item_id].status_effect, 0.0, 0.0)
 		else:
 			status_effect.apply_status_effect(game_data.items[item.item_id].status_effect, game_data.items[item.item_id].status_effect_strength, game_data.items[item.item_id].status_effect_duration)
-			# If effect is timed, put into hold_on_status_effect array, release after effect duration
-			if game_data.items[item.item_id].status_effect_destroyable && game_data.items[item.item_id].status_effect_duration > 0.325:
+			# If effect is timed and NOT toggleable, put into hold_on_status_effect array, release after effect duration
+			if game_data.items[item.item_id].status_effect_destroyable && game_data.items[item.item_id].status_effect_duration > 0.325 && game_data.items[item.item_id].status_effect_toggleable:
 				hold_on_status_effect.append(game_data.items[item.item_id].status_effect)
 	if game_data.items[item.item_id].usage != 0:
 		item_remove(item, game_data.items[item.item_id].usage == 2)

@@ -20,7 +20,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-131|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
 |🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
-|🟡SCP-178|✅, since 5.2.0|❌, 3d help wanted|✅ Full|
+|🟡SCP-178|✅, since 5.2.0|❌|✅ Full|
 |🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, removed in 5.8.0|✅ Full|
@@ -55,6 +55,8 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ❌ - Unavailable.
 <!-- 🎃 - Spawns only at October -->
 ⛄ - Spawns only in December.
+<!-- ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded. -->
+
 #### Functionality
 ✅ - SCP object is fully implemented
 ❓ - SCP object is partly implemented
@@ -79,7 +81,7 @@ Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
 
 ### Building lite version (for Web)
 **In Lite version, some components are missing:**
-There are no SCP-178 (may be reinstated in later update), *SCP: Unity* SCP-173 model, SCP-266 (spawnable), SCP-347 (spawnable), SCP-791, SCP-938 (spawnable), SCP-914.
+There are no SCP-178 (item exists, but has no effect), *SCP: Unity* SCP-173 model, SCP-266 (spawnable), SCP-347 (spawnable), SCP-791, SCP-938 (spawnable), SCP-914.
 1. Project->Export
 2. Choose your platform (e.g. Web)
 3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`

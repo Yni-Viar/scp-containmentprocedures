@@ -150,7 +150,7 @@ quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("8_1ko01")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://fmpvlida0r6k"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c64tykjer7feb"]
 
-[ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/OverlayShaders/NormalEdgeDetectShader/edgedetect.gdshader" id="1_eeq8o"]
+[ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/NormalEdgeDetectShader/edgedetect.gdshader" id="1_eeq8o"]
 
 [resource]
 render_priority = 0

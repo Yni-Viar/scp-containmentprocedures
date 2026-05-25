@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GDShaderCompositorResource" load_steps=2 format=3 uid="uid://bv1sxkdqixblj"]
+
+[ext_resource type="Script" uid="uid://cehby8ygncffm" path="res://Scripts/GDShaderCompositor/GDShaderCompositorResource.gd" id="1_dv3ce"]
+
+[resource]
+script = ExtResource("1_dv3ce")
+shader_path = "res://Shaders/OverlayShaders/AnaglyphShader/anaglyph.gdshaderinc"
+shader_callable = "anaglyph(SCREEN_TEXTURE, SCREEN_UV, VIEWPORT_SIZE)"
+shader_variables = Dictionary[String, Variant]({
+"blue_shift": -2.0,
+"red_shift": 2.0
+})
+metadata/_custom_type_script = "uid://cehby8ygncffm"

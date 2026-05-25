@@ -1,25 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4tymm7axdu4r"]
-
-[ext_resource type="Texture2D" uid="uid://cjc2cv7hfk7of" path="res://Assets/HUD/HikkanEasterEgg/idle_or_waiting.PNG" id="1_e0nks"]
-[ext_resource type="Texture2D" uid="uid://d6bpy1fhmme5" path="res://Assets/HUD/HikkanEasterEgg/idle1.PNG" id="2_uwbnu"]
-[ext_resource type="Texture2D" uid="uid://cbpwnvpy1cklt" path="res://Assets/HUD/HikkanEasterEgg/idle2.PNG" id="3_dlww6"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dd46u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_e0nks")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_uwbnu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_dlww6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[gd_scene format=3 uid="uid://b4tymm7axdu4r"]
 
 [node name="EasterEgg" type="Control"]
 layout_mode = 3
@@ -53,10 +32,3 @@ text = "[center][font_size=32]Welcome to Yni Viar's dimension![/font_size][/cent
 Some hikkikomori decided to get out from home.
 But can they actually do it?
 Interesting question..."
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(528, 192)
-sprite_frames = SubResource("SpriteFrames_dd46u")
-autoplay = "default"

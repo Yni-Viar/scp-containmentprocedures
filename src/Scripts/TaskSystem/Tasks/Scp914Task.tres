@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="GameTaskResource" load_steps=6 format=3 uid="uid://do5omahxr33bm"]
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=7 format=3 uid="uid://do5omahxr33bm"]
 
 [ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_mk5wd"]
 [ext_resource type="Resource" uid="uid://cx4c0e4se1waa" path="res://Scripts/TaskSystem/Tasks/Scp914Exp1.tres" id="2_t3f85"]
 [ext_resource type="Resource" uid="uid://duje4a25hopru" path="res://Scripts/TaskSystem/Tasks/Scp914Exp2.tres" id="3_5xug8"]
 [ext_resource type="Resource" uid="uid://c5u6uapjsmd6e" path="res://Scripts/TaskSystem/Tasks/Scp914Exp3.tres" id="4_md4mp"]
 [ext_resource type="Resource" uid="uid://d1el55bndmsin" path="res://Scripts/TaskSystem/Tasks/Scp914Exp4.tres" id="5_n8lpl"]
+[ext_resource type="Resource" uid="uid://pqsnd3na5h13" path="res://Scripts/TaskSystem/Tasks/Scp914Exp6.tres" id="6_md4mp"]
 
 [resource]
 script = ExtResource("1_mk5wd")
 internal_name = "multiple_task_914"
 required_groups = Array[String](["Scp914"])
-sub_tasks = Array[ExtResource("1_mk5wd")]([ExtResource("2_t3f85"), ExtResource("3_5xug8"), ExtResource("4_md4mp"), ExtResource("5_n8lpl")])
+sub_tasks = Array[ExtResource("1_mk5wd")]([ExtResource("2_t3f85"), ExtResource("3_5xug8"), ExtResource("4_md4mp"), ExtResource("5_n8lpl"), ExtResource("6_md4mp")])
 metadata/_custom_type_script = "uid://2412583x8gql"

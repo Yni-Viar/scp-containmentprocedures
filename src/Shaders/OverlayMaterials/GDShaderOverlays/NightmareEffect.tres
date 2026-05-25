@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GDShaderCompositorResource" load_steps=3 format=3 uid="uid://bn56ov77o8bk"]
+
+[ext_resource type="Script" uid="uid://cehby8ygncffm" path="res://Scripts/GDShaderCompositor/GDShaderCompositorResource.gd" id="1_0udku"]
+[ext_resource type="Texture2D" uid="uid://c8rxrp23psfa5" path="res://Shaders/OverlayMaterials/GDShaderOverlays/Nightmare/NightmareNoise.tres" id="2_0adg4"]
+
+[resource]
+script = ExtResource("1_0udku")
+shader_path = "res://Shaders/OverlayShaders/GlitchyViewShader/glitchy_view.gdshaderinc"
+shader_callable = "glitchy_view(SCREEN_UV)"
+shader_variables = Dictionary[String, Variant]({
+"glitchy_noise_texture": ExtResource("2_0adg4")
+})
+metadata/_custom_type_script = "uid://cehby8ygncffm"

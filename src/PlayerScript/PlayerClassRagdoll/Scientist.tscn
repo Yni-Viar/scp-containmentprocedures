@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://dss3td6nro4o5"]
+[gd_scene load_steps=59 format=4 uid="uid://dss3td6nro4o5"]
 
 [ext_resource type="Script" uid="uid://bhf85wkhfm536" path="res://PlayerScript/PlayerClassRagdoll/RagdollManager.gd" id="1_b3hh0"]
 [ext_resource type="Material" uid="uid://4foax8koch4x" path="res://Assets/Materials/Classes/Christmas/Scientist_torso.tres" id="2_iy5ui"]
@@ -10,7 +10,6 @@
 [ext_resource type="Material" uid="uid://canux8vhdvrrl" path="res://Assets/Materials/Classes/Halloween/Scientist_pants.tres" id="5_6cnh8"]
 [ext_resource type="Texture2D" uid="uid://bjptkot3hguyf" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_head_Normal.png" id="5_iy5ui"]
 [ext_resource type="Material" uid="uid://js8yaoku04g5" path="res://Assets/ExternalModels/SCP/CommonMaterial/Mouth/mouth.tres" id="6_3u6yb"]
-[ext_resource type="Texture2D" uid="uid://bq52xyerw0135" path="res://Assets/ExternalModels/SCP/Scientist/Image.png" id="7_h4x8g"]
 [ext_resource type="Texture2D" uid="uid://d15a2nxo5aa5c" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_pants_AlbedoTransparency.png" id="8_6cnh8"]
 [ext_resource type="Texture2D" uid="uid://d38o0i4c62fso" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_pants_Normal.png" id="9_he61c"]
 [ext_resource type="Texture2D" uid="uid://ctccbhg84v7lm" path="res://Assets/ExternalModels/SCP/Scientist/scientist_shoes_AlbedoTransparency.png" id="10_6oafs"]
@@ -453,9 +452,8 @@ normal_texture = ExtResource("5_iy5ui")
 resource_name = "mouth.005"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-metallic_texture = ExtResource("7_h4x8g")
+metallic = 1.0
 metallic_texture_channel = 2
-roughness_texture = ExtResource("7_h4x8g")
 roughness_texture_channel = 1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ygex0"]
@@ -2154,10 +2152,10 @@ transform = Transform3D(1, -1.0430813e-07, -2.9802322e-08, -8.940697e-08, 3.2782
 shape = SubResource("CapsuleShape3D_b3vw3")
 
 [node name="Physical Bone Heel_L" type="PhysicalBone3D" parent="HumanRig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-1.3014522, -8.69693e-09, -0.28982767, 1.4510589e-12, 1.3333334, -4.0016182e-08, 0.28982767, -3.905967e-08, -1.3014522, 0.27803612, 0.058579013, 0.09598202)
+transform = Transform3D(-1.3014522, -8.696918e-09, -0.28982767, 1.4517317e-12, 1.3333334, -4.001613e-08, 0.28982767, -3.905962e-08, -1.3014522, 0.27803612, 0.058579013, 0.09598202)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4969367e-09, -7.823184e-09, 0.11171105)
-body_offset = Transform3D(1.3333333, -1.2621015e-12, -2.9802322e-08, -5.9604645e-08, -4.0016175e-08, -1.3333331, 1.2615807e-12, 1.3333334, -4.0016186e-08, 0, 0.14894804, 1.4901161e-08)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4969367e-09, -7.823188e-09, 0.11171105)
+body_offset = Transform3D(1.3333333, -1.2647661e-12, -2.9802322e-08, -5.9604645e-08, -4.0016122e-08, -1.3333331, 1.2622534e-12, 1.3333334, -4.001613e-08, 0, 0.14894804, 1.4901161e-08)
 bone_name = "Heel.L"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -2284,10 +2282,10 @@ transform = Transform3D(1.0000141, -1.2945384e-07, -8.1956387e-07, -9.983778e-07
 shape = SubResource("CapsuleShape3D_m76fd")
 
 [node name="Physical Bone Hip" type="PhysicalBone3D" parent="HumanRig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.16240735, -0.56721854, -1.1956859, 0.07435842, 1.206664, -0.5623264, 1.3213147, 0.0018124682, 0.1786114, 0.07523363, 1.568831, -0.05413589)
+transform = Transform3D(0.16240735, -0.56721854, -1.1956859, 0.07435842, 1.206664, -0.5623264, 1.3213147, 0.0018124682, 0.1786114, 0.075233705, 1.5694474, -0.05413577)
 joint_type = 5
-joint_offset = Transform3D(0.9999968, 0, 0, 0, 0.9999955, 0, 0, 0, 0.9999941, -0.0007692417, -0.012476379, 0.07903559)
-body_offset = Transform3D(-0.34155798, 0.59982765, 1.1407552, -4.7683716e-07, 1.1801336, -0.62053365, -1.2888427, -0.15896156, -0.3023129, -0.08293932, 0.06376803, 0.020918783)
+joint_offset = Transform3D(0.9999968, 0, 0, 0, 0.9999955, 0, 0, 0, 0.9999941, -0.0007951176, -0.012894759, 0.079230614)
+body_offset = Transform3D(-0.34155798, 0.59982765, 1.1407552, -4.7683716e-07, 1.1801336, -0.62053365, -1.2888427, -0.15896156, -0.3023129, -0.08291967, 0.06438279, 0.020877883)
 bone_name = "Hip"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0

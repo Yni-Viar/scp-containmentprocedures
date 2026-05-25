@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://6kmquyr4ttab"]
 
-[ext_resource type="Shader" uid="uid://cgwl6uyvafgwy" path="res://Shaders/S4AO_Godot_Fallback/s4ao_inc.gdshader" id="1_m1xsa"]
+[ext_resource type="Shader" path="res://Shaders/S4AO_Godot_Fallback/s4ao_inc.gdshader" id="1_m1xsa"]
 
 [resource]
 render_priority = 0

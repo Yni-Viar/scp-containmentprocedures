@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b25hrjnoos5me"]
+[gd_scene load_steps=27 format=3 uid="uid://b25hrjnoos5me"]
 
 [ext_resource type="Script" uid="uid://nuv64h1g048i" path="res://Scripts/MainMenu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://calm8y36ivn5q" path="res://UI/MainMenu/mainmenubackground.png" id="2_idohh"]
@@ -15,21 +15,51 @@
 [ext_resource type="Texture2D" uid="uid://b3huhsmj8qtv8" path="res://UI/MainMenu/StoryMode/MainStory.png" id="12_dsmso"]
 [ext_resource type="Texture2D" uid="uid://m3f2djuc8pr0" path="res://UI/MainMenu/StoryMode/GenericStory.png" id="13_t8p2w"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
-[ext_resource type="AudioStream" uid="uid://6eaqqqa6f7pc" path="res://Sounds/Music/Original/facility_drone.ogg" id="16_dsmso"]
+[ext_resource type="AudioStream" uid="uid://bfi3taei3rspy" path="res://Sounds/Music/Original/SCP_MainTheme.ogg" id="16_dsmso"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p2w"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd46u"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmso"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3nbb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.44291076, 0.44291076, 0.44291073, 0.19607843)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm44m"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 0.1254902)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du1yi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -38,6 +68,11 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krje8"]
 bg_color = Color(0, 0, 0, 1)
@@ -54,6 +89,24 @@ width = 1152
 height = 648
 noise = SubResource("FastNoiseLite_krje8")
 color_ramp = SubResource("Gradient_a8aa6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p2w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmso"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -79,32 +132,37 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
 anchor_top = 0.099
-anchor_right = 0.181
-anchor_bottom = 0.099
-offset_left = -0.512009
-offset_top = -0.152008
-offset_right = 497.488
-offset_bottom = 132.848
+anchor_right = 0.61300004
+anchor_bottom = 0.30900002
+offset_left = -0.51200867
+offset_top = -0.15200806
+offset_right = -0.17602539
+offset_bottom = -0.23200989
 theme_override_fonts/font = ExtResource("5_idohh")
 theme_override_font_sizes/font_size = 64
 text = "SCP: Continued
 Procedures"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 264.0
-offset_right = 564.0
-offset_bottom = 442.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.69100004
+anchor_right = 0.98600006
+anchor_bottom = 0.97200006
+offset_left = -0.12800026
+offset_top = 0.23196411
+offset_right = -595.8721
+offset_bottom = 0.14398193
+grow_vertical = 0
 theme_override_constants/separation = 64
 
 [node name="Play" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "CASUAL_MODE"
 icon = ExtResource("5_3jcrr")
 icon_alignment = 1
@@ -113,11 +171,10 @@ vertical_icon_alignment = 0
 [node name="StoryMode" type="Button" parent="HBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "STORY_MODE"
 icon = ExtResource("7_a8aa6")
 icon_alignment = 1
@@ -125,11 +182,10 @@ vertical_icon_alignment = 0
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "SETTINGS"
 icon = ExtResource("7_x0ao6")
 icon_alignment = 1
@@ -138,11 +194,10 @@ vertical_icon_alignment = 0
 [node name="HelpButton" type="Button" parent="HBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "HELP_BUTTON"
 icon = ExtResource("6_aobxe")
 icon_alignment = 1
@@ -150,11 +205,15 @@ vertical_icon_alignment = 0
 
 [node name="GameSettings" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -174.0
-offset_right = 320.0
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.395
+anchor_right = 0.29200003
+anchor_bottom = 0.66400003
+offset_left = -0.12800026
+offset_top = 0.039993286
+offset_right = -0.3840332
+offset_bottom = -0.2720337
 grow_vertical = 0
 alignment = 1
 
@@ -182,14 +241,14 @@ text = "ZEN_MODE"
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.09
-anchor_top = 0.198
-anchor_right = 0.09
-anchor_bottom = 0.198
-offset_left = -63.68
-offset_top = -64.304
-offset_right = 64.32
-offset_bottom = 63.696
+anchor_left = 0.007
+anchor_top = 0.049000002
+anchor_right = 0.17400001
+anchor_bottom = 0.34600002
+offset_left = 31.936008
+offset_top = 32.248
+offset_right = -32.448013
+offset_bottom = -32.208008
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_sjh0l")

@@ -124,7 +124,7 @@ interior = true
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("9_2rsn3")
 
 [node name="Seasonal" type="Node3D" parent="."]

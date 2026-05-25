@@ -3,41 +3,51 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v8.0.0 ("Expansion update part 4", W.I.P)
+## v8.0.0 ("Expansion update part 4", 2026.05.25)
 ### Self-learning NPCs
-- [x] Self-learning NPCs (currently it affect only picking items)
+- Self-learning NPCs (currently it affect only picking items)
   - Available for PC and Android, Web version is still experimental.
 
 ### Storage Sub-zone
-- [x] Storage sub-zone
+- Storage sub-zone - a reduced Entrance Zone.
 
 ### New (and reworked) SCPs
-- [x] SCP-131
-- [x] SCP-261 (uses new windowed dialogues feature)
-- [x] SCP-2028
-- [x] SCP-2471
-- [x] Reworked SCP-812 task + added sounds.
+- SCP-131
+- SCP-261 (uses new windowed dialogues feature)
+- SCP-2028
+- SCP-2471
+- Reworked SCP-812 task + added sounds.
 
 ### Rendering overhaul
-- [x] Restored SSAO (use fallback in Mobile and Compatibility (in Godot 4.5), else use native shader)
-- [x] Added experimental support for RenderingDevice renderers (PC only).
-- [x] Lighting overhaul - 3 lighting modes are available - disabled lights (fastest performance, but bad quality), lightmap mode (from older versions, moderate performance and available only in OpenGL renderer) and realtime (only Forward+, worst performance)
-- [x] Overlay shaders started to use alpha channel (Performance will be worse, but it is necessary to support overlapping)
+- Restored SSAO (use fallback in Mobile and Compatibility (in Godot 4.5), else use native shader)
+- Added experimental support for RenderingDevice renderers (PC only).
+- Lighting overhaul - 3 lighting modes are available - disabled lights (fastest performance, but bad quality), lightmap mode (from older versions, moderate performance and available only in OpenGL renderer) and realtime (only Forward+, worst performance)
+- 2 new shader subsystems - first is intended for advanced effects, the second is based on alpha channel and opeartyes with tint (such as Cold effect)
+- Added support for different resolutions (even for large screens)
+- \[PC only\] Added advanced sky shader for Surface Zone.
 
 ### Windowed dialogues
-- [x] Added dialogue support through windows
+- Added dialogue support through windows
 
 ### Other changes
-- [x] Fixed (finally) legacy code, that allowed to complete SCP-162, SCP-173 and SCP-266 tasks without Class-D
-- [x] Fixed Chaos Insurgent could not move after arrival to facility.
-- [x] Added second cafeteria in Personnel Zone
-- [x] Reworked Credits menu, using Hikkan approach.
-- [x] \[Hard mode\] Increased hunger and thirst meter drain
-- [x] \[Technical\] Implemented combined health type for humans - you can heal, feed and drink by specifying -1 health_type.
-- [x] \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
-- [x] Overhaul Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
-- [x] Update to Godot 4.5.3.rc.fixed, which fixes security issues.
-- [x] \[Debug console\] Fixed spawn_npc and add_item commands accepting incorrect values ~~(and introduce new easter egg)~~
+- Fixed SCP-1223 is showing images while it is removed from inventory.
+- Fixed (finally) legacy code, that allowed to complete SCP-162, SCP-173 and SCP-266 tasks without Class-D
+- Fixed Chaos Insurgent could not move after arrival to facility.
+- Added second cafeteria in Personnel Zone
+- Reworked Credits menu, using Hikkan approach.
+- Reworked Main Menu and showcase Story mode UI as beta feature (also *something* moved in a new place - find it)
+- Updated to Godot 4.5.3.rc.fixed, which fixes security issues.
+- Enabled hunger mechanic to all modes, except Safe mode.
+- Increased hunger and thirst meter drain
+- \[Audio/music\] New Main theme (previous was dull and unfinished, made from scratch).
+- \[Full version\] \[Tasks\] Added one more new SCP-914 experiment.
+- \[Lite version\] Remove remains of MTF agent
+- \[Lite version\] Added a helper collider to the bottom of small elevator to reduce falling-out-elevator problems.
+- \[UI\] Rework Main Menu buttons
+- \[Debug console\] Fixed spawn_npc and add_item commands accepting incorrect values ~~(and introduce new easter egg)~~
+- \[Technical\] Items can now have toggleable or not effects - the only item, that is firing every time is SCP-1223.
+- \[Technical\] Implemented combined health type for humans - you can heal, feed and drink by specifying -1 health_type.
+- \[Technical\] Reworked ingame dialogue - SCP-067, 1223, 2028 and 2471 started to use new API.
 
 ## v7.0.7 (2026.04.26)
 

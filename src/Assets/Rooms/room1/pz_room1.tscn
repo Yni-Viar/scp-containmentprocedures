@@ -139,7 +139,7 @@ quality = 0
 bounces = 1
 bounce_indirect_energy = 1.5
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("10_syexj")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbe"]]

@@ -99,7 +99,7 @@ func _process(delta: float) -> void:
 				ci_probability = 0
 		if mtf_cooldown > 0.0:
 			mtf_cooldown -= delta
-	if time_limited && protagonist != null:
+	if !Settings.setting_res.zen_mode && protagonist != null:
 		# Hunger and thirst mechanic
 		protagonist.health_manage(-delta * 0.25, 2)
 		protagonist.health_manage(-delta * 0.1875, 3)
@@ -281,6 +281,8 @@ func show_image(images: Array, command_after: CommandResource = null, timer: flo
 				if command_after != null:
 					if timer > 0.375:
 						await get_tree().create_timer(timer).timeout
+						$UI/Showable.hide()
+						showable_res = ""
 					protagonist._call_function(command_after.action_node_path, command_after.action_method_name, command_after.action_args)
 	else:
 		$UI/Showable.hide()

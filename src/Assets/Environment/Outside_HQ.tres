@@ -1,0 +1,30 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://1c6vsgl4ua3u"]
+
+[ext_resource type="Shader" uid="uid://d3efw3m1l4qfj" path="res://Shaders/SkyShader/cloudy_sky.gdshader" id="1_s8toa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bu2in"]
+shader = ExtResource("1_s8toa")
+shader_parameter/time_scale = 0.5
+shader_parameter/base_color = Color(0.73194915, 0.73384684, 0.8143077, 1)
+shader_parameter/slime_color = Color(0.5772558, 0.57860065, 0.68334687, 1)
+shader_parameter/highlight_color = Color(0.8231157, 0.8515925, 0.8828371, 1)
+shader_parameter/tendril_density = 4.0
+shader_parameter/tendril_thickness = 0.3
+shader_parameter/animation_speed = 1.0
+shader_parameter/slime_wetness = 0.7
+
+[sub_resource type="Sky" id="Sky_afsef"]
+sky_material = SubResource("ShaderMaterial_bu2in")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_afsef")
+ambient_light_source = 2
+tonemap_white = 2.0
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_begin = 24.0
+fog_depth_end = 60.0
