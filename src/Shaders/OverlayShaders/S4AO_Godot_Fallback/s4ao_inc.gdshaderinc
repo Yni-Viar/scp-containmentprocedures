@@ -20,6 +20,8 @@
 /**************************************************************************/
 // The sample_width should be even, else the midpoint is at SCREEN_UV.
 // Takes sample_width^2 samples in a grid, with the corners notched.
+#define USE_SSAO_LOW
+
 #if defined(USE_SSAO_LOW)
 const int ssao_sample_width = 2;
 #elif defined(USE_SSAO_HIGH)

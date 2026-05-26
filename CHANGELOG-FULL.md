@@ -3,6 +3,11 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v8.0.1
+
+- [x] Update main menu theme to 1.1 version
+- [x] Use lower-quality SSAO.
+
 ## v8.0.0 ("Expansion update part 4", 2026.05.25)
 ### Self-learning NPCs
 - Self-learning NPCs (currently it affect only picking items)
