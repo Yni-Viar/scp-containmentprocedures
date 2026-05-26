@@ -151,5 +151,6 @@ skeleton = NodePath("")
 
 [node name="Glass_glass_0" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002641818, 1.1795182, -0.15795629)
+visible = false
 mesh = SubResource("ArrayMesh_7epek")
 skeleton = NodePath("")

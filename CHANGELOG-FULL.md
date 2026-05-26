@@ -3,10 +3,13 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v8.0.1
+## v8.0.1 (2026.05.26)
 
-- [x] Update main menu theme to 1.1 version
-- [x] Use lower-quality SSAO.
+- Update main menu theme to 1.1 version
+- Use lower-quality SSAO.
+- Hide SCP-131 glass to improve Web performance.
+- Disable also Mobile renderer on Android
+- Added money indicator
 
 ## v8.0.0 ("Expansion update part 4", 2026.05.25)
 ### Self-learning NPCs

@@ -145,6 +145,11 @@ func _ready() -> void:
 		_nav_agent.velocity_computed.connect(move_pawn)
 
 func _physics_process(delta: float) -> void:
+	if $UI/Inventory.visible:
+		$UI/Inventory/Money.text = ""
+		for m in money:
+			$UI/Inventory/Money.text += m + ": " + str(money[m]) + "\n"
+	
 	# Wander if wandering enabled
 	if wandering && idle:
 		wander(delta)

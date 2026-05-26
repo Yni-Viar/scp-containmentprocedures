@@ -51,3 +51,14 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_2q7fl")
 script = ExtResource("3_nrxg5")
+
+[node name="Money" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 137.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "MONEY_AMOUNT"

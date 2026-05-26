@@ -27,7 +27,8 @@ func _ready() -> void:
 		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
 	elif OS.get_name() == "Android":
-		# Disable Forward+ on Android for now.
+		# Disable Mobile and Forward+ renderers on Android.
+		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
 	
 	if Settings.setting_res.renderer == SettingsResource.Renderer.OPENGL:
