@@ -573,7 +573,14 @@ Used from https://poly.pizza/m/q3lsX3tSta
 ------------------------
 Beetle bot 3D model is made by
 GDQuest 
-License: CC-BY 4.0."
+License: CC-BY 4.0.
+------------------------
+\"Local Forecast - Elevator\"
+by Kevin MacLeod (incompetech.com)
+Licensed under
+Creative Commons: By
+Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/ "
 
 [node name="FoldableContainer12" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
 layout_mode = 2

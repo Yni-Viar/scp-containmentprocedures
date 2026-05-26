@@ -3,6 +3,10 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v8.0.2
+
+- [x] Elevators now have sound!
+
 ## v8.0.1 (2026.05.26)
 
 - Update main menu theme to 1.1 version

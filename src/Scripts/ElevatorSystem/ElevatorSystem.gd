@@ -176,6 +176,8 @@ func elevator_move_web():
 	if !elevator_doors.is_empty():
 		get_tree().root.get_node(elevator_doors[current_floor]).door_close()
 	door_close()
+	if !$Move.playing:
+		$Move.play()
 	if (target_floor < current_floor):
 		last_move = LastMove.UP
 		is_moving = true

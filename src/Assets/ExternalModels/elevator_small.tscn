@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cqset7w3gmd5"]
+[gd_scene load_steps=49 format=4 uid="uid://cqset7w3gmd5"]
 
 [ext_resource type="Script" uid="uid://blproyl2vump2" path="res://Scripts/ElevatorSystem/ElevatorSystem.gd" id="1_cs2rt"]
 [ext_resource type="Texture2D" uid="uid://dymcum0c1ufle" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_ExitWall_unbake_BaseColor.png" id="2_g6v4j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d306qt10exyb3" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_MetalSupports_unbake_BaseColor.png" id="8_e2rwu"]
 [ext_resource type="Texture2D" uid="uid://c64hm4xjtehc3" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_MetalSupports_unbake_Metallic-MetalSupports_unbake_Roughness.png" id="9_hyoai"]
 [ext_resource type="Texture2D" uid="uid://daearp60ygthj" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_MetalSupports_unbake_Normal.png" id="10_ed518"]
+[ext_resource type="AudioStream" uid="uid://dpl3d3w6dypv0" path="res://Sounds/Music/Third_party/local_forecast_elevator.ogg" id="11_w1psn"]
 [ext_resource type="Script" uid="uid://bti7y8cq2dfm4" path="res://Scripts/DoorSystem/DoorBase.gd" id="12_np1vv"]
 [ext_resource type="Texture2D" uid="uid://cuodt5qwr7gtn" path="res://Assets/Doors/LczDoor_Door_Texturize_door_frame_Albedo.png" id="13_jpt57"]
 [ext_resource type="Texture2D" uid="uid://bkkweuyuqhi2x" path="res://Assets/Doors/LczDoor_Door_Texturize_door_frame_Metallic-Door_Texturize_door_frame_Roughness.png" id="14_w1psn"]
@@ -312,6 +313,8 @@ _data = {
 [node name="elevator" type="Node3D"]
 script = ExtResource("1_cs2rt")
 speed = 12.0
+open_door_sounds = PackedStringArray("res://Sounds/Door/DoorOpen.ogg")
+close_door_sounds = PackedStringArray("res://Sounds/Door/DoorClose.ogg")
 navigation_link = NodePath("NavigationLink3D")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
@@ -369,7 +372,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9016125, 0, 0)
 max_distance = 40.0
 
 [node name="Move" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_w1psn")
 max_distance = 48.0
+bus = &"Music"
 
 [node name="PlayerArea" type="Area3D" parent="."]
 collision_layer = 11
