@@ -135,7 +135,7 @@ enable_vision_scan = true
 vision_class_detect = Array[int]([2])
 
 [node name="Mesh" type="Node3D" parent="."]
-transform = Transform3D(-0.25, 0, -3.774895e-08, 0, 0.25, 0, 3.774895e-08, 0, -0.25, 0, 0, 0)
+transform = Transform3D(-0.188, 0, -2.8387209e-08, 0, 0.188, 0, 2.8387209e-08, 0, -0.188, 0, 0, 0)
 
 [node name="Glass_001_glass_0" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018835068, 1.1795182, -0.1533198)

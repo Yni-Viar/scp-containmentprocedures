@@ -3,9 +3,10 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v8.0.2
+## v8.0.2 (2026.05.27)
 
-- [x] Elevators now have sound!
+- Elevators now have sound!
+- SCP-131 instances are now smaller.
 
 ## v8.0.1 (2026.05.26)
 

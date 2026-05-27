@@ -3,11 +3,22 @@
 [Available on GameJolt](https://gamejolt.com/games/scpcontpr/998566)
 ## About
 
-Do your daily job at Site-[REDACTED].
+Do your daily job at Site-\[REDACTED\].
 
 Click/Tap - move/pick items (if you tap on character, they will go with you).
 
 If Chaos Insurgency will raid your Site, call MTF using the button (in other times, the button won't work)
+
+## Requirements to play
+
+- 🐧Linux distribution from 2024 and newer
+- 🪟Windows 8.1 (partially), 10 (all updates) and 11 (all updates)
+- 🤖Android 7.0 and newer
+- 🌐Modern browser (Chromium-based, Firefox and Edge)
+- 🖥️ Hardware requirements
+   - OpenGL 3.3/ES 3.0 minimum, Vulkan support recommended
+   - display resolution > 1280x720 (except Android) recommended
+   - Mouse/touch support
 
 ### Included SCPs
 
@@ -25,8 +36,8 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, removed in 5.8.0|✅ Full|
 |🟡SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, removed in 6.0.0|❓ Partial|
-|🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Only available via SCP-261|
-|🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ None|
+|🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
+|🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
 |🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-649|⛄, since 5.5.0|⛄, since 5.7.0|✅ Full|
@@ -53,7 +64,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ✅ - Available.
 ❓ - Partial availability.
 ❌ - Unavailable.
-<!-- 🎃 - Spawns only at October -->
+<!-- 🎃 - Spawns only in October -->
 ⛄ - Spawns only in December.
 <!-- ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded. -->
 
@@ -70,8 +81,10 @@ We **do not** distribute dangerous things in this app!
 
 ## Requirements to build
 
-The project uses Godot 4.5.2 as a base.
+The project uses Godot 4.5.x as a base (since 5.0/5.8.3 - Expansion update part 2).
 Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
+
+> Godot 4.6 was used in 5.8.0-5.8.2 and, while downgraded to 4.5 in 5.8.3 (the reason is in changelog), can be used without risk **in your own forks**, since official builds use Godot 4.5!
 
 ### Building regular version
 
