@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func add_item(args: Array):
 	if args.size() > 0:
 		if args[0].is_valid_int():
-			if int(args[0]) < get_parent().gamedata.puppet_classes.size() && int(args[0]) > 0:
+			if int(args[0]) < get_parent().gamedata.items.size() && int(args[0]) >= 0:
 				get_node(get_parent().get_node("StaticPlayer").target_puppet_path).call("_call_function", "UI/Inventory/Inventory", "add_item", [int(args[0])])
 
 ## GDSh command

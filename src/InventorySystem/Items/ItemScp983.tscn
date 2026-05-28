@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=4 uid="uid://d0o1eeb1xokss"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_0wg1b"]
-[ext_resource type="Texture2D" uid="uid://birhuj8vyp0pn" path="res://Assets/ExternalModels/ItemScp983/1001_Base_Color.png" id="1_cydjt"]
-[ext_resource type="Texture2D" uid="uid://deu0ibcxx0f3i" path="res://Assets/ExternalModels/ItemScp983/1001_Emissive.png" id="2_nlgkk"]
-[ext_resource type="Texture2D" uid="uid://bi4dtk63vwwm5" path="res://Assets/ExternalModels/ItemScp983/1001_Metallic-1001_Roughness.png" id="3_0wg1b"]
-[ext_resource type="Texture2D" uid="uid://n6y4nf5l4ao1" path="res://Assets/ExternalModels/ItemScp983/1001_Normal_OpenGL.png" id="4_lsrbe"]
+[ext_resource type="Texture2D" uid="uid://birhuj8vyp0pn" path="res://Assets/ExternalModels/SCP/Scp983/1001_Base_Color.png" id="1_cydjt"]
+[ext_resource type="Texture2D" uid="uid://deu0ibcxx0f3i" path="res://Assets/ExternalModels/SCP/Scp983/1001_Emissive.png" id="2_nlgkk"]
+[ext_resource type="Texture2D" uid="uid://bi4dtk63vwwm5" path="res://Assets/ExternalModels/SCP/Scp983/1001_Metallic-1001_Roughness.png" id="3_0wg1b"]
+[ext_resource type="Texture2D" uid="uid://n6y4nf5l4ao1" path="res://Assets/ExternalModels/SCP/Scp983/1001_Normal_OpenGL.png" id="4_lsrbe"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="4_nlgkk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3rft"]

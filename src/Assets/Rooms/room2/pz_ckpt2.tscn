@@ -147,11 +147,12 @@ visibility_range_end = 64.0
 mesh = SubResource("TextMesh_yt1ha")
 script = ExtResource("10_14xjv")
 waypoints_and_groups = Dictionary[String, String]({
-"SCP-067": "Scp067Spawn",
-"SCP-1223": "Scp1223Spawn",
+"SCP-067": "pz_testroom",
+"SCP-1223": "pz_testroom",
 "SCP-2028": "Scp2028",
 "SCP-261": "Scp261",
-"SCP-446": "Scp446Spawn"
+"SCP-446": "Scp446Spawn",
+"SCP-5270": "pz_testroom"
 })
 
 [node name="Seasonal" type="Node3D" parent="."]

@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=4 uid="uid://dewjdvhvhhprq"]
+[gd_scene load_steps=10 format=4 uid="uid://dewjdvhvhhprq"]
 
-[ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_7v7wk"]
 [ext_resource type="Texture2D" uid="uid://mxgmlfhqxp6p" path="res://Assets/OriginalModels/ItemDisarmer/Disarmer_base_png.png" id="2_fom0o"]
 [ext_resource type="Texture2D" uid="uid://c03tkruq032h6" path="res://Assets/OriginalModels/ItemDisarmer/Disarmer_rough_png.png" id="3_8l1ik"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="4_fom0o"]
@@ -65,8 +64,6 @@ size = Vector3(0.19519, 1, 0.239624)
 collision_layer = 8
 freeze = true
 continuous_cd = true
-script = ExtResource("1_7v7wk")
-item_id = 1
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.188, 0, 0, 0, 0.188, 0, 0, 0, 0.188, 0, 0.324097, 0)

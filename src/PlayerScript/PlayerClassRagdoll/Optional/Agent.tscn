@@ -1,13 +1,13 @@
 [gd_scene load_steps=35 format=4 uid="uid://b4s62t53mnodx"]
 
 [ext_resource type="Script" uid="uid://bhf85wkhfm536" path="res://PlayerScript/PlayerClassRagdoll/RagdollManager.gd" id="1_xaotn"]
-[ext_resource type="Texture2D" uid="uid://c40ygl47drwrm" path="res://Assets/ExternalModels/SCP/Guard-Unity/Guard_Base_Color.png.png" id="2_t6g13"]
-[ext_resource type="Material" uid="uid://bqsppnronmqj4" path="res://Assets/Materials/Classes/Christmas/Agent_clothes.tres" id="2_uor2e"]
-[ext_resource type="Material" uid="uid://dvabsudgk6ny" path="res://Assets/Materials/Classes/Christmas/Agent_light.tres" id="3_7h46i"]
-[ext_resource type="Texture2D" uid="uid://dkpn05834naha" path="res://Assets/ExternalModels/SCP/Guard-Unity/Extra_Body_Base_Color.png.png" id="3_74nnp"]
-[ext_resource type="Material" uid="uid://ct7u14c0v6tx8" path="res://Assets/Materials/Classes/Halloween/Agent_clothes.tres" id="4_b564u"]
-[ext_resource type="Texture2D" uid="uid://cf24uvb4yr0u3" path="res://Assets/ExternalModels/SCP/Guard-Unity/Accessories_Base_Color.png.png" id="4_uor2e"]
-[ext_resource type="Material" uid="uid://xqbctwh5kcdm" path="res://Assets/Materials/Classes/Halloween/Agent_light.tres" id="5_dgcwu"]
+[ext_resource type="Texture2D" uid="uid://c40ygl47drwrm" path="res://Assets/ExternalModels/SCP/Optional/Guard-Unity/Guard_Base_Color.png.png" id="2_t6g13"]
+[ext_resource type="Material" uid="uid://bqsppnronmqj4" path="res://Assets/Materials/Classes/Christmas/Optional/Agent_clothes.tres" id="2_uor2e"]
+[ext_resource type="Material" uid="uid://dvabsudgk6ny" path="res://Assets/Materials/Classes/Christmas/Optional/Agent_light.tres" id="3_7h46i"]
+[ext_resource type="Texture2D" uid="uid://dkpn05834naha" path="res://Assets/ExternalModels/SCP/Optional/Guard-Unity/Extra_Body_Base_Color.png.png" id="3_74nnp"]
+[ext_resource type="Material" uid="uid://ct7u14c0v6tx8" path="res://Assets/Materials/Classes/Halloween/Optional/Agent_clothes.tres" id="4_b564u"]
+[ext_resource type="Texture2D" uid="uid://cf24uvb4yr0u3" path="res://Assets/ExternalModels/SCP/Optional/Guard-Unity/Accessories_Base_Color.png.png" id="4_uor2e"]
+[ext_resource type="Material" uid="uid://xqbctwh5kcdm" path="res://Assets/Materials/Classes/Halloween/Optional/Agent_light.tres" id="5_dgcwu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdtqv"]
 resource_name = "Guard.001"

@@ -1,0 +1,1 @@
+The bear is taken from original SCP-Wiki article

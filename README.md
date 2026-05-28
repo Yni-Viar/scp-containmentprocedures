@@ -34,8 +34,8 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟡SCP-178|✅, since 5.2.0|❌|✅ Full|
 |🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, removed in 5.8.0|✅ Full|
-|🟡SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, removed in 6.0.0|❓ Partial|
+|🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, disabled in 5.8.0|✅ Full|
+|🟡SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❓ Partial|
 |🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
 |🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
@@ -48,9 +48,12 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-914|✅, since 2.0.0|❌, 5.7.x only, removed in 5.8.0|❓ Process only items|
 |🔴SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
 |🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
+|🟢SCP-983|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
 |🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-2306|✅, xince 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-5270|✅, since 8.1.0|✅, since 8.1.0|❓ Implemented only one event out of three|
 
 #### Object class
 🟢 - Safe

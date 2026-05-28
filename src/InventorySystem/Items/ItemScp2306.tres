@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bashuw1bawio1"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_2i46h"]
+[ext_resource type="Texture2D" uid="uid://bnafp1gl3a36k" path="res://InventorySystem/Items/Res/scp2306.png" id="2_2i46h"]
+
+[resource]
+script = ExtResource("1_2i46h")
+id = 24
+name = "SCP-2306"
+texture_tiled = ExtResource("2_2i46h")
+pickable_path = "res://InventorySystem/Items/ItemScp2306.tscn"
+size = Vector2i(1, 1)
+action_node_path = "InGameCommands"
+action_method_name = "scp_2306"
+upgrade_coarse = Array[int]([3])
+upgrade_one_to_one = Array[int]([24])
+upgrade_fine = Array[int]([0])
+upgrade_very_fine = Array[int]([0, 23])

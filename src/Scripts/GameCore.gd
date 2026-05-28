@@ -266,7 +266,7 @@ func showable(resource_path: String):
 
 ## Shows random images (currently used for 067 and 1223)
 ## If specified, a command will be done after some seconds (if showed)
-func show_image(images: Array, command_after: CommandResource = null, timer: float = 0.0):
+func show_image(images: Array, command_after: CommandResource = null, timer: float = 1.0):
 	if (images != null && images.size() > 0):
 		var resource_path: String = images[rng.randi_range(0, images.size() - 1)]
 		if $UI/Showable.visible:
@@ -284,6 +284,10 @@ func show_image(images: Array, command_after: CommandResource = null, timer: flo
 						$UI/Showable.hide()
 						showable_res = ""
 					protagonist._call_function(command_after.action_node_path, command_after.action_method_name, command_after.action_args)
+				elif timer > 0.375:
+					await get_tree().create_timer(timer).timeout
+					$UI/Showable.hide()
+					showable_res = ""
 	else:
 		$UI/Showable.hide()
 		showable_res = ""

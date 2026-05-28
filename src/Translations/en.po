@@ -40,7 +40,8 @@ msgstr ""
 "Some tasks require to bring Class-D (162, 173, 266, 522, 939, partly 938).\n"
 "Some tasks require to bring object/item to special place (347, 914).\n"
 "Some tasks require to come with special item (791).\n"
-"Some tasks require to interact or use subject of testing (023, 067, 249)."
+"Some tasks require to interact or use subject of testing (023, 067, 249).\n"
+"Some tasks require to interact with item while having another item in inventory (5280-2306)"
 
 msgid "HELP_EVENTS"
 msgstr ""
@@ -467,6 +468,11 @@ msgstr "Refine a food box on Very fine"
 
 msgid "TASK_914_EXP_7"
 msgstr "Refine a food box on Very fine"
+
+msgid "TASK_5270_2306_FIX"
+msgstr ""
+"Make the bear inside SCP-5270 happy,\n"
+"using SCP-2306"
 
 #~ msgid "RENDERER_BACKEND_SELECT"
 #~ msgstr "Select your rendering backend"

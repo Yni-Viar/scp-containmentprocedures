@@ -3,6 +3,19 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v8.1.0
+### Inventory refactor
+- [x] Refactor inventory system to allow item's custom properties
+- [x] \[Debug shell\] Fix add_item command to include item 0 and items more than 14 (a mistake was made)
+
+### New SCPs
+- [x] SCP-2306
+- [x] SCP-5270
+
+### Other changes
+- [x] \[Lite version\] Remove remains of agent (part 2)
+- [x] Remove debug cube, left after 8.0 development
+
 ## v8.0.2 (2026.05.27)
 
 - Elevators now have sound!

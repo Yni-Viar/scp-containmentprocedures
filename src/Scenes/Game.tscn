@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_7lihs"]
 [ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
 [ext_resource type="Script" uid="uid://bu7shnqhd7um8" path="res://MapGen/MapGen3D.gd" id="3_2irst"]
+[ext_resource type="Script" uid="uid://do7w8u202622b" path="res://Scripts/InGameCommands.gd" id="3_4eqlp"]
 [ext_resource type="PackedScene" uid="uid://by5c7g15ljuta" path="res://PlayerScript/StaticPlayer.tscn" id="3_bf53h"]
 [ext_resource type="Script" uid="uid://brnmrs6xlpyic" path="res://Scripts/UI.gd" id="6_dahhg"]
 [ext_resource type="PackedScene" uid="uid://c52ew0y5rt6s7" path="res://Assets/Rooms/sublevels/pd_basement.tscn" id="6_jn8rg"]
@@ -121,14 +122,15 @@ color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyesh"]
 texture = ExtResource("23_i4lct")
 
-[sub_resource type="BoxMesh" id="BoxMesh_umnjm"]
-
 [node name="Game" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_7lihs")
 
 [node name="GDShCommands" type="Node3D" parent="."]
 script = ExtResource("2_umnjm")
+
+[node name="InGameCommands" type="Node3D" parent="."]
+script = ExtResource("3_4eqlp")
 
 [node name="StaticPlayer" parent="." instance=ExtResource("3_bf53h")]
 
@@ -768,9 +770,6 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 100.0
 show_percentage = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_umnjm")
 
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
 [connection signal="task_done" from="FoundationTask" to="UI" method="_on_foundation_task_task_done"]

@@ -1,0 +1,10 @@
+Model Information:
+* title:	SCP-5270 Press X To Bear Handheld Console
+* source:	https://sketchfab.com/3d-models/scp-5270-press-x-to-bear-handheld-console-fcaa8e7570be4a1694f4596125e9235c
+* contact person:	sickbrick (https://sketchfab.com/sickbrick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+SCP-5270 Press X To Bear (GameBear Advice) Handheld Console created for the SCP game Go Home Annie by Mateja Olujić. We’re releasing all models of SCPs we created for the game for free under the CC Attribution license.

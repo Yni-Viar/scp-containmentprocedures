@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b6g45ixoaqyeo"]
+
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_huh2a"]
+[ext_resource type="Texture2D" uid="uid://k5tgbwhev5ao" path="res://InventorySystem/Items/Res/scp5270.png" id="2_huh2a"]
+
+[resource]
+script = ExtResource("1_huh2a")
+id = 23
+name = "SCP-5270"
+texture_tiled = ExtResource("2_huh2a")
+pickable_path = "res://InventorySystem/Items/ItemScp5270.tscn"
+size = Vector2i(2, 1)
+action_node_path = "Game"
+action_method_name = "show_image"
+action_args = [["ItemCustom:0"]]
+upgrade_rough = Array[int]([24])
+upgrade_coarse = Array[int]([0])
+upgrade_one_to_one = Array[int]([23])
+upgrade_fine = Array[int]([23])
+upgrade_very_fine = Array[int]([23])
+custom_properties = Array[String](["res://Assets/ExternalModels/SCP/HUD/sad.png", "res://Assets/ExternalModels/SCP/HUD/neutral.png"])

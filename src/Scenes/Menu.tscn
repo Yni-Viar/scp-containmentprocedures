@@ -399,7 +399,9 @@ SCP-939 by Adam Smascher
 SCP-983 by NekoChris
 SCP-1223 by Wildt
 SCP-2028 by GibberingEloquence
+SCP-2306 by Jacob Conwell
 SCP-2471 by WrongJohnSilver
+SCP-5270 by penguin6, gerrymanderbassist
 \"Experiment Log 261 Ad De\"
 by Dr Gears
 License: SCP-Wiki CC-BY-SA 3.0"
@@ -502,6 +504,12 @@ visible = false
 layout_mode = 2
 text = "SCP-131 The Eye Pods created for the SCP game
 Go Home Annie by Mateja Olujić.
+License: CC-BY-4.0
+------------------------
+SCP-5270 Press X To Bear
+(GameBear Advice) Handheld Console
+created for the SCP game Go Home Annie
+by Mateja Olujić.
 License: CC-BY-4.0"
 
 [node name="FoldableContainer13" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]

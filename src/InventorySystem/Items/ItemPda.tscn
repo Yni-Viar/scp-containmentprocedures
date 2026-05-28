@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=4 uid="uid://hqsff80j7fha"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_0cbie"]
-[ext_resource type="Texture2D" uid="uid://3wwb4cdhl4gw" path="res://Assets/ExternalModels/ItemPda/PDA_PDA_AlbedoTransparency.png" id="1_y8eho"]
-[ext_resource type="Texture2D" uid="uid://csvhxjxdc7hq" path="res://Assets/ExternalModels/ItemPda/PDA_PDA_MetallicSmoothness.png" id="2_nsg2q"]
-[ext_resource type="Texture2D" uid="uid://dpfs8g6iygkjb" path="res://Assets/ExternalModels/ItemPda/PDA_PDA_Normal.png" id="3_0cbie"]
+[ext_resource type="Texture2D" uid="uid://3wwb4cdhl4gw" path="res://Assets/ExternalModels/SCP/Pda/PDA_PDA_AlbedoTransparency.png" id="1_y8eho"]
+[ext_resource type="Texture2D" uid="uid://csvhxjxdc7hq" path="res://Assets/ExternalModels/SCP/Pda/PDA_PDA_MetallicSmoothness.png" id="2_nsg2q"]
+[ext_resource type="Texture2D" uid="uid://dpfs8g6iygkjb" path="res://Assets/ExternalModels/SCP/Pda/PDA_PDA_Normal.png" id="3_0cbie"]
 [ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="3_nsg2q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3rft"]

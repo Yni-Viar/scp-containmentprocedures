@@ -281,6 +281,8 @@ func _call_function(node_path: String, method_caller: String, amount: Array):
 	match node_path:
 		"Game":
 			get_tree().root.get_node("Game").callv(method_caller, amount)
+		"InGameCommands":
+			get_tree().root.get_node("Game/InGameCommands").callv(method_caller, amount)
 		"StaticPlayer":
 			get_tree().root.get_node("Game/StaticPlayer").callv(method_caller, amount)
 		_:

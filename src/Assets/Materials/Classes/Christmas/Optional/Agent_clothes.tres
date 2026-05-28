@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqsppnronmqj4"]
+
+[ext_resource type="Texture2D" uid="uid://cgboorevsn88c" path="res://Assets/ExternalModels/SCP/Optional/Guard-Unity/christmas/Guard_Base_Color.png" id="1_65ekd"]
+
+[resource]
+resource_name = "Guard.001"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_65ekd")
+roughness = 0.5
