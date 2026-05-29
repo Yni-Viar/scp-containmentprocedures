@@ -13,7 +13,7 @@ font = ExtResource("1_rfmb2")
 font_size = 32
 depth = 0.01
 
-[node name="Scp983Spawner" type="Node3D"]
+[node name="Scp983Spawner" type="Node3D" groups=["Scp983Spawn"]]
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.45167, 2.0021727, -7.0062)

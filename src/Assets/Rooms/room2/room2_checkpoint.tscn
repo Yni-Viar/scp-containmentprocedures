@@ -145,13 +145,14 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-162": "cont1_162",
 "SCP-173": "Scp173Spawn",
 "SCP-178": "Scp178Spawn",
+"SCP-2306": "RZ_cont1_testroom",
 "SCP-2471": "RZ_Cafeteria",
 "SCP-458": "RZ_Cafeteria",
 "SCP-522": "Scp522",
 "SCP-650": "Scp650Spawn",
 "SCP-686": "RZ_cont1_testroom",
 "SCP-914": "Scp914",
-"SCP-983": "RZ_cont1_testroom"
+"SCP-983": "Scp983Spawn"
 })
 delimiter_after = 1
 

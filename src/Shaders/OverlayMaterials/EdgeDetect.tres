@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c64tykjer7feb"]
-
-[ext_resource type="Shader" uid="uid://mknm08d75hop" path="res://Shaders/NormalEdgeDetectShader/edgedetect.gdshader" id="1_eeq8o"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_eeq8o")
-shader_parameter/line_color = Color(1, 1, 1, 1)
