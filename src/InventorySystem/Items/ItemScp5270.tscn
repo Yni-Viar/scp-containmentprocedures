@@ -109,7 +109,7 @@ shadow_mesh = SubResource("ArrayMesh_igury")
 [sub_resource type="BoxShape3D" id="BoxShape3D_r4gjs"]
 size = Vector3(0.5894165, 0.108306885, 0.34475708)
 
-[node name="ItemScp5270" type="RigidBody3D" groups=["Item"]]
+[node name="ItemScp5270" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 continuous_cd = true
 script = ExtResource("1_ltlwj")

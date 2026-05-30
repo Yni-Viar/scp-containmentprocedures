@@ -78,9 +78,9 @@ msgstr "Reflection probe"
 
 msgid "REFLECTION_PROBE_WARNING"
 msgstr ""
-"Since v5.7.0, you can safely disable Reflection probe setting,\n"
-"since implemented fallback mechanism.\n"
-"(lighting may change color after some time)"
+"When reflection probe is disabled\n"
+"and lighting type is Lightmap,\n"
+"lighting may change color after some time."
 
 msgid "MUSIC_VOLUME"
 msgstr "Music volume"

@@ -108,7 +108,7 @@ shadow_mesh = SubResource("ArrayMesh_brkp0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_38frd"]
 size = Vector3(0.07659912, 0.035339355, 0.31347656)
 
-[node name="Scp2306" type="RigidBody3D" groups=["Item"]]
+[node name="Scp2306" type="RigidBody3D" groups=["ImportantItem", "Item"]]
 collision_layer = 8
 continuous_cd = true
 script = ExtResource("1_38frd")

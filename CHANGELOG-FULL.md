@@ -3,6 +3,11 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v8.1.1 (2026.05.30)
+
+- Fix possibility of interrupting SCP-5270-2306 task by NPC scientist, when AI is enabled.
+- Increased SCP-5270 using timer to 2.0 (was 1.0)
+
 ## v8.1.0 (2026.05.29)
 ### Inventory refactor
 - Refactor inventory system to allow item's custom properties
