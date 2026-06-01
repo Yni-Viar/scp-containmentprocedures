@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdohqm7yw00if" path="res://Assets/HUD/room2_90.png" id="1_m24xy"]
 [ext_resource type="Texture2D" uid="uid://8etimuikkbyb" path="res://Assets/HUD/room2.png" id="2_gtaaj"]
-[ext_resource type="PackedScene" uid="uid://nwbpeg161c6u" path="res://Assets/Rooms/room2/mt_room2_legacy.tscn" id="3_m24xy"]
+[ext_resource type="PackedScene" uid="uid://nwbpeg161c6u" path="res://Assets/Rooms/room2/mt_room2_echoes.tscn" id="3_m24xy"]
 [ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="4_276y4"]
 
 [resource]
@@ -13,4 +13,5 @@ icon_0_degrees = ExtResource("1_m24xy")
 icon_90_degrees = ExtResource("2_gtaaj")
 icon_180_degrees = ExtResource("1_m24xy")
 icon_270_degrees = ExtResource("2_gtaaj")
-spawn_chance = 7.5
+spawn_chance = 5.0
+door_type = 1

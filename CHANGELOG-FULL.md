@@ -3,6 +3,18 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v9.0.0 ()
+### Human update
+- [ ] Different male scientists (thanks to OOD from SL Blender community)
+
+### New SCPs
+- [ ] SCP-080
+- [ ] SCP-1507 (tied to a variantion of Class-D)
+
+### Maintenance Zone expansion
+- [x] Import some open-source rooms from SCP Echoes, that fit the game style.
+- [ ] Different door frames in Maintenance Zone
+
 ## v8.1.1 (2026.05.30)
 
 - Fix possibility of interrupting SCP-5270-2306 task by NPC scientist, when AI is enabled.

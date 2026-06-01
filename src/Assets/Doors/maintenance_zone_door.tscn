@@ -42,8 +42,10 @@ data = PackedVector3Array(2.83, 2.55, 0.16, 2.7756, 1.9978, -0.16, 2.7756, 1.997
 [node name="MaintenanceZoneDoor" type="StaticBody3D" groups=["Door"]]
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2500408, 0)
 mesh = SubResource("ArrayMesh_e2a5o")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2500408, 0)
 shape = SubResource("ConcavePolygonShape3D_yvm80")
