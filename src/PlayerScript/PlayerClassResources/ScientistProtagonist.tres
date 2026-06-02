@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://c8pms1lfwn1s8"]
 
-[ext_resource type="PackedScene" uid="uid://citkd65dmhf8b" path="res://PlayerScript/PlayerClassPrefab/Scientist.tscn" id="1_ptuxb"]
+[ext_resource type="PackedScene" uid="uid://wf17o2xvgdbw" path="res://PlayerScript/PlayerClassPrefab/Protagonist.tscn" id="1_1bwyr"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_1bwyr"]
 [ext_resource type="PackedScene" uid="uid://dss3td6nro4o5" path="res://PlayerScript/PlayerClassRagdoll/Scientist.tscn" id="2_o38e7"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_1bwyr")
 puppet_class_name = "SCIENCE_PERSONNEL"
 speed = 12.0
-prefab = ExtResource("1_ptuxb")
+prefab = ExtResource("1_1bwyr")
 spawn_point_group = "ScientistSpawn"
 initial_amount = 1
 footstep_sounds = {

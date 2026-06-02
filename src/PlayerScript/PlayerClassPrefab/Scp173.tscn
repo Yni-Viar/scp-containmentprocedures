@@ -1,18 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://ehb4w8qwxc47"]
+[gd_scene load_steps=2 format=3 uid="uid://ehb4w8qwxc47"]
 
 [ext_resource type="Script" uid="uid://c3kn53huxivav" path="res://PlayerScript/PlayerClassScript/Scp173PuppetScript.gd" id="1_b0s8h"]
-[ext_resource type="Script" uid="uid://cbro31t8tbaub" path="res://Scripts/ItemSequence.gd" id="4_bfo3e"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_b0s8h")
-armature_name = "SCP173_Rig"
-enable_vision_scan = true
-
-[node name="Scp173Spawner" type="Marker3D" parent="."]
-script = ExtResource("4_bfo3e")
-items = Dictionary[String, int]({
+available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Optional/Scp173Unity.tscn": 1,
 "res://PlayerScript/PlayerClassPrefab/Scp173_Variations/Scp173Our.tscn": 0
 })
-
-[connection signal="item_not_found" from="Scp173Spawner" to="." method="_on_scp_173_spawner_item_not_found"]
+armature_name = "SCP173_Rig"
+enable_vision_scan = true

@@ -428,6 +428,22 @@ are made by Keirdan Jenson
 for SCP: Secret Lab
 License: CC-BY-SA 4.0"
 
+[node name="FoldableContainer17" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+layout_mode = 2
+folded = true
+title = "SCP: SL Blender Community assets"
+
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer17"]
+visible = false
+layout_mode = 2
+text = "SCP: SL Scientist modification by OOD.
+Based on PurpleGoop Scientist model.
+License - CC-BY-SA 4.0*
+---
+*since it was based on
+CC-BY-SA 4.0 asset, the
+license continue to apply"
+
 [node name="FoldableContainer6" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
 layout_mode = 2
 folded = true

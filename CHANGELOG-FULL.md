@@ -4,8 +4,17 @@ This list contains all features, added in the game, or will be added in upcoming
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ## v9.0.0 ()
-### Human update
-- [ ] Different male scientists (thanks to OOD from SL Blender community)
+### Humans and class system update
+- [x] Different male scientists (thanks to OOD from SL Blender community)
+- [x] Add support for different skins
+  - [x] Scientists & protagonist
+  - [ ] Re-implement season outfits and rework legacy `BasePuppetScript` one.
+  - [ ] SCP-023
+  - [ ] SCP-131
+  - [x] SCP-173
+  - [ ] SCP-347
+  - [x] SCP-650
+  - [ ] SCP-939
 
 ### New SCPs
 - [ ] SCP-080
@@ -14,6 +23,9 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ### Maintenance Zone expansion
 - [x] Import some open-source rooms from SCP Echoes, that fit the game style.
 - [ ] Different door frames in Maintenance Zone
+
+### Other changes
+- [x] All scientists are now bald because of new models limitation.
 
 ## v8.1.1 (2026.05.30)
 

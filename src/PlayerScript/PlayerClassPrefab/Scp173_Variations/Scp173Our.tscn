@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://c4rswab7pvvnc"]
 
-[ext_resource type="Script" uid="uid://cj1asomajykvp" path="res://PlayerScript/PlayerClassScript/Outfits/Outfits.gd" id="1_jj4fc"]
+[ext_resource type="Script" uid="uid://cj1asomajykvp" path="res://PlayerScript/PlayerClassScript/Outfits/Scp173Outfits.gd" id="1_jj4fc"]
 [ext_resource type="Texture2D" uid="uid://dkkj1vvr8rlvl" path="res://Assets/OriginalModels/Scp173/Scp173Statue_base.png" id="1_qreyh"]
 [ext_resource type="Texture2D" uid="uid://iinmnr6e6psw" path="res://Assets/OriginalModels/Scp173/Faces/Face1.png" id="2_8gq43"]
 [ext_resource type="Texture2D" uid="uid://t8hxjv4mx0jk" path="res://Assets/OriginalModels/Scp173/Scp173Statue_rough.png" id="2_170pv"]

@@ -23,7 +23,7 @@ var player_direction: Vector3
 var movement_reset: bool = false
 
 # Called when the node enters the scene tree for the first time.
-func on_start() -> void:
+func on_spawned() -> void:
 	raycast = get_parent().get_parent().get_node("RayCastLow")
 	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
 	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)

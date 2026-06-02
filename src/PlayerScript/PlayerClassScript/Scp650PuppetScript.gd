@@ -7,7 +7,7 @@ class_name Scp650PuppetScript
 var timer = 0
 
 # Called when the node enters the scene tree for the first time.
-func on_start() -> void:
+func on_spawned() -> void:
 	pass # Replace with function body.
 
 
@@ -36,6 +36,6 @@ func _physics_process(delta: float) -> void:
 ## Animation state
 func set_state(s):
 	# if animation is the same, do nothing, else play new animation
-	if $AnimationPlayer.current_animation == s:
+	if get_child(0).get_node("AnimationPlayer").current_animation == s:
 		return
-	$AnimationPlayer.play(s, 0.3)
+	get_child(0).get_node("AnimationPlayer").play(s, 0.3)
