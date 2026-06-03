@@ -158,7 +158,7 @@ script = ExtResource("8_o8cvc")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("9_a16uk")]
-transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 4.707461, 0.6896373, 4.4958286)
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 7.3766413, -1.2674007, -9.341572)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
@@ -166,7 +166,10 @@ script = ExtResource("8_o8cvc")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("10_a16uk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7970872, -1.9661734, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0973434, -1.9661734, 0)
+
+[node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("10_a16uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.822874, -1.9661734, 0)
 
 [node name="FireExtinguisher" parent="." instance=ExtResource("13_liy1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.274598, -0.61824614, 9.080241)

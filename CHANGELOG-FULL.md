@@ -8,13 +8,13 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Different male scientists (thanks to OOD from SL Blender community)
 - [x] Add support for different skins
   - [x] Scientists & protagonist
-  - [ ] Re-implement season outfits and rework legacy `BasePuppetScript` one.
-  - [ ] SCP-023
-  - [ ] SCP-131
+  - [x] Re-implement season outfits and remove legacy system from `BasePuppetScript`.
+  - [x] SCP-023
+  - [x] SCP-131
   - [x] SCP-173
-  - [ ] SCP-347
+  - [x] SCP-347
   - [x] SCP-650
-  - [ ] SCP-939
+  - [x] SCP-939
 
 ### New SCPs
 - [ ] SCP-080
@@ -26,6 +26,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ### Other changes
 - [x] All scientists are now bald because of new models limitation.
+- [x] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
 
 ## v8.1.1 (2026.05.30)
 

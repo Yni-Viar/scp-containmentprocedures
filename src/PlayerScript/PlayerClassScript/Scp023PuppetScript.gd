@@ -1,4 +1,4 @@
-extends BasePuppetScript
+extends SkinnablePuppetScript
 ## SCP-023 puppet script.
 ## It is like a delayed timeb0mb with warning.
 ## It appears in late round, you need to come to repair eyes. Won't do it - catch gameover.
@@ -10,7 +10,7 @@ var eye_glow_strength: float = 0.25
 @export var glow_enabled: bool = true
 @onready var timer: Timer = $Timer
 
-func on_start():
+func on_spawned() -> void:
 	if Settings.setting_res.zen_mode:
 		glow_enabled = false
 	if glow_enabled:
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			call("set_state", "idle")
 		States.WALKING:
 			call("set_state", "walk")
-	$rig_001_deform/Skeleton3D/Plane.mesh.surface_get_material(2).set_shader_parameter("emission_strength", eye_glow_strength)
+	puppet_node.get_node("rig_001_deform/Skeleton3D/Plane").mesh.surface_get_material(2).set_shader_parameter("emission_strength", eye_glow_strength)
 	# If eye glowing too strong, activate 023 event
 	if !timer.is_stopped():
 		eye_glow_strength = lerpf(0.25, 2.0, (timer.wait_time - timer.time_left) / timer.wait_time )
@@ -35,9 +35,9 @@ func _physics_process(delta: float) -> void:
 ## Animation state
 func set_state(anim_name: String) -> void:
 	# if animation is the same, do nothing, else play new animation
-	if $AnimationPlayer.current_animation == anim_name:
+	if puppet_node.get_node("AnimationPlayer").current_animation == anim_name:
 		return
-	$AnimationPlayer.play(anim_name, 0.3)
+	puppet_node.get_node("AnimationPlayer").play(anim_name, 0.3)
 
 
 func _on_timer_timeout() -> void:

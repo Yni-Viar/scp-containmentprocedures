@@ -11,7 +11,7 @@ script = ExtResource("1_pgakl")
 torso_node_path = NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0")
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Scientist_Variations/scientist_protagonist.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_protagonist.tscn": 0
 })
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])

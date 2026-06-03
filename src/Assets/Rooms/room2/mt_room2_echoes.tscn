@@ -260,7 +260,10 @@ script = ExtResource("9_8w5c4")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("10_yhn7d")]
-transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 4.707461, 0.6896373, 4.4958286)
+transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 2.2294455, -1.2442352, 9.360581)
+
+[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("10_yhn7d")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.1711006, -1.2442361, -9.234573)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
@@ -268,7 +271,10 @@ script = ExtResource("9_8w5c4")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("11_4jojy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7970872, -1.9661734, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3673005, -0.70169735, -0.53107786)
+
+[node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("11_4jojy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3960235, -0.70169735, -0.53107786)
 
 [node name="Entityspawn" type="Marker3D" parent="." groups=["Scp131BSpawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4957379, -0.78577, 5.991299)

@@ -1,4 +1,4 @@
-extends BasePuppetScript
+extends SkinnablePuppetScript
 ## SCP-939 puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name Scp939PuppetScript
@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 		attack()
 
 func set_state(anim: String):
-	if $AnimationPlayer.current_animation != anim:
-		$AnimationPlayer.play(anim)
+	if puppet_node.get_node("AnimationPlayer").current_animation != anim:
+		puppet_node.get_node("AnimationPlayer").play(anim)
 
 func attack():
 	if attack_update_timer > 0:

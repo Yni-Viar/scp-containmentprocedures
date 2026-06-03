@@ -18,17 +18,13 @@ uniform float metallic : hint_range(0.0, 1.0, 0.01);
 uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
 uniform float normal_scale : hint_range(-16.0, 16.0);
 
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
 group_uniforms;
 group_uniforms tint;
 uniform vec3 tint: source_color = vec3(0.0);
 group_uniforms;
 
 void vertex() {
-	UV = UV * uv1_scale.xy + uv1_offset.xy;
+	
 }
 
 void fragment() {

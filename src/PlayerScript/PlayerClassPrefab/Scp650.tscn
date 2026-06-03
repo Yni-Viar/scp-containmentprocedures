@@ -5,8 +5,9 @@
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_u5i6x")
+default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Scp650_Variations/Scp650.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp650/Scp650.tscn": 0
 })
 armature_name = "Armature"
 fixed_prefab = true

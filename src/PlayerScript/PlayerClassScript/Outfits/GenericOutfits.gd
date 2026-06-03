@@ -2,9 +2,22 @@ extends MeshInstance3D
 ## Apply seasonal outfits
 ## Made by Yni, licensed under MIT License.
 
+@export var christmas_material: Array[Material]
+@export var halloween_material: Array[Material]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	match Settings.current_season:
+		Settings.Season.CHRISTMAS:
+			for i in range(christmas_material.size()):
+				if christmas_material[i] == null:
+					continue
+				mesh.surface_set_material(i, christmas_material[i])
+		Settings.Season.HALLOWEEN:
+			for i in range(halloween_material.size()):
+				if halloween_material[i] == null:
+					continue
+				mesh.surface_set_material(i, halloween_material[i])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

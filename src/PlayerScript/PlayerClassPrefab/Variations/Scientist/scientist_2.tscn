@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://duw5opo4n6nmd"]
+[gd_scene load_steps=48 format=4 uid="uid://duw5opo4n6nmd"]
 
 [ext_resource type="Material" uid="uid://jl2l6yfgmg64" path="res://Assets/ExternalModels/SCP/CommonMaterial/Eyes/eye.tres" id="1_03xn4"]
 [ext_resource type="Texture2D" uid="uid://br08rhmwhsavv" path="res://Assets/ExternalModels/SCP/Scientist/hairAtlas_Albedo_transparency_dark.png" id="2_03xn4"]
@@ -10,9 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://b1yhgihge33o1" path="res://Assets/ExternalModels/SCP/Scientist/EditedByOOD/Scientist2/Scientist_head_Mask.png" id="9_k8o6n"]
 [ext_resource type="Texture2D" uid="uid://tgrb4mcfntk8" path="res://Assets/ExternalModels/SCP/Scientist/EditedByOOD/Scientist2/Scientist_head_Normal.png" id="10_h26nw"]
 [ext_resource type="Material" uid="uid://oba2bcy3xvrf" path="res://Assets/Materials/Classes/Regular/Scientist_pants.tres" id="12_ksksg"]
+[ext_resource type="Material" uid="uid://csg73fmkioovy" path="res://Assets/Materials/Classes/Christmas/Scientist_pants.tres" id="12_s8lmj"]
+[ext_resource type="Material" uid="uid://canux8vhdvrrl" path="res://Assets/Materials/Classes/Halloween/Scientist_pants.tres" id="13_02la1"]
 [ext_resource type="Texture2D" uid="uid://ctccbhg84v7lm" path="res://Assets/ExternalModels/SCP/Scientist/scientist_shoes_AlbedoTransparency.png" id="13_l60ik"]
+[ext_resource type="Script" uid="uid://c7x8jm7kgh7ie" path="res://PlayerScript/PlayerClassScript/Outfits/GenericOutfits.gd" id="14_1dfs8"]
 [ext_resource type="Texture2D" uid="uid://c5ob532o2qkyh" path="res://Assets/ExternalModels/SCP/Scientist/scientist_shoes_Normal.png" id="14_ulqgc"]
+[ext_resource type="Material" uid="uid://4foax8koch4x" path="res://Assets/Materials/Classes/Christmas/Scientist_torso.tres" id="15_23kcf"]
 [ext_resource type="Material" uid="uid://bs0pigtflaxqr" path="res://Assets/Materials/Classes/Regular/Scientist_torso.tres" id="15_rxqmw"]
+[ext_resource type="Material" uid="uid://c60sygjdlyxjv" path="res://Assets/Materials/Classes/Halloween/Scientist_torso.tres" id="16_23kcf"]
 [ext_resource type="AnimationLibrary" uid="uid://b0e0jgqlgfcph" path="res://PlayerScript/PlayerClassPrefab/SLAnimLibrary/SLAnimations.res" id="23_dfikn"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3m32r"]
@@ -1413,6 +1418,9 @@ blend_shapes/chad = 0.0
 [node name="Scientist_Pants_LOD0_002" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
 mesh = SubResource("ArrayMesh_bit5n")
 skin = SubResource("Skin_xjy7n")
+script = ExtResource("14_1dfs8")
+christmas_material = Array[Material]([ExtResource("12_s8lmj")])
+halloween_material = Array[Material]([ExtResource("13_02la1")])
 
 [node name="Scientist_shoe_LOD0_002" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
 mesh = SubResource("ArrayMesh_hfrro")
@@ -1421,6 +1429,9 @@ skin = SubResource("Skin_xjy7n")
 [node name="Scientist_torso_LOD0_002" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
 mesh = SubResource("ArrayMesh_5s4tt")
 skin = SubResource("Skin_xjy7n")
+script = ExtResource("14_1dfs8")
+christmas_material = Array[Material]([ExtResource("15_23kcf")])
+halloween_material = Array[Material]([ExtResource("16_23kcf")])
 
 [node name="HeadAttachment" type="BoneAttachment3D" parent="HumanRig/Skeleton3D"]
 transform = Transform3D(0.99822074, -0.01987152, 0.056218743, 0.028762355, 0.9863613, -0.16205813, -0.052231535, 0.16338679, 0.9851778, -0.04095096, 4.7261543, 0.37282795)

@@ -8,10 +8,8 @@ enum Season {NONE, WINTER, SPRING, SUMMER, AUTUMN, CHRISTMAS, HALLOWEEN}
 
 signal settings_saved
 
-## Migrated from Globals.
 ## Game's data compatibility for modding.
-const DATA_COMPATIBILITY: String = "8.0.0"
-## Migrated from Globals.
+const DATA_COMPATIBILITY: String = "9.0.0"
 ## Game's data compatibility for modding.
 const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.

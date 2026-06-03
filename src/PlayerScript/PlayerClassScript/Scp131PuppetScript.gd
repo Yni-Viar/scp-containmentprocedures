@@ -1,13 +1,17 @@
-extends BasePuppetScript
+extends SkinnablePuppetScript
+## SCP-131 puppet script
+## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp131PuppetScript
 
 @export_group("DO NOT TOUCH!")
 @export var looking_at_target: bool = false
 @export var elapsed_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
-func on_start():
-	pass
-
+func on_spawned():
+	if default_puppet_to_spawn == -1:
+		selected_puppet = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
+		get_tree().call_group("Scp131", "assign_puppet", selected_puppet)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

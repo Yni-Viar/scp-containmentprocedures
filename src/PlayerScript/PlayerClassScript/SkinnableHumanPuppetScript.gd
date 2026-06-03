@@ -35,14 +35,14 @@ var update_timer = 1.0
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
 	raycast = get_parent().get_parent().get_node("RayCast3D")
-	if get_child(0).get_node_or_null("AnimationTree") != null:
-		get_child(0).get_node("AnimationTree").active = true
+	if puppet_node.get_node_or_null("AnimationTree") != null:
+		puppet_node.get_node("AnimationTree").active = true
 		has_animtree = true
-	if get_child(0).get_node_or_null(armature_name + "/Skeleton3D/LookAtModifier3D") != null && get_parent().get_parent().puppet_class.enable_ik:
+	if puppet_node.get_node_or_null(armature_name + "/Skeleton3D/LookAtModifier3D") != null && get_parent().get_parent().puppet_class.enable_ik:
 		has_lookat_ik = true
 	
 	
-	if get_child(0).get_node_or_null(torso_node_path) == null:
+	if puppet_node.get_node_or_null(torso_node_path) == null:
 		resistance_scp686 = true
 	
 	on_start_human()
@@ -56,24 +56,24 @@ func _physics_process(delta: float) -> void:
 	if has_animtree && !get_parent().get_parent().optimizator_paused:
 		match state:
 			States.IDLE:
-				if !get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount") - 0.00001 < -1:
-					call("set_state", "state_machine", "blend_amount", lerp(get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount"), -1.0, get_parent().get_parent().character_speed * delta))
+				if !puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount") - 0.00001 < -1:
+					call("set_state", "state_machine", "blend_amount", lerp(puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount"), -1.0, get_parent().get_parent().character_speed * delta))
 			States.WALKING:
-				if !get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount") + 0.00001 > 0:
-					call("set_state", "state_machine", "blend_amount", lerp(get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount"), 0.0, get_parent().get_parent().character_speed * delta))
+				if !puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount") + 0.00001 > 0:
+					call("set_state", "state_machine", "blend_amount", lerp(puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount"), 0.0, get_parent().get_parent().character_speed * delta))
 			States.RUNNING:
-				if !get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount") + 0.00001 > 1:
-					call("set_state", "state_machine", "blend_amount", lerp(get_child(0).get_node("AnimationTree").get("parameters/state_machine/blend_amount"), 1.0, get_parent().get_parent().character_speed * delta))
+				if !puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount") + 0.00001 > 1:
+					call("set_state", "state_machine", "blend_amount", lerp(puppet_node.get_node("AnimationTree").get("parameters/state_machine/blend_amount"), 1.0, get_parent().get_parent().character_speed * delta))
 		if enable_secondary_state:
 			match secondary_state:
 				SecondaryState.NONE:
-					if !get_child(0).get_node("AnimationTree").get("parameters/items_blend/blend_amount") - 0.00001 < 0:
-						call("set_state", "items_blend", "blend_amount", lerp(get_child(0).get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 0.0, get_parent().get_parent().character_speed * delta))
+					if !puppet_node.get_node("AnimationTree").get("parameters/items_blend/blend_amount") - 0.00001 < 0:
+						call("set_state", "items_blend", "blend_amount", lerp(puppet_node.get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 0.0, get_parent().get_parent().character_speed * delta))
 				_:
 					call("set_state", "secondary_state", "transition_request", SECONDARY_STATE_ALIAS[secondary_state])
 			if secondary_state != SecondaryState.NONE:
-				if !get_child(0).get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
-					call("set_state", "items_blend", "blend_amount", lerp(get_child(0).get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 1.0, get_parent().get_parent().character_speed * delta))
+				if !puppet_node.get_node("AnimationTree").get("parameters/items_blend/blend_amount") + 0.00001 > 1:
+					call("set_state", "items_blend", "blend_amount", lerp(puppet_node.get_node("AnimationTree").get("parameters/items_blend/blend_amount"), 1.0, get_parent().get_parent().character_speed * delta))
 	
 	## Look at enemy
 	if active_puppets.size() > 0 && state == States.IDLE:
@@ -92,8 +92,8 @@ func _physics_process(delta: float) -> void:
 		# If there is must-not-look SCP (like 023), just watch SafePoint. Else, look directly, as 173 or 650
 		#if active_puppets[index].puppet_class.fraction == 3 && \
 		#active_puppets[index].get_node_or_null("PlayerModel/Puppet") != null:
-			#if active_puppets[index].get_node("PlayerModel/Puppet").get_child(0).get_node_or_null("SafeZone") != null:
-				#looking_object = active_puppets[index].get_node("PlayerModel/Puppet").get_child(0).get_node("SafeZone")
+			#if active_puppets[index].get_node("PlayerModel/Puppet").puppet_node.get_node_or_null("SafeZone") != null:
+				#looking_object = active_puppets[index].get_node("PlayerModel/Puppet").puppet_node.get_node("SafeZone")
 			#else:
 				#looking_object = active_puppets[index]
 		#else:
@@ -107,14 +107,14 @@ func _physics_process(delta: float) -> void:
 		
 		if has_lookat_ik:
 			get_parent().get_parent().get_node("RayCast3D").look_at(looking_object.global_position)
-			get_child(0).get_node(armature_name + "/Skeleton3D/LookAtModifier3D").target_node = looking_object.get_path()
+			puppet_node.get_node(armature_name + "/Skeleton3D/LookAtModifier3D").target_node = looking_object.get_path()
 		elif active_puppets[index].puppet_class.fraction != 3:
 			get_parent().get_parent().look_at(looking_object.global_position)
 		looking_at_target = true
 	elif looking_at_target:
 		get_parent().get_parent().get_node("RayCast3D").rotation = Vector3.ZERO
 		if has_lookat_ik:
-			get_child(0).get_node(armature_name + "/Skeleton3D/LookAtModifier3D").target_node = ""
+			puppet_node.get_node(armature_name + "/Skeleton3D/LookAtModifier3D").target_node = ""
 		looking_at_target = false
 	
 	# It handles watching at 173 and 650...
@@ -146,7 +146,7 @@ func _on_raycast_update_npc(collider_path: String):
 
 ## Set animation to an entity via Animation Tree.
 func set_state(animation_name: String, action_name: String, amount):
-	get_child(0).get_node("AnimationTree").set("parameters/" + animation_name + "/" + action_name, amount)
+	puppet_node.get_node("AnimationTree").set("parameters/" + animation_name + "/" + action_name, amount)
 
 #func set_anim_state(animation_name: String):
 	#$AnimationPlayer.play(animation_name)
@@ -158,10 +158,10 @@ func footstep(key: String):
 
 ## Hold item in hand
 func hold_item(idx: int):
-	if get_child(0).get_node_or_null(armature_name + "/Skeleton3D/ItemAttachment/Marker3D") != null:
+	if puppet_node.get_node_or_null(armature_name + "/Skeleton3D/ItemAttachment/Marker3D") != null:
 		if get_parent().get_parent().is_player:
-			if get_child(0).get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").get_child_count() > 0:
-				for node in get_child(0).get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").get_children():
+			if puppet_node.get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").get_child_count() > 0:
+				for node in puppet_node.get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").get_children():
 					node.queue_free()
 				secondary_state = SecondaryState.NONE
 				current_item = -1
@@ -170,7 +170,7 @@ func hold_item(idx: int):
 				var item_prefab: Pickable = load(get_tree().root.get_node("Game").gamedata.items[idx].pickable_path).instantiate()
 				item_prefab.picked = true
 				item_prefab.freeze = true
-				get_child(0).get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").add_child(item_prefab)
+				puppet_node.get_node(armature_name + "/Skeleton3D/ItemAttachment/Marker3D").add_child(item_prefab)
 				current_item = idx
 			
 
@@ -178,7 +178,7 @@ func effect_manager_start(effect: String, strength: float):
 	match effect:
 		"Scp686":
 			if !resistance_scp686:
-				get_child(0).get_node(torso_node_path).mesh.surface_set_material(0, get_child(0).get_node(torso_node_path).mesh.surface_get_material(0).duplicate())
+				puppet_node.get_node(torso_node_path).mesh.surface_set_material(0, puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).duplicate())
 		"Scp178":
 			if !resistance_scp178:
 				if get_tree().get_node_count_in_group("Scp178-1") == 0 && !OS.has_feature("Lite"):
@@ -194,7 +194,7 @@ func effect_manager_start(effect: String, strength: float):
 				glasses.freeze = true
 				glasses.position = Vector3(0.0, 0.162, 0.215)
 				glasses.rotation_degrees = Vector3(0.0, -90.0, 0.0)
-				get_child(0).get_node(armature_name + "/Skeleton3D/HeadAttachment/Marker3D").add_child(glasses)
+				puppet_node.get_node(armature_name + "/Skeleton3D/HeadAttachment/Marker3D").add_child(glasses)
 				await get_tree().create_timer(2.5).timeout
 				secondary_state = SecondaryState.NONE
 		"Scp067":
@@ -230,9 +230,9 @@ func effect_manager_update(effect: String, strength: float):
 	match effect:
 		"Scp686":
 			if !resistance_scp686:
-				if get_child(0).get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint")[0] < 0.95:
+				if puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint")[0] < 0.95:
 					var value: float = get_physics_process_delta_time() * 2 * strength
-					get_child(0).get_node(torso_node_path).mesh.surface_get_material(0).set_shader_parameter("tint", get_child(0).get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint") + Color(value, value, value))
+					puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).set_shader_parameter("tint", puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint") + Color(value, value, value))
 				get_parent().get_parent().health_manage(-get_physics_process_delta_time() * strength, 2)
 	effect_manager_update_custom(effect, strength)
 
@@ -245,7 +245,7 @@ func effect_manager_destroy(effect: String, strength: float):
 			if !resistance_scp178:
 				get_tree().root.get_node("Game/StaticPlayer").apply_overlay("Scp178", 0.0)
 				get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").set_cull_mask_value(20, false)
-				for node in get_child(0).get_node(armature_name + "/Skeleton3D/HeadAttachment/Marker3D").get_children():
+				for node in puppet_node.get_node(armature_name + "/Skeleton3D/HeadAttachment/Marker3D").get_children():
 					node.queue_free()
 		"Scp067":
 			if scp_067_affected:

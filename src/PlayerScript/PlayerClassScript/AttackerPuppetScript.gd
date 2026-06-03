@@ -1,4 +1,4 @@
-extends HumanPuppetScript
+extends SkinnableHumanPuppetScript
 ## Chaos and MTF base scripts
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name AttackerPuppetScript

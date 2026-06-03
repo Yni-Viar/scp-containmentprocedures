@@ -36,6 +36,6 @@ func _physics_process(delta: float) -> void:
 ## Animation state
 func set_state(s):
 	# if animation is the same, do nothing, else play new animation
-	if get_child(0).get_node("AnimationPlayer").current_animation == s:
+	if puppet_node.get_node("AnimationPlayer").current_animation == s:
 		return
-	get_child(0).get_node("AnimationPlayer").play(s, 0.3)
+	puppet_node.get_node("AnimationPlayer").play(s, 0.3)

@@ -11,10 +11,10 @@ func _ready() -> void:
 	match Settings.current_season:
 		Settings.Season.CHRISTMAS:
 			$CPUParticles3D.mesh.material = load("res://Assets/VFX/Scp266/christmas/Scp266_active.tres")
-			$CPUParticles3D2.mesh.material = load("res://Assets/VFX/Scp266/christmas/Scp266_dormant.tres")
+			$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Scp266/christmas/Scp266_dormant.tres")
 		Settings.Season.HALLOWEEN:
 			$CPUParticles3D.mesh.material = load("res://Assets/VFX/Scp266/halloween/Scp266_active.tres")
-			$CPUParticles3D2.mesh.material = load("res://Assets/VFX/Scp266/halloween/Scp266_dormant.tres")
+			$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Scp266/halloween/Scp266_dormant.tres")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

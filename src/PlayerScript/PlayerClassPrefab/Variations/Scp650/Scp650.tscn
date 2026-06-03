@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://c8trus7ofr2xs"]
+[gd_scene load_steps=16 format=4 uid="uid://c8trus7ofr2xs"]
 
+[ext_resource type="Script" uid="uid://c7x8jm7kgh7ie" path="res://PlayerScript/PlayerClassScript/Outfits/GenericOutfits.gd" id="2_nthbr"]
 [ext_resource type="Material" uid="uid://osaixqx57tie" path="res://Assets/Materials/Classes/Regular/Scp650.tres" id="3_ixvm1"]
+[ext_resource type="Material" uid="uid://x8juja3kgucu" path="res://Assets/Materials/Classes/Christmas/Scp650.tres" id="3_tvgi8"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6b0v7"]
 resource_name = "SCP_650_650"
@@ -1609,6 +1611,8 @@ bones/19/scale = Vector3(1, 1, 1)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_6b0v7")
 skin = SubResource("Skin_y06pg")
+script = ExtResource("2_nthbr")
+christmas_material = Array[Material]([ExtResource("3_tvgi8")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
