@@ -22,7 +22,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ### Maintenance Zone expansion
 - [x] Import some open-source rooms from SCP Echoes, that fit the game style.
-- [ ] Different door frames in Maintenance Zone
+- [x] Different door frames in Maintenance Zone
 
 ### Other changes
 - [x] All scientists are now bald because of new models limitation.
