@@ -33,23 +33,25 @@ func _physics_process(delta: float) -> void:
 	else:
 		for puppet in frozen_puppets:
 			# Freeze...
-			puppet.health_manage(-1.25, 1)
+			puppet.health_manage(-5.0, 1)
 		timer = 4.0
 
 func _on_cold_area_body_entered(body: Node3D) -> void:
-	if body is RoomPrefab:
-		var mesh = body.get_node(body.mesh_node_path)
-		if mesh is MeshInstance3D:
-			mesh.set_surface_override_material(body.floor_material_index, load("res://Shaders/SnowShader/snow.tres"))
-	elif body is MovableNpc:
+	#if body is RoomPrefab:
+		#var mesh = body.get_node(body.mesh_node_path)
+		#if mesh is MeshInstance3D:
+			#if mesh.get_surface_override_material_count() > body.floor_material_index:
+				#mesh.set_surface_override_material(body.floor_material_index, load("res://Shaders/SnowShader/snow.tres"))
+	if body is MovableNpc:
 		if body.current_health.size() >= 2:
 			frozen_puppets.append(body)
 
 func _on_cold_area_body_exited(body: Node3D) -> void:
-	if body is RoomPrefab:
-		var mesh = body.get_node(body.mesh_node_path)
-		if mesh is MeshInstance3D:
-			mesh.set_surface_override_material(body.floor_material_index, null)
-	elif body is MovableNpc:
+	#if body is RoomPrefab:
+		#var mesh = body.get_node(body.mesh_node_path)
+		#if mesh is MeshInstance3D:
+			#if mesh.get_surface_override_material_count() > body.floor_material_index:
+				#mesh.set_surface_override_material(body.floor_material_index, null)
+	if body is MovableNpc:
 		if frozen_puppets.has(body):
 			frozen_puppets.erase(body)

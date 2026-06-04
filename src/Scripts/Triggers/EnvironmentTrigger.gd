@@ -1,7 +1,7 @@
 extends Area3D
 ## Switches environment
 ## Made by Yni, licensed under MIT License.
-
+class_name EnvironmentTrigger
 ## Must be file name WITHOUT path, _HQ/_LQ postfixes and extensions (like ".tres")
 ## Only needs env name from res://Assets/Environment/ folder
 @export var env_name: String

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://m1pgn6wnw3d7"]
+
+[ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_cn6kx"]
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_cn6kx")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp347/Scp347_MH.tscn": 0
+})
+armature_name = "Woman_body_rig"
+vision_class_detect = Array[int]([2, 3])

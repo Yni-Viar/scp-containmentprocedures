@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd0n8ie5pyuli"]
+
+[ext_resource type="Script" uid="uid://dycl28rc6algd" path="res://PlayerScript/PlayerClassScript/Scp1507PuppetScript.gd" id="1_6kmpp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6kmpp"]
+height = 1.3369446
+radius = 0.6166992
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_6kmpp")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp1507/Scp1507_GHA.tscn": 0
+})
+
+[node name="Attack" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5233917, 0)
+shape = SubResource("CylinderShape3D_6kmpp")
+
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]

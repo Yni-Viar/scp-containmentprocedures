@@ -47,7 +47,6 @@
 [ext_resource type="Texture2D" uid="uid://brxtgl2ekhirf" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_diff_2k.jpg" id="43_ahybo"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="44_ahybo"]
 [ext_resource type="Texture2D" uid="uid://dtltp2a8q46ak" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_arm_2k.jpg" id="44_o0sal"]
-[ext_resource type="Script" uid="uid://b8ejwuyooah4b" path="res://Scripts/Triggers/EnvironmentTrigger.gd" id="45_g5h47"]
 [ext_resource type="Texture2D" uid="uid://qxf6be3nv334" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_nor_gl_2k.jpg" id="45_ihe0l"]
 [ext_resource type="PackedScene" uid="uid://c32hwf66e1ihj" path="res://Assets/OriginalModels/scp_cage.tscn" id="45_o0sal"]
 [ext_resource type="PackedScene" uid="uid://cqset7w3gmd5" path="res://Assets/ExternalModels/elevator_small.tscn" id="46_1deop"]
@@ -59,6 +58,7 @@
 [ext_resource type="Script" uid="uid://bufye8a550ay6" path="res://Scripts/Triggers/ElevatorTrigger.gd" id="48_dn0m7"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="48_sx3v1"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="49_sx3v1"]
+[ext_resource type="Script" uid="uid://c0ddsd34xv3i2" path="res://Scripts/Triggers/SurfaceZoneEnvironmentTrigger.gd" id="51_wslhb"]
 [ext_resource type="Texture2D" uid="uid://0ji4t7t5fpeb" path="res://Assets/VFX/snowflake.png" id="54_xfk1r"]
 [ext_resource type="Script" uid="uid://b136x6pnhh76y" path="res://Scripts/GpuParticleOptimizator.gd" id="55_e8h8d"]
 [ext_resource type="Script" uid="uid://6iiqswcaatwc" path="res://Scripts/Seasonal/SeasonSpawner.gd" id="55_krw4v"]
@@ -1174,8 +1174,7 @@ size = Vector3(14.11232, 10.803436, 15.807465)
 [node name="SwitchEnvironmentTrigger" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("45_g5h47")
-env_name = "Outside"
+script = ExtResource("51_wslhb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwitchEnvironmentTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48788452, 14.56739, -3.9844666)
@@ -1292,7 +1291,7 @@ amount = 1024
 lifetime = 2.0
 speed_scale = 2.0
 visibility_aabb = AABB(-128, 0, -96, 256, 16, 192)
-transform_align = 1
+transform_align = 2
 process_material = SubResource("ParticleProcessMaterial_jsytd")
 draw_pass_1 = SubResource("QuadMesh_fnodd")
 script = ExtResource("55_e8h8d")
@@ -1313,7 +1312,7 @@ amount = 1024
 lifetime = 2.0
 speed_scale = 2.0
 visibility_aabb = AABB(-128, 0, -96, 256, 16, 192)
-transform_align = 1
+transform_align = 2
 process_material = SubResource("ParticleProcessMaterial_jsytd")
 draw_pass_1 = SubResource("QuadMesh_fnodd")
 script = ExtResource("55_e8h8d")
@@ -1334,7 +1333,7 @@ amount = 1024
 lifetime = 2.0
 speed_scale = 2.0
 visibility_aabb = AABB(-128, 0, -96, 256, 16, 192)
-transform_align = 1
+transform_align = 2
 process_material = SubResource("ParticleProcessMaterial_jsytd")
 draw_pass_1 = SubResource("QuadMesh_fnodd")
 script = ExtResource("55_e8h8d")

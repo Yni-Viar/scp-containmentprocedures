@@ -1,27 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://citkd65dmhf8b"]
+[gd_scene load_steps=2 format=3 uid="uid://citkd65dmhf8b"]
 
 [ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_ptkqp"]
-[ext_resource type="Material" uid="uid://4foax8koch4x" path="res://Assets/Materials/Classes/Christmas/Scientist_torso.tres" id="2_bsl58"]
-[ext_resource type="Material" uid="uid://csg73fmkioovy" path="res://Assets/Materials/Classes/Christmas/Scientist_pants.tres" id="3_54xu3"]
-[ext_resource type="Material" uid="uid://c60sygjdlyxjv" path="res://Assets/Materials/Classes/Halloween/Scientist_torso.tres" id="4_mhuim"]
-[ext_resource type="Material" uid="uid://canux8vhdvrrl" path="res://Assets/Materials/Classes/Halloween/Scientist_pants.tres" id="5_ch6oe"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_ptkqp")
 torso_node_path = NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0")
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/Optional/scientist_1.tscn": 1,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_2.tscn": 0,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_3.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/Optional/scientist_1_SL_OOD.tscn": 1,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_2_SL_OOD.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_3_SL_OOD.tscn": 0
 })
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])
-fixed_prefab = true
-christmas_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0"): [[0, ExtResource("2_bsl58")]],
-NodePath("HumanRig/Skeleton3D/Scientist_Pants_LOD0"): [[0, ExtResource("3_54xu3")]]
-})
-halloween_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0"): [[0, ExtResource("4_mhuim")]],
-NodePath("HumanRig/Skeleton3D/Scientist_Pants_LOD0"): [[0, ExtResource("5_ch6oe")]]
-})

@@ -157,7 +157,7 @@ data = PackedVector3Array(-0.29999998, 1.8973999, -2.3, -0.29999998, 3.1499999, 
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_5v1sj")
-floor_material_index = 1
+mesh_node_path = NodePath("NavigationRegion3D/HC_room2/Plane")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")

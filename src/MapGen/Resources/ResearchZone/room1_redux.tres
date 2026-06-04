@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://b8nf0gvd62sem" path="res://Assets/HUD/room1_270.png" id="2_okvyr"]
 [ext_resource type="Texture2D" uid="uid://b7pofqfywnjd4" path="res://Assets/HUD/room1_180.png" id="3_fgh4f"]
 [ext_resource type="Texture2D" uid="uid://bmbn1pgwlfdri" path="res://Assets/HUD/room1.png" id="4_7a26f"]
-[ext_resource type="PackedScene" uid="uid://b8ov0fbc5m23w" path="res://Assets/Rooms/room1/room1_b_redux.tscn" id="5_g87y3"]
+[ext_resource type="PackedScene" uid="uid://dkm13u0iu00ll" path="res://Assets/Rooms/room1/rz_room1.tscn" id="5_skdmc"]
 [ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="6_25mgc"]
 
 [resource]
 script = ExtResource("6_25mgc")
 name = "room1"
-prefab = ExtResource("5_g87y3")
+prefab = ExtResource("5_skdmc")
 icon_0_degrees = ExtResource("1_g87y3")
 icon_90_degrees = ExtResource("4_7a26f")
 icon_180_degrees = ExtResource("2_okvyr")

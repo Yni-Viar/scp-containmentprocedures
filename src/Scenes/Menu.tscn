@@ -398,6 +398,8 @@ SCP-938 by Adam Smascher
 SCP-939 by Adam Smascher
 SCP-983 by NekoChris
 SCP-1223 by Wildt
+SCP-1507 by anonymous user,
+rewritten by Rex Atlas
 SCP-2028 by GibberingEloquence
 SCP-2306 by Jacob Conwell
 SCP-2471 by WrongJohnSilver
@@ -526,6 +528,11 @@ SCP-5270 Press X To Bear
 (GameBear Advice) Handheld Console
 created for the SCP game Go Home Annie
 by Mateja Olujić.
+License: CC-BY-4.0
+------------------------
+SCP-1507 (Pink Flamingos) created for
+the SCP game Go Home Annie by
+Franjo Badurina.
 License: CC-BY-4.0"
 
 [node name="FoldableContainer13" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]

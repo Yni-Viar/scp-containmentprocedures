@@ -3,7 +3,7 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v9.0.0 ()
+## v9.0.0 (Multiverse update)
 ### Humans and class system update
 - [x] Different male scientists (thanks to OOD from SL Blender community)
 - [x] Add support for different skins
@@ -18,7 +18,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ### New SCPs
 - [ ] SCP-080
-- [ ] SCP-1507 (tied to a variantion of Class-D)
+- [x] SCP-1507 (tied to a variantion of Class-D)
 
 ### Maintenance Zone expansion
 - [x] Import some open-source rooms from SCP Echoes, that fit the game style.
@@ -26,7 +26,10 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ### Other changes
 - [x] All scientists are now bald because of new models limitation.
-- [x] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
+- [x] \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
+- [x] \[Christmas\] Fixed SCP-649 - removed snow in affected rooms (will be rewritten eventually by using MeshInstances directly, as new season outfit system), increased cold damage.
+- [x] \[Surface Zone\] Use darker sky for all seasons, except Spring.
+- [x] \[Research Zone\] Updated generic endroom model.
 
 ## v8.1.1 (2026.05.30)
 

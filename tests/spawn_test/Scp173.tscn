@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3j38hqmtdkth"]
+
+[ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_cmt0m"]
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_cmt0m")
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Optional/Scp173_U.tscn": 1,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Scp173_OWN.tscn": 0
+})
+armature_name = "SCP173_Rig"

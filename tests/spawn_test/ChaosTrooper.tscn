@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgilrvx0jv0ed"]
+
+[ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_epnh1"]
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_epnh1")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/CI/ChaosTrooper_SL.tscn": 0
+})
+vision_class_detect = Array[int]([2, 3])

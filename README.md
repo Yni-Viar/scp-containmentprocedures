@@ -40,7 +40,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
 |🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
-|🟢SCP-649|⛄, since 5.5.0|⛄, since 5.7.0|✅ Full|
+|🟢SCP-649|⛄, 5.5.x-5.7.x, since 9.0.0|⛄, 5.7.x only, since 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
 |🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\)|
 |🟢SCP-686|✅, since 5.1.0|✅, since 5.7.0|❓ Partial \(hidden NSFW parts\)|
 |🟢SCP-791|✅, since 6.0.0|❌|📃 Task only|
@@ -50,6 +50,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-983|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
 |🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
+|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Mostly full|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-2306|✅, xince 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
@@ -65,14 +66,16 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 #### Availability
 ✅ - Available.
+🫙 - Testing needed.
 ❓ - Partial availability.
 ❌ - Unavailable.
 <!-- 🎃 - Spawns only in October -->
-⛄ - Spawns only in December.
+<!-- ⛄ - Spawns only in December. -->
 <!-- ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded. -->
 
 #### Functionality
 ✅ - SCP object is fully implemented
+
 ❓ - SCP object is partly implemented
 📃 - SCP object is implemented only for a task
 ❌ - SCP object is not compatible with SCP article

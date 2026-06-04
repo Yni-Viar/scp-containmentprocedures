@@ -1,16 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj1cu304tkb42"]
+[gd_scene load_steps=2 format=3 uid="uid://bj1cu304tkb42"]
 
 [ext_resource type="Script" uid="uid://c8b4nftqtxopr" path="res://PlayerScript/PlayerClassScript/Scp650PuppetScript.gd" id="1_u5i6x"]
-[ext_resource type="Material" uid="uid://x8juja3kgucu" path="res://Assets/Materials/Classes/Christmas/Scp650.tres" id="2_wlxr7"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_u5i6x")
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp650/Scp650.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp650/Scp650_U.tscn": 0
 })
 armature_name = "Armature"
-fixed_prefab = true
-christmas_suits = Dictionary[NodePath, Array]({
-NodePath("Armature/Skeleton3D/650"): [[0, ExtResource("2_wlxr7")]]
-})

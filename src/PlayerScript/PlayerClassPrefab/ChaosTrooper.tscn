@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbwdmitjo6s86"]
+[gd_scene load_steps=2 format=3 uid="uid://bbwdmitjo6s86"]
 
 [ext_resource type="Script" uid="uid://dg02q08qfpg6e" path="res://PlayerScript/PlayerClassScript/ChaosTrooperPuppetScript.gd" id="1_bpuag"]
-[ext_resource type="Material" uid="uid://dnmmma2bifkqn" path="res://Assets/Materials/Classes/Christmas/ChaosTrooper.tres" id="2_ce3xw"]
-[ext_resource type="Material" uid="uid://d0o3t3v2d43fy" path="res://Assets/Materials/Classes/Halloween/ChaosTrooper.tres" id="3_5ullq"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_bpuag")
@@ -11,15 +9,7 @@ resistance_scp178 = true
 resistance_scp686 = true
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/CI/ChaosTrooper.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/CI/ChaosTrooper_SL.tscn": 0
 })
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])
-fixed_prefab = true
-christmas_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/Torso_LOD0"): [[0, ExtResource("2_ce3xw")]]
-})
-halloween_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/Torso_LOD0"): [[0, ExtResource("3_5ullq")]],
-NodePath("HumanRig/Skeleton3D/Head_LOD0"): [[0, ExtResource("3_5ullq")]]
-})

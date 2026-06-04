@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dse10q2d85240"]
+[gd_scene load_steps=2 format=3 uid="uid://dse10q2d85240"]
 
 [ext_resource type="Script" uid="uid://5ujr1fn3x461" path="res://PlayerScript/PlayerClassScript/MtfPlayerScript.gd" id="1_rpp6h"]
-[ext_resource type="Material" uid="uid://cs3tcik10utcc" path="res://Assets/Materials/Classes/Christmas/MTF_body.tres" id="2_lfium"]
-[ext_resource type="Material" uid="uid://bf57eel0hp6mn" path="res://Assets/Materials/Classes/Halloween/MTF_body.tres" id="3_rpp6h"]
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_rpp6h")
@@ -11,14 +9,7 @@ resistance_scp178 = true
 resistance_scp686 = true
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/MTF/MTF.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/MTF/MTF_SL.tscn": 0
 })
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])
-fixed_prefab = true
-christmas_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/NTF_body_LOD0"): [[0, ExtResource("2_lfium")]]
-})
-halloween_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/NTF_body_LOD0"): [[0, ExtResource("3_rpp6h")]]
-})

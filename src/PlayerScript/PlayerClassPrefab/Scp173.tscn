@@ -5,8 +5,8 @@
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_b0s8h")
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Optional/Scp173Unity.tscn": 1,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Scp173Our.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Optional/Scp173_U.tscn": 1,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Scp173_OWN.tscn": 0
 })
 armature_name = "SCP173_Rig"
 enable_vision_scan = true

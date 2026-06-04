@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=4 uid="uid://bo0sr4aihd6s4"]
+[gd_scene load_steps=33 format=4 uid="uid://bo0sr4aihd6s4"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_6nfla"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="2_2w8ge"]
-[ext_resource type="PackedScene" uid="uid://c4rphn1mij8kp" path="res://Assets/ExternalModels/pipe_1.tscn" id="3_ssrh2"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="4_ugff5"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="5_iwav6"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_ntdhm"]
@@ -238,7 +237,7 @@ data = PackedVector3Array(-2.4405, 0.1267, 1.8625, -6.7, 0.1086, 1.8499999, -2.4
 
 [node name="room3" type="StaticBody3D"]
 script = ExtResource("1_6nfla")
-floor_material_index = 1
+mesh_node_path = NodePath("NavigationRegion3D/HC_room3/Plane_002")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_08alc")
@@ -246,13 +245,7 @@ navigation_mesh = SubResource("NavigationMesh_08alc")
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="FireExtinguisher" parent="NavigationRegion3D/Props" instance=ExtResource("2_2w8ge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10892123, -0.62127346, -2.9224906)
-
-[node name="Pipe_04" parent="NavigationRegion3D/Props" instance=ExtResource("3_ssrh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49445, 1.41002, -2.43104)
-
-[node name="Pipe_05" parent="NavigationRegion3D/Props" instance=ExtResource("3_ssrh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41466, 1.41002, -2.43104)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69935, -0.62127346, -2.3021054)
 
 [node name="industrial_wall_lamp3" parent="NavigationRegion3D/Props" instance=ExtResource("4_ugff5")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.026626468, 4.1040006, 3.4366705)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://grcf1pn48ge1"]
+
+[ext_resource type="PackedScene" uid="uid://p28858r2ococ" path="res://Assets/OriginalModels/scp_649.tscn" id="1_xbpe2"]
+[ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="2_1r7or"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhyl5"]
+albedo_color = Color(0.46627665, 0.6279772, 0.71389, 1)
+emission_enabled = true
+emission = Color(0.46627665, 0.6279772, 0.71389, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_lkqjd"]
+material = SubResource("StandardMaterial3D_dhyl5")
+text = "649"
+font = ExtResource("2_1r7or")
+depth = 0.01
+
+[node name="Scp649Spawn" type="Node3D"]
+
+[node name="Scp649" parent="." instance=ExtResource("1_xbpe2")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 1.9105444, 1.1794608, -0.010848999)
+visibility_range_end = 64.0
+mesh = SubResource("TextMesh_lkqjd")

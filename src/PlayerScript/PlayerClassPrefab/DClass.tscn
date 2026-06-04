@@ -1,19 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpmocngv0mdlh"]
+[gd_scene load_steps=2 format=3 uid="uid://dpmocngv0mdlh"]
 
 [ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_wmcpi"]
-[ext_resource type="Material" uid="uid://dsxkxasbkkhkb" path="res://Assets/Materials/Classes/Christmas/DClass_jumpsuit.tres" id="2_bfpm1"]
-[ext_resource type="Material" uid="uid://dig02xllan7ya" path="res://Assets/Materials/Classes/Christmas/DClass_shoes.tres" id="3_8hfsw"]
 
 [node name="Puppet" type="Node3D"]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 script = ExtResource("1_wmcpi")
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/DClass/DClass.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/DClass/DClass_SL.tscn": 0
 })
 vision_class_detect = Array[int]([2, 3])
-fixed_prefab = true
-christmas_suits = Dictionary[NodePath, Array]({
-NodePath("HumanRig/Skeleton3D/jumpsuit_LOD0"): [[0, ExtResource("2_bfpm1")]],
-NodePath("HumanRig/Skeleton3D/shoes_LOD0"): [[0, ExtResource("3_8hfsw")]]
-})

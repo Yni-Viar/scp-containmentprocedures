@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvl5c1sqfid0f"]
+
+[ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_8blbt"]
+
+[node name="Puppet" type="Node3D" groups=["Scp131"]]
+script = ExtResource("1_8blbt")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131B.tscn": 0
+})
+vision_class_detect = Array[int]([2])
