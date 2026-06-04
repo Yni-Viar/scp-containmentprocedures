@@ -1,6 +1,7 @@
 # SCP: Continued Procedures
 
 [Available on GameJolt](https://gamejolt.com/games/scpcontpr/998566)
+
 ## About
 
 Do your daily job at Site-\[REDACTED\].
@@ -21,6 +22,12 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
    - Mouse/touch support
 
 ### Included SCPs
+
+**21\(18 in Web version\) SCPs with complete mechanics,**
+
+**15\(12 in Web version\) SCPs with completed 3D models,**
+
+**30\(21 in Web version\) total SCPs**
 
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
@@ -50,7 +57,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-983|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
 |🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
-|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Mostly full|
+|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-2306|✅, xince 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
