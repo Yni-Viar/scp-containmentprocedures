@@ -25,7 +25,9 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 **21\(18 in Web version\) SCPs with complete mechanics,**
 
-**15\(12 in Web version\) SCPs with completed 3D models,**
+**15\(12 in Web version\) SCPs with completed\* 3D models,**
+
+> \* completed means own, first-party models.
 
 **30\(21 in Web version\) total SCPs**
 
