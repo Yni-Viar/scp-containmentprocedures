@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bbjmuygg67pir"]
+[gd_scene load_steps=27 format=4 uid="uid://bbjmuygg67pir"]
 
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_ff23p"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_j7vhe"]
@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_qwdp2"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="11_0kgap"]
 [ext_resource type="LightmapGIData" uid="uid://ck3aqmrve15mp" path="res://Assets/Rooms/room2/Lm/mt_room2_large.lmbake" id="11_ff0m3"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="11_j7vhe"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="14_0kgap"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="14_j7vhe"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="14_qwdp2"]
@@ -145,8 +146,6 @@ data = PackedVector3Array(-2.8407, 1.7571, -10.2401, -9.4566, 3.5814, -10.2401, 
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_j7vhe")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder")
-floor_material_index = 1
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -280,6 +279,8 @@ avoidance_enabled = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27, 0)
 mesh = SubResource("ArrayMesh_533f6")
 skeleton = NodePath("")
+script = ExtResource("11_j7vhe")
+scp_649_floor_index = 1
 
 [node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)

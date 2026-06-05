@@ -84,7 +84,6 @@ Scp173Spawn=""
 Scientist650Spawn=""
 DClassSpawn=""
 GuardOfDClassSpawn=""
-Scp347Spawn=""
 Scp266Spawn=""
 WaveSpawn=""
 ReflectionProbe="Reflection Probes"
@@ -111,6 +110,7 @@ Scp131=""
 PoI1507=""
 PoI1507Spawn=""
 Scp1507Spawn=""
+Scp347Spawn=""
 
 [input]
 
@@ -175,6 +175,7 @@ locale/translations=PackedStringArray("res://Translations/en.po", "res://Transla
 3d_navigation/layer_2="Class-D only"
 3d_navigation/layer_3="Special"
 3d_navigation/layer_4="SCP-023"
+3d_navigation/layer_5="SCP-347"
 
 [navigation]
 

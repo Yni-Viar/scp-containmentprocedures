@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=4 uid="uid://djsvlp6wwwcpl"]
+[gd_scene load_steps=24 format=4 uid="uid://djsvlp6wwwcpl"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_epfj1"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_wkxox"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="2_55dyc"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="3_yajlf"]
 [ext_resource type="Material" uid="uid://cn06h7ro4lomm" path="res://Assets/Materials/ResearchZone/Redux/Ventilation.tres" id="4_epfj1"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_5y8as"]
 [ext_resource type="Material" uid="uid://emi0dvvkx1lb" path="res://Assets/Materials/ResearchZone/Redux/Ventilation_Wall.tres" id="5_stn5d"]
 [ext_resource type="PackedScene" uid="uid://dtuvos03l8w06" path="res://Assets/ExternalModels/industrial_wall_lamp_lighter.tscn" id="6_5qicx"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="7_0avt3"]
@@ -364,8 +365,7 @@ data = PackedVector3Array(-4.0184, -2.1177, -7.0803, -4.1553, 5.148, -6.9319, -4
 
 [node name="rz_room2_wc" type="StaticBody3D"]
 script = ExtResource("1_epfj1")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_d8u2j")
@@ -375,6 +375,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_epfj1")
 skeleton = NodePath("")
+script = ExtResource("5_5y8as")
+scp_649_floor_index = 2
 
 [node name="site19_wall_cb_modern" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1.009, 0, 0, 0, 1, 10.1926, -1.2906283, 7.65616)

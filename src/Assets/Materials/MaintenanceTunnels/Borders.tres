@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://r3xwpbwndakb"]
 
-[ext_resource type="Texture2D" uid="uid://b3w6fh7pgc0cu" path="res://Assets/Materials/TextureLibraries/SLMaterials/Wall_Normal.png" id="1_mpeoe"]
+[ext_resource type="Texture2D" uid="uid://b3w6fh7pgc0cu" path="res://Assets/Materials/TextureLibraries/SLMaterials_CCBYSA4/Wall_Normal.png" id="1_mpeoe"]
 
 [resource]
 resource_name = "Material_2"

@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ckp7t4160q150"]
 
-[ext_resource type="Texture2D" uid="uid://btwei8ny15tbb" path="res://Assets/Materials/TextureLibraries/EchoesMaterials/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="1_gjacs"]
-[ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials/HCZ_Wall_Trimming_Normal.png" id="2_rocvx"]
+[ext_resource type="Texture2D" uid="uid://btwei8ny15tbb" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="1_gjacs"]
+[ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_Wall_Trimming_Normal.png" id="2_rocvx"]
 
 [resource]
 resource_name = "HCZ_Wall_Trimming"

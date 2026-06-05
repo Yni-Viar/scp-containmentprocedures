@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://yisxhphqh2cr"]
+[gd_scene load_steps=22 format=4 uid="uid://yisxhphqh2cr"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_lbwet"]
 [ext_resource type="Material" uid="uid://bx63xbbbafqy5" path="res://Assets/Materials/PersonnelZone/WallGray.tres" id="2_tgd6u"]
 [ext_resource type="Material" uid="uid://duqdlf80wk5do" path="res://Assets/Materials/PersonnelZone/Floor.tres" id="3_3m0fy"]
 [ext_resource type="Material" uid="uid://ccrij48d7o4jf" path="res://Assets/Materials/PersonnelZone/WallBlue.tres" id="4_diu3l"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_tgd6u"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="5_x283m"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="6_8yetw"]
 [ext_resource type="PackedScene" uid="uid://g2a7novacc01" path="res://Assets/ExternalModels/shelf_2028.tscn" id="6_lbwet"]
@@ -76,8 +77,7 @@ data = PackedVector3Array(1.0015, 0, 9.9365, 9.0604, 6.078, 9.9365, 1.0015, 3.17
 
 [node name="pz_room2" type="StaticBody3D"]
 script = ExtResource("1_lbwet")
-mesh_node_path = NodePath("NavigationRegion3D/PZ_HallwayI")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/PZ_HallwayI")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -86,6 +86,8 @@ navigation_mesh = SubResource("NavigationMesh_swyoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2772188, 0)
 mesh = SubResource("ArrayMesh_knu20")
 skeleton = NodePath("")
+script = ExtResource("5_tgd6u")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

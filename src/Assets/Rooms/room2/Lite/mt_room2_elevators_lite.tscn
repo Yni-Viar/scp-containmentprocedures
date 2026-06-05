@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=4 uid="uid://jg0jm6u1kptv"]
+[gd_scene load_steps=24 format=4 uid="uid://jg0jm6u1kptv"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_ybttq"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="3_me1po"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="5_gc7mo"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="5_lybqe"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="7_4xps2"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_lybqe"]
 [ext_resource type="LightmapGIData" uid="uid://wtjqi3q7gmr2" path="res://Assets/Rooms/room2/Lm/mt_room2_elevators.lmbake" id="8_rq2ya"]
 [ext_resource type="PackedScene" uid="uid://cqset7w3gmd5" path="res://Assets/ExternalModels/elevator_small.tscn" id="9_0a1fo"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="9_8dkxs"]
@@ -90,8 +91,7 @@ data = PackedVector3Array(-3.2596, 0.0079, 1.8623999, -3.1606, 0.0079, 3.7777, -
 
 [node name="mt_room2_elevators" type="StaticBody3D"]
 script = ExtResource("1_ybttq")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_repx5")
@@ -126,6 +126,8 @@ affect_navigation_mesh = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27, 0)
 mesh = SubResource("ArrayMesh_pq60p")
 skeleton = NodePath("")
+script = ExtResource("8_lybqe")
+scp_649_floor_index = 1
 
 [node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -1.2, 0)

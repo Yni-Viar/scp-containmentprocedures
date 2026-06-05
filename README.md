@@ -23,20 +23,13 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 ### Included SCPs
 
-**21\(18 in Web version\) SCPs with complete mechanics,**
-
-**15\(12 in Web version\) SCPs with completed\* 3D models,**
-
-> \* completed means own, first-party models.
-
-**30\(21 in Web version\) total SCPs**
-
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
 |🟢SCP-005|❓, since 6.0.0/7.0.4|✅, since 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
 |🟡SCP-018|✅, since 7.0.0|✅, since 7.0.0|✅ Full|
 |🟡SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
+|🟡SCP-080|✅, since 9.0.0|❌||
 |🟢SCP-131|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
 |🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
@@ -44,7 +37,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, disabled in 5.8.0|✅ Full|
-|🟡SCP-347|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❓ Partial|
+|🟡SCP-347|✅, since 1.0.0|✅, 5.7.x-5.8.x only, since 9.0.0|❓ Partial|
 |🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
 |🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
@@ -61,7 +54,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
 |🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|🟢SCP-2306|✅, xince 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
+|🟢SCP-2306|✅, since 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-5270|✅, since 8.1.0|✅, since 8.1.0|❓ Implemented only one event out of three|
 
@@ -79,7 +72,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ❓ - Partial availability.
 ❌ - Unavailable.
 <!-- 🎃 - Spawns only in October -->
-<!-- ⛄ - Spawns only in December. -->
+⛄ - Spawns only in December.
 <!-- ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded. -->
 
 #### Functionality

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bioti3gaqj0t8"]
+[gd_scene load_steps=38 format=4 uid="uid://bioti3gaqj0t8"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_lwtf3"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_r8il1"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="11_ua6hs"]
 [ext_resource type="PackedScene" uid="uid://ca6ofg6genp02" path="res://InventorySystem/Items/ItemScp2306.tscn" id="12_lbiiv"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="16_abfkj"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="16_gt6np"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="19_53a8x"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="20_42cx5"]
 [ext_resource type="Script" uid="uid://dcghct5q7tn0u" path="res://Scripts/Triggers/Scp005SpawnTrigger.gd" id="20_crjl6"]
@@ -177,8 +178,7 @@ depth = 0.01
 
 [node name="cont1_testroom" type="StaticBody3D" groups=["RZ_cont1_testroom"]]
 script = ExtResource("1_lwtf3")
-mesh_node_path = NodePath("NavigationRegion3D/Cube2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_2ywj7")
@@ -265,6 +265,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.782803, 0.34048018, -0.715
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024559975, 0.8606625, 0.00096416473)
 mesh = SubResource("ArrayMesh_abfkj")
 skeleton = NodePath("")
+script = ExtResource("16_gt6np")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

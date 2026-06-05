@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://dkm13u0iu00ll"]
+[gd_scene load_steps=18 format=4 uid="uid://dkm13u0iu00ll"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_gq6pq"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="2_jcy0j"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="4_ixjhj"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="8_fsnpn"]
 [ext_resource type="LightmapGIData" uid="uid://cmbbj6hwi0uwe" path="res://Assets/Rooms/room1/Lm/room1_b_redux.lmbake" id="9_5gca0"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="9_f36gq"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="9_m4yct"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="13_qmpye"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="14_ajqpk"]
@@ -62,6 +63,7 @@ data = PackedVector3Array(-4.053, 3.1467998, 1.3587999, -4.0522, -2.1311, 2.0024
 
 [node name="cont1_testroom" type="StaticBody3D" groups=["RZ_cont1_testroom"]]
 script = ExtResource("1_gq6pq")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_2ywj7")
@@ -99,6 +101,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.84
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024559975, 0.8606625, 0.00096416473)
 mesh = SubResource("ArrayMesh_abfkj")
 skeleton = NodePath("")
+script = ExtResource("9_f36gq")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

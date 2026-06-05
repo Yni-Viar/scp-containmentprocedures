@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://c4sa2lyvkkp7k"]
+[gd_scene load_steps=15 format=4 uid="uid://c4sa2lyvkkp7k"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_iej4x"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_tkq7p"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="2_75k7w"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="3_qgq8u"]
 [ext_resource type="PackedScene" uid="uid://l6v51fn3hbsv" path="res://Assets/ExternalModels/industrial_wall_lamp_light.tscn" id="4_75k7w"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_gtvdq"]
 [ext_resource type="LightmapGIData" uid="uid://d2bqx4jrx8lf2" path="res://Assets/Rooms/room1/Lm/cont1_dclass.lmbake" id="5_qgq8u"]
 [ext_resource type="PackedScene" uid="uid://ihxbfqwehb5s" path="res://Assets/ExternalModels/mattress.tscn" id="6_qqex4"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="7_pnenl"]
@@ -59,8 +60,7 @@ data = PackedVector3Array(-4.0211, 5.2391, -9.8804, -10.0084, -2.1155, -9.9553, 
 
 [node name="cont1_dclass" type="StaticBody3D"]
 script = ExtResource("1_iej4x")
-mesh_node_path = NodePath("NavigationRegion3D/Cube2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_2ywj7")
@@ -70,6 +70,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_tkq7p")
 skeleton = NodePath("")
+script = ExtResource("5_gtvdq")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://dk5tshb1f2wsi"]
+[gd_scene load_steps=18 format=4 uid="uid://dk5tshb1f2wsi"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_n8bhf"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_tsku5"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="2_4w4vd"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="3_ag3w7"]
 [ext_resource type="Material" uid="uid://cn06h7ro4lomm" path="res://Assets/Materials/ResearchZone/Redux/Ventilation.tres" id="4_ag3w7"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_ceb16"]
 [ext_resource type="Material" uid="uid://emi0dvvkx1lb" path="res://Assets/Materials/ResearchZone/Redux/Ventilation_Wall.tres" id="5_knu6h"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="5_tsku5"]
 [ext_resource type="LightmapGIData" uid="uid://di8iii0836774" path="res://Assets/Rooms/room2c/Lm/room2c_special.lmbake" id="6_knu6h"]
@@ -199,8 +200,7 @@ data = PackedVector3Array(-4.0037, 5.1302, 10.2356, -4.0037, -2.1302, 7.4113, -4
 
 [node name="room2c" type="StaticBody3D"]
 script = ExtResource("1_tsku5")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_o7u4x")
@@ -209,6 +209,8 @@ navigation_mesh = SubResource("NavigationMesh_o7u4x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 mesh = SubResource("ArrayMesh_74ork")
 skeleton = NodePath("")
+script = ExtResource("5_ceb16")
+scp_649_floor_index = 2
 
 [node name="site19_wall_cb_modern_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 4.8166237, -1.24115, -5.91178)

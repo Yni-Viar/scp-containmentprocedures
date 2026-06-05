@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cc7ivjfy10nr1"]
+[gd_scene load_steps=31 format=4 uid="uid://cc7ivjfy10nr1"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_bxrv5"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="3_qu32r"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="14_yvkhy"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="15_a6u3e"]
 [ext_resource type="PackedScene" uid="uid://bl4a2vhnoklia" path="res://Assets/OriginalModels/scp_249.tscn" id="15_yvkhy"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="16_lhyuu"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="16_tx07a"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="17_lhyuu"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="18_tyld4"]
@@ -168,8 +169,7 @@ data = PackedVector3Array(-9.505, 3.4468, 2.5281, -9.505, -9.505, -2.7533998, -9
 
 [node name="mt_cont1_249" type="StaticBody3D"]
 script = ExtResource("1_bxrv5")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_002")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -345,6 +345,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.658225, -0.63336664, 2.448
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_tyld4")
 skeleton = NodePath("")
+script = ExtResource("16_lhyuu")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

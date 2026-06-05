@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b5y3sgvtsrdl2"]
+[gd_scene load_steps=28 format=4 uid="uid://b5y3sgvtsrdl2"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_3u5sp"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="2_3focv"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="12_p1u4r"]
 [ext_resource type="LightmapGIData" uid="uid://dwdynwyyonq53" path="res://Assets/Rooms/room1/Lm/rz_cont1_1507.lmbake" id="13_4ykpw"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="13_b45h7"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="13_jysi3"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="14_3focv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_2ywj7"]
@@ -122,6 +123,7 @@ depth = 0.01
 
 [node name="cont1_testroom" type="StaticBody3D" groups=["RZ_cont1_testroom"]]
 script = ExtResource("1_3u5sp")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_2ywj7")
@@ -179,6 +181,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.84
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024559975, 0.8606625, 0.00096416473)
 mesh = SubResource("ArrayMesh_abfkj")
 skeleton = NodePath("")
+script = ExtResource("13_jysi3")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

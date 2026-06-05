@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://co06de4n8epvf"]
+[gd_scene load_steps=26 format=4 uid="uid://co06de4n8epvf"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_uxwn0"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="2_2eaxa"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="3_imtjn"]
 [ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="4_4g2fs"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_0mqw4"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="5_y0woy"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="6_a6qm2"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="7_bej4u"]
@@ -94,8 +95,7 @@ size = Vector3(42.175354, 10.090698, 51.79059)
 
 [node name="subl_cont939" type="StaticBody3D"]
 script = ExtResource("1_uxwn0")
-mesh_node_path = NodePath("NavigationRegion3D/Cube_003")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube_003")])
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbe"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007019043, 4.645158, 6.509674)
@@ -110,6 +110,8 @@ transform = Transform3D(1.7881393e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_523bw")
 skeleton = NodePath("")
+script = ExtResource("5_0mqw4")
+scp_649_floor_index = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(-3.4969122e-07, 0, -8, 0, 8, 0, 8, 0, -3.4969122e-07, 3.9812806, 3.81702, 18.707603)

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cel4uex7vjwpu"]
+
+[ext_resource type="Texture2D" uid="uid://bbtrel6y00aim" path="res://Assets/Materials/TextureLibraries/SLMaterials_CCBYSA4/Tile_VentGrating_Albedo.png" id="1_tpg0m"]
+[ext_resource type="Texture2D" uid="uid://1t7qelqwq2vt" path="res://Assets/Materials/TextureLibraries/SLMaterials_CCBYSA4/Tile_VentGrating_Normal.png" id="2_5q1tj"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_tpg0m")
+normal_enabled = true
+normal_texture = ExtResource("2_5q1tj")
+stencil_flags = 2

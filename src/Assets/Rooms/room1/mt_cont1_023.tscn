@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="2_e8iy8"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="3_d2sa3"]
 [ext_resource type="LightmapGIData" uid="uid://c6pn6ns16er1m" path="res://Assets/Rooms/room4/Lm/mt_room_4.lmbake" id="3_ruuf7"]
-[ext_resource type="PackedScene" uid="uid://c7o5iodr55fdp" path="res://Assets/Doors/maintenance_zone_door.tscn" id="4_aux4i"]
 [ext_resource type="PackedScene" uid="uid://d206r02l87aim" path="res://Assets/Doors/maintenance_zone_door_faux.tscn" id="5_vsgnr"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="6_5kj20"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="6_vsgnr"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_5kj20"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nw3mk"]
 vertices = PackedVector3Array(-1.2399998, -0.77760994, -1.7399998, -2.2399998, -0.77760994, -1.7399998, -2.9899998, -0.77760994, -0.7399998, -2.9899998, -0.77760994, 0.7600002, -1.4899998, -0.77760994, 2.0100002, -9.74, -0.77760994, -0.9899998, -9.74, -0.77760994, 1.0100002, -0.9899998, -0.77760994, -9.74, -0.7399998, -0.77760994, -2.9899998, 0.7600002, -0.77760994, -2.9899998, 1.0100002, -0.77760994, -9.74, 3.0100002, -0.77760994, 0.7600002, 9.76, -0.77760994, 1.0100002, 9.76, -0.77760994, -0.9899998, 3.0100002, -0.77760994, -0.7399998, -0.7399998, -0.77760994, 3.0100002, 0.7600002, -0.77760994, 3.0100002, -0.9899998, -0.77760994, 9.76, 1.0100002, -0.77760994, 9.76)
@@ -72,8 +72,7 @@ data = PackedVector3Array(-2.7756999, 3.5131998, -0.55219996, -2.6885998, 3.5131
 
 [node name="cont1_023" type="StaticBody3D"]
 script = ExtResource("1_d2sa3")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_001")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_001")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_nw3mk")
@@ -104,13 +103,12 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.2
 [node name="MaintenanceZoneDoor3" parent="NavigationRegion3D/Props" instance=ExtResource("5_vsgnr")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.24, -1.25, 0)
 
-[node name="MaintenanceZoneDoor4" parent="NavigationRegion3D/Props" instance=ExtResource("4_aux4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.24)
-
 [node name="Cylinder_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_yckn0")
 skeleton = NodePath("")
+script = ExtResource("8_5kj20")
+scp_649_floor_index = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0

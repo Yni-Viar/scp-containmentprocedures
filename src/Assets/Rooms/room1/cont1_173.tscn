@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b0lbehlrb2hbt"]
+[gd_scene load_steps=24 format=4 uid="uid://b0lbehlrb2hbt"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_sggw7"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_u2482"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="4_0mrdf"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="4_bj2f8"]
 [ext_resource type="Script" uid="uid://br4y13klj1rn1" path="res://Scripts/Triggers/Scp173TaskTrigger.gd" id="5_cajk8"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_whtaw"]
 [ext_resource type="LightmapGIData" uid="uid://bxhgv5h6atle6" path="res://Assets/Rooms/room1/Lm/cont1_173.lmbake" id="6_bh5mh"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="13_hpied"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="14_4j8up"]
@@ -77,8 +78,7 @@ data = PackedVector3Array(-4.053, 3.1467998, 1.3587999, 2.7645, 5.1154, 1.3417, 
 
 [node name="cont1_173" type="StaticBody3D"]
 script = ExtResource("1_sggw7")
-mesh_node_path = NodePath("NavigationRegion3D/Cube2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -87,6 +87,8 @@ navigation_mesh = SubResource("NavigationMesh_6571d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)
 mesh = SubResource("ArrayMesh_4ecej")
 skeleton = NodePath("")
+script = ExtResource("5_whtaw")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

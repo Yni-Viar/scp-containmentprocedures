@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://nwbpeg161c6u"]
+[gd_scene load_steps=26 format=4 uid="uid://nwbpeg161c6u"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_5v1sj"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="2_oio2b"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="4_eku37"]
 [ext_resource type="LightmapGIData" uid="uid://rl8wk67ffbg6" path="res://Assets/Rooms/room2/Lm/mt_room2_legacy.lmbake" id="5_na8li"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_0bfyi"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_g5cxs"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_8w5c4"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="10_yhn7d"]
@@ -157,7 +158,7 @@ data = PackedVector3Array(-0.29999998, 1.8973999, -2.3, -0.29999998, 3.1499999, 
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_5v1sj")
-mesh_node_path = NodePath("NavigationRegion3D/HC_room2/Plane")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/HC_room2/Plane")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -214,6 +215,8 @@ skeleton = NodePath("")
 transform = Transform3D(3.5762787e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 3.5762787e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_13ou4")
 skeleton = NodePath("")
+script = ExtResource("6_0bfyi")
+scp_649_floor_index = 0
 
 [node name="Cube_002" type="MeshInstance3D" parent="NavigationRegion3D/HC_room2"]
 transform = Transform3D(4.8826934e-07, 0, 1.3652999, 0, 1.3653, 0, -1.3652999, 0, 4.8826934e-07, 0, 0, -3.4132502)

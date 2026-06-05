@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://b2058uf8i0kt0"]
+[gd_scene load_steps=15 format=4 uid="uid://b2058uf8i0kt0"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_m518o"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_p6mpm"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="2_mmsqm"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="3_nnxjk"]
 [ext_resource type="LightmapGIData" uid="uid://x8jbgbucbi22" path="res://Assets/Rooms/room4/Lm/room4.lmbake" id="4_mmsqm"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_2kbn8"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="5_p6mpm"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="6_sge6t"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="7_txbq1"]
@@ -59,8 +60,7 @@ data = PackedVector3Array(-4.0212, 5.1154, -7.4046, -7.416, -2.1155, -3.9819, -7
 
 [node name="room4" type="StaticBody3D"]
 script = ExtResource("1_p6mpm")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ijhca")
@@ -70,6 +70,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_nnxjk")
 skeleton = NodePath("")
+script = ExtResource("5_2kbn8")
+scp_649_floor_index = 2
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

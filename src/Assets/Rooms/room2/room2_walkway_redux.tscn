@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://3nk4aude758p"]
+[gd_scene load_steps=19 format=4 uid="uid://3nk4aude758p"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_k5spb"]
 [ext_resource type="Material" uid="uid://cn06h7ro4lomm" path="res://Assets/Materials/ResearchZone/Redux/Ventilation.tres" id="1_oo7ax"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="4_tg3nw"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="5_kfnw8"]
 [ext_resource type="LightmapGIData" uid="uid://cud8niyltgnro" path="res://Assets/Rooms/room2/Lm/room2_walkway_redux.lmbake" id="6_2i7p4"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="7_dhx8w"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="7_k5spb"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="8_k5spb"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="10_0t1ol"]
@@ -337,8 +338,7 @@ data = PackedVector3Array(-7.0211, -2.1155, -10.2273, -7.0038, 5.1301, 10.2338, 
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_k5spb")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -353,6 +353,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 mesh = SubResource("ArrayMesh_tg3nw")
 skeleton = NodePath("")
+script = ExtResource("7_dhx8w")
+scp_649_floor_index = 2
 
 [node name="site19_wall_cb_modern_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1.0085899, 0, 1.50996e-07, 0, -1, -7.12685, -1.255059, -7.668)

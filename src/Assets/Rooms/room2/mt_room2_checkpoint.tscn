@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://d2o7gg8fn2sqp"]
+[gd_scene load_steps=22 format=4 uid="uid://d2o7gg8fn2sqp"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_gs171"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_t4gkv"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="6_3e3it"]
 [ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="7_3uxqc"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="8_x72dv"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="9_3uxqc"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="11_n1mql"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="12_jaqls"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="15_3uxqc"]
@@ -81,8 +82,7 @@ data = PackedVector3Array(9.7904, -3.4134, -4.7167997, 1.657, -3.4134, -2.7909, 
 
 [node name="mt_ckpt2" type="StaticBody3D"]
 script = ExtResource("1_gs171")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_001")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_001")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_shvc4")
@@ -114,6 +114,8 @@ transform = Transform3D(4.3711385e-08, -8.742278e-08, -1, 1, -4.371139e-08, 4.37
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_mp3r5")
 skeleton = NodePath("")
+script = ExtResource("9_3uxqc")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c4akxkw3hi36x"]
+[gd_scene load_steps=15 format=4 uid="uid://c4akxkw3hi36x"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_w6anl"]
 [ext_resource type="Material" uid="uid://bx63xbbbafqy5" path="res://Assets/Materials/PersonnelZone/WallGray.tres" id="4_w6anl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnsd7dsduynvo" path="res://Assets/ExternalModels/hanging_light_pz.tscn" id="5_lqr2g"]
 [ext_resource type="Material" uid="uid://ccrij48d7o4jf" path="res://Assets/Materials/PersonnelZone/WallBlue.tres" id="6_3fbqf"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="6_ddqbs"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="7_bn5wg"]
 [ext_resource type="LightmapGIData" uid="uid://mqokdrkrowu0" path="res://Assets/Rooms/room4/Lm/pz_room4.lmbake" id="7_w6anl"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="8_m0v3k"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="9_cnc6c"]
@@ -59,8 +60,7 @@ data = PackedVector3Array(3.0389, 0, 3.0389, 3.0389, 6.078, 9.9365, 3.0389, 0, 9
 
 [node name="room4" type="StaticBody3D"]
 script = ExtResource("1_w6anl")
-mesh_node_path = NodePath("NavigationRegion3D/PZ_HallwayX")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/PZ_HallwayX")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ijhca")
@@ -86,6 +86,8 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2543876, 0)
 mesh = SubResource("ArrayMesh_bn5wg")
 skeleton = NodePath("")
+script = ExtResource("7_bn5wg")
+scp_649_floor_index = 1
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2768985, 0)

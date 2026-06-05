@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://kb5so0w2xj5k"]
+[gd_scene load_steps=28 format=4 uid="uid://kb5so0w2xj5k"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_grw7g"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="2_8pokj"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="12_4qkby"]
 [ext_resource type="LightmapGIData" uid="uid://cg8d5p62fem64" path="res://Assets/Rooms/room1/Optional/Lm/mt_cont1_446.lmbake" id="13_8jg3x"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="13_t3uug"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="14_nibfv"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="14_p238q"]
 [ext_resource type="PackedScene" uid="uid://0hcy8vda587t" path="res://Assets/ExternalModels/pumpkin.tscn" id="15_42m8r"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="16_q466q"]
@@ -157,8 +158,7 @@ data = PackedVector3Array(-9.5875, -6.8809, -1.0799, -6.8819, -9.5866995, 0.7604
 
 [node name="mt_cont1_446" type="StaticBody3D"]
 script = ExtResource("1_grw7g")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_001")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_001")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -296,6 +296,8 @@ spot_angle = 72.74222
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_ghl57")
 skeleton = NodePath("")
+script = ExtResource("14_nibfv")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false

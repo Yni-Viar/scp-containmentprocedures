@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://sx7vi58vu84"]
 
-[ext_resource type="Texture2D" uid="uid://cuviov4kiep5n" path="res://Assets/Materials/TextureLibraries/PopPopIcard/M_CorrugatedMetalWall_BaseColor_Yni_Edit.png" id="1_cfyu8"]
-[ext_resource type="Texture2D" uid="uid://egmwp3p3m7i0" path="res://Assets/Materials/TextureLibraries/PopPopIcard/M_CorrugatedMetalWall_Normal.png" id="2_8liqy"]
-[ext_resource type="Texture2D" uid="uid://e7nimpshuny" path="res://Assets/Materials/TextureLibraries/PopPopIcard/M_CorrugatedMetalWall_Roughness.png" id="3_vixjw"]
+[ext_resource type="Texture2D" uid="uid://cuviov4kiep5n" path="res://Assets/Materials/TextureLibraries/PopPopIcard_CCBYSA3/M_CorrugatedMetalWall_BaseColor_Yni_Edit.png" id="1_cfyu8"]
+[ext_resource type="Texture2D" uid="uid://egmwp3p3m7i0" path="res://Assets/Materials/TextureLibraries/PopPopIcard_CCBYSA3/M_CorrugatedMetalWall_Normal.png" id="2_8liqy"]
+[ext_resource type="Texture2D" uid="uid://e7nimpshuny" path="res://Assets/Materials/TextureLibraries/PopPopIcard_CCBYSA3/M_CorrugatedMetalWall_Roughness.png" id="3_vixjw"]
 
 [resource]
 albedo_texture = ExtResource("1_cfyu8")

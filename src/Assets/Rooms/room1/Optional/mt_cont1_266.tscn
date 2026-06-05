@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://hwemtla6kkrn"]
+[gd_scene load_steps=33 format=4 uid="uid://hwemtla6kkrn"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_3f335"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="2_epdb3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://cn06h7ro4lomm" path="res://Assets/Materials/ResearchZone/Redux/Ventilation.tres" id="13_qoarv"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="14_0bax3"]
 [ext_resource type="LightmapGIData" uid="uid://p5dr70di6038" path="res://Assets/Rooms/room1/Optional/Lm/mt_cont1_266.lmbake" id="14_rkcgn"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="15_cxvey"]
 [ext_resource type="PackedScene" uid="uid://0hcy8vda587t" path="res://Assets/ExternalModels/pumpkin.tscn" id="15_qf6et"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="16_u5ys7"]
 [ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="17_8ummh"]
@@ -172,7 +173,7 @@ size = Vector3(7.150531, 4.987975, 16.11029)
 
 [node name="mt_cont1_446" type="StaticBody3D"]
 script = ExtResource("1_3f335")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -262,6 +263,8 @@ mesh = SubResource("TextMesh_cxvey")
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_bn1gi")
 skeleton = NodePath("")
+script = ExtResource("15_cxvey")
+scp_649_floor_index = 1
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2336923, 0)

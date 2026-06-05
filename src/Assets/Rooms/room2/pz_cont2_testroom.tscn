@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=4 uid="uid://dtiv8cnlaekmd"]
+[gd_scene load_steps=37 format=4 uid="uid://dtiv8cnlaekmd"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_7c5id"]
 [ext_resource type="Material" uid="uid://bx63xbbbafqy5" path="res://Assets/Materials/PersonnelZone/WallGray.tres" id="2_rkv6l"]
 [ext_resource type="Material" uid="uid://duqdlf80wk5do" path="res://Assets/Materials/PersonnelZone/Floor.tres" id="3_g6o4o"]
 [ext_resource type="Material" uid="uid://ccrij48d7o4jf" path="res://Assets/Materials/PersonnelZone/WallBlue.tres" id="4_aogc4"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_uk6xx"]
 [ext_resource type="PackedScene" uid="uid://bnsd7dsduynvo" path="res://Assets/ExternalModels/hanging_light_pz.tscn" id="5_wl5ov"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="6_lsjj1"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="6_rkv6l"]
@@ -180,8 +181,7 @@ depth = 0.01
 
 [node name="pz_cont2_067_1223" type="StaticBody3D" groups=["pz_testroom"]]
 script = ExtResource("1_7c5id")
-mesh_node_path = NodePath("NavigationRegion3D/PZ_HallwayI_002")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/PZ_HallwayI_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -190,6 +190,8 @@ navigation_mesh = SubResource("NavigationMesh_swyoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2874618, 0)
 mesh = SubResource("ArrayMesh_7c5id")
 skeleton = NodePath("")
+script = ExtResource("5_uk6xx")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

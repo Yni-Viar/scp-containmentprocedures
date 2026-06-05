@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://4i51o046e2no"]
+[gd_scene load_steps=16 format=4 uid="uid://4i51o046e2no"]
 
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_olia3"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_u32hl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="7_cf2e0"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="7_kl0c8"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="8_cf2e0"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_lutjv"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="11_046qp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_olia3"]
@@ -61,8 +62,7 @@ data = PackedVector3Array(-2.7756999, 3.5131998, -0.55219996, -2.6885998, 3.5131
 
 [node name="room4" type="StaticBody3D"]
 script = ExtResource("1_u32hl")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_001")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_001")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_olia3")
@@ -91,6 +91,8 @@ transform = Transform3D(1.3113416e-07, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_jw22y")
 skeleton = NodePath("")
+script = ExtResource("8_lutjv")
+scp_649_floor_index = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0

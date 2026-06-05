@@ -1,18 +1,19 @@
-[gd_scene load_steps=33 format=4 uid="uid://bo0sr4aihd6s4"]
+[gd_scene load_steps=34 format=4 uid="uid://bo0sr4aihd6s4"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_6nfla"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="2_2w8ge"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="4_ugff5"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="5_iwav6"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_ntdhm"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_ugff5"]
 [ext_resource type="LightmapGIData" uid="uid://caykuibnwfow8" path="res://Assets/Rooms/room3/Optional/Lm/mt_room3_echoes.lmbake" id="7_ntdhm"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_jjeam"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="10_tmr1g"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="11_ytgh4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_08alc"]
-vertices = PackedVector3Array(-2.7397518, -0.77760994, 1.7232821, -2.4897518, -0.77760994, 2.473282, -1.7397518, -0.77760994, 2.723282, -9.739752, -0.77760994, -0.5267179, -9.739752, -0.77760994, 0.7232821, -8.739752, -0.77760994, 1.9732821, -0.48975182, -0.77760994, 9.723282, 1.2602482, -0.77760994, 9.473282, 2.0102482, -0.77760994, 8.723282, 1.7602482, -0.77760994, 2.723282, -1.9897518, -0.77760994, 8.723282, -8.739752, -0.77760994, -2.026718, -1.9897518, -0.77760994, -1.5267179, -2.2397518, -0.77760994, -2.026718, 2.7602482, -0.77760994, 1.7232821, 2.7602482, -0.77760994, -1.7767179, 8.760248, -0.77760994, 1.9732821, 9.760248, -0.77760994, 0.7232821, 9.760248, -0.77760994, -0.5267179, 8.760248, -0.77760994, -2.026718)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 10), PackedInt32Array(8, 10, 2), PackedInt32Array(8, 2, 9), PackedInt32Array(12, 0, 13), PackedInt32Array(13, 0, 11), PackedInt32Array(11, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(0, 12, 2), PackedInt32Array(2, 12, 9), PackedInt32Array(9, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 14), PackedInt32Array(19, 14, 15)]
+vertices = PackedVector3Array(-2.7397518, -0.7703918, 1.7232821, -2.4897518, -0.7703918, 2.473282, -1.7397518, -0.7703918, 2.723282, 1.7602482, -0.7703918, 2.723282, -8.239752, -0.7703918, -0.7767179, -9.489752, -0.7703918, -1.0267179, -9.739752, -0.7703918, -0.5267179, -9.739752, -0.7703918, 0.7232821, -8.739752, -0.7703918, 1.9732821, -7.739752, -0.7703918, -2.026718, -0.48975182, -0.7703918, 9.723282, 1.2602482, -0.7703918, 9.473282, 2.0102482, -0.7703918, 8.723282, -1.9897518, -0.7703918, 8.723282, 2.7602482, -0.7703918, 1.7232821, 2.7602482, -0.7703918, -1.7767179, 8.760248, -0.7703918, 1.9732821, 9.760248, -0.7703918, 0.7232821, 9.760248, -0.7703918, -0.5267179, 8.760248, -0.7703918, -2.026718)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(4, 9, 8), PackedInt32Array(8, 9, 0), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(12, 13, 2), PackedInt32Array(12, 2, 3), PackedInt32Array(14, 3, 15), PackedInt32Array(15, 3, 0), PackedInt32Array(15, 0, 9), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 14), PackedInt32Array(19, 14, 15)]
 agent_max_climb = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ugff5"]
@@ -237,7 +238,7 @@ data = PackedVector3Array(-2.4405, 0.1267, 1.8625, -6.7, 0.1086, 1.8499999, -2.4
 
 [node name="room3" type="StaticBody3D"]
 script = ExtResource("1_6nfla")
-mesh_node_path = NodePath("NavigationRegion3D/HC_room3/Plane_002")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/HC_room3/Plane_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_08alc")
@@ -278,6 +279,8 @@ skeleton = NodePath("")
 transform = Transform3D(1.3653, 0, 0, 0, 1.3653, 0, 0, 0, 1.3653, 0, 0, 2.272427e-06)
 mesh = SubResource("ArrayMesh_a00jw")
 skeleton = NodePath("")
+script = ExtResource("6_ugff5")
+scp_649_floor_index = 0
 
 [node name="Cube_019" type="MeshInstance3D" parent="NavigationRegion3D/HC_room3"]
 transform = Transform3D(4.882692e-07, 0, 1.3652996, 0, 1.3653, 0, -1.3652996, 0, 4.882692e-07, 0, 0, 2.272427e-06)

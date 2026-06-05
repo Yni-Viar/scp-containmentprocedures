@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ch2it7880i81w"]
+[gd_scene load_steps=45 format=4 uid="uid://ch2it7880i81w"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_78d0j"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_hpyvh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="3_a2l54"]
 [ext_resource type="Material" uid="uid://vkd4gsi3ilqy" path="res://Assets/Materials/ResearchZone/Floor173.tres" id="4_evikk"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="5_3v0td"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_8j3m0"]
 [ext_resource type="Texture2D" uid="uid://d20f2cnlootqj" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_diff_2k.jpg" id="7_4f2nv"]
 [ext_resource type="Texture2D" uid="uid://clamhl4keqtms" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_emissive_2k.jpg" id="8_trxw6"]
 [ext_resource type="Texture2D" uid="uid://dpyr1p84higf0" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_arm_2k.jpg" id="9_qo2rk"]
@@ -270,8 +271,7 @@ data = PackedVector3Array(-8.658299, -2.1302, 10.241, -4.0039, 5.1301, 10.235499
 
 [node name="rz_cont1_522" type="StaticBody3D"]
 script = ExtResource("1_hpyvh")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08080673)
@@ -281,6 +281,8 @@ navigation_mesh = SubResource("NavigationMesh_me810")
 transform = Transform3D(0.99, 0, 0, 0, 0.99, 0, 0, 0, 0.99, 0, 0.8467577, 0)
 mesh = SubResource("ArrayMesh_5m812")
 skeleton = NodePath("")
+script = ExtResource("6_8j3m0")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9874576, 0)

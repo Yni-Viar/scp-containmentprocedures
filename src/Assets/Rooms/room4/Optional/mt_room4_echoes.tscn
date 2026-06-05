@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=4 uid="uid://dnqurcp7nx7e6"]
+[gd_scene load_steps=39 format=4 uid="uid://dnqurcp7nx7e6"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_ldpwe"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="3_mbkb2"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="3_rfnko"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="5_qf4on"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_j0nrm"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_lbcgt"]
 [ext_resource type="LightmapGIData" uid="uid://4gxrpeq367hk" path="res://Assets/Rooms/room4/Optional/Lm/mt_room4_echoes.lmbake" id="6_qf4on"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_mljy8"]
@@ -333,7 +334,7 @@ data = PackedVector3Array(-98.1495, -1017.2818, -327.15118, 98.1441, -1017.2818,
 
 [node name="room4" type="StaticBody3D"]
 script = ExtResource("1_ldpwe")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/HC_room4/Plane_003")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_olia3")
@@ -392,6 +393,8 @@ skeleton = NodePath("")
 transform = Transform3D(1.3653, 0, 0, 0, 1.3653, 0, 0, 0, 1.3653, 0, 0, 0.00019726157)
 mesh = SubResource("ArrayMesh_4myvi")
 skeleton = NodePath("")
+script = ExtResource("6_j0nrm")
+scp_649_floor_index = 0
 
 [node name="Cube_028" type="MeshInstance3D" parent="NavigationRegion3D/HC_room4"]
 transform = Transform3D(4.8826934e-07, 0, 1.3652999, 0, 1.3653, 0, -1.3652999, 0, 4.8826934e-07, 0, 0, 0.00019726157)

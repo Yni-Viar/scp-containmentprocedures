@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bj6yk74i8r8c6"]
+[gd_scene load_steps=20 format=4 uid="uid://bj6yk74i8r8c6"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_glu1g"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_qom4j"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="7_glu1g"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="7_gsowd"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="8_qa6h4"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="9_q350h"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_swyoh"]
 vertices = PackedVector3Array(-2.4895992, -0.83982325, 8.897082, -1.2395992, -0.83982325, 9.647082, 1.0104008, -0.83982325, 9.647082, 1.0104008, -0.83982325, -9.852918, -0.9895992, -0.83982325, -9.852918, -2.4895992, -0.83982325, -8.852918)
@@ -98,8 +99,7 @@ data = PackedVector3Array(-3.2595, 0.0079, 1.8623999, -3.1606, 0.0079, 3.7777998
 
 [node name="room2_wc" type="StaticBody3D"]
 script = ExtResource("1_glu1g")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -155,6 +155,8 @@ mesh = SubResource("BoxMesh_ukw1m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27, 0)
 mesh = SubResource("ArrayMesh_q350h")
 skeleton = NodePath("")
+script = ExtResource("9_q350h")
+scp_649_floor_index = 1
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -1.2, 0)

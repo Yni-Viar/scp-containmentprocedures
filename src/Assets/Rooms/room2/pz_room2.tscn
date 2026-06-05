@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://daoaxug5x2ksq"]
+[gd_scene load_steps=15 format=4 uid="uid://daoaxug5x2ksq"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_ulxt7"]
 [ext_resource type="Material" uid="uid://bx63xbbbafqy5" path="res://Assets/Materials/PersonnelZone/WallGray.tres" id="2_nlshh"]
 [ext_resource type="PackedScene" uid="uid://bnsd7dsduynvo" path="res://Assets/ExternalModels/hanging_light_pz.tscn" id="2_ulxt7"]
 [ext_resource type="Material" uid="uid://duqdlf80wk5do" path="res://Assets/Materials/PersonnelZone/Floor.tres" id="3_poi6t"]
 [ext_resource type="Material" uid="uid://ccrij48d7o4jf" path="res://Assets/Materials/PersonnelZone/WallBlue.tres" id="4_ulxt7"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_poi6t"]
 [ext_resource type="LightmapGIData" uid="uid://dbnfcd0yk4gd6" path="res://Assets/Rooms/room2/Lm/pz_room2.lmbake" id="8_uu0ma"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_u6h56"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="10_rcvds"]
@@ -60,8 +61,7 @@ data = PackedVector3Array(3.039, 0, -9.9365, 3.039, 6.078, 9.9365, 3.039, 0, 9.9
 
 [node name="pz_room2" type="StaticBody3D"]
 script = ExtResource("1_ulxt7")
-mesh_node_path = NodePath("NavigationRegion3D/PZ_HallwayI")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/PZ_HallwayI")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -70,6 +70,8 @@ navigation_mesh = SubResource("NavigationMesh_swyoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2805085, 0)
 mesh = SubResource("ArrayMesh_nijqq")
 skeleton = NodePath("")
+script = ExtResource("5_poi6t")
+scp_649_floor_index = 1
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

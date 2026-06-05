@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bdbe4inx2p52y"]
+
+[ext_resource type="Texture2D" uid="uid://md4h2cd36ddo" path="res://Assets/Materials/TextureLibraries/ShareTextures_CC0/carpet_13_basecolor-1K.png" id="1_cqtsd"]
+[ext_resource type="Texture2D" uid="uid://dtykccsnll4b7" path="res://Assets/Materials/TextureLibraries/ShareTextures_CC0/carpet_13_roughness-1K.png" id="2_qpqlg"]
+[ext_resource type="Texture2D" uid="uid://blr4fd7hd1dke" path="res://Assets/Materials/TextureLibraries/ShareTextures_CC0/carpet_13_normal-1K.png" id="3_a5euf"]
+
+[resource]
+resource_name = "Material"
+albedo_texture = ExtResource("1_cqtsd")
+metallic_texture = ExtResource("2_qpqlg")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_qpqlg")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_a5euf")

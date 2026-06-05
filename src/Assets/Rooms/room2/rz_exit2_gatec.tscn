@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bsf6uo5b8l2jm"]
+[gd_scene load_steps=35 format=4 uid="uid://bsf6uo5b8l2jm"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_v6vjl"]
 [ext_resource type="Texture2D" uid="uid://d20f2cnlootqj" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_diff_2k.jpg" id="2_takvg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpyr1p84higf0" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_arm_2k.jpg" id="4_sjxj1"]
 [ext_resource type="Texture2D" uid="uid://dm3meiue50u10" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_nor_gl_2k.jpg" id="5_67355"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="5_a7c55"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_ms0t8"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="5_vh0jy"]
 [ext_resource type="Texture2D" uid="uid://brxtgl2ekhirf" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_glass_diff_2k.jpg" id="6_0oerq"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="6_f028w"]
@@ -179,8 +180,7 @@ size = Vector3(6.846161, 6.0405273, 10.31337)
 
 [node name="rz_exit2_gatec" type="StaticBody3D"]
 script = ExtResource("1_v6vjl")
-mesh_node_path = NodePath("NavigationRegion3D/Cube")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_shvc4")
@@ -190,6 +190,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_f028w")
 skeleton = NodePath("")
+script = ExtResource("5_ms0t8")
+scp_649_floor_index = 2
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

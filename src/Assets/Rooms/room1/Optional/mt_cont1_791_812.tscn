@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bxuadtl8358ia"]
+[gd_scene load_steps=40 format=4 uid="uid://bxuadtl8358ia"]
 
 [ext_resource type="Script" uid="uid://c5p5uc3tem55b" path="res://Scripts/Triggers/Scp812RoomTrigger.gd" id="1_d2mx2"]
 [ext_resource type="PackedScene" uid="uid://7m1jswp3ru21" path="res://Assets/OriginalModels/scp_812.tscn" id="2_ck86r"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqhhycwdvhaq6" path="res://Assets/ExternalModels/hanging_light.tscn" id="12_pxsbx"]
 [ext_resource type="Material" uid="uid://5dkh77ls84l2" path="res://Assets/Materials/MaintenanceTunnels/Blocks.tres" id="13_dxjog"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="13_vligh"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="14_d2mx2"]
 [ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="14_lkbf1"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="15_qagxn"]
 [ext_resource type="Shader" uid="uid://b2smunw6gw5ds" path="res://Shaders/Water2Shader/water_shader.gdshader" id="16_dya4o"]
@@ -194,7 +195,7 @@ size = Vector3(5.97742, 3.82202, 2.7720947)
 
 [node name="cont1_812" type="StaticBody3D" groups=["cont1_791", "cont1_812"]]
 script = ExtResource("1_d2mx2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -347,8 +348,10 @@ transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81052, 0)
 mesh = SubResource("ArrayMesh_vligh")
 skeleton = NodePath("")
+script = ExtResource("14_d2mx2")
+scp_649_floor_index = 2
 
-[node name="entityspawn2" type="Marker3D" parent="." groups=["Scp347Spawn"]]
+[node name="entityspawn2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4306, -1.24029, 7.35588)
 
 [node name="WaterFlow" type="MeshInstance3D" parent="."]

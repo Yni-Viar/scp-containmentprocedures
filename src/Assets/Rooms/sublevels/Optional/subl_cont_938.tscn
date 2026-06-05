@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cmg1lea3osal"]
+[gd_scene load_steps=24 format=4 uid="uid://cmg1lea3osal"]
 
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_cngcp"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_qy6ff"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bjt7nn1tc22tc" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Plastic012A_2K-PNG_Color.png" id="5_y5bn2"]
 [ext_resource type="Texture2D" uid="uid://bvpg4ob2hwehi" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Plastic012A_2K-PNG_NormalGL.png" id="6_pkqvl"]
 [ext_resource type="Texture2D" uid="uid://cp0h60rrlhv5u" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Plastic012A_2K-PNG_Roughness.png" id="7_qy6ff"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="9_pfvoy"]
 [ext_resource type="Script" uid="uid://cj10wvokmrckh" path="res://Scripts/Triggers/Scp938TaskTrigger.gd" id="10_pkqvl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dl2j"]
@@ -176,8 +177,7 @@ size = Vector3(53.475723, 17.192139, 41.3338)
 
 [node name="subl_cont938" type="StaticBody3D"]
 script = ExtResource("1_qy6ff")
-mesh_node_path = NodePath("NavigationRegion3D/Cube_003")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube_003")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_4dl2j")
@@ -196,6 +196,8 @@ transform = Transform3D(1.7881393e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1
 visibility_range_end = 96.0
 mesh = SubResource("ArrayMesh_pkqvl")
 skeleton = NodePath("")
+script = ExtResource("9_pfvoy")
+scp_649_floor_index = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0.07, 0.17536, -0.36)

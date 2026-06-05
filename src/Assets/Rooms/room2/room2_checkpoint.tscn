@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://nhxrp1vckqu8"]
+[gd_scene load_steps=21 format=4 uid="uid://nhxrp1vckqu8"]
 
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_54lxd"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_wthl7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="3_8ektp"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="4_b4com"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="5_0wjnf"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_4mbmi"]
 [ext_resource type="LightmapGIData" uid="uid://b7rcps8m64j7l" path="res://Assets/Rooms/room2/Lm/room2_checkpoint.lmbake" id="5_invu1"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="7_nb454"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="13_ffrkr"]
@@ -78,6 +79,7 @@ data = PackedVector3Array(10.0405, -2.1155, 10.226999, 10.023, 5.1301, -10.23409
 
 [node name="room2_b" type="StaticBody3D"]
 script = ExtResource("1_wthl7")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_shvc4")
@@ -87,6 +89,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_invu1")
 skeleton = NodePath("")
+script = ExtResource("5_4mbmi")
+scp_649_floor_index = 2
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

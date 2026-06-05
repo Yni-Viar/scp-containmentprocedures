@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cdcqfq1yh3osh"]
+[gd_scene load_steps=18 format=4 uid="uid://cdcqfq1yh3osh"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_apk2l"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_ywe0e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4rphn1mij8kp" path="res://Assets/ExternalModels/pipe_1.tscn" id="5_2mbc1"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="7_cu68v"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="7_liy1r"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_5amr7"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="8_o8cvc"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="9_a16uk"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="10_a16uk"]
@@ -62,8 +63,7 @@ data = PackedVector3Array(-2.8407, 1.7571, -10.2401, -4.4565, 3.5814, -10.2401, 
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_apk2l")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -126,6 +126,8 @@ avoidance_enabled = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27, 0)
 mesh = SubResource("ArrayMesh_5amr7")
 skeleton = NodePath("")
+script = ExtResource("8_5amr7")
+scp_649_floor_index = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dy2kt71q27y07"]
+[gd_scene load_steps=35 format=4 uid="uid://dy2kt71q27y07"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_pikur"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="2_dyihh"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="13_tpnjp"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="14_7v7vy"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="15_c0h8d"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="18_iuukv"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="20_31vim"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_o7u4x"]
@@ -178,8 +179,7 @@ depth = 0.01
 
 [node name="room2c" type="StaticBody3D"]
 script = ExtResource("1_pikur")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder2")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder2")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_o7u4x")
@@ -295,6 +295,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2644596, 0.25769997, 7.866
 [node name="Cylinder2" type="MeshInstance3D" parent="NavigationRegion3D"]
 mesh = SubResource("ArrayMesh_pikur")
 skeleton = NodePath("")
+script = ExtResource("18_iuukv")
+scp_649_floor_index = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0

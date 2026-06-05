@@ -1,10 +1,12 @@
-[gd_scene load_steps=40 format=4 uid="uid://bl0vhtasiu10o"]
+[gd_scene load_steps=42 format=4 uid="uid://bl0vhtasiu10o"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_fi17x"]
+[ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_nnhk7"]
 [ext_resource type="Material" uid="uid://d2vsmrtffqdm0" path="res://Assets/Materials/ResearchZone/Concrete.tres" id="2_2qg5q"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="3_ohyrj"]
 [ext_resource type="PackedScene" uid="uid://b4wqhag5irfle" path="res://Assets/ExternalModels/Optional/hanging_light_ez_metro.tscn" id="4_ktx5a"]
 [ext_resource type="Texture2D" uid="uid://nqndkej30cea" path="res://Assets/OriginalModels/Optional/Rails/Rails_Optimized_base.png" id="4_yo5u0"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_blv0v"]
 [ext_resource type="Texture2D" uid="uid://dxeftl8lnnm" path="res://Assets/OriginalModels/Optional/Rails/Rails_Optimized_metal-Rails_Optimized_rough.png" id="5_x4mkj"]
 [ext_resource type="Texture2D" uid="uid://chbil8k07854n" path="res://Assets/OriginalModels/Optional/Rails/Rails_Optimized_nor.png" id="6_2ne7v"]
 [ext_resource type="PackedScene" uid="uid://cogri7pfu6a1e" path="res://Assets/ExternalModels/box.tscn" id="7_wmn4j"]
@@ -202,6 +204,8 @@ depth = 0.01
 size = Vector3(133.64355, 48.074345, 122.74052)
 
 [node name="subl_metro" type="StaticBody3D"]
+script = ExtResource("1_nnhk7")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_yw1f4")
@@ -209,6 +213,8 @@ navigation_mesh = SubResource("NavigationMesh_yw1f4")
 [node name="Cube" type="MeshInstance3D" parent="NavigationRegion3D"]
 mesh = SubResource("ArrayMesh_fou65")
 skeleton = NodePath("")
+script = ExtResource("5_blv0v")
+scp_649_floor_index = 3
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 

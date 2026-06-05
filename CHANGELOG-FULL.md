@@ -16,9 +16,11 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
   - [x] SCP-650
   - [x] SCP-939
 
-### New SCPs
+### New and reworked SCPs
 - [ ] SCP-080
 - [x] SCP-1507 (tied to a variantion of Class-D)
+- [x] Optimized SCP-347 (which allowed to reintroduce in Lite/Web version), removed legacy mechanics completely and gave her a room (finally after a year of wandering)
+- [x] \[Christmas\] Fixed SCP-649 - increased cold damage and refactored snow spawn, making it easier for programmers to implement.
 
 ### Maintenance Zone expansion
 - [x] Import some open-source rooms from SCP Echoes, that fit the game style.
@@ -27,7 +29,6 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ### Other changes
 - [x] All scientists are now bald because of new models limitation.
 - [x] \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
-- [x] \[Christmas\] Fixed SCP-649 - removed snow in affected rooms (will be rewritten eventually by using MeshInstances directly, as new season outfit system), increased cold damage.
 - [x] \[Surface Zone\] Use darker sky for all seasons, except Spring.
 - [x] \[Research Zone\] Updated generic endroom model.
 

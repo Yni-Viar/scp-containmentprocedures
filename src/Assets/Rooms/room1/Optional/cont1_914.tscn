@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://cryliu61nwkac"]
+[gd_scene load_steps=57 format=4 uid="uid://cryliu61nwkac"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_0ffxi"]
 [ext_resource type="Script" uid="uid://crbiqf8o03ge1" path="res://Scripts/Scps/Scp914.gd" id="1_0mc4a"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ot1af7632t" path="res://InventorySystem/Items/ItemDoc.tscn" id="15_pde0x"]
 [ext_resource type="PackedScene" uid="uid://cqhhycwdvhaq6" path="res://Assets/ExternalModels/hanging_light.tscn" id="16_u0mfn"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="19_1jsuh"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="20_pde0x"]
 [ext_resource type="Texture2D" uid="uid://blt4sp0nvls3t" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_Emissive.png" id="20_yel77"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="22_j878u"]
 [ext_resource type="Animation" uid="uid://ctx84dub3sql3" path="res://Assets/ExternalModels/SCP/Optional/scp914/scp914/Animations/914anim.res" id="33_ohoqi"]
@@ -573,7 +574,7 @@ data = PackedVector3Array(-18.8657, 8.3223, -5.2644997, -18.8657, 4.3515997, -7.
 
 [node name="cont1_914" type="StaticBody3D"]
 script = ExtResource("1_rooy2")
-floor_material_index = 2
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -1382,6 +1383,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.937153, 0, -3.725363)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)
 mesh = SubResource("ArrayMesh_kob7d")
 skeleton = NodePath("")
+script = ExtResource("20_pde0x")
+scp_649_floor_index = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.70377, 9.75811, -20.2455)

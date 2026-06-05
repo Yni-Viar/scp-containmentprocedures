@@ -1,11 +1,12 @@
-[gd_scene load_steps=33 format=4 uid="uid://jj2lslwnb2os"]
+[gd_scene load_steps=34 format=4 uid="uid://jj2lslwnb2os"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_3ehpl"]
-[ext_resource type="Texture2D" uid="uid://btwei8ny15tbb" path="res://Assets/Materials/TextureLibraries/EchoesMaterials/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="2_es8lr"]
+[ext_resource type="Texture2D" uid="uid://btwei8ny15tbb" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="2_es8lr"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="2_kyurq"]
 [ext_resource type="PackedScene" uid="uid://cogri7pfu6a1e" path="res://Assets/ExternalModels/box.tscn" id="3_0ovdr"]
-[ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials/HCZ_Wall_Trimming_Normal.png" id="3_3ehpl"]
+[ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_Wall_Trimming_Normal.png" id="3_3ehpl"]
 [ext_resource type="PackedScene" uid="uid://c4rphn1mij8kp" path="res://Assets/ExternalModels/pipe_1.tscn" id="3_xriwm"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_kqv8x"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="5_6yybo"]
 [ext_resource type="LightmapGIData" uid="uid://7fges3361hws" path="res://Assets/Rooms/room1/Lm/mt_room1.lmbake" id="5_rfehi"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_5qnc2"]
@@ -189,7 +190,7 @@ data = PackedVector3Array(0.29999998, 3.1499999, 7.0976, 0.29999998, 1.8973999, 
 
 [node name="mt_room1" type="StaticBody3D"]
 script = ExtResource("1_3ehpl")
-mesh_node_path = NodePath("NavigationRegion3D/HC_room1_Yni_Edit/Plane")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/HC_room1_Yni_Edit/Plane")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -211,6 +212,8 @@ skeleton = NodePath("")
 transform = Transform3D(3.5762787e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 3.5762787e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6yybo")
 skeleton = NodePath("")
+script = ExtResource("4_kqv8x")
+scp_649_floor_index = 0
 
 [node name="Cube_002" type="MeshInstance3D" parent="NavigationRegion3D/HC_room1_Yni_Edit"]
 transform = Transform3D(4.8826934e-07, 0, 1.3652999, 0, 1.3653, 0, -1.3652999, 0, 4.8826934e-07, 0, 0, -3.4132502)

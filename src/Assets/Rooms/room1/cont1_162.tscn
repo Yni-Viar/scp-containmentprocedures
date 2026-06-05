@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=4 uid="uid://buwx2f5s8ms0n"]
+[gd_scene load_steps=34 format=4 uid="uid://buwx2f5s8ms0n"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_i76g7"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="2_ohsvx"]
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="3_b72w1"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="4_26vda"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_egjxc"]
 [ext_resource type="PackedScene" uid="uid://53puk7j21cif" path="res://Assets/OriginalModels/scp_162.tscn" id="5_tbpx5"]
 [ext_resource type="PackedScene" uid="uid://cqsat881jn5qo" path="res://Assets/ExternalModels/steel_frame_shelves.tscn" id="6_5wsgw"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="7_b8xcb"]
@@ -202,8 +203,7 @@ size = Vector3(21.4137, 9.70383, 21.8945)
 
 [node name="cont1_162" type="StaticBody3D"]
 script = ExtResource("1_i76g7")
-mesh_node_path = NodePath("NavigationRegion3D/RoomMesh")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/RoomMesh")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -213,6 +213,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_0rp3e")
 skeleton = NodePath("")
+script = ExtResource("5_egjxc")
+scp_649_floor_index = 1
 
 [node name="Cube_001" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.790538, -0.258573, 0)

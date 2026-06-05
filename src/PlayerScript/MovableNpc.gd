@@ -334,6 +334,8 @@ func wander(delta: float):
 			if wander_action:
 				if wandering_ready:
 					wandering_rotator = rng.randi_range(-15, 15)
+					if wandering_rotator == 0:
+						wandering_rotator = 1
 					set_target_position(NavigationServer3D.map_get_random_point(_nav_agent.get_navigation_map(), 1, true))
 					# set the destination with a new rotation degrees
 					wandering_destination = roundi(rotation_degrees.y + wandering_rotator)

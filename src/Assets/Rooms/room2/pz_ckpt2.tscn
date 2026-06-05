@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bvk4un3yhjuqo"]
+[gd_scene load_steps=22 format=4 uid="uid://bvk4un3yhjuqo"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_s8obg"]
 [ext_resource type="PackedScene" uid="uid://bnsd7dsduynvo" path="res://Assets/ExternalModels/hanging_light_pz.tscn" id="4_tk8pd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="7_3y14a"]
 [ext_resource type="Material" uid="uid://ccrij48d7o4jf" path="res://Assets/Materials/PersonnelZone/WallBlue.tres" id="7_7ngyn"]
 [ext_resource type="LightmapGIData" uid="uid://02ecms7i1lyo" path="res://Assets/Rooms/room2/Lm/pz_ckpt2.lmbake" id="8_s8obg"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_yt1ha"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="9_6i1vp"]
 [ext_resource type="Script" uid="uid://7wruw00caufk" path="res://Scripts/WaypointLabel.gd" id="10_14xjv"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="11_fv1qb"]
@@ -83,8 +84,7 @@ data = PackedVector3Array(10.0314, 7.1976, -9.9365, -1.0016, 3.1754, -9.9365, -1
 
 [node name="room2_b" type="StaticBody3D"]
 script = ExtResource("1_s8obg")
-mesh_node_path = NodePath("NavigationRegion3D/PZ_HallwayI")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/PZ_HallwayI")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_shvc4")
@@ -116,6 +116,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.267318, 4.70162, -4.758519
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2646084, 0)
 mesh = SubResource("ArrayMesh_tk8pd")
 skeleton = NodePath("")
+script = ExtResource("8_yt1ha")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="."]
 visible = false
@@ -151,9 +153,11 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-1223": "pz_testroom",
 "SCP-2028": "Scp2028",
 "SCP-261": "Scp261",
+"SCP-347": "Scp347Spawn",
 "SCP-446": "Scp446Spawn",
 "SCP-5270": "pz_testroom"
 })
+delimiter_after = 1
 
 [node name="Seasonal" type="Node3D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cd5dsyts0jeeo"]
+[gd_scene load_steps=11 format=4 uid="uid://cd5dsyts0jeeo"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_dh6c2"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="2_wdmdc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="4_aqwoc"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="5_874r2"]
 [ext_resource type="LightmapGIData" uid="uid://ciqma88pq5ej8" path="res://Assets/Rooms/room2/Optional/Lm/mt_room2.lmbake" id="6_55tmd"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_wdmdc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_swyoh"]
 vertices = PackedVector3Array(-1.50256, -0.750399, -3.24, -1.25256, -0.750399, 9.76, 1.24744, -0.750399, 9.76, 1.49744, -0.750399, 3.26, 1.24744, -0.750399, -9.74, -1.25256, -0.750399, -9.74)
@@ -55,8 +56,7 @@ data = PackedVector3Array(-2.7756999, 3.5131998, -0.55219996, -2.6885, 3.5131998
 
 [node name="room2" type="StaticBody3D"]
 script = ExtResource("1_dh6c2")
-mesh_node_path = NodePath("NavigationRegion3D/Cylinder_001")
-floor_material_index = 1
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_001")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -76,6 +76,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_l686v")
 skeleton = NodePath("")
+script = ExtResource("6_wdmdc")
+scp_649_floor_index = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
 quality = 0
