@@ -1,5 +1,6 @@
-[gd_scene load_steps=46 format=4 uid="uid://du0oc330cxlq3"]
+[gd_scene load_steps=47 format=4 uid="uid://du0oc330cxlq3"]
 
+[ext_resource type="Script" uid="uid://g43drwoxudqr" path="res://PlayerScript/PlayerClassScript/Puppet/Puppet.gd" id="1_ip4nr"]
 [ext_resource type="Texture2D" uid="uid://c0xql5p5bukxw" path="res://Assets/ExternalModels/SCP/DClass/ClassD_benie_AlbedoTransparency.png" id="4_sfv3q"]
 [ext_resource type="Texture2D" uid="uid://dsrgsq76kvlo6" path="res://Assets/ExternalModels/SCP/DClass/ClassD_benie_Normal.png" id="5_ce6s2"]
 [ext_resource type="Texture2D" uid="uid://l70ldfmw8bpm" path="res://Assets/ExternalModels/SCP/DClass/ClassD_head_AlbedoTransparency.png" id="6_efyg3"]
@@ -672,6 +673,7 @@ nodes/mtf_rifle/position = Vector2(40, 1380)
 node_connections = [&"output", 0, &"items_blend", &"items_blend", 0, &"state_machine", &"items_blend", 1, &"secondary_state", &"secondary_state", 0, &"item_anim", &"secondary_state", 1, &"cuffed_anim", &"secondary_state", 2, &"jailbird_attack_anim", &"secondary_state", 3, &"interact", &"secondary_state", 4, &"ci_rifle", &"secondary_state", 5, &"Animation", &"secondary_state", 6, &"mtf_rifle", &"state_machine", 0, &"idle", &"state_machine", 1, &"walk_anim", &"state_machine", 2, &"run_anim"]
 
 [node name="Puppet" type="Node3D"]
+script = ExtResource("1_ip4nr")
 
 [node name="HumanRig" type="Node3D" parent="."]
 transform = Transform3D(-0.61, 0, -5.3327895e-08, 0, 0.61, 0, 5.3327895e-08, 0, -0.61, 0, 0, 0)

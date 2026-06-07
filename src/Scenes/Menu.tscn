@@ -207,11 +207,11 @@ vertical_icon_alignment = 0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.014
-anchor_top = 0.395
+anchor_top = 0.34600002
 anchor_right = 0.29200003
 anchor_bottom = 0.66400003
 offset_left = -0.12800026
-offset_top = 0.039993286
+offset_top = -0.20800781
 offset_right = -0.3840332
 offset_bottom = -0.2720337
 grow_vertical = 0
@@ -237,6 +237,18 @@ text = "TIME_LIMITED"
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "ZEN_MODE"
+
+[node name="HSeparator" type="HSeparator" parent="GameSettings"]
+layout_mode = 2
+
+[node name="Info2" type="Label" parent="GameSettings"]
+layout_mode = 2
+text = "CASUAL_MODE_PROGRESS"
+
+[node name="ProgressBar" type="ProgressBar" parent="GameSettings"]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+max_value = 1.0
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1

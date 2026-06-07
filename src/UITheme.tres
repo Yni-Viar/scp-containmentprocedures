@@ -2434,17 +2434,9 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71f55"]
-bg_color = Color(0.517647, 0.85098, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0.23509973, 0.52961504, 0.733298, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdlr4"]
 bg_color = Color(0, 0, 0, 1)

@@ -48,3 +48,5 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 @export var lighting: Lighting = Lighting.LIGHTMAP
 ## Rendering
 @export var renderer: Renderer = Renderer.OPENGL
+## Casual mode progress
+@export var casual_game_progress: PackedStringArray = []

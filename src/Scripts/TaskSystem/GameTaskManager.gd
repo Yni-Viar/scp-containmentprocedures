@@ -9,6 +9,9 @@ signal task_done
 var tasks_left: int = 2
 var all_tasks: Array[GameTaskResource]
 var all_tasks_bkp: Array[GameTaskResource]
+
+var aliases: Dictionary[String, String] = {}
+
 var special_event: SpecialEvent = SpecialEvent.NONE
 
 
@@ -42,6 +45,7 @@ func initialize() -> void:
 			# Sub tasks logic
 			if get_parent().gamedata.tasks[task_index].sub_tasks != null && !get_parent().gamedata.tasks[task_index].sub_tasks.is_empty():
 				var sub_task_index: int = get_parent().rng.randi_range(0, get_parent().gamedata.tasks[task_index].sub_tasks.size() - 1)
+				aliases[get_parent().gamedata.tasks[task_index].sub_tasks[sub_task_index].internal_name] = get_parent().gamedata.tasks[task_index].internal_name
 				all_tasks.append(get_parent().gamedata.tasks[task_index].sub_tasks[sub_task_index])
 			else:
 				# Regular task
@@ -62,6 +66,12 @@ func add_task(task_name: String):
 func do_task(task_name: String):
 	for task in all_tasks:
 		if task.internal_name == task_name:
+			if special_event == SpecialEvent.NONE && !Settings.setting_res.casual_game_progress.has(task.internal_name):
+				if aliases.has(task.internal_name):
+					Settings.setting_res.casual_game_progress.append(aliases[task.internal_name])
+				else:
+					Settings.setting_res.casual_game_progress.append(task.internal_name)
+				Settings.save_resource(Settings.setting_res)
 			all_tasks.erase(task)
 			task_done.emit()
 			break

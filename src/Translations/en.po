@@ -474,5 +474,8 @@ msgstr ""
 "Make the bear inside SCP-5270 happy,\n"
 "using SCP-2306"
 
+msgid "CASUAL_MODE_PROGRESS"
+msgstr "Game progress"
+
 #~ msgid "RENDERER_BACKEND_SELECT"
 #~ msgstr "Select your rendering backend"

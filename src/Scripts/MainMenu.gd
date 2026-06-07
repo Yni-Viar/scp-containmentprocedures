@@ -4,8 +4,15 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _enter_tree() -> void:
+	var gamedata: GameData
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
+		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
+		$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
+	else:
+		gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
+		$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
+	$GameSettings/ProgressBar.value = Settings.setting_res.casual_game_progress.size()
 	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():

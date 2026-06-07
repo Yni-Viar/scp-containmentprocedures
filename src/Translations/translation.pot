@@ -380,3 +380,6 @@ msgstr ""
 
 msgid "TASK_5270_2306_FIX"
 msgstr ""
+
+msgid "CASUAL_MODE_PROGRESS"
+msgstr ""

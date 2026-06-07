@@ -510,3 +510,6 @@ msgid "TASK_5270_2306_FIX"
 msgstr ""
 "Обрадуйте мишку из SCP-5270 с\n"
 "помощью SCP-2306"
+
+msgid "CASUAL_MODE_PROGRESS"
+msgstr "Игровой прогресс"

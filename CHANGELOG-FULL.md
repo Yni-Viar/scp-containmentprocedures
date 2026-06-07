@@ -27,6 +27,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Different door frames in Maintenance Zone
 
 ### Other changes
+- [x] Added completed task counter.
 - [x] All scientists are now bald because of new models limitation.
 - [x] \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
 - [x] \[Surface Zone\] Use darker sky for all seasons, except Spring.

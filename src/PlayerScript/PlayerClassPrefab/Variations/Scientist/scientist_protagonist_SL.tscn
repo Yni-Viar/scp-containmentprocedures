@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=4 uid="uid://cbq4c31l4cg2r"]
+[gd_scene load_steps=48 format=4 uid="uid://cbq4c31l4cg2r"]
 
 [ext_resource type="Material" uid="uid://jl2l6yfgmg64" path="res://Assets/ExternalModels/SCP/CommonMaterial/Eyes/eye.tres" id="1_kbla1"]
+[ext_resource type="Script" uid="uid://g43drwoxudqr" path="res://PlayerScript/PlayerClassScript/Puppet/Puppet.gd" id="1_lwgwg"]
 [ext_resource type="Texture2D" uid="uid://br08rhmwhsavv" path="res://Assets/ExternalModels/SCP/Scientist/hairAtlas_Albedo_transparency_dark.png" id="2_1agab"]
 [ext_resource type="Texture2D" uid="uid://e0pcrf1cbyfy" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_head_AlbedoTransparency.png" id="3_2msmo"]
 [ext_resource type="Texture2D" uid="uid://bjptkot3hguyf" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_head_Normal.png" id="4_dy0eh"]
@@ -705,6 +706,7 @@ nodes/mtf_rifle/position = Vector2(40, 1380)
 node_connections = [&"output", 0, &"items_blend", &"items_blend", 0, &"state_machine", &"items_blend", 1, &"secondary_state", &"secondary_state", 0, &"item_anim", &"secondary_state", 1, &"cuffed_anim", &"secondary_state", 2, &"jailbird_attack_anim", &"secondary_state", 3, &"interact", &"secondary_state", 4, &"ci_rifle", &"secondary_state", 5, &"Animation", &"secondary_state", 6, &"mtf_rifle", &"state_machine", 0, &"idle", &"state_machine", 1, &"walk_anim", &"state_machine", 2, &"run_anim"]
 
 [node name="Puppet" type="Node3D"]
+script = ExtResource("1_lwgwg")
 
 [node name="HumanRig" type="Node3D" parent="."]
 transform = Transform3D(-0.625, 0, -9.4372375e-08, 0, 0.625, 0, 9.4372375e-08, 0, -0.625, 0, -0.05, 0)

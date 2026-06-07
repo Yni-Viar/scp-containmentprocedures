@@ -307,7 +307,7 @@ func _call_function(node_path: String, method_caller: String, amount: Array):
 func action_take(index: int):
 	if puppet_class.fraction == 0 && get_node_or_null("PlayerModel/Puppet") != null:
 		var prefab: Node3D = get_node("PlayerModel/Puppet")
-		if prefab is HumanPuppetScript:
+		if prefab is SkinnableHumanPuppetScript:
 			prefab.hold_item(index)
 
 ## Target follow target position setter.
