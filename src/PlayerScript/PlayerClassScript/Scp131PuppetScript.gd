@@ -9,9 +9,7 @@ class_name Scp131PuppetScript
 
 # Called when the node enters the scene tree for the first time.
 func on_spawned():
-	if default_puppet_to_spawn == -1:
-		selected_puppet = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
-		get_tree().call_group("Scp131", "assign_puppet", selected_puppet)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

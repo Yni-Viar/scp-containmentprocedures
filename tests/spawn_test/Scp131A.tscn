@@ -4,9 +4,11 @@
 
 [node name="Puppet" type="Node3D" groups=["Scp131"]]
 script = ExtResource("1_u5w4m")
-default_puppet_to_spawn = 0
+single_type_per_group = true
+single_type_group_name = "Scp131"
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131A.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131A.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/Optional/U/Scp131A.tscn": 1
 })
 armature_name = ""
 vision_class_detect = Array[int]([2])

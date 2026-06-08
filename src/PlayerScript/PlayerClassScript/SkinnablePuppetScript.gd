@@ -3,6 +3,11 @@ extends BasePuppetScript
 ## Made by Yni, licensed under MIT license.
 class_name SkinnablePuppetScript
 
+## If true, makes the entities of `single_type_group_name` use the same id.
+## Useful for entities, that should be same in the round.
+@export var single_type_per_group: bool = false
+## Group for single typed entities (see `single_type_per_group` for explanation)
+@export var single_type_group_name: String = ""
 ## It is recommended to leave it with default value
 ## This paramterer determines if specific puppet will be spawned or will be randomized.
 @export var default_puppet_to_spawn: int = -1
@@ -13,20 +18,30 @@ class_name SkinnablePuppetScript
 @export var selected_puppet: int = -1
 ## Current puppet's node path
 @export var puppet_node: Node3D
+## Check if single type had spawned.
+@export var single_type_spawned: bool = false
+
+static var default_class_presets: Dictionary[String, int]
 
 # Called when the node enters the scene tree for the first time.
 func on_start() -> void:
 	if default_puppet_to_spawn < 0:
-		assign_puppet()
+		if single_type_per_group && get_tree().has_group(single_type_group_name):
+			selected_puppet = get_static_preset()
+			get_tree().call_group(single_type_group_name, "assign_puppet", selected_puppet)
+		else:
+			assign_puppet()
 	else:
 		assign_puppet(default_puppet_to_spawn)
 
 func on_spawned() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## Gets (or sets, if not existing) static presets.
+func get_static_preset() -> int:
+	if !default_class_presets.has(single_type_group_name):
+		default_class_presets[single_type_group_name] = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
+	return default_class_presets[single_type_group_name]
 
 ## Assign a puppet variation to the puppet script
 ## Has optional parameter, which can force specific

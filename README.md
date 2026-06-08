@@ -30,7 +30,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟡SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
 |🟡SCP-080|✅, since 9.0.0|❌||
-|🟢SCP-131|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-131|✅, since 8.0.0/9.0.0|❓, since 8.0.0|✅ Full|
 |🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
 |🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
 |🟡SCP-178|✅, since 5.2.0|❌|✅ Full|

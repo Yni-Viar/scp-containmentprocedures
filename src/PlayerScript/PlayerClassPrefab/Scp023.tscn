@@ -4,7 +4,6 @@
 
 [node name="Puppet" type="Node3D"]
 script = ExtResource("1_bw3o4")
-default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp023/Scp023_TP.tscn": 0
 })

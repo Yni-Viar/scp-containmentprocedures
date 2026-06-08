@@ -6,7 +6,6 @@
 script = ExtResource("1_setat")
 resistance_scp178 = true
 resistance_scp686 = true
-default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp347/Scp347_MH.tscn": 0
 })

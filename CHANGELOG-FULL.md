@@ -4,21 +4,23 @@ This list contains all features, added in the game, or will be added in upcoming
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ## v9.0.0 (Multiverse update)
-### Humans and class system update
+### Class system rework
 - [x] Different male scientists (thanks to OOD from SL Blender community)
 - [x] Add support for different skins
   - [x] Scientists & protagonist
-  - [x] Re-implement season outfits and remove legacy system from `BasePuppetScript`.
+  - [x] Skins can be either randomized or single, the latter is useful for SCPs (SCP-131 will use this).
   - [x] SCP-023
   - [x] SCP-131
   - [x] SCP-173
   - [x] SCP-347
   - [x] SCP-650
   - [x] SCP-939
+- [x] Re-implemented season outfits and remove legacy system from `BasePuppetScript`.
 
 ### New and reworked SCPs
 - [ ] SCP-080
-- [x] SCP-1507 (tied to a variantion of Class-D)
+- [x] SCP-1507 (tied to a variation of Class-D)
+- [x] Added second variation of SCP-131 instance
 - [x] Optimized SCP-347 (which allowed to reintroduce in Lite/Web version), removed legacy mechanics completely and gave her a room (finally after a year of wandering)
 - [x] \[Christmas\] Fixed SCP-649 - increased cold damage and refactored snow spawn, making it easier for programmers to implement.
 

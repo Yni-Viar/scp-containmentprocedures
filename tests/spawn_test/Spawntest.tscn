@@ -71,7 +71,7 @@ shape = SubResource("ConcavePolygonShape3D_0dddd")
 transform = Transform3D(1, 0, 0, 0, -0.7464292, 0.6654649, 0, -0.6654649, -0.7464292, 0, 2.0748413, 2.021271)
 
 [node name="Puppet" parent="." instance=ExtResource("2_hylr4")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -7, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 
 [node name="Puppet2" parent="." instance=ExtResource("3_swnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
@@ -104,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="Puppet12" parent="." instance=ExtResource("13_rqcje")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="Puppet13" parent="." instance=ExtResource("14_1n0mb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

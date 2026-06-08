@@ -484,7 +484,11 @@ title = "SCP: Unity assets"
 [node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer7"]
 visible = false
 layout_mode = 2
-text = "SCP-173 (version 2) - Aruspice (model, textures),
+text = "SCP-131 - Aruspice (model, textures),
+Shakles (rig, animation)
+License: SCP-Wiki CC-BY-SA 3.0
+------------------------
+SCP-173 (version 2) - Aruspice (model, textures),
 Shakles (rig, animation), PixelPuffin (concept art)
 License: SCP-Wiki CC-BY-SA 3.0
 ------------------------
