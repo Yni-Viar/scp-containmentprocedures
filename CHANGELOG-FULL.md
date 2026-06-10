@@ -29,7 +29,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Different door frames in Maintenance Zone
 
 ### Game progress system/achievement
-- [x] Added achievements for studying SCPs (not necessary the task one, and not all)
+- [x] Added achievements for studying SCPs (not necessary the task one, and not all SCPs)
 
 ### Other changes
 - [x] All scientists are now bald because of new models limitation.
