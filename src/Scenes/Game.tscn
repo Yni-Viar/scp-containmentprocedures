@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://6l8r5fy0ymqt"]
+[gd_scene load_steps=49 format=3 uid="uid://6l8r5fy0ymqt"]
 
 [ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_7lihs"]
 [ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://c8y4oka7p08v6" path="res://UI/icon_192_dark.png" id="26_iyesh"]
 [ext_resource type="Texture2D" uid="uid://cx0pyayxian80" path="res://Assets/HUD/Touch/call_elevator_click.png" id="27_i4lct"]
 [ext_resource type="FontFile" uid="uid://df7jbkqjjvyuv" path="res://Assets/Fonts/Special_Elite_with_Cyrillic_by_Lomzz/SpecialElite.ttf" id="29_18uti"]
-[ext_resource type="PackedScene" uid="uid://o6rnnciwmwvn" path="res://GDsh/InGameConsole.tscn" id="30_i1pr2"]
 
 [sub_resource type="Animation" id="Animation_i1pr2"]
 length = 0.001
@@ -126,7 +125,7 @@ texture = ExtResource("23_i4lct")
 process_mode = 1
 script = ExtResource("1_7lihs")
 
-[node name="GDShCommands" type="Node3D" parent="."]
+[node name="DebugCommands" type="Node3D" parent="."]
 script = ExtResource("2_umnjm")
 
 [node name="InGameCommands" type="Node3D" parent="."]
@@ -689,10 +688,6 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("26_iyesh")
-
-[node name="InGameConsole" parent="UI" instance=ExtResource("30_i1pr2")]
-visible = false
-layout_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_dahhg")

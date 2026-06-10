@@ -81,6 +81,11 @@ func refine():
 		1:
 			door_block_in.enabled = true
 			door_block_out.enabled = true
+	# Achievement
+	if Settings.setting_res.scp_study_progress_full.has("SCP-914"):
+		if !Settings.setting_res.scp_study_progress_full["SCP-914"]:
+			Settings.setting_res.scp_study_progress_full["SCP-914"] = true
+			Settings.save_resource(Settings.setting_res)
 
 
 func _on_add_items_area_body_entered(body: Node3D) -> void:

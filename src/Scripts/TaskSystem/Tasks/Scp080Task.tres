@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://de6nywsyvpmjq"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_81wqb"]
+
+[resource]
+script = ExtResource("1_81wqb")
+internal_name = "task_080"
+public_name = "TASK_080_CHECK"
+required_groups = Array[String](["Scp080Spawn"])
+metadata/_custom_type_script = "uid://2412583x8gql"

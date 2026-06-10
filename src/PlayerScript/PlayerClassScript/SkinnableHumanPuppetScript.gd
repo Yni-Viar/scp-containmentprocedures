@@ -178,13 +178,23 @@ func effect_manager_start(effect: String, strength: float):
 	match effect:
 		"Scp686":
 			if !resistance_scp686:
+				#Achievement
+				if Settings.setting_res.scp_study_progress_all.has("SCP-686"):
+					if !Settings.setting_res.scp_study_progress_all["SCP-686"]:
+						Settings.setting_res.scp_study_progress_all["SCP-686"] = true
+						Settings.save_resource(Settings.setting_res)
 				puppet_node.get_node(torso_node_path).mesh.surface_set_material(0, puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).duplicate())
 		"Scp178":
 			if !resistance_scp178:
 				if get_tree().get_node_count_in_group("Scp178-1") == 0 && !OS.has_feature("Lite"):
+					#Achievement
+					if Settings.setting_res.scp_study_progress_full.has("SCP-178"):
+						if !Settings.setting_res.scp_study_progress_full["SCP-178"]:
+							Settings.setting_res.scp_study_progress_full["SCP-178"] = true
+							Settings.save_resource(Settings.setting_res)
 					for i in range(64):
 						var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
-						npc.puppet_class = load("res://PlayerScript/PlayerClassResources/Scp178-1.tres")
+						npc.puppet_class = load("res://PlayerScript/PlayerClassResources/Optional/Scp178-1.tres")
 						npc.position = NavigationServer3D.map_get_random_point(get_parent().get_parent().get_node("NavigationAgent3D").get_navigation_map(), 1, true)
 						get_tree().root.get_node("Game/NPCs").add_child(npc)
 				secondary_state = SecondaryState.HAT
@@ -216,10 +226,17 @@ func effect_manager_start(effect: String, strength: float):
 			get_tree().root.get_node("Game").advanced_dialogue(["SCP067_DLG3"])
 			await get_tree().create_timer(1.0).timeout
 			get_parent().get_parent().get_node("StatusEffects").remove_status_effect(get_parent().get_parent().get_node("StatusEffects").get_status_effect_index("Scp067"))
+			if Settings.setting_res.scp_study_progress_all.has("SCP-067"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-067"]:
+					Settings.setting_res.scp_study_progress_all["SCP-067"] = true
+					Settings.save_resource(Settings.setting_res)
 		"Scp2028":
 			get_tree().root.get_node("Game").advanced_dialogue(["SCP2028_NIGHTMARE", "SCP2028_NIGHTMARE2", "SCP2028_NIGHTMARE3"])
 			hold_item(20)
-			
+			if Settings.setting_res.scp_study_progress_all.has("SCP-2028"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-2028"]:
+					Settings.setting_res.scp_study_progress_all["SCP-2028"] = true
+					Settings.save_resource(Settings.setting_res)
 	
 	effect_manager_start_custom(effect, strength)
 

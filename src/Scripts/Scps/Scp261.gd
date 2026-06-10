@@ -143,6 +143,11 @@ func interact(player: Node3D):
 	super.interact(player)
 	if player is MovableNpc:
 		if player.is_player && player.money.has("YEN"):
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-261"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-261"]:
+					Settings.setting_res.scp_study_progress_all["SCP-261"] = true
+					Settings.save_resource(Settings.setting_res)
 			Settings.dialogue_window("SCP261_CHOICE", "SCP-261", true, base_buttons)
 
 ## Main SCP-261 function

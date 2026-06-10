@@ -25,17 +25,20 @@ func _physics_process(delta):
 		if enabled:
 			# stop moving
 			progress_ratio += move_toward(0.005, 0, delta) * delta
-			$Sound.volume_db = move_toward(0, -10, delta) * delta
+			if get_node_or_null("Sound") != null:
+				$Sound.volume_db = move_toward(0, -10, delta) * delta
 			counter += 1
 		else:
 			# start moving
 			progress_ratio += move_toward(0, 0.005, delta) * delta
-			$Sound.volume_db = move_toward(-10, 0, delta) * delta
+			if get_node_or_null("Sound") != null:
+				$Sound.volume_db = move_toward(-10, 0, delta) * delta
 			counter += 1
 		if counter == 5:
 			# change values on stopping/starting
 			enabled = !enabled
-			$Sound.playing = !$Sound.playing
+			if get_node_or_null("Sound") != null:
+				$Sound.playing = !$Sound.playing
 			counter = 0
 			transition = false
 

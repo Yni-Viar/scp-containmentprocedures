@@ -4,15 +4,30 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _enter_tree() -> void:
-	var gamedata: GameData
+	var total_amount: int = Settings.setting_res.scp_study_progress_all.size()
+	var completed_amount: int = 0
+	for progress in Settings.setting_res.scp_study_progress_all:
+		if Settings.setting_res.scp_study_progress_all[progress]:
+			completed_amount += 1
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
-		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
-		$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
 	else:
-		gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
-		$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
-	$GameSettings/ProgressBar.value = Settings.setting_res.casual_game_progress.size()
+		total_amount += Settings.setting_res.scp_study_progress_full.size()
+		for progress in Settings.setting_res.scp_study_progress_full:
+			if Settings.setting_res.scp_study_progress_full[progress]:
+				completed_amount += 1
+	
+	if Settings.current_season == Settings.Season.CHRISTMAS:
+		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
+		for progress in Settings.setting_res.scp_study_progress_christmas:
+			if Settings.setting_res.scp_study_progress_christmas[progress]:
+				completed_amount += 1
+	#gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
+	$GameSettings/ProgressBar.max_value = total_amount
+	#else:
+		#gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
+		#$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
+	$GameSettings/ProgressBar.value = completed_amount
 	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():
@@ -32,8 +47,8 @@ func _enter_tree() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 
 func _on_play_pressed() -> void:

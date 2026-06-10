@@ -18,6 +18,11 @@ func _on_body_entered(body: Node3D) -> void:
 				2:
 					class_d_amount += 1
 		if class_d_amount >= 3 && foundation_amount >= 1:
+			#Achievement
+			if Settings.setting_res.scp_study_progress_full.has("SCP-938"):
+				if !Settings.setting_res.scp_study_progress_full["SCP-938"]:
+					Settings.setting_res.scp_study_progress_full["SCP-938"] = true
+					Settings.save_resource(Settings.setting_res)
 			get_tree().root.get_node("Game/FoundationTask").do_task("task_938")
 
 

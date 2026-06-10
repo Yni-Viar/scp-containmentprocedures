@@ -19,33 +19,40 @@ func _process(delta: float) -> void:
 		waterflow.position.y -= delta
 
 func flow():
-	$Waterfall.emitting = flowing
-	$Waterfall2.emitting = flowing
-	$Waterfall3.emitting = flowing
+	if get_node_or_null("Waterfall") != null:
+		$Waterfall.emitting = flowing
+	if get_node_or_null("Waterfall2") != null:
+		$Waterfall2.emitting = flowing
+	if get_node_or_null("Waterfall3") != null:
+		$Waterfall3.emitting = flowing
 	waterflow.visible = flowing
 
 func open_sound():
 	var sound: AudioStream = load("res://Sounds/Environment/Scp812/deleted_user_7146007__opening-old-garage-door.ogg")
-	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
-	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
+	if get_node_or_null("NavigationRegion3D/Scp812/AudioStreamPlayer3D") != null:
+		$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
+		$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
 	$WaterfallSound.play()
 	var tween: Tween = create_tween()
 	tween.tween_property($WaterfallSound, "volume_db", 0.0, 1.0)
 
 func close_sound():
 	var sound: AudioStream = load("res://Sounds/Environment/Scp812/deleted_user_7146007__locking-old-garage-door.ogg")
-	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
-	$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
+	if get_node_or_null("NavigationRegion3D/Scp812/AudioStreamPlayer3D") != null:
+		$NavigationRegion3D/Scp812/AudioStreamPlayer3D.stream = sound
+		$NavigationRegion3D/Scp812/AudioStreamPlayer3D.play()
 	var tween: Tween = create_tween()
-	tween.tween_property($WaterfallSound, "volume_db", -20.0, 1.0)
-	tween.finished.connect(disable_waterfall_sound)
+	if get_node_or_null("WaterfallSound") != null:
+		tween.tween_property($WaterfallSound, "volume_db", -20.0, 1.0)
+		tween.finished.connect(disable_waterfall_sound)
 
 func _on_scp_812_trigger_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			open_sound()
 			if !flowing:
-				$AnimationPlayer.play("open_waterflow")
+				if get_node_or_null("AnimationPlayer") != null:
+					$AnimationPlayer.play("open_waterflow")
 				flowing = true
 
 
@@ -54,7 +61,13 @@ func _on_scp_812_trigger_body_exited(body: Node3D) -> void:
 		if body.is_player:
 			close_sound()
 			if flowing:
-				$AnimationPlayer.play_backwards("open_waterflow")
+				if get_node_or_null("AnimationPlayer") != null:
+					$AnimationPlayer.play_backwards("open_waterflow")
+				#Achievement
+				if Settings.setting_res.scp_study_progress_all.has("SCP-812"):
+					if !Settings.setting_res.scp_study_progress_all["SCP-812"]:
+						Settings.setting_res.scp_study_progress_all["SCP-812"] = true
+						Settings.save_resource(Settings.setting_res)
 				get_tree().root.get_node("Game/FoundationTask").do_task("task_812")
 				flowing = false
 

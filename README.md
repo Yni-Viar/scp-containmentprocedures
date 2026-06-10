@@ -30,6 +30,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟡SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
 |🟡SCP-080|✅, since 9.0.0|❌||
+|🟡SCP-109\*|✅, since 4.3.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-131|✅, since 8.0.0/9.0.0|❓, since 8.0.0|✅ Full|
 |🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
 |🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
@@ -38,9 +39,9 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, disabled in 5.8.0|✅ Full|
 |🟡SCP-347|✅, since 1.0.0|✅, 5.7.x-5.8.x only, since 9.0.0|❓ Partial|
-|🟠SCP-417|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
-|🟢SCP-446|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
-|🟢SCP-458|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
+|🟠SCP-417\*|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
+|🟢SCP-446\*|✅, since 5.3.0|✅, since 5.7.0|❌ Cameo / simple ragdoll|
+|🟢SCP-458\*|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-649|⛄, 5.5.x-5.7.x, since 9.0.0|⛄, 5.7.x only, since 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
 |🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\)|
@@ -50,12 +51,12 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-914|✅, since 2.0.0|❌, 5.7.x only, removed in 5.8.0|❓ Process only items|
 |🔴SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
 |🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
-|🟢SCP-983|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
-|🟢SCP-1223|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
+|🟢SCP-983\*|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
+|🟢SCP-1223\*|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
 |🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-2306|✅, since 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
-|🟢SCP-2471|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
+|🟢SCP-2471\*|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-5270|✅, since 8.1.0|✅, since 8.1.0|❓ Implemented only one event out of three|
 
 #### Object class
@@ -75,12 +76,16 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ⛄ - Spawns only in December.
 <!-- ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded. -->
 
+
 #### Functionality
 ✅ - SCP object is fully implemented
-
 ❓ - SCP object is partly implemented
 📃 - SCP object is implemented only for a task
 ❌ - SCP object is not compatible with SCP article
+
+#### Achievements
+\* means that no achievement is given for this SCP
+> Achievements are also not given, if this SCP does not exist in this build (e.g. SCP-791, which is missing in Lite version) or season (e.g. SCP-649 is available only in December, so is achievement for it).
 
 ## Note to Google Android users:
 Please, check [tutorial to install apps without Google verification (effective since Sep 2026)](https://android-developers.googleblog.com/2026/03/android-developer-verification.html), since I don't plan to give all data and pay a fee to Google.
@@ -102,7 +107,7 @@ Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
 
 ### Building lite version (for Web)
 **In Lite version, some components are missing:**
-There are no SCP-178 (item exists, but has no effect), *SCP: Unity* SCP-173 model, SCP-266 (spawnable), SCP-347 (spawnable), SCP-791, SCP-938 (spawnable), SCP-914.
+There are no SCP-080, SCP-178 (item exists, but has no effect), *SCP: Unity* SCP-173 model, SCP-266, SCP-791, SCP-914, SCP-938.
 1. Project->Export
 2. Choose your platform (e.g. Web)
 3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`

@@ -21,5 +21,10 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5233917, 0)
 shape = SubResource("CylinderShape3D_6kmpp")
 
+[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1145895, -0.050662994)
+aabb = AABB(-0.42323288, -1.113152, -0.41636354, 0.84646577, 2.226304, 0.8327271)
+
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
 [connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]
+[connection signal="screen_entered" from="Achievement" to="." method="_on_achievement_screen_entered"]

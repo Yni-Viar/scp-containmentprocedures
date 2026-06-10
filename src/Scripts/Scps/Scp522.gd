@@ -32,21 +32,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	match animation_timer:
-		1:
-			$Armature/Skeleton3D/CopyTransformModifier3D.active = true
-			if $Armature/Skeleton3D/CopyTransformModifier3D.influence < 0.9990234375 && timer < 1.0:
-				$Armature/Skeleton3D/CopyTransformModifier3D.influence = timer
-			else:
-				animation_timer = 0
-				$Armature/Skeleton3D/CopyTransformModifier3D.influence = 1.0
-		-1:
-			if $Armature/Skeleton3D/CopyTransformModifier3D.influence > 0.0009765625 && timer < 1.0:
-				$Armature/Skeleton3D/CopyTransformModifier3D.influence = 1.0 - timer
-			else:
-				$Armature/Skeleton3D/CopyTransformModifier3D.influence = 0.0
-				animation_timer = 0
-				$Armature/Skeleton3D/CopyTransformModifier3D.active = false
+	if get_node_or_null("Armature/Skeleton3D/CopyTransformModifier3D") != null:
+		match animation_timer:
+			1:
+				$Armature/Skeleton3D/CopyTransformModifier3D.active = true
+				if $Armature/Skeleton3D/CopyTransformModifier3D.influence < 0.9990234375 && timer < 1.0:
+					$Armature/Skeleton3D/CopyTransformModifier3D.influence = timer
+				else:
+					animation_timer = 0
+					$Armature/Skeleton3D/CopyTransformModifier3D.influence = 1.0
+			-1:
+				if $Armature/Skeleton3D/CopyTransformModifier3D.influence > 0.0009765625 && timer < 1.0:
+					$Armature/Skeleton3D/CopyTransformModifier3D.influence = 1.0 - timer
+				else:
+					$Armature/Skeleton3D/CopyTransformModifier3D.influence = 0.0
+					animation_timer = 0
+					$Armature/Skeleton3D/CopyTransformModifier3D.active = false
 	if state == Scp522State.ACTIVE:
 		timer += delta
 		if body_to_process != null:
@@ -64,6 +65,11 @@ func _on_scp_522_trigger_body_entered(body: Node3D) -> void:
 		state = Scp522State.ACTIVE
 		body_to_process = body
 		if body is MovableNpc:
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-522"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-522"]:
+					Settings.setting_res.scp_study_progress_all["SCP-522"] = true
+					Settings.save_resource(Settings.setting_res)
 			body_inside = [body.fraction, body.puppet_class.team]
 			body.movement_freeze = true
 		else:

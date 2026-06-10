@@ -207,6 +207,7 @@ func effect_manager_start(effect: String, strength: float):
 			get_tree().root.get_node("Game").advanced_dialogue(["SCP067_DLG3"])
 			await get_tree().create_timer(1.0).timeout
 			get_parent().get_parent().get_node("StatusEffects").remove_status_effect(get_parent().get_parent().get_node("StatusEffects").get_status_effect_index("Scp067"))
+			
 		"Scp2028":
 			get_tree().root.get_node("Game").advanced_dialogue(["SCP2028_NIGHTMARE", "SCP2028_NIGHTMARE2", "SCP2028_NIGHTMARE3"])
 			hold_item(20)

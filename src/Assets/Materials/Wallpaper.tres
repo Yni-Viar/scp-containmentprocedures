@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ct6gfuldvvvej"]
+
+[ext_resource type="Texture2D" uid="uid://ci5m857xgvcwh" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Wallpaper002A_2K-PNG_Color.png" id="1_0u0w2"]
+[ext_resource type="Texture2D" uid="uid://nihrkbvh7s4h" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Wallpaper002A_2K-PNG_Roughness.png" id="2_o8iy8"]
+[ext_resource type="Texture2D" uid="uid://ctq1d11irgw5t" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Wallpaper002A_2K-PNG_NormalGL.png" id="3_o43xj"]
+
+[resource]
+resource_name = "RoomWalls"
+albedo_texture = ExtResource("1_0u0w2")
+metallic_texture = ExtResource("2_o8iy8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_o8iy8")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_o43xj")

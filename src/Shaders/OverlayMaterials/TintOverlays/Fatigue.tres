@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bdiaj7vkautln"]
+
+[ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="1_vd5eg"]
+
+[sub_resource type="Gradient" id="Gradient_x4gmm"]
+offsets = PackedFloat32Array(0, 0.3197425, 0.7296137, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.023529412, 0.023529412, 0.32156864, 0.8627451, 0.18039216, 0.18039216, 0.18039216, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vd5eg"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uctv3"]
+noise = SubResource("FastNoiseLite_vd5eg")
+color_ramp = SubResource("Gradient_x4gmm")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vd5eg")
+shader_parameter/overlay = SubResource("NoiseTexture2D_uctv3")
+shader_parameter/multiplier = 1.0

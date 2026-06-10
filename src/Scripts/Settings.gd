@@ -66,7 +66,8 @@ func _ready() -> void:
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
 	season_checker()
-	GDsh.add_command("beta_mode_features", beta_mode_features, "List current beta features.")
+	Console.add_command("beta_mode_features", beta_mode_features)
+	Console.add_command("beta_mode_enable", beta_mode_enable, ["keyword"], 1)
 
 ## Sometimes ago it was a great function. Now it is just a stub, that calls ResourceStorage and loads settings
 func load_resource():
@@ -102,7 +103,7 @@ func save_resource(res):
 func season_checker():
 	match Time.get_datetime_dict_from_system()["month"]:
 		1:
-			if Time.get_datetime_dict_from_system()["day"] <= 3:
+			if Time.get_datetime_dict_from_system()["day"] <= 7:
 				current_season = Season.CHRISTMAS
 			else:
 				current_season = Season.WINTER
@@ -186,16 +187,22 @@ func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
 	
 	add_child(loading_screen)
 
-## GDsh command, that describes beta features.
-func beta_mode_features(args: Array):
-	return """Beta features:
+func beta_mode_enable(keyword: Variant):
+	if keyword is String:
+		if keyword == "feature_beta":
+			beta_mode = true
+
+## GDsh command.
+## List current beta features.
+func beta_mode_features():
+	Console.print_info("""Beta features:
 	
 	- Story mode UI.
 	- Neural AI for Web platform
 	
-	To enable beta features, write in Seed input following text:
-	[b]feature_beta[/b]
-	"""
+	To enable beta features, call in thsi console this command:
+	[b]beta_mode_enable feature_beta[/b]
+	""")
 
 ## Creates dialogue window
 ## Text is message to show, title is window title and button_actions (optional, only used ingame) is used for choices.

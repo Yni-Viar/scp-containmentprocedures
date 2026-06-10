@@ -4,7 +4,15 @@ extends Pickable
 class_name Scp018
 
 ## Is SCP-018 activated. Disabled only in containment cube.
-@export var activated: bool = false
+@export var activated: bool = false:
+	set(val):
+		activated = val
+		if activated:
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-018"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-018"]:
+					Settings.setting_res.scp_study_progress_all["SCP-018"] = true
+					Settings.save_resource(Settings.setting_res)
 ## Impulse setter variable
 @export var vel: Vector3 = Vector3.ZERO
 ## Speed coefficient

@@ -50,7 +50,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2uhs1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hugkd"]
-size = Vector3(0.363037, 0.0301514, 0.533447)
+size = Vector3(0.5032959, 0.0301514, 0.7511444)
 
 [node name="doc" type="RigidBody3D" groups=["Item"]]
 collision_layer = 8
@@ -60,11 +60,11 @@ script = ExtResource("1_bul0b")
 item_id = 7
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.349784, 0, 0, 0, 0.349784, 0, 0, 0, 0.349784, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_qr6x8")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00354004, 6.10352e-05, 0.00231934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010375977, 6.10352e-05, -0.000679072)
 shape = SubResource("BoxShape3D_hugkd")

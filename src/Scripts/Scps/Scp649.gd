@@ -21,13 +21,14 @@ func interact(player: Node3D):
 
 func _physics_process(delta: float) -> void:
 	# Creating or destructing ice age.
-	if is_opened && $ColdArea/CollisionShape3D.shape.radius < 100.0:
-		$ColdArea/CollisionShape3D.shape.radius += delta * speed
-		speed += delta * 0.125
-	elif $ColdArea/CollisionShape3D.shape.radius > 0.0625:
-		$ColdArea/CollisionShape3D.shape.radius -= delta * speed
-		if speed < 2.0:
+	if get_node_or_null("ColdArea/CollisionShape3D") != null:
+		if is_opened && $ColdArea/CollisionShape3D.shape.radius < 100.0:
+			$ColdArea/CollisionShape3D.shape.radius += delta * speed
 			speed += delta * 0.125
+		elif $ColdArea/CollisionShape3D.shape.radius > 0.0625:
+			$ColdArea/CollisionShape3D.shape.radius -= delta * speed
+			if speed < 2.0:
+				speed += delta * 0.125
 	if timer > 0:
 		timer -= delta
 	else:
@@ -38,6 +39,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_cold_area_body_entered(body: Node3D) -> void:
 	if body is RoomPrefab:
+		#Achievement
+		if Settings.setting_res.scp_study_progress_christmas.has("SCP-649"):
+			if !Settings.setting_res.scp_study_progress_christmas["SCP-649"]:
+				Settings.setting_res.scp_study_progress_christmas["SCP-649"] = true
+				Settings.save_resource(Settings.setting_res)
 		body.scp_649_activate(true)
 	if body is MovableNpc:
 		if body.current_health.size() >= 2:

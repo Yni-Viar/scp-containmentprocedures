@@ -512,4 +512,12 @@ msgstr ""
 "помощью SCP-2306"
 
 msgid "CASUAL_MODE_PROGRESS"
-msgstr "Игровой прогресс"
+msgstr "Изученные SCP:"
+
+msgid "GAME_OVER_6"
+msgstr "Вместо того, чтобы сделать свою работу, Вы уснули."
+
+msgid "TASK_080_CHECK"
+msgstr ""
+"Прикажите персоналу Класса-Д проверить\n"
+"присутствие SCP-080"

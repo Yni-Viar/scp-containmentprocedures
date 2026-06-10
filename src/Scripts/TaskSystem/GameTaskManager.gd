@@ -66,11 +66,24 @@ func add_task(task_name: String):
 func do_task(task_name: String):
 	for task in all_tasks:
 		if task.internal_name == task_name:
-			if special_event == SpecialEvent.NONE && !Settings.setting_res.casual_game_progress.has(task.internal_name):
-				if aliases.has(task.internal_name):
-					Settings.setting_res.casual_game_progress.append(aliases[task.internal_name])
-				else:
-					Settings.setting_res.casual_game_progress.append(task.internal_name)
+			if special_event == SpecialEvent.NONE:
+				#if aliases.has(task.internal_name):
+					#Settings.setting_res.casual_game_progress.append(aliases[task.internal_name])
+				#else:
+					#Settings.setting_res.casual_game_progress.append(task.internal_name)
+				#Achievement
+				match task.internal_name:
+					"task_5270_2306":
+						if Settings.setting_res.scp_study_progress_all.has("SCP-2306") && Settings.setting_res.scp_study_progress_all.has("SCP-5270"):
+							if !Settings.setting_res.scp_study_progress_all["SCP-2306"] && !Settings.setting_res.scp_study_progress_all["SCP-5270"]:
+								Settings.setting_res.scp_study_progress_all["SCP-2306"] = true
+								Settings.setting_res.scp_study_progress_all["SCP-5270"] = true
+								Settings.save_resource(Settings.setting_res)
+					"task_914_exp_5":
+						if Settings.setting_res.scp_study_progress_all.has("SCP-005"):
+							if !Settings.setting_res.scp_study_progress_all["SCP-005"]:
+								Settings.setting_res.scp_study_progress_all["SCP-005"] = true
+								Settings.save_resource(Settings.setting_res)
 				Settings.save_resource(Settings.setting_res)
 			all_tasks.erase(task)
 			task_done.emit()

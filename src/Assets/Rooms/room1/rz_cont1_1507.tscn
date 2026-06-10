@@ -121,7 +121,7 @@ font = ExtResource("14_3focv")
 font_size = 32
 depth = 0.01
 
-[node name="cont1_testroom" type="StaticBody3D" groups=["RZ_cont1_testroom"]]
+[node name="cont1_testroom" type="StaticBody3D"]
 script = ExtResource("1_3u5sp")
 mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 

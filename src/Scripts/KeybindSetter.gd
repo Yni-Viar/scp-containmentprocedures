@@ -10,7 +10,6 @@ var settings_key: Dictionary[String, String] = {
 	"TVM": "toggle_mode",
 	"I": "inventory",
 	"PM": "photomode",
-	"D": "debug_console"
 }
 var listen_to_keybind: bool = false
 var current_setting_to_change: int
@@ -79,9 +78,3 @@ func _on_pm_button_pressed() -> void:
 	listen_to_keybind = true
 	$PMButton.text = "KEY_LISTENING"
 	current_setting_to_change = 6
-
-
-func _on_d_button_pressed() -> void:
-	listen_to_keybind = true
-	$DButton.text = "KEY_LISTENING"
-	current_setting_to_change = 7

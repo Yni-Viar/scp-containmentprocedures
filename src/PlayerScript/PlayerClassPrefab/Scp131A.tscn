@@ -13,3 +13,9 @@ available_puppets = Dictionary[String, int]({
 armature_name = ""
 enable_vision_scan = true
 vision_class_detect = Array[int]([2])
+
+[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1145895, -0.050662994)
+aabb = AABB(-0.42323288, -1.113152, -0.41636354, 0.84646577, 2.226304, 0.8327271)
+
+[connection signal="screen_entered" from="Achievement" to="." method="_on_achievement_screen_entered"]

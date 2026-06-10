@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://35mt4ijfv8lv"]
+
+[ext_resource type="PackedScene" uid="uid://bqoqnyepfa104" path="res://PlayerScript/PlayerClassPrefab/default.tscn" id="1_bn2aq"]
+[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_d8mvp"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_el1ke"]
+
+[resource]
+script = ExtResource("3_el1ke")
+puppet_class_name = "SCP-938"
+speed = 15.0
+prefab = ExtResource("1_bn2aq")
+spawn_point_group = "Scp938Spawn"
+initial_amount = 1
+fraction = 1
+apply_height_bugfix = false
+enable_wander = false
+health = Array[float]([2300.0])
+enable_avoidance = false
+puppet_navigation_layers = 3
+enable_ik = false
+ragdoll_prefab = ExtResource("2_d8mvp")
+can_ride = false

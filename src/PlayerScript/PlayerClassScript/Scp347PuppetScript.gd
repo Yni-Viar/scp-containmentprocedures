@@ -74,3 +74,11 @@ func scp_347_infrared_blink(delta: float):
 						#get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.GENERIC_WANDER
 						#get_parent().get_parent().follow_target = ""
 		#mood_timer = rng.randf_range(15.0, 24.0)
+
+
+func _on_achievement_screen_entered() -> void:
+	#Achievement
+	if Settings.setting_res.scp_study_progress_all.has("SCP-347"):
+		if !Settings.setting_res.scp_study_progress_all["SCP-347"]:
+			Settings.setting_res.scp_study_progress_all["SCP-347"] = true
+			Settings.save_resource(Settings.setting_res)

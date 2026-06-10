@@ -475,7 +475,13 @@ msgstr ""
 "using SCP-2306"
 
 msgid "CASUAL_MODE_PROGRESS"
-msgstr "Game progress"
+msgstr "Studied SCPs:"
+
+msgid "GAME_OVER_6"
+msgstr "Instead of doing your job, you felt asleep."
+
+msgid "TASK_080_CHECK"
+msgstr "Order Class-D personnel to check SCP-080's existence"
 
 #~ msgid "RENDERER_BACKEND_SELECT"
 #~ msgstr "Select your rendering backend"

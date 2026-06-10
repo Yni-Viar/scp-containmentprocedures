@@ -31,6 +31,11 @@ func _physics_process(delta: float) -> void:
 
 ## Activate SCP-162 on player.
 func activate():
+	#Achievement
+	if Settings.setting_res.scp_study_progress_all.has("SCP-162"):
+		if !Settings.setting_res.scp_study_progress_all["SCP-162"]:
+			Settings.setting_res.scp_study_progress_all["SCP-162"] = true
+			Settings.save_resource(Settings.setting_res)
 	for npc in targets:
 		if is_instance_valid(npc):
 			npc.follow_target = self.get_path()

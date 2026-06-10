@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://dwvjvm78gm8b"]
 
-[ext_resource type="Material" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/wood.tres" id="1_ir87j"]
+[ext_resource type="Material" uid="uid://dxak7gxn6yyjf" path="res://Assets/Materials/Wood.tres" id="1_ir87j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afriu"]
 size = Vector3(2.02222, 3.03284, 1.37)

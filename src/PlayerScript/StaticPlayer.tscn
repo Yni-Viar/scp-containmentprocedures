@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://by5c7g15ljuta"]
+[gd_scene load_steps=18 format=3 uid="uid://by5c7g15ljuta"]
 
 [ext_resource type="Script" uid="uid://coqykxns1k055" path="res://PlayerScript/StaticPlayer.gd" id="1_cfg1l"]
 [ext_resource type="Script" uid="uid://cehby8ygncffm" path="res://Scripts/GDShaderCompositor/GDShaderCompositorResource.gd" id="3_ejqts"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://lg83pkwn3bcv" path="res://Shaders/OverlayMaterials/TintOverlays/Electrocute.tres" id="11_vgbhc"]
 [ext_resource type="Material" uid="uid://gw1nl3f4bpjf" path="res://Shaders/OverlayMaterials/TintOverlays/Scp261KleinBottle.tres" id="12_ih07c"]
 [ext_resource type="Material" uid="uid://c2768cnm2bxyr" path="res://Shaders/OverlayMaterials/TintOverlays/Scp261Orange.tres" id="13_dlstf"]
+[ext_resource type="Material" uid="uid://bdiaj7vkautln" path="res://Shaders/OverlayMaterials/TintOverlays/Fatigue.tres" id="14_jpt06"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j77eh"]
 radius = 32.0
@@ -68,6 +69,7 @@ script = ExtResource("9_78fyt")
 shaders = Dictionary[String, ShaderMaterial]({
 "Cold": ExtResource("10_ckqrc"),
 "Electrocute": ExtResource("11_vgbhc"),
+"Fatigue": ExtResource("14_jpt06"),
 "Scp261KleinBottle": ExtResource("12_ih07c"),
 "Scp261Orange": ExtResource("13_dlstf")
 })

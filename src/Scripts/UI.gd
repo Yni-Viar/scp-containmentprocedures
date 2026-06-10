@@ -23,8 +23,6 @@ func _ready():
 			#
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("debug_console"):
-		$InGameConsole.visible = !$InGameConsole.visible
 	if event.is_action_released("inventory"):
 		_on_inventory_button_pressed()
 	if event.is_action_pressed("photomode"):

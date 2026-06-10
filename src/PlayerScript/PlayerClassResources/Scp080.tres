@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dqfejxd1qicrc"]
+
+[ext_resource type="PackedScene" uid="uid://c2qhqodm5rcay" path="res://PlayerScript/PlayerClassPrefab/Optional/Scp080.tscn" id="1_uus37"]
+[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_rvulf"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_s3x2o"]
+
+[resource]
+script = ExtResource("3_s3x2o")
+puppet_class_name = "SCP-080"
+speed = 6.0
+prefab = ExtResource("1_uus37")
+spawn_point_group = "Scp080Spawn"
+initial_amount = 1
+fraction = 1
+apply_height_bugfix = false
+wandering_system = 1
+health = Array[float]([120.0])
+puppet_navigation_layers = 32
+enable_ik = false
+ragdoll_prefab = ExtResource("2_rvulf")
+can_ride = false

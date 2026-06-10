@@ -43,16 +43,18 @@ func door_controller(keycard: int):
 ## Open the door
 func door_open():
 	var rng = RandomNumberGenerator.new()
-	$AnimationPlayer.play("door_open")
-	if !open_door_sounds.is_empty():
+	if get_node_or_null("AnimationPlayer") != null:
+		$AnimationPlayer.play("door_open")
+	if !open_door_sounds.is_empty() && get_node_or_null("DoorSound") != null:
 		$DoorSound.stream = load(open_door_sounds[rng.randi_range(0, open_door_sounds.size() - 1)])
 		$DoorSound.play()
 	is_opened = true
 ## Closes the door
 func door_close():
 	var rng = RandomNumberGenerator.new()
-	$AnimationPlayer.play("door_open", -1, -1, true)
-	if !close_door_sounds.is_empty():
+	if get_node_or_null("AnimationPlayer") != null:
+		$AnimationPlayer.play("door_open", -1, -1, true)
+	if !open_door_sounds.is_empty() && get_node_or_null("DoorSound") != null:
 		$DoorSound.stream = load(close_door_sounds[rng.randi_range(0, close_door_sounds.size() - 1)])
 		$DoorSound.play()
 	is_opened = false

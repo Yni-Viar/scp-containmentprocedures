@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=28 format=3 uid="uid://dtd6pwanbhy7j"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=29 format=3 uid="uid://dtd6pwanbhy7j"]
 
 [ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="1_2euw7"]
 [ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_my6bj"]
@@ -26,12 +26,13 @@
 [ext_resource type="Resource" uid="uid://bgor15quhx77p" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_elevators.tres" id="13_mnhla"]
 [ext_resource type="Resource" uid="uid://bpfldgimo3k8j" path="res://MapGen/Resources/MaintenanceZone/cont2_testroom.tres" id="16_6rvoo"]
 [ext_resource type="Resource" uid="uid://d0xy6hxtg6dyx" path="res://MapGen/Resources/MaintenanceZone/room2_legacy.tres" id="16_f6ln2"]
+[ext_resource type="Resource" uid="uid://b8vekd1a2jiy" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_080.tres" id="16_mgn5q"]
 [ext_resource type="Resource" uid="uid://ccl1uuy1o3ct0" path="res://MapGen/Resources/MaintenanceZone/Optional/room3_echoes.tres" id="26_mgn5q"]
 
 [resource]
 script = ExtResource("13_icpll")
 endrooms = Array[ExtResource("1_2euw7")]([ExtResource("4_3un6p")])
-endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("10_wv3ou"), ExtResource("7_7ovle"), ExtResource("12_qn3in"), ExtResource("13_7yn3w")])
+endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("10_wv3ou"), ExtResource("7_7ovle"), ExtResource("12_qn3in"), ExtResource("16_mgn5q"), ExtResource("13_7yn3w")])
 endrooms_single_large = Array[ExtResource("1_2euw7")]([ExtResource("12_yphfd")])
 hallways = Array[ExtResource("1_2euw7")]([ExtResource("9_bt36h"), ExtResource("10_qfdjr"), ExtResource("10_3un6p"), ExtResource("16_f6ln2")])
 hallways_single = Array[ExtResource("1_2euw7")]([ExtResource("12_pdafb"), ExtResource("16_6rvoo"), ExtResource("13_mnhla")])

@@ -22,6 +22,11 @@ func _physics_process(delta: float) -> void:
 			var random_human: Node3D = players[rng.randi_range(0, players.size() - 1)]
 			#Action. We move SCP-650 to player's global position - offset (which is transform.basis.z) * how far SCP-650 will be from player
 			get_parent().get_parent().global_position = random_human.global_position - random_human.global_transform.basis.z * 2
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-650"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-650"]:
+					Settings.setting_res.scp_study_progress_all["SCP-650"] = true
+					Settings.save_resource(Settings.setting_res)
 			set_state("Pose " + str(rng.randi_range(4, 10)))
 			# Look at player
 			look_at(random_human.global_position)

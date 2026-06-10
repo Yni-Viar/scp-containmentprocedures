@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2qhqodm5rcay"]
+
+[ext_resource type="Script" uid="uid://du3hvnec2ql5j" path="res://PlayerScript/PlayerClassScript/Scp080PuppetScript.gd" id="1_1bmh5"]
+[ext_resource type="Shader" uid="uid://bfo7rf43jxd81" path="res://Shaders/Scp080Shader/Scp080Shader.gdshader" id="2_8tw2q"]
+
+[sub_resource type="Gradient" id="Gradient_x4gmm"]
+offsets = PackedFloat32Array(0, 0.3197425, 0.7296137, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.023529412, 0.023529412, 0.32156864, 0.8627451, 0.18039216, 0.18039216, 0.18039216, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vd5eg"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uctv3"]
+noise = SubResource("FastNoiseLite_vd5eg")
+color_ramp = SubResource("Gradient_x4gmm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn83s"]
+render_priority = 0
+shader = ExtResource("2_8tw2q")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_uctv3")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lnmrj"]
+material = SubResource("ShaderMaterial_hn83s")
+radius = 0.4
+height = 2.6
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tw2q"]
+radius = 0.6
+height = 2.8
+
+[node name="Puppet" type="Node3D"]
+script = ExtResource("1_1bmh5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3045787, 0)
+mesh = SubResource("CapsuleMesh_lnmrj")
+skeleton = NodePath("")
+
+[node name="Scp080TouchTrigger" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scp080TouchTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3037436, 0)
+shape = SubResource("CapsuleShape3D_8tw2q")

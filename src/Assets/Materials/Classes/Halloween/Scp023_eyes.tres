@@ -1,9 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ccuy3xt60u6ek"]
-
-[ext_resource type="Shader" uid="uid://crydejvxtf5rf" path="res://Shaders/Scp023EyeShader/simpleglowshader.gdshader" id="1_7w32q"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_7w32q")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/emission_strength = 1.0

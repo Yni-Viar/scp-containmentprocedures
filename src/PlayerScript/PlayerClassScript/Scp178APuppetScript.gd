@@ -42,8 +42,9 @@ func _physics_process(delta: float) -> void:
 		get_parent().get_parent().follow_target = ""
 
 func set_state(anim: String):
-	if $AnimationPlayer.current_animation != anim:
-		$AnimationPlayer.play(anim)
+	if get_node_or_null("AnimationPlayer") != null:
+		if $AnimationPlayer.current_animation != anim:
+			$AnimationPlayer.play(anim)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:

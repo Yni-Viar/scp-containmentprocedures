@@ -33,7 +33,7 @@ buses/default_bus_layout="uid://b5q6nyv2tmgde"
 [autoload]
 
 ResourceStorage="*res://Scripts/ResourceStorage.gd"
-GDsh="*res://GDsh/GDsh.gd"
+Console="*res://addons/console/console.gd"
 Settings="*res://Scripts/Settings.gd"
 
 [display]
@@ -47,13 +47,12 @@ run/main_run_args="-l en"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ai_algorithms/plugin.cfg")
+enabled=PackedStringArray("res://addons/ai_algorithms/plugin.cfg", "res://addons/console/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "orange",
-"res://GDsh/": "green",
 "res://InventorySystem/": "yellow",
 "res://MapGen/": "teal",
 "res://PlayerScript/": "red",
@@ -111,6 +110,7 @@ PoI1507=""
 PoI1507Spawn=""
 Scp1507Spawn=""
 Scp347Spawn=""
+Scp080Spawn=""
 
 [input]
 
@@ -176,6 +176,7 @@ locale/translations=PackedStringArray("res://Translations/en.po", "res://Transla
 3d_navigation/layer_3="Special"
 3d_navigation/layer_4="SCP-023"
 3d_navigation/layer_5="SCP-347"
+3d_navigation/layer_6="SCP-080"
 
 [navigation]
 

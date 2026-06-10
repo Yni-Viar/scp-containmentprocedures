@@ -142,6 +142,7 @@ script = ExtResource("16_6k8l3")
 waypoints_and_groups = Dictionary[String, String]({
 "SCP-018": "Scp018Spawn",
 "SCP-023": "Scp023Spawn",
+"SCP-080": "Scp080Spawn",
 "SCP-249": "Scp249",
 "SCP-266": "Scp266Spawn",
 "SCP-649": "Scp649",

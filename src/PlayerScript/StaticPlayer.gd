@@ -260,6 +260,11 @@ func apply_overlay(effect: String, strength: float):
 				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Electrocute", true)
 		"Scp2028":
 			if strength >= 0.375:
+				#Achievement
+				if Settings.setting_res.scp_study_progress_all.has("SCP-2028"):
+					if !Settings.setting_res.scp_study_progress_all["SCP-2028"]:
+						Settings.setting_res.scp_study_progress_all["SCP-2028"] = true
+						Settings.save_resource(Settings.setting_res)
 				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(3)
 			else:
 				$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(3, true)
@@ -273,6 +278,14 @@ func apply_overlay(effect: String, strength: float):
 				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261KleinBottle")
 			else:
 				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261KleinBottle", true)
+		"Fatigue":
+			if strength > 0.984375:
+				get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_6")
+			if strength > 0.03125:
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Fatigue")
+				$Head/Camera3D/Overlays/TintCompositor.apply_strength("Fatigue", strength)
+			else:
+				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Fatigue", true)
 		_:
 			printerr("Since v8.0.0, GDShader and Tint compositors replaced legacy shader system.")
 

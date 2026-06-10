@@ -10,11 +10,15 @@ var timer: float = 4.0
 func _ready() -> void:
 	match Settings.current_season:
 		Settings.Season.CHRISTMAS:
-			$CPUParticles3D.mesh.material = load("res://Assets/VFX/Scp266/christmas/Scp266_active.tres")
-			$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Scp266/christmas/Scp266_dormant.tres")
+			if get_node_or_null("CPUParticles3D") != null:
+				$CPUParticles3D.mesh.material = load("res://Assets/VFX/Optional/Scp266/christmas/Scp266_active.tres")
+			if get_node_or_null("GPUParticles3D") != null:
+				$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Optional/Scp266/christmas/Scp266_dormant.tres")
 		Settings.Season.HALLOWEEN:
-			$CPUParticles3D.mesh.material = load("res://Assets/VFX/Scp266/halloween/Scp266_active.tres")
-			$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Scp266/halloween/Scp266_dormant.tres")
+			if get_node_or_null("CPUParticles3D") != null:
+				$CPUParticles3D.mesh.material = load("res://Assets/VFX/Optional/Scp266/halloween/Scp266_active.tres")
+			if get_node_or_null("GPUParticles3D") != null:
+				$GPUParticles3D.draw_pass_1.material = load("res://Assets/VFX/Optional/Scp266/halloween/Scp266_dormant.tres")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

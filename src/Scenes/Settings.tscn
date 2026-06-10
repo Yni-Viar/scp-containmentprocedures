@@ -250,13 +250,6 @@ text = "PHOTOMODE"
 [node name="PMButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
 layout_mode = 2
 
-[node name="DLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
-layout_mode = 2
-text = "DEBUG_CONSOLE"
-
-[node name="DButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
-layout_mode = 2
-
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="visibility_changed" from="." to="ScrollContainer/SettingsUI" method="_on_settings_visibility_changed"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/AI" to="ScrollContainer/SettingsUI" method="_on_ai_toggled"]
@@ -274,4 +267,3 @@ layout_mode = 2
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/TVMButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_tvm_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/IButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_i_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/PMButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_pm_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/DButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_d_button_pressed"]

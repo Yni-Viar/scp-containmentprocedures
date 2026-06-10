@@ -48,3 +48,11 @@ func _physics_process(delta: float) -> void:
 		looking_at_target = true
 	else:
 		elapsed_time = 0.0
+
+
+func _on_achievement_screen_entered() -> void:
+	#Achievement
+	if Settings.setting_res.scp_study_progress_all.has("SCP-131"):
+		if !Settings.setting_res.scp_study_progress_all["SCP-131"]:
+			Settings.setting_res.scp_study_progress_all["SCP-131"] = true
+			Settings.save_resource(Settings.setting_res)

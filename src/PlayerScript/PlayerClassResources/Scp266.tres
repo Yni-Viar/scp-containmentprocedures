@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://4mdgfhansx8s"]
 
 [ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_gfjpe"]
-[ext_resource type="PackedScene" uid="uid://bijlxmhkoeyga" path="res://PlayerScript/PlayerClassPrefab/Scp266.tscn" id="2_rj2b1"]
+[ext_resource type="PackedScene" uid="uid://bijlxmhkoeyga" path="res://PlayerScript/PlayerClassPrefab/Optional/Scp266.tscn" id="2_rj2b1"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_x2edw"]
 
 [resource]

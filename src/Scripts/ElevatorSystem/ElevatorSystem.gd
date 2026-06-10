@@ -103,22 +103,24 @@ func on_update(delta):
 # Open the door
 func door_open():
 	var rng = RandomNumberGenerator.new()
-	$AnimationPlayer.play("door_open")
-	if get_node_or_null(navigation_link) != null:
-		get_node(navigation_link).enabled = true
+	if get_node_or_null("AnimationPlayer") != null:
+		$AnimationPlayer.play("door_open")
+		if get_node_or_null(navigation_link) != null:
+			get_node(navigation_link).enabled = true
 	set_physics_process(false)
-	if !open_door_sounds.is_empty():
+	if !open_door_sounds.is_empty() && get_node_or_null("DoorSound") != null:
 		$DoorSound.stream = load(open_door_sounds[rng.randi_range(0, open_door_sounds.size() - 1)])
 		$DoorSound.play()
 
 # Closes the door
 func door_close():
 	var rng = RandomNumberGenerator.new()
-	$AnimationPlayer.play("door_open", -1, -1, true)
-	if get_node_or_null(navigation_link) != null:
-		get_node(navigation_link).enabled = false
-	$AnimationPlayer.connect("animation_finished", _on_animation_finished)
-	if !close_door_sounds.is_empty():
+	if get_node_or_null("AnimationPlayer") != null:
+		$AnimationPlayer.play("door_open", -1, -1, true)
+		if get_node_or_null(navigation_link) != null:
+			get_node(navigation_link).enabled = false
+		$AnimationPlayer.connect("animation_finished", _on_animation_finished)
+	if !close_door_sounds.is_empty() && get_node_or_null("DoorSound") != null:
 		$DoorSound.stream = load(close_door_sounds[rng.randi_range(0, close_door_sounds.size() - 1)])
 		$DoorSound.play()
 
@@ -128,8 +130,9 @@ func call_elevator(floor):
 		return
 	changed_launch_state.emit(true)
 	if npc_can_ride:
-		if !$Timer.is_stopped():
-			$Timer.stop()
+		if get_node_or_null("Timer") != null:
+			if !$Timer.is_stopped():
+				$Timer.stop()
 	target_floor = floor
 	if OS.get_name() == "Web":
 		elevator_move_web()
@@ -169,15 +172,17 @@ func elevator_move(p_pass_floor: bool, first : bool):
 		waypoints.append([get_node(floors[floor].destination_point).global_position, get_node(floors[floor].destination_point).global_rotation])
 	current_floor = floor
 	is_moving = true
-	if !$Move.playing:
-		$Move.play()
+	if get_node_or_null("Move") != null:
+		if !$Move.playing:
+			$Move.play()
 
 func elevator_move_web():
 	if !elevator_doors.is_empty():
 		get_tree().root.get_node(elevator_doors[current_floor]).door_close()
 	door_close()
-	if !$Move.playing:
-		$Move.play()
+	if get_node_or_null("Move") != null:
+		if !$Move.playing:
+			$Move.play()
 	if (target_floor < current_floor):
 		last_move = LastMove.UP
 		is_moving = true
@@ -194,7 +199,8 @@ func elevator_move_web():
 			get_node(node_path).global_rotation = get_node(floors[target_floor].destination_point).global_rotation
 		is_moving = false
 		changed_launch_state.emit(false)
-		get_node("Move").stop()
+		if get_node_or_null("Move") != null:
+			get_node("Move").stop()
 	elif (target_floor > current_floor):
 		last_move = LastMove.DOWN
 		is_moving = true
@@ -211,7 +217,8 @@ func elevator_move_web():
 			get_node(node_path).global_rotation = get_node(floors[target_floor].destination_point).global_rotation
 		is_moving = false
 		changed_launch_state.emit(false)
-		get_node("Move").stop()
+		if get_node_or_null("Move") != null:
+			get_node("Move").stop()
 	current_floor = target_floor
 	call("open_dest_doors")
 	
@@ -245,8 +252,8 @@ func _on_player_area_body_exited(body: Node3D) -> void:
 ## start countdown, then puppet will ride
 func add_object(body):
 	var unpacked_body: Node3D = get_node(body)
-	if unpacked_body is MovableNpc:
-		if unpacked_body.is_player: 
+	if unpacked_body is MovableNpc && get_node_or_null("Timer") != null:
+		if unpacked_body.is_player:
 			if !$Timer.is_stopped():
 				$Timer.stop()
 		elif npc_can_ride && $Timer.is_stopped() && unpacked_body.puppet_class.can_ride:
@@ -259,11 +266,13 @@ func remove_object(body):
 	if get_node(body) is MovableNpc:
 		changed_launch_state.disconnect(get_node(body).on_moving_platform)
 	objects_to_teleport.erase(body)
-	if !$Timer.is_stopped() && objects_to_teleport.is_empty():
-		$Timer.stop()
+	if get_node_or_null("Timer") != null:
+		if !$Timer.is_stopped() && objects_to_teleport.is_empty():
+			$Timer.stop()
 
 func _on_animation_finished(anim_name):
-	$AnimationPlayer.disconnect("animation_finished", _on_animation_finished)
+	if get_node_or_null("AnimationPlayer") != null:
+		$AnimationPlayer.disconnect("animation_finished", _on_animation_finished)
 	set_physics_process(true)
 
 

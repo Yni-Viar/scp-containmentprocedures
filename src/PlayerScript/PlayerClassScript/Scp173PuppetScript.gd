@@ -61,6 +61,11 @@ func scp_173_blink(delta: float):
 				current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
 			current_human = null
+		#Achievement
+		if Settings.setting_res.scp_study_progress_all.has("SCP-173"):
+			if !Settings.setting_res.scp_study_progress_all["SCP-173"]:
+				Settings.setting_res.scp_study_progress_all["SCP-173"] = true
+				Settings.save_resource(Settings.setting_res)
 		blink_timer = blink_timer_default
 		await get_tree().create_timer(0.3).timeout
 		is_blinking = false

@@ -11,6 +11,11 @@ func _physics_process(delta: float) -> void:
 	if people.size() > 0 && d_class_came:
 		counter_task += delta * 0.5 * people.size()
 		if counter_task > 1.0:
+			#Achievement
+			if Settings.setting_res.scp_study_progress_full.has("SCP-266"):
+				if !Settings.setting_res.scp_study_progress_full["SCP-266"]:
+					Settings.setting_res.scp_study_progress_full["SCP-266"] = true
+					Settings.save_resource(Settings.setting_res)
 			get_tree().root.get_node("Game/FoundationTask").do_task("task_266")
 			set_process(false)
 			set_physics_process(false)

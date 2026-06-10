@@ -35,8 +35,7 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"camera_rotate_right": [InputMethod.KB, KEY_D],
 	"toggle_mode": [InputMethod.KB, KEY_SPACE],
 	"inventory": [InputMethod.KB, KEY_TAB],
-	"photomode": [InputMethod.KB, KEY_P],
-	"debug_console": [InputMethod.KB, KEY_QUOTELEFT]
+	"photomode": [InputMethod.KB, KEY_P]
 }
 ## SSAO
 @export var ssao: bool = false
@@ -49,4 +48,43 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 ## Rendering
 @export var renderer: Renderer = Renderer.OPENGL
 ## Casual mode progress
-@export var casual_game_progress: PackedStringArray = []
+#@export var casual_game_progress: PackedStringArray = []
+## SCP study progress
+@export var scp_study_progress_all: Dictionary[String, bool] = {
+	"SCP-005": false,
+	"SCP-018": false,
+	"SCP-023": false,
+	"SCP-067": false,
+	"SCP-131": false,
+	"SCP-162": false,
+	"SCP-173": false,
+	"SCP-249": false,
+	"SCP-261": false,
+	"SCP-347": false,
+	"SCP-522": false,
+	"SCP-650": false,
+	"SCP-686": false,
+	"SCP-812": false,
+	"SCP-939": false,
+	"SCP-1507": false,
+	"SCP-2028": false,
+	"SCP-2306": false,
+	"SCP-5270": false,
+}
+
+@export var scp_study_progress_full: Dictionary[String, bool] = {
+	"SCP-080": false,
+	"SCP-178": false,
+	"SCP-266": false,
+	"SCP-791": false,
+	"SCP-914": false,
+	"SCP-938": false,
+}
+
+@export var scp_study_progress_christmas: Dictionary[String, bool] = {
+	"SCP-649": false,
+}
+
+#@export var scp_study_progress_halloween: Dictionary[String, bool] = {
+	#
+#}

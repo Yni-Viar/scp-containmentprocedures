@@ -59,3 +59,11 @@ func _on_attack_body_entered(body: Node3D) -> void:
 func _on_attack_body_exited(body: Node3D) -> void:
 	if scp_1507_state == Scp1507State.ATTACKING:
 		scp_1507_state = Scp1507State.PURSUING
+
+
+func _on_achievement_screen_entered() -> void:
+	#Achievement
+	if Settings.setting_res.scp_study_progress_all.has("SCP-1507"):
+		if !Settings.setting_res.scp_study_progress_all["SCP-1507"]:
+			Settings.setting_res.scp_study_progress_all["SCP-1507"] = true
+			Settings.save_resource(Settings.setting_res)

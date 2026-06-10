@@ -18,7 +18,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Re-implemented season outfits and remove legacy system from `BasePuppetScript`.
 
 ### New and reworked SCPs
-- [ ] SCP-080
+- [x] SCP-080
 - [x] SCP-1507 (tied to a variation of Class-D)
 - [x] Added second variation of SCP-131 instance
 - [x] Optimized SCP-347 (which allowed to reintroduce in Lite/Web version), removed legacy mechanics completely and gave her a room (finally after a year of wandering)
@@ -28,9 +28,14 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - [x] Import some open-source rooms from SCP Echoes, that fit the game style.
 - [x] Different door frames in Maintenance Zone
 
+### Game progress system/achievement
+- [x] Added achievements for studying SCPs (not necessary the task one, and not all)
+
 ### Other changes
-- [x] Added completed task counter.
 - [x] All scientists are now bald because of new models limitation.
+- [ ] \[Gameplay AI\] Expand capabilities to rotate the body of scientist.
+- [x] \[Lite version\] Completely removed remains of SCP-178-1, SCP-266 and SCP-938, and replaced to dummies.
+- [x] \[Debug Console\] \[Regionalization\] Replaced GDSh to [jitspoe's Godot Debug Console](https://github.com/jitspoe/godot-console/tree/master) to minimize legal troubles in some countries.
 - [x] \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
 - [x] \[Surface Zone\] Use darker sky for all seasons, except Spring.
 - [x] \[Research Zone\] Updated generic endroom model.

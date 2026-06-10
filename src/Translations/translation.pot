@@ -383,3 +383,9 @@ msgstr ""
 
 msgid "CASUAL_MODE_PROGRESS"
 msgstr ""
+
+msgid "GAME_OVER_6"
+msgstr ""
+
+msgid "TASK_080_CHECK"
+msgstr ""

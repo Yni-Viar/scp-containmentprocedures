@@ -47,5 +47,10 @@ func special_action():
 	if glow_enabled:
 		eye_glow_strength = 0.25
 		$Timer.stop()
+		#Achievement
+		if Settings.setting_res.scp_study_progress_all.has("SCP-023"):
+			if !Settings.setting_res.scp_study_progress_all["SCP-023"]:
+				Settings.setting_res.scp_study_progress_all["SCP-023"] = true
+				Settings.save_resource(Settings.setting_res)
 		if get_tree().root.get_node("Game/FoundationTask").has_task("task_023_emergency"):
 			get_tree().root.get_node("Game/FoundationTask").get_tree().root.get_node("Game/FoundationTask").trigger_event(0)

@@ -55,6 +55,11 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 		if body.puppet_class.puppet_class_name != "SCP-939":
 			if body.is_player:
 				body.get_node("StatusEffects").apply_status_effect("Amnesia", 1.0, 0.0)
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-939"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-939"]:
+					Settings.setting_res.scp_study_progress_all["SCP-939"] = true
+					Settings.save_resource(Settings.setting_res)
 			heat_targets.append(body)
 			get_parent().get_parent().follow_target = body.get_path()
 			get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.NONE
