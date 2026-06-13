@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utpiat13t1cm"
-path.s3tc="res://.godot/imported/Metal046A_2K-PNG_NormalGL.png-c70f06da2765510ad84cabbef90a5ea9.s3tc.ctex"
-path.etc2="res://.godot/imported/Metal046A_2K-PNG_NormalGL.png-c70f06da2765510ad84cabbef90a5ea9.etc2.ctex"
+uid="uid://bcpt0lmr0vlde"
+path.s3tc="res://.godot/imported/fabric_199_Normal-1K.png-6eee5e4ceb820fd00c4beb9fb40cd66a.s3tc.ctex"
+path.etc2="res://.godot/imported/fabric_199_Normal-1K.png-6eee5e4ceb820fd00c4beb9fb40cd66a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "1bafd67bde22cb350938af50eb3fdc18"
+}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal046A_2K-PNG_NormalGL.png"
-dest_files=["res://.godot/imported/Metal046A_2K-PNG_NormalGL.png-c70f06da2765510ad84cabbef90a5ea9.s3tc.ctex", "res://.godot/imported/Metal046A_2K-PNG_NormalGL.png-c70f06da2765510ad84cabbef90a5ea9.etc2.ctex"]
+source_file="res://Assets/Materials/TextureLibraries/ShareTextures_CC0/Optional/fabric_199_Normal-1K.png"
+dest_files=["res://.godot/imported/fabric_199_Normal-1K.png-6eee5e4ceb820fd00c4beb9fb40cd66a.s3tc.ctex", "res://.godot/imported/fabric_199_Normal-1K.png-6eee5e4ceb820fd00c4beb9fb40cd66a.etc2.ctex"]
 
 [params]
 
@@ -28,7 +31,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/Materials/ResearchZone/Metal046A_2K-PNG_NormalGL.png"
+roughness/src_normal="res://Assets/RoomAssets/mt_cont1_080_fabric_199_Normal-1K.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

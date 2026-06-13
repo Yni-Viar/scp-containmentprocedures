@@ -16,6 +16,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
   - SCP-650
   - SCP-939
 - Re-implemented season outfits and remove legacy system from `BasePuppetScript`.
+- Ragdolls were replaced with short-lived silhouettes.
 
 ### New and reworked SCPs
 - SCP-080

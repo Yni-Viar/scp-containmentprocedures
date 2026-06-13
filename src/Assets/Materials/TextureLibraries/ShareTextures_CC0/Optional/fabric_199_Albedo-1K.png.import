@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nbb0x52ustxt"
-path.s3tc="res://.godot/imported/Metal046A_2K-PNG_Color.png-24058ca6e8ebf2e57153ab0099e74925.s3tc.ctex"
-path.etc2="res://.godot/imported/Metal046A_2K-PNG_Color.png-24058ca6e8ebf2e57153ab0099e74925.etc2.ctex"
+uid="uid://6hj1y4sm08ly"
+path.s3tc="res://.godot/imported/fabric_199_Albedo-1K.png-c933c38690682cf00bba17a566d21992.s3tc.ctex"
+path.etc2="res://.godot/imported/fabric_199_Albedo-1K.png-c933c38690682cf00bba17a566d21992.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "cacff4c30fe69f2996ad28726fadab23"
+}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal046A_2K-PNG_Color.png"
-dest_files=["res://.godot/imported/Metal046A_2K-PNG_Color.png-24058ca6e8ebf2e57153ab0099e74925.s3tc.ctex", "res://.godot/imported/Metal046A_2K-PNG_Color.png-24058ca6e8ebf2e57153ab0099e74925.etc2.ctex"]
+source_file="res://Assets/Materials/TextureLibraries/ShareTextures_CC0/Optional/fabric_199_Albedo-1K.png"
+dest_files=["res://.godot/imported/fabric_199_Albedo-1K.png-c933c38690682cf00bba17a566d21992.s3tc.ctex", "res://.godot/imported/fabric_199_Albedo-1K.png-c933c38690682cf00bba17a566d21992.etc2.ctex"]
 
 [params]
 

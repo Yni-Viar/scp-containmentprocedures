@@ -9,30 +9,12 @@ enum ObjectType {static_prefab, animated, ragdoll}
 ## Armature name (only used, when type is ObjectType.ragdoll)
 @export var armature_name: String = "Armature"
 ## Seconds, before ragdoll despawns
-@export var seconds_before_despawn: float = 30.0
-@export_group("Festive settings")
-## Set false to disable festive decorations.
-@export var fixed_prefab: bool = false
-## Format: NodePath: [[material_index, material], ...]
-@export var christmas_suits: Dictionary[NodePath, Array]
-## Format: NodePath: [[material_index, material], ...]
-@export var halloween_suits: Dictionary[NodePath, Array]
+@export var seconds_before_despawn: float = 0.5
 
 var update_timer: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if fixed_prefab:
-		# Festive
-		match Settings.current_season:
-			Settings.Season.CHRISTMAS:
-				for node_path in christmas_suits:
-					for i in range(christmas_suits[node_path].size()):
-						get_node(node_path).set_surface_override_material(christmas_suits[node_path][i][0], christmas_suits[node_path][i][1])
-			Settings.Season.HALLOWEEN:
-				for node_path in halloween_suits:
-					for i in range(halloween_suits[node_path].size()):
-						get_node(node_path).set_surface_override_material(halloween_suits[node_path][i][0], halloween_suits[node_path][i][1])
 	update_timer = get_physics_process_delta_time()
 	match type:
 		ObjectType.animated:

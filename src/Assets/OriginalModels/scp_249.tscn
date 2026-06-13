@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bl4a2vhnoklia"]
+[gd_scene load_steps=12 format=4 uid="uid://bl4a2vhnoklia"]
 
 [ext_resource type="Script" uid="uid://d2upepdap1mja" path="res://Scripts/Scps/Scp249.gd" id="1_6yuhc"]
 [ext_resource type="Texture2D" uid="uid://djb7pj3nwna64" path="res://Assets/OriginalModels/Scp249/Scp249_Scp249_Cube.001_base.png" id="2_qsmb6"]
@@ -14,21 +14,6 @@ metallic_texture_channel = 2
 roughness_texture_channel = 1
 normal_enabled = true
 normal_texture = ExtResource("4_jitsk")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_5giun"]
-_surfaces = [{
-"aabb": AABB(-1.054, -1.6304939, -0.18453372, 2.108, 3.28934, 0.35961664),
-"format": 34896613377,
-"index_count": 162,
-"index_data": PackedByteArray("EgAMABMAFAATAAwAEgAVAAwAFQAUAAwADwAVABIADQAPABIADwARABUADQASABYAFgASABMADgANABYAEQAJABUAFQAJABQAEQAQAAkACgAQAA4ADgAWAAoACgAJABAACgAWAAsAFgATAAsAFAAXABMAFwALABMACQAYABQAGAAXABQACgALABkAFwAZAAsABgAJAAoABgAKABkACQAAABgABgAAAAkAGAAaABcAGgAZABcAAgAaABgAAAACABgAGgAbABkABgAZABsABAAAAAYABAADAAAABwAEAAYAAwAcAAAAAAAcAAIAAwABABwAAgAdABoAHAAdAAIAHQAbABoAAQAeABwAHAAeAB0AAQAFAB4AHQAIABsAHgAIAB0AHwAbAAgAHgAfAAgABQAfAB4ABQAHAB8AHwAGABsABwAGAB8A"),
-"lods": [0.0006308829, PackedByteArray("AAABAAIAAwABAAAABAADAAAAAQAFAAIABAAAAAYABwAEAAYABQAHAAgABwAGAAgABQAIAAIABgAAAAkACQAAAAIABgAKAAgABgAJAAoAAgAIAAsACgALAAgADAAJAAIAAgALAAwACgANAAsADQAMAAsADgANAAoADQAPAAwACgAQAA4ACgAJABAAEQAQAAkADwARAAwAEQAJAAwA")],
-"name": "door_frame",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 32,
-"vertex_data": PackedByteArray("0Paj+AAAAAD//wAAAAAAAP////8AAAAA0PYAAAAAAADQ9gAA//8AAP//AAD/fwAA0Paj+P//AAD//wAA//8AAP///////wAAYAqj+AAAAABgCqP4//8AAAAA/////wAAAAD//wAAAAAAAAAA//8AAGAKAAD//wAAAAAAAP9/AABgCgAAAAAAAAAAAAAAAAAAAACj+P9/AAAAAP///38AAGAK//8AAAAAAACj+AAAAAAAAKP4//8AAGAK////fwAA0Pb//wAAAABgCv////8AAND2////fwAA0Pb/////AAD//6P4AAAAAP//////fwAA//+j+P9/AAD//6P4//8AAA==")
-}]
-blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1qifs"]
 resource_name = "Scp249_Cube_003"
@@ -47,7 +32,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("0Paj+AAA/////wAAAAD///////8AAP//0PYAAAAA//9gCqP4AAD//wAA//8AAP//AAAAAAAA//9gCgAAAAD/////AAD/f///////////////////AAD/////AAD///////8AAAAA//9gCqP4/////wAA//////////////////8AAAAA/////2AKAAD/////0Paj+P///////wAA/////9D2AAD/////AAAAAP9///8AAAAAAAD//wAA//8AAP//AAAAAP////8AAP///////9D2o/j//1TVYAqj+AAAVNVgCqP4//9U1dD2o/gAAFTV0PYAAP/////Q9qP4AAD//9D2o/j/////0PYAAAAA////////AABU1f///////1TVAAD/////VNUAAP//AABU1WAKo/j/////YAoAAAAA//9gCgAA/////2AKo/gAAP//AACj+P9///8AAP///3///wAAo/gAAP//AACj+P/////Q9v//AAD/////o/gAAP//YAr//wAA//8AAKP4AAD/////o/j/f/////////9//////6P4////////o/gAAP//YAr///////8AAKP4/////9D2//////////+j+P////9gCv///39U1QAA////f1TVYAr/////VNVgCv//AABU1dD2//8AAFTV0Pb///9/VNXQ9v////9U1f//////f1TV////f////3////9/////f////3////9/////f////3//v/9//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//z//f/8//3//P/9//z//f/8//39UVVRVVFVUVVRVVFVUVVRV/z//f/8//3//P/9//z//f1TVqipU1aoqVNWqKlTVqir/v/9//7//f/+//3//v/9//z//f/8//3//P/9//z//f////3////9/////f////3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3//f1TVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_5giun")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ochee"]
 resource_name = "Door"

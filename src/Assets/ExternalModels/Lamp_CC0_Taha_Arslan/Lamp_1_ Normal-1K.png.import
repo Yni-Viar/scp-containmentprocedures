@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwexpnvlmnmde"
-path.s3tc="res://.godot/imported/lightbulb_01_nor_gl_1k.jpg-d30bd32795b70dea9312500d85ca411e.s3tc.ctex"
-path.etc2="res://.godot/imported/lightbulb_01_nor_gl_1k.jpg-d30bd32795b70dea9312500d85ca411e.etc2.ctex"
+uid="uid://sfe3l0ffp4qb"
+path.s3tc="res://.godot/imported/Lamp_1_ Normal-1K.png-3675dac97949d3f0c6aa0af3deba648f.s3tc.ctex"
+path.etc2="res://.godot/imported/Lamp_1_ Normal-1K.png-3675dac97949d3f0c6aa0af3deba648f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9f1b333f67dcf841aea07eaf1c721d1c"
+}
 
 [deps]
 
-source_file="res://Assets/ExternalModels/Lightbulb_CC0_Josh_Dean/textures/lightbulb_01_nor_gl_1k.jpg"
-dest_files=["res://.godot/imported/lightbulb_01_nor_gl_1k.jpg-d30bd32795b70dea9312500d85ca411e.s3tc.ctex", "res://.godot/imported/lightbulb_01_nor_gl_1k.jpg-d30bd32795b70dea9312500d85ca411e.etc2.ctex"]
+source_file="res://Assets/ExternalModels/Lamp_CC0_Taha_Arslan/Lamp_1_ Normal-1K.png"
+dest_files=["res://.godot/imported/Lamp_1_ Normal-1K.png-3675dac97949d3f0c6aa0af3deba648f.s3tc.ctex", "res://.godot/imported/Lamp_1_ Normal-1K.png-3675dac97949d3f0c6aa0af3deba648f.etc2.ctex"]
 
 [params]
 
@@ -28,7 +31,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/ExternalModels/Lightbulb_CC0_Josh_Dean/textures/lightbulb_01_nor_gl_1k.jpg"
+roughness/src_normal="res://Assets/ExternalModels/Lamp_CC0_Taha_Arslan/3D_lamp_1-eBM_Lamp_1_ Normal-1K.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
@@ -38,5 +41,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=256
+process/size_limit=512
 detect_3d/compress_to=0
