@@ -3,42 +3,42 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v9.0.0 (Multiverse update)
+## v9.0.0 (Multiverse update, 2026.06.XX)
 ### Class system rework
-- [x] Different male scientists (thanks to OOD from SL Blender community)
-- [x] Add support for different skins
-  - [x] Scientists & protagonist
-  - [x] Skins can be either randomized or single, the latter is useful for SCPs (SCP-131 will use this).
-  - [x] SCP-023
-  - [x] SCP-131
-  - [x] SCP-173
-  - [x] SCP-347
-  - [x] SCP-650
-  - [x] SCP-939
-- [x] Re-implemented season outfits and remove legacy system from `BasePuppetScript`.
+- Different male scientists (thanks to OOD from SL Blender community)
+- Add support for different skins
+  - Scientists & protagonist
+  - Skins can be either randomized or single, the latter is useful for SCPs (SCP-131 will use this).
+  - SCP-023
+  - SCP-131
+  - SCP-173
+  - SCP-347
+  - SCP-650
+  - SCP-939
+- Re-implemented season outfits and remove legacy system from `BasePuppetScript`.
 
 ### New and reworked SCPs
-- [x] SCP-080
-- [x] SCP-1507 (tied to a variation of Class-D)
-- [x] Added second variation of SCP-131 instance
-- [x] Optimized SCP-347 (which allowed to reintroduce in Lite/Web version), removed legacy mechanics completely and gave her a room (finally after a year of wandering)
-- [x] \[Christmas\] Fixed SCP-649 - increased cold damage and refactored snow spawn, making it easier for programmers to implement.
+- SCP-080
+- SCP-1507 (tied to a variation of Class-D)
+- Added second variation of SCP-131 instance
+- Optimized SCP-347 (which allowed to reintroduce in Lite/Web version), removed legacy mechanics completely and gave her a room (finally after a year of wandering)
+- \[Christmas\] Fixed SCP-649 - increased cold damage and refactored snow spawn, making it easier for programmers to implement.
 
 ### Maintenance Zone expansion
-- [x] Import some open-source rooms from SCP Echoes, that fit the game style.
-- [x] Different door frames in Maintenance Zone
+- Import some open-source rooms from SCP Echoes, that fit the game style.
+- Different door frames in Maintenance Zone
 
 ### Game progress system/achievement
-- [x] Added achievements for studying SCPs (not necessary the task one, and not all SCPs)
+- Added achievements for studying SCPs (not necessary the task one, and not all SCPs)
 
 ### Other changes
-- [x] All scientists are now bald because of new models limitation.
-- [ ] \[Gameplay AI\] Expand capabilities to rotate the body of scientist.
-- [x] \[Lite version\] Completely removed remains of SCP-178-1, SCP-266 and SCP-938, and replaced to dummies.
-- [x] \[Debug Console\] \[Regionalization\] Replaced GDSh to [jitspoe's Godot Debug Console](https://github.com/jitspoe/godot-console/tree/master) to minimize legal troubles in some countries.
-- [x] \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
-- [x] \[Surface Zone\] Use darker sky for all seasons, except Spring.
-- [x] \[Research Zone\] Updated generic endroom model.
+- All scientists are now bald because of new models limitation.
+- \[Gameplay AI\] NPC will rotate to the item, while trying to take it.
+- \[Lite version\] Completely removed remains of SCP-178-1, SCP-266 and SCP-938, and replaced to dummies.
+- \[Debug Console\] \[Regionalization\] Replaced GDSh to [jitspoe's Godot Debug Console](https://github.com/jitspoe/godot-console/tree/master) to minimize legal troubles in some countries.
+- \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
+- \[Surface Zone\] Use darker sky for all seasons, except Spring.
+- \[Research Zone\] Updated generic endroom model.
 
 ## v8.1.1 (2026.05.30)
 

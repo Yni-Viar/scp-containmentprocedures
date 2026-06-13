@@ -380,6 +380,7 @@ func wander(delta: float):
 						else:
 							wandering_system = WanderingSystem.GENERIC_WANDER
 					elif idle:
+						look_at(Vector3(0.0, nn_current_item.global_position.y, 0.0))
 						var addition_arg: Array = []
 						for raycast in $NNRay.get_children():
 							if raycast.get_collision_point().distance_squared_to(nn_current_item.global_position) > 0.5:
