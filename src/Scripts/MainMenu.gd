@@ -9,6 +9,10 @@ func _enter_tree() -> void:
 	for progress in Settings.setting_res.scp_study_progress_all:
 		if Settings.setting_res.scp_study_progress_all[progress]:
 			completed_amount += 1
+		else:
+			var label: Label = Label.new()
+			label.text = progress
+			$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
 	else:
@@ -16,12 +20,20 @@ func _enter_tree() -> void:
 		for progress in Settings.setting_res.scp_study_progress_full:
 			if Settings.setting_res.scp_study_progress_full[progress]:
 				completed_amount += 1
+			else:
+				var label: Label = Label.new()
+				label.text = progress
+				$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
 	
 	if Settings.current_season == Settings.Season.CHRISTMAS:
 		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
 		for progress in Settings.setting_res.scp_study_progress_christmas:
 			if Settings.setting_res.scp_study_progress_christmas[progress]:
 				completed_amount += 1
+			else:
+				var label: Label = Label.new()
+				label.text = progress
+				$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
 	#gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
 	$GameSettings/ProgressBar.max_value = total_amount
 	#else:

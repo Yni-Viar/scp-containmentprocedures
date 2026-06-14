@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dthnqm8mknn1y"]
+
+[ext_resource type="PackedScene" uid="uid://bqoqnyepfa104" path="res://PlayerScript/PlayerClassPrefab/default.tscn" id="1_5efab"]
+[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_wo7ct"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_445fi"]
+
+[resource]
+script = ExtResource("3_445fi")
+puppet_class_name = "Dummy"
+speed = 0.0
+prefab = ExtResource("1_5efab")
+apply_height_bugfix = false
+enable_wander = false
+health = Array[float]([1000.0])
+enable_ik = false
+ragdoll_prefab = ExtResource("2_wo7ct")
+can_ride = false

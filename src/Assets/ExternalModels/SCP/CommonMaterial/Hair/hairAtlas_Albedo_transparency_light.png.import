@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwaautr13ah7h"
-path.s3tc="res://.godot/imported/hairAtlas_Albedo_transparency_dark.png-0ffc8d213fc18c513f70915e452719be.s3tc.ctex"
-path.etc2="res://.godot/imported/hairAtlas_Albedo_transparency_dark.png-0ffc8d213fc18c513f70915e452719be.etc2.ctex"
+uid="uid://ba623ujleosj4"
+path.s3tc="res://.godot/imported/hairAtlas_Albedo_transparency_light.png-f74f668bb5bab5b6dbadd1b2ca488a65.s3tc.ctex"
+path.etc2="res://.godot/imported/hairAtlas_Albedo_transparency_light.png-f74f668bb5bab5b6dbadd1b2ca488a65.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/ExternalModels/SCP/Guard-fixed/hairAtlas_Albedo_transparency_dark.png"
-dest_files=["res://.godot/imported/hairAtlas_Albedo_transparency_dark.png-0ffc8d213fc18c513f70915e452719be.s3tc.ctex", "res://.godot/imported/hairAtlas_Albedo_transparency_dark.png-0ffc8d213fc18c513f70915e452719be.etc2.ctex"]
+source_file="res://Assets/ExternalModels/SCP/CommonMaterial/Hair/hairAtlas_Albedo_transparency_light.png"
+dest_files=["res://.godot/imported/hairAtlas_Albedo_transparency_light.png-f74f668bb5bab5b6dbadd1b2ca488a65.s3tc.ctex", "res://.godot/imported/hairAtlas_Albedo_transparency_light.png-f74f668bb5bab5b6dbadd1b2ca488a65.etc2.ctex"]
 
 [params]
 

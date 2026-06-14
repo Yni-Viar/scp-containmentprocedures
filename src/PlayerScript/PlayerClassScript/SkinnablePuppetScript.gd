@@ -40,7 +40,12 @@ func on_spawned() -> void:
 ## Gets (or sets, if not existing) static presets.
 func get_static_preset() -> int:
 	if !default_class_presets.has(single_type_group_name):
-		default_class_presets[single_type_group_name] = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
+		var idx: int = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
+		for i in range(127):
+			if check_availability(idx):
+				break
+			idx = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
+		default_class_presets[single_type_group_name] = idx
 	return default_class_presets[single_type_group_name]
 
 ## Assign a puppet variation to the puppet script

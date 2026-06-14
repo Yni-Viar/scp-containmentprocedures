@@ -475,7 +475,7 @@ msgstr ""
 "using SCP-2306"
 
 msgid "CASUAL_MODE_PROGRESS"
-msgstr "Studied SCPs:"
+msgstr "Remaining SCPs to study:"
 
 msgid "GAME_OVER_6"
 msgstr "Instead of doing your job, you felt asleep."

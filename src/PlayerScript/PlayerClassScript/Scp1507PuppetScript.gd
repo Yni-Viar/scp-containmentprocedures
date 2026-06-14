@@ -52,13 +52,15 @@ func attack(collider_path: String):
 		test.health_manage(-5.0)
 
 func _on_attack_body_entered(body: Node3D) -> void:
-	if scp_1507_state == Scp1507State.PURSUING:
-		scp_1507_state = Scp1507State.ATTACKING
+	if body is MovableNpc:
+		if scp_1507_state == Scp1507State.PURSUING && body.is_player:
+			scp_1507_state = Scp1507State.ATTACKING
 
 
 func _on_attack_body_exited(body: Node3D) -> void:
-	if scp_1507_state == Scp1507State.ATTACKING:
-		scp_1507_state = Scp1507State.PURSUING
+	if body is MovableNpc:
+		if scp_1507_state == Scp1507State.ATTACKING && body.is_player:
+			scp_1507_state = Scp1507State.PURSUING
 
 
 func _on_achievement_screen_entered() -> void:

@@ -245,6 +245,13 @@ layout_mode = 2
 layout_mode = 2
 text = "CASUAL_MODE_PROGRESS"
 
+[node name="ScrollContainer" type="ScrollContainer" parent="GameSettings"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameSettings/ScrollContainer"]
+layout_mode = 2
+
 [node name="ProgressBar" type="ProgressBar" parent="GameSettings"]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
