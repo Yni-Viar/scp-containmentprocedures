@@ -31,6 +31,8 @@ var protagonist: MovableNpc
 ## Map seed public name
 var map_seed_name: String
 
+var game_ended: bool = false
+
 
 var showable_res: String = ""
 
@@ -230,10 +232,16 @@ func spawn_offices(default_office_path: String, spawn_group: String):
 
 ## Game end
 func finish_game(good_end: bool, reason: String):
-	$UI/Condition/ConditionLabel.text = "GAME_WIN" if good_end else "GAME_OVER"
-	$UI/Condition/ReasonLabel.text = reason
-	$AnimationPlayer.play("condition_open")
-	$GameOverTimer.stop()
+	if !game_ended:
+		if get_node_or_null("SoundStreamPlayer") != null:
+			var audio: AudioStreamPlayer = get_node("SoundStreamPlayer")
+			audio.stream = load("res://Sounds/Generic/Win.ogg") if good_end else load("res://Sounds/Generic/Lose.ogg")
+			audio.play()
+		$UI/Condition/ConditionLabel.text = "GAME_WIN" if good_end else "GAME_OVER"
+		$UI/Condition/ReasonLabel.text = reason
+		$AnimationPlayer.play("condition_open")
+		$GameOverTimer.stop()
+		game_ended = true
 
 ## Cutscene animation
 func cutscene_anim(reverse: bool = false):

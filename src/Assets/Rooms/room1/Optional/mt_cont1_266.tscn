@@ -313,10 +313,10 @@ script = ExtResource("14_0bax3")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("15_qf6et")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9042425, -1.2344855, 2.2106209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9042425, -1.2344855, 5.893445)
 
 [node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("15_qf6et")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5923395, -1.2344874, -0.39376593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5923395, -1.2344874, 3.806468)
 
 [node name="Pumpkin3" parent="Seasonal/Halloween" instance=ExtResource("15_qf6et")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8154263, -1.2344893, -8.205961)
@@ -327,10 +327,10 @@ script = ExtResource("14_0bax3")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("16_u5ys7")]
-transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 0.075865746, -1.7819049, -6.2482333)
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 0.075865746, -1.7819049, 1.7148175)
 
 [node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("16_u5ys7")]
-transform = Transform3D(-0.41346997, 0, -0.91051775, 0, 1, 0, 0.91051775, 0, -0.41346997, 0.075865746, -1.7819049, -6.2482333)
+transform = Transform3D(-0.41346997, 0, -0.91051775, 0, 1, 0, 0.91051775, 0, -0.41346997, 0.075865746, -1.7819049, 1.7148175)
 
 [node name="DoorToTeleport" type="Marker3D" parent="." groups=["Door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2053595, -0.78577095, -1.5476819)

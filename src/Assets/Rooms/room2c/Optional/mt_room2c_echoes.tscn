@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://cghgieo77woko"]
+[gd_scene load_steps=34 format=4 uid="uid://cghgieo77woko"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_4tbj8"]
-[ext_resource type="PackedScene" uid="uid://c4rphn1mij8kp" path="res://Assets/ExternalModels/pipe_1.tscn" id="2_5uq1y"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/MaintenanceTunnels/EchoesWall.tres" id="2_g0wjy"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="3_880em"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_f274l"]
@@ -13,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="10_yt2qu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_o7u4x"]
-vertices = PackedVector3Array(1.723278, -0.7650399, 2.723279, 2.473278, -0.7650399, 2.473279, 2.723278, -0.7650399, 1.723279, 0.72327805, -0.7650399, -1.526721, 0.47327805, -0.7650399, -2.026721, -1.026722, -0.7650399, -2.026721, -2.026722, -0.7650399, -1.026721, -2.026722, -0.7650399, 0.973279, -1.526722, -0.7650399, 1.223279, -2.026722, -0.7650399, 8.723279, -0.52672195, -0.7650399, 9.723279, 1.973278, -0.7650399, 8.723279, -1.526722, -0.7650399, 2.223279, -2.026722, -0.7650399, 2.473279, 0.72327805, -0.7650399, 9.723279, 8.723278, -0.7650399, 1.973279, 9.723278, -0.7650399, 0.723279, 9.723278, -0.7650399, -0.526721, 8.723278, -0.7650399, -2.026721, 2.223278, -0.7650399, -2.026721, 1.973278, -0.7650399, -1.526721)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(12, 0, 13), PackedInt32Array(13, 0, 9), PackedInt32Array(9, 0, 10), PackedInt32Array(10, 0, 11), PackedInt32Array(11, 14, 10), PackedInt32Array(17, 16, 15), PackedInt32Array(20, 19, 2), PackedInt32Array(2, 19, 18), PackedInt32Array(2, 18, 17), PackedInt32Array(2, 17, 15), PackedInt32Array(12, 8, 0), PackedInt32Array(0, 8, 2), PackedInt32Array(2, 8, 3), PackedInt32Array(2, 3, 20)]
+vertices = PackedVector3Array(1.723278, -0.7567191, 2.723279, 2.473278, -0.7567191, 2.473279, 2.723278, -0.7567191, 1.723279, -1.026722, -0.7567191, -2.026721, -2.026722, -0.7567191, -1.026721, -0.52672195, -0.7567191, 9.723279, 0.72327805, -0.7567191, 9.723279, 1.973278, -0.7567191, 8.723279, -2.026722, -0.7567191, 8.723279, 8.723278, -0.7567191, 1.973279, 9.723278, -0.7567191, 0.723279, 9.723278, -0.7567191, -0.526721, 8.723278, -0.7567191, -2.026721)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(7, 8, 0), PackedInt32Array(0, 8, 4), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 2), PackedInt32Array(12, 2, 3)]
 agent_max_climb = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f274l"]
@@ -308,12 +307,6 @@ mesh = SubResource("ArrayMesh_4uc3y")
 skeleton = NodePath("")
 
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
-
-[node name="Pipe_01" parent="NavigationRegion3D/Props" instance=ExtResource("2_5uq1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35031, 1.42259, -2.40346)
-
-[node name="Pipe_02" parent="NavigationRegion3D/Props" instance=ExtResource("2_5uq1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33944, 1.42259, 1.7159)
 
 [node name="industrial_wall_lamp3" parent="NavigationRegion3D/Props" instance=ExtResource("5_880em")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.026626468, 4.1040006, 3.4366705)

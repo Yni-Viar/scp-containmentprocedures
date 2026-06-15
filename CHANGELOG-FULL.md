@@ -3,7 +3,7 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v9.0.0 (Multiverse update, 2026.06.XX)
+## v9.0.0 (Multiverse update, 2026.06.15)
 ### Class system rework
 - Different male scientists (thanks to OOD from SL Blender community)
 - Add support for different skins
@@ -33,10 +33,11 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 - Added achievements for studying SCPs (not necessary the task one, and not all SCPs)
 
 ### Other changes
+- Added sound effects for completing task and finishing game.
 - All scientists are now bald because of new models limitation.
 - \[Gameplay AI\] NPC will rotate to the item, while trying to take it.
 - \[Lite version\] Completely removed remains of SCP-178-1, SCP-266 and SCP-938, and replaced to dummies.
-- \[Debug Console\] \[Regionalization\] Replaced GDSh to [jitspoe's Godot Debug Console](https://github.com/jitspoe/godot-console/tree/master) to minimize legal troubles in some countries.
+- \[Debug Console\] \[Regionalization\] Replaced GDSh to [jitspoe's Godot Debug Console](https://github.com/jitspoe/godot-console/tree/master) to minimize legal troubles in some countries. Also Debug Console now won't work for Web.
 - \[Halloween\] \[Christmas\] Update some legacy code to work on Halloween and Christmas (preparing for 2026 season)
 - \[Surface Zone\] Use darker sky for all seasons, except Spring.
 - \[Research Zone\] Updated generic endroom model.

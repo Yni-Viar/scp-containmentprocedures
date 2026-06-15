@@ -16,8 +16,8 @@ const color_dictionary : Dictionary[String, Color] = {
 	CONSOLE_COLOR_WARNING: Color.LIGHT_GOLDENROD
 }
 
-var enabled : bool = true
-var enable_on_release_build : bool = false : set = set_enable_on_release_build
+var enabled : bool = true if OS.get_name() != "Web" else false
+var enable_on_release_build : bool = true if OS.get_name() != "Web" else false : set = set_enable_on_release_build
 var pause_enabled : bool = false
 var font_size : int : set = _set_font_size
 
@@ -505,7 +505,8 @@ func _on_line_edit_text_changed(new_text : String) -> void:
 
 
 func quit() -> void:
-	get_tree().quit()
+	if OS.get_name() != "Web":
+		get_tree().quit()
 
 
 func clear() -> void:

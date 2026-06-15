@@ -100,6 +100,10 @@ func trigger_event(event_type: SpecialEvent, res: GameTaskResource = null):
 		all_tasks_bkp = all_tasks.duplicate(true)
 		all_tasks.clear()
 		all_tasks.append(res)
+	if get_parent().get_node_or_null("SoundStreamPlayer") != null:
+		var audio: AudioStreamPlayer = get_parent().get_node("SoundStreamPlayer")
+		audio.stream = load("res://Sounds/Generic/TaskComplete.ogg")
+		audio.play()
 	task_done.emit()
 
 ## Returns true if task exist (requires task's internal name)

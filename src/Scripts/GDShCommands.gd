@@ -13,21 +13,21 @@ func _process(delta: float) -> void:
 
 ## GDSh command
 ## Adds item to your inventory
-func add_item(index: int):
-	if index is int:
-		if int(index) < get_parent().gamedata.items.size() && index >= 0:
-			get_node(get_parent().get_node("StaticPlayer").target_puppet_path).call("_call_function", "UI/Inventory/Inventory", "add_item", [index])
+func add_item(index: String):
+	if index.is_valid_int():
+		if int(index) < get_parent().gamedata.items.size() && int(index) >= 0:
+			get_node(get_parent().get_node("StaticPlayer").target_puppet_path).call("_call_function", "UI/Inventory/Inventory", "add_item", [int(index)])
 
 ## GDSh command
 ## Spawns a NPC in front of you (make sure you run away, if it is hostile)
-func spawn_npc(index: Variant):
-	if index is int:
-		if index < get_parent().gamedata.puppet_classes.size() && index > 0:
+func spawn_npc(index: String):
+	if index.is_valid_int():
+		if int(index) < get_parent().gamedata.puppet_classes.size() && int(index) >= 0:
 			var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
-			npc.puppet_class = get_parent().gamedata.puppet_classes[index]
+			npc.puppet_class = get_parent().gamedata.puppet_classes[int(index)]
 			npc.position = get_parent().protagonist.global_position - get_parent().protagonist.global_transform.basis.z * 4
 			get_parent().get_node("NPCs").add_child(npc)
-		elif index == -1:
+		elif int(index) == -1:
 			if get_parent().map_seed_name.to_lower() == "hikkan":
 				# Hikkan / Hikkiko
 				# What I have written? - Yni
@@ -38,6 +38,6 @@ func spawn_npc(index: Variant):
 
 ## GDSh command
 ## Adds task manually, if it is possible to complete.
-func add_task(task_name):
+func add_task(task_name: String):
 	if task_name is String:
 		get_parent().get_node("FoundationTask").add_task(task_name)
