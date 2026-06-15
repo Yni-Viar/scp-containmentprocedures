@@ -7,7 +7,7 @@ For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 ### Class system rework
 - Different male scientists (thanks to OOD from SL Blender community)
 - Add support for different skins
-  - Scientists & protagonist
+  - All humans
   - Skins can be either randomized or single, the latter is useful for SCPs (SCP-131 will use this).
   - SCP-023
   - SCP-131
