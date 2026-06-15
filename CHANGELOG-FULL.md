@@ -3,6 +3,10 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v9.0.1 (??? patch, 2026.06.15)
+- Add an easter egg.
+- Update Credits.
+
 ## v9.0.0 (Multiverse update, 2026.06.15)
 ### Class system rework
 - Different male scientists (thanks to OOD from SL Blender community)

@@ -24,6 +24,9 @@ func _enter_tree() -> void:
 				var label: Label = Label.new()
 				label.text = progress
 				$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
+		if randf() > 0.75:
+			$AudioStreamPlayer.stream = load("res://Sounds/Music/Original/Optional/SCP_MainTheme_v2.ogg")
+	
 	
 	if Settings.current_season == Settings.Season.CHRISTMAS:
 		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
