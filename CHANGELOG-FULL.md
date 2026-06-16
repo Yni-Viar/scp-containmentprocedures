@@ -3,6 +3,10 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v9.0.2
+
+- [x] Fix game logo overlapping with seed input control
+
 ## v9.0.1 (??? patch, 2026.06.15)
 - Add an easter egg.
 - Update Credits.
