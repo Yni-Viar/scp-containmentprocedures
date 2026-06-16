@@ -217,21 +217,10 @@ msgstr ""
 msgid "TASK_812_RESEARCH"
 msgstr "Проверьте, правильно ли закрыт SCP-812."
 
-msgid "TASK_347_CATCH"
-msgstr ""
-"НЕ ПОЗВОЛЯЙТЕ SCP-347 СБЕЖАТЬ!!!\n"
-"Утащите SCP-347 подальше от выхода."
-
 msgid "TASK_266_TEST"
 msgstr ""
 "Прикажите Классу-Д измерить температуру\n"
 "SCP-266."
-
-msgid "TASK_347_PASS"
-msgstr ""
-"Найдите SCP-347 и приведите\n"
-"ее к агенту на Выходе Б для\n"
-"перевозки в другой комплекс"
 
 msgid "TASK_CI_INVASION"
 msgstr ""
@@ -521,3 +510,6 @@ msgid "TASK_080_CHECK"
 msgstr ""
 "Прикажите персоналу Класса-Д проверить\n"
 "присутствие SCP-080"
+
+msgid "CASUAL_MODE_PROGRESS_2"
+msgstr "Вы изучили здесь всех SCP!"

@@ -31,6 +31,7 @@ func _on_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			get_tree().root.get_node("Game/UI/HBoxContainer/ElevatorButton").hide()
+			get_tree().root.get_node("Game/UI/ElevatorMode").hide()
 		elif body.puppet_class.can_ride:
 			queue -= 1
 

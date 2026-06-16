@@ -3,9 +3,15 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
-## v9.0.2
+## v9.0.2 (2026.06.16)
 
-- [x] Fix game logo overlapping with seed input control
+- Unify puppet models and ragdolls scale.
+- Removed entirely remnants of SCP-347 task and MTF agent class... For now.
+- Fixed SCP-347 being at the exit on Surface Zone could crash the game.
+- Fixed elevator dialogue
+- \[Main menu\] Fix game logo overlapping with seed input control
+- \[Main menu\] Separated achievement UI from game configure one.
+- \[Christmas\] Fixed SCP-649 not counting in achievement detection.
 
 ## v9.0.1 (??? patch, 2026.06.15)
 - Add an easter egg.

@@ -130,14 +130,14 @@ expand_mode = 1
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.181
-anchor_top = 0.099
+anchor_left = 0.18100001
+anchor_top = 0.062000003
 anchor_right = 0.61300004
-anchor_bottom = 0.30900002
-offset_left = -0.51200867
-offset_top = -24.152008
+anchor_bottom = 0.272
+offset_left = -0.5120239
+offset_top = -0.17601013
 offset_right = -0.17602539
-offset_bottom = -24.23201
+offset_bottom = -0.25601196
 theme_override_fonts/font = ExtResource("5_idohh")
 theme_override_font_sizes/font_size = 64
 text = "SCP: Continued
@@ -207,11 +207,11 @@ vertical_icon_alignment = 0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.014
-anchor_top = 0.34600002
+anchor_top = 0.321
 anchor_right = 0.29200003
 anchor_bottom = 0.66400003
 offset_left = -0.12800026
-offset_top = -0.20800781
+offset_top = 15.991989
 offset_right = -0.3840332
 offset_bottom = -0.2720337
 grow_vertical = 0
@@ -238,21 +238,32 @@ layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "ZEN_MODE"
 
-[node name="HSeparator" type="HSeparator" parent="GameSettings"]
-layout_mode = 2
+[node name="Achievements" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.333
+anchor_right = 0.625
+anchor_bottom = 0.66700006
+offset_left = 0.57598877
+offset_top = 0.21600342
+offset_bottom = -0.21603394
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Info2" type="Label" parent="GameSettings"]
+[node name="Info2" type="Label" parent="Achievements"]
 layout_mode = 2
 text = "CASUAL_MODE_PROGRESS"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="GameSettings"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Achievements"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GameSettings/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Achievements/ScrollContainer"]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="GameSettings"]
+[node name="ProgressBar" type="ProgressBar" parent="Achievements"]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 max_value = 1.0
@@ -261,13 +272,13 @@ max_value = 1.0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.007
-anchor_top = 0.049000002
+anchor_top = 0.012
 anchor_right = 0.17400001
-anchor_bottom = 0.34600002
+anchor_bottom = 0.30900002
 offset_left = -0.06400013
-offset_top = -23.752
+offset_top = 0.22399998
 offset_right = -0.4480133
-offset_bottom = -24.208008
+offset_bottom = -0.23200989
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_sjh0l")
@@ -520,13 +531,6 @@ Shakles (rig and animation)
 License: SCP-Wiki CC-BY-SA 3.0
 -----------------------
 PDA item - Model and textures by Shadowscale
-License: SCP-Wiki CC-BY-SA 3.0
------------------------
-Agent model uses SCP: Unity guard
-model with MTF animations.
-SCP Security Guard -
-Shadowscale (model, textures),
-Shakles (rig, animation)
 License: SCP-Wiki CC-BY-SA 3.0"
 
 [node name="FoldableContainer8" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]

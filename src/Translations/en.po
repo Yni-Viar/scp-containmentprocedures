@@ -211,19 +211,8 @@ msgstr "Order Class-D to clean SCP-173 chamber."
 msgid "TASK_812_RESEARCH"
 msgstr "Check SCP-812 is properly closed."
 
-msgid "TASK_347_CATCH"
-msgstr ""
-"DO NOT LET SCP-347 ESCAPE!!!\n"
-"Take SCP-347 from the exit."
-
 msgid "TASK_266_TEST"
 msgstr "Order Class-D to check SCP-266 temperature."
-
-msgid "TASK_347_PASS"
-msgstr ""
-"Find SCP-347 and lead her to the\n"
-"agent at Gate B to transport to\n"
-"another facility"
 
 msgid "TASK_CI_INVASION"
 msgstr ""
@@ -483,5 +472,5 @@ msgstr "Instead of doing your job, you felt asleep."
 msgid "TASK_080_CHECK"
 msgstr "Order Class-D personnel to check SCP-080's existence"
 
-#~ msgid "RENDERER_BACKEND_SELECT"
-#~ msgstr "Select your rendering backend"
+msgid "CASUAL_MODE_PROGRESS_2"
+msgstr "You studied all SCPs here!"

@@ -123,10 +123,7 @@ func _on_facility_generator_generated() -> void:
 	
 	$FoundationTask.initialize()
 	$UI._on_foundation_task_task_done()
-	
-	# Spawn SCP-347 agent, if there is a task
-	#if get_node("FoundationTask").has_task("task_347"):
-		#spawn_wave_entity(2)
+
 	
 	await get_tree().create_timer(5.0).timeout
 	$LoadingScreen.call_deferred("hide")

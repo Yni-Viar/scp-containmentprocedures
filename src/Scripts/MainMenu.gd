@@ -12,7 +12,7 @@ func _enter_tree() -> void:
 		else:
 			var label: Label = Label.new()
 			label.text = progress
-			$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
+			$Achievements/ScrollContainer/HBoxContainer.add_child(label)
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
 	else:
@@ -23,26 +23,16 @@ func _enter_tree() -> void:
 			else:
 				var label: Label = Label.new()
 				label.text = progress
-				$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
+				$Achievements/ScrollContainer/HBoxContainer.add_child(label)
 		if randf() > 0.75:
 			$AudioStreamPlayer.stream = load("res://Sounds/Music/Original/Optional/SCP_MainTheme_v2.ogg")
 	
-	
-	if Settings.current_season == Settings.Season.CHRISTMAS:
-		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
-		for progress in Settings.setting_res.scp_study_progress_christmas:
-			if Settings.setting_res.scp_study_progress_christmas[progress]:
-				completed_amount += 1
-			else:
-				var label: Label = Label.new()
-				label.text = progress
-				$GameSettings/ScrollContainer/HBoxContainer.add_child(label)
 	#gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
-	$GameSettings/ProgressBar.max_value = total_amount
+	$Achievements/ProgressBar.max_value = total_amount
 	#else:
 		#gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
 		#$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
-	$GameSettings/ProgressBar.value = completed_amount
+	$Achievements/ProgressBar.value = completed_amount
 	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():
@@ -59,7 +49,21 @@ func _enter_tree() -> void:
 			"ru_RU":
 				# New upcoming Russian law.
 				$Logo.texture = load("res://UI/MainMenu/LawRegulation/RU.png")
-
+	
+	await get_tree().physics_frame
+	
+	if Settings.current_season == Settings.Season.CHRISTMAS:
+		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
+		for progress in Settings.setting_res.scp_study_progress_christmas:
+			if Settings.setting_res.scp_study_progress_christmas[progress]:
+				completed_amount += 1
+			else:
+				var label: Label = Label.new()
+				label.text = progress
+				$Achievements/ScrollContainer/HBoxContainer.add_child(label)
+	if completed_amount == total_amount:
+		$Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
+		$Achievements/ScrollContainer.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:

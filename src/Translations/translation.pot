@@ -183,13 +183,7 @@ msgstr ""
 msgid "TASK_812_RESEARCH"
 msgstr ""
 
-msgid "TASK_347_CATCH"
-msgstr ""
-
 msgid "TASK_266_TEST"
-msgstr ""
-
-msgid "TASK_347_PASS"
 msgstr ""
 
 msgid "TASK_CI_INVASION"
@@ -388,4 +382,7 @@ msgid "GAME_OVER_6"
 msgstr ""
 
 msgid "TASK_080_CHECK"
+msgstr ""
+
+msgid "CASUAL_MODE_PROGRESS_2"
 msgstr ""
