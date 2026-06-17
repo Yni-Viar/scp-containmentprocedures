@@ -375,7 +375,10 @@ script = ExtResource("12_majfa")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("13_f0iu3")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.28144908, -1.2532705, -6.1367216)
+transform = Transform3D(-1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, -1.4142135, 6.9826765, -1.2532705, 1.6134887)
+
+[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("13_f0iu3")]
+transform = Transform3D(1.4142137, 0, 1.4142134, 0, 2, 0, -1.4142134, 0, 1.4142137, -7.692052, -1.2532705, -7.6739745)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false

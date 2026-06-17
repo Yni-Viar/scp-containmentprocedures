@@ -197,6 +197,12 @@ transform = Transform3D(1.4702742e-07, 0, 1, 0, 1, 0, -1, 0, 1.4702742e-07, 4.11
 [node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("9_lckij")]
 transform = Transform3D(-2.7818132e-08, 0, 1, 0, 1, 0, -1, 0, -2.7818132e-08, 4.002769, -1.2184112, -3.1457818)
 
+[node name="Pumpkin3" parent="Seasonal/Halloween" instance=ExtResource("9_lckij")]
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, 2.4509163, -1.2184112, -3.1457815)
+
+[node name="Pumpkin4" parent="Seasonal/Halloween" instance=ExtResource("9_lckij")]
+transform = Transform3D(1.1524091e-07, 0, -1, 0, 1, 0, 1, 0, 1.1524091e-07, 2.5667822, -1.2184112, 3.9348211)
+
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
 script = ExtResource("8_eqxln")

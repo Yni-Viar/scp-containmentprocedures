@@ -314,6 +314,9 @@ current_season = 5
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("18_ned5y")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 1.6218638, -0.08734143, 2.21102)
 
+[node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("18_ned5y")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.8666072, -0.08734143, -3.6253047)
+
 [node name="Scp178" parent="." instance=ExtResource("16_78hjk")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.6470456, 1.598583, -2.734996)
 

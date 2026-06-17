@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c6k5tw3kej3j7"]
+[gd_scene load_steps=35 format=4 uid="uid://c6k5tw3kej3j7"]
 
 [ext_resource type="Script" uid="uid://q2ybem7bgrsg" path="res://Scripts/Triggers/Scp080RoomTrigger.gd" id="1_03v0j"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="3_18ut1"]
@@ -17,6 +17,7 @@
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="14_p0np5"]
 [ext_resource type="PackedScene" uid="uid://daniqy18dv0gq" path="res://InventorySystem/Items/ItemWoodenLantern.tscn" id="14_tc0nq"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="15_vh8e0"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="17_yjs2c"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="18_ldrmm"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="19_rl3vk"]
 [ext_resource type="Material" uid="uid://bk3235nf3e4jm" path="res://Assets/Materials/Optional/Curtains.tres" id="19_yjs2c"]
@@ -190,7 +191,7 @@ size = Vector3(10.388123, 5.20166, 11.355957)
 
 [node name="mt_cont1_080" type="StaticBody3D"]
 script = ExtResource("1_03v0j")
-mesh_paths = Array[NodePath]([NodePath("")])
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -247,6 +248,8 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -5.5
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_tc0nq")
 skeleton = NodePath("")
+script = ExtResource("17_yjs2c")
+scp_649_floor_index = 1
 
 [node name="Plane" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.71, 1.7631092, 5.2659492)

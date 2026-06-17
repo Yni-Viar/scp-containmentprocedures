@@ -14,7 +14,10 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 - 🐧Linux distribution from 2024 and newer
 - 🪟Windows 8.1 (partially), 10 (all updates) and 11 (all updates)
+   > Windows 7 is not supported since v5.0 (natively)
 - 🤖Android 7.0 and newer
+   > Android 5.0-6.0 is not supported since v5.0
+
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
 - 🖥️ Hardware requirements
    - OpenGL 3.3/ES 3.0 minimum, Vulkan support recommended

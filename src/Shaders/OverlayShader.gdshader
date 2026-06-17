@@ -3,9 +3,7 @@ render_mode unshaded;
 
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
-uniform sampler2D DEPTH_TEXTURE: hint_screen_texture;
-
-varying vec4 temp;
+uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 
 
 void vertex() {

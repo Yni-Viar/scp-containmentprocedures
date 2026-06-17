@@ -215,7 +215,10 @@ script = ExtResource("10_4ykpw")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("11_rtml0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.536304, -2.2677655, -4.5495543)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -1.8544996, -2.2677655, 9.881914)
+
+[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("11_rtml0")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -1.8544996, -2.2677655, 7.410627)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
@@ -223,7 +226,10 @@ script = ExtResource("10_4ykpw")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("12_p1u4r")]
-transform = Transform3D(0.287394, 0, -0.9578124, 0, 1, 0, 0.9578124, 0, 0.287394, 7.790239, 2.4292855, 3.3720303)
+transform = Transform3D(0.287394, 0, -0.9578124, 0, 1, 0, 0.9578124, 0, 0.287394, 7.790239, 2.4292855, 4.5149336)
+
+[node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("12_p1u4r")]
+transform = Transform3D(0.9995589, 0, 0.029701144, 0, 1, 0, -0.029701144, 0, 0.9995589, 13.095838, 2.4292855, 0.5116615)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86066204, 0)

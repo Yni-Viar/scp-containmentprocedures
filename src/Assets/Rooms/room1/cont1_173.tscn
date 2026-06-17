@@ -195,7 +195,10 @@ script = ExtResource("17_2ovmx")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("19_4ecej")]
-transform = Transform3D(0.287394, 0, -0.9578124, 0, 1, 0, 0.9578124, 0, 0.287394, 0.60658884, 0.29091358, 3.3720303)
+transform = Transform3D(0.287394, 0, -0.9578124, 0, 1, 0, 0.9578124, 0, 0.287394, 0.60658884, 0.29091358, 7.232815)
+
+[node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("19_4ecej")]
+transform = Transform3D(0.9995589, 0, 0.029701144, 0, 1, 0, -0.029701144, 0, 0.9995589, 6.5690374, 0.29091358, 1.512392)
 
 [node name="DoorToTeleport" type="Marker3D" parent="." groups=["Door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5367813, -0.78577095, 2.1784372)

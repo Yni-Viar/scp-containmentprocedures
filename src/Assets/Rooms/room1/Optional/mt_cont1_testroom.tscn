@@ -347,6 +347,12 @@ transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.2588
 [node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("16_q466q")]
 transform = Transform3D(-0.41346997, 0, -0.91051775, 0, 1, 0, 0.91051775, 0, -0.41346997, 0.075865746, -1.7819049, -6.2482333)
 
+[node name="ChristmasLights3" parent="Seasonal/Christmas" instance=ExtResource("16_q466q")]
+transform = Transform3D(0.35293603, 0, -0.9356474, 0, 1, 0, 0.9356474, 0, 0.35293603, 0.075865746, -1.7819049, 2.239142)
+
+[node name="ChristmasLights4" parent="Seasonal/Christmas" instance=ExtResource("16_q466q")]
+transform = Transform3D(-0.32153863, 0, -0.94689643, 0, 1, 0, 0.94689643, 0, -0.32153863, 0.075865746, -1.7819049, 2.239142)
+
 [node name="ScientistPoint" type="Marker3D" parent="." groups=["ScientistPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.553456, -0.78577095, -4.9618673)
 

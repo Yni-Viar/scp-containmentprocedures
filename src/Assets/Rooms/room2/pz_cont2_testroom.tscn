@@ -321,7 +321,10 @@ script = ExtResource("12_gp8eu")
 current_season = 5
 
 [node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("14_nivx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3909056, -1.179415, 0.71636677)
+transform = Transform3D(0.79561096, 0, -0.60580796, 0, 1, 0, 0.60580796, 0, 0.79561096, -3.3604467, -1.179415, -2.5520988)
+
+[node name="ChristmasLights3" parent="Seasonal/Christmas" instance=ExtResource("14_nivx4")]
+transform = Transform3D(0.7910848, 0, 0.6117065, 0, 1, 0, -0.6117065, 0, 0.7910848, -3.2513716, -1.179415, 2.813684)
 
 [node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("14_nivx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6806068, -1.1755486, 0.71636677)

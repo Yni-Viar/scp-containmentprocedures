@@ -186,6 +186,12 @@ current_season = 6
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("10_pjy0a")]
 transform = Transform3D(0.99999994, 0, 1.7320509, 0, 2, 0, -1.7320509, 0, 0.99999994, -5.8977757, -1.2612566, -0.6512089)
 
+[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("10_pjy0a")]
+transform = Transform3D(-2, 0, -2.3841858e-07, 0, 2, 0, 2.3841858e-07, 0, -2, 2.8189287, -1.2612566, 8.675518)
+
+[node name="Pumpkin3" parent="Seasonal/Halloween" instance=ExtResource("10_pjy0a")]
+transform = Transform3D(-2, 0, -2.3841858e-07, 0, 2, 0, 2.3841858e-07, 0, -2, 7.695214, -1.2612566, 8.675518)
+
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.752462, 9.217535)
 visible = false

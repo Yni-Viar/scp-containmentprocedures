@@ -1679,6 +1679,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 1, -4.371139e-08, -4.371139e-08, -
 [node name="ChristmasLights2" parent="Seasonal/Christmas" instance=ExtResource("57_xjfrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.105263, 8.112629, -11.673369)
 
+[node name="ChristmasLights6" parent="Seasonal/Christmas" instance=ExtResource("57_xjfrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.105263, 8.112629, -11.673369)
+
 [node name="ChristmasLights3" parent="Seasonal/Christmas" instance=ExtResource("57_xjfrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.457008, 8.112629, -11.673369)
 

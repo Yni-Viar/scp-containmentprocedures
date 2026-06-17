@@ -3,6 +3,13 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v9.0.3 (2026.06.17)
+
+- Removed remaining MTF Agent textures
+- Fixed SCP-162 collider.
+- \[Christmas\] SCP-080 Containment chamber: Add support for SCP-649 freeze.
+- \[Halloween\] \[Christmas\] Improve decorations around facility.
+
 ## v9.0.2 (2026.06.16)
 
 - Unify puppet models and ragdolls scale.
