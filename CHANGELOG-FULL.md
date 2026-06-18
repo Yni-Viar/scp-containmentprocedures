@@ -3,6 +3,11 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
+## v9.0.4 (2026.06.18)
+
+- Updated credits
+- Fixed SCP-1507 containment chamber and generic room1 navmesh + add boxes in latter room.
+
 ## v9.0.3 (2026.06.17)
 
 - Removed remaining MTF Agent textures

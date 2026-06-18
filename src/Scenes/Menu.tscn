@@ -576,7 +576,8 @@ title = "SCP-Godot assets"
 [node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer13"]
 visible = false
 layout_mode = 2
-text = "SCP-173 neck snap sound is
+text = "SCP-173 neck snap sound
+and door sounds are
 made by Daniel Nesov for SCP: Godot
 License: MIT License"
 
