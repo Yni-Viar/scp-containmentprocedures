@@ -1,7 +1,6 @@
 # SCP: Continued Procedures
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
-For plan, check [features changelog](./CHANGELOG-UPCOMING.md)
 
 ## v9.0.4 (2026.06.18)
 
