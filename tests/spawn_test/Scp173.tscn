@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_cmt0m"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp173"]]
 script = ExtResource("1_cmt0m")
+single_type_per_group = true
+single_type_group_name = "Scp173"
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Optional/Scp173_U.tscn": 1,
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Scp173_OWN.tscn": 0
 })
+enable_gltf_loading = true
+gltf_file_prefix = "Scp173"
+gltf_path_to_find = "scp173"
 armature_name = "SCP173_Rig"

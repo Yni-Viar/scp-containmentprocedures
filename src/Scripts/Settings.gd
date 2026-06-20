@@ -9,7 +9,7 @@ enum Season {NONE, WINTER, SPRING, SUMMER, AUTUMN, CHRISTMAS, HALLOWEEN}
 signal settings_saved
 
 ## Game's data compatibility for modding.
-const DATA_COMPATIBILITY: String = "9.0.0"
+const DATA_COMPATIBILITY: String = "9.1.0"
 ## Game's data compatibility for modding.
 const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.
@@ -64,10 +64,14 @@ func _ready() -> void:
 	change_renderer()
 	if OS.get_name() == "Web":
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
+	elif !DirAccess.dir_exists_absolute("user://mods/puppets/"):
+		DirAccess.make_dir_recursive_absolute("user://mods/puppets/")
 	Settings.touchscreen = DisplayServer.is_touchscreen_available()
 	season_checker()
 	Console.add_command("beta_mode_features", beta_mode_features)
 	Console.add_command("beta_mode_enable", beta_mode_enable, ["keyword"], 1)
+	Console.add_command("replace_npc_help", replace_npc_models_feature)
+	
 
 ## Sometimes ago it was a great function. Now it is just a stub, that calls ResourceStorage and loads settings
 func load_resource():
@@ -187,10 +191,9 @@ func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
 	
 	add_child(loading_screen)
 
-func beta_mode_enable(keyword: Variant):
-	if keyword is String:
-		if keyword == "feature_beta":
-			beta_mode = true
+func beta_mode_enable(keyword: String):
+	if keyword == "feature_beta":
+		beta_mode = true
 
 ## GDsh command.
 ## List current beta features.
@@ -200,8 +203,29 @@ func beta_mode_features():
 	- Story mode UI.
 	- Neural AI for Web platform
 	
-	To enable beta features, call in thsi console this command:
+	To enable beta features, call in debug console this command:
 	[b]beta_mode_enable feature_beta[/b]
+	""")
+
+func replace_npc_models_feature():
+	Console.print_info("""How to quickly replace NPC model?
+	---
+	Requirements
+	---
+	- Your filename should be .GLB file
+	- Only SCP-131, SCP-173, SCP-650 or SCP-1507 is supported.
+	- Your filename should be in this format:
+	   - For SCP-131: `Scp`*number*`_`*your_name*`_`*A or B*`.glb`
+	   - For other SCPs: `Scp`*number*`_`*your_name*`.glb`
+	- Your model should face (or be rotated to) +Y (in Blender) coordinate
+	---
+	Steps
+	---
+	1.
+	   - Windows-specific - Go to `%APPDATA%\\ScpContPr\\mods\\puppets\\`
+	   - Linux-specific - Go to `~/.local/share/ScpContPr/mods/puppets/`
+	2. Copy your renamed file into one of these folders (if they exist) - `scp`*number*
+	3. Your SCP will likely spawn in one of the rounds
 	""")
 
 ## Creates dialogue window
@@ -259,3 +283,17 @@ func change_renderer():
 				if RenderingServer.get_current_rendering_method() != "forward_plus":
 					OS.set_restart_on_exit(true, ["--rendering-method", "forward_plus"])
 					get_tree().quit()
+
+## Loads GLTF resource (~safely)
+func load_gltf(path: String) -> PackedScene:
+	if path.begins_with("res://") || path.begins_with("user://"):
+		var gltf_document_load = GLTFDocument.new()
+		var gltf_state_load = GLTFState.new()
+		var error = gltf_document_load.append_from_file(path, gltf_state_load)
+		if error == OK:
+			var gltf_scene_root_node: Node = gltf_document_load.generate_scene(gltf_state_load)
+			var packed_scene:PackedScene = PackedScene.new()
+			packed_scene.pack(gltf_scene_root_node)
+			gltf_scene_root_node.queue_free()
+			return packed_scene
+	return null

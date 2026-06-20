@@ -5,10 +5,12 @@ class_name Scp650PuppetScript
 
 @export var wait_seconds: float = 5
 var timer = 0
+var has_animations: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
-	pass # Replace with function body.
+	if puppet_node.get_node_or_null("AnimationPlayer") == null:
+		has_animations = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +29,8 @@ func _physics_process(delta: float) -> void:
 				if !Settings.setting_res.scp_study_progress_all["SCP-650"]:
 					Settings.setting_res.scp_study_progress_all["SCP-650"] = true
 					Settings.save_resource(Settings.setting_res)
-			set_state("Pose " + str(rng.randi_range(4, 10)))
+			if has_animations:
+				set_state("Pose " + str(rng.randi_range(4, 10)))
 			# Look at player
 			look_at(random_human.global_position)
 			# reset timer
@@ -35,8 +38,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		# reset timer
 		timer = 0
-
-
 
 ## Animation state
 func set_state(s):

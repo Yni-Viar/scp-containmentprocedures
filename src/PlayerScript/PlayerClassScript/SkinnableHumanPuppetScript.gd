@@ -118,7 +118,7 @@ func _physics_process(delta: float) -> void:
 		looking_at_target = false
 	
 	# It handles watching at 173 and 650...
-	if raycast.is_colliding():
+	if raycast != null && raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider is MovableNpc:
 			var puppet_class = collider.puppet_class

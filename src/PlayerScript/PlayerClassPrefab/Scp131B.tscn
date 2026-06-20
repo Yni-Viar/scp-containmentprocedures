@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://de3l6v84anoym" path="res://PlayerScript/PlayerClassScript/Scp131PuppetScript.gd" id="1_8n2pv"]
 
-[node name="Puppet" type="Node3D" groups=["Scp131"]]
+[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp131", "SinglePuppet"]]
 script = ExtResource("1_8n2pv")
 single_type_per_group = true
 single_type_group_name = "Scp131"
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131B.tscn": 0,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/Optional/U/Scp131B.tscn": 1
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131_GHA_B.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/Optional/U/Scp131_U_B.tscn": 1
 })
+enable_gltf_loading = true
+gltf_file_prefix = "Scp131"
+gltf_file_suffix = "B"
+gltf_path_to_find = "scp131b"
+armature_name = ""
 enable_vision_scan = true
 vision_class_detect = Array[int]([2])
 

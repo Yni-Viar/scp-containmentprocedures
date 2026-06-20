@@ -12,27 +12,35 @@ enum Scp1507State {DORMANT, PURSUING, ATTACKING}
 ## Customizable attack cooldown.
 @export var attack_cooldown: float = 2.0
 
+var has_animations: bool = true
+
 var timer = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
+	if puppet_node.get_node_or_null("AnimationPlayer") == null:
+		has_animations = false
+	elif !puppet_node.get_node("AnimationPlayer").has_animation("idle") || \
+	  !puppet_node.get_node("AnimationPlayer").has_animation("move"):
+			has_animations = false
 	get_parent().get_parent().follow_target = get_tree().get_first_node_in_group("PoI1507").get_path()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	match state:
-		States.IDLE:
-			set_state("idle")
-		States.WALKING, States.RUNNING:
-			set_state("move")
+	if has_animations:
+		match state:
+			States.IDLE:
+				set_state("idle")
+			States.WALKING, States.RUNNING:
+				set_state("move")
 	if scp_1507_state == Scp1507State.ATTACKING:
 		timer += delta
 		if timer > attack_cooldown:
 			attack(get_parent().get_parent().follow_target)
 			timer = 0.0
 	elif scp_1507_state == Scp1507State.DORMANT && get_node(get_parent().get_parent().follow_target) == null:
-		# If PoI-1507 is killed, beceom hostile to the player
+		# If PoI-1507 is killed, become hostile to the player
 		special_action()
 
 ## Play specific animation

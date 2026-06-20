@@ -7,7 +7,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e803e"]
 resource_name = "lambert8"
-transparency = 4
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_3qthr")
 metallic = 1.0
@@ -94,7 +93,6 @@ bind/15/pose = Transform3D(-2.3031402, 99.97344, 1.0509164e-05, -2.5152726e-06, 
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak83p"]
 resource_name = "lambert8.001"
-transparency = 4
 albedo_texture = ExtResource("1_3qthr")
 metallic = 1.0
 metallic_texture = ExtResource("3_jwwls")

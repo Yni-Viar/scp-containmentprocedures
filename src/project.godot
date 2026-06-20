@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="SCP: Continued Procedures"
 config/description="A Facility simulator"
-config/version="9.0.4"
+config/version="9.1.0"
 config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
 run/main_scene="uid://b25hrjnoos5me"
 config/use_custom_user_dir=true
@@ -89,7 +89,6 @@ WaveSpawn=""
 ReflectionProbe="Reflection Probes"
 Scp914=""
 Scp023Spawn=""
-AgentSpawn=""
 SiteDirectorSpawn=""
 Scp938Spawn=""
 Scp178-1=""
@@ -112,6 +111,11 @@ PoI1507Spawn=""
 Scp1507Spawn=""
 Scp347Spawn=""
 Scp080Spawn=""
+Scp1507=""
+Scp173=""
+CustomizablePuppet=""
+SinglePuppet=""
+Scp650=""
 
 [input]
 

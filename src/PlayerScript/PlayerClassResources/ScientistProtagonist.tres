@@ -22,6 +22,7 @@ team = 1
 enable_avoidance = false
 puppet_navigation_layers = 7
 ragdoll_prefab = ExtResource("2_o38e7")
+can_ride = false
 start_money = Dictionary[String, int]({
 "DOLLARS": 1000,
 "YEN": 3000

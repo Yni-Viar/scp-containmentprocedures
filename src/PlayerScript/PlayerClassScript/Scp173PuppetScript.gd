@@ -27,7 +27,6 @@ func on_spawned() -> void:
 	raycast = get_parent().get_parent().get_node("RayCastLow")
 	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
 	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
-	#spawn_scp_variation()
 	#set_face()
 
 

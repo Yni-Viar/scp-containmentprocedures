@@ -34,9 +34,9 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
 |🟡SCP-080|✅, since 9.0.0|❌|✅ Full|
 |🟡SCP-109\*|✅, since 4.3.0|✅, since 5.7.0|✅ Full|
-|🟢SCP-131|✅, since 8.0.0/9.0.0|❓, since 8.0.0|✅ Full|
+|🟢SCP-131|✅, since 8.0.0/9.0.0|❓, since 8.0.0|❓ Partial, supports custom models|
 |🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
-|🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full|
+|🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full, supports custom models|
 |🟡SCP-178|✅, since 5.2.0|❌|✅ Full|
 |🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
 |🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
@@ -47,7 +47,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-458\*|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
 |🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-649|⛄, 5.5.x-5.7.x, since 9.0.0|⛄, 5.7.x only, since 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
-|🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\)|
+|🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\), supports custom models|
 |🟢SCP-686|✅, since 5.1.0|✅, since 5.7.0|❓ Partial \(hidden NSFW parts\)|
 |🟢SCP-791|✅, since 6.0.0|❌|📃 Task only|
 |🟡SCP-812|✅, since 1.0.0|✅, since 5.7.0|✅ Full|
@@ -56,7 +56,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
 |🟢SCP-983\*|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
 |🟢SCP-1223\*|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
-|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full|
+|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full, supports custom models|
 |🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
 |🟢SCP-2306|✅, since 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471\*|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
@@ -95,7 +95,9 @@ Please, check [tutorial to install apps without Google verification (effective s
 
 We **do not** distribute dangerous things in this app!
 
-## Requirements to build
+## Development
+
+### Requirements to build
 
 The project uses Godot 4.5.x as a base (since 5.0/5.8.3 - Expansion update part 2).
 Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
@@ -115,6 +117,24 @@ There are no SCP-080, SCP-178 (item exists, but has no effect), *SCP: Unity* SCP
 2. Choose your platform (e.g. Web)
 3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`
 4. Navigate to Features tab and type in "Custom (comma separated)": `Lite`
+
+### How to quickly replace NPC model
+
+**Requirements**
+
+- Your filename should be .GLB file
+- Only SCP-131, SCP-173, SCP-650 or SCP-1507 is supported.
+- Your filename should be in this format:
+   - For SCP-131: `Scp`*number*`_`*your_name*`_`*A or B*`.glb`
+   - For other SCPs: `Scp`*number*`_`*your_name*`.glb`
+- Your model should face (or be rotated to) +Y (in Blender) coordinate
+
+**Steps**
+
+1🪟. Windows-specific - Go to `%APPDATA%\\ScpContPr\\mods\\puppets\\`
+1🐧. Linux-specific - Go to `~/.local/share/ScpContPr/mods/puppets/`
+2. Copy your renamed file into one of these folders (if they exist) - `scp`*number*
+3. Your SCP will likely spawn in one of the rounds
 
 ## Why this name?
 - It is a recursive acronym - **S**CP: **C**ontinued **P**rocedures
@@ -143,3 +163,61 @@ You can:
 - Suggest a new SCP object (before you suggest, see [suggestion rules](./SUGGESTING-IDEAS.md))
 - Suggest an own model for replacement of existing one. (e.g own SCP-023 model instead of bad quality 3-rd party one, or own SCP-178-1 model).
 - Suggest an own audio (SFX, music) for addition/replacement into the game
+
+### Folder structure
+
+- 📁 All Lite folders are used ONLY by Lite/Web version
+- 📁 All Optional folders are used by Full version
+
+
+- 📁 Assets - Here is a place for most assets, excluding items and NPCs.
+   - 📁 Doors - Here is a place for all doors
+   - 📁 Environment - Here is a place for all environments
+   - 📁 ExternalModels - Here is a place for most third-party props, models, textures...
+      - 📁 SCPs - Here is a place for all third-party open-source assets from SCP games
+   - 📁 Fonts - Here is a place for all fonts
+   - 📁 HUD - Here is a place for first-party HUD textures
+   - 📁 MakeHumanModels - Used only for SCP-446
+   - 📁 Materials - Here is a place for common materials to quickly apply
+   - 📁 OriginalModels - Here is a place for most first-party props, models, textures...
+   - 📁 RoomAssets - A temporary folder, used when adding new room. Should remain empty with readme.md
+   - 📁 Rooms - Here is a place for all room prefabs
+      - 📁 room1 - Here is a place for all endrooms
+      - 📁 room2 - Here is a place for all hallways
+      - 📁 room2c - Here is a place for all corners
+      - 📁 room3 - Here is a place for all intersections
+      - 📁 room4 - Here is a place for all crossrooms
+      - 📁 ScientistRooms - Here is place for all Scientists' rooms. Managed by Yni - repository's owner.
+      - 📁 sublevels - Here is a place for all static sublevels
+   - 📁 VFX - VFX stuff.
+- 📁 Inventory - Here is a place for inventory and items
+- 📁 MapGen - Map generator module
+   - 📁 Resources - Here is a place for all room resources for map generator
+- 📁 PlayerScript - Here is a place for all NPCs
+   - 📁 PlayerClassPrefab - Here is a place for all NPC prefabs
+      - 📁 Variations - Here is a place for all variable NPC models
+   - 📁 PlayerClassRagdoll - Here is a place for all NPC ragdolls
+   - 📁 PlayerClassResource - Here is a place for all NPC resources for registry
+   - 📁 PlayerClassScript - Here is a place for all NPC-related code
+- 📁 Scenes - Here is a place for all game scenes (such as Game, Menu, etc)
+- 📁 Scripts - Here is a place for the most code
+   - 📁 ElevatorSystem - Here is a place for the elevator stuff
+   - 📁 GameData - Here is a place for the game registry
+   - 📁 GDShaderCompositor - Here is a place for the GDShaderCompositor, which manages shaders
+   - 📁 Interactable - Here is a place for the interactive stuff (e.g. item)
+   - 📁 Scps - Here is a place for mostly static SCPs, such as SCP-249
+   - 📁 Seasonal - Here is a place for the season stuff
+   - 📁 SettingResource - Here is a place for the settings file and it's presets
+   - 📁 StatusEffects - Here is place for status effect system and effect resources
+   - 📁 TaskSystem - Here is a place for the in-game quests
+   - 📁 Triggers - Here is a place for the triggers via Area3D
+- 📁 Shaders - Here is a place for all shaders
+   - 📁 OverlayMaterials - Here is a place for shader materials and GDShaderCompositor resources
+   - 📁 OverlayShaders - Here is a place for GDShaderCompositor shader includes
+- 📁 Sounds - Here is a place for all sounds
+   - 📁 Character - Here is a place for NPC-related sounds
+   - 📁 Environment - Here is a place for room/sublevel based sounds
+   - 📁 Item - Here is a place for item-related sounds
+   - 📁 Music - Here is a place for all music
+- 📁 Translations - Here is a place for gettext translations
+- 📁 UI - Here is a place for most 2D UI assets

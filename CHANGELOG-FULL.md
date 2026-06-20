@@ -2,6 +2,12 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v9.1.0 (2026.06.20)
+- Allow to sideload characters (via GLTF) (supported ONLY for specific SCPs: SCP-131, SCP-173, SCP-650 and SCP-1507)
+- Fixed Gate B elevator wrong rotation
+- Fixed Gate B elevator being triggered by just spawned guard.
+- Fixed SCP-131 (Unity edition) transparency
+
 ## v9.0.4 (2026.06.18)
 
 - Updated credits

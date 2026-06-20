@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://d2f3eoy4yitkx" path="res://tests/spawn_test/SkinnablePuppetScript.gd" id="1_k46k4"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp1507"]]
 script = ExtResource("1_k46k4")
+single_type_per_group = true
+single_type_group_name = "Scp1507"
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp1507/Scp1507_GHA.tscn": 0
 })
+enable_gltf_loading = true
+gltf_file_prefix = "Scp1507"
+gltf_path_to_find = "scp1507"
+gltf_required_animations = Array[String](["idle", "move"])
 armature_name = ""

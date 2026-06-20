@@ -7,8 +7,12 @@ script = ExtResource("1_u5w4m")
 single_type_per_group = true
 single_type_group_name = "Scp131"
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131A.tscn": 0,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/Optional/U/Scp131A.tscn": 1
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/GHA/Scp131_GHA_A.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp131/Optional/U/Scp131_U_A.tscn": 1
 })
+enable_gltf_loading = true
+gltf_file_prefix = "Scp131"
+gltf_file_suffix = "A"
+gltf_path_to_find = "scp131a"
 armature_name = ""
 vision_class_detect = Array[int]([2])

@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c3kn53huxivav" path="res://PlayerScript/PlayerClassScript/Scp173PuppetScript.gd" id="1_b0s8h"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp173", "SinglePuppet"]]
 script = ExtResource("1_b0s8h")
+single_type_per_group = true
+single_type_group_name = "Scp173"
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Optional/Scp173_U.tscn": 1,
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp173/Scp173_OWN.tscn": 0
 })
+enable_gltf_loading = true
+gltf_file_prefix = "Scp173"
+gltf_path_to_find = "scp173"
 armature_name = "SCP173_Rig"
 enable_vision_scan = true

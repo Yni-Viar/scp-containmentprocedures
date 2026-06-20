@@ -532,7 +532,14 @@ func help() -> void:
 		[system_color color=CONSOLE_COLOR_LITERAL]echo_warning[/system_color]: Prints a given string as warning to the console
 		[system_color color=CONSOLE_COLOR_LITERAL]pause[/system_color]: Pauses node processing
 		[system_color color=CONSOLE_COLOR_LITERAL]unpause[/system_color]: Unpauses node processing
-		[system_color color=CONSOLE_COLOR_LITERAL]quit[/system_color]: Quits the game
+		[system_color color=CONSOLE_COLOR_LITERAL]quit[/system_color]: Quits the game (except Web version)
+		
+	Game commands:
+		[system_color color=CONSOLE_COLOR_LITERAL]add_item[/system_color]: Adds item to your inventory
+		[system_color color=CONSOLE_COLOR_LITERAL]spawn_npc[/system_color]: Spawns NPC in front of you.
+		[system_color color=CONSOLE_COLOR_LITERAL]add_task[/system_color]: Adds task, if necessary conditions are met
+		[system_color color=CONSOLE_COLOR_LITERAL]replace_npc_help[/system_color]: Gives you information about replacing in-game NPCs
+	
 	Controls:
 		[system_color color=CONSOLE_COLOR_INFO]Up[/system_color] and [system_color color=CONSOLE_COLOR_INFO]Down[/system_color] arrow keys to navigate commands history
 		[system_color color=CONSOLE_COLOR_INFO]PageUp[/system_color] and [system_color color=CONSOLE_COLOR_INFO]PageDown[/system_color] to scroll registry
