@@ -2,6 +2,15 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v9.1.2 (2026.06.XX)
+
+- Fix documentation
+- Fixed unused variables
+- Moved Basement spawn next to the nearest door, since the only way to get there is SCP-249 door.
+- New HUD icons
+- Moved SCP-939 sublevel under elevator room to avoid Gate B overlap.
+- Fixed item drop duplicating items in hand.
+
 ## v9.1.1 (2026.06.23)
 
 - Remove available beta features

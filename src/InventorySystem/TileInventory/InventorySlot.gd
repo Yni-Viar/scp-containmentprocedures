@@ -4,7 +4,6 @@ extends TextureRect
 class_name InventorySlot
 
 ## Item ID
-## @deprecated use item variable
 @export var item_id: int
 ## Item
 @export var item: Item

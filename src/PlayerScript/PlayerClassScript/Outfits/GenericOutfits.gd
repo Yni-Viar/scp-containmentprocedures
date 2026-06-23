@@ -1,5 +1,6 @@
 extends MeshInstance3D
 ## Apply seasonal outfits
+## Applied only for built-in classes.
 ## Made by Yni, licensed under MIT License.
 
 @export var christmas_material: Array[Material]

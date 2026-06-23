@@ -6,8 +6,6 @@ class_name GameCore
 
 @export var gamedata: GameData
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
-## It is actually how many generators are left
-var activated_generators: int = 0
 ## Presets for game ##
 var map_seed: int = -1
 ## Possibility to spawn Chaos Insurgency
@@ -30,7 +28,7 @@ var mtf_cooldown: float = 35.0:
 var protagonist: MovableNpc
 ## Map seed public name
 var map_seed_name: String
-
+## Check if the game was finished
 var game_ended: bool = false
 
 
@@ -175,8 +173,6 @@ func spawn_wave_entity(wave_type: int):
 			how_much_spawn = 3
 		1: # Chaos Insurgency Agent
 			how_much_spawn = 1
-		#2: # Agent for SCP-347
-			#how_much_spawn = 1
 	var spawn = get_tree().get_first_node_in_group("WaveSpawn")
 	if spawn != null:
 		if OS.get_name() != "Web":
@@ -193,8 +189,6 @@ func spawn_wave_entity(wave_type: int):
 				1: # Chaos Insurgency
 					wavenpc.puppet_class = gamedata.wave_puppet_classes[1]
 					wavenpc.add_to_group("ChaosInsurgency")
-				#2:
-					#wavenpc.puppet_class = gamedata.wave_puppet_classes[2]
 			spawn.get_child(i).add_child(wavenpc)
 		for i in range(how_much_spawn):
 			for node in spawn.get_child(i).get_children():
@@ -248,7 +242,6 @@ func cutscene_anim(reverse: bool = false):
 		$AnimationPlayer.play("cutscene")
 
 ## Dialogue system from 7.0 and earlier.
-## @deprecated This function may be removed in 9.0, please, use advanced_dialogue([text]) as replacement.
 func dialogue(text: String):
 	advanced_dialogue([text])
 
@@ -265,7 +258,6 @@ func advanced_dialogue(random_text: Array, command_after: CommandResource = null
 	$UI/Dialogue.text = ""
 
 ## Shows image (6.0 version)
-## @deprecated This function may be removed in 9.0, please use show_image function
 func showable(resource_path: String):
 	show_image([resource_path])
 

@@ -20,7 +20,7 @@ enum Scp522State {DORMANT, ACTIVE}
 @export var body_to_process: Node3D
 
 var animation_timer: int = 0.0
-## Format - [pubbet class fraction, puppet class team]
+## Format - [puppet class fraction, puppet class team]
 var body_inside: PackedInt32Array = [-1, -1]
 
 var timer: float = 0.0

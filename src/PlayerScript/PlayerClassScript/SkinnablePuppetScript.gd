@@ -9,7 +9,7 @@ class_name SkinnablePuppetScript
 ## Group for single typed entities (see `single_type_per_group` for explanation)
 @export var single_type_group_name: String = ""
 ## It is recommended to leave it with default value
-## This paramterer determines if specific puppet will be spawned or will be randomized.
+## This parameter determines if specific puppet will be spawned or will be randomized.
 @export var default_puppet_to_spawn: int = -1
 ## All available puppet variations
 @export var available_puppets: Dictionary[String, BaseSpawner.Availability] = {}

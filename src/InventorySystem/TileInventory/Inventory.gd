@@ -83,7 +83,7 @@ func item_remove(item: InventorySlot, drop: bool) -> bool:
 			# Stop holding item
 			if get_tree().root.get_node("Game").protagonist.get_node("PlayerModel").get_child_count() > 0:
 				var puppet: BasePuppetScript = get_tree().root.get_node("Game").protagonist.get_node("PlayerModel").get_child(0)
-				if puppet is HumanPuppetScript:
+				if puppet is SkinnableHumanPuppetScript:
 					puppet.hold_item(-1)
 			# Stop status effect
 			var status_effect: StatusEffectManager = get_node(get_tree().root.get_node("Game/StaticPlayer").target_puppet_path + "/StatusEffects")

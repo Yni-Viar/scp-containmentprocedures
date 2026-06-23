@@ -49,7 +49,7 @@ func attack():
 				get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.GENERIC_WANDER
 		attack_update_timer = 2.0
 
-## Apply amnesiac and go to target
+## Apply amnestic and go to target
 func _on_trigger_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.puppet_class.puppet_class_name != "SCP-939":

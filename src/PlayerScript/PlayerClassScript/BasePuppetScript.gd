@@ -4,7 +4,6 @@ class_name BasePuppetScript
 
 
 ## Armature name
-## @deprecated Use puppet's armature_name property
 @export var armature_name: String = "HumanRig"
 enum States {IDLE, WALKING, RUNNING, SPECIAL1, SPECIAL2, SPECIAL3, SPECIAL4}
 @export var state: States = States.IDLE

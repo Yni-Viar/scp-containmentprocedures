@@ -30,7 +30,6 @@ func _ready() -> void:
 	if Settings.setting_res.ssao && (RenderingServer.get_current_rendering_method() == "mobile" || \
 	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
 	  Engine.get_version_info()["minor"] < 6)):
-		# Make SSAO even more performant (but uglier) in Lite version
 		# Recommended to remove after upgrading to 4.6 and newer versions.
 		$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(1)
 
@@ -106,7 +105,7 @@ func intersect_shape(intersect_position: Vector3) -> Array[Dictionary]:
 	
 	return result
 
-## Mian interacting function.
+## Main interacting function.
 func interact(value: String) -> void:
 	if get_node_or_null(target_puppet_path) == null:
 		get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_1")

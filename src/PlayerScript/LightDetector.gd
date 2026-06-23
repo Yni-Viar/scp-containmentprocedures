@@ -1,5 +1,5 @@
 extends SubViewport
-## Light detector, used for environment lighting without ReflectionProbes.
+## Light detector, used for environment (Lightmap) lighting without ReflectionProbes.
 
 @export var enabled: bool = false
 var time_to_update: float = 0.0

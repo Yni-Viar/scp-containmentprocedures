@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dkgyet63cgaaa" path="res://Assets/HUD/healthbar.png" id="10_71axn"]
 [ext_resource type="Environment" uid="uid://mkrxfq7uvngm" path="res://Assets/Environment/Default.tres" id="10_khs3t"]
 [ext_resource type="AudioStream" uid="uid://0gapate5fity" path="res://Sounds/Music/Third_party/lcz_ambient.ogg" id="11_dahhg"]
-[ext_resource type="Texture2D" uid="uid://c7425hilhemru" path="res://Assets/HUD/waterbar.png" id="13_4eqlp"]
+[ext_resource type="Texture2D" uid="uid://vgfshvfqvegj" path="res://Assets/HUD/waterbar.svg" id="12_umnjm"]
+[ext_resource type="Texture2D" uid="uid://c4r3nfc05454" path="res://Assets/HUD/foodbar.svg" id="13_4eqlp"]
 [ext_resource type="Script" uid="uid://dxam3jgydqblf" path="res://Scripts/FPSCounter.gd" id="13_acvyw"]
 [ext_resource type="Texture2D" uid="uid://ru4xgebhbko0" path="res://UI/914bg.png" id="14_8e0uq"]
-[ext_resource type="Texture2D" uid="uid://lv8kggcxlch3" path="res://Assets/HUD/foodbar.png" id="14_18uti"]
 [ext_resource type="Texture2D" uid="uid://bsdsboenf6un3" path="res://Assets/HUD/Touch/inventory.png" id="15_8r6kd"]
 [ext_resource type="Theme" uid="uid://wed0ey45xt0t" path="res://UITheme_Elevator.tres" id="16_i4lct"]
 [ext_resource type="Texture2D" uid="uid://c6w4f0ei72n5d" path="res://Assets/HUD/Touch/switch_camera.png" id="16_jn8rg"]
@@ -236,6 +236,7 @@ max_value = 50.0
 show_percentage = false
 
 [node name="HealthIcon" type="TextureRect" parent="UI"]
+self_modulate = Color(0.735357, 0.735357, 0.735357, 1)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -251,6 +252,7 @@ grow_vertical = 0
 texture = ExtResource("10_71axn")
 
 [node name="ThirstIcon" type="TextureRect" parent="UI"]
+self_modulate = Color(0, 0.8226884, 0.96535945, 1)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -262,9 +264,10 @@ offset_left = 0.31999207
 offset_top = -0.12005615
 offset_bottom = -0.2960205
 grow_vertical = 0
-texture = ExtResource("13_4eqlp")
+texture = ExtResource("12_umnjm")
 
 [node name="HungerIcon" type="TextureRect" parent="UI"]
+self_modulate = Color(1, 0.6199727, 0.572891, 1)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -277,7 +280,7 @@ offset_top = -0.12005615
 offset_right = 0.06399536
 offset_bottom = -0.2960205
 grow_vertical = 0
-texture = ExtResource("14_18uti")
+texture = ExtResource("13_4eqlp")
 
 [node name="Tasks" type="VBoxContainer" parent="UI"]
 layout_mode = 1

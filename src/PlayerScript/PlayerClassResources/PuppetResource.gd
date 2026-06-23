@@ -5,7 +5,7 @@ class_name PuppetClass
 
 ## None - other player will do nothing
 ## Follow - other player will follow you
-## Special action - Other player will do something if you interact (e.g. SCP-023)
+## Special action - Other player will do something if you interact (e.g. SCP-023 or SCP-1507)
 enum InteractAction {NONE, FOLLOW, SPECIAL}
 
 ## Generic wander is MovableNpc wander implementation
@@ -27,10 +27,10 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var apply_height_bugfix: bool = true
 @export var wandering_system: WanderingSystem = WanderingSystem.NONE
 @export var special_wandering_group: String = ""
-## Will the puppet stay on this point, or it will wander. Use wandering_system enum since 5.6.0
-## @deprecated
+## Will the puppet stay on this point, or it will wander.
+## @deprecated Use `wandering_system` instead
 @export var enable_wander: bool = true
-## Health (0 is general health, 1 is coldness (humans only),
+## Health (0 is generic health, 1 is coldness (humans only),
 ## 2 is thirst (humans only), 3 is hunger (humans only)
 @export var health: Array[float] = [100]
 ## Only for humans currently.

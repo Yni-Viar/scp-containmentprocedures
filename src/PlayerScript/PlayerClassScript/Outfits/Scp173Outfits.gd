@@ -1,5 +1,6 @@
 extends Node3D
 ## Apply random SCP-173 outfit
+## Applied only for built-in SCP-173!
 ## Made by Yni, licensed under MIT License.
 
 @export var shader_material: ShaderMaterial

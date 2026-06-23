@@ -15,7 +15,7 @@ const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.
 ## Available flags:
 ## generic_XX, where XX is country id
-## no_halloween - disables Halloween for this region
+## no_halloween - disables Halloween
 ## no_neural_ai - disables AI interactions
 const LEGAL_REQ_REGIONS: Dictionary[String, PackedStringArray] = {
 	"ru_RU": ["generic_ru"]

@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		var status = ResourceLoader.load_threaded_get_status(file_path_to_load, progress)
 		match status:
 			ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
-				# Need to port message system from InE Demo 2
 				get_tree().quit(1)
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 				$LoadProgress.value = progress[0] * 100

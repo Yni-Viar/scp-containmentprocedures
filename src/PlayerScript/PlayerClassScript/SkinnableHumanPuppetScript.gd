@@ -1,5 +1,5 @@
 extends SkinnablePuppetScript
-## Зuppet script, that is used by all civilian humans and is base for SCP-347, MTF and Chaos insurgent
+## Puppet script, that is used by all civilian humans and is base for SCP-347, MTF and Chaos insurgent
 ## Made by Yni, licensed under MIT license.
 class_name SkinnableHumanPuppetScript
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lv8kggcxlch3"
-path="res://.godot/imported/foodbar.png-dcc6a9c1af49cf6e5f93d849cf4a33d6.ctex"
+uid="uid://vgfshvfqvegj"
+path="res://.godot/imported/waterbar.svg-b7305ca72376eaeeda26501e7cfc8462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD/foodbar.png"
-dest_files=["res://.godot/imported/foodbar.png-dcc6a9c1af49cf6e5f93d849cf4a33d6.ctex"]
+source_file="res://Assets/HUD/waterbar.svg"
+dest_files=["res://.godot/imported/waterbar.svg-b7305ca72376eaeeda26501e7cfc8462.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=2.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

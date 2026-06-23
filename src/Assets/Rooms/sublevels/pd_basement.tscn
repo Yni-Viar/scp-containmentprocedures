@@ -282,4 +282,4 @@ I hope I finish somedays this work...
 "
 
 [node name="spawnpoint" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22803116, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77687, 0.50189704, 6.0217843)

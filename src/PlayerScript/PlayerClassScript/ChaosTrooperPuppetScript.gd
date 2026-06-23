@@ -15,8 +15,7 @@ func on_update_human(delta: float):
 		var collider = raycast.get_collider()
 		if collider is MovableNpc:
 			var puppet_class = collider.puppet_class
-			# Give player a chance, if CI came, to not entirely lose because of SCP-347 task.
-			if puppet_class.fraction == 0 && puppet_class.team == 1 && puppet_class.puppet_class_name != "MTF_AGENT":
+			if puppet_class.fraction == 0 && puppet_class.team == 1:
 				saw_player = true
 				if !get_parent().get_parent().movement_freeze:
 					get_parent().get_parent().follow_target = collider.get_path()

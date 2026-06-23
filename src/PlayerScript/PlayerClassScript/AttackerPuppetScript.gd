@@ -5,7 +5,7 @@ class_name AttackerPuppetScript
 
 var timer: float = 10.0
 
-## Smart target determination (only effective in facility and Surface Zone, cannot go to other sublevels)
+## Smart target finding (only effective in facility and Surface Zone, cannot go to other sublevels)
 func go_to_target(primary_target: String):
 	if get_parent().get_parent().platform_moving:
 		return

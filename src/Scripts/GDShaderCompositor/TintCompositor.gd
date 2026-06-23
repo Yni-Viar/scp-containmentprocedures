@@ -50,7 +50,7 @@ func apply_shader(effect_name: String, remove: bool = false) -> bool:
 	set_surface_override_material(0, material)
 	return true
 
-## Applies strength to ashader with `effect_name` key to the tint with specific `intensity`
+## Applies strength to a shader with `effect_name` key to the tint with specific `intensity`
 func apply_strength(effect_name: String, intensity: float):
 	if used_shaders.is_empty():
 		return false

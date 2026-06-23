@@ -1,6 +1,6 @@
 extends Node3D
-## Made by Yni, licensed under MIT License.
-## Contains Godot Docs entries under CC-BY 3.0
+## Human and SCP-347 model-to-skinnablepuppetscript shim
+## Made by Yni, licensed under CC0.
 
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
