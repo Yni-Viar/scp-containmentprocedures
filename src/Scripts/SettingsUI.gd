@@ -6,10 +6,6 @@ func _ready() -> void:
 	if Settings.feature_legality_checker("no_neural_ai"):
 		$GameplayLabel.queue_free()
 		$AI.queue_free()
-	elif OS.get_name() == "Web":
-		$GameplayLabel.hide()
-		$AI.hide()
-		$AI.button_pressed = Settings.setting_res.ai_enabled
 	else:
 		$AI.button_pressed = Settings.setting_res.ai_enabled
 	$Renderer.selected = Settings.setting_res.renderer
@@ -54,8 +50,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 func _on_music_volume_drag_ended(value_changed: bool) -> void:
 	if value_changed:

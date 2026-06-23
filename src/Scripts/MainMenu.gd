@@ -131,8 +131,6 @@ func _on_story_mode_pressed() -> void:
 
 func _on_story_back_pressed() -> void:
 	$StoryUI.hide()
-	$StoryUI/ScrollContainer.show()
-	$StoryUI/EasterEgg.hide()
 
 
 func _on_settings_button_pressed() -> void:
@@ -140,18 +138,9 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_seed_text_changed(new_text: String) -> void:
-	if new_text.to_lower() == "feature_beta":
-		Settings.beta_mode = true
-		$HBoxContainer/StoryMode.show()
-		$GameSettings/Seed.text = ""
 	if new_text.to_lower() == "spoilers":
 		$HBoxContainer/HelpButton.show()
 	if new_text.to_lower() == "yenjeai":
-		$StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.show()
-	elif $StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.visible:
-		$StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator.hide()
-
-
-func _on_easter_egg_activator_pressed() -> void:
-	$StoryUI/ScrollContainer.hide()
-	$StoryUI/EasterEgg.show()
+		$HBoxContainer/StoryMode.show()
+	elif $HBoxContainer/StoryMode.visible:
+		$HBoxContainer/StoryMode.hide()

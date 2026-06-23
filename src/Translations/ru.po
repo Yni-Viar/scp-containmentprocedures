@@ -54,7 +54,7 @@ msgid "CASUAL_MODE"
 msgstr "Играть"
 
 msgid "STORY_MODE"
-msgstr "Кампания (в разработке)"
+msgstr "???"
 
 msgid "HELP_BUTTON"
 msgstr "Подсказка"

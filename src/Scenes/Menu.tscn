@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b25hrjnoos5me"]
+[gd_scene load_steps=22 format=3 uid="uid://b25hrjnoos5me"]
 
 [ext_resource type="Script" uid="uid://nuv64h1g048i" path="res://Scripts/MainMenu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://calm8y36ivn5q" path="res://UI/MainMenu/mainmenubackground.png" id="2_idohh"]
@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://26abh1a6pa33" path="res://UI/MainMenu/Modes/settings.png" id="7_x0ao6"]
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
-[ext_resource type="PackedScene" uid="uid://b4tymm7axdu4r" path="res://UI/MainMenu/easter_egg.tscn" id="12_a8aa6"]
-[ext_resource type="Texture2D" uid="uid://b3huhsmj8qtv8" path="res://UI/MainMenu/StoryMode/MainStory.png" id="12_dsmso"]
-[ext_resource type="Texture2D" uid="uid://m3f2djuc8pr0" path="res://UI/MainMenu/StoryMode/GenericStory.png" id="13_t8p2w"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
 [ext_resource type="AudioStream" uid="uid://bfi3taei3rspy" path="res://Sounds/Music/Original/SCP_MainTheme.ogg" id="16_dsmso"]
 
@@ -89,24 +86,6 @@ width = 1152
 height = 648
 noise = SubResource("FastNoiseLite_krje8")
 color_ramp = SubResource("Gradient_a8aa6")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p2w"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmso"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -704,6 +683,7 @@ title = "Tutorial"
 initial_position = 2
 size = Vector2i(800, 480)
 visible = false
+min_size = Vector2i(32, 32)
 theme = ExtResource("2_syfuq")
 script = ExtResource("7_wfhf6")
 
@@ -751,53 +731,38 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_dd46u")
 expand_mode = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="StoryUI"]
+[node name="EasterEgg" type="Control" parent="StoryUI"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -574.0
-offset_top = -184.0
-offset_right = 574.0
-offset_bottom = 184.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="StoryUI/ScrollContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
+[node name="Panel" type="Panel" parent="StoryUI/EasterEgg"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
-[node name="MainStory" type="Button" parent="StoryUI/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
-text = "STORY_MAIN"
-icon = ExtResource("12_dsmso")
-icon_alignment = 1
-vertical_icon_alignment = 0
-
-[node name="EasterEggActivator" type="Button" parent="StoryUI/ScrollContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_t8p2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_dsmso")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dsmso")
-text = "???"
-icon = ExtResource("13_t8p2w")
-icon_alignment = 1
-vertical_icon_alignment = 0
-
-[node name="EasterEgg" parent="StoryUI" instance=ExtResource("12_a8aa6")]
-visible = false
+[node name="Label" type="RichTextLabel" parent="StoryUI/EasterEgg/Panel"]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "[center][font_size=32]Welcome to Yni Viar's dimension![/font_size][/center]
+[hr]
+Some hikkikomori decided to get out from home.
+But can they actually do it?
+Interesting question..."
 
 [node name="Back" type="TextureButton" parent="StoryUI"]
 layout_mode = 1
@@ -830,5 +795,4 @@ text = "LITE_VERSION_WARNING"
 [connection signal="toggled" from="GameSettings/TimeLimited" to="." method="_on_time_limited_toggled"]
 [connection signal="toggled" from="GameSettings/ZenMode" to="." method="_on_zen_mode_toggled"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="StoryUI/ScrollContainer/HBoxContainer/EasterEggActivator" to="." method="_on_easter_egg_activator_pressed"]
 [connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]

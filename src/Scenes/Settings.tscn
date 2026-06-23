@@ -12,6 +12,7 @@ oversampling_override = 1.0
 title = "Settings"
 initial_position = 2
 size = Vector2i(800, 480)
+min_size = Vector2i(32, 32)
 theme = ExtResource("1_yrknh")
 script = ExtResource("2_w1nw0")
 

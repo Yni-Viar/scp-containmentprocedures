@@ -2,6 +2,11 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v9.1.1 (2026.06.23)
+
+- Remove available beta features
+- Limit Settings and spoilers window resize to minimum 32 pixels.
+
 ## v9.1.0 (2026.06.20)
 - Allow to sideload characters (via GLTF) (supported ONLY for specific SCPs: SCP-131, SCP-173, SCP-650 and SCP-1507)
 - Fixed Gate B elevator wrong rotation

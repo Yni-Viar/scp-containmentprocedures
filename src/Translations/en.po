@@ -54,7 +54,7 @@ msgid "CASUAL_MODE"
 msgstr "Play"
 
 msgid "STORY_MODE"
-msgstr "Story mode (in development)"
+msgstr "???"
 
 msgid "HELP_BUTTON"
 msgstr "Hint"
