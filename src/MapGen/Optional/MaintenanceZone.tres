@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d0en6563qst02" path="res://MapGen/Resources/MaintenanceZone/room1.tres" id="4_3un6p"]
 [ext_resource type="Resource" uid="uid://l8pr1iq52v3y" path="res://MapGen/Resources/MaintenanceZone/room2C_warehouse.tres" id="4_h50gj"]
 [ext_resource type="Resource" uid="uid://bgvcokfa5iie5" path="res://MapGen/Resources/MaintenanceZone/exit1_gateb.tres" id="5_2euw7"]
-[ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/MaintenanceZone/Optional/room2C_echoes.tres" id="5_7o6mq"]
+[ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/MaintenanceZone/room2C_echoes.tres" id="5_7o6mq"]
 [ext_resource type="PackedScene" uid="uid://dm4apurgx8m7m" path="res://Assets/Doors/mt_door.tscn" id="6_6rvoo"]
 [ext_resource type="Resource" uid="uid://bw58osyjan7h8" path="res://MapGen/Resources/MaintenanceZone/cont1_023.tres" id="7_7ovle"]
 [ext_resource type="Resource" uid="uid://p5bix08fmuyu" path="res://MapGen/Resources/MaintenanceZone/Optional/room4_echoes.tres" id="8_nytp7"]

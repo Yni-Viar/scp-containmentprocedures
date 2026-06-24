@@ -291,7 +291,6 @@ visible = false
 quality = 0
 bounces = 1
 bounce_indirect_energy = 1.5
-directional = true
 texel_scale = 0.25
 light_data = ExtResource("5_rfehi")
 

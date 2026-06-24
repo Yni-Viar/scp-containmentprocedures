@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="3_880em"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_f274l"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="5_880em"]
-[ext_resource type="LightmapGIData" uid="uid://3ijqxlm2nno2" path="res://Assets/Rooms/room2c/Optional/Lm/mt_room2c_echoes.lmbake" id="6_880em"]
+[ext_resource type="LightmapGIData" uid="uid://3ijqxlm2nno2" path="res://Assets/Rooms/room2c/Lm/mt_room2c_echoes.lmbake" id="6_880em"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="8_rwfyf"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="9_fub8v"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="10_f274l"]
@@ -340,7 +340,10 @@ script = ExtResource("8_rwfyf")
 current_season = 6
 
 [node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("9_fub8v")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.8851857, -1.2581564, -1.7314548)
+transform = Transform3D(0.70710677, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.70710677, 8.5306835, -1.2581564, -1.7314548)
+
+[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("9_fub8v")]
+transform = Transform3D(-0.70710677, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, -0.70710677, -1.825448, -1.2581574, 8.944025)
 
 [node name="Christmas" type="Node3D" parent="Seasonal"]
 visible = false
@@ -351,7 +354,7 @@ current_season = 5
 transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 2.5589776, -2.3823, 2.9210362)
 
 [node name="FireExtinguisher" parent="." instance=ExtResource("10_yt2qu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7944759, -0.6225068, -2.8122768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5325662, -0.6225068, -1.5774074)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.3652999, 0, 0, 0, 1.3653, 0, 0, 0, 1.3652999, 0, -1.2567126, 0)

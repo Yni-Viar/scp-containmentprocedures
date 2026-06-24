@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=22 format=3 uid="uid://o7dvqel7sfbm"]
+[gd_resource type="Resource" script_class="MapGenZone" load_steps=23 format=3 uid="uid://o7dvqel7sfbm"]
 
 [ext_resource type="PackedScene" uid="uid://dm4apurgx8m7m" path="res://Assets/Doors/mt_door.tscn" id="1_d5akv"]
 [ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_sh8pc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dv32h2vbj6x8v" path="res://MapGen/Resources/MaintenanceZone/room2_checkpoint.tres" id="3_pshb2"]
 [ext_resource type="Resource" uid="uid://baskn56ygmotl" path="res://MapGen/Resources/MaintenanceZone/room2C.tres" id="4_gba87"]
 [ext_resource type="Resource" uid="uid://l8pr1iq52v3y" path="res://MapGen/Resources/MaintenanceZone/room2C_warehouse.tres" id="5_7w5cm"]
+[ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/MaintenanceZone/room2C_echoes.tres" id="5_hldxh"]
 [ext_resource type="Resource" uid="uid://d0so8w0byu3rf" path="res://MapGen/Resources/MaintenanceZone/room4.tres" id="6_1fk1t"]
 [ext_resource type="Resource" uid="uid://d0en6563qst02" path="res://MapGen/Resources/MaintenanceZone/room1.tres" id="7_uwkbe"]
 [ext_resource type="PackedScene" uid="uid://c7o5iodr55fdp" path="res://Assets/Doors/maintenance_zone_door.tscn" id="8_fgb1r"]
@@ -30,7 +31,7 @@ endrooms_single_large = Array[ExtResource("2_sh8pc")]([ExtResource("11_nnytr")])
 hallways = Array[ExtResource("2_sh8pc")]([ExtResource("13_nkg10"), ExtResource("14_pn8dw"), ExtResource("16_fgb1r")])
 hallways_single = Array[ExtResource("2_sh8pc")]([ExtResource("15_8bbsw"), ExtResource("17_ps2nh"), ExtResource("18_v2mi3")])
 checkpoint_hallway = Array[ExtResource("2_sh8pc")]([ExtResource("3_pshb2")])
-corners = Array[ExtResource("2_sh8pc")]([ExtResource("4_gba87")])
+corners = Array[ExtResource("2_sh8pc")]([ExtResource("4_gba87"), ExtResource("5_hldxh")])
 corners_single = Array[ExtResource("2_sh8pc")]([ExtResource("5_7w5cm")])
 trooms = Array[ExtResource("2_sh8pc")]([ExtResource("19_odabp")])
 crossrooms = Array[ExtResource("2_sh8pc")]([ExtResource("6_1fk1t")])

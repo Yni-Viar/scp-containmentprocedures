@@ -2,7 +2,7 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
-## v9.1.2 (2026.06.XX)
+## v9.1.2 (2026.06.24)
 
 - Fix documentation
 - Fixed unused variables
@@ -10,6 +10,7 @@ This list contains all features, added in the game, or will be added in upcoming
 - New HUD icons
 - Moved SCP-939 sublevel under elevator room to avoid Gate B overlap.
 - Fixed item drop duplicating items in hand.
+- Make *SCP: Echoes* corner in Maintenance Zone available to Lite/Web version.
 
 ## v9.1.1 (2026.06.23)
 
