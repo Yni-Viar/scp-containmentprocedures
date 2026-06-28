@@ -5,11 +5,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bu2in"]
 shader = ExtResource("1_1yhlk")
 shader_parameter/time_scale = 0.5
-shader_parameter/base_color = Color(0.518, 0.553, 0.608, 1)
+shader_parameter/base_color = Color(0.32839376, 0.3578453, 0.40366852, 1)
 shader_parameter/slime_color = Color(0.22385302, 0.29844347, 0.41716978, 1)
-shader_parameter/highlight_color = Color(0.22672379, 0.26376536, 0.30560276, 1)
-shader_parameter/tendril_density = 1.15600005491
-shader_parameter/tendril_thickness = 0.3930000186675
+shader_parameter/highlight_color = Color(0.33436283, 0.37920672, 0.43424004, 1)
+shader_parameter/tendril_density = 4.0
+shader_parameter/tendril_thickness = 0.1510000071725
 shader_parameter/animation_speed = 1.0
 shader_parameter/slime_wetness = 0.7
 

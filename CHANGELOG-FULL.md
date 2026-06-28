@@ -2,6 +2,10 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v9.1.3 (2026.06.28, last version, that support Windows 8.1 unofficially)
+
+- \[PC only\] Fix cloud color to more realistic
+
 ## v9.1.2 (2026.06.24)
 
 - Fix documentation
