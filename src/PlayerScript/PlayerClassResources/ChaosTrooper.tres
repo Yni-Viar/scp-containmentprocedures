@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://br4pxad71a6v3"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://br4pxad71a6v3"]
 
-[ext_resource type="PackedScene" uid="uid://bbwdmitjo6s86" path="res://PlayerScript/PlayerClassPrefab/ChaosTrooper.tscn" id="1_5p1h6"]
-[ext_resource type="PackedScene" uid="uid://d2jryp86rkou3" path="res://PlayerScript/PlayerClassRagdoll/ChaosTrooper.tscn" id="2_6nqxi"]
+[ext_resource type="PackedScene" uid="uid://bbwdmitjo6s86" path="res://PlayerScript/PlayerClassPrefab/Optional/ChaosTrooper.tscn" id="1_5p1h6"]
+[ext_resource type="PackedScene" uid="uid://d2jryp86rkou3" path="res://PlayerScript/PlayerClassRagdoll/Optional/ChaosTrooper.tscn" id="2_6nqxi"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_nwwtm"]
 
 [resource]

@@ -162,16 +162,16 @@ msgstr ""
 msgid "GAME_WIN_1"
 msgstr ""
 
-msgid "GAME_OVER_1"
+msgid "GAME_OVER_DIE"
 msgstr ""
 
-msgid "GAME_OVER_2"
+msgid "GAME_OVER_SCP_938"
 msgstr ""
 
-msgid "GAME_OVER_3"
+msgid "GAME_OVER_CONTAINMENT_BREACH"
 msgstr ""
 
-msgid "GAME_OVER_4"
+msgid "GAME_OVER_SCP_023"
 msgstr ""
 
 msgid "TASK_162_TOUCH"
@@ -297,7 +297,7 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-msgid "GAME_OVER_5"
+msgid "GAME_OVER_SCP_018"
 msgstr ""
 
 msgid "TASK_914_EXP_5"
@@ -378,11 +378,65 @@ msgstr ""
 msgid "CASUAL_MODE_PROGRESS"
 msgstr ""
 
-msgid "GAME_OVER_6"
+msgid "GAME_OVER_ASLEEP"
 msgstr ""
 
 msgid "TASK_080_CHECK"
 msgstr ""
 
 msgid "CASUAL_MODE_PROGRESS_2"
+msgstr ""
+
+msgid "GAME_OVER_SCP_983"
+msgstr ""
+
+msgid "SCP983_NOT_BIRTHDAY"
+msgstr ""
+
+msgid "GAME_OVER_THIRST"
+msgstr ""
+
+msgid "GAME_OVER_HUNGER"
+msgstr ""
+
+msgid "GAME_OVER_TIMES_UP"
+msgstr ""
+
+msgid "GAME_OVER_SCP_162"
+msgstr ""
+
+msgid "GAME_OVER_SCP_173"
+msgstr ""
+
+msgid "GAME_OVER_SCP_178"
+msgstr ""
+
+msgid "GAME_OVER_SCP_266"
+msgstr ""
+
+msgid "GAME_OVER_SCP_522"
+msgstr ""
+
+msgid "GAME_OVER_SCP_649"
+msgstr ""
+
+msgid "GAME_OVER_SCP_686"
+msgstr ""
+
+msgid "GAME_OVER_SCP_939"
+msgstr ""
+
+msgid "GAME_OVER_SCP_1507"
+msgstr ""
+
+msgid "GAME_OVER_CI"
+msgstr ""
+
+msgid "GAME_OVER_SCP_018_BREACH"
+msgstr ""
+
+msgid "GAME_OVER_UNKNOWN_ENTITIES"
+msgstr ""
+
+msgid "STORAGE_ZONE"
 msgstr ""

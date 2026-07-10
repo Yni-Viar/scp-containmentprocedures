@@ -80,7 +80,7 @@ navigation_mesh = SubResource("NavigationMesh_nw3mk")
 [node name="Props" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="FireExtinguisher" parent="NavigationRegion3D/Props" instance=ExtResource("2_e8iy8")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.6633146, -0.6290726, 2.2204466)
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.3044875, -0.6290726, 2.0027385)
 
 [node name="industrial_wall_lamp" parent="NavigationRegion3D/Props" instance=ExtResource("3_d2sa3")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.137, 6.677)

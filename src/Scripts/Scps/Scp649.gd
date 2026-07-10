@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		for puppet in frozen_puppets:
 			# Freeze...
-			puppet.health_manage(-5.0, 1)
+			puppet.health_manage(-5.0, 1, "GAME_OVER_SCP_649")
 		timer = 4.0
 
 func _on_cold_area_body_entered(body: Node3D) -> void:

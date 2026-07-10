@@ -1,19 +1,18 @@
 extends Node
 ## Game task manager
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name GameTaskManager
 
-enum SpecialEvent {NONE, POSITIVE, NEGATIVE}
+enum SpecialEvent {NONE, POSITIVE, NEGATIVE_CONT_BREACH, NEGATIVE_UNKNOWN_ENTITIES}
 
 signal task_done
 
 var tasks_left: int = 2
-var all_tasks: Array[GameTaskResource]
-var all_tasks_bkp: Array[GameTaskResource]
+var all_tasks: Dictionary[GameTaskResource, String]
 
 var aliases: Dictionary[String, String] = {}
 
 var special_event: SpecialEvent = SpecialEvent.NONE
-
 
 # Called when the node enters the scene tree for the first time.
 func initialize() -> void:
@@ -46,24 +45,24 @@ func initialize() -> void:
 			if get_parent().gamedata.tasks[task_index].sub_tasks != null && !get_parent().gamedata.tasks[task_index].sub_tasks.is_empty():
 				var sub_task_index: int = get_parent().rng.randi_range(0, get_parent().gamedata.tasks[task_index].sub_tasks.size() - 1)
 				aliases[get_parent().gamedata.tasks[task_index].sub_tasks[sub_task_index].internal_name] = get_parent().gamedata.tasks[task_index].internal_name
-				all_tasks.append(get_parent().gamedata.tasks[task_index].sub_tasks[sub_task_index])
+				all_tasks[get_parent().gamedata.tasks[task_index].sub_tasks[sub_task_index]] = ""
 			else:
 				# Regular task
-				all_tasks.append(get_parent().gamedata.tasks[task_index])
+				all_tasks[get_parent().gamedata.tasks[task_index]] = ""
 
 ## Adds task manually, if it is possible to complete.
-func add_task(task_name: String):
+func add_task(task_name: String) -> void:
 	for task in get_parent().gamedata.tasks:
 		if task.internal_name == task_name:
 			for group in task.required_groups:
 				if get_tree().get_node_count_in_group(group) == 0:
 					return
-			all_tasks.append(task)
+			all_tasks[task] = ""
 			task_done.emit()
 			break
 
 ## Do task with specified internal name
-func do_task(task_name: String):
+func do_task(task_name: String) -> void:
 	for task in all_tasks:
 		if task.internal_name == task_name:
 			if special_event == SpecialEvent.NONE:
@@ -86,25 +85,32 @@ func do_task(task_name: String):
 								Settings.save_resource(Settings.setting_res)
 				Settings.save_resource(Settings.setting_res)
 			all_tasks.erase(task)
+			if get_parent().get_node_or_null("SoundStreamPlayer") != null:
+				var audio: AudioStreamPlayer = get_parent().get_node("SoundStreamPlayer")
+				audio.stream = load("res://Sounds/Generic/TaskComplete.ogg")
+				audio.play()
 			task_done.emit()
 			break
 
-## Trigger event - replace all tasks for a while with specific task.
+## Adds single task with tied event.
+## Not to be confused for v9.x.x event system, which was removed.
 func trigger_event(event_type: SpecialEvent, res: GameTaskResource = null):
-	special_event = event_type
-	if special_event == SpecialEvent.NONE || res == null:
-		all_tasks.clear()
-		all_tasks = all_tasks_bkp.duplicate(true)
-		all_tasks_bkp.clear()
-	else:
-		all_tasks_bkp = all_tasks.duplicate(true)
-		all_tasks.clear()
-		all_tasks.append(res)
-	if get_parent().get_node_or_null("SoundStreamPlayer") != null:
-		var audio: AudioStreamPlayer = get_parent().get_node("SoundStreamPlayer")
-		audio.stream = load("res://Sounds/Generic/TaskComplete.ogg")
-		audio.play()
-	task_done.emit()
+	if !has_task(res.internal_name):
+		special_event = event_type
+		if get_parent().get_node_or_null("SoundStreamPlayer") != null:
+			var audio: AudioStreamPlayer = get_parent().get_node("SoundStreamPlayer")
+			audio.stream = load("res://Sounds/Generic/TaskEvent.ogg")
+			audio.play()
+		if res.time_to_complete > 3.125:
+			var timer: Timer = Timer.new()
+			timer.one_shot = true
+			timer.timeout.connect(_on_time_out)
+			timer.start(res.time_to_complete)
+			add_child(timer)
+			all_tasks[res] = timer.get_path()
+		else:
+			all_tasks[res] = ""
+		task_done.emit()
 
 ## Returns true if task exist (requires task's internal name)
 func has_task(task_name: String) -> bool:
@@ -112,3 +118,15 @@ func has_task(task_name: String) -> bool:
 		if task.internal_name == task_name:
 			return true
 	return false
+
+## Gets amount of active tasks (for Story mode)
+func get_amount_of_active_tasks() -> int:
+	return all_tasks.size()
+
+func add_single_task(task_name: String) -> void:
+	if !has_task(task_name):
+		add_task(task_name)
+
+func _on_time_out():
+	all_tasks.clear()
+	task_done.emit()

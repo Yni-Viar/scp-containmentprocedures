@@ -59,6 +59,6 @@ func attack():
 		attack_update_timer -= get_physics_process_delta_time()
 	else:
 		var test = get_parent().get_parent().follow_target
-		get_node(test).health_manage(-50.0)
+		get_node(test).health_manage(-50.0, 0, "GAME_OVER_SCP_178")
 		attack_update_timer = 0.375
 		set_state("Attack")

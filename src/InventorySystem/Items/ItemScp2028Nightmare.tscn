@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://de2wg6ld1xsxq"]
+[gd_scene format=4 uid="uid://de2wg6ld1xsxq"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_80arm"]
 [ext_resource type="Texture2D" uid="uid://focy2jsjip7h" path="res://Assets/OriginalModels/Scp2028/Scp2028_Scp2028_Bottom_base.png" id="2_budk4"]
@@ -106,25 +106,26 @@ radius = 0.37866926
 height = 0.102890015
 radius = 0.24853516
 
-[node name="Scp2028" type="RigidBody3D" groups=["Item"]]
+[node name="Scp2028" type="RigidBody3D" unique_id=1031018713 groups=["Item"]]
 collision_layer = 8
+freeze = true
 script = ExtResource("1_80arm")
 item_id = 20
 
-[node name="Mesh" type="Node3D" parent="."]
+[node name="Mesh" type="Node3D" parent="." unique_id=895678700]
 transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
 
-[node name="Glass" type="MeshInstance3D" parent="Mesh"]
+[node name="Glass" type="MeshInstance3D" parent="Mesh" unique_id=330841135]
 mesh = SubResource("ArrayMesh_njife")
 skeleton = NodePath("")
 
-[node name="Bottom" type="MeshInstance3D" parent="Mesh"]
+[node name="Bottom" type="MeshInstance3D" parent="Mesh" unique_id=496095596]
 mesh = SubResource("ArrayMesh_wdlgg")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=74876677]
 shape = SubResource("SphereShape3D_budk4")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1207550257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35993958, 0)
 shape = SubResource("CylinderShape3D_yaaqa")

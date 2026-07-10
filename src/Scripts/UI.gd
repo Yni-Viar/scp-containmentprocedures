@@ -7,6 +7,8 @@ var current_elevator: ElevatorSystem = null
 var input_amount: Dictionary[int, Vector2] = {}
 var dragged: bool = false
 
+var task_with_timer_labels: Dictionary[Label, Timer] = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -16,11 +18,19 @@ func _ready():
 
 #
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _physics_process(delta):
-	#if input_time_record:
-		#input_timer += delta
-		#if Input.is_action_pressed("click"):
-			#
+func _physics_process(delta):
+	$CurrentTime.text = str(get_parent().hours).lpad(2, "0") + ":" + str(get_parent().minutes).lpad(2, "0")
+	#$CurrentTime.modulate = Color(lerp(0.0, 1.0, get_parent().hours), lerp(1.0, 0.0, get_parent().hours), 0.0)
+	#for task_label in task_with_timer_labels:
+		#if task_with_timer_labels[task_label].time_left < 5.0:
+			#task_label.modulate = Color(1.0, 0.75, 0.0)
+		#elif task_with_timer_labels[task_label].time_left < 2.0:
+			#task_label.modulate = Color(1.0, 0.5, 0.0)
+		#elif task_with_timer_labels[task_label].time_left < 1.0:
+			#task_label.modulate = Color(1.0, 0.0, 0.0)
+		#else:
+			#task_label.modulate = Color(1.0, 1.0, 0.0)
+	pass
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("inventory"):
@@ -35,6 +45,7 @@ func _input(event: InputEvent) -> void:
 		$Tasks.visible = !$Tasks.visible
 		$HBoxContainer.visible = !$HBoxContainer.visible
 		$Back.visible = !$Back.visible
+		$FPSCounter.visible = !$FPSCounter.visible
 
 #func _on_seed_text_changed(new_text):
 	#if new_text != "":
@@ -55,13 +66,18 @@ func _on_back_pressed() -> void:
 
 # Check new task if task done, else finish game.
 func _on_foundation_task_task_done() -> void:
+	task_with_timer_labels.clear()
 	for prev_task in $Tasks.get_children():
 		prev_task.queue_free()
-	for task in get_parent().get_node("FoundationTask").all_tasks:
+	for task in get_parent().get_node("FoundationTask").all_tasks.keys():
 		var label: Label = Label.new()
 		label.add_theme_font_size_override("font_size", 20)
 		label.text = task.public_name
 		$Tasks.add_child(label)
+		if !get_parent().get_node("FoundationTask").all_tasks[task].is_empty():
+			var timer: Timer = get_node_or_null(get_parent().get_node("FoundationTask").all_tasks[task])
+			if timer != null:
+				task_with_timer_labels[label] = timer
 		$Tasks.add_child(HSeparator.new())
 	if get_parent().get_node("FoundationTask").all_tasks.size() == 0:
 		match get_parent().get_node("FoundationTask").special_event:
@@ -69,8 +85,10 @@ func _on_foundation_task_task_done() -> void:
 				get_parent().finish_game(true, "GAME_WIN_1")
 			1: # temporary
 				get_parent().finish_game(true, "GAME_WIN_1")
-			2: # gameover
-				get_parent().finish_game(false, "GAME_OVER_3")
+			2: # gameover - containment breach
+				get_parent().finish_game(false, "GAME_OVER_CONTAINMENT_BREACH")
+			3: # gameover - contact lost
+				get_parent().finish_game(false, "GAME_OVER_UNKNOWN_ENTITIES")
 
 
 func _on_inventory_button_pressed() -> void:

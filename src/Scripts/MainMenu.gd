@@ -27,11 +27,7 @@ func _enter_tree() -> void:
 		if randf() > 0.75:
 			$AudioStreamPlayer.stream = load("res://Sounds/Music/Original/Optional/SCP_MainTheme_v2.ogg")
 	
-	#gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
 	$Achievements/ProgressBar.max_value = total_amount
-	#else:
-		#gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
-		#$GameSettings/ProgressBar.max_value = gamedata.tasks.size()
 	$Achievements/ProgressBar.value = completed_amount
 	
 	#var index: int = 0
@@ -40,11 +36,9 @@ func _enter_tree() -> void:
 		#node.visible = (Settings.setting_res.secrets >> index) % 2 == 1
 		#index += 1
 	
-	$GameSettings/TimeLimited.button_pressed = Settings.setting_res.time_limited
-	$GameSettings/ZenMode.button_pressed = Settings.setting_res.zen_mode
 	
 	# Display game ratings in main menu in some countries, this will replace the game logo.
-	if Settings.legal_req:
+	if Settings.legal_req && !Settings.IS_STORE_BUILD:
 		match Settings.region:
 			"ru_RU":
 				# New upcoming Russian law.
@@ -52,15 +46,10 @@ func _enter_tree() -> void:
 	
 	await get_tree().physics_frame
 	
-	if Settings.current_season == Settings.Season.CHRISTMAS:
-		total_amount += Settings.setting_res.scp_study_progress_christmas.size()
-		for progress in Settings.setting_res.scp_study_progress_christmas:
-			if Settings.setting_res.scp_study_progress_christmas[progress]:
-				completed_amount += 1
-			else:
-				var label: Label = Label.new()
-				label.text = progress
-				$Achievements/ScrollContainer/HBoxContainer.add_child(label)
+	if Settings.setting_res.free_mode_unlocked:
+		$HBoxContainer/Play.show()
+		$GameSettingsContainer.show()
+	
 	if completed_amount == total_amount:
 		$Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
 		$Achievements/ScrollContainer.hide()
@@ -80,25 +69,19 @@ func _on_credits_pressed() -> void:
 
 func play():
 	Settings.loader("res://Scenes/Game.tscn", {
-		"map_seed": hash($GameSettings/Seed.text) if !$GameSettings/Seed.text.is_empty() else -1,
-		"time_limited": $GameSettings/TimeLimited.button_pressed,
-		"map_seed_name": $GameSettings/Seed.text if !$GameSettings/Seed.text.is_empty() else "random"
+		"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else -1,
+		"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else "random"
 	})
 	
 	#$FakeLoadingScreen.show()
 	#
 	#var game: GameCore = load("res://Scenes/Game.tscn").instantiate()
-	#if !$GameSettings/Seed.text.is_empty():
-		#game.map_seed = hash($GameSettings/Seed.text)
-	#game.time_limited = $GameSettings/TimeLimited.button_pressed
+	#if !$HBoxContainer/Seed.text.is_empty():
+		#game.map_seed = hash($HBoxContainer/Seed.text)
+	#game.time_limited = $GameSettingsContainer/GameSettings/TimeLimited.button_pressed
 	#get_tree().root.add_child(game)
 	#Settings.call_deferred("override_main_scene", game)
 	#queue_free()
-
-
-func _on_time_limited_toggled(toggled_on: bool) -> void:
-	Settings.setting_res.time_limited = toggled_on
-	Settings.save_resource(Settings.setting_res)
 
 
 func _on_help_button_pressed() -> void:
@@ -106,9 +89,9 @@ func _on_help_button_pressed() -> void:
 
 
 func _on_zen_mode_toggled(toggled_on: bool) -> void:
-	$GameSettings/TimeLimited.disabled = toggled_on
+	$GameSettingsContainer/GameSettings/TimeLimited.disabled = toggled_on
 	if toggled_on:
-		$GameSettings/TimeLimited.button_pressed = false
+		$GameSettingsContainer/GameSettings/TimeLimited.button_pressed = false
 	Settings.setting_res.zen_mode = toggled_on
 	Settings.save_resource(Settings.setting_res)
 
@@ -126,7 +109,14 @@ func _on_enable_sound_toggled(toggled_on: bool) -> void:
 
 
 func _on_story_mode_pressed() -> void:
-	$StoryUI.show()
+	if $HBoxContainer/Seed.text == "yenjeai":
+		$StoryUI.show()
+	else:
+		Settings.loader("res://Scenes/Game.tscn", {
+			"story_mode": true,
+			"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else -1,
+			"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else "random"
+		})
 
 
 func _on_story_back_pressed() -> void:
@@ -138,9 +128,4 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_seed_text_changed(new_text: String) -> void:
-	if new_text.to_lower() == "spoilers":
-		$HBoxContainer/HelpButton.show()
-	if new_text.to_lower() == "yenjeai":
-		$HBoxContainer/StoryMode.show()
-	elif $HBoxContainer/StoryMode.visible:
-		$HBoxContainer/StoryMode.hide()
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyo4u3ig5wr1p"]
+[gd_scene format=3 uid="uid://dyo4u3ig5wr1p"]
 
 [ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="1_yrknh"]
 [ext_resource type="Script" uid="uid://c8axhj303g8f2" path="res://Scripts/BaseWindow.gd" id="2_w1nw0"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="4_mjqtt"]
 [ext_resource type="Script" uid="uid://burwwqf7eqpi5" path="res://Scripts/KeybindSetter.gd" id="5_mjqtt"]
 
-[node name="Settings" type="Window"]
+[node name="Settings" type="Window" unique_id=1544047678]
 auto_translate_mode = 1
 oversampling_override = 1.0
 title = "Settings"
@@ -16,19 +16,19 @@ min_size = Vector2i(32, 32)
 theme = ExtResource("1_yrknh")
 script = ExtResource("2_w1nw0")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=749954069]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsUI" type="VBoxContainer" parent="ScrollContainer"]
+[node name="SettingsUI" type="VBoxContainer" parent="ScrollContainer" unique_id=920894747]
 custom_minimum_size = Vector2(768, 0)
 layout_mode = 2
 script = ExtResource("3_mjqtt")
 
-[node name="GameplayLabel" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="GameplayLabel" type="Label" parent="ScrollContainer/SettingsUI" unique_id=63801184]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
 theme_override_font_sizes/font_size = 32
@@ -36,12 +36,12 @@ text = "GAMEPLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AI" type="CheckButton" parent="ScrollContainer/SettingsUI"]
+[node name="AI" type="CheckButton" parent="ScrollContainer/SettingsUI" unique_id=1650101604]
 layout_mode = 2
 button_pressed = true
 text = "NEURAL_AI"
 
-[node name="GraphicsLabel" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="GraphicsLabel" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1384164794]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
 theme_override_font_sizes/font_size = 32
@@ -49,11 +49,11 @@ text = "GRAPHICS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="Label3" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1371582274]
 layout_mode = 2
 text = "RENDERER_SELECT"
 
-[node name="Renderer" type="OptionButton" parent="ScrollContainer/SettingsUI"]
+[node name="Renderer" type="OptionButton" parent="ScrollContainer/SettingsUI" unique_id=74644345]
 layout_mode = 2
 selected = 0
 item_count = 3
@@ -64,11 +64,11 @@ popup/item_1/id = 1
 popup/item_2/text = "Forward+"
 popup/item_2/id = 2
 
-[node name="Label2" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="Label2" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1365845956]
 layout_mode = 2
 text = "LIGHTING_TYPE"
 
-[node name="Lighting" type="OptionButton" parent="ScrollContainer/SettingsUI"]
+[node name="Lighting" type="OptionButton" parent="ScrollContainer/SettingsUI" unique_id=989699556]
 layout_mode = 2
 selected = 1
 item_count = 3
@@ -79,54 +79,54 @@ popup/item_1/id = 1
 popup/item_2/text = "LIGHTING_REALTIME"
 popup/item_2/id = 2
 
-[node name="FoldableContainer3" type="FoldableContainer" parent="ScrollContainer/SettingsUI"]
+[node name="FoldableContainer3" type="FoldableContainer" parent="ScrollContainer/SettingsUI" unique_id=2048456621]
 layout_mode = 2
 folded = true
 title = "INFO"
 
-[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer3"]
+[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer3" unique_id=1997566561]
 visible = false
 layout_mode = 2
 text = "GODOT_RD_STATE"
 
-[node name="Glow" type="CheckButton" parent="ScrollContainer/SettingsUI"]
+[node name="Glow" type="CheckButton" parent="ScrollContainer/SettingsUI" unique_id=1524139408]
 layout_mode = 2
 button_pressed = true
 text = "GLOW"
 
-[node name="HSeparator" type="HSeparator" parent="ScrollContainer/SettingsUI"]
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/SettingsUI" unique_id=537686311]
 layout_mode = 2
 
-[node name="BasicReflection" type="CheckButton" parent="ScrollContainer/SettingsUI"]
+[node name="BasicReflection" type="CheckButton" parent="ScrollContainer/SettingsUI" unique_id=1574919891]
 layout_mode = 2
 button_pressed = true
 text = "REFLECTION_PROBE"
 
-[node name="FoldableContainer" type="FoldableContainer" parent="ScrollContainer/SettingsUI"]
+[node name="FoldableContainer" type="FoldableContainer" parent="ScrollContainer/SettingsUI" unique_id=592907989]
 layout_mode = 2
 folded = true
 title = "INFO"
 
-[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer"]
+[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer" unique_id=1936172491]
 visible = false
 layout_mode = 2
 text = "REFLECTION_PROBE_WARNING"
 
-[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/SettingsUI"]
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/SettingsUI" unique_id=1851949916]
 layout_mode = 2
 
-[node name="SSAO" type="CheckButton" parent="ScrollContainer/SettingsUI"]
+[node name="SSAO" type="CheckButton" parent="ScrollContainer/SettingsUI" unique_id=481917686]
 layout_mode = 2
 text = "SSAO"
 
-[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/SettingsUI"]
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/SettingsUI" unique_id=147310933]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="Label" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1161960758]
 layout_mode = 2
 text = "TONEMAPPER_SELECT"
 
-[node name="Tonemapper" type="OptionButton" parent="ScrollContainer/SettingsUI"]
+[node name="Tonemapper" type="OptionButton" parent="ScrollContainer/SettingsUI" unique_id=1626548551]
 layout_mode = 2
 selected = 0
 item_count = 5
@@ -141,20 +141,20 @@ popup/item_3/id = 3
 popup/item_4/text = "TONEMAPPER_AGX"
 popup/item_4/id = 4
 
-[node name="FoldableContainer2" type="FoldableContainer" parent="ScrollContainer/SettingsUI"]
+[node name="FoldableContainer2" type="FoldableContainer" parent="ScrollContainer/SettingsUI" unique_id=1499158503]
 layout_mode = 2
 folded = true
 title = "INFO"
 
-[node name="Label2" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer2"]
+[node name="Label2" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer2" unique_id=1355671154]
 visible = false
 layout_mode = 2
 text = "TONEMAPPER_INFO"
 
-[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/SettingsUI"]
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/SettingsUI" unique_id=474138435]
 layout_mode = 2
 
-[node name="SoundsLabel" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="SoundsLabel" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1565733239]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
 theme_override_font_sizes/font_size = 32
@@ -162,23 +162,23 @@ text = "SOUNDS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" type="HBoxContainer" parent="ScrollContainer/SettingsUI"]
+[node name="Music" type="HBoxContainer" parent="ScrollContainer/SettingsUI" unique_id=1204235705]
 custom_minimum_size = Vector2(768, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/Music"]
+[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/Music" unique_id=1972509575]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 text = "MUSIC_VOLUME"
 
-[node name="MusicVolume" type="HSlider" parent="ScrollContainer/SettingsUI/Music"]
+[node name="MusicVolume" type="HSlider" parent="ScrollContainer/SettingsUI/Music" unique_id=1919382625]
 custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
 max_value = 1.0
 step = 0.1
 value = 1.0
 
-[node name="KeybindingLabel" type="Label" parent="ScrollContainer/SettingsUI"]
+[node name="KeybindingLabel" type="Label" parent="ScrollContainer/SettingsUI" unique_id=150226326]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
 theme_override_font_sizes/font_size = 32
@@ -186,69 +186,69 @@ text = "KEYBINDING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer/SettingsUI"]
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/SettingsUI" unique_id=2071657998]
 custom_minimum_size = Vector2(768, 0)
 layout_mode = 2
 columns = 2
 script = ExtResource("5_mjqtt")
 
-[node name="CLLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CLLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=26561991]
 visible = false
 layout_mode = 2
 text = "CAMERA_LOOK"
 
-[node name="CLButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CLButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=636761574]
 visible = false
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="CLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1089198565]
 layout_mode = 2
 text = "CLICK"
 
-[node name="CButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=365686545]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="CRLLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CRLLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1239308036]
 custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
 text = "CAMERA_ROTATE_LEFT"
 
-[node name="CRLButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CRLButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=966789356]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="CRRLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CRRLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1463491591]
 custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
 text = "CAMERA_ROTATE_RIGHT"
 
-[node name="CRRButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="CRRButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1540728860]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="TVMLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="TVMLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=697790106]
 layout_mode = 2
 text = "TOGGLE_VIEW_MODE"
 
-[node name="TVMButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="TVMButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1329364967]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="ILabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="ILabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=1248218655]
 layout_mode = 2
 text = "INVENTORY"
 
-[node name="IButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="IButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=744862634]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="PMLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="PMLabel" type="Label" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=441324864]
 layout_mode = 2
 text = "PHOTOMODE"
 
-[node name="PMButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer"]
+[node name="PMButton" type="Button" parent="ScrollContainer/SettingsUI/GridContainer" unique_id=2014240853]
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

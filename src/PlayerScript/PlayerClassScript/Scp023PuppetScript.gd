@@ -11,7 +11,7 @@ var eye_glow_strength: float = 0.25
 @onready var timer: Timer = $Timer
 
 func on_spawned() -> void:
-	if Settings.setting_res.zen_mode:
+	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
 		glow_enabled = false
 	if glow_enabled:
 		timer.wait_time = rng.randf_range(224, 256)
@@ -41,7 +41,7 @@ func set_state(anim_name: String) -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_4")
+	get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_SCP_023")
 
 func special_action():
 	if glow_enabled:
@@ -53,4 +53,4 @@ func special_action():
 				Settings.setting_res.scp_study_progress_all["SCP-023"] = true
 				Settings.save_resource(Settings.setting_res)
 		if get_tree().root.get_node("Game/FoundationTask").has_task("task_023_emergency"):
-			get_tree().root.get_node("Game/FoundationTask").get_tree().root.get_node("Game/FoundationTask").trigger_event(0)
+			get_tree().root.get_node("Game/FoundationTask").trigger_event(0)

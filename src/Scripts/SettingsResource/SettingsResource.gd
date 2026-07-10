@@ -19,12 +19,6 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 @export var glow: bool = true
 ## Reflection probe setting
 @export var reflection_probe: bool = true
-## Current enemy spawn value
-@export var ci_spawn: int = 0
-## Hard mode
-@export var time_limited: bool = false
-## Zen mode
-@export var zen_mode: bool = false
 ## Music volume
 @export var music_volume: float = 1.0
 ## Keybinds
@@ -47,8 +41,6 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 @export var lighting: Lighting = Lighting.LIGHTMAP
 ## Rendering
 @export var renderer: Renderer = Renderer.OPENGL
-## Casual mode progress
-#@export var casual_game_progress: PackedStringArray = []
 ## SCP study progress
 @export var scp_study_progress_all: Dictionary[String, bool] = {
 	"SCP-005": false,
@@ -80,11 +72,5 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"SCP-914": false,
 	"SCP-938": false,
 }
-
-@export var scp_study_progress_christmas: Dictionary[String, bool] = {
-	"SCP-649": false,
-}
-
-#@export var scp_study_progress_halloween: Dictionary[String, bool] = {
-	#
-#}
+## Free roam mode unlocked
+@export var free_mode_unlocked: bool = false

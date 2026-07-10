@@ -39,7 +39,7 @@ func attack():
 		current_target = get_node(get_parent().get_parent().follow_target)
 		if current_target != null:
 			set_state("939_Attack" + str(rng.randi_range(1, 3)))
-			current_target.health_manage(-100.0)
+			current_target.health_manage(-100.0, 0, "GAME_OVER_SCP_939")
 			heat_targets.erase(current_target)
 			current_target = null
 			if heat_targets.size() > 0:

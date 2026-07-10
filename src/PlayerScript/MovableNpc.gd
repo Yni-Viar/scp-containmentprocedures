@@ -40,6 +40,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER, AI_WANDER}
 @export var current_health: Array[float] = []
 @export var movement_freeze: bool = false
 @export var money: Dictionary[String, int] = {}
+@export var immortal: bool = false
 
 @export var wandering_system: WanderingSystem = WanderingSystem.NONE:
 	set(val):
@@ -159,8 +160,8 @@ func _physics_process(delta: float) -> void:
 			puppet_mesh.state = puppet_mesh.States.IDLE
 		if !is_on_floor():
 			velocity += get_gravity() * delta
-		if global_position.y < -1024.0:
-			health_manage(-16777216, 0)
+		if global_position.y < -2048.0:
+			health_manage(-16777216, 0, "ERROR!!! SIMULATION BROKEN.")
 		move_and_slide()
 		return
 	# Follow the target, if target is not empty.
@@ -249,7 +250,9 @@ func set_target_position(target_position: Vector3) -> void:
 		#get_tree().root.get_node("Game/PlayerUI").speak(dialogues[current_dialogue][0], dialogues[current_dialogue][1], get_path())
 
 ## Health management (health type: 0 is generic health)
-func health_manage(health_to_add: float, health_type: int = 0):
+func health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = ""):
+	if immortal:
+		return
 	if health_type >= current_health.size() || health_type >= health.size():
 		print("Invalid parameter - wrong health type")
 	elif health_type == -1 && puppet_class.fraction == 0:
@@ -273,6 +276,7 @@ func health_manage(health_to_add: float, health_type: int = 0):
 			ragdoll.global_position = global_position
 			get_parent().add_child(ragdoll)
 		# Remove one live
+		get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE" if deplete_reason.is_empty() else deplete_reason)
 		queue_free()
 
 func _call_function(node_path: String, method_caller: String, amount: Array):

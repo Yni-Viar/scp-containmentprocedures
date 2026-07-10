@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ca6ofg6genp02"]
+[gd_scene format=4 uid="uid://ca6ofg6genp02"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_38frd"]
 [ext_resource type="Texture2D" uid="uid://dysd1xalelm1y" path="res://Assets/OriginalModels/Scp2306/Scp2306_scp2306_hold_Albedo.png" id="1_k0ms1"]
@@ -108,25 +108,26 @@ shadow_mesh = SubResource("ArrayMesh_brkp0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_38frd"]
 size = Vector3(0.07659912, 0.035339355, 0.31347656)
 
-[node name="Scp2306" type="RigidBody3D" groups=["ImportantItem", "Item"]]
+[node name="Scp2306" type="RigidBody3D" unique_id=848696338 groups=["ImportantItem", "Item"]]
 collision_layer = 8
+freeze = true
 continuous_cd = true
 script = ExtResource("1_38frd")
 item_id = 24
 
-[node name="Mesh" type="Node3D" parent="."]
+[node name="Mesh" type="Node3D" parent="." unique_id=1491569597]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="Cube_002" type="MeshInstance3D" parent="Mesh"]
+[node name="Cube_002" type="MeshInstance3D" parent="Mesh" unique_id=1705725206]
 transform = Transform3D(0.683414, 0, -0.7300311, 0, 1, 0, 0.7300311, 0, 0.683414, 0, 0, 0)
 mesh = SubResource("ArrayMesh_q8mnw")
 skeleton = NodePath("")
 
-[node name="Cube" type="MeshInstance3D" parent="Mesh"]
+[node name="Cube" type="MeshInstance3D" parent="Mesh" unique_id=1941460128]
 transform = Transform3D(0.3345722, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064446926, 0, 0.0022486895)
 mesh = SubResource("ArrayMesh_ow0xf")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1848325885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1552734e-05, 3.0517578e-05, 0.010253906)
 shape = SubResource("BoxShape3D_38frd")

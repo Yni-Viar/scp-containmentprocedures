@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		if body_to_process != null:
 			if body_to_process is MovableNpc:
 				if int(timer) % 8 == 0:
-					body_to_process.health_manage(-10.0)
+					body_to_process.health_manage(-10.0, 0, "GAME_OVER_SCP_522")
 		elif timer > 10.0 || body_to_process == null:
 			finished.emit(body_inside)
 			state = Scp522State.DORMANT

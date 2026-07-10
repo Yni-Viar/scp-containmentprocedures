@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b6g45ixoaqyeo"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b6g45ixoaqyeo"]
 
 [ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_huh2a"]
 [ext_resource type="Texture2D" uid="uid://k5tgbwhev5ao" path="res://InventorySystem/Items/Res/scp5270.png" id="2_huh2a"]

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bdiaj7vkautln"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bdiaj7vkautln"]
 
 [ext_resource type="Shader" uid="uid://d24wera2yb2tv" path="res://Shaders/Tint3DShader/tint.gdshader" id="1_vd5eg"]
 

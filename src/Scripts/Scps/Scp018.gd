@@ -29,8 +29,8 @@ func _on_body_entered(body: Node) -> void:
 	if activated:
 		if coefficient < 16:
 			coefficient *= 2
-		if coefficient > 4 && !Settings.setting_res.zen_mode:
-			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_5")
+		if coefficient > 4 && get_tree().root.get_node_or_null("Game/StoryModeNode") != null:
+			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_SCP_018_BREACH")
 		apply_impulse(vel * coefficient)
 		vel = global_position.direction_to(global_transform.basis.z * 2)
 
@@ -38,4 +38,4 @@ func _on_body_entered(body: Node) -> void:
 func _on_damage_trigger_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if coefficient >= 8:
-			body.health_manage(-5 * coefficient)
+			body.health_manage(-5 * coefficient, 0, "GAME_OVER_SCP_018")

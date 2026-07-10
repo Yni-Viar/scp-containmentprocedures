@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bbfc62gsa4434"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bbfc62gsa4434"]
 
 [ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="1_vkadg"]
 [ext_resource type="Texture2D" uid="uid://crhwe1mbyg3nn" path="res://InventorySystem/Items/Res/scp983.png" id="3_wy5yc"]
@@ -10,6 +10,8 @@ name = "SCP-983"
 texture_tiled = ExtResource("3_wy5yc")
 pickable_path = "res://InventorySystem/Items/ItemScp983.tscn"
 size = Vector2i(1, 2)
+action_node_path = "InGameCommands"
+action_method_name = "scp_983"
 upgrade_rough = Array[int]([3, 4])
 upgrade_coarse = Array[int]([2, 3])
 upgrade_one_to_one = Array[int]([2])

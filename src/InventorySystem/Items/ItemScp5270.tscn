@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://be1owg8dy8vfa"]
+[gd_scene format=4 uid="uid://be1owg8dy8vfa"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_ltlwj"]
 [ext_resource type="Texture2D" uid="uid://ilybdotleaof" path="res://Assets/ExternalModels/SCP/Scp5270_f/textures/body_baseColor.png" id="1_nwwno"]
@@ -109,24 +109,25 @@ shadow_mesh = SubResource("ArrayMesh_igury")
 [sub_resource type="BoxShape3D" id="BoxShape3D_r4gjs"]
 size = Vector3(0.5894165, 0.108306885, 0.34475708)
 
-[node name="ItemScp5270" type="RigidBody3D" groups=["ImportantItem", "Item"]]
+[node name="ItemScp5270" type="RigidBody3D" unique_id=397323749 groups=["ImportantItem", "Item"]]
 collision_layer = 8
+freeze = true
 continuous_cd = true
 script = ExtResource("1_ltlwj")
 item_id = 23
 
-[node name="Mesh" type="Node3D" parent="."]
+[node name="Mesh" type="Node3D" parent="." unique_id=794267507]
 transform = Transform3D(0.25, 0, 0, 0, -0.25, -2.1855694e-08, 0, 2.1855694e-08, -0.25, 0, 0, 0)
 
-[node name="Screen_Low_glass_0" type="MeshInstance3D" parent="Mesh"]
+[node name="Screen_Low_glass_0" type="MeshInstance3D" parent="Mesh" unique_id=820086839]
 visible = false
 mesh = SubResource("ArrayMesh_8nyef")
 skeleton = NodePath("")
 
-[node name="Screen_Low_body_0" type="MeshInstance3D" parent="Mesh"]
+[node name="Screen_Low_body_0" type="MeshInstance3D" parent="Mesh" unique_id=1474730298]
 mesh = SubResource("ArrayMesh_x75cv")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1869993620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013122559, 0.0018157959, 0.0031280518)
 shape = SubResource("BoxShape3D_r4gjs")

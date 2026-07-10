@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d0o1eeb1xokss"]
+[gd_scene format=4 uid="uid://d0o1eeb1xokss"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_0wg1b"]
 [ext_resource type="Texture2D" uid="uid://birhuj8vyp0pn" path="res://Assets/ExternalModels/SCP/Scp983/1001_Base_Color.png" id="1_cydjt"]
@@ -338,66 +338,66 @@ shadow_mesh = SubResource("ArrayMesh_pf3qx")
 height = 0.674034
 radius = 0.247559
 
-[node name="scp983" type="RigidBody3D" groups=["Item"]]
+[node name="scp983" type="RigidBody3D" unique_id=1300469282 groups=["Item"]]
 collision_layer = 8
 freeze = true
 script = ExtResource("1_0wg1b")
 item_id = 2
 
-[node name="scp983_body_low" type="MeshInstance3D" parent="."]
+[node name="scp983_body_low" type="MeshInstance3D" parent="." unique_id=338174954]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_mlktt")
 skeleton = NodePath("")
 
-[node name="scp983_teeh_low" type="MeshInstance3D" parent="."]
+[node name="scp983_teeh_low" type="MeshInstance3D" parent="." unique_id=1541040313]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_pswr1")
 skeleton = NodePath("")
 
-[node name="scp983_eyes_low" type="MeshInstance3D" parent="."]
+[node name="scp983_eyes_low" type="MeshInstance3D" parent="." unique_id=2020595619]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_uwmka")
 skeleton = NodePath("")
 
-[node name="scp983_buttons_low" type="MeshInstance3D" parent="."]
+[node name="scp983_buttons_low" type="MeshInstance3D" parent="." unique_id=1455638239]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_moil4")
 skeleton = NodePath("")
 
-[node name="scp983_hoop_low" type="MeshInstance3D" parent="."]
+[node name="scp983_hoop_low" type="MeshInstance3D" parent="." unique_id=1011788948]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_7w55j")
 skeleton = NodePath("")
 
-[node name="scp983_bell_low" type="MeshInstance3D" parent="."]
+[node name="scp983_bell_low" type="MeshInstance3D" parent="." unique_id=185520152]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_00ihp")
 skeleton = NodePath("")
 
-[node name="scp983_handle_low" type="MeshInstance3D" parent="."]
+[node name="scp983_handle_low" type="MeshInstance3D" parent="." unique_id=1219458209]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_js17n")
 skeleton = NodePath("")
 
-[node name="scp983_clapper_low" type="MeshInstance3D" parent="."]
+[node name="scp983_clapper_low" type="MeshInstance3D" parent="." unique_id=2121660435]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_y8rhb")
 skeleton = NodePath("")
 
-[node name="scp983_hammer_low" type="MeshInstance3D" parent="."]
+[node name="scp983_hammer_low" type="MeshInstance3D" parent="." unique_id=1910082100]
 transform = Transform3D(0.15039, 0, 0, 0, -5.37836e-08, -0.15039, 0, 0.15039, -5.37836e-08, 0, 0.131317, -0.024303)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_87n20")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=794002884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.064457, 0.0126329)
 shape = SubResource("CylinderShape3D_iou1f")

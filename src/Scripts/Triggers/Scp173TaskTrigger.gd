@@ -6,6 +6,9 @@ extends Area3D
 var counter_task: float = 0.0
 var people_count: int = 0
 
+func _ready() -> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	if people_count > 0:
 		counter_task += delta * people_count

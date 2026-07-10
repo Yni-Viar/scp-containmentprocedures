@@ -2,6 +2,41 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.0.0 (Megarework update)
+### Gameplay rework / Story mode
+- [x] Add support for timed tasks
+- [ ] Add whole story
+- [x] Remove hard mode
+- [ ] Merge previous Casual mode and Zen mode under Free roam mode.
+- [x] Remove CI and MTF from normal gameplay, re-introduce MTF Agent.
+- [x] Remove wave subsystem (until proper re-implementation)
+- [x] Day cycle and AAA-quality clouds
+
+### New Storage Zone
+- [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
+- [x] Move SCP-109, SCP-686, SCP-1223 and SCP-5270 into Storage Zone
+- [ ] Add rooms for Story mode into that zone.
+
+### Rework Personnel Zone
+- [ ] Make it more comforatble for inhabitants.
+
+### New SCPs
+- [ ] SCP-1██ (exclusively for Story mode, hidden because of spoilers)
+- [x] SCP-983
+
+### Other changes
+- [x] Removed SCP-446 in Lite version and disabled in Full version.
+- [x] Removed rain in all seasons due to new sky performance impact.
+- [x] Sound rework
+- [x] Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
+  - [x] Remove Android support for **Godot 4.7.0 only** due to https://github.com/godotengine/godot/issues/120439
+  - [x] Temporarily disable RD renderers support due to https://github.com/godotengine/godot/issues/120534
+  - [x] Revert to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
+
+## v9.1.3 (2026.06.28, last version, that support Windows 8.1 unofficially)
+
+- \[PC only\] Fix cloud color to be more realistic
+
 ## v9.1.2 (2026.06.24)
 
 - Fix documentation

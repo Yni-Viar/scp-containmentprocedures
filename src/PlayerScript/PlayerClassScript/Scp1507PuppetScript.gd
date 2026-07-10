@@ -57,7 +57,7 @@ func special_action():
 func attack(collider_path: String):
 	var test = get_node(collider_path)
 	if test != null:
-		test.health_manage(-5.0)
+		test.health_manage(-5.0, 0, "GAME_OVER_SCP_1507")
 
 func _on_attack_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:

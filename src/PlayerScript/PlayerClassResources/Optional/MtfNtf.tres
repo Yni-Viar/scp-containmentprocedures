@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://kt10qm1d2rht"]
+
+[ext_resource type="PackedScene" uid="uid://dse10q2d85240" path="res://PlayerScript/PlayerClassPrefab/Optional/MTF.tscn" id="1_fq7lc"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="1_qg7uu"]
+[ext_resource type="PackedScene" uid="uid://dtphgs8i61fd5" path="res://PlayerScript/PlayerClassRagdoll/MTF.tscn" id="2_7qjna"]
+
+[resource]
+script = ExtResource("1_qg7uu")
+puppet_class_name = "MTF_NTF"
+prefab = ExtResource("1_fq7lc")
+spawn_point_group = "MtfSpawn"
+initial_amount = 4
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg")
+}
+apply_height_bugfix = false
+enable_wander = false
+health = Array[float]([100.0, 50.0, 50.0, 50.0])
+team = 1
+spawn_on_start = false
+ragdoll_prefab = ExtResource("2_7qjna")
+disable_move_on_slide = true
+start_money = Dictionary[String, int]({
+"DOLLARS": 2000
+})

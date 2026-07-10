@@ -13,9 +13,11 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ## Requirements to play
 
 - 🐧Linux distribution from 2024 and newer
-- 🪟Windows 8.1 (partially), 10 (all updates) and 11 (all updates)
+- 🪟10 (all updates) and 11 (all updates)
+   > Windows 8.1 is not supported since v10.0 (natively)
    > Windows 7 is not supported since v5.0 (natively)
-- 🤖Android 7.0 and newer
+   > You can still access Web version for Windows 7 - 8.1 by using Supermium.
+- 🤖~~Android 7.0 and newer~~ Android is temporarily not supported, because of https://github.com/godotengine/godot/issues/120439
    > Android 5.0-6.0 is not supported since v5.0
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
@@ -25,42 +27,45 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
    - Mouse/touch support
 
 ### Included SCPs
-
+#### Casual mode
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
-|🟢SCP-005|❓, since 6.0.0/7.0.4|✅, since 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
-|🟡SCP-018|✅, since 7.0.0|✅, since 7.0.0|✅ Full|
-|🟡SCP-023|✅, since 3.0.0|✅, since 5.7.0|✅ Full|
-|🟢SCP-067|✅, since 5.2.0|✅, since 5.7.0|✅ Full|
-|🟡SCP-080|✅, since 9.0.0|❌|✅ Full|
-|🟡SCP-109\*|✅, since 4.3.0|✅, since 5.7.0|✅ Full|
-|🟢SCP-131|✅, since 8.0.0/9.0.0|❓, since 8.0.0|❓ Partial, supports custom models|
-|🟡SCP-162|✅, since 1.0.0|✅, since 5.8.0|✅ Full|
-|🟡SCP-173|✅, since 1.0.0|❓, since 5.7.0|✅ Full, supports custom models|
-|🟡SCP-178|✅, since 5.2.0|❌|✅ Full|
-|🟡SCP-249|✅, since 6.0.0|✅, since 6.0.0|✅ Full|
-|🟢SCP-261|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|🟡SCP-266|✅, since 1.0.0|❌, 5.7.x only, disabled in 5.8.0|✅ Full|
-|🟡SCP-347|✅, since 1.0.0|✅, 5.7.x-5.8.x only, since 9.0.0|❓ Partial|
-|🟠SCP-417\*|❓, since 8.0.0|❓, since 8.0.0|❓ Cameo / Only available via SCP-261|
-|🟢SCP-446\*|✅, since 5.3.0|⛔, since 5.7.0|❌ Cameo / simple ragdoll|
-|🟢SCP-458\*|✅, since 5.1.0|✅, since 5.7.0|✅ Full|
-|🟢SCP-522|✅, since 5.8.0|✅, since 5.8.0|✅ Full|
-|🟢SCP-649|⛄, 5.5.x-5.7.x, since 9.0.0|⛄, 5.7.x only, since 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
-|🟡SCP-650|✅, since 1.0.0|✅, since 5.7.0|✅ Full \(only if breached\), supports custom models|
-|🟢SCP-686|✅, since 5.1.0|✅, since 5.7.0|❓ Partial \(hidden NSFW parts\)|
-|🟢SCP-791|✅, since 6.0.0|❌|📃 Task only|
-|🟡SCP-812|✅, since 1.0.0|✅, since 5.7.0|✅ Full|
-|🟢SCP-914|✅, since 2.0.0|❌, 5.7.x only, removed in 5.8.0|❓ Process only items|
-|🔴SCP-938|✅, since 5.0.0|❌|✅ Full \(since 6.0.0\)|
-|🔴SCP-939|✅, since 5.5.0|✅, since 5.8.0|✅ Full|
-|🟢SCP-983\*|✅, since 1.0.0|❌, 5.7.x-5.8.x only, disabled in 6.0.0|❌ Cameo / simple item|
-|🟢SCP-1223\*|✅, since 6.1.0|✅, since 6.1.0|✅ Full|
-|🟡SCP-1507|✅, since 9.0.0|✅, since 9.0.0|✅ Full, supports custom models|
-|🟢SCP-2028|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|🟢SCP-2306|✅, since 8.1.0|✅, since 8.1.0|📃 Task only/repairs SCP-5270|
-|🟢SCP-2471\*|✅, since 8.0.0|✅, since 8.0.0|✅ Full|
-|🟢SCP-5270|✅, since 8.1.0|✅, since 8.1.0|❓ Implemented only one event out of three|
+|🟢SCP-005|❓, > 6.0.0/7.0.4|✅, > 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
+|🟡SCP-018|✅, > 7.0.0|✅, > 7.0.0|✅ Full|
+|🟡SCP-023|✅, > 3.0.0|✅, > 5.7.0|✅ Full|
+|🟢SCP-067|✅, > 5.2.0|✅, > 5.7.0|✅ Full|
+|🟡SCP-080|✅, > 9.0.0|❌|✅ Full|
+|🟡SCP-109\*|✅, > 4.3.0|✅, > 5.7.0|✅ Full|
+|🟢SCP-131|✅, > 8.0.0/9.0.0|❓, > 8.0.0|❓ Partial, supports custom models|
+|🟡SCP-162|✅, > 1.0.0|✅, > 5.8.0|✅ Full|
+|🟡SCP-173|✅, > 1.0.0|❓, > 5.7.0|✅ Full, supports custom models|
+|🟡SCP-178|✅, > 5.2.0|❌|✅ Full|
+|🟢SCP-181\*|☑️, > 10.0.0|☑️ > 10.0.0|❌ Story mode only character|
+|🟡SCP-249|✅, > 6.0.0|✅, > 6.0.0|✅ Full|
+|🟢SCP-261|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
+|🟡SCP-266|✅, > 1.0.0|❌, 5.7.x only|✅ Full|
+|🟡SCP-347|✅, > 1.0.0|✅, 5.7.x-5.8.x only, > 9.0.0|❓ Partial|
+|🟠SCP-417\*|❓, > 8.0.0|❓, > 8.0.0|❓ Cameo / Only available via SCP-261|
+|🟢SCP-458\*|✅, > 5.1.0|✅, > 5.7.0|✅ Full|
+|🟢SCP-522|✅, > 5.8.0|✅, > 5.8.0|✅ Full|
+|🟢SCP-649|⛄, 5.5.x-5.7.x, > 9.0.0|⛄, 5.7.x only, > 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
+|🟡SCP-650|✅, > 1.0.0|✅, > 5.7.0|✅ Full \(only if breached\), supports custom models|
+|🟢SCP-686|✅, > 5.1.0|✅, > 5.7.0|❓ Partial \(hidden NSFW parts\)|
+|🟢SCP-791|✅, > 6.0.0|❌|📃 Task only|
+|🟡SCP-812|✅, > 1.0.0|✅, > 5.7.0|✅ Full|
+|🟢SCP-914|✅, > 2.0.0|❌, 5.7.x only|❓ Process only items|
+|🔴SCP-938|✅, > 5.0.0|❌|✅ Full \(> 6.0.0\)|
+|🔴SCP-939|✅, > 5.5.0|✅, > 5.8.0|✅ Full|
+|🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only, disabled in 6.0.0|✅ Full|
+|🟢SCP-1223\*|✅, > 6.1.0|✅, > 6.1.0|✅ Full|
+|🟡SCP-1507|✅, > 9.0.0|✅, > 9.0.0|✅ Full, supports custom models|
+|🟢SCP-2028|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
+|🟢SCP-2306|✅, > 8.1.0|✅, > 8.1.0|📃 Task only/repairs SCP-5270|
+|🟢SCP-2471\*|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
+|🟢SCP-5270|✅, > 8.1.0|✅, > 8.1.0|❓ Implemented only one event out of three|
+
+##### Removed SCPs
+|🟢SCP-446\*|❎, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
 
 #### Object class
 🟢 - Safe
@@ -71,10 +76,14 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 <!-- 🔵 - Esoteric -->
 
 #### Availability
-✅ - Available.
+✅ - Available in all modes.
+☑️ - Available only in Story mode
+✔️ - Available only in Casual mode
 🫙 - Testing needed.
 ❓ - Partial availability.
+❎ - Available in files, unavailable in gameplay.
 ❌ - Unavailable.
+
 <!-- 🎃 - Spawns only in October -->
 ⛄ - Spawns only in December.
 ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded.
@@ -90,10 +99,10 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 \* means that no achievement is given for this SCP
 > Achievements are also not given, if this SCP does not exist in this build (e.g. SCP-791, which is missing in Lite version) or season (e.g. SCP-649 is available only in December, so is achievement for it).
 
-## Note to Google Android users:
+<!--## Note to Google Android users:
 Please, check [tutorial to install apps without Google verification (effective since Sep 2026)](https://android-developers.googleblog.com/2026/03/android-developer-verification.html), since I don't plan to give all data and pay a fee to Google.
 
-We **do not** distribute dangerous things in this app!
+We **do not** distribute dangerous things in this app!-->
 
 ## Development
 

@@ -18,3 +18,9 @@ func scp_2306():
 		get_tree().root.get_node("Game/FoundationTask").do_task("task_5270_2306")
 	get_parent().get_node("SoundStreamPlayer").stream = load("res://Sounds/Item/Scp2306/Original/Scp2306use.ogg")
 	get_parent().get_node("SoundStreamPlayer").play()
+
+func scp_983():
+	if Time.get_datetime_dict_from_system()["month"] == 12 && Time.get_datetime_dict_from_system()["day"] == 29:
+		get_parent().protagonist.health_manage(-127, 0, "GAME_OVER_SCP_983")
+	else :
+		get_parent().advanced_dialogue(["SCP983_NOT_BIRTHDAY"])

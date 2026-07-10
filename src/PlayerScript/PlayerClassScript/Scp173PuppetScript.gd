@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 				if collider.fraction == 0:
 					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
 					get_parent().get_parent().get_node("InteractSound").play()
-					collider.health_manage(-16777216)
+					collider.health_manage(-16777216, 0, "GAME_OVER_SCP_173")
 					active_puppets.erase(current_human)
 					current_human = null
 					movement_reset = false

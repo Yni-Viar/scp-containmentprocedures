@@ -9,8 +9,8 @@ var current_state: Scp938State = Scp938State.DORMANT:
 	set(val):
 		current_state = val
 		if current_state != Scp938State.DORMANT:
-			if !Settings.setting_res.zen_mode:
-				get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_2")
+			if get_tree().root.get_node_or_null("Game/StoryModeNode") != null:
+				get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_SCP_938")
 			teleport_is_ready = true
 var timer: float = 24.0
 var teleport_is_ready: bool = false
@@ -52,7 +52,7 @@ func _on_attack_area_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.puppet_class.puppet_class_name != "SCP-938" && !body.platform_moving:
 			body.get_node("StatusEffects").apply_status_effect("Electrocuted", 1.0, 1.0)
-			body.health_manage(-80)
+			body.health_manage(-80, 0, "GAME_OVER_SCP_938")
 			await get_tree().create_timer(2.0).timeout
 			if body != null:
 				favourite_target = body

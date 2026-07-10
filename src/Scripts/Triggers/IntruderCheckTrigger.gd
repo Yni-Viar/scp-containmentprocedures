@@ -11,7 +11,7 @@ func _on_body_entered(body: Node3D) -> void:
 			body.get_node("PlayerModel").get_child(0).infrared_visibility = true
 		if body.fraction == 0 && body.puppet_class.team == 3 && detect_CI:
 			if !get_tree().root.get_node("Game/FoundationTask").has_task("task_ci"):
-				get_tree().root.get_node("Game/FoundationTask").trigger_event(2, load("res://Scripts/TaskSystem/Tasks/CIEmergencyTask.tres"))
+				get_tree().root.get_node("Game/FoundationTask").trigger_event(3, load("res://Scripts/TaskSystem/Tasks/CIEmergencyTask.tres"))
 				get_tree().root.get_node("Game/UI/HBoxContainer/CallMtfButton").show()
 
 

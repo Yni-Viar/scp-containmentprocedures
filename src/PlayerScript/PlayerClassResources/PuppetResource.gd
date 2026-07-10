@@ -55,3 +55,5 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var start_money: Dictionary[String, int]
 ## Enables AI (if it is available and enabled)
 @export var enable_advanced_ai: bool = false
+## Is character immortal or not (currently applies on SCP-181 and SCP-080
+@export var immortal: bool = false

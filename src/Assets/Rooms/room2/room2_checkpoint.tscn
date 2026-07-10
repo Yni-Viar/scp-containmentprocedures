@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://nhxrp1vckqu8"]
+[gd_scene format=4 uid="uid://nhxrp1vckqu8"]
 
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_54lxd"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_wthl7"]
@@ -77,14 +77,14 @@ depth = 0.01
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ffrkr"]
 data = PackedVector3Array(10.0405, -2.1155, 10.226999, 10.023, 5.1301, -10.234099, 10.0405, 5.1154, 10.226999, 10.0405, -2.1155, 10.226999, 10.023, -2.1302, -10.234099, 10.023, 5.1301, -10.234099, 10.023, -2.1302, -10.234099, 4.0036, 5.1302, -10.2355995, 10.023, 5.1301, -10.234099, 10.023, -2.1302, -10.234099, 4.0036, -2.1302, -10.2355995, 4.0036, 5.1302, -10.2355995, -10.0480995, 5.1302, -10.2213, -3.9903998, -2.1302, -10.2219, -10.0480995, -2.1302, -10.2213, -10.0480995, 5.1302, -10.2213, -3.9903998, 5.1302, -10.2219, -3.9903998, -2.1302, -10.2219, -10.0503, 5.1299996, 10.258599, -10.0480995, -2.1302, -10.2213, -10.0491, -2.1288, 10.258599, -10.0503, 5.1299996, 10.258599, -10.0480995, 5.1302, -10.2213, -10.0480995, -2.1302, -10.2213, 4.0036, 5.1302, -10.2355995, 10.0405, 5.1154, 10.226999, 10.023, 5.1302, -10.234099, -3.9903998, 5.1302, -10.2219, 10.0405, 5.1154, 10.226999, 4.0036, 5.1302, -10.2355995, 10.0405, 5.1154, 10.226999, -3.9903998, 5.1302, -10.2219, -3.9907, 5.1301, 10.252999, 10.0405, 5.1154, 10.226999, -3.9907, 5.1301, 10.252999, 4.0208, 5.1154, 10.2476, -3.9907, 5.1301, 10.252999, -3.9903998, 5.1302, -10.2219, -10.0480995, 5.1302, -10.2213, -3.9907, 5.1301, 10.252999, -10.0480995, 5.1302, -10.2213, -10.0503, 5.1301, 10.258599, 10.0405, -2.1153998, 10.226999, 4.0034, -2.1302, -10.2355995, 10.023, -2.1302, -10.234099, 10.0405, -2.1153998, 10.226999, -3.9903998, -2.1302, -10.2219, 4.0034, -2.1302, -10.2355995, -3.9903998, -2.1302, -10.2219, 10.0405, -2.1153998, 10.226999, -3.9894998, -2.1288, 10.252999, -3.9894998, -2.1288, 10.252999, 10.0405, -2.1153998, 10.226999, 4.0209, -2.1153998, 10.2476, -3.9903998, -2.1302, -10.2219, -3.9894998, -2.1288, 10.252999, -10.049, -2.1288, 10.258599, -3.9903998, -2.1302, -10.2219, -10.049, -2.1288, 10.258599, -10.0480995, -2.1302, -10.2213)
 
-[node name="room2_b" type="StaticBody3D"]
+[node name="room2_b" type="StaticBody3D" unique_id=1546555392]
 script = ExtResource("1_wthl7")
 mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube2")])
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1071453987]
 navigation_mesh = SubResource("NavigationMesh_shvc4")
 
-[node name="Cube2" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="Cube2" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1225955277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_invu1")
@@ -92,30 +92,30 @@ skeleton = NodePath("")
 script = ExtResource("5_4mbmi")
 scp_649_floor_index = 2
 
-[node name="Props" type="Node3D" parent="NavigationRegion3D"]
+[node name="Props" type="Node3D" parent="NavigationRegion3D" unique_id=461445482]
 
-[node name="Table" parent="NavigationRegion3D/Props" instance=ExtResource("1_54lxd")]
+[node name="Table" parent="NavigationRegion3D/Props" unique_id=1441019060 instance=ExtResource("1_54lxd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.375951, -0.238879, 3.21097)
 
-[node name="Table2" parent="NavigationRegion3D/Props" instance=ExtResource("1_54lxd")]
+[node name="Table2" parent="NavigationRegion3D/Props" unique_id=1839900756 instance=ExtResource("1_54lxd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.394005, -0.238879, 3.21097)
 
-[node name="Light2" parent="NavigationRegion3D/Props" instance=ExtResource("13_ffrkr")]
+[node name="Light2" parent="NavigationRegion3D/Props" unique_id=859965682 instance=ExtResource("13_ffrkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6092596, 4.037821, -5.136506)
 
-[node name="Light3" parent="NavigationRegion3D/Props" instance=ExtResource("13_ffrkr")]
+[node name="Light3" parent="NavigationRegion3D/Props" unique_id=630583089 instance=ExtResource("13_ffrkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.595415, 4.037821, -5.136506)
 
-[node name="industrial_wall_lamp4" parent="NavigationRegion3D/Props" instance=ExtResource("7_nb454")]
+[node name="industrial_wall_lamp4" parent="NavigationRegion3D/Props" unique_id=469930600 instance=ExtResource("7_nb454")]
 transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 1.9106855e-15, -9.904739, 2.7805512, 8.354219)
 
-[node name="industrial_wall_lamp5" parent="NavigationRegion3D/Props" instance=ExtResource("7_nb454")]
+[node name="industrial_wall_lamp5" parent="NavigationRegion3D/Props" unique_id=812381397 instance=ExtResource("7_nb454")]
 transform = Transform3D(4.3711385e-08, -8.742278e-08, -1, 1, -4.371139e-08, 4.371139e-08, -4.3711392e-08, -1, 8.742278e-08, 9.843184, 2.7805512, 8.354219)
 
-[node name="DebugLights" type="Node3D" parent="."]
+[node name="DebugLights" type="Node3D" parent="." unique_id=163831316]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbe"]]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=650352785 groups=["ReflectionProbe"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0608902, 2.343, -0.0816641)
 blend_distance = 0.4
 max_distance = 64.0
@@ -123,7 +123,7 @@ size = Vector3(20.1237, 7.31363, 20.4)
 box_projection = true
 interior = true
 
-[node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=336301914 groups=["Lightmap"]]
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
@@ -131,19 +131,18 @@ interior = true
 texel_scale = 0.5
 light_data = ExtResource("5_invu1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=626132101]
 transform = Transform3D(3.01992e-07, 0, -4, 0, 4, 0, 4, 0, 3.01992e-07, 10.0068, 4.15162, 0.0379491)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_54lxd")
 
-[node name="Waypoints" type="MeshInstance3D" parent="."]
+[node name="Waypoints" type="MeshInstance3D" parent="." unique_id=836477830]
 transform = Transform3D(-3.2584137e-07, 0, 2, 0, 2, 0, -2, 0, -3.2584137e-07, -10.051636, 2.6874046, -3.528721)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_wthl7")
 script = ExtResource("16_ffrkr")
 waypoints_and_groups = Dictionary[String, String]({
 "SCP-005": "Scp005",
-"SCP-109": "RZ_Cafeteria",
 "SCP-1507": "Scp1507Spawn",
 "SCP-162": "cont1_162",
 "SCP-173": "Scp173Spawn",
@@ -153,33 +152,32 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-458": "RZ_Cafeteria",
 "SCP-522": "Scp522",
 "SCP-650": "Scp650Spawn",
-"SCP-686": "RZ_cont1_testroom",
 "SCP-914": "Scp914",
 "SCP-983": "Scp983Spawn"
 })
 delimiter_after = 2
 
-[node name="Seasonal" type="Node3D" parent="."]
+[node name="Seasonal" type="Node3D" parent="." unique_id=783267765]
 
-[node name="Halloween" type="Node3D" parent="Seasonal"]
+[node name="Halloween" type="Node3D" parent="Seasonal" unique_id=370384583]
 visible = false
 script = ExtResource("15_i5e20")
 current_season = 6
 
-[node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("16_h2w75")]
+[node name="Pumpkin" parent="Seasonal/Halloween" unique_id=1420553117 instance=ExtResource("16_h2w75")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 8.440223, 0.2292887, 1.6285892)
 
-[node name="Pumpkin2" parent="Seasonal/Halloween" instance=ExtResource("16_h2w75")]
+[node name="Pumpkin2" parent="Seasonal/Halloween" unique_id=2123365428 instance=ExtResource("16_h2w75")]
 transform = Transform3D(0.7071068, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071068, -8.673354, 0.2292887, 1.6285892)
 
-[node name="Christmas" type="Node3D" parent="Seasonal"]
+[node name="Christmas" type="Node3D" parent="Seasonal" unique_id=535487493]
 visible = false
 script = ExtResource("15_i5e20")
 current_season = 5
 
-[node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("17_h2w75")]
+[node name="ChristmasLights" parent="Seasonal/Christmas" unique_id=25939828 instance=ExtResource("17_h2w75")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.012556076, -0.6757479, -3.2576213)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=89678136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 shape = SubResource("ConcavePolygonShape3D_ffrkr")

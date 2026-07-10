@@ -34,5 +34,5 @@ func _on_raycast_update_npc(collider_path: String):
 func attack(collider_path: String):
 	var test = get_node(collider_path)
 	if test != null:
-		test.health_manage(-70.0)
+		test.health_manage(-70.0, 0, "GAME_OVER_CI")
 	await get_tree().create_timer(0.375).timeout

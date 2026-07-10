@@ -1,20 +1,34 @@
-[gd_resource type="Environment" load_steps=4 format=3 uid="uid://1c6vsgl4ua3u"]
+[gd_resource type="Environment" format=3 uid="uid://1c6vsgl4ua3u"]
 
-[ext_resource type="Shader" uid="uid://d3efw3m1l4qfj" path="res://Shaders/SkyShader/cloudy_sky.gdshader" id="1_4att5"]
+[ext_resource type="Shader" uid="uid://bbcjjuxh8lchk" path="res://Shaders/SkyShader/clayjohn/clouds_optimized.gdshader" id="1_316qu"]
+[ext_resource type="CompressedTexture3D" uid="uid://dbsltlt84u424" path="res://Shaders/SkyShader/clayjohn/perlworlnoise.png" id="2_316qu"]
+[ext_resource type="Texture2D" uid="uid://dfkye0uf4i6w1" path="res://Shaders/SkyShader/clayjohn/weather.bmp" id="3_3k1js"]
+[ext_resource type="CompressedTexture3D" uid="uid://ct38bmsjlanb0" path="res://Shaders/SkyShader/clayjohn/worlnoise.png" id="4_bws5b"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bu2in"]
-shader = ExtResource("1_4att5")
-shader_parameter/time_scale = 0.5
-shader_parameter/base_color = Color(0.73194915, 0.73384684, 0.8143077, 1)
-shader_parameter/slime_color = Color(0.5772558, 0.57860065, 0.68334687, 1)
-shader_parameter/highlight_color = Color(0.8231157, 0.8515925, 0.8828371, 1)
-shader_parameter/tendril_density = 4.0
-shader_parameter/tendril_thickness = 0.3
-shader_parameter/animation_speed = 1.0
-shader_parameter/slime_wetness = 0.7
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glv2v"]
+shader = ExtResource("1_316qu")
+shader_parameter/worlnoise = ExtResource("4_bws5b")
+shader_parameter/perlworlnoise = ExtResource("2_316qu")
+shader_parameter/weathermap = ExtResource("3_3k1js")
+shader_parameter/wind_direction = Vector2(1, 0)
+shader_parameter/wind_speed = 1.0
+shader_parameter/_density = 0.03100000077398
+shader_parameter/cloud_coverage = 0.12500000267762
+shader_parameter/_time_offset = 0.0
+shader_parameter/rayleigh = 2.0
+shader_parameter/rayleigh_color = Color(0.26, 0.41, 0.58, 1)
+shader_parameter/mie = 0.005
+shader_parameter/mie_eccentricity = 0.8
+shader_parameter/mie_color = Color(0.63, 0.77, 0.92, 1)
+shader_parameter/turbidity = 10.0
+shader_parameter/sun_disk_scale = 1.0
+shader_parameter/ground_color = Color(1, 1, 1, 1)
+shader_parameter/exposure = 0.1
+shader_parameter/sky_color = Color(0.31, 0.61, 0.89, 1)
 
 [sub_resource type="Sky" id="Sky_afsef"]
-sky_material = SubResource("ShaderMaterial_bu2in")
+sky_material = SubResource("ShaderMaterial_glv2v")
+radiance_size = 0
 
 [resource]
 background_mode = 2

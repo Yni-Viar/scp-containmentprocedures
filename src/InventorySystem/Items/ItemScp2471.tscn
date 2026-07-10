@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://oc54c554sken"]
+[gd_scene format=4 uid="uid://oc54c554sken"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_p7vhq"]
 [ext_resource type="Texture2D" uid="uid://bairb7yr6i5i" path="res://Assets/ExternalModels/AmbientCG_CC0/Cookie/3DCookie001_LQ-2K-PNG_Color.png" id="1_xi1g4"]
@@ -58,17 +58,18 @@ shadow_mesh = SubResource("ArrayMesh_ggqeq")
 height = 0.048065186
 radius = 0.083984375
 
-[node name="Cookie" type="RigidBody3D" groups=["Item"]]
+[node name="Cookie" type="RigidBody3D" unique_id=855012019 groups=["Item"]]
 collision_layer = 8
+freeze = true
 continuous_cd = true
 script = ExtResource("1_p7vhq")
 item_id = 22
 
-[node name="3DCookie001_LQ-2K-PNG" type="MeshInstance3D" parent="."]
+[node name="3DCookie001_LQ-2K-PNG" type="MeshInstance3D" parent="." unique_id=689971106]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_x0rws")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=446227103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.023605347, 0)
 shape = SubResource("CylinderShape3D_ceyvs")

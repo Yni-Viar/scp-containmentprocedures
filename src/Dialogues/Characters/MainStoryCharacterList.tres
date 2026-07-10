@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://cb7b6mhsl221o"]
+
+[ext_resource type="Script" uid="uid://42coc6buijm5" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_c800f"]
+[ext_resource type="Script" uid="uid://dr0x7hw4xr8r7" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_d4f4o"]
+[ext_resource type="Resource" uid="uid://deps0pm04fvof" path="res://Dialogues/Characters/PanJanusz.tres" id="2_irhsc"]
+
+[resource]
+script = ExtResource("2_d4f4o")
+characters = Array[ExtResource("1_c800f")]([ExtResource("2_irhsc")])
+metadata/_custom_type_script = "uid://bqqa8okdheslq"

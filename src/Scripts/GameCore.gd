@@ -3,22 +3,20 @@ class_name GameCore
 ## Game system.
 ## Made by Yni, licensed under MIT license.
 
+signal round_started
 
 @export var gamedata: GameData
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 ## Presets for game ##
 var map_seed: int = -1
-## Possibility to spawn Chaos Insurgency
-var ci_probability: int = -1
 ## Time limit enabled
 var time_limited: bool = true
+## Current hours (is set by Surface Zone)
+var hours: int = 8
+## Current minutes (is set by Surface Zone)
+var minutes: int = 0
 ## End presets for game ##
 
-## Enemy spawn timer
-var ci_timer: float = 20.0
-## Are Chaos Insurgency ready to spawn (automatically set after 15 seconds)
-var ci_ready: bool = false
-## MTF call cooldown
 var mtf_cooldown: float = 35.0:
 	set(val):
 		mtf_cooldown = val
@@ -37,14 +35,14 @@ var showable_res: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	RenderingServer.viewport_set_measure_render_time(get_tree().root.get_viewport_rid(), true)
-	ci_timer = rng.randf_range(30.0, 32.0)
+	
 	if OS.has_feature("Lite"):
 		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
-		var rooms: Array[MapGenZone] = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), load("res://MapGen/Lite/ResearchZoneLite.tres"), load("res://MapGen/Lite/PersonnelZoneLite.tres")]
+		var rooms: Array[MapGenZone] = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), load("res://MapGen/Lite/StorageZoneLite.tres"), load("res://MapGen/Lite/ResearchZoneLite.tres"), load("res://MapGen/Lite/PersonnelZoneLite.tres")]
 		$FacilityGenerator.rooms = rooms
 	else:
 		gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
-		var rooms: Array[MapGenZone] = [load("res://MapGen/Optional/MaintenanceZone.tres"), load("res://MapGen/Optional/ResearchZone.tres"), load("res://MapGen/Optional/PersonnelZone.tres")]
+		var rooms: Array[MapGenZone] = [load("res://MapGen/Optional/MaintenanceZone.tres"), load("res://MapGen/Optional/StorageZone.tres"), load("res://MapGen/Optional/ResearchZone.tres"), load("res://MapGen/Optional/PersonnelZone.tres")]
 		$FacilityGenerator.rooms = rooms
 	# Choose seed
 	$FacilityGenerator.rng = rng
@@ -60,8 +58,7 @@ func _ready() -> void:
 	$WorldEnvironment.environment.glow_enabled = Settings.setting_res.glow
 	# Enable SSAO in OpenGL only in Godot 4.6
 	if RenderingServer.get_current_rendering_method() == "forward_plus" || \
-	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
-	  Engine.get_version_info()["minor"] >= 6):
+	 RenderingServer.get_current_rendering_method() == "gl_compatibility":
 		$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
 	$WorldEnvironment.environment.tonemap_mode = Settings.setting_res.tonemapper
 	if Settings.setting_res.tonemapper != Environment.TONE_MAPPER_LINEAR || \
@@ -88,50 +85,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !$GameOverTimer.is_stopped():
-		$UI/TimeToLeft.text = tr("SECONDS_LEFT") + " " + str(ceili($GameOverTimer.time_left))
-	if ci_ready:
-		if ci_probability == 1:
-			ci_timer -= delta
-			if ci_timer < 0:
-				spawn_wave_entity(1)
-				# Disable Chaos wave if they were already spawned (5.5.0 feature)
-				ci_probability = 0
-		if mtf_cooldown > 0.0:
-			mtf_cooldown -= delta
-	if !Settings.setting_res.zen_mode && protagonist != null:
+	if get_tree().root.get_node_or_null("Game/StoryModeNode") != null && protagonist != null:
 		# Hunger and thirst mechanic
-		protagonist.health_manage(-delta * 0.25, 2)
-		protagonist.health_manage(-delta * 0.1875, 3)
+		protagonist.health_manage(-delta * 0.25, 2, "GAME_OVER_THIRST")
+		protagonist.health_manage(-delta * 0.1875, 3, "GAME_OVER_HUNGER")
 
 
 func _on_facility_generator_generated() -> void:
 	# Spawn surface zone
-	var sz: Node3D = load("res://Assets/Rooms/sublevels/External/subl_sz.tscn").instantiate()
-	sz.position.y = 256.0
-	add_child(sz, true)
+	#var sz: Node3D = load("res://Assets/Rooms/sublevels/External/subl_sz.tscn").instantiate()
+	#sz.position.y = 256.0
+	#add_child(sz, true)
 	
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
 	spawn_player()
 	spawn_puppets()
 	
-	if time_limited && !Settings.setting_res.zen_mode:
-		$GameOverTimer.start()
-	
-	$FoundationTask.initialize()
-	$UI._on_foundation_task_task_done()
-
+	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
+		$FoundationTask.initialize()
+		$UI._on_foundation_task_task_done()
+	$SZ.set_time(8, 0)
 	
 	await get_tree().create_timer(5.0).timeout
 	$LoadingScreen.call_deferred("hide")
-	if ci_probability < 0:
-		# Disable CI event, if hard mode, safe mode, or if you are lucky to get in 3/4
-		if !time_limited && !Settings.setting_res.zen_mode && rng.randi_range(0, 3) == 1:
-			ci_probability = 1
-		else:
-			ci_probability = 0
-	ci_ready = true
 	
 ## Spawns player-protagonist
 func spawn_player():
@@ -164,50 +141,6 @@ func spawn_puppets():
 			npc.position = spawn_point_group[random_number].global_position
 			$NPCs.add_child(npc)
 			used_spawns.append(random_number)
-
-## Spawns wave entities
-func spawn_wave_entity(wave_type: int):
-	var how_much_spawn: int = -1
-	match wave_type:
-		0: # Mobile Task Force
-			how_much_spawn = 3
-		1: # Chaos Insurgency Agent
-			how_much_spawn = 1
-	var spawn = get_tree().get_first_node_in_group("WaveSpawn")
-	if spawn != null:
-		if OS.get_name() != "Web":
-			for i in range(how_much_spawn):
-				var vfxspawn = load("res://Assets/VFX/spawnvfx.tscn").instantiate()
-				spawn.get_child(i).add_child(vfxspawn)
-		await get_tree().create_timer(1.0).timeout
-		for i in range(how_much_spawn):
-			var wavenpc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
-			match wave_type:
-				0: # Mobile Task Force
-					wavenpc.puppet_class = gamedata.wave_puppet_classes[0]
-					wavenpc.add_to_group("MobileTaskForce")
-				1: # Chaos Insurgency
-					wavenpc.puppet_class = gamedata.wave_puppet_classes[1]
-					wavenpc.add_to_group("ChaosInsurgency")
-			spawn.get_child(i).add_child(wavenpc)
-		for i in range(how_much_spawn):
-			for node in spawn.get_child(i).get_children():
-				if node is not MovableNpc:
-					node.queue_free()
-
-## Despawns wave VFX.
-func despawn_wave(wave_type: int):
-	match wave_type:
-		0:
-			for node in get_tree().get_nodes_in_group("MobileTaskForce"):
-				var vfxspawn = load("res://Assets/VFX/spawnvfx.tscn").instantiate()
-				node.add_child(vfxspawn)
-				node.queue_free()
-		1:
-			for node in get_tree().get_nodes_in_group("ChaosInsurgency"):
-				var vfxspawn = load("res://Assets/VFX/spawnvfx.tscn").instantiate()
-				node.add_child(vfxspawn)
-				node.queue_free()
 
 ## Personnel office spawner
 func spawn_offices(default_office_path: String, spawn_group: String):
@@ -245,7 +178,7 @@ func cutscene_anim(reverse: bool = false):
 func dialogue(text: String):
 	advanced_dialogue([text])
 
-## Dialogue system (used in 067, 1223, 2028 and 2471)
+## Dialogue system (used in 067, 983, 1223, 2028 and 2471)
 func advanced_dialogue(random_text: Array, command_after: CommandResource = null):
 	$UI/Dialogue.text = random_text[rng.randi_range(0, random_text.size() - 1)]
 	for i in $UI/Dialogue.text.length():
@@ -291,10 +224,7 @@ func show_image(images: Array, command_after: CommandResource = null, timer: flo
 
 ## Calls MTF.
 func call_mtf():
-	if get_node("FoundationTask").has_task("task_ci") && mtf_cooldown <= 0.0:
-		spawn_wave_entity(0)
-		mtf_cooldown = 50.0
-
-
-func _on_game_over_timer_timeout() -> void:
-	finish_game(false, "GAME_OVER_3")
+	pass
+	#if get_node("FoundationTask").has_task("task_ci") && mtf_cooldown <= 0.0:
+		#spawn_wave_entity(0)
+		#mtf_cooldown = 50.0

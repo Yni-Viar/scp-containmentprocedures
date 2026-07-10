@@ -3,6 +3,7 @@ extends InteractableStatic
 ## Made by Yni, licensed under GPLv3.
 
 @export var meals: Dictionary = {
+	"version": "2.0.0",
 	"lowest_1": {
 		"Corn": ["health:20.0:3"],
 		"Apple seed": ["message:You received 100 apple seeds"],
@@ -37,7 +38,8 @@ extends InteractableStatic
 		"Hazelnut in chocolate": ["health:20.0:3"],
 		"Candy Pistol": ["health:-1.0:0", "health:15.0:3"],
 		"Apple seed": ["message:You received 500 apple seeds"],
-		"X-treme chips": ["health:50.0:3", "message:You want to climb mountains"]
+		"X-treme chips": ["health:50.0:3", "message:You want to climb mountains"],
+		"SCP-1657 eggs": ["health:25.0:0", "health:25.0:3", "message:The eggs were very tasty. I became a REAL MAN!!1!"]
 	},
 	"mid_2": {
 		"Spice Bomb": ["health:-5.0:0"],
@@ -99,11 +101,27 @@ func _ready() -> void:
 		if !FileAccess.file_exists("user://Scp261.json"):
 			var result_json: String = JSON.stringify(meals)
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
-			file.store_string(result_json)
+			file.store_line(result_json)
+			file.close()
 		else:
-			JSON.stringify(meals)
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.READ)
-			meals = JSON.parse_string(file.get_as_text())
+			var result_meals: Dictionary = JSON.parse_string(file.get_as_text())
+			if result_meals.get("version") == null:
+				# New versioning system, if loading SCP-261 data from 9.x.x (SCP-261 1.x)
+				# rewrite it.
+				file.close()
+				var result_json: String = JSON.stringify(meals)
+				file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
+				file.store_line(result_json)
+			elif result_meals["version"] < meals["version"]:
+				# Upgrade system
+				file.close()
+				var result_json: String = JSON.stringify(meals)
+				file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
+				file.store_line(result_json)
+			else:
+				meals = result_meals
+			file.close()
 	base_buttons.resize(5)
 	# For retrieving drink
 	for i in range(5):

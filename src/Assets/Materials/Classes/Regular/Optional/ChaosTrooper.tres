@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tfgp131u5nad"]
+
+[ext_resource type="Texture2D" uid="uid://cdo61oo373n6b" path="res://Assets/ExternalModels/SCP/Optional/Chaos/body_Chaos_AlbedoTransparency.png" id="1_ygedg"]
+[ext_resource type="Texture2D" uid="uid://ca1g73ovoqpm" path="res://Assets/ExternalModels/SCP/Optional/Chaos/body_Chaos_Normal.png" id="2_w8mdv"]
+
+[resource]
+resource_name = "backup_UVsquares.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_ygedg")
+roughness = 0.954545
+normal_enabled = true
+normal_texture = ExtResource("2_w8mdv")

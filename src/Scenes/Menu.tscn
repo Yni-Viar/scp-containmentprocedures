@@ -1,13 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://b25hrjnoos5me"]
+[gd_scene format=3 uid="uid://b25hrjnoos5me"]
 
 [ext_resource type="Script" uid="uid://nuv64h1g048i" path="res://Scripts/MainMenu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://calm8y36ivn5q" path="res://UI/MainMenu/mainmenubackground.png" id="2_idohh"]
 [ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="2_syfuq"]
 [ext_resource type="Texture2D" uid="uid://5h1b7i0j2rq2" path="res://UI/MainMenu/Modes/casualmode.png" id="5_3jcrr"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="5_idohh"]
-[ext_resource type="Texture2D" uid="uid://cpl6y2uxqdot7" path="res://UI/MainMenu/Modes/helpbutton.png" id="6_aobxe"]
 [ext_resource type="Texture2D" uid="uid://cj5anigj1kj5y" path="res://UI/MainMenu/Modes/storymode.png" id="7_a8aa6"]
-[ext_resource type="Script" uid="uid://c8axhj303g8f2" path="res://Scripts/BaseWindow.gd" id="7_wfhf6"]
 [ext_resource type="Texture2D" uid="uid://26abh1a6pa33" path="res://UI/MainMenu/Modes/settings.png" id="7_x0ao6"]
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
@@ -87,7 +85,7 @@ height = 648
 noise = SubResource("FastNoiseLite_krje8")
 color_ramp = SubResource("Gradient_a8aa6")
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=694064524]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,7 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3kf3n")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=335805394]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +104,7 @@ grow_vertical = 2
 texture = ExtResource("2_idohh")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1081980458]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.18100001
@@ -122,32 +120,27 @@ theme_override_font_sizes/font_size = 64
 text = "SCP: Continued
 Procedures"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1650466822]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.014
-anchor_top = 0.679
-anchor_right = 0.98600006
-anchor_bottom = 0.96000004
-offset_left = -0.12800026
-offset_top = 0.0079956055
-offset_right = -595.8721
-offset_bottom = -0.08001709
+anchor_left = 0.007
+anchor_top = 0.296
+anchor_right = 0.275
+anchor_bottom = 0.98800004
+offset_left = -0.06400013
+offset_top = 0.19200134
+offset_right = 0.19998169
+offset_bottom = -0.22399902
 grow_vertical = 0
-theme_override_constants/separation = 64
+alignment = 1
 
-[node name="Play" type="Button" parent="HBoxContainer"]
+[node name="Seed" type="LineEdit" parent="HBoxContainer" unique_id=1134399060]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
-theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
-text = "CASUAL_MODE"
-icon = ExtResource("5_3jcrr")
-icon_alignment = 1
-vertical_icon_alignment = 0
+theme = ExtResource("2_syfuq")
+placeholder_text = "CUSTOM_SEED"
 
-[node name="StoryMode" type="Button" parent="HBoxContainer"]
+[node name="StoryMode" type="Button" parent="HBoxContainer" unique_id=1207079172]
 visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
@@ -156,10 +149,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
 theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "STORY_MODE"
 icon = ExtResource("7_a8aa6")
-icon_alignment = 1
-vertical_icon_alignment = 0
 
-[node name="SettingsButton" type="Button" parent="HBoxContainer"]
+[node name="Play" type="Button" parent="HBoxContainer" unique_id=1873414667]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
+text = "CASUAL_MODE"
+icon = ExtResource("5_3jcrr")
+
+[node name="SettingsButton" type="Button" parent="HBoxContainer" unique_id=302197401]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
@@ -167,87 +167,39 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
 theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "SETTINGS"
 icon = ExtResource("7_x0ao6")
-icon_alignment = 1
-vertical_icon_alignment = 0
 
-[node name="HelpButton" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
-theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
-text = "HELP_BUTTON"
-icon = ExtResource("6_aobxe")
-icon_alignment = 1
-vertical_icon_alignment = 0
-
-[node name="GameSettings" type="VBoxContainer" parent="."]
+[node name="Achievements" type="VBoxContainer" parent="." unique_id=1244781128]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.014
-anchor_top = 0.321
-anchor_right = 0.29200003
-anchor_bottom = 0.66400003
-offset_left = -0.12800026
-offset_top = 15.991989
-offset_right = -0.3840332
-offset_bottom = -0.2720337
-grow_vertical = 0
-alignment = 1
-
-[node name="Info" type="Label" parent="GameSettings"]
-visible = false
-layout_mode = 2
-text = "GAME_SETTINGS_INFO"
-
-[node name="Seed" type="LineEdit" parent="GameSettings"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-theme = ExtResource("2_syfuq")
-placeholder_text = "CUSTOM_SEED"
-
-[node name="TimeLimited" type="CheckBox" parent="GameSettings"]
-layout_mode = 2
-theme = ExtResource("2_syfuq")
-text = "TIME_LIMITED"
-
-[node name="ZenMode" type="CheckBox" parent="GameSettings"]
-layout_mode = 2
-theme = ExtResource("2_syfuq")
-text = "ZEN_MODE"
-
-[node name="Achievements" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.312
-anchor_top = 0.333
-anchor_right = 0.625
-anchor_bottom = 0.66700006
-offset_left = 0.57598877
-offset_top = 0.21600342
-offset_bottom = -0.21603394
+anchor_left = 0.68100005
+anchor_top = 0.84000003
+anchor_right = 0.99300003
+anchor_bottom = 0.98800004
+offset_left = -0.51208496
+offset_top = -0.32000732
+offset_right = 0.063964844
+offset_bottom = -0.22399902
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Info2" type="Label" parent="Achievements"]
+[node name="Info2" type="Label" parent="Achievements" unique_id=2143256492]
 layout_mode = 2
-text = "CASUAL_MODE_PROGRESS"
+text = "PROGRESS_SCP_STUDY"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Achievements"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Achievements" unique_id=1136139848]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Achievements/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Achievements/ScrollContainer" unique_id=633472280]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Achievements"]
+[node name="ProgressBar" type="ProgressBar" parent="Achievements" unique_id=1496853775]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 max_value = 1.0
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="." unique_id=746273088]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.007
@@ -262,21 +214,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_sjh0l")
 
-[node name="Info2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "HELP_SPOILERS_AHEAD"
-horizontal_alignment = 2
-
-[node name="CreditsContainer" type="Panel" parent="."]
+[node name="CreditsContainer" type="Panel" parent="." unique_id=1040339160]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -286,7 +224,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_krje8")
 
-[node name="CreditsContainer2" type="ScrollContainer" parent="CreditsContainer"]
+[node name="CreditsContainer2" type="ScrollContainer" parent="CreditsContainer" unique_id=240773504]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.007
@@ -298,10 +236,10 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_syfuq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/CreditsContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/CreditsContainer2" unique_id=1185979234]
 layout_mode = 2
 
-[node name="CreditsLabel" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="CreditsLabel" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=33113196]
 layout_mode = 2
 text = "SCP: Continued Procedures
 -------------------------
@@ -313,12 +251,12 @@ See third-party credits below:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FoldableContainer" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1781868907]
 layout_mode = 2
 folded = true
 title = "Godot Engine"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer" unique_id=261126833]
 visible = false
 layout_mode = 2
 text = "Godot Engine, SSAO fallback shader
@@ -327,57 +265,57 @@ Copyright (c) 2014-present Godot Engine contributors
 Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 License: MIT License."
 
-[node name="FoldableContainer2" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer2" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=185792652]
 layout_mode = 2
 folded = true
 title = "Camera Gimbal"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer2"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer2" unique_id=901787544]
 visible = false
 layout_mode = 2
 text = "Camera Gimbal by kidscancode 
 License: MIT License."
 
-[node name="FoldableContainer16" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer16" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1084381418]
 layout_mode = 2
 folded = true
 title = "Neural Network AI"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer16"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer16" unique_id=1411092303]
 visible = false
 layout_mode = 2
 text = "Copyright (c) 2022 Ryash
 Uses portions of code by Greaby
 License: MIT License."
 
-[node name="FoldableContainer3" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer3" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1754957648]
 layout_mode = 2
 folded = true
 title = "Scanning shader"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer3"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer3" unique_id=577600353]
 visible = false
 layout_mode = 2
 text = "Scanning Shader by Yui Kinomoto @arlez80 
 License: MIT License"
 
-[node name="FoldableContainer4" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer4" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1483520250]
 layout_mode = 2
 folded = true
 title = "Bottle shader"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer4"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer4" unique_id=530022149]
 visible = false
 layout_mode = 2
 text = "Bottle shader and script by Lexpartizan
 Licensed under MIT License"
 
-[node name="FoldableContainer15" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer15" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1290032590]
 layout_mode = 2
 folded = true
 title = "SCP-Wiki"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer15"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer15" unique_id=79166561]
 visible = false
 layout_mode = 2
 text = "Mentioned SCP objects:
@@ -417,12 +355,12 @@ SCP-5270 by penguin6, gerrymanderbassist
 by Dr Gears
 License: SCP-Wiki CC-BY-SA 3.0"
 
-[node name="FoldableContainer5" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer5" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1673327885]
 layout_mode = 2
 folded = true
 title = "SCP: Secret Laboratory assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer5"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer5" unique_id=270412808]
 visible = false
 layout_mode = 2
 text = "Scientist, guard, class-D, MTF and
@@ -439,12 +377,12 @@ are made by Keirdan Jenson
 for SCP: Secret Lab
 License: CC-BY-SA 4.0"
 
-[node name="FoldableContainer17" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer17" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=2008752331]
 layout_mode = 2
 folded = true
 title = "SCP: SL Blender Community assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer17"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer17" unique_id=1706809392]
 visible = false
 layout_mode = 2
 text = "SCP: SL Scientist modification by OOD.
@@ -459,12 +397,12 @@ License - CC-BY-SA 4.0*
 CC-BY-SA 4.0 asset, the
 license continue to apply"
 
-[node name="FoldableContainer6" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer6" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=203776439]
 layout_mode = 2
 folded = true
 title = "Assets by pop_pop_icard"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer6"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer6" unique_id=312026209]
 visible = false
 layout_mode = 2
 text = "Small elevator model
@@ -479,12 +417,12 @@ and Surface Zone
 are made by pop_pop_icard
 License: SCP-Wiki CC-BY-SA 3.0"
 
-[node name="FoldableContainer7" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer7" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=540430133]
 layout_mode = 2
 folded = true
 title = "SCP: Unity assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer7"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer7" unique_id=1693253403]
 visible = false
 layout_mode = 2
 text = "SCP-131 - Aruspice (model, textures),
@@ -512,24 +450,24 @@ License: SCP-Wiki CC-BY-SA 3.0
 PDA item - Model and textures by Shadowscale
 License: SCP-Wiki CC-BY-SA 3.0"
 
-[node name="FoldableContainer8" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer8" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=228092589]
 layout_mode = 2
 folded = true
 title = "SCP: Sigil assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer8"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer8" unique_id=1373910377]
 visible = false
 layout_mode = 2
 text = "Alternate SCP-005 is made by
 aruspice (https://sketchfab.com/vtomioka)
 License: CC-BY-4.0"
 
-[node name="FoldableContainer9" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer9" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=427331158]
 layout_mode = 2
 folded = true
 title = "Go Home Annie: SCP assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer9"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer9" unique_id=788967389]
 visible = false
 layout_mode = 2
 text = "SCP-131 The Eye Pods created for the SCP game
@@ -547,12 +485,12 @@ the SCP game Go Home Annie by
 Franjo Badurina.
 License: CC-BY-4.0"
 
-[node name="FoldableContainer13" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer13" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1809094503]
 layout_mode = 2
 folded = true
 title = "SCP-Godot assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer13"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer13" unique_id=1254980190]
 visible = false
 layout_mode = 2
 text = "SCP-173 neck snap sound
@@ -560,24 +498,24 @@ and door sounds are
 made by Daniel Nesov for SCP: Godot
 License: MIT License"
 
-[node name="FoldableContainer11" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer11" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=20546416]
 layout_mode = 2
 folded = true
 title = "SCP-CB Community assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer11"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer11" unique_id=32170711]
 visible = false
 layout_mode = 2
 text = "SCP-178-1 model
 made by Kenneth crooker
 License: CC-BY-SA 3.0"
 
-[node name="FoldableContainer10" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer10" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=608730898]
 layout_mode = 2
 folded = true
 title = "Other assets"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer10"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer10" unique_id=1157815487]
 visible = false
 layout_mode = 2
 text = "SCP-347 model is made using Makehuman model.
@@ -626,12 +564,12 @@ Creative Commons: By
 Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/ "
 
-[node name="FoldableContainer12" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer12" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=500271034]
 layout_mode = 2
 folded = true
 title = "Personnel office props"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer12"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer12" unique_id=1284257739]
 visible = false
 layout_mode = 2
 text = "[Yni Viar Personnel Office] SuperTuxKart nitro model
@@ -649,12 +587,12 @@ Made by Clint Bellanger
 Licensed under CC-BY 3.0
 Edited by Yni."
 
-[node name="FoldableContainer14" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer"]
+[node name="FoldableContainer14" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1437984532]
 layout_mode = 2
 folded = true
 title = "Fonts"
 
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer14"]
+[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer14" unique_id=1867000371]
 visible = false
 layout_mode = 2
 text = "Fonts:
@@ -663,7 +601,7 @@ SansNormalcy by SCP-Wiki
 SpecialElite by Brian J. Bonislawsky and
 Lomzz"
 
-[node name="Credits" type="Button" parent="."]
+[node name="Credits" type="Button" parent="." unique_id=1497812691]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -677,42 +615,10 @@ theme = ExtResource("2_syfuq")
 toggle_mode = true
 text = "CREDITS"
 
-[node name="Tutorial" type="Window" parent="."]
-disable_3d = true
-title = "Tutorial"
-initial_position = 2
-size = Vector2i(800, 480)
-visible = false
-min_size = Vector2i(32, 32)
-theme = ExtResource("2_syfuq")
-script = ExtResource("7_wfhf6")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Tutorial"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial/ScrollContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Tutorial/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HELP_TITLE"
-
-[node name="Label2" type="Label" parent="Tutorial/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HELP_TASKS"
-
-[node name="Label3" type="Label" parent="Tutorial/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HELP_EVENTS"
-
-[node name="Settings" parent="." instance=ExtResource("11_a8aa6")]
+[node name="Settings" parent="." unique_id=752566435 instance=ExtResource("11_a8aa6")]
 visible = false
 
-[node name="StoryUI" type="Control" parent="."]
+[node name="StoryUI" type="Control" parent="." unique_id=1773573092]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -721,7 +627,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="StoryUI"]
+[node name="TextureRect" type="TextureRect" parent="StoryUI" unique_id=275025668]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -731,7 +637,7 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_dd46u")
 expand_mode = 1
 
-[node name="EasterEgg" type="Control" parent="StoryUI"]
+[node name="EasterEgg" type="Control" parent="StoryUI" unique_id=1340542050]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -739,13 +645,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="StoryUI/EasterEgg"]
+[node name="Panel" type="Panel" parent="StoryUI/EasterEgg" unique_id=1126803951]
 layout_mode = 0
 offset_top = 320.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="RichTextLabel" parent="StoryUI/EasterEgg/Panel"]
+[node name="Label" type="RichTextLabel" parent="StoryUI/EasterEgg/Panel" unique_id=1382961702]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -764,7 +670,7 @@ Some hikkikomori decided to get out from home.
 But can they actually do it?
 Interesting question..."
 
-[node name="Back" type="TextureButton" parent="StoryUI"]
+[node name="Back" type="TextureButton" parent="StoryUI" unique_id=560038280]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -774,25 +680,21 @@ offset_right = 64.0
 grow_vertical = 0
 texture_normal = ExtResource("14_dsmso")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2144827009]
 stream = ExtResource("16_dsmso")
 volume_db = -8.226
 autoplay = true
 bus = &"Music"
 
-[node name="LiteWarning" type="Label" parent="."]
+[node name="LiteWarning" type="Label" parent="." unique_id=611675351]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "LITE_VERSION_WARNING"
 
-[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/StoryMode" to="." method="_on_story_mode_pressed"]
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
-[connection signal="text_changed" from="GameSettings/Seed" to="." method="_on_seed_text_changed"]
-[connection signal="toggled" from="GameSettings/TimeLimited" to="." method="_on_time_limited_toggled"]
-[connection signal="toggled" from="GameSettings/ZenMode" to="." method="_on_zen_mode_toggled"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]

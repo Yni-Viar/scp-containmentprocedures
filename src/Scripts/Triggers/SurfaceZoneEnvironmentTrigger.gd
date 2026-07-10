@@ -1,5 +1,7 @@
 extends EnvironmentTrigger
 
+## Check if player is on Surface Zone
+@export var entered_surface: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +15,20 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
-			if OS.get_name() != "Web" && OS.get_name() != "Android":
-				if Settings.current_season == Settings.Season.SPRING:
+			match OS.get_name():
+				"Web":
+					apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
+				"Android":
+					if OS.has_feature("Lite"):
+						apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
+					else:
+						apply_environment(load("res://Assets/Environment/Outside_MQ_Default.tres"))
+				_:
 					apply_environment(load("res://Assets/Environment/Outside_HQ_Default.tres"))
-				else:
-					apply_environment(load("res://Assets/Environment/Outside_HQ_Rainy.tres"))
-			else:
-				apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
+		entered_surface = true
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is MovableNpc:
+		if body.is_player:
+			apply_environment(load("res://Assets/Environment/Default.tres"), true)
+		entered_surface = false

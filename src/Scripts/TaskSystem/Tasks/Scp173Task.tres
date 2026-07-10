@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameTaskResource" load_steps=2 format=3 uid="uid://cdlwr1y5gkw5"]
+[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://cdlwr1y5gkw5"]
 
 [ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_4c56u"]
 

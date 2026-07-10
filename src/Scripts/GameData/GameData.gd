@@ -6,12 +6,10 @@ class_name GameData
 @export var player_class: Array[PuppetClass] = []
 ## Puppet class
 @export var puppet_classes: Array[PuppetClass] = []
-## Tasks to do.
+## Legacy (pre-10.0) tasks.
 @export var tasks: Array[GameTaskResource] = []
 ## All items.
 @export var items: Array[Item] = []
-## Wave puppets
-@export var wave_puppet_classes: Array[PuppetClass] = []
 ## Custom Scientist's offices (available since v7.0)
 @export var custom_scientists_offices: Array[PackedScene] = []
 ## Status Effects

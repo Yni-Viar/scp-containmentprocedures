@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://vogv1lg76ib2"]
+[gd_scene format=4 uid="uid://vogv1lg76ib2"]
 
 [ext_resource type="Texture2D" uid="uid://clp51ptw14vq0" path="res://Assets/OriginalModels/Scp018/Scp018_Scp018_base.png" id="1_6e10k"]
 [ext_resource type="Script" uid="uid://bfs005j6h2mc5" path="res://Scripts/Scps/Scp018.gd" id="1_lacva"]
@@ -81,7 +81,7 @@ radius = 0.125
 [sub_resource type="SphereShape3D" id="SphereShape3D_lacva"]
 radius = 0.25
 
-[node name="Scp018" type="RigidBody3D" groups=["ImportantItem", "Item"]]
+[node name="Scp018" type="RigidBody3D" unique_id=475979167 groups=["ImportantItem", "Item"]]
 collision_layer = 8
 physics_material_override = SubResource("PhysicsMaterial_lacva")
 continuous_cd = true
@@ -91,24 +91,24 @@ script = ExtResource("1_lacva")
 activated = true
 item_id = 17
 
-[node name="Sphere_001" type="MeshInstance3D" parent="."]
+[node name="Sphere_001" type="MeshInstance3D" parent="." unique_id=147596638]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
 mesh = SubResource("ArrayMesh_y4gw4")
 skeleton = NodePath("")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=676853131]
 lifetime = 0.25
 mesh = SubResource("QuadMesh_blblp")
 gravity = Vector3(0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1969056330]
 shape = SubResource("SphereShape3D_6e10k")
 
-[node name="DamageTrigger" type="Area3D" parent="."]
+[node name="DamageTrigger" type="Area3D" parent="." unique_id=1242663954]
 collision_layer = 11
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageTrigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageTrigger" unique_id=545702870]
 shape = SubResource("SphereShape3D_lacva")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

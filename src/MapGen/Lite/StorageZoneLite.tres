@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="MapGenZone" format=3 uid="uid://bw0qpnk21fywo"]
+
+[ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_lp826"]
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="2_4inc1"]
+[ext_resource type="Resource" uid="uid://cynujkfmtutav" path="res://MapGen/Resources/StorageZone/ckpt2.tres" id="3_0gbf8"]
+[ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/StorageZone/room2C.tres" id="4_gdh6m"]
+[ext_resource type="Resource" uid="uid://p5bix08fmuyu" path="res://MapGen/Resources/StorageZone/room4.tres" id="5_dtlmw"]
+[ext_resource type="Resource" uid="uid://r4jtmjvd7l37" path="res://MapGen/Resources/StorageZone/room1.tres" id="6_u7nl0"]
+[ext_resource type="Resource" uid="uid://d0xy6hxtg6dyx" path="res://MapGen/Resources/StorageZone/room2.tres" id="7_bau4c"]
+[ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="8_k0wtq"]
+[ext_resource type="Resource" uid="uid://ccl1uuy1o3ct0" path="res://MapGen/Resources/StorageZone/room3.tres" id="9_knjx6"]
+[ext_resource type="Resource" uid="uid://bm51rfjlriqo1" path="res://MapGen/Resources/StorageZone/cont3_echoes.tres" id="10_nxljm"]
+
+[resource]
+script = ExtResource("8_k0wtq")
+endrooms = Array[ExtResource("2_4inc1")]([ExtResource("6_u7nl0")])
+hallways = Array[ExtResource("2_4inc1")]([ExtResource("7_bau4c")])
+checkpoint_hallway = Array[ExtResource("2_4inc1")]([ExtResource("3_0gbf8")])
+corners = Array[ExtResource("2_4inc1")]([ExtResource("4_gdh6m")])
+trooms = Array[ExtResource("2_4inc1")]([ExtResource("9_knjx6")])
+trooms_single = Array[ExtResource("2_4inc1")]([ExtResource("10_nxljm")])
+crossrooms = Array[ExtResource("2_4inc1")]([ExtResource("5_dtlmw")])
+door_frames = Array[PackedScene]([ExtResource("1_lp826")])
+checkpoint_door_frames = Array[PackedScene]([ExtResource("1_lp826")])
+metadata/_custom_type_script = "uid://d0tlgr0c6w7gq"

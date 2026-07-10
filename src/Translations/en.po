@@ -36,22 +36,29 @@ msgstr "Hints"
 msgid "HELP_TASKS"
 msgstr ""
 "You need to do tasks.\n"
-"Some tasks require to come close to the subject of testing (812, partly 938).\n"
-"Some tasks require to bring Class-D (080, 162, 173, 266, 522, 939, partly 938).\n"
+"Some tasks require to come close to the subject of testing (812, partly "
+"938).\n"
+"Some tasks require to bring Class-D (080, 162, 173, 266, 522, 939, partly "
+"938).\n"
 "Some tasks require to bring object/item to special place (347, 914).\n"
 "Some tasks require to come with special item (791).\n"
 "Some tasks require to interact or use subject of testing (023, 067, 249).\n"
-"Some tasks require to interact with item while having another item in inventory (5270-2306)"
+"Some tasks require to interact with item while having another item in "
+"inventory (5270-2306)"
 
 msgid "HELP_EVENTS"
 msgstr ""
 "Also the game has events.\n"
-"There are only three events implemented right now - Chaos Insurgency invasion and SCP-023 critical state.\n"
-"For the first one, you need to call MTF (maybe more then one time), just when they appear.\n"
-"For SCP-023 - if you round took long (> 2 minutes), you need to go to Maintenance Zone and go to SCP-023, replacing his \"eyes\" as soon, as possible."
+"There are only three events implemented right now - Chaos Insurgency "
+"invasion and SCP-023 critical state.\n"
+"For the first one, you need to call MTF (maybe more then one time), just "
+"when they appear.\n"
+"For SCP-023 - if you round took long (> 2 minutes), you need to go to "
+"Maintenance Zone and go to SCP-023, replacing his \"eyes\" as soon, as "
+"possible."
 
 msgid "CASUAL_MODE"
-msgstr "Play"
+msgstr "Free walk mode"
 
 msgid "STORY_MODE"
 msgstr "???"
@@ -188,18 +195,20 @@ msgstr "FAILED!"
 msgid "GAME_WIN_1"
 msgstr "You did all tasks. The Foundation is proud of you!"
 
-msgid "GAME_OVER_1"
-msgstr "You died. What a pity..."
+msgid "GAME_OVER_DIE"
+msgstr "You died."
 
-msgid "GAME_OVER_2"
+msgid "GAME_OVER_SCP_938"
 msgstr ""
 "SCP-938 containment breach occured.\n"
 "Unfortunately, you became victim of that creature."
 
-msgid "GAME_OVER_3"
-msgstr "You did not finish all the task in a work day."
+msgid "GAME_OVER_CONTAINMENT_BREACH"
+msgstr ""
+"Containment breach scenario occured because of your negligence.\n"
+"You will be demoted into Class-D personnel."
 
-msgid "GAME_OVER_4"
+msgid "GAME_OVER_SCP_023"
 msgstr "You didn't change SCP-023's eyes in time."
 
 msgid "TASK_162_TOUCH"
@@ -299,7 +308,8 @@ msgstr ""
 "↓ Maintenance Zone"
 
 msgid "LITE_VERSION_WARNING"
-msgstr "Lite/Demo version. Please, download full game for accessing more content"
+msgstr ""
+"Lite/Demo version. Please, download full game for accessing more content"
 
 msgid "TASK_522_BODY"
 msgstr "Order Class-D to step on SCP-522."
@@ -371,8 +381,8 @@ msgstr ""
 msgid "INFO"
 msgstr "[i] NOTE"
 
-msgid "GAME_OVER_5"
-msgstr "You started SCP-018 containment breach. You will be demoted to Class-D personnel."
+msgid "GAME_OVER_SCP_018"
+msgstr "You were hit to death with SCP-018"
 
 msgid "TASK_914_EXP_5"
 msgstr "Refine SCP-005 in SCP-914 on 1:1"
@@ -396,8 +406,10 @@ msgstr ""
 "No lighting is support on all renderers\n"
 "Lightmap lighting is supported only in OpenGL Compatibility renderer\n"
 "(because of Godot limitation, see\n"
-"https://github.com/godotengine/godot-proposals/issues/12577 for more information)\n"
-"Real-time lighting is supported in Forward+ renderer and only on PCs, because\n"
+"https://github.com/godotengine/godot-proposals/issues/12577 for more "
+"information)\n"
+"Real-time lighting is supported in Forward+ renderer and only on PCs, "
+"because\n"
 "of performance and rendering reasons."
 
 msgid "ATTENTION"
@@ -466,7 +478,7 @@ msgstr ""
 msgid "CASUAL_MODE_PROGRESS"
 msgstr "Remaining SCPs to study:"
 
-msgid "GAME_OVER_6"
+msgid "GAME_OVER_ASLEEP"
 msgstr "Instead of doing your job, you felt asleep."
 
 msgid "TASK_080_CHECK"
@@ -474,3 +486,92 @@ msgstr "Order Class-D personnel to check SCP-080's existence"
 
 msgid "CASUAL_MODE_PROGRESS_2"
 msgstr "You studied all SCPs here!"
+
+msgid "GAME_OVER_SCP_983"
+msgstr "You died from heart attack, caused by SCP-983."
+
+msgid "SCP983_NOT_BIRTHDAY"
+msgstr "Hopefully, it was not your birthday..."
+
+msgid "GAME_OVER_THIRST"
+msgstr "You died of thirst."
+
+msgid "GAME_OVER_HUNGER"
+msgstr "You died of starvation."
+
+msgid "GAME_OVER_TIMES_UP"
+msgstr "You did not finish all tasks in a work day."
+
+msgid "GAME_OVER_SCP_162"
+msgstr "You died of SCP-162's spikes."
+
+msgid "GAME_OVER_SCP_173"
+msgstr "SCP-173 had crunched your neck."
+
+msgid "GAME_OVER_SCP_178"
+msgstr ""
+"Your dead body was covered with scratches,\n"
+"presumably made by SCP-178-1."
+
+msgid "GAME_OVER_SCP_266"
+msgstr "You were frozen to death by SCP-266."
+
+msgid "GAME_OVER_SCP_522"
+msgstr "SCP-522 took all of your blood."
+
+msgid "GAME_OVER_SCP_649"
+msgstr ""
+"You were frozen to death.\n"
+"The cause of that is likely SCP-649, since the sector is covered with snow."
+
+msgid "GAME_OVER_SCP_686"
+msgstr "You died of thirst, caused by milk production."
+
+msgid "GAME_OVER_SCP_939"
+msgstr ""
+"Your dead body had a large bite mark in the neck,\n"
+"presumably made by SCP-939 instance."
+
+msgid "GAME_OVER_SCP_1507"
+msgstr "You got pecked to death by SCP-1507."
+
+msgid "GAME_OVER_CI"
+msgstr "Chaos Insurgency agent had killed you."
+
+msgid "GAME_OVER_SCP_018_BREACH"
+msgstr ""
+"You started SCP-018 containment breach. You will be demoted to Class-D "
+"personnel."
+
+msgid "GAME_OVER_UNKNOWN_ENTITIES"
+msgstr ""
+"Unknown entities occupied facility.\n"
+"Contact with Site was lost."
+
+msgid "STORAGE_ZONE"
+msgstr "Storage Zone"
+
+#, fuzzy
+#~| msgid "GAME_WIN_1"
+#~ msgid "GAME_WIN_DAY1"
+#~ msgstr "You did all tasks. The Foundation is proud of you!"
+
+#, fuzzy
+#~| msgid "GAME_WIN_1"
+#~ msgid "GAME_WIN_DAY2"
+#~ msgstr "You did all tasks. The Foundation is proud of you!"
+
+#, fuzzy
+#~| msgid "GAME_WIN_1"
+#~ msgid "GAME_WIN_DAY3"
+#~ msgstr "You did all tasks. The Foundation is proud of you!"
+
+#, fuzzy
+#~| msgid "GAME_WIN_1"
+#~ msgid "GAME_WIN_DAY4"
+#~ msgstr "You did all tasks. The Foundation is proud of you!"
+
+#, fuzzy
+#~| msgid "GAME_WIN_1"
+#~ msgid "GAME_WIN_DAY5"
+#~ msgstr "You did all tasks. The Foundation is proud of you!"

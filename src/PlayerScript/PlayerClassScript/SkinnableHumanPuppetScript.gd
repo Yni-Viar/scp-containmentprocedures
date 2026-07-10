@@ -250,7 +250,7 @@ func effect_manager_update(effect: String, strength: float):
 				if puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint")[0] < 0.95:
 					var value: float = get_physics_process_delta_time() * 2 * strength
 					puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).set_shader_parameter("tint", puppet_node.get_node(torso_node_path).mesh.surface_get_material(0).get_shader_parameter("tint") + Color(value, value, value))
-				get_parent().get_parent().health_manage(-get_physics_process_delta_time() * strength, 2)
+				get_parent().get_parent().health_manage(-get_physics_process_delta_time() * strength, 2, "GAME_OVER_SCP_686")
 	effect_manager_update_custom(effect, strength)
 
 func effect_manager_update_custom(effect: String, strength: float):

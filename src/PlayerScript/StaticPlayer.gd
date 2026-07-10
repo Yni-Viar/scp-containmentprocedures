@@ -27,11 +27,11 @@ func _ready() -> void:
 	# OpenGL Compatibility renderer supports SSAO since Godot 4.6
 	# As for May 2026, we stay on 4.5 just because it is the most stable\
 	# Godot release.
-	if Settings.setting_res.ssao && (RenderingServer.get_current_rendering_method() == "mobile" || \
-	 (RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
-	  Engine.get_version_info()["minor"] < 6)):
-		# Recommended to remove after upgrading to 4.6 and newer versions.
-		$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(1)
+	#if Settings.setting_res.ssao && (RenderingServer.get_current_rendering_method() == "mobile" || \
+	 #(RenderingServer.get_current_rendering_method() == "gl_compatibility" && \
+	  #Engine.get_version_info()["minor"] < 6)):
+		## No longer used, since we updated to Godot 4.7
+		#$Head/Camera3D/Overlays/OverlayCompositor.apply_shader(1)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	rotate_player_by_key(Vector2i(int(Input.is_action_just_pressed("camera_rotate_right")) - int(Input.is_action_just_pressed("camera_rotate_left")), 0))
 	if !target_puppet_path.is_empty():
 		if get_node_or_null(target_puppet_path) == null:
-			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_1")
+			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
 		else:
 			get_tree().root.get_node("Game/UI/HealthBar").value = get_node(target_puppet_path).current_health[0]
 			if get_node(target_puppet_path).fraction == 0:
@@ -108,7 +108,7 @@ func intersect_shape(intersect_position: Vector3) -> Array[Dictionary]:
 ## Main interacting function.
 func interact(value: String) -> void:
 	if get_node_or_null(target_puppet_path) == null:
-		get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_1")
+		get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
 	else:
 		match value:
 			"Point":
@@ -147,7 +147,7 @@ func interact(value: String) -> void:
 													s_result["collider"].get_node("PlayerModel/Puppet").special_action()
 					# ray cast for moving
 					if get_node_or_null(target_puppet_path) == null:
-						get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_1")
+						get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
 					else:
 						get_node(target_puppet_path).set_target_position(result["position"])
 
@@ -279,7 +279,7 @@ func apply_overlay(effect: String, strength: float):
 				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Scp261KleinBottle", true)
 		"Fatigue":
 			if strength > 0.984375:
-				get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_6")
+				get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_ASLEEP")
 			if strength > 0.03125:
 				$Head/Camera3D/Overlays/TintCompositor.apply_shader("Fatigue")
 				$Head/Camera3D/Overlays/TintCompositor.apply_strength("Fatigue", strength)

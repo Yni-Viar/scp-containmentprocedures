@@ -8,8 +8,9 @@ enum Season {NONE, WINTER, SPRING, SUMMER, AUTUMN, CHRISTMAS, HALLOWEEN}
 
 signal settings_saved
 
+const IS_STORE_BUILD: bool = false
 ## Game's data compatibility for modding.
-const DATA_COMPATIBILITY: String = "9.1.0"
+const DATA_COMPATIBILITY: String = "10.0.0"
 ## Game's data compatibility for modding.
 const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.
@@ -67,7 +68,13 @@ func _ready() -> void:
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 	elif !DirAccess.dir_exists_absolute("user://mods/puppets/"):
 		DirAccess.make_dir_recursive_absolute("user://mods/puppets/")
-	Settings.touchscreen = DisplayServer.is_touchscreen_available()
+	touchscreen = DisplayServer.is_touchscreen_available()
+	# Failsafe for Godot 4.7
+	if touchscreen && Engine.get_version_info()["minor"] == 7 && Engine.get_version_info()["patch"] == 0:
+		dialogue_window(""" You have touchscreen enabled AND Godot version is 4.7.0!
+ That Godot version has duplicate touchscreen events, making the game unplayable.
+ If you has any touchscreen devices or you built the game for Android, please, use mouse to click buttons.""", "WARNING!")
+	
 	season_checker()
 	Console.add_command("beta_mode_features", beta_mode_features)
 	Console.add_command("beta_mode_enable", beta_mode_enable, ["keyword"], 1)
@@ -183,14 +190,27 @@ func season_feature_checker(season_check: Season) -> bool:
 
 ## Toggle loading screen.
 func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
-	if get_child_count() > 0:
-		if get_child(0) is LoadingScreen:
-			return
-	var loading_screen: LoadingScreen = load("res://Scenes/LoadingScreen.tscn").instantiate()
-	loading_screen.file_path_to_load = file_path_to_load
-	loading_screen.parameters = parameters
+	#if get_child_count() > 0:
+		#if get_child(0) is LoadingScreen:
+			#return
+	#var loading_screen: LoadingScreen = load("res://Scenes/LoadingScreen.tscn").instantiate()
+	#loading_screen.file_path_to_load = file_path_to_load
+	#loading_screen.parameters = parameters
+	#
+	#add_child(loading_screen)
 	
+	# Godot bug https://github.com/godotengine/godot/issues/121124
+	# Reverted to single-threaded pre-5.8.0 load :(
+	var loading_screen: Control = load("res://Scenes/LoadingScreen.tscn").instantiate()
 	add_child(loading_screen)
+	await get_tree().create_timer(0.5).timeout
+	var game: GameCore = load(file_path_to_load).instantiate()
+	for parameter in parameters:
+		game.set(parameter, parameters[parameter])
+	get_tree().root.add_child(game, true)
+	get_tree().current_scene.queue_free()
+	call_deferred("override_main_scene", game)
+	loading_screen.queue_free()
 
 func beta_mode_enable(keyword: String):
 	if keyword == "feature_beta":
@@ -276,11 +296,25 @@ func change_renderer():
 					OS.set_restart_on_exit(true, ["--rendering-method", "gl_compatibility"])
 					get_tree().quit()
 			1:
-				if RenderingServer.get_current_rendering_method() != "mobile":
+				# Failsafe for Godot 4.7.0
+				if Engine.get_version_info()["minor"] == 7:
+					Console.print_error("There are bugs in Godot 4.7: ", true)
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD GPUs).", true)
+					# To developers - we can't use Godot 4.6 because of broken Web build.
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/120409 ) (prevents using Vulkan on very old GPUs, which was working in 4.6)", true)
+					Console.print_error("Until they get fixed, we'll keep Compatibility renderer as the only option", true)
+				elif RenderingServer.get_current_rendering_method() != "mobile":
 					OS.set_restart_on_exit(true, ["--rendering-method", "mobile"])
 					get_tree().quit()
 			2:
-				if RenderingServer.get_current_rendering_method() != "forward_plus":
+				# Failsafe for Godot 4.7.0
+				if Engine.get_version_info()["minor"] == 7:
+					Console.print_error("There are bugs in Godot 4.7: ", true)
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD devices).", true)
+					# To developers - we can't use Godot 4.6 because of broken Web build.
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/120409 ) (prevents using Vulkan on very old GPUs, which was working in 4.6)", true)
+					Console.print_error("Until they get fixed, we'll keep Compatibility renderer as the only option", true)
+				elif RenderingServer.get_current_rendering_method() != "forward_plus":
 					OS.set_restart_on_exit(true, ["--rendering-method", "forward_plus"])
 					get_tree().quit()
 

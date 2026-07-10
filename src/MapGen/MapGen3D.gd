@@ -222,7 +222,7 @@ func spawn_rooms() -> void:
 			# 0|2
 			# -=-
 			# 1|3
-			zone_index_default += size_y / (zone_size * (map_size_y + 1))
+			zone_index_default += map_size_y + 1
 			zone_index = zone_index_default
 		for o in range(size_y):
 			if o >= size_y / (map_size_y + 1) * (zone_counter.y + 1):

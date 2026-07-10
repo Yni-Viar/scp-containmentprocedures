@@ -22,10 +22,14 @@ func _ready() -> void:
 		$Tonemapper.set_item_disabled(4, true)
 		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
-	elif OS.get_name() == "Android":
-		# Disable Mobile and Forward+ renderers on Android.
+		$Renderer.hide()
+		$Label3.hide()
+	elif OS.get_name() == "Android" || Engine.get_version_info()["minor"] == 7:
+		# Disable Mobile and Forward+ renderers on Android and all of Godot 4.7.0.
 		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
+		$Renderer.hide()
+		$Label3.hide()
 	
 	if Settings.setting_res.renderer == SettingsResource.Renderer.OPENGL:
 		# Disable real-time lighting op OpenGL

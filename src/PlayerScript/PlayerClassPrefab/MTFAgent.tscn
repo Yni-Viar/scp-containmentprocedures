@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cwnj6i40ixiwe"]
+
+[ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_prx31"]
+
+[node name="Puppet" type="Node3D" unique_id=1648854867]
+script = ExtResource("1_prx31")
+secondary_state = 5
+resistance_scp178 = true
+resistance_scp686 = true
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/MTF/MTF_SL.tscn": 0
+})
+enable_vision_scan = true
+vision_class_detect = Array[int]([2, 3])
