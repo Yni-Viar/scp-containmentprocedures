@@ -56,7 +56,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-914|✅, > 2.0.0|❌, 5.7.x only|❓ Process only items|
 |🔴SCP-938|✅, > 5.0.0|❌|✅ Full \(> 6.0.0\)|
 |🔴SCP-939|✅, > 5.5.0|✅, > 5.8.0|✅ Full|
-|🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only, disabled in 6.0.0|✅ Full|
+|🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only|✅ Full|
 |🟢SCP-1223\*|✅, > 6.1.0|✅, > 6.1.0|✅ Full|
 |🟡SCP-1507|✅, > 9.0.0|✅, > 9.0.0|✅ Full, supports custom models|
 |🟢SCP-2028|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
@@ -65,6 +65,8 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-5270|✅, > 8.1.0|✅, > 8.1.0|❓ Implemented only one event out of three|
 
 ##### Removed SCPs
+| SCP# | Full | Lite/Web version | Functionality |
+|------|------|------------------|---------------|
 |🟢SCP-446\*|❎, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
 
 #### Object class
