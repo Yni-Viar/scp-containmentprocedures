@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btl81my4xo0te"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntbkr"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ntbkr"]
+material = SubResource("StandardMaterial3D_ntbkr")
+size = Vector2(1, 0.5)
+
+[node name="AreaLight" type="Node3D" unique_id=607995365]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=206104022]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("QuadMesh_ntbkr")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=991345622]
+visible = false
+light_bake_mode = 1
+distance_fade_enabled = true
+area_range = 32.0
+area_normalize_energy = false
+area_size = Vector2(1, 0.5)

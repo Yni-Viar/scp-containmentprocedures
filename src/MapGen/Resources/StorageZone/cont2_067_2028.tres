@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MapGenRoom" format=3 uid="uid://bprnbgimely5g"]
+
+[ext_resource type="Texture2D" uid="uid://bdohqm7yw00if" path="res://Assets/HUD/room2_90.png" id="1_fwodf"]
+[ext_resource type="Texture2D" uid="uid://8etimuikkbyb" path="res://Assets/HUD/room2.png" id="2_qj7y7"]
+[ext_resource type="PackedScene" uid="uid://bgxqi8c031r1w" path="res://Assets/Rooms/room2/st_cont2_067_2028.tscn" id="3_fwodf"]
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="4_hjujg"]
+
+[resource]
+script = ExtResource("4_hjujg")
+name = "room2_middle"
+prefab = ExtResource("3_fwodf")
+icon_0_degrees = ExtResource("1_fwodf")
+icon_90_degrees = ExtResource("2_qj7y7")
+icon_180_degrees = ExtResource("1_fwodf")
+icon_270_degrees = ExtResource("2_qj7y7")
+spawn_chance = 50.16

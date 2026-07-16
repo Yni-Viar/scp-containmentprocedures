@@ -4,11 +4,11 @@ extends VBoxContainer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Settings.feature_legality_checker("no_neural_ai"):
-		$GameplayLabel.queue_free()
 		$AI.queue_free()
 	else:
 		$AI.button_pressed = Settings.setting_res.ai_enabled
 	$Renderer.selected = Settings.setting_res.renderer
+	$HungerInCasualMode.button_pressed = Settings.setting_res.casual_mode_hunger
 	$Lighting.selected = Settings.setting_res.lighting
 	$Glow.button_pressed = Settings.setting_res.glow
 	$BasicReflection.button_pressed = Settings.setting_res.reflection_probe
@@ -24,8 +24,8 @@ func _ready() -> void:
 		$Renderer.set_item_disabled(2, true)
 		$Renderer.hide()
 		$Label3.hide()
-	elif OS.get_name() == "Android" || Engine.get_version_info()["minor"] == 7:
-		# Disable Mobile and Forward+ renderers on Android and all of Godot 4.7.0.
+	elif OS.get_name() == "Android" || (Engine.get_version_info()["minor"] == 7 && !Settings.setting_res.beta_mode):
+		# Disable Mobile and Forward+ renderers on Android and all of Godot 4.7.x, if beta_mode is not used.
 		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
 		$Renderer.hide()
@@ -97,6 +97,11 @@ func _on_lighting_item_selected(index: int) -> void:
 
 
 func _on_settings_visibility_changed() -> void:
-	if OS.get_name() == "Web" && Settings.beta_mode:
-		$GameplayLabel.show()
+	if OS.get_name() == "Web" && Settings.setting_res.beta_mode && \
+	  get_node_or_null("AI") != null:
 		$AI.show()
+
+
+func _on_hunger_in_casual_mode_toggled(toggled_on: bool) -> void:
+	Settings.setting_res.casual_mode_hunger = toggled_on
+	Settings.save_resource(Settings.setting_res)

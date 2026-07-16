@@ -1,0 +1,45 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bdfoqi1grcuih"
+path.s3tc="res://.godot/imported/MetalGrateFloor_Metallic-MetalGrateFloor_Roughness.png-38392460813771359550e5bc6cfe9e64.s3tc.ctex"
+path.etc2="res://.godot/imported/MetalGrateFloor_Metallic-MetalGrateFloor_Roughness.png-38392460813771359550e5bc6cfe9e64.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8a52d95bfb2a12a869de7e85ca0fa943"
+}
+
+[deps]
+
+source_file="res://Assets/Materials/TextureLibraries/PopPopIcard_CCBYSA3/Optional/MetalGrateFloor_Metallic-MetalGrateFloor_Roughness.png"
+dest_files=["res://.godot/imported/MetalGrateFloor_Metallic-MetalGrateFloor_Roughness.png-38392460813771359550e5bc6cfe9e64.s3tc.ctex", "res://.godot/imported/MetalGrateFloor_Metallic-MetalGrateFloor_Roughness.png-38392460813771359550e5bc6cfe9e64.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=512
+detect_3d/compress_to=0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenZone" load_steps=23 format=3 uid="uid://5i615ov2u3o1"]
+[gd_resource type="Resource" script_class="MapGenZone" format=3 uid="uid://5i615ov2u3o1"]
 
 [ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_4wncd"]
 [ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="2_r1mwm"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://mby2ifriv2wp" path="res://MapGen/Resources/ResearchZone/cont1_173.tres" id="13_hacfo"]
 [ext_resource type="Resource" uid="uid://b5iorkkrwdl3m" path="res://MapGen/Resources/ResearchZone/room2_walkway_redux.tres" id="15_gouin"]
 [ext_resource type="Resource" uid="uid://cgh78us53op5w" path="res://MapGen/Resources/ResearchZone/room2_redux.tres" id="16_lqkos"]
-[ext_resource type="Resource" uid="uid://l5etyp83tec2" path="res://MapGen/Resources/ResearchZone/room2_cafeteria.tres" id="17_4wncd"]
 [ext_resource type="Resource" uid="uid://cwn3flxx1e8ho" path="res://MapGen/Resources/ResearchZone/rz_exit2_gatec.tres" id="17_eih06"]
 [ext_resource type="Resource" uid="uid://da43aoalrw56x" path="res://MapGen/Resources/ResearchZone/cont2_650.tres" id="18_3m7i0"]
 [ext_resource type="Resource" uid="uid://dwy6qiei1wti0" path="res://MapGen/Resources/ResearchZone/room2_wc.tres" id="19_kfsji"]
@@ -28,7 +27,7 @@ script = ExtResource("20_25ogj")
 endrooms = Array[ExtResource("2_r1mwm")]([ExtResource("8_ob58e")])
 endrooms_single = Array[ExtResource("2_r1mwm")]([ExtResource("9_dvmdw"), ExtResource("10_r8imm"), ExtResource("11_4wncd"), ExtResource("12_n0ja3"), ExtResource("11_hkjbf"), ExtResource("13_hacfo")])
 hallways = Array[ExtResource("2_r1mwm")]([ExtResource("15_gouin"), ExtResource("16_lqkos")])
-hallways_single = Array[ExtResource("2_r1mwm")]([ExtResource("17_eih06"), ExtResource("17_4wncd"), ExtResource("18_3m7i0"), ExtResource("19_kfsji")])
+hallways_single = Array[ExtResource("2_r1mwm")]([ExtResource("17_eih06"), ExtResource("18_3m7i0"), ExtResource("19_kfsji")])
 checkpoint_hallway = Array[ExtResource("2_r1mwm")]([ExtResource("3_0r8dp")])
 corners = Array[ExtResource("2_r1mwm")]([ExtResource("4_l2hhr")])
 corners_single = Array[ExtResource("2_r1mwm")]([ExtResource("5_o283s")])

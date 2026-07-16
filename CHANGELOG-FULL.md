@@ -7,21 +7,20 @@ This list contains all features, added in the game, or will be added in upcoming
 - [x] Add support for timed tasks
 - [ ] Add whole story
 - [x] Remove hard mode
-- [ ] Merge previous Casual mode and Zen mode under Free roam mode.
 - [x] Remove CI and MTF from normal gameplay, re-introduce MTF Agent.
 - [x] Remove wave subsystem (until proper re-implementation)
 - [x] Day cycle and AAA-quality clouds
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
-- [x] Move SCP-109, SCP-686, SCP-1223 and SCP-5270 into Storage Zone
-- [ ] Add rooms for Story mode into that zone.
+- [x] Move SCP-067, SCP-109, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone
+- [x] Add rooms for Story mode into that zone.
 
 ### Rework Personnel Zone
-- [ ] Make it more comforatble for inhabitants.
+- [x] Make it more comforatble for inhabitants.
 
 ### New SCPs
-- [ ] SCP-1██ (exclusively for Story mode, hidden because of spoilers)
+- [ ] SCP-181 (exclusively for Story mode, hidden because of spoilers)
 - [x] SCP-983
 
 ### Other changes
@@ -29,7 +28,6 @@ This list contains all features, added in the game, or will be added in upcoming
 - [x] Removed rain in all seasons due to new sky performance impact.
 - [x] Sound rework
 - [x] Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
-  - [x] Remove Android support for **Godot 4.7.0 only** due to https://github.com/godotengine/godot/issues/120439
   - [x] Temporarily disable RD renderers support due to https://github.com/godotengine/godot/issues/120534
   - [x] Revert to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
 

@@ -24,9 +24,6 @@ msgstr "Credits"
 msgid "CUSTOM_ENEMYTYPE_RAND"
 msgstr "Randomize enemy spawn"
 
-msgid "TIME_LIMITED"
-msgstr "Hard mode"
-
 msgid "ZEN_MODE"
 msgstr "Safe mode"
 
@@ -58,7 +55,7 @@ msgstr ""
 "possible."
 
 msgid "CASUAL_MODE"
-msgstr "Free walk mode"
+msgstr "Casual mode"
 
 msgid "STORY_MODE"
 msgstr "???"
@@ -550,6 +547,12 @@ msgstr ""
 
 msgid "STORAGE_ZONE"
 msgstr "Storage Zone"
+
+msgid "CASUAL_MODE_HUNGER_ENABLE"
+msgstr "Enable hunger in casual mode"
+
+#~ msgid "TIME_LIMITED"
+#~ msgstr "Hard mode"
 
 #, fuzzy
 #~| msgid "GAME_WIN_1"

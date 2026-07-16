@@ -44,9 +44,6 @@ var region: String = "":
 var legal_req: bool = false
 var current_season: Season = Season.NONE
 
-## Beta mode
-var beta_mode: bool = false
-
 func _init():
 	load_resource()
 	audio_settings(1, setting_res.music_volume)
@@ -69,15 +66,10 @@ func _ready() -> void:
 	elif !DirAccess.dir_exists_absolute("user://mods/puppets/"):
 		DirAccess.make_dir_recursive_absolute("user://mods/puppets/")
 	touchscreen = DisplayServer.is_touchscreen_available()
-	# Failsafe for Godot 4.7
-	if touchscreen && Engine.get_version_info()["minor"] == 7 && Engine.get_version_info()["patch"] == 0:
-		dialogue_window(""" You have touchscreen enabled AND Godot version is 4.7.0!
- That Godot version has duplicate touchscreen events, making the game unplayable.
- If you has any touchscreen devices or you built the game for Android, please, use mouse to click buttons.""", "WARNING!")
 	
 	season_checker()
 	Console.add_command("beta_mode_features", beta_mode_features)
-	Console.add_command("beta_mode_enable", beta_mode_enable, ["keyword"], 1)
+	Console.add_command("beta_mode_enable", beta_mode_enable, ["keyword"])
 	Console.add_command("replace_npc_help", replace_npc_models_feature)
 	
 
@@ -204,7 +196,7 @@ func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
 	var loading_screen: Control = load("res://Scenes/LoadingScreen.tscn").instantiate()
 	add_child(loading_screen)
 	await get_tree().create_timer(0.5).timeout
-	var game: GameCore = load(file_path_to_load).instantiate()
+	var game: Node = load(file_path_to_load).instantiate()
 	for parameter in parameters:
 		game.set(parameter, parameters[parameter])
 	get_tree().root.add_child(game, true)
@@ -212,16 +204,21 @@ func loader(file_path_to_load: String, parameters: Dictionary[String, Variant]):
 	call_deferred("override_main_scene", game)
 	loading_screen.queue_free()
 
-func beta_mode_enable(keyword: String):
+func beta_mode_enable(keyword: String = ""):
 	if keyword == "feature_beta":
-		beta_mode = true
+		setting_res.beta_mode = true
+		save_resource(setting_res)
+	else:
+		setting_res.beta_mode = false
+		save_resource(setting_res)
 
 ## GDsh command.
 ## List current beta features.
 func beta_mode_features():
 	Console.print_info("""Beta features:
 	
-	No beta features are available
+	- RenderingDevice backends for PCs (experimental for Godot 4.7)
+	- NPC AI for Web (not available in vanilla game)
 	
 	To enable beta features, call in debug console this command:
 	[b]beta_mode_enable feature_beta[/b]
@@ -297,7 +294,7 @@ func change_renderer():
 					get_tree().quit()
 			1:
 				# Failsafe for Godot 4.7.0
-				if Engine.get_version_info()["minor"] == 7:
+				if Engine.get_version_info()["minor"] == 7 && !setting_res.beta_mode:
 					Console.print_error("There are bugs in Godot 4.7: ", true)
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD GPUs).", true)
 					# To developers - we can't use Godot 4.6 because of broken Web build.
@@ -308,7 +305,7 @@ func change_renderer():
 					get_tree().quit()
 			2:
 				# Failsafe for Godot 4.7.0
-				if Engine.get_version_info()["minor"] == 7:
+				if Engine.get_version_info()["minor"] == 7 && !setting_res.beta_mode:
 					Console.print_error("There are bugs in Godot 4.7: ", true)
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD devices).", true)
 					# To developers - we can't use Godot 4.6 because of broken Web build.

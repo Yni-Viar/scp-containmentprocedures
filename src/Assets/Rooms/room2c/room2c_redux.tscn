@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b0o8mx7cqp3j1"]
+[gd_scene format=4 uid="uid://b0o8mx7cqp3j1"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_0mti2"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_p2nqo"]
@@ -165,45 +165,45 @@ blend_shape_mode = 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4f3ew"]
 data = PackedVector3Array(7.3931, -2.1251, -3.9956, -4.0036, 5.1302, 7.4113, 7.3938, 5.1305, -3.9956, 7.3931, -2.1251, -3.9956, -4.0036, -2.1302, 7.4113, -4.0036, 5.1302, 7.4113, 3.9901, 5.1302, 7.3974, 7.3971, -2.1302, 4.0137, 7.3971, 5.1302, 4.0137, 3.9901, 5.1302, 7.3974, 3.9901, -2.1302, 7.3974, 7.3971, -2.1302, 4.0137, 7.3971, -2.1302, 4.0137, 10.2404, 5.1302, 4.0137, 7.3971, 5.1302, 4.0137, 7.3971, -2.1302, 4.0137, 10.2404, -2.1302, 4.0137, 10.2404, 5.1302, 4.0137, 7.3938, 5.1305, -3.9956, 10.2363, -2.1251, -3.9956, 7.3931, -2.1251, -3.9956, 7.3938, 5.1305, -3.9956, 10.237, 5.1305, -3.9956, 10.2363, -2.1251, -3.9956, -4.0036, -2.1302, 7.4113, -4.0036, 5.1302, 10.2356, -4.0036, 5.1302, 7.4113, -4.0036, -2.1302, 7.4113, -4.0036, -2.1302, 10.2356, -4.0036, 5.1302, 10.2356, 3.9901, 5.1302, 7.3974, 3.9901, -2.1302, 10.2215, 3.9901, -2.1302, 7.3974, 3.9901, 5.1302, 7.3974, 3.9901, 5.1302, 10.2215, 3.9901, -2.1302, 10.2215, 7.3971, 5.1302, 4.0137, 10.237, 5.1305, -3.9956, 7.3938, 5.1305, -3.9956, 7.3971, 5.1302, 4.0137, 10.2404, 5.1302, 4.0137, 10.237, 5.1305, -3.9956, 7.3971, 5.1302, 4.0137, 7.3938, 5.1305, -3.9956, -4.0036, 5.1302, 7.4113, 7.3971, 5.1302, 4.0137, -4.0036, 5.1302, 7.4113, 3.9901, 5.1302, 7.3974, -4.0036, 5.1302, 7.4113, 3.9901, 5.1302, 10.2215, 3.9901, 5.1302, 7.3974, -4.0036, 5.1302, 7.4113, -4.0036, 5.1302, 10.2356, 3.9901, 5.1302, 10.2215, -4.0036, -2.1302, 7.4113, 7.3971, -2.1302, 4.0137, 3.9901, -2.1302, 7.3974, -4.0036, -2.1302, 7.4113, 7.3931, -2.1251, -3.9956, 7.3971, -2.1302, 4.0137, 7.3931, -2.1251, -3.9956, 10.2404, -2.1302, 4.0137, 7.3971, -2.1302, 4.0137, 7.3931, -2.1251, -3.9956, 10.2363, -2.1251, -3.9956, 10.2404, -2.1302, 4.0137, 3.9901, -2.1302, 7.3974, -4.0036, -2.1302, 10.2356, -4.0036, -2.1302, 7.4113, 3.9901, -2.1302, 7.3974, 3.9901, -2.1302, 10.2215, -4.0036, -2.1302, 10.2356)
 
-[node name="room2c" type="StaticBody3D"]
+[node name="room2c" type="StaticBody3D" unique_id=1497712622]
 script = ExtResource("1_0mti2")
 mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cube")])
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1738683373]
 navigation_mesh = SubResource("NavigationMesh_o7u4x")
 
-[node name="Cube" type="MeshInstance3D" parent="NavigationRegion3D"]
+[node name="Cube" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1879488029]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 mesh = SubResource("ArrayMesh_0wd6j")
 skeleton = NodePath("")
 script = ExtResource("5_jv1w2")
 scp_649_floor_index = 2
 
-[node name="site19_wall_cb_modern_002" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.36335, -1.24981, -2.37995)
+[node name="site19_wall_cb_modern_002" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1929312559]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.346052, -1.24981, -2.4220922)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_d7qgd")
 skeleton = NodePath("")
 
-[node name="Props" type="Node3D" parent="NavigationRegion3D"]
+[node name="Props" type="Node3D" parent="NavigationRegion3D" unique_id=1465289436]
 
-[node name="Light2" parent="NavigationRegion3D/Props" instance=ExtResource("7_0mti2")]
+[node name="Light2" parent="NavigationRegion3D/Props" unique_id=2008562858 instance=ExtResource("7_0mti2")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0.34824038, 4.038, 7.134976)
 
-[node name="Light3" parent="NavigationRegion3D/Props" instance=ExtResource("7_0mti2")]
+[node name="Light3" parent="NavigationRegion3D/Props" unique_id=1428382945 instance=ExtResource("7_0mti2")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 6.8684726, 4.038, 0.6147437)
 
-[node name="FireExtinguisher" parent="NavigationRegion3D" instance=ExtResource("8_lmknj")]
+[node name="FireExtinguisher" parent="NavigationRegion3D" unique_id=435007710 instance=ExtResource("8_lmknj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6364594, -0.6496344, 7.6100373)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=482231773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.860662, 0)
 shape = SubResource("ConcavePolygonShape3D_4f3ew")
 
-[node name="DebugLights" type="Node3D" parent="."]
+[node name="DebugLights" type="Node3D" parent="." unique_id=231719315]
 visible = false
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." groups=["ReflectionProbe"]]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1146273974 groups=["ReflectionProbe"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12498, 2.34369, 3.10972)
 blend_distance = 0.4
 max_distance = 64.0
@@ -211,7 +211,7 @@ size = Vector3(14.15, 7.266, 14.15)
 origin_offset = Vector3(0.35, 0, 0.35)
 interior = true
 
-[node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1643293198 groups=["Lightmap"]]
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
@@ -219,20 +219,20 @@ interior = true
 texel_scale = 0.5
 light_data = ExtResource("6_nnfbq")
 
-[node name="Seasonal" type="Node3D" parent="."]
+[node name="Seasonal" type="Node3D" parent="." unique_id=1194783462]
 
-[node name="Halloween" type="Node3D" parent="Seasonal"]
+[node name="Halloween" type="Node3D" parent="Seasonal" unique_id=1957130451]
 visible = false
 script = ExtResource("8_gxdct")
 current_season = 6
 
-[node name="Pumpkin" parent="Seasonal/Halloween" instance=ExtResource("9_1fsrq")]
+[node name="Pumpkin" parent="Seasonal/Halloween" unique_id=536284310 instance=ExtResource("9_1fsrq")]
 transform = Transform3D(-0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, -0.7071067, 5.387258, -1.2581564, 4.948254)
 
-[node name="Christmas" type="Node3D" parent="Seasonal"]
+[node name="Christmas" type="Node3D" parent="Seasonal" unique_id=1941060213]
 visible = false
 script = ExtResource("8_gxdct")
 current_season = 5
 
-[node name="ChristmasLights" parent="Seasonal/Christmas" instance=ExtResource("10_1fsrq")]
+[node name="ChristmasLights" parent="Seasonal/Christmas" unique_id=518006563 instance=ExtResource("10_1fsrq")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 1.6218638, -0.08734143, 2.21102)

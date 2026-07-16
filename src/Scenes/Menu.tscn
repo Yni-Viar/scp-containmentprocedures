@@ -168,33 +168,36 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "SETTINGS"
 icon = ExtResource("7_x0ao6")
 
-[node name="Achievements" type="VBoxContainer" parent="." unique_id=1244781128]
+[node name="AchievementContainer" type="FoldableContainer" parent="." unique_id=498651892]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.68100005
-anchor_top = 0.84000003
-anchor_right = 0.99300003
-anchor_bottom = 0.98800004
-offset_left = -0.51208496
-offset_top = -0.32000732
-offset_right = 0.063964844
-offset_bottom = -0.22399902
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+folded = true
+
+[node name="Achievements" type="VBoxContainer" parent="AchievementContainer" unique_id=1244781128]
+visible = false
+layout_mode = 2
 alignment = 1
 
-[node name="Info2" type="Label" parent="Achievements" unique_id=2143256492]
+[node name="Info2" type="Label" parent="AchievementContainer/Achievements" unique_id=2143256492]
 layout_mode = 2
 text = "PROGRESS_SCP_STUDY"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Achievements" unique_id=1136139848]
+[node name="ScrollContainer" type="ScrollContainer" parent="AchievementContainer/Achievements" unique_id=1136139848]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Achievements/ScrollContainer" unique_id=633472280]
+[node name="HBoxContainer" type="HBoxContainer" parent="AchievementContainer/Achievements/ScrollContainer" unique_id=633472280]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Achievements" unique_id=1496853775]
+[node name="ProgressBar" type="ProgressBar" parent="AchievementContainer/Achievements" unique_id=1496853775]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 max_value = 1.0

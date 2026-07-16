@@ -24,9 +24,6 @@ msgstr ""
 msgid "CUSTOM_ENEMYTYPE_RAND"
 msgstr ""
 
-msgid "TIME_LIMITED"
-msgstr ""
-
 msgid "ZEN_MODE"
 msgstr ""
 
@@ -439,4 +436,7 @@ msgid "GAME_OVER_UNKNOWN_ENTITIES"
 msgstr ""
 
 msgid "STORAGE_ZONE"
+msgstr ""
+
+msgid "CASUAL_MODE_HUNGER_ENABLE"
 msgstr ""

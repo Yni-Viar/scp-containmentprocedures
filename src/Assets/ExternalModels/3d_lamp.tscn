@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://brouvfjjcatxw"]
+[gd_scene format=4 uid="uid://brouvfjjcatxw"]
 
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="1_706gi"]
 [ext_resource type="Texture2D" uid="uid://btqchu36fx5x6" path="res://Assets/ExternalModels/Lightbulb_CC0_Josh_Dean/textures/lightbulb_01_diff_1k.jpg" id="4_v5asn"]
@@ -98,26 +98,26 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="Lamp11" type="Node3D"]
+[node name="Lamp11" type="Node3D" unique_id=1178686144]
 script = ExtResource("1_706gi")
 
-[node name="lightbulb_02" type="MeshInstance3D" parent="."]
+[node name="lightbulb_02" type="MeshInstance3D" parent="." unique_id=1365113290]
 transform = Transform3D(2, 0, 0, 0, -2, 3.019916e-07, 0, -3.019916e-07, -2, 0, -1.1195834, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_lhmb4")
 skeleton = NodePath("")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0140705, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=522884681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2245394, 0)
 visible = false
 light_color = Color(1, 1, 0.752941, 1)
-light_energy = 2.0
+light_energy = 2.5
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
-omni_range = 15.0
+omni_range = 24.0
 
-[node name="Lamp 1" type="MeshInstance3D" parent="."]
+[node name="Lamp 1" type="MeshInstance3D" parent="." unique_id=133527496]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_s1x8s")
 skeleton = NodePath("")

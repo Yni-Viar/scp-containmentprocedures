@@ -72,5 +72,9 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"SCP-914": false,
 	"SCP-938": false,
 }
-## Free roam mode unlocked
-@export var free_mode_unlocked: bool = false
+## Casual mode unlocked
+@export var casual_mode_unlocked: bool = false
+## Beta mode enabled
+@export var beta_mode: bool = false
+## Enables hunger mechanics in casual mode
+@export var casual_mode_hunger: bool = true

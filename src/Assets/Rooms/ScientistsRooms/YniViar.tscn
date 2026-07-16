@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c1hqsxxlsoqws"]
+[gd_scene format=4 uid="uid://c1hqsxxlsoqws"]
 
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_tvbqg"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="2_0ng8n"]
@@ -254,70 +254,68 @@ _data = {
 &"SevigeneIdle": SubResource("Animation_n5c60")
 }
 
-[node name="OfficeYniViar" type="Node3D"]
+[node name="OfficeYniViar" type="Node3D" unique_id=697986793]
 
-[node name="Table" parent="." instance=ExtResource("1_tvbqg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.050264835, -0.26285422, 3.5906365)
+[node name="Table" parent="." unique_id=1559363629 instance=ExtResource("1_tvbqg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.05026436, -0.26285422, 5.4452186)
 
-[node name="laptop" parent="." instance=ExtResource("2_0ng8n")]
-transform = Transform3D(-0.9997339, 0, -0.023071487, 0, 1, 0, 0.023071487, 0, -0.9997339, -1.7587285, 0.17432654, 3.6511104)
+[node name="laptop" parent="." unique_id=1739483654 instance=ExtResource("2_0ng8n")]
+transform = Transform3D(-0.9997339, 0, -0.023071487, 0, 1, 0, 0.023071487, 0, -0.9997339, -1.758728, 0.17432654, 5.505693)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.7484544e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484544e-07, -3.185988, 3.5561476, -0.057388783)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=854010000]
+transform = Transform3D(4, 0, -1.1368684e-13, 0, 4, 0, 1.1368684e-13, 0, 4, -0.04627037, 3.556147, -6.531717)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_4lnpe")
 
-[node name="Couch" parent="." instance=ExtResource("4_5dmf0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11272383, -1.2628438, -3.3731828)
+[node name="Couch" parent="." unique_id=2100767892 instance=ExtResource("4_5dmf0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.112724304, -1.2628438, -5.200018)
 
-[node name="nitro" parent="." instance=ExtResource("5_okgko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7648368, -0.118054, -2.8490276)
+[node name="nitro" parent="." unique_id=8984964 instance=ExtResource("5_okgko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7648373, -0.11805403, -4.6758623)
 
-[node name="OmnidotplushV2" type="Node3D" parent="."]
-transform = Transform3D(-1.5714244e-07, 0, -3.595, 0, 3.595, 0, 3.595, 0, -1.5714244e-07, -0.97126305, -0.046496123, -3.326383)
+[node name="OmnidotplushV2" type="Node3D" parent="." unique_id=281584015]
+transform = Transform3D(-1.5714244e-07, 0, -3.595, 0, 3.595, 0, 3.595, 0, -1.5714244e-07, -0.97126293, -0.046496153, -5.1532183)
 
-[node name="Cylinder" type="MeshInstance3D" parent="OmnidotplushV2"]
+[node name="Cylinder" type="MeshInstance3D" parent="OmnidotplushV2" unique_id=1900984896]
 transform = Transform3D(0.1251525, 0, 0, 0, 0.1251525, 0, 0, 0, 0.1251525, 0.06229791, 0.0149272755, 0.0007974552)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_ehloj")
 skeleton = NodePath("")
 
-[node name="Cylinder_001" type="MeshInstance3D" parent="OmnidotplushV2"]
+[node name="Cylinder_001" type="MeshInstance3D" parent="OmnidotplushV2" unique_id=2136942430]
 transform = Transform3D(0.0247555, 0.1219075, -0.013739999, -0.12263687, 0.02495975, 0.0004981463, 0.0032254625, 0.01336525, 0.124394506, 0.17574319, 0.09391765, 0.03829633)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_4udjf")
 skeleton = NodePath("")
 
-[node name="Cylinder_002" type="MeshInstance3D" parent="OmnidotplushV2"]
+[node name="Cylinder_002" type="MeshInstance3D" parent="OmnidotplushV2" unique_id=509363840]
 transform = Transform3D(0.017179376, 0.123840004, 0.0056184754, -0.12396575, 0.01719025, 0.0001443925, -0.00062884873, -0.00558505, 0.12502624, 0.17804506, 0.09391765, -0.027100299)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_3psrn")
 skeleton = NodePath("")
 
-[node name="Cylinder_004" type="MeshInstance3D" parent="OmnidotplushV2"]
+[node name="Cylinder_004" type="MeshInstance3D" parent="OmnidotplushV2" unique_id=1947155334]
 transform = Transform3D(0.06610087, 0.10627188, 0, -0.10627188, 0.06610087, 0, 0, 0, 0.1251525, 0.1619052, 0.14477241, 0.0106193675)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_3theo")
 skeleton = NodePath("")
 
-[node name="Icosphere" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.2758787, 0.7185807, -3.3558803)
+[node name="Icosphere" type="MeshInstance3D" parent="." unique_id=1316358382]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.2758789, 0.7185807, -5.1827154)
 mesh = SubResource("ArrayMesh_n5c60")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5dmf0")
-}
-autoplay = "SevigeneIdle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=125348818]
+libraries/ = SubResource("AnimationLibrary_5dmf0")
+autoplay = &"SevigeneIdle"
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, -0.8412713, -3.378654)
+[node name="Label3D" type="Label3D" parent="." unique_id=1443985769]
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0, -0.8412713, -5.205489)
 text = "As of April 2026, InE universe will have bridge with SCP one.
 Maybe Sevigene can be found in SCP universe..."
 
-[node name="Amy" parent="." instance=ExtResource("13_5dmf0")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 2.4266152, 0.20531392, 4.2211523)
+[node name="Amy" parent="." unique_id=665453999 instance=ExtResource("13_5dmf0")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 2.4266148, 0.20531392, 6.0757346)
 
-[node name="Andrew" parent="." instance=ExtResource("14_okgko")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.8398056, 0.20531404, 3.5831318)
+[node name="Andrew" parent="." unique_id=1144996509 instance=ExtResource("14_okgko")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.8398056, 0.20531404, 5.437714)

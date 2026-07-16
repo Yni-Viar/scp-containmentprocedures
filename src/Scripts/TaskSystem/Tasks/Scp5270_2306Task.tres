@@ -6,5 +6,5 @@
 script = ExtResource("1_jtt0n")
 internal_name = "task_5270_2306"
 public_name = "TASK_5270_2306_FIX"
-required_groups = Array[String](["RZ_cont1_testroom", "pz_testroom"])
+required_groups = Array[String](["RZ_cont1_testroom", "st_testroom"])
 metadata/_custom_type_script = "uid://2412583x8gql"

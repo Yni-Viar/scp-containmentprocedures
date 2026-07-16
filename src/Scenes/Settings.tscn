@@ -41,6 +41,10 @@ layout_mode = 2
 button_pressed = true
 text = "NEURAL_AI"
 
+[node name="HungerInCasualMode" type="CheckButton" parent="ScrollContainer/SettingsUI" unique_id=390849310]
+layout_mode = 2
+text = "CASUAL_MODE_HUNGER_ENABLE"
+
 [node name="GraphicsLabel" type="Label" parent="ScrollContainer/SettingsUI" unique_id=1384164794]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mjqtt")
@@ -254,6 +258,7 @@ layout_mode = 2
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="visibility_changed" from="." to="ScrollContainer/SettingsUI" method="_on_settings_visibility_changed"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/AI" to="ScrollContainer/SettingsUI" method="_on_ai_toggled"]
+[connection signal="toggled" from="ScrollContainer/SettingsUI/HungerInCasualMode" to="ScrollContainer/SettingsUI" method="_on_hunger_in_casual_mode_toggled"]
 [connection signal="item_selected" from="ScrollContainer/SettingsUI/Renderer" to="ScrollContainer/SettingsUI" method="_on_renderer_item_selected"]
 [connection signal="item_selected" from="ScrollContainer/SettingsUI/Lighting" to="ScrollContainer/SettingsUI" method="_on_lighting_item_selected"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/Glow" to="ScrollContainer/SettingsUI" method="_on_glow_toggled"]

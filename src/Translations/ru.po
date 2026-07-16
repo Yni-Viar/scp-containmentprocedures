@@ -24,9 +24,6 @@ msgstr "Титры"
 msgid "CUSTOM_ENEMYTYPE_RAND"
 msgstr "Случайное появление противников"
 
-msgid "TIME_LIMITED"
-msgstr "Сложный режим"
-
 msgid "ZEN_MODE"
 msgstr "Безопасный режим"
 
@@ -59,7 +56,7 @@ msgstr ""
 "Техническую зону и заменить \"глаза\" SCP-023 как можно скорее."
 
 msgid "CASUAL_MODE"
-msgstr "Играть"
+msgstr "Свободная игра"
 
 msgid "STORY_MODE"
 msgstr "???"
@@ -592,6 +589,12 @@ msgstr ""
 
 msgid "STORAGE_ZONE"
 msgstr "Зона хранилища"
+
+msgid "CASUAL_MODE_HUNGER_ENABLE"
+msgstr "Включить систему голода в свободной игре"
+
+#~ msgid "TIME_LIMITED"
+#~ msgstr "Сложный режим"
 
 #~ msgid "GAME_OVER_5"
 #~ msgstr ""

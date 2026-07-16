@@ -12,7 +12,7 @@ func _enter_tree() -> void:
 		else:
 			var label: Label = Label.new()
 			label.text = progress
-			$Achievements/ScrollContainer/HBoxContainer.add_child(label)
+			$AchievementContainer/Achievements/ScrollContainer/HBoxContainer.add_child(label)
 	if OS.has_feature("Lite"):
 		$LiteWarning.show()
 	else:
@@ -23,12 +23,12 @@ func _enter_tree() -> void:
 			else:
 				var label: Label = Label.new()
 				label.text = progress
-				$Achievements/ScrollContainer/HBoxContainer.add_child(label)
+				$AchievementContainer/Achievements/ScrollContainer/HBoxContainer.add_child(label)
 		if randf() > 0.75:
 			$AudioStreamPlayer.stream = load("res://Sounds/Music/Original/Optional/SCP_MainTheme_v2.ogg")
 	
-	$Achievements/ProgressBar.max_value = total_amount
-	$Achievements/ProgressBar.value = completed_amount
+	$AchievementContainer/Achievements/ProgressBar.max_value = total_amount
+	$AchievementContainer/Achievements/ProgressBar.value = completed_amount
 	
 	#var index: int = 0
 	#for node in $LorePanel/ScrollContainer/VBoxContainer.get_children():
@@ -46,13 +46,13 @@ func _enter_tree() -> void:
 	
 	await get_tree().physics_frame
 	
-	if Settings.setting_res.free_mode_unlocked:
+	if Settings.setting_res.casual_mode_unlocked:
 		$HBoxContainer/Play.show()
 		$GameSettingsContainer.show()
 	
 	if completed_amount == total_amount:
-		$Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
-		$Achievements/ScrollContainer.hide()
+		$AchievementContainer/Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
+		$AchievementContainer/Achievements/ScrollContainer.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:

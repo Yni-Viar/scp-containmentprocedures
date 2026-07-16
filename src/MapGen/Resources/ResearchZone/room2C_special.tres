@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MapGenRoom" load_steps=7 format=3 uid="uid://dkax2pgmsnpbr"]
+[gd_resource type="Resource" script_class="MapGenRoom" format=3 uid="uid://dkax2pgmsnpbr"]
 
 [ext_resource type="Texture2D" uid="uid://b6pxgudfi35q0" path="res://Assets/HUD/room2C.png" id="1_b26nl"]
 [ext_resource type="Texture2D" uid="uid://ia41ujoiaq1e" path="res://Assets/HUD/room2C_180.png" id="2_f13a6"]

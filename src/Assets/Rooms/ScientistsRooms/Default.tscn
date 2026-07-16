@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://tqgwmnit0prl"]
+[gd_scene format=3 uid="uid://tqgwmnit0prl"]
 
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_wkv2x"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="2_nfm50"]
@@ -15,18 +15,18 @@ text = "[DATA REDACTED]"
 font = ExtResource("3_o2iuw")
 font_size = 24
 
-[node name="OfficeDefault" type="Node3D"]
+[node name="OfficeDefault" type="Node3D" unique_id=1977095205]
 
-[node name="Table" parent="." instance=ExtResource("1_wkv2x")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.050264835, -0.26285422, 3.5906365)
+[node name="Table" parent="." unique_id=748537956 instance=ExtResource("1_wkv2x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.050265312, -0.26285422, 5.129433)
 
-[node name="laptop" parent="." instance=ExtResource("2_nfm50")]
-transform = Transform3D(-0.9997339, 0, -0.023071487, 0, 1, 0, 0.023071487, 0, -0.9997339, -1.5832238, 0.17432654, 3.6511104)
+[node name="laptop" parent="." unique_id=828387576 instance=ExtResource("2_nfm50")]
+transform = Transform3D(-0.9997339, 0, -0.023071487, 0, 1, 0, 0.023071487, 0, -0.9997339, -1.5832243, 0.17432654, 5.1899066)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.7484544e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484544e-07, -3.185988, 3.5561476, -0.057388783)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2043599979]
+transform = Transform3D(4, 0, -1.1368684e-13, 0, 4, 0, 1.1368684e-13, 0, 4, 0.14840317, 3.5561476, -6.5143003)
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_4lnpe")
 
-[node name="Couch" parent="." instance=ExtResource("4_ofuen")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11272383, -1.2628438, -3.3731828)
+[node name="Couch" parent="." unique_id=458912793 instance=ExtResource("4_ofuen")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11272335, -1.2628438, -5.5085964)

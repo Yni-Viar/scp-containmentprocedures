@@ -60,6 +60,10 @@ func _ready() -> void:
 	if RenderingServer.get_current_rendering_method() == "forward_plus" || \
 	 RenderingServer.get_current_rendering_method() == "gl_compatibility":
 		$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
+	if RenderingServer.get_current_rendering_method() == "forward_plus" && \
+	 Settings.setting_res.lighting == SettingsResource.Lighting.REALTIME:
+		$WorldEnvironment.environment.sdfgi_enabled = true
+	
 	$WorldEnvironment.environment.tonemap_mode = Settings.setting_res.tonemapper
 	if Settings.setting_res.tonemapper != Environment.TONE_MAPPER_LINEAR || \
 	 Settings.setting_res.tonemapper != Environment.TONE_MAPPER_AGX:
@@ -85,7 +89,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if get_tree().root.get_node_or_null("Game/StoryModeNode") != null && protagonist != null:
+	if (get_tree().root.get_node_or_null("Game/StoryModeNode") != null || Settings.setting_res.casual_mode_hunger) && protagonist != null:
 		# Hunger and thirst mechanic
 		protagonist.health_manage(-delta * 0.25, 2, "GAME_OVER_THIRST")
 		protagonist.health_manage(-delta * 0.1875, 3, "GAME_OVER_HUNGER")

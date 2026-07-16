@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="6_q0cx4"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="8_5qnc2"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_5qnc2"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="10_6yybo"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="10_q0cx4"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="11_xvau2"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="12_xvau2"]
@@ -75,6 +76,7 @@ data = PackedVector3Array(-9.505, 3.4468, 2.5281, -9.505, -9.505, -2.7533998, -9
 
 [node name="mt_room1" type="StaticBody3D" unique_id=1724106295]
 script = ExtResource("1_3ehpl")
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=939245593]
 navigation_mesh = SubResource("NavigationMesh_6571d")
@@ -127,6 +129,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.1
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.28336, 0)
 mesh = SubResource("ArrayMesh_kyurq")
 skeleton = NodePath("")
+script = ExtResource("10_6yybo")
+scp_649_floor_index = 1
 
 [node name="DebugLights" type="Node3D" parent="." unique_id=1984218546]
 visible = false

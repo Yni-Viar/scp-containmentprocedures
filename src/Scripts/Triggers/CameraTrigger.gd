@@ -18,3 +18,9 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			get_tree().root.get_node("Game/StaticPlayer").camera_mode = camera_mode
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is MovableNpc:
+		if body.is_player:get_tree().root.get_node("Game/StaticPlayer").camera_mode = StaticPlayer.CameraMode.ALL
+			

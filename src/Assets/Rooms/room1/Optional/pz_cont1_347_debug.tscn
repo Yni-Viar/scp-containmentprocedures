@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ds3ppewbuwgeh"]
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D"]
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" unique_id=1524981729]
 height = 3.05
-vertices = PackedVector3Array(-1.3046, 0, 4.1669984, -1.3136852, 0, 4.7393627, 1.2846653, 0, 4.7393627, 1.2755802, 0, 4.1397433)
+vertices = PackedVector3Array(-1.3120794, 0, 4.727029, -1.3120794, 0, 5.3884497, 1.28111, 0, 5.367452, 1.2706115, 0, 4.727029)
 affect_navigation_mesh = true
