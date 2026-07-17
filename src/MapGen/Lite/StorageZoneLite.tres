@@ -5,11 +5,12 @@
 [ext_resource type="Resource" uid="uid://cynujkfmtutav" path="res://MapGen/Resources/StorageZone/ckpt2.tres" id="3_u7nl0"]
 [ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/StorageZone/room2C.tres" id="4_bau4c"]
 [ext_resource type="Resource" uid="uid://p5bix08fmuyu" path="res://MapGen/Resources/StorageZone/room4.tres" id="5_k0wtq"]
+[ext_resource type="Resource" uid="uid://jmjh0luvyagc" path="res://MapGen/Resources/StorageZone/cont2C_067.tres" id="5_p0bw8"]
 [ext_resource type="Resource" uid="uid://r4jtmjvd7l37" path="res://MapGen/Resources/StorageZone/room1.tres" id="6_knjx6"]
 [ext_resource type="Resource" uid="uid://cjwa8lyg82tro" path="res://MapGen/Resources/StorageZone/cont1_nuke.tres" id="7_nxljm"]
 [ext_resource type="Resource" uid="uid://d0xy6hxtg6dyx" path="res://MapGen/Resources/StorageZone/room2.tres" id="8_c0n0b"]
 [ext_resource type="Resource" uid="uid://chu88o6q8jjlq" path="res://MapGen/Resources/StorageZone/room2_large.tres" id="9_8wb5d"]
-[ext_resource type="Resource" uid="uid://bprnbgimely5g" path="res://MapGen/Resources/StorageZone/cont2_067_2028.tres" id="10_w1sni"]
+[ext_resource type="Resource" uid="uid://bprnbgimely5g" path="res://MapGen/Resources/StorageZone/cont2_2028.tres" id="10_w1sni"]
 [ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="11_xwmj8"]
 [ext_resource type="Resource" uid="uid://ccl1uuy1o3ct0" path="res://MapGen/Resources/StorageZone/room3.tres" id="12_lqvm2"]
 [ext_resource type="Resource" uid="uid://bm51rfjlriqo1" path="res://MapGen/Resources/StorageZone/cont3_echoes.tres" id="13_g8bxc"]
@@ -22,6 +23,7 @@ hallways = Array[ExtResource("2_dtlmw")]([ExtResource("8_c0n0b"), ExtResource("9
 hallways_single = Array[ExtResource("2_dtlmw")]([ExtResource("10_w1sni")])
 checkpoint_hallway = Array[ExtResource("2_dtlmw")]([ExtResource("3_u7nl0")])
 corners = Array[ExtResource("2_dtlmw")]([ExtResource("4_bau4c")])
+corners_single = Array[ExtResource("2_dtlmw")]([ExtResource("5_p0bw8")])
 trooms = Array[ExtResource("2_dtlmw")]([ExtResource("12_lqvm2")])
 trooms_single = Array[ExtResource("2_dtlmw")]([ExtResource("13_g8bxc")])
 crossrooms = Array[ExtResource("2_dtlmw")]([ExtResource("5_k0wtq")])

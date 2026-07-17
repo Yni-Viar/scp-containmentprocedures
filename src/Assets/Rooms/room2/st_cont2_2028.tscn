@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="12_42a8v"]
 [ext_resource type="PackedScene" uid="uid://g2a7novacc01" path="res://Assets/ExternalModels/shelf_2028.tscn" id="12_bqb6u"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="13_hrklx"]
-[ext_resource type="PackedScene" uid="uid://di3qs5437vm87" path="res://InventorySystem/Items/ItemScp067.tscn" id="14_sbs4n"]
-[ext_resource type="PackedScene" uid="uid://d0ot1af7632t" path="res://InventorySystem/Items/ItemDoc.tscn" id="15_fdghm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_swyoh"]
 vertices = PackedVector3Array(4.7572403, -0.763, -3.489749, 7.0072403, -0.763, -3.739749, 4.5072403, -0.763, -3.989749, 4.5072403, -0.763, -1.989749, 1.5072403, -0.763, -8.989749, 1.2572403, -0.763, -9.739749, -1.2427597, -0.763, -9.739749, -1.4927597, -0.763, -8.989749, 4.5072403, -0.763, -8.989749, -6.9927597, -0.763, -8.739749, -6.9927597, -0.763, -7.739749, -4.2427597, -0.763, -7.489749, -4.2427597, -0.763, -2.239749, 7.5072403, -0.763, 2.260251, 7.5072403, -0.763, -2.489749, 7.0072403, -0.763, 2.260251, 4.7572403, -0.763, 2.510251, 4.5072403, -0.763, 2.010251, 4.5072403, -0.763, 4.260251, -4.2427597, -0.763, 4.260251, -4.4927597, -0.763, -0.48974895, -6.9927597, -0.763, -0.48974895, -6.9927597, -0.763, 2.260251, -4.4927597, -0.763, 2.260251, 5.7572403, -0.763, 9.010251, 5.7572403, -0.763, 8.260251, 4.5072403, -0.763, 8.010251, 1.5072403, -0.763, 9.010251, -1.4927597, -0.763, 9.010251, -1.2427597, -0.763, 9.760251, 1.2572403, -0.763, 9.760251, -4.2427597, -0.763, 9.010251)
@@ -124,6 +122,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mrdf"]
+albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
@@ -132,13 +131,6 @@ material = SubResource("StandardMaterial3D_0mrdf")
 text = "2028"
 font = ExtResource("13_hrklx")
 font_size = 32
-depth = 0.01
-
-[sub_resource type="TextMesh" id="TextMesh_o3bla"]
-material = SubResource("StandardMaterial3D_0mrdf")
-text = "067"
-font = ExtResource("13_hrklx")
-font_size = 24
 depth = 0.01
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bqb6u"]
@@ -268,17 +260,6 @@ transform = Transform3D(-4, 0, -6.039832e-07, 0, 4, 0, 6.039832e-07, 0, -4, 3.81
 visibility_range_end = 64.0
 mesh = SubResource("TextMesh_f0cdv")
 skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1858022772 groups=["Scp067Spawn"]]
-transform = Transform3D(-6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, -6, -4.637598, 2.1212075, 9.459626)
-visibility_range_end = 64.0
-mesh = SubResource("TextMesh_o3bla")
-
-[node name="Scp067" parent="." unique_id=58235109 instance=ExtResource("14_sbs4n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.978568, 0.2725604, 6.3187904)
-
-[node name="doc" parent="." unique_id=1335079457 instance=ExtResource("15_fdghm")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.0086236, 0.26693416, 7.5178556)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1395136472]
 transform = Transform3D(4.882693e-07, 0, 1.3652997, 0, 1.3653, 0, -1.3652997, 0, 4.882693e-07, 0, -1.263, 0)
