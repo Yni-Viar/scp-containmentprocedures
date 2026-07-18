@@ -139,6 +139,7 @@ zone_size = 10
 map_size_x = 1
 map_size_y = 1
 large_rooms = true
+room_amount = 0.875
 better_zone_generation_min_amount = 5
 checkpoints_enabled = true
 

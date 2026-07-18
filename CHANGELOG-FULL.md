@@ -10,6 +10,15 @@ This list contains all features, added in the game, or will be added in upcoming
 - [x] Remove CI and MTF from normal gameplay, re-introduce MTF Agent.
 - [x] Remove wave subsystem (until proper re-implementation)
 - [x] Day cycle and AAA-quality clouds
+- [x] Add door system
+- [x] Rework several rooms to support doors
+  - [x] SCP-173 containment chamber
+  - [x] SCP-650 containment chamber
+  - [x] SCP-178 containment chamber
+  - [x] SCP-522 containment chamber
+  - [x] SCP-1507 containment chamber
+  - [x] Research Zone testroom
+  - [x] Research Zone endroom
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
@@ -22,16 +31,19 @@ This list contains all features, added in the game, or will be added in upcoming
 ### New SCPs
 - [ ] SCP-181 (exclusively for Story mode, hidden because of spoilers)
 - [x] SCP-983
+- [x] Rework SCP-261 to support translations.
 
 ### Other changes
+- [x] Disabled SCP-266, due to incompatibility with SCP article. (You can no longer spawn it, but it still exist in game files)
 - [x] Removed SCP-446 in Lite version and disabled in Full version.
 - [x] Removed rain in all seasons due to new sky performance impact.
 - [x] Sound rework
+- [x] \[Full version\] Fixed overlap between SCP-938 containment chamber and Gate A
 - [x] Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
   - [x] Temporarily disable RD renderers support due to https://github.com/godotengine/godot/issues/120534
   - [x] Revert to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
 
-## v9.1.3 (2026.06.28, last version, that support Windows 8.1 unofficially)
+## v9.1.3 (2026.06.28, ⚠️ Last version, that unofficially supports Windows 8.1!!!)
 
 - \[PC only\] Fix cloud color to be more realistic
 

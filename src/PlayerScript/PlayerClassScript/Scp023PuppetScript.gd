@@ -46,7 +46,7 @@ func _on_timer_timeout() -> void:
 func special_action():
 	if glow_enabled:
 		eye_glow_strength = 0.25
-		$Timer.stop()
+		timer.stop()
 		#Achievement
 		if Settings.setting_res.scp_study_progress_all.has("SCP-023"):
 			if !Settings.setting_res.scp_study_progress_all["SCP-023"]:

@@ -41,6 +41,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER, AI_WANDER}
 @export var movement_freeze: bool = false
 @export var money: Dictionary[String, int] = {}
 @export var immortal: bool = false
+@export var keycards: Array[int] = []
 
 @export var wandering_system: WanderingSystem = WanderingSystem.NONE:
 	set(val):
@@ -119,6 +120,7 @@ func _ready() -> void:
 	wandering_system = int(puppet_class.wandering_system) as WanderingSystem
 	special_wandering_group = puppet_class.special_wandering_group
 	spawn_on_start = puppet_class.spawn_on_start
+	keycards = puppet_class.keycards
 	_nav_agent.avoidance_enabled = puppet_class.enable_avoidance
 	_nav_agent.navigation_layers = puppet_class.puppet_navigation_layers
 	current_health = health.duplicate()

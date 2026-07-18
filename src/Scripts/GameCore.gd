@@ -126,6 +126,8 @@ func spawn_player():
 	protagonist.global_position = selected_spawn.global_position
 	$NPCs.add_child(protagonist)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
+	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
+		protagonist.keycards.append(16)
 
 ## Start-round spawn
 func spawn_puppets():
@@ -168,7 +170,6 @@ func finish_game(good_end: bool, reason: String):
 		$UI/Condition/ConditionLabel.text = "GAME_WIN" if good_end else "GAME_OVER"
 		$UI/Condition/ReasonLabel.text = reason
 		$AnimationPlayer.play("condition_open")
-		$GameOverTimer.stop()
 		game_ended = true
 
 ## Cutscene animation

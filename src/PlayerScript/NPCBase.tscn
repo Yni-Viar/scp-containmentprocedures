@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rj65na3myb3i"]
+[gd_scene format=3 uid="uid://rj65na3myb3i"]
 
 [ext_resource type="Script" uid="uid://b8pkv7v2qmc5c" path="res://PlayerScript/MovableNpc.gd" id="1_3jgrj"]
 [ext_resource type="Script" uid="uid://caoa6u8nk71m7" path="res://Scripts/StatusEffects/StatusEffectManager.gd" id="2_2vyji"]
@@ -17,169 +17,169 @@ height = 24.5533
 height = 3.24065
 radius = 1.50717
 
-[node name="NPCBase" type="CharacterBody3D" groups=["Players"]]
+[node name="NPCBase" type="CharacterBody3D" unique_id=278338901 groups=["Players"]]
 collision_layer = 10
 collision_mask = 3
 floor_stop_on_slope = false
 script = ExtResource("1_3jgrj")
 footstep_sounds = Array[String](["res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"])
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=799353419]
 path_desired_distance = 0.5
 path_height_offset = 0.25
 neighbor_distance = 2.5
 max_speed = 15.0
 
-[node name="PlayerModel" type="Node3D" parent="."]
+[node name="PlayerModel" type="Node3D" parent="." unique_id=1793289030]
 transform = Transform3D(1.50046, 0, 0, 0, 1.50046, 0, 0, 0, 1.50046, 0, 0, 0)
 
-[node name="StatusEffects" type="Node" parent="."]
+[node name="StatusEffects" type="Node" parent="." unique_id=126967716]
 script = ExtResource("2_2vyji")
 
-[node name="CollisionBodyCapsule" type="CollisionShape3D" parent="."]
+[node name="CollisionBodyCapsule" type="CollisionShape3D" parent="." unique_id=951564305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10079, 0)
 shape = SubResource("CapsuleShape3D_kvonu")
 
-[node name="WalkSounds" type="AudioStreamPlayer3D" parent="."]
+[node name="WalkSounds" type="AudioStreamPlayer3D" parent="." unique_id=760631431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.242917, 0)
 max_distance = 16.0
 
-[node name="InteractSound" type="AudioStreamPlayer3D" parent="."]
+[node name="InteractSound" type="AudioStreamPlayer3D" parent="." unique_id=2084403183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1602, 0)
 max_distance = 64.0
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1450038685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86335, 0)
 target_position = Vector3(0, 0, -32)
 collision_mask = 7
 
-[node name="NNRay" type="Node3D" parent="."]
+[node name="NNRay" type="Node3D" parent="." unique_id=72434019]
 
-[node name="RayCastLow" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow" type="RayCast3D" parent="NNRay" unique_id=1177665945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow2" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow2" type="RayCast3D" parent="NNRay" unique_id=169442523]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow4" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow4" type="RayCast3D" parent="NNRay" unique_id=382146343]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881904, 0, -0.25881904, 0.9659259, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow5" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow5" type="RayCast3D" parent="NNRay" unique_id=1652314060]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.49999997, 0.8660254, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow8" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow8" type="RayCast3D" parent="NNRay" unique_id=2036579770]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow9" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow9" type="RayCast3D" parent="NNRay" unique_id=2006997126]
 transform = Transform3D(0.9659258, 0.0669873, 0.25, 0, 0.96592593, -0.25881907, -0.25881907, 0.25000003, 0.9330128, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow11" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow11" type="RayCast3D" parent="NNRay" unique_id=1417539027]
 transform = Transform3D(0.9659258, -0.0669873, 0.25, 0, 0.9659258, 0.258819, -0.258819, -0.24999999, 0.93301266, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow12" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow12" type="RayCast3D" parent="NNRay" unique_id=1361645216]
 transform = Transform3D(0.9659258, -0.1294095, 0.22414386, 0, 0.8660254, 0.49999997, -0.25881904, -0.48296288, 0.83651626, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow15" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow15" type="RayCast3D" parent="NNRay" unique_id=1240290849]
 transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow16" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow16" type="RayCast3D" parent="NNRay" unique_id=1529910528]
 transform = Transform3D(0.9659258, -0.066987306, -0.25000006, -3.8567047e-09, 0.96592605, -0.2588191, 0.258819, 0.25000003, 0.9330128, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow18" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow18" type="RayCast3D" parent="NNRay" unique_id=12594943]
 transform = Transform3D(0.96592575, 0.06698728, -0.24999999, 0, 0.96592593, 0.25881904, 0.25881907, -0.25, 0.93301266, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow19" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow19" type="RayCast3D" parent="NNRay" unique_id=1039482728]
 transform = Transform3D(0.9659258, 0.12940952, -0.22414385, 7.196708e-09, 0.8660254, 0.49999997, 0.25881904, -0.48296288, 0.83651626, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow17" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow17" type="RayCast3D" parent="NNRay" unique_id=1067663435]
 transform = Transform3D(0.990435, 0, -0.13798043, 0, 1, 0, 0.13798043, 0, 0.990435, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow20" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow20" type="RayCast3D" parent="NNRay" unique_id=1802503801]
 transform = Transform3D(0.99043494, -0.03571198, -0.13327894, 2.538716e-10, 0.9659261, -0.2588191, 0.1379804, 0.25634345, 0.95668674, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow21" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow21" type="RayCast3D" parent="NNRay" unique_id=783623942]
 transform = Transform3D(0.9904349, 0.035711974, -0.13327888, -7.450581e-09, 0.9659259, 0.258819, 0.13798046, -0.25634342, 0.9566866, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow22" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow22" type="RayCast3D" parent="NNRay" unique_id=1965896100]
 transform = Transform3D(0.99043494, 0.068990245, -0.11949459, 9.193085e-09, 0.8660254, 0.5, 0.13798046, -0.49521747, 0.8577418, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow23" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow23" type="RayCast3D" parent="NNRay" unique_id=1248686459]
 transform = Transform3D(0.9895334, 0, 0.14430444, 0, 1, 0, -0.14430444, 0, 0.9895334, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow24" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow24" type="RayCast3D" parent="NNRay" unique_id=1556427625]
 transform = Transform3D(0.9895333, 0.037348717, 0.13938731, 2.3099398e-09, 0.96592605, -0.25881907, -0.14430441, 0.25611007, 0.9558158, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow25" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow25" type="RayCast3D" parent="NNRay" unique_id=1486592074]
 transform = Transform3D(0.9895333, -0.037348714, 0.13938734, -9.50665e-09, 0.9659259, 0.258819, -0.14430438, -0.25611007, 0.95581573, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow26" type="RayCast3D" parent="NNRay"]
+[node name="RayCastLow26" type="RayCast3D" parent="NNRay" unique_id=1008515399]
 transform = Transform3D(0.9895335, -0.07215219, 0.12497125, 9.615566e-09, 0.8660254, 0.5, -0.1443044, -0.49476674, 0.856961, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="RayCastLow" type="RayCast3D" parent="."]
+[node name="RayCastLow" type="RayCast3D" parent="." unique_id=611234924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86353, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 7
 
-[node name="VisionArea" type="Area3D" parent="."]
+[node name="VisionArea" type="Area3D" parent="." unique_id=1992265381]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea" unique_id=88928845]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.39744, 0)
 shape = SubResource("CapsuleShape3D_fbqsr")
 
-[node name="ActionArea" type="Area3D" parent="."]
+[node name="ActionArea" type="Area3D" parent="." unique_id=1884158119]
 collision_layer = 2
 collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionArea" unique_id=2021001073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30394, 0)
 shape = SubResource("CylinderShape3D_m1isr")
 
-[node name="ItemSpawn" type="Marker3D" parent="."]
+[node name="ItemSpawn" type="Marker3D" parent="." unique_id=196102005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44197, 0)
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=1319920601]
 layout_mode = 3
 anchor_left = 0.056
 anchor_right = 1.0
@@ -191,7 +191,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_yax7y")
 
-[node name="Inventory" parent="UI" instance=ExtResource("2_m1isr")]
+[node name="Inventory" parent="UI" unique_id=1150015309 instance=ExtResource("2_m1isr")]
 visible = false
 layout_mode = 1
 

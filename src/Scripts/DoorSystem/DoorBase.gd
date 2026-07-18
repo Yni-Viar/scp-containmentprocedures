@@ -6,14 +6,17 @@ class_name DoorBase
 @export var can_open: bool = true
 ## The door is actually opened.
 @export var is_opened: bool = false
-# WTF? Why I duplicated the can_open function?
-#@export var can_manual_open: bool = true
 ## Enables door sound
 @export var enable_sound: bool = true
 ## Door open sound variations
 @export var open_door_sounds: Array[String]
 ## Door close sound variations
 @export var close_door_sounds: Array[String]
+## Is this door keycarded? 
+## Useless for elevator doors!
+@export var check_keycards: bool = false
+## Which keycard can open this door
+@export var required_keycards: Array[int] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,15 +29,15 @@ func _ready():
 	#pass
 
 ## Main control method, which checks - is the door opened.
-func door_control(player_path: String, keycard: int, check_key: bool = false): #, manual: bool = false):
-	if can_open: # && (manual && can_manual_open != !manual):
-		#if (check_key && check_keycard(player_path, keycard)) != !check_key:
-		door_controller(keycard)
+func door_control(player_path: String):
+	if can_open:
+		if (check_keycards && check_keycard(player_path)) != !check_keycards:
+			door_controller()
 	#else:
 		#$DoorSound.stream = load()
 
 ## If DoorControl check is successful, open the door (or close)
-func door_controller(keycard: int):
+func door_controller():
 	if is_opened && !get_node("AnimationPlayer").is_playing():
 		door_close()
 	elif !get_node("AnimationPlayer").is_playing():
@@ -59,12 +62,16 @@ func door_close():
 		$DoorSound.play()
 	is_opened = false
 
-#func check_keycard(player_path: String, keycard: int) -> bool:
-	#var player = get_node(player_path)
-	#if player is PlayerScript:
-		#if player.keycards.has(keycard):
-			#return true
-		#else:
-			#return false
-	#else:
-		#return false
+## Checks keycards
+func check_keycard(player_path: String) -> bool:
+	var player = get_node(player_path)
+	if player is MovableNpc:
+		# 0 is SCP-005 and 16 is Casual mode keycard
+		if player.keycards.has(0) || player.keycards.has(16):
+			return true
+		for key in player.keycards:
+			if required_keycards.has(key):
+				return true
+		return false
+	else:
+		return false

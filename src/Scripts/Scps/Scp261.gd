@@ -2,84 +2,7 @@ extends InteractableStatic
 ## SCP-261 script
 ## Made by Yni, licensed under GPLv3.
 
-@export var meals: Dictionary = {
-	"version": "2.0.0",
-	"lowest_1": {
-		"Corn": ["health:20.0:3"],
-		"Apple seed": ["message:You received 100 apple seeds"],
-		"Artifical Coffee drink": ["health:5.0:3", "message:Such an disgusting drink"],
-		"American air": ["message:It is an usual air"]
-	},
-	"lowest_2": {
-		"Disease Curer": ["health:100.0:0"],
-		"Eetmees": ["health:15.0:3"],
-	},
-	"lowest_3": {
-		"Beefy fedora hat": ["health:30.0:3"],
-		"Penguin bottle with liquid": ["health:-2.0:0", "health:2.0:2"]
-	},
-	"low_1": {
-		"Instant Ramen": ["health:30.0:3"],
-		"A banana": ["health:45.0:3"],
-		"BEEF!": ["health:5.0:3", "message:It was a raw meat..."],
-		"Apple seed": ["message:You received 300 apple seeds"]
-	},
-	"low_2": {
-		"Applexplosion": ["health:-2.5:0", "health:5.0:3"],
-		"Minty fish": ["health:1.0:3", "health:-1.0:0", "message:It was difficult to chew and has unpleasant taste."]
-	},
-	"low_3": {
-		"TASTE ME!!!": ["health:-100.0:0"],
-		"Chicken Candy Can": ["health:70.0:3"]
-	},
-	"mid_1": {
-		"An usual cookie" : ["health:15.0:3"],
-		"Green Apple Frosting": ["health:25.0:3"],
-		"Hazelnut in chocolate": ["health:20.0:3"],
-		"Candy Pistol": ["health:-1.0:0", "health:15.0:3"],
-		"Apple seed": ["message:You received 500 apple seeds"],
-		"X-treme chips": ["health:50.0:3", "message:You want to climb mountains"],
-		"SCP-1657 eggs": ["health:25.0:0", "health:25.0:3", "message:The eggs were very tasty. I became a REAL MAN!!1!"]
-	},
-	"mid_2": {
-		"Spice Bomb": ["health:-5.0:0"],
-		"Hardtack": ["health:10.0:3"]
-	},
-	"mid_3": {
-		"Water with creatures": ["health:10.0:2"],
-		"SCP-417 fruit": ["health:-200.0:0"]
-	},
-	"high_1": {
-		"Fruit drink": ["health:30.0:2"],
-		"Can with flying insects": ["health:-5.0:0", "health:10.0:3"],
-		"Apple seed": ["message:You received 700 apple seeds"],
-		"Box jellyfish meat": ["health:-150.0:0"]
-	},
-	"high_2": {
-		"Edible Chess set": ["health:20.0:3"],
-		"Nipples": ["health:15.0:3", "message:Tastes, like pork"]
-	},
-	"high_3": {
-		"Human Breast milk (Chocolate flavored)": ["health:50.0:0", "health:50.0:2", "health:50.0:3", "message:I think the boob-shaped container was a nice touch."],
-		"Edible bacon shirt": ["health:70.0:3"]
-	},
-	"highest_1": {
-		"Candy Robots": ["health:5.0:3"],
-		"Six-legged blue turtle": ["health:-120.0:0"],
-		"Rat on stick": ["health:30.0:3"],
-		"Apple seed": ["message:You received 1000 apple seeds"],
-		"Pythia's choice": ["health:-100.0:0"]
-	},
-	"highest_2": {
-		"Orange Radiation": ["effect:Scp261Orange"],
-		"Demon's chips": ["health:-100.0:0"],
-		"Philosopher's scone": ["health:100.0:0", "health:100.0:2", "health:100.0:3"]
-	},
-	"highest_3": {
-		"Unknown steel canister": ["health:-110.0:0"],
-		"Klein wine bottle": ["effect:Scp261KleinBottle"]
-	}
-}
+@export var meals: Dictionary
 @export_group("DON'T TOUCH - AUTOMATIC")
 ## Iterations for same SCP-261
 @export var _iterations: int = 0
@@ -97,6 +20,13 @@ var eat_buttons: Array[CommandResource] = []
 
 
 func _ready() -> void:
+	if FileAccess.file_exists("res://Scripts/Scps/Scp261Data/Scp261_" + OS.get_locale_language() + ".json"):
+		var internal_file: FileAccess = FileAccess.open("res://Scripts/Scps/Scp261Data/Scp261_" + OS.get_locale_language() + ".json", FileAccess.READ)
+		meals = JSON.parse_string(internal_file.get_as_text())
+	else:
+		var internal_file: FileAccess = FileAccess.open("res://Scripts/Scps/Scp261Data/Scp261_en.json", FileAccess.READ)
+		meals = JSON.parse_string(internal_file.get_as_text())
+	
 	if OS.get_name() != "Web":
 		if !FileAccess.file_exists("user://Scp261.json"):
 			var result_json: String = JSON.stringify(meals)
@@ -106,7 +36,7 @@ func _ready() -> void:
 		else:
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.READ)
 			var result_meals: Dictionary = JSON.parse_string(file.get_as_text())
-			if result_meals.get("version") == null:
+			if !result_meals.has("version"):
 				# New versioning system, if loading SCP-261 data from 9.x.x (SCP-261 1.x)
 				# rewrite it.
 				file.close()

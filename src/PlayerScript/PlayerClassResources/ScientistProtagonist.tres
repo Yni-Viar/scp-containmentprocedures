@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://c8pms1lfwn1s8"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://c8pms1lfwn1s8"]
 
 [ext_resource type="PackedScene" uid="uid://wf17o2xvgdbw" path="res://PlayerScript/PlayerClassPrefab/Protagonist.tscn" id="1_1bwyr"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_1bwyr"]
@@ -27,3 +27,4 @@ start_money = Dictionary[String, int]({
 "DOLLARS": 1000,
 "YEN": 3000
 })
+keycards = Array[int]([-2021])

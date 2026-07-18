@@ -57,3 +57,10 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var enable_advanced_ai: bool = false
 ## Is character immortal or not (currently applies on SCP-181 and SCP-080
 @export var immortal: bool = false
+## Applied keycards
+## Keycard examples:
+## SCP-005 has id 0, and can open any doors
+## Casual mode has id 16, and can open any doors
+## Protagonist has keycard with id -2021, which can open some doors
+## id -2584 is required to open nuke in story mode
+@export var keycards: Array[int] = []

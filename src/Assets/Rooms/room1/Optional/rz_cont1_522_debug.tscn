@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bck41c0h5ndnl"]
-
-[node name="NavigationObstacle3D" type="NavigationObstacle3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12500644, 0, -0.89700127)
-height = 7.25
-vertices = PackedVector3Array(-8.992552, 0, -0.48294666, -8.992552, 0, 0.19454406, 0.21334219, 0, 0.27424785, 0.25319433, 0, -9.609136, -0.5438523, 0, -9.569283, -0.66341066, 0, -0.56265044)
-affect_navigation_mesh = true
-avoidance_enabled = false

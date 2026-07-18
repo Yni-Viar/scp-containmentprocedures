@@ -12,14 +12,11 @@
 [ext_resource type="Resource" uid="uid://bw58osyjan7h8" path="res://MapGen/Resources/MaintenanceZone/cont1_023.tres" id="7_7ovle"]
 [ext_resource type="Resource" uid="uid://ch0bxsompxx5d" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_walkway.tres" id="9_bt36h"]
 [ext_resource type="Resource" uid="uid://c28c54bngkuhi" path="res://MapGen/Resources/MaintenanceZone/room2_large.tres" id="10_3un6p"]
-[ext_resource type="PackedScene" uid="uid://c7o5iodr55fdp" path="res://Assets/Doors/maintenance_zone_door.tscn" id="10_nytp7"]
 [ext_resource type="Resource" uid="uid://c0ohfy6nbwkv3" path="res://MapGen/Resources/MaintenanceZone/room2_middle.tres" id="10_qfdjr"]
 [ext_resource type="Resource" uid="uid://cmcap7nf4h15i" path="res://MapGen/Resources/MaintenanceZone/cont1_249.tres" id="10_wv3ou"]
 [ext_resource type="Resource" uid="uid://budusfvk76l2u" path="res://MapGen/Resources/MaintenanceZone/room2_wc.tres" id="12_pdafb"]
 [ext_resource type="Resource" uid="uid://0d70qmpl37gq" path="res://MapGen/Resources/MaintenanceZone/room3.tres" id="12_phv2b"]
-[ext_resource type="Resource" uid="uid://7cqlqpchllp6" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_266.tres" id="12_qn3in"]
 [ext_resource type="Resource" uid="uid://bwospyj2g7rgv" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_791_812.tres" id="12_yphfd"]
-[ext_resource type="Resource" uid="uid://i7dv4g0tnkdn" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_testroom.tres" id="13_7yn3w"]
 [ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="13_icpll"]
 [ext_resource type="Resource" uid="uid://bgor15quhx77p" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_elevators.tres" id="13_mnhla"]
 [ext_resource type="Resource" uid="uid://bpfldgimo3k8j" path="res://MapGen/Resources/MaintenanceZone/cont2_testroom.tres" id="16_6rvoo"]
@@ -28,7 +25,7 @@
 [resource]
 script = ExtResource("13_icpll")
 endrooms = Array[ExtResource("1_2euw7")]([ExtResource("4_3un6p")])
-endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("10_wv3ou"), ExtResource("7_7ovle"), ExtResource("12_qn3in"), ExtResource("16_mgn5q"), ExtResource("13_7yn3w")])
+endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("10_wv3ou"), ExtResource("7_7ovle"), ExtResource("16_mgn5q")])
 endrooms_single_large = Array[ExtResource("1_2euw7")]([ExtResource("12_yphfd")])
 hallways = Array[ExtResource("1_2euw7")]([ExtResource("9_bt36h"), ExtResource("10_qfdjr"), ExtResource("10_3un6p")])
 hallways_single = Array[ExtResource("1_2euw7")]([ExtResource("12_pdafb"), ExtResource("16_6rvoo"), ExtResource("13_mnhla")])
@@ -37,5 +34,5 @@ corners = Array[ExtResource("1_2euw7")]([ExtResource("2_bt36h")])
 corners_single = Array[ExtResource("1_2euw7")]([ExtResource("4_h50gj")])
 trooms = Array[ExtResource("1_2euw7")]([ExtResource("12_phv2b")])
 crossrooms = Array[ExtResource("1_2euw7")]([ExtResource("3_8nfe0")])
-door_frames = Array[PackedScene]([ExtResource("6_6rvoo"), ExtResource("10_nytp7")])
+door_frames = Array[PackedScene]([ExtResource("6_6rvoo")])
 checkpoint_door_frames = Array[PackedScene]([ExtResource("1_my6bj")])

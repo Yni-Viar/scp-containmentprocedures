@@ -24,9 +24,6 @@ msgstr ""
 msgid "CUSTOM_ENEMYTYPE_RAND"
 msgstr ""
 
-msgid "ZEN_MODE"
-msgstr ""
-
 msgid "HELP_TITLE"
 msgstr ""
 
@@ -124,9 +121,6 @@ msgid "ELEVATOR_WHAT_FLOOR"
 msgstr ""
 
 msgid "ELEVATOR_CALL"
-msgstr ""
-
-msgid "ENTRANCE_SUBZONE"
 msgstr ""
 
 msgid "GATE_A"

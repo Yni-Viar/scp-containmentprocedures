@@ -13,11 +13,11 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ## Requirements to play
 
 - 🐧Linux distribution from 2024 and newer
-- 🪟10 (all updates) and 11 (all updates)
+- 🪟Windows 10 (all updates) and 11 (all updates)
    > Windows 8.1 is not supported since v10.0 (natively)
    > Windows 7 is not supported since v5.0 (natively)
    > You can still access Web version for Windows 7 - 8.1 by using Supermium.
-- 🤖~~Android 7.0 and newer~~ Android is temporarily not supported, because of https://github.com/godotengine/godot/issues/120439
+- 🤖Android 7.0 and newer (varies by device)
    > Android 5.0-6.0 is not supported since v5.0
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
@@ -43,7 +43,6 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-181\*|☑️, > 10.0.0|☑️ > 10.0.0|❌ Story mode only character|
 |🟡SCP-249|✅, > 6.0.0|✅, > 6.0.0|✅ Full|
 |🟢SCP-261|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
-|🟡SCP-266|✅, > 1.0.0|❌, 5.7.x only|✅ Full|
 |🟡SCP-347|✅, > 1.0.0|✅, 5.7.x-5.8.x only, > 9.0.0|❓ Partial|
 |🟠SCP-417\*|❓, > 8.0.0|❓, > 8.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-458\*|✅, > 5.1.0|✅, > 5.7.0|✅ Full|
@@ -59,6 +58,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only|✅ Full|
 |🟢SCP-1223\*|✅, > 6.1.0|✅, > 6.1.0|✅ Full|
 |🟡SCP-1507|✅, > 9.0.0|✅, > 9.0.0|✅ Full, supports custom models|
+|🟡SCP-1657|❓, > 10.0.0|❓, > 10.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-2028|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
 |🟢SCP-2306|✅, > 8.1.0|✅, > 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471\*|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
@@ -67,6 +67,7 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ##### Removed SCPs
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
+|🟡SCP-266|❎, 1.0.0-9.1.3|❌, 5.7.x only|❌ Awaiting re-implementation|
 |🟢SCP-446\*|❎, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
 
 #### Object class

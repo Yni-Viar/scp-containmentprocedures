@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_a3cyf"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="2_vv1xn"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="3_ulht2"]
+[ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_sexo0"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="4_tdgmb"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="5_sexo0"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="6_ulht2"]
@@ -140,7 +141,7 @@ data = PackedVector3Array(0.29999998, 3.1499999, 6.3532996, 0.29999998, 1.897399
 
 [node name="st_room2" type="StaticBody3D" unique_id=2143272083]
 script = ExtResource("1_a3cyf")
-mesh_paths = Array[NodePath]([NodePath("")])
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/HC_room2_large/Plane")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1602555613]
 navigation_mesh = SubResource("NavigationMesh_swyoh")
@@ -162,6 +163,8 @@ skeleton = NodePath("")
 transform = Transform3D(3.5762787e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 3.5762787e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sexo0")
 skeleton = NodePath("")
+script = ExtResource("4_sexo0")
+scp_649_floor_index = 0
 
 [node name="Cube_002" type="MeshInstance3D" parent="NavigationRegion3D/HC_room2_large" unique_id=768835077]
 transform = Transform3D(4.882693e-07, 0, 1.3652997, 0, 1.3653, 0, -1.3652997, 0, 4.882693e-07, 0, 0, -3.4132502)

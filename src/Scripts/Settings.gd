@@ -297,6 +297,7 @@ func change_renderer():
 				if Engine.get_version_info()["minor"] == 7 && !setting_res.beta_mode:
 					Console.print_error("There are bugs in Godot 4.7: ", true)
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD GPUs).", true)
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/121503 ) (prevents using Forward+ renderer on Linux with some GPUs)", true)
 					# To developers - we can't use Godot 4.6 because of broken Web build.
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120409 ) (prevents using Vulkan on very old GPUs, which was working in 4.6)", true)
 					Console.print_error("Until they get fixed, we'll keep Compatibility renderer as the only option", true)
@@ -308,6 +309,7 @@ func change_renderer():
 				if Engine.get_version_info()["minor"] == 7 && !setting_res.beta_mode:
 					Console.print_error("There are bugs in Godot 4.7: ", true)
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120534 ) (prevents using Vulkan in integrated AMD devices).", true)
+					Console.print_error(" ( https://github.com/godotengine/godot/issues/121503 ) (prevents using Forward+ renderer on Linux with some GPUs)", true)
 					# To developers - we can't use Godot 4.6 because of broken Web build.
 					Console.print_error(" ( https://github.com/godotengine/godot/issues/120409 ) (prevents using Vulkan on very old GPUs, which was working in 4.6)", true)
 					Console.print_error("Until they get fixed, we'll keep Compatibility renderer as the only option", true)

@@ -24,9 +24,6 @@ msgstr "Credits"
 msgid "CUSTOM_ENEMYTYPE_RAND"
 msgstr "Randomize enemy spawn"
 
-msgid "ZEN_MODE"
-msgstr "Safe mode"
-
 msgid "HELP_TITLE"
 msgstr "Hints"
 
@@ -58,7 +55,7 @@ msgid "CASUAL_MODE"
 msgstr "Casual mode"
 
 msgid "STORY_MODE"
-msgstr "???"
+msgstr "Play"
 
 msgid "HELP_BUTTON"
 msgstr "Hint"
@@ -155,9 +152,6 @@ msgstr "Choose your destination"
 msgid "ELEVATOR_CALL"
 msgstr "Call/Ride the elevator"
 
-msgid "ENTRANCE_SUBZONE"
-msgstr "Under construction"
-
 msgid "GATE_A"
 msgstr "Gate A"
 
@@ -218,7 +212,7 @@ msgid "TASK_812_RESEARCH"
 msgstr "Check SCP-812 is properly closed."
 
 msgid "TASK_266_TEST"
-msgstr "Order Class-D to check SCP-266 temperature."
+msgstr "-"
 
 msgid "TASK_CI_INVASION"
 msgstr ""
@@ -551,30 +545,8 @@ msgstr "Storage Zone"
 msgid "CASUAL_MODE_HUNGER_ENABLE"
 msgstr "Enable hunger in casual mode"
 
+#~ msgid "ZEN_MODE"
+#~ msgstr "Safe mode"
+
 #~ msgid "TIME_LIMITED"
 #~ msgstr "Hard mode"
-
-#, fuzzy
-#~| msgid "GAME_WIN_1"
-#~ msgid "GAME_WIN_DAY1"
-#~ msgstr "You did all tasks. The Foundation is proud of you!"
-
-#, fuzzy
-#~| msgid "GAME_WIN_1"
-#~ msgid "GAME_WIN_DAY2"
-#~ msgstr "You did all tasks. The Foundation is proud of you!"
-
-#, fuzzy
-#~| msgid "GAME_WIN_1"
-#~ msgid "GAME_WIN_DAY3"
-#~ msgstr "You did all tasks. The Foundation is proud of you!"
-
-#, fuzzy
-#~| msgid "GAME_WIN_1"
-#~ msgid "GAME_WIN_DAY4"
-#~ msgstr "You did all tasks. The Foundation is proud of you!"
-
-#, fuzzy
-#~| msgid "GAME_WIN_1"
-#~ msgid "GAME_WIN_DAY5"
-#~ msgstr "You did all tasks. The Foundation is proud of you!"

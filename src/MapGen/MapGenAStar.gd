@@ -82,10 +82,7 @@ func generate_zone_astar() -> void:
 			
 			var current_zone_center: Vector2i = Vector2i(zone_center + (zone_size * zone_counter.x), zone_center + (zone_size * zone_counter.y))
 			mapgen[current_zone_center.x][current_zone_center.y].exist = true
-			if number_of_rooms > (zone_size - 1) * 4 - 4 - large_room_amount * 6:
-				printerr("Too many rooms, map won't spawn")
-				return
-			elif number_of_rooms < 1:
+			if number_of_rooms < 1:
 				printerr("Too few rooms, map won't spawn")
 				return
 			# Available room position (for AStar walk)
