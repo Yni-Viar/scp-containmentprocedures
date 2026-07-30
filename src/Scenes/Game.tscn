@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6l8r5fy0ymqt"]
 
 [ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_jn8rg"]
+[ext_resource type="Script" uid="uid://b7dsinnqp67ea" path="res://Scripts/PluginSystem/PluginManager.gd" id="2_0iyqm"]
 [ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
 [ext_resource type="Script" uid="uid://bu7shnqhd7um8" path="res://MapGen/MapGen3D.gd" id="3_2irst"]
 [ext_resource type="Script" uid="uid://do7w8u202622b" path="res://Scripts/InGameCommands.gd" id="3_4eqlp"]
@@ -128,6 +129,9 @@ texture = SubResource("GradientTexture2D_qsl1r")
 [node name="Game" type="Node3D" unique_id=1603466621]
 process_mode = 1
 script = ExtResource("1_jn8rg")
+
+[node name="PluginManager" type="Node" parent="." unique_id=2134961241]
+script = ExtResource("2_0iyqm")
 
 [node name="DebugCommands" type="Node3D" parent="." unique_id=693733768]
 script = ExtResource("2_umnjm")

@@ -47,7 +47,7 @@ func on_spawned() -> void:
 	on_start_human()
 
 func on_start_human():
-	pass
+	plugin_api_function("on_start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -138,7 +138,7 @@ func _physics_process(delta: float) -> void:
 	on_update_human(delta)
 
 func on_update_human(delta: float):
-	pass
+	plugin_api_function("on_update")
 
 func _on_raycast_update_npc(collider_path: String):
 	pass

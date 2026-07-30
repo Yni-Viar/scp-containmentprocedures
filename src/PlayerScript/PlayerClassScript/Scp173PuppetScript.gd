@@ -25,6 +25,7 @@ var movement_reset: bool = false
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
 	raycast = get_parent().get_parent().get_node("RayCastLow")
+	plugin_api_function("on_start")
 	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
 	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 	#set_face()
@@ -32,6 +33,7 @@ func on_spawned() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	plugin_api_function("on_update")
 	scp_173_blink(delta)
 	# If is watching, set velocity to zero, else - go to player.
 	if ((is_blinking && watching_puppets.size() > 0 && current_human != null) || (watching_puppets.size() == 0 && current_human != null)) && !freeze:
@@ -42,6 +44,7 @@ func _physics_process(delta: float) -> void:
 				if collider.fraction == 0:
 					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
 					get_parent().get_parent().get_node("InteractSound").play()
+					plugin_api_function("on_crunch")
 					collider.health_manage(-16777216, 0, "GAME_OVER_SCP_173")
 					active_puppets.erase(current_human)
 					current_human = null
@@ -60,6 +63,7 @@ func scp_173_blink(delta: float):
 				current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
 			current_human = null
+		plugin_api_function("on_blink")
 		#Achievement
 		if Settings.setting_res.scp_study_progress_all.has("SCP-173"):
 			if !Settings.setting_res.scp_study_progress_all["SCP-173"]:

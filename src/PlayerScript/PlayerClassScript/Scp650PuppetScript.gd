@@ -11,10 +11,12 @@ var has_animations: bool = true
 func on_spawned() -> void:
 	if puppet_node.get_node_or_null("AnimationPlayer") == null:
 		has_animations = false
+	plugin_api_function("on_start")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	plugin_api_function("on_update")
 	#If is not watching
 	if watching_puppets.size() == 0:
 		#Wait
@@ -30,7 +32,9 @@ func _physics_process(delta: float) -> void:
 					Settings.setting_res.scp_study_progress_all["SCP-650"] = true
 					Settings.save_resource(Settings.setting_res)
 			if has_animations:
-				set_state("Pose " + str(rng.randi_range(4, 10)))
+				var pose: String = "Pose " + str(rng.randi_range(4, 10))
+				set_state(pose)
+			plugin_api_function("on_teleported")
 			# Look at player
 			look_at(random_human.global_position)
 			# reset timer

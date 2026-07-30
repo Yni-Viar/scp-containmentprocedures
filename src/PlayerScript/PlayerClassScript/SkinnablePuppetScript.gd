@@ -1,5 +1,5 @@
 extends BasePuppetScript
-## In future, it will be base for near-all classes, except non-modificable ones.
+## It is base for near-all classes, except non-modificable ones.
 ## Made by Yni, licensed under MIT license.
 class_name SkinnablePuppetScript
 
@@ -89,6 +89,9 @@ func on_start() -> void:
 				available_puppets[file] = BaseSpawner.Availability.ALL
 	_set_up_puppet()
 
+func on_spawned() -> void:
+	pass
+ 
 ## Try to spawn puppet after initial loading
 func _set_up_puppet() -> void:
 	if default_puppet_to_spawn < 0:
@@ -102,9 +105,6 @@ func _set_up_puppet() -> void:
 			assign_puppet()
 	else:
 		assign_puppet(default_puppet_to_spawn)
-
-func on_spawned() -> void:
-	pass
 
 ## Gets (or sets, if not existing) static presets.
 func get_static_preset() -> int:
@@ -197,3 +197,19 @@ func _exit_tree() -> void:
 		default_class_presets_gltf_extension.clear()
 	if get_tree().get_node_count_in_group("SinglePuppet") == 1:
 		default_class_presets.clear()
+
+## Loads custom scripts for SkinnablePuppetScript
+func plugin_api_function(function_name: String):
+	if gltf_path_to_find == null:
+		return
+	if gltf_path_to_find.is_empty():
+		return
+	var file_to_load: String = "user://mods/puppets/".path_join(gltf_path_to_find).path_join("Scripts").path_join(function_name + ".gompl")
+	if FileAccess.file_exists(file_to_load):
+		var file: FileAccess = FileAccess.open(file_to_load, FileAccess.READ)
+		var file_string: String = file.get_as_text()
+		var gompl: Gompl = Gompl.new(self)
+		gompl.eval(file_string)
+
+func plugin_api_output(something: String):
+	Console.print_info("[Plugin system] " + something, true)

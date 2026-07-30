@@ -1,0 +1,13 @@
+{
+	"name": "SamplePlugin",
+	"author": "Yni Viar",
+	"year": 2026,
+	"plugin_type": "puppet",
+	"gltf_file_prefix": "Sample",
+	"gltf_file_suffix": "",
+	"gltf_path_to_find": "Sample",
+	"signal_scripts": {
+		"on_spawn": "Scripts/on_spawn.omp"
+		"on_update": "Scripts/on_update.omp"
+	}
+}

@@ -18,6 +18,7 @@ var current_target: Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	plugin_api_function("on_update")
 	match state:
 		States.IDLE:
 			set_state("939_Idle")
@@ -39,6 +40,7 @@ func attack():
 		current_target = get_node(get_parent().get_parent().follow_target)
 		if current_target != null:
 			set_state("939_Attack" + str(rng.randi_range(1, 3)))
+			plugin_api_function("on_attack")
 			current_target.health_manage(-100.0, 0, "GAME_OVER_SCP_939")
 			heat_targets.erase(current_target)
 			current_target = null
@@ -55,6 +57,7 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 		if body.puppet_class.puppet_class_name != "SCP-939":
 			if body.is_player:
 				body.get_node("StatusEffects").apply_status_effect("Amnesia", 1.0, 0.0)
+			plugin_api_function("on_near_trigger_entered")
 			#Achievement
 			if Settings.setting_res.scp_study_progress_all.has("SCP-939"):
 				if !Settings.setting_res.scp_study_progress_all["SCP-939"]:
@@ -69,6 +72,7 @@ func _on_trigger_body_exited(body: Node3D) -> void:
 		if body.puppet_class.puppet_class_name != "SCP-939":
 			if body.is_player:
 				body.get_node("StatusEffects").apply_status_effect("Amnesia", 0.0, 0.0)
+			plugin_api_function("on_near_trigger_exited")
 			heat_targets.erase(body)
 			if heat_targets.is_empty():
 				get_parent().get_parent().follow_target = ""

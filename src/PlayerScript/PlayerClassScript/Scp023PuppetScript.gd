@@ -11,11 +11,13 @@ var eye_glow_strength: float = 0.25
 @onready var timer: Timer = $Timer
 
 func on_spawned() -> void:
+	plugin_api_function("on_start")
 	if glow_enabled:
 		timer.wait_time = rng.randf_range(224, 256)
 		timer.start()
 
 func _physics_process(delta: float) -> void:
+	plugin_api_function("on_update")
 	match state:
 		States.IDLE:
 			call("set_state", "idle")
