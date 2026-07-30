@@ -7,12 +7,10 @@ class_name Scp023PuppetScript
 
 var eye_glow_strength: float = 0.25
 
-@export var glow_enabled: bool = true
+@export var glow_enabled: bool = false
 @onready var timer: Timer = $Timer
 
 func on_spawned() -> void:
-	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
-		glow_enabled = false
 	if glow_enabled:
 		timer.wait_time = rng.randf_range(224, 256)
 		timer.start()

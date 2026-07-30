@@ -23,13 +23,14 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 @export var music_volume: float = 1.0
 ## Keybinds
 @export var keybinds: Dictionary[String, Array] = {
-	"look": [InputMethod.MB, MOUSE_BUTTON_RIGHT],
 	"click": [InputMethod.MB, MOUSE_BUTTON_LEFT],
 	"camera_rotate_left": [InputMethod.KB, KEY_A],
 	"camera_rotate_right": [InputMethod.KB, KEY_D],
 	"toggle_mode": [InputMethod.KB, KEY_SPACE],
 	"inventory": [InputMethod.KB, KEY_TAB],
-	"photomode": [InputMethod.KB, KEY_P]
+	"photomode": [InputMethod.KB, KEY_P],
+	"move_forward": [InputMethod.KB, KEY_W],
+	"move_backward": [InputMethod.KB, KEY_S],
 }
 ## SSAO
 @export var ssao: bool = false

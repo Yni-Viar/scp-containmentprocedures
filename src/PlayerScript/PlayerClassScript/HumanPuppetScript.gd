@@ -11,7 +11,6 @@ const SECONDARY_STATE_ALIAS: Dictionary[SecondaryState, String] = {
 	SecondaryState.CUFFED: "cuffed",
 	SecondaryState.JAILBIRD_ATTACK: "jailbird_attack",
 	SecondaryState.INTERACT: "interact",
-	SecondaryState.MTF_RIFLE: "mtf_rifle",
 	SecondaryState.CI_RIFLE: "ci_rifle",
 	SecondaryState.HAT: "hat"
 }

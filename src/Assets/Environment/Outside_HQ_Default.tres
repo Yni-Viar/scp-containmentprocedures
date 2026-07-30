@@ -24,7 +24,6 @@ shader_parameter/turbidity = 10.0
 shader_parameter/sun_disk_scale = 1.0
 shader_parameter/ground_color = Color(1, 1, 1, 1)
 shader_parameter/exposure = 0.1
-shader_parameter/sky_color = Color(0.31, 0.61, 0.89, 1)
 
 [sub_resource type="Sky" id="Sky_afsef"]
 sky_material = SubResource("ShaderMaterial_glv2v")

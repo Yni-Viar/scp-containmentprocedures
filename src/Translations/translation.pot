@@ -434,3 +434,30 @@ msgstr ""
 
 msgid "CASUAL_MODE_HUNGER_ENABLE"
 msgstr ""
+
+msgid "MOVE_FORWARD"
+msgstr ""
+
+msgid "MOVE_BACKWARD"
+msgstr ""
+
+msgid "MOVE_RIGHT"
+msgstr ""
+
+msgid "MOVE_LEFT"
+msgstr ""
+
+msgid "THANKS_FOR_PLAYING"
+msgstr ""
+
+msgid "PAN_JANUSZ"
+msgstr ""
+
+msgid "DAY"
+msgstr ""
+
+msgid "OOPS"
+msgstr ""
+
+msgid "GAME_IMPASSABLE"
+msgstr ""

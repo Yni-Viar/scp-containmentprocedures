@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bl6vns1m7gc8"]
+
+[ext_resource type="Script" uid="uid://cdxov2g3ssltv" path="res://Stories/MainStory/PlayerScript/PlayerClassScript/S_Scp347PuppetScript.gd" id="1_rmd0y"]
+[ext_resource type="Texture2D" uid="uid://cbnqk6cs45gd3" path="res://Assets/HUD/talk.png" id="2_rmd0y"]
+
+[node name="Puppet" type="Node3D" unique_id=811466072 groups=["Scp347"]]
+script = ExtResource("1_rmd0y")
+resistance_scp178 = true
+resistance_scp686 = true
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp347/Scp347_MH.tscn": 0
+})
+armature_name = "Woman_body_rig"
+enable_vision_scan = true
+vision_class_detect = Array[int]([2, 3])
+
+[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="." unique_id=1424590976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1145895, -0.050662994)
+aabb = AABB(-0.42323288, -1.113152, -0.41636354, 0.84646577, 2.226304, 0.8327271)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=364546097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = ExtResource("2_rmd0y")
+
+[connection signal="screen_entered" from="Achievement" to="." method="_on_achievement_screen_entered"]

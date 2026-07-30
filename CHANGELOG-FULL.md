@@ -5,13 +5,14 @@ This list contains all features, added in the game, or will be added in upcoming
 ## v10.0.0 (Megarework update)
 ### Gameplay rework / Story mode
 - [x] Add support for timed tasks
-- [ ] Add whole story
+- [x] Add whole story
 - [x] Remove hard mode
-- [x] Remove CI and MTF from normal gameplay, re-introduce MTF Agent.
+- [x] Remove CI and MTF, re-introduce MTF Agent.
 - [x] Remove wave subsystem (until proper re-implementation)
 - [x] Day cycle and AAA-quality clouds
 - [x] Add door system
 - [x] Rework several rooms to support doors
+  - [x] New SCP-005 Containment chamber (in Maintenance Zone)
   - [x] SCP-173 containment chamber
   - [x] SCP-650 containment chamber
   - [x] SCP-178 containment chamber
@@ -19,23 +20,38 @@ This list contains all features, added in the game, or will be added in upcoming
   - [x] SCP-1507 containment chamber
   - [x] Research Zone testroom
   - [x] Research Zone endroom
+- [x] Add support for custom stories/DLCs.
+
+### Plugin System
+- [ ] Plugin System, based on GOMPL, a dialect of IMP Language
+  - [ ] Add modding manager node (child of Game), which auto-loads mods.
+  - [ ] Add modding support to:
+    - [ ] SkinnablePuppetScripts (limited to static meshes)
+    - [ ] Items
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
-- [x] Move SCP-067, SCP-109, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone
+- [x] Move SCP-067, SCP-109, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone, SCP-005 - in Maintenance Zone
 - [x] Add rooms for Story mode into that zone.
 
 ### Rework Personnel Zone
 - [x] Make it more comforatble for inhabitants.
 
 ### New SCPs
-- [ ] SCP-181 (exclusively for Story mode, hidden because of spoilers)
+- [x] SCP-079 (as a prop)
+- [x] SCP-181 (exclusively for Story mode)
 - [x] SCP-983
 - [x] Rework SCP-261 to support translations.
 
 ### Other changes
-- [x] Disabled SCP-266, due to incompatibility with SCP article. (You can no longer spawn it, but it still exist in game files)
-- [x] Removed SCP-446 in Lite version and disabled in Full version.
+- [x] Fix crash with empty SCP-261.json cache file
+- [x] UI theme update
+- [x] Added easter egg.
+- [x] Reworked Credits system to use same base, as SCP-261
+- [x] SCP-023 will now activate in Story with 50% chance, in Casual mode it will be always dormant.
+- [x] Added support for moving via keyboard in third-person mode.
+- [x] Removed SCP-266, due to incompatibility with SCP article.
+- [x] Removed SCP-446 in both Lite and Full versions.
 - [x] Removed rain in all seasons due to new sky performance impact.
 - [x] Sound rework
 - [x] \[Full version\] Fixed overlap between SCP-938 containment chamber and Gate A

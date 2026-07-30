@@ -97,8 +97,26 @@ func generate_zone_astar() -> void:
 							## If checkpoints enabled, let's clean path for checkpoints
 							## As a workaround, large rooms will be always near center of map.
 							random_room = Vector2i(rng.randi_range(available_room_position[0].x + 3, available_room_position[0].y - 3), rng.randi_range(available_room_position[1].x + 3, available_room_position[1].y - 3))
+							# If room already exist, place large room near that point.
+							if mapgen[random_room.x][random_room.y].exist:
+								for m in range(-1, 2, 2):
+									for n in range(-1, 2, 2):
+										if check_room_dimensions(current_zone_center.x + m * 2, current_zone_center.y + m * 2, 0):
+											walk_astar(Vector2i(current_zone_center.x + m * 2, current_zone_center.y + m * 2), random_room)
+											mapgen[current_zone_center.x + m * 2][current_zone_center.y + m * 2].large = true
+											break
+								break
 						else:
 							random_room = Vector2i(rng.randi_range(available_room_position[0].x, available_room_position[0].y), rng.randi_range(available_room_position[1].x, available_room_position[1].y))
+							# If room already exist, place large room near that point.
+							if mapgen[random_room.x][random_room.y].exist:
+								for m in range(-1, 2, 2):
+									for n in range(-1, 2, 2):
+										if check_room_dimensions(current_zone_center.x + m * 2, current_zone_center.y + m * 2, 0):
+											walk_astar(Vector2i(current_zone_center.x + m * 2, current_zone_center.y + m * 2), random_room)
+											mapgen[current_zone_center.x + m * 2][current_zone_center.y + m * 2].large = true
+											break
+								break
 						if check_room_dimensions(random_room.x, random_room.y, 0):
 							walk_astar(Vector2i(current_zone_center.x, current_zone_center.y), random_room)
 							mapgen[random_room.x][random_room.y].large = true

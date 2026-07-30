@@ -1,0 +1,271 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: key\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+msgid "S_GAMEOVER_TIMES_UP"
+msgstr ""
+
+msgid "S_JOHN_CROW"
+msgstr ""
+
+msgid "S_ANDREW_WHITE"
+msgstr ""
+
+msgid "S_TASK_1"
+msgstr ""
+
+msgid "S_TASK_2"
+msgstr ""
+
+msgid "S_TASK_3"
+msgstr ""
+
+msgid "S_TASK_4"
+msgstr ""
+
+msgid "S_TASK_5"
+msgstr ""
+
+msgid "S_TASK_6"
+msgstr ""
+
+msgid "S_TASK_7"
+msgstr ""
+
+msgid "S_TASK_8"
+msgstr ""
+
+msgid "S_TASK_9_SH"
+msgstr ""
+
+msgid "S_TASK_10_SH"
+msgstr ""
+
+msgid "S_INTRO_DLG_1"
+msgstr ""
+
+msgid "S_INTRO_DLG_2"
+msgstr ""
+
+msgid "S_INTRO_DLG_3"
+msgstr ""
+
+msgid "S_INTRO_DLG_4"
+msgstr ""
+
+msgid "S_INTRO_DLG_5"
+msgstr ""
+
+msgid "S_INTRO_DLG_6"
+msgstr ""
+
+msgid "S_INTRO_DLG_7"
+msgstr ""
+
+msgid "S_INTRO_DLG_8"
+msgstr ""
+
+msgid "S_INTRO_DLG_9"
+msgstr ""
+
+msgid "S_INTRO_DLG_10"
+msgstr ""
+
+msgid "S_INTRO_DLG_11"
+msgstr ""
+
+msgid "S_INTRO_DLG_12"
+msgstr ""
+
+msgid "S_INTRO_DLG_13"
+msgstr ""
+
+msgid "S_KEYNOTFOUND_DLG_1"
+msgstr ""
+
+msgid "S_KEYNOTFOUND_DLG_2"
+msgstr ""
+
+msgid "S_CLASSD_DLG_1"
+msgstr ""
+
+msgid "S_CLASSD_DLG_2"
+msgstr ""
+
+msgid "S_CLASSD_DLG_3"
+msgstr ""
+
+msgid "S_CLASSD_DLG_4"
+msgstr ""
+
+msgid "S_CLASSD_DLG_5"
+msgstr ""
+
+msgid "S_CLASSD_DLG_6"
+msgstr ""
+
+msgid "S_347_SCP_DLG_1"
+msgstr ""
+
+msgid "S_347_SCP_DLG_2"
+msgstr ""
+
+msgid "S_347_SCP_DLG_3"
+msgstr ""
+
+msgid "S_347_SCP_DLG_4"
+msgstr ""
+
+msgid "S_347_SCP_DLG_5"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_1"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_2"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_3"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_4"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_5"
+msgstr ""
+
+msgid "S_WHITE_SCP_DLG_6"
+msgstr ""
+
+msgid "S_WHERE_IS_181"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_1"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_2"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_3"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_4"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_4_SH"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_4_SCP"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_SCP_1"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_SCP_2"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_5"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_6"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_7"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_8"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_9"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_10"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_11"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_12"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_13"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_14"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_15"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_16"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_17"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_18"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_19"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_20"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_21"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_22"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_23"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_23_SCP"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_23_SH"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_SH_1"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_SH_2"
+msgstr ""
+
+msgid "S_THERE_IS_181_914_SH_3"
+msgstr ""
+
+msgid "S_347_SH_DLG_1"
+msgstr ""
+
+msgid "S_347_SH_DLG_2"
+msgstr ""
+
+msgid "S_347_SH_DLG_3"
+msgstr ""
+
+msgid "S_FINAL_SH_DLG_1"
+msgstr ""
+
+msgid "S_FINAL_SH_DLG_2"
+msgstr ""
+
+msgid "S_FINAL_SH_DLG_3"
+msgstr ""
+
+msgid "S_SCP_FOUNDATION_WIN"
+msgstr ""
+
+msgid "S_SERPENTS_HAND_WIN"
+msgstr ""

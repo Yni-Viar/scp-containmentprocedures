@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://o4i7m11yonpo"]
+
+[ext_resource type="Script" uid="uid://bgspbiifdhg2w" path="res://Scripts/CreditsContainer.gd" id="1_uaer5"]
+[ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="2_5k37h"]
+[ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="3_1kigx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krje8"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CreditsContainer" type="Panel" unique_id=2077770643]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_krje8")
+script = ExtResource("1_uaer5")
+
+[node name="CreditsContainer" type="ScrollContainer" parent="." unique_id=1676802488]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.007
+anchor_bottom = 1.003
+offset_top = 2.0
+offset_right = -8.063965
+offset_bottom = 0.22399902
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_5k37h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer" unique_id=1041045427]
+layout_mode = 2
+
+[node name="CreditsLabel" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=1437015099]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1kigx")
+theme_override_font_sizes/font_size = 32
+text = "SCP: Continued Procedures"
+horizontal_alignment = 1
+vertical_alignment = 1

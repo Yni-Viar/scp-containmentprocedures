@@ -8,7 +8,8 @@
 	},
 	"lowest_2": {
 		"Disease Curer": ["health:100.0:0"],
-		"Eetmees": ["health:15.0:3"]
+		"Eetmees": ["health:15.0:3"],
+		"Tasty transistors": ["health:-50.0:0", "message:I feel, that that's food made NOT for people..."]
 	},
 	"lowest_3": {
 		"Beefy fedora hat": ["health:30.0:3"],
@@ -22,7 +23,8 @@
 	},
 	"low_2": {
 		"Applexplosion": ["health:-2.5:0", "health:5.0:3"],
-		"Minty fish": ["health:1.0:3", "health:-1.0:0", "message:It was difficult to chew and has unpleasant taste."]
+		"Minty fish": ["health:1.0:3", "health:-1.0:0", "message:It was difficult to chew and has unpleasant taste."],
+		"Mannaz-rune pie": ["health:30.0:-1", "It was a tasty pie."]
 	},
 	"low_3": {
 		"TASTE ME!!!": ["health:-100.0:0"],
@@ -39,11 +41,13 @@
 	},
 	"mid_2": {
 		"Spice Bomb": ["health:-5.0:0"],
-		"Hardtack": ["health:10.0:3"]
+		"Hardtack": ["health:10.0:3"],
+		"Mr. Godot's Crunchy Cookies": ["health:30.0:0", "health:30.0:3", "message:A cookie in shape of a robot? Anyways, it was tasty..."]
 	},
 	"mid_3": {
 		"Water with creatures": ["health:10.0:2"],
-		"SCP-417 fruit": ["health:-200.0:0"]
+		"SCP-417 fruit": ["health:-200.0:0"],
+		"SCP-3238": ["health:-100.0:0"]
 	},
 	"high_1": {
 		"Fruit drink": ["health:30.0:2"],
@@ -69,7 +73,8 @@
 	"highest_2": {
 		"Orange Radiation": ["effect:Scp261Orange"],
 		"Demon's chips": ["health:-100.0:0"],
-		"Philosopher's scone": ["health:100.0:0", "health:100.0:2", "health:100.0:3"]
+		"Philosopher's scone": ["health:100.0:0", "health:100.0:2", "health:100.0:3"],
+		"Yenjeai's pie": ["effect:EdgeVision", "message:I feel... the world simulation..."]
 	},
 	"highest_3": {
 		"Unknown steel canister": ["health:-110.0:0"],

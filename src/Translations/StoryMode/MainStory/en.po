@@ -1,0 +1,347 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+msgid "S_GAMEOVER_TIMES_UP"
+msgstr "You did not fix the generator in time."
+
+msgid "S_JOHN_CROW"
+msgstr "John Crow"
+
+msgid "S_ANDREW_WHITE"
+msgstr "Andrew White"
+
+msgid "S_TASK_1"
+msgstr "Go to the warehouse hallway and look for a keycard."
+
+msgid "S_TASK_2"
+msgstr "Find D-5274, who cleaned this room yesterday."
+
+msgid "S_TASK_3"
+msgstr "Go to SCP-347 to ask for a keycard."
+
+msgid "S_TASK_4"
+msgstr "Go to Andrew White in SCP-079 containment chamber."
+
+msgid "S_TASK_5"
+msgstr "Go to SCP-173 containment chamber to pick up the lost keycard."
+
+msgid "S_TASK_6"
+msgstr "Go to generator room in Storage Zone."
+
+msgid "S_TASK_7"
+msgstr "Toggle the lever."
+
+msgid "S_TASK_8"
+msgstr "Find SCP-181."
+
+msgid "S_TASK_9_SH"
+msgstr "Take SCP-347 and some SCP items."
+
+msgid "S_TASK_10_SH"
+msgstr "Escape from SCP Foundation."
+
+msgid "S_INTRO_DLG_1"
+msgstr "...deep in Site-19 of SCP Foundation"
+
+msgid "S_INTRO_DLG_2"
+msgstr "no one Group of Interest tried to attack the facility..."
+
+msgid "S_INTRO_DLG_3"
+msgstr "There also were no containment breaches recently..."
+
+msgid "S_INTRO_DLG_4"
+msgstr "- You, the major scientist Janusz Krzystofski thought."
+
+msgid "S_INTRO_DLG_5"
+msgstr ""
+"But today, you found a letter. It was from John Crow -\n"
+"the Mobile Task Force \"Nine-Tailed Fox\" agent, who you\n"
+"knew as a good colleague."
+
+msgid "S_INTRO_DLG_6"
+msgstr ""
+"Mobile Task Epsilon-11 \"Nine-Tailed Fox\" did not meet\n"
+"this place long ago because no incidents were happening.\n"
+"You opened the letter and started reading:"
+
+msgid "S_INTRO_DLG_7"
+msgstr "Hello, Janusz."
+
+msgid "S_INTRO_DLG_8"
+msgstr "We found unauthorized attack on facility generator in Storage Zone."
+
+msgid "S_INTRO_DLG_9"
+msgstr ""
+"The power is now supplied from a backup generator,\n"
+"but the problem is that its supply is not very large."
+
+msgid "S_INTRO_DLG_10"
+msgstr ""
+"If energy will run out, the facility will black out, and\n"
+"multiple containment breaches will happen."
+
+msgid "S_INTRO_DLG_11"
+msgstr ""
+"Our experts have calculated that the\n"
+"backup generator's supply will only last for 5 days."
+
+msgid "S_INTRO_DLG_12"
+msgstr "I recommend to hurry up."
+
+msgid "S_INTRO_DLG_13"
+msgstr ""
+"You remembered, that keycard should be in the warehouse in Maintenance Zone. "
+"What's happened here?"
+
+msgid "S_KEYNOTFOUND_DLG_1"
+msgstr "I was sure the keycard was here!"
+
+msgid "S_KEYNOTFOUND_DLG_2"
+msgstr "And where keycard is now..."
+
+msgid "S_CLASSD_DLG_1"
+msgstr "YOU - Class-D-5274, say immediately where is the key!"
+
+msgid "S_CLASSD_DLG_2"
+msgstr "I saw you cleaned that place yesterday!"
+
+msgid "S_CLASSD_DLG_3"
+msgstr "...b-but I didn’t see any keys there, maybe they weren’t there?"
+
+msgid "S_CLASSD_DLG_4"
+msgstr "Stop pretend like an idiot, or I will send you to 939."
+
+msgid "S_CLASSD_DLG_5"
+msgstr "...Oh, I remember, there was a keycard, but yesterday it was missing."
+
+msgid "S_CLASSD_DLG_6"
+msgstr "Maybe object 347 stole it?"
+
+msgid "S_347_SCP_DLG_1"
+msgstr "Good morning, 347."
+
+msgid "S_347_SCP_DLG_2"
+msgstr "Please, call me Claudia!"
+
+msgid "S_347_SCP_DLG_3"
+msgstr ""
+"Claudia, I really need keycards from generator room.\n"
+"Do you know about them?"
+
+msgid "S_347_SCP_DLG_4"
+msgstr ""
+"I was not here sometime ago, only Dr. Andrew White talked to me yesterday."
+
+msgid "S_347_SCP_DLG_5"
+msgstr "Maybe he knows, where is your keycard."
+
+msgid "S_WHITE_SCP_DLG_1"
+msgstr "Good morning, Dr. White."
+
+msgid "S_WHITE_SCP_DLG_2"
+msgstr ""
+"We are in trouble - the main generator is broken,\n"
+"only backup generator is working, but it's supply is low..."
+
+msgid "S_WHITE_SCP_DLG_3"
+msgstr "I know your problem."
+
+msgid "S_WHITE_SCP_DLG_4"
+msgstr ""
+"SCP-181 breached from Class-D personnel chamber.\n"
+"I saw him on cameras."
+
+msgid "S_WHITE_SCP_DLG_5"
+msgstr ""
+"He throwed that keycard to SCP-173 containment chamber.\n"
+"I was about to go to you with that news."
+
+msgid "S_WHITE_SCP_DLG_6"
+msgstr ""
+"I need to take some spare Class-D's to safely take from SCP-173's chamber a "
+"keycard."
+
+msgid "S_WHERE_IS_181"
+msgstr "The main generator is on, but where is SCP-181?"
+
+msgid "S_THERE_IS_181_914_1"
+msgstr "Stop right there, 181!"
+
+msgid "S_THERE_IS_181_914_2"
+msgstr "Ha-ha-ha, you cannot stop me, Krzystofski!"
+
+msgid "S_THERE_IS_181_914_3"
+msgstr ""
+"You knew, that it is forbidden to put any biological material\n"
+"into SCP-914, but what to do, if SCP-181 was here...\n"
+"While you are thinking, what to do, Dr.Andrew White called you."
+
+msgid "S_THERE_IS_181_914_4"
+msgstr "Do you want to evade this problem?"
+
+msgid "S_THERE_IS_181_914_4_SH"
+msgstr "OK, but I do not understand you."
+
+msgid "S_THERE_IS_181_914_4_SCP"
+msgstr "No, thank you."
+
+msgid "S_THERE_IS_181_914_SCP_1"
+msgstr ""
+"As you like. I wanted to help you, because you were the most sane person in "
+"there."
+
+msgid "S_THERE_IS_181_914_SCP_2"
+msgstr "I really hope, that you will not be demoted to Class-D after all."
+
+msgid "S_THERE_IS_181_914_5"
+msgstr "How much do you know about me?"
+
+msgid "S_THERE_IS_181_914_6"
+msgstr "I think, a lot, since we were working many years..."
+
+msgid "S_THERE_IS_181_914_7"
+msgstr "I want to surprise you - I am not, who you know."
+
+msgid "S_THERE_IS_181_914_8"
+msgstr "Did you think, that SCPs exist here, like in a prison?"
+
+msgid "S_THERE_IS_181_914_9"
+msgstr "We think, that they should be free."
+
+msgid "S_THERE_IS_181_914_10"
+msgstr ""
+"You are cheating people by keeping the unique artifacts\n"
+"and creatures behind the wall of secret."
+
+msgid "S_THERE_IS_181_914_11"
+msgstr ""
+"I recommend that you do not make a fuss about this event.\n"
+"Consider this: if your involvement is revealed,\n"
+"you could be demoted back to junior researcher, or even to Class-D (for "
+"unauthorized use of SCP-914 by Class-D personnel),\n"
+"with all the consequences.\n"
+"Is that really what you want? Wouldn't it be easier to forget everything and "
+"remain the respected major scientist of such an important facility?"
+
+msgid "S_THERE_IS_181_914_12"
+msgstr ""
+"Think about it, and we'll be happy if you join us,\n"
+"or at least don't get in our way."
+
+msgid "S_THERE_IS_181_914_13"
+msgstr ""
+"Wait, Dr. White, so you've been an agent of the Serpent's Hand all this time?"
+
+msgid "S_THERE_IS_181_914_14"
+msgstr ""
+"Well, don't jump to conclusions.\n"
+"You don't even know who I really am."
+
+msgid "S_THERE_IS_181_914_15"
+msgstr ""
+"Or maybe you want to be demoted to Class-D,\n"
+"and be feeded with amnestics?"
+
+msgid "S_THERE_IS_181_914_16"
+msgstr "No, I don't want this."
+
+msgid "S_THERE_IS_181_914_17"
+msgstr "Now, think about whether it's worth being in position of Jailor."
+
+msgid "S_THERE_IS_181_914_18"
+msgstr ""
+"It seems that your position is not bad at first glance - major scientist."
+
+msgid "S_THERE_IS_181_914_19"
+msgstr "But with one disadvantage - this scientist works in a jail."
+
+msgid "S_THERE_IS_181_914_20"
+msgstr ""
+"The only good thing is you don't trying to destroy so-called SCPs, as the "
+"Bookburners do."
+
+msgid "S_THERE_IS_181_914_21"
+msgstr "Is your conscience silent?"
+
+msgid "S_THERE_IS_181_914_22"
+msgstr "My conscience is none of your business."
+
+msgid "S_THERE_IS_181_914_23"
+msgstr "I suggest you to get rid of this burden and join us!"
+
+msgid "S_THERE_IS_181_914_23_SCP"
+msgstr "I'll stay with SCP Foundation."
+
+msgid "S_THERE_IS_181_914_23_SH"
+msgstr "I think, you're right."
+
+msgid "S_THERE_IS_181_914_SH_1"
+msgstr "But what will do SCP Foundation with me, after this?"
+
+msgid "S_THERE_IS_181_914_SH_2"
+msgstr ""
+"None of your business.\n"
+"SCP Foundation won't take you from us."
+
+msgid "S_THERE_IS_181_914_SH_3"
+msgstr ""
+"Here is first your mission - take as many artifacts, as you can.\n"
+"A-and Claudia, which you call 347, is important to us."
+
+msgid "S_347_SH_DLG_1"
+msgstr "Good morning, Claudia."
+
+msgid "S_347_SH_DLG_2"
+msgstr "Dr. White wanted you to go with us."
+
+msgid "S_347_SH_DLG_3"
+msgstr "He told you our mission? That's excellent!"
+
+msgid "S_FINAL_SH_DLG_1"
+msgstr ""
+"Let's go to the exit. I'll create portal to our home dimension,\n"
+"and we'll be safe!"
+
+msgid "S_FINAL_SH_DLG_2"
+msgstr "To the Wanderer's Library?"
+
+msgid "S_FINAL_SH_DLG_3"
+msgstr "Of course."
+
+msgid "S_SCP_FOUNDATION_WIN"
+msgstr ""
+"You got reprimand, but, luckily, you were not demoted to Class-D personnel.\n"
+"SCP-347 and Dr. █████ went missing. Possibly they joined [REDACTED], but "
+"information is not approved.\n"
+"\n"
+"SCP Foundation.\n"
+"We secure. We contain. We protect."
+
+msgid "S_SERPENTS_HAND_WIN"
+msgstr ""
+"After Dr. Andrew White took you to the Wanderer's Library, he takes of a hat "
+"(looks like a missing SCP-268) and... is actually a woman.\n"
+"She takes you to some bookshelf with Jailor's news, and there was a "
+"message:\n"
+"\n"
+"Multiple containment breach occurred in Site-19,\n"
+"SCP-███, SCP-███, SCP-████, SCP-347, Dr. [REDACTED], Dr. [REDACTED] are "
+"missing,\n"
+"due to attack of [DATA EXPUNGED].\n"
+"\n"
+"And then, she closed the newspaper, and said you:\n"
+"We are safe.\n"
+"The Garden is the Serpent's place.\n"
+"\n"
+"We are the Serpent's Hand."

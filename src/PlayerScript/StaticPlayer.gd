@@ -13,10 +13,17 @@ enum CameraMode {ALL, UPPERLOOK, THIRD_PERSON, SIZE}
 		camera_mode = val 
 @export var current_camera_mode: CameraMode = CameraMode.UPPERLOOK
 @export var target_puppet_path: String = ""
+#Fixes keyboard animation glitch
+@export var walk_cooldown: int = 1
 var mouse_sensitivity = 0.03125
 var prev_x_coordinate: float = 0
 var scroll_factor: float = 1.0
 var transition: NodePath
+
+# Used for keyboard navigation
+var target_keyboard_position: float = 0.0
+#Fixes keyboard animation glitch
+var walk_timer: int = 0
 
 const RAY_LENGTH = 512
 
@@ -59,6 +66,8 @@ func _physics_process(delta: float) -> void:
 			transition = NodePath()
 	if Input.is_action_just_pressed("toggle_mode"):
 		toggle_switcher()
+	target_keyboard_position = Input.get_axis("move_forward", "move_backward")
+	
 	rotate_player_by_key(Vector2i(int(Input.is_action_just_pressed("camera_rotate_right")) - int(Input.is_action_just_pressed("camera_rotate_left")), 0))
 	if !target_puppet_path.is_empty():
 		if get_node_or_null(target_puppet_path) == null:
@@ -73,6 +82,8 @@ func _physics_process(delta: float) -> void:
 				global_position = get_node(target_puppet_path).global_position + Vector3(0, 2.5, 0)
 			else:
 				global_position = get_node(target_puppet_path).global_position + Vector3(0, 3, 0)
+	if !is_zero_approx(target_keyboard_position):
+		interact("InputMove")
 
 ## Used from Godot Docs
 func intersect() -> Dictionary:
@@ -134,6 +145,10 @@ func interact(value: String) -> void:
 								s_result["collider"].interact(get_node(target_puppet_path))
 								#Use only one interactable
 								break
+							if s_result["collider"] is InteractableRigid && s_result["collider"].global_position.distance_to(get_node(target_puppet_path).global_position) < 4.0:
+								s_result["collider"].interact(get_node(target_puppet_path))
+								#Use only one interactable
+								break
 							# Player detected
 							if s_result["collider"] is MovableNpc:
 								if !s_result["collider"].is_player:
@@ -150,6 +165,15 @@ func interact(value: String) -> void:
 						get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
 					else:
 						get_node(target_puppet_path).set_target_position(result["position"])
+			"InputMove":
+				if walk_timer == walk_cooldown:
+					if get_node_or_null(target_puppet_path) == null:
+						get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
+					else:
+						get_node(target_puppet_path).set_target_position(get_node(target_puppet_path).global_position + $Head.global_transform.basis.z * 2 * target_keyboard_position)
+					walk_timer = 0
+				else:
+					walk_timer += 1
 
 func rotate_player(event: InputEvent):
 	# Yni: Necessary to fix annoying bug on Android, when if you rotate screen, player began to move.

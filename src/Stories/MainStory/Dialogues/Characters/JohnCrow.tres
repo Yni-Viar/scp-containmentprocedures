@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://dyv00ekt13ntq"]
+
+[ext_resource type="Texture2D" uid="uid://by15sh8wt2eo3" path="res://Assets/HUD/Dialogue/MTF.png" id="1_4budh"]
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_yttvp"]
+
+[resource]
+script = ExtResource("1_yttvp")
+name = "S_JOHN_CROW"
+image = ExtResource("1_4budh")
+color = Color(0, 0.6136059, 0.9114124, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

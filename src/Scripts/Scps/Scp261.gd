@@ -1,6 +1,7 @@
 extends InteractableStatic
 ## SCP-261 script
 ## Made by Yni, licensed under GPLv3.
+class_name Scp261
 
 @export var meals: Dictionary
 @export_group("DON'T TOUCH - AUTOMATIC")
@@ -35,22 +36,24 @@ func _ready() -> void:
 			file.close()
 		else:
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.READ)
-			var result_meals: Dictionary = JSON.parse_string(file.get_as_text())
-			if !result_meals.has("version"):
-				# New versioning system, if loading SCP-261 data from 9.x.x (SCP-261 1.x)
-				# rewrite it.
-				file.close()
-				var result_json: String = JSON.stringify(meals)
-				file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
-				file.store_line(result_json)
-			elif result_meals["version"] < meals["version"]:
-				# Upgrade system
-				file.close()
-				var result_json: String = JSON.stringify(meals)
-				file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
-				file.store_line(result_json)
-			else:
-				meals = result_meals
+			var meals_text: String = file.get_as_text()
+			if meals_text.contains("{") && meals_text.contains("}"):
+				var result_meals: Dictionary = JSON.parse_string(meals_text)
+				if !result_meals.has("version"):
+					# New versioning system, if loading SCP-261 data from 9.x.x (SCP-261 1.x)
+					# rewrite it.
+					file.close()
+					var result_json: String = JSON.stringify(meals)
+					file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
+					file.store_line(result_json)
+				elif result_meals["version"] < meals["version"]:
+					# Upgrade system
+					file.close()
+					var result_json: String = JSON.stringify(meals)
+					file = FileAccess.open("user://Scp261.json", FileAccess.WRITE)
+					file.store_line(result_json)
+				else:
+					meals = result_meals
 			file.close()
 	base_buttons.resize(5)
 	# For retrieving drink

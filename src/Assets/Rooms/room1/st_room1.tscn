@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cogri7pfu6a1e" path="res://Assets/ExternalModels/box.tscn" id="3_0ovdr"]
 [ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_Wall_Trimming_Normal.png" id="3_3ehpl"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_kqv8x"]
-[ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="5_6yybo"]
+[ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="8_ae4a1"]
 [ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_5qnc2"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="10_q0cx4"]
 [ext_resource type="LightmapGIData" uid="uid://c76wslsq27gly" path="res://Assets/Rooms/room1/Lm/st_room1.lmbake" id="11_ba14s"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="11_xvau2"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="12_xvau2"]
-[ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="13_es8lr"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="15_6yybo"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_6571d"]
@@ -228,21 +227,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48667, -0.251623, -7.35936)
 [node name="box4" parent="NavigationRegion3D/Props" unique_id=1698599716 instance=ExtResource("3_0ovdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15623, -0.251724, 0.4497614)
 
-[node name="industrial_wall_lamp6" parent="NavigationRegion3D/Props" unique_id=529649220 instance=ExtResource("5_6yybo")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0480358, 5.0601573, 6.403115)
-
-[node name="Light" parent="NavigationRegion3D/Props" unique_id=1956001815 instance=ExtResource("13_es8lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65232, 3.0902457, -5.858849)
-
-[node name="Light2" parent="NavigationRegion3D/Props" unique_id=1003232867 instance=ExtResource("13_es8lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65232, 3.0902457, -0.6541629)
-
-[node name="Light3" parent="NavigationRegion3D/Props" unique_id=1905060290 instance=ExtResource("13_es8lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.041255, 3.0902457, -5.858849)
-
-[node name="Light4" parent="NavigationRegion3D/Props" unique_id=556757987 instance=ExtResource("13_es8lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.041255, 3.0902457, -0.6541629)
-
 [node name="box5" parent="NavigationRegion3D/Props" unique_id=1648452366 instance=ExtResource("3_0ovdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4938374, -0.2407682, -4.106873)
 
@@ -257,6 +241,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.870534, -0.2407682, -3.4226
 
 [node name="box9" parent="NavigationRegion3D/Props" unique_id=180086625 instance=ExtResource("3_0ovdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25919443, -0.24076891, -1.7464833)
+
+[node name="industrial_wall_lamp" parent="NavigationRegion3D/Props" unique_id=381787279 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 4.0782084, 3.4616227)
+
+[node name="industrial_wall_lamp2" parent="NavigationRegion3D/Props" unique_id=117086164 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 5.6219864, 4.0782084, -3.457745)
+
+[node name="industrial_wall_lamp3" parent="NavigationRegion3D/Props" unique_id=147583195 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -5.3780136, 4.0782084, -3.457745)
+
+[node name="industrial_wall_lamp4" parent="NavigationRegion3D/Props" unique_id=1612347808 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 4.078, -3.458)
+
+[node name="industrial_wall_lamp5" parent="NavigationRegion3D/Props" unique_id=1723053315 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 5.6219864, 4.0782084, -8.678162)
+
+[node name="industrial_wall_lamp6" parent="NavigationRegion3D/Props" unique_id=56225539 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -5.3780136, 4.0782084, -8.678162)
+
+[node name="industrial_wall_lamp7" parent="NavigationRegion3D/Props" unique_id=1728605684 instance=ExtResource("8_ae4a1")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 4.078, -8.678416)
 
 [node name="DebugLights" type="Node3D" parent="." unique_id=14098579]
 visible = false

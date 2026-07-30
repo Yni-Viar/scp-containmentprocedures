@@ -80,7 +80,7 @@ func _on_attack_body_entered(body: Node3D) -> void:
 			is_attacking = true
 
 func _on_attack_body_exited(body: Node3D) -> void:
-	if body == get_node(get_parent().get_parent().follow_target):
+	if body is MovableNpc && body == get_node(get_parent().get_parent().follow_target):
 		is_attacking = false
 
 func _on_run_trigger_body_entered(body: Node3D) -> void:

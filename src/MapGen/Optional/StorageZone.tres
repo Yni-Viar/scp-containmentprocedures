@@ -9,8 +9,9 @@
 [ext_resource type="Resource" uid="uid://tigr2rqnfwwy" path="res://MapGen/Resources/StorageZone/room2C.tres" id="3_ys8j6"]
 [ext_resource type="Resource" uid="uid://p5bix08fmuyu" path="res://MapGen/Resources/StorageZone/room4.tres" id="4_rujm6"]
 [ext_resource type="Resource" uid="uid://jmjh0luvyagc" path="res://MapGen/Resources/StorageZone/cont2C_067.tres" id="5_f0n3x"]
-[ext_resource type="Resource" uid="uid://cjwa8lyg82tro" path="res://MapGen/Resources/StorageZone/cont1_nuke.tres" id="7_fjh07"]
+[ext_resource type="Resource" uid="uid://dx6rsvsl05u0c" path="res://MapGen/Resources/StorageZone/cont1_079.tres" id="8_7mo7n"]
 [ext_resource type="Resource" uid="uid://ccl1uuy1o3ct0" path="res://MapGen/Resources/StorageZone/room3.tres" id="8_cyex5"]
+[ext_resource type="Resource" uid="uid://cjwa8lyg82tro" path="res://MapGen/Resources/StorageZone/Optional/cont1_nuke.tres" id="9_7mo7n"]
 [ext_resource type="Resource" uid="uid://chu88o6q8jjlq" path="res://MapGen/Resources/StorageZone/room2_large.tres" id="9_f0n3x"]
 [ext_resource type="Resource" uid="uid://bm51rfjlriqo1" path="res://MapGen/Resources/StorageZone/cont3_echoes.tres" id="9_fjh07"]
 [ext_resource type="Resource" uid="uid://bprnbgimely5g" path="res://MapGen/Resources/StorageZone/cont2_2028.tres" id="10_7mo7n"]
@@ -18,7 +19,8 @@
 [resource]
 script = ExtResource("2_v5ya3")
 endrooms = Array[ExtResource("1_qy7lh")]([ExtResource("2_ocutf")])
-endrooms_single_large = Array[ExtResource("1_qy7lh")]([ExtResource("7_fjh07")])
+endrooms_single = Array[ExtResource("1_qy7lh")]([ExtResource("8_7mo7n")])
+endrooms_single_large = Array[ExtResource("1_qy7lh")]([ExtResource("9_7mo7n")])
 hallways = Array[ExtResource("1_qy7lh")]([ExtResource("3_55qvv"), ExtResource("9_f0n3x")])
 hallways_single = Array[ExtResource("1_qy7lh")]([ExtResource("10_7mo7n")])
 checkpoint_hallway = Array[ExtResource("1_qy7lh")]([ExtResource("2_bm8tg")])

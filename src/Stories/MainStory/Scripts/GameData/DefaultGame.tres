@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://bexpxwlp8wm7v"]
+
+[ext_resource type="PackedScene" uid="uid://cymiuku05au2f" path="res://Assets/Rooms/ScientistsRooms/Protagonist.tscn" id="1_jhaab"]
+[ext_resource type="PackedScene" uid="uid://c1hqsxxlsoqws" path="res://Assets/Rooms/ScientistsRooms/YniViar.tscn" id="2_8a6p6"]
+[ext_resource type="Script" uid="uid://dl2oay33sw2ih" path="res://InventorySystem/Items/Item.gd" id="3_uo2es"]
+[ext_resource type="Resource" uid="uid://d1pxflhcot1lu" path="res://InventorySystem/Items/ItemPda.tres" id="4_ia782"]
+[ext_resource type="Resource" uid="uid://ccgr3lh4u7jg0" path="res://InventorySystem/Items/Lantern.tres" id="5_ilkhq"]
+[ext_resource type="Resource" uid="uid://bbfc62gsa4434" path="res://InventorySystem/Items/ItemScp983.tres" id="6_r7ycc"]
+[ext_resource type="Resource" uid="uid://dk8t148bg028i" path="res://InventorySystem/Items/CubeItem.tres" id="7_k3ppj"]
+[ext_resource type="Resource" uid="uid://caeffa8v3lv6c" path="res://InventorySystem/Items/ItemScp109.tres" id="8_gqcxs"]
+[ext_resource type="Resource" uid="uid://sletek4tlyt" path="res://InventorySystem/Items/Item914book.tres" id="9_b8cu8"]
+[ext_resource type="Resource" uid="uid://n523prjqbfay" path="res://InventorySystem/Items/Item914doc.tres" id="10_0rra3"]
+[ext_resource type="Resource" uid="uid://6a47k5bb3tso" path="res://InventorySystem/Items/ItemDoc.tres" id="11_rv080"]
+[ext_resource type="Resource" uid="uid://ds21tmmi6nfrt" path="res://InventorySystem/Items/Item914BookDoc.tres" id="12_qel00"]
+[ext_resource type="Resource" uid="uid://0ru8kubmd8q6" path="res://InventorySystem/Items/ItemScp458.tres" id="13_jkrcx"]
+[ext_resource type="Resource" uid="uid://cu1gsqhpxw2x3" path="res://InventorySystem/Items/ItemScp686.tres" id="14_dkm4l"]
+[ext_resource type="Resource" uid="uid://sd610lrs11ox" path="res://InventorySystem/Items/ItemScp178.tres" id="15_ybkx3"]
+[ext_resource type="Resource" uid="uid://p6ep1225emgw" path="res://InventorySystem/Items/ItemScp067.tres" id="16_7152c"]
+[ext_resource type="Resource" uid="uid://xrrjhidisw1j" path="res://InventorySystem/Items/ItemDocShock.tres" id="17_lx41n"]
+[ext_resource type="Resource" uid="uid://hs2kf7tpq7pc" path="res://InventorySystem/Items/ItemBeaker.tres" id="18_irjjj"]
+[ext_resource type="Resource" uid="uid://nncd16da37n3" path="res://InventorySystem/Items/ItemScp005_W1.tres" id="19_ifsjb"]
+[ext_resource type="Resource" uid="uid://kgfkhypsvlyr" path="res://InventorySystem/Items/ItemScp1223.tres" id="20_6aj07"]
+[ext_resource type="Resource" uid="uid://bmhatf82qrjls" path="res://InventorySystem/Items/ItemScp018.tres" id="21_smacw"]
+[ext_resource type="Resource" uid="uid://2g8ucn5i0coc" path="res://InventorySystem/Items/ItemScp005_W2.tres" id="22_aem4o"]
+[ext_resource type="Resource" uid="uid://0hlfp08poq4a" path="res://InventorySystem/Items/ItemScp2028.tres" id="23_6juma"]
+[ext_resource type="Resource" uid="uid://c1jhrygeycjqr" path="res://InventorySystem/Items/ItemScp2028Nightmare.tres" id="24_pxbye"]
+[ext_resource type="Resource" uid="uid://b7w4gv0ultd2g" path="res://InventorySystem/Items/ItemFoodBox.tres" id="25_c8eon"]
+[ext_resource type="Resource" uid="uid://263c7io4oerh" path="res://InventorySystem/Items/ItemScp2471.tres" id="26_ifaqk"]
+[ext_resource type="Resource" uid="uid://b6g45ixoaqyeo" path="res://InventorySystem/Items/ItemScp5270.tres" id="27_plmep"]
+[ext_resource type="Resource" uid="uid://bashuw1bawio1" path="res://InventorySystem/Items/ItemScp2306.tres" id="28_om846"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="29_x8qal"]
+[ext_resource type="Resource" uid="uid://c8pms1lfwn1s8" path="res://PlayerScript/PlayerClassResources/ScientistProtagonist.tres" id="30_paucb"]
+[ext_resource type="Resource" uid="uid://cdvadpe1bwmkp" path="res://PlayerScript/PlayerClassResources/Scientist.tres" id="31_umhn7"]
+[ext_resource type="Resource" uid="uid://dtxvxmwsol0hf" path="res://PlayerScript/PlayerClassResources/Guard.tres" id="32_87gq4"]
+[ext_resource type="Resource" uid="uid://csusu4a31htq1" path="res://PlayerScript/PlayerClassResources/Scp173.tres" id="33_g64px"]
+[ext_resource type="Resource" uid="uid://b78x487lxutqy" path="res://PlayerScript/PlayerClassResources/Scp650.tres" id="34_ntae4"]
+[ext_resource type="Resource" uid="uid://nydi02ml4weh" path="res://PlayerScript/PlayerClassResources/Scientist650.tres" id="35_1p810"]
+[ext_resource type="Resource" uid="uid://l23gxmbiwbrh" path="res://PlayerScript/PlayerClassResources/DClass.tres" id="36_kfjmm"]
+[ext_resource type="Resource" uid="uid://6j3kwox735os" path="res://PlayerScript/PlayerClassResources/GuardOfDClass.tres" id="37_o8wub"]
+[ext_resource type="Resource" uid="uid://dc261j6vhe7mm" path="res://Stories/MainStory/PlayerScript/PlayerClassResources/Scp347.tres" id="38_jhaab"]
+[ext_resource type="Resource" uid="uid://cfqnesxjnjhyd" path="res://Stories/MainStory/PlayerScript/PlayerClassResources/Scp023.tres" id="39_jhaab"]
+[ext_resource type="Resource" uid="uid://75f7gb2eutok" path="res://PlayerScript/PlayerClassResources/Optional/Scp938.tres" id="40_8pepm"]
+[ext_resource type="Resource" uid="uid://ckdbmedjp0ohc" path="res://PlayerScript/PlayerClassResources/Scp939.tres" id="41_6mf47"]
+[ext_resource type="Resource" uid="uid://dg1mhd0yoqjnb" path="res://PlayerScript/PlayerClassResources/Scp131-A.tres" id="42_2sqjb"]
+[ext_resource type="Resource" uid="uid://b5biaet1ehauh" path="res://PlayerScript/PlayerClassResources/Scp131-B.tres" id="43_gjxfi"]
+[ext_resource type="Resource" uid="uid://coq7wi5ib2ocb" path="res://PlayerScript/PlayerClassResources/DClassPoI1507.tres" id="44_xxqhf"]
+[ext_resource type="Resource" uid="uid://3gd3ggfbhbel" path="res://PlayerScript/PlayerClassResources/Scp1507.tres" id="45_fbqmu"]
+[ext_resource type="Resource" uid="uid://dqfejxd1qicrc" path="res://PlayerScript/PlayerClassResources/Optional/Scp080.tres" id="46_7uf18"]
+[ext_resource type="Resource" uid="uid://ta820aguqs0e" path="res://Stories/MainStory/PlayerScript/PlayerClassResources/DClass_5274.tres" id="47_8a6p6"]
+[ext_resource type="Script" uid="uid://cgv4yjj6gyjc1" path="res://Scripts/GameData/GameData.gd" id="47_npo2s"]
+[ext_resource type="Script" uid="uid://c4fqc7mfbrm1o" path="res://Scripts/StatusEffects/StatusEffect.gd" id="48_rusbt"]
+[ext_resource type="Resource" uid="uid://cnm2qfuahmt4e" path="res://Stories/MainStory/PlayerScript/PlayerClassResources/ScientistWhite.tres" id="48_uo2es"]
+[ext_resource type="Resource" uid="uid://c2d5grsmib6lc" path="res://Scripts/StatusEffects/StatusEffects/Amnesia.tres" id="49_ub3c6"]
+[ext_resource type="Resource" uid="uid://cl3tmyk8pvu75" path="res://Scripts/StatusEffects/StatusEffects/Electrocuted.tres" id="50_fu25j"]
+[ext_resource type="Resource" uid="uid://bfiwkhemjuc38" path="res://Scripts/StatusEffects/StatusEffects/Fatigue.tres" id="51_cpvgb"]
+[ext_resource type="Resource" uid="uid://dbakjcsd0twa8" path="res://Scripts/StatusEffects/StatusEffects/Frozen.tres" id="52_kgget"]
+[ext_resource type="Resource" uid="uid://dk1uamwfquef6" path="res://Scripts/StatusEffects/StatusEffects/Scp067.tres" id="53_equem"]
+[ext_resource type="Resource" uid="uid://bvgm5xll68t8u" path="res://Scripts/StatusEffects/StatusEffects/Scp178.tres" id="54_wg8ys"]
+[ext_resource type="Resource" uid="uid://ds43lxdn780le" path="res://Scripts/StatusEffects/StatusEffects/Scp2028.tres" id="55_pb0xo"]
+[ext_resource type="Resource" uid="uid://8w5evo6p3hmj" path="res://Scripts/StatusEffects/StatusEffects/Scp261KleinBottle.tres" id="56_67uhc"]
+[ext_resource type="Resource" uid="uid://dfoo1haub0n52" path="res://Scripts/StatusEffects/StatusEffects/Scp261Orange.tres" id="57_nyd6d"]
+[ext_resource type="Resource" uid="uid://di2hwxertgitw" path="res://Scripts/StatusEffects/StatusEffects/Scp686.tres" id="58_l2r3n"]
+[ext_resource type="Resource" uid="uid://dp5a3j32mc0fl" path="res://Scripts/StatusEffects/StatusEffects/EdgeVision.tres" id="59_10fk7"]
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="59_je70j"]
+[ext_resource type="Resource" uid="uid://cm64fq8jej14x" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task1.tres" id="60_dl1ix"]
+[ext_resource type="Resource" uid="uid://blynsaane2l50" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task2.tres" id="61_10fk7"]
+[ext_resource type="Resource" uid="uid://d1jur5jr8tfgm" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task3.tres" id="62_ix1uh"]
+[ext_resource type="Resource" uid="uid://cnubikr8bakt7" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task4.tres" id="63_jhaab"]
+[ext_resource type="Resource" uid="uid://dvl7qq7eykk1m" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task5.tres" id="64_8a6p6"]
+[ext_resource type="Resource" uid="uid://bmcdmy7k87ogd" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task6.tres" id="65_uo2es"]
+[ext_resource type="Resource" uid="uid://bi1oehyf5kdya" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task7.tres" id="66_ia782"]
+[ext_resource type="Resource" uid="uid://che0fwo2l4rvs" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task8.tres" id="67_ilkhq"]
+[ext_resource type="Resource" uid="uid://cl207g4i4bmvv" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task9.tres" id="68_r7ycc"]
+[ext_resource type="Resource" uid="uid://c6y2y54fl4psg" path="res://Stories/MainStory/Scripts/TaskSystem/Tasks/Task10.tres" id="69_k3ppj"]
+
+[resource]
+script = ExtResource("47_npo2s")
+player_class = Array[ExtResource("29_x8qal")]([ExtResource("30_paucb")])
+puppet_classes = Array[ExtResource("29_x8qal")]([ExtResource("31_umhn7"), ExtResource("32_87gq4"), ExtResource("33_g64px"), ExtResource("34_ntae4"), ExtResource("35_1p810"), ExtResource("36_kfjmm"), ExtResource("37_o8wub"), ExtResource("38_jhaab"), ExtResource("39_jhaab"), ExtResource("40_8pepm"), ExtResource("41_6mf47"), ExtResource("42_2sqjb"), ExtResource("43_gjxfi"), ExtResource("44_xxqhf"), ExtResource("45_fbqmu"), ExtResource("46_7uf18"), ExtResource("47_8a6p6"), ExtResource("48_uo2es")])
+tasks = Array[ExtResource("59_je70j")]([ExtResource("60_dl1ix"), ExtResource("61_10fk7"), ExtResource("62_ix1uh"), ExtResource("63_jhaab"), ExtResource("64_8a6p6"), ExtResource("65_uo2es"), ExtResource("66_ia782"), ExtResource("67_ilkhq"), ExtResource("68_r7ycc"), ExtResource("69_k3ppj")])
+items = Array[ExtResource("3_uo2es")]([ExtResource("4_ia782"), ExtResource("5_ilkhq"), ExtResource("6_r7ycc"), ExtResource("7_k3ppj"), ExtResource("8_gqcxs"), ExtResource("9_b8cu8"), ExtResource("10_0rra3"), ExtResource("11_rv080"), ExtResource("12_qel00"), ExtResource("13_jkrcx"), ExtResource("14_dkm4l"), ExtResource("15_ybkx3"), ExtResource("16_7152c"), ExtResource("17_lx41n"), ExtResource("18_irjjj"), ExtResource("19_ifsjb"), ExtResource("20_6aj07"), ExtResource("21_smacw"), ExtResource("22_aem4o"), ExtResource("23_6juma"), ExtResource("24_pxbye"), ExtResource("25_c8eon"), ExtResource("26_ifaqk"), ExtResource("27_plmep"), ExtResource("28_om846")])
+custom_scientists_offices = Array[PackedScene]([ExtResource("1_jhaab"), ExtResource("2_8a6p6")])
+status_effects = Dictionary[String, ExtResource("48_rusbt")]({
+"Amnesia": ExtResource("49_ub3c6"),
+"EdgeVision": ExtResource("59_10fk7"),
+"Electrocuted": ExtResource("50_fu25j"),
+"Fatigue": ExtResource("51_cpvgb"),
+"Frozen": ExtResource("52_kgget"),
+"Scp067": ExtResource("53_equem"),
+"Scp178": ExtResource("54_wg8ys"),
+"Scp2028": ExtResource("55_pb0xo"),
+"Scp261KleinBottle": ExtResource("56_67uhc"),
+"Scp261Orange": ExtResource("57_nyd6d"),
+"Scp686": ExtResource("58_l2r3n")
+})
+metadata/_custom_type_script = "uid://cgv4yjj6gyjc1"

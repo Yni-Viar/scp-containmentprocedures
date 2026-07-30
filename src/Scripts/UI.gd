@@ -1,6 +1,7 @@
 extends Control
 ## Made by Yni, licensed under MIT License.
 ## Uses third-party code. See code comment.
+class_name GameUI
 
 var exiting: bool = false
 var current_elevator: ElevatorSystem = null
@@ -13,6 +14,7 @@ var task_with_timer_labels: Dictionary[Label, Timer] = {}
 func _ready():
 	pass
 	#if !Settings.touchscreen:
+		#$Back.hide()
 		#$HBoxContainer/InventoryButton.hide()
 		#$HBoxContainer/SwitchCameraButton.hide()
 
@@ -44,8 +46,11 @@ func _input(event: InputEvent) -> void:
 		$HungerIcon.visible = !$HungerIcon.visible
 		$Tasks.visible = !$Tasks.visible
 		$HBoxContainer.visible = !$HBoxContainer.visible
+		#if Settings.touchscreen:
 		$Back.visible = !$Back.visible
 		$FPSCounter.visible = !$FPSCounter.visible
+	if event.is_action_pressed("ui_cancel"):
+		_on_back_pressed()
 
 #func _on_seed_text_changed(new_text):
 	#if new_text != "":

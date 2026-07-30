@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MapGenZone" format=3 uid="uid://beftie1gmngm1"]
+
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="1_m1i6c"]
+[ext_resource type="Resource" uid="uid://d0nfhacpkxpv2" path="res://MapGen/Resources/PersonnelZone/room2_checkpoint.tres" id="2_3ufxv"]
+[ext_resource type="Resource" uid="uid://dlganlemvxqwq" path="res://MapGen/Resources/PersonnelZone/room2C.tres" id="3_2o2v1"]
+[ext_resource type="Resource" uid="uid://doc72gxtl6efq" path="res://MapGen/Resources/PersonnelZone/room4.tres" id="4_wffqr"]
+[ext_resource type="Resource" uid="uid://bokvroo0o05ab" path="res://MapGen/Resources/PersonnelZone/room1.tres" id="5_glcyf"]
+[ext_resource type="Resource" uid="uid://scajrlg5lmca" path="res://MapGen/Resources/PersonnelZone/cont1_261.tres" id="6_p1sxb"]
+[ext_resource type="Resource" uid="uid://df05xke2b5qkr" path="res://Stories/MainStory/MapGen/Rooms/PersonnelZone/cont1_347.tres" id="7_m1i6c"]
+[ext_resource type="Resource" uid="uid://dmclou0yv25dr" path="res://MapGen/Resources/PersonnelZone/cont1_scientist_lounge.tres" id="8_nx8vs"]
+[ext_resource type="Resource" uid="uid://068ca70gvy1y" path="res://MapGen/Resources/PersonnelZone/room2.tres" id="9_yt0q2"]
+[ext_resource type="Resource" uid="uid://ckxj3raeg211o" path="res://MapGen/Resources/PersonnelZone/room2_cafeteria.tres" id="10_4gktu"]
+[ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="11_mhf15"]
+[ext_resource type="Resource" uid="uid://5giemu7rx4c6" path="res://MapGen/Resources/PersonnelZone/room3.tres" id="12_a6b5i"]
+
+[resource]
+script = ExtResource("11_mhf15")
+endrooms = Array[ExtResource("1_m1i6c")]([ExtResource("5_glcyf")])
+endrooms_single = Array[ExtResource("1_m1i6c")]([ExtResource("6_p1sxb"), ExtResource("7_m1i6c")])
+endrooms_single_large = Array[ExtResource("1_m1i6c")]([ExtResource("8_nx8vs")])
+hallways = Array[ExtResource("1_m1i6c")]([ExtResource("9_yt0q2")])
+hallways_single = Array[ExtResource("1_m1i6c")]([ExtResource("10_4gktu")])
+checkpoint_hallway = Array[ExtResource("1_m1i6c")]([ExtResource("2_3ufxv")])
+corners = Array[ExtResource("1_m1i6c")]([ExtResource("3_2o2v1")])
+trooms = Array[ExtResource("1_m1i6c")]([ExtResource("12_a6b5i")])
+crossrooms = Array[ExtResource("1_m1i6c")]([ExtResource("4_wffqr")])
+metadata/_custom_type_script = "uid://d0tlgr0c6w7gq"

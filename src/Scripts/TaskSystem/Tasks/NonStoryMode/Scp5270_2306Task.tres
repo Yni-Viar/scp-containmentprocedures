@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://cyxin8ojrvsrm"]
-
-[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_1qktg"]
-
-[resource]
-script = ExtResource("1_1qktg")
-internal_name = "task_zen"
-public_name = "TASK_ZEN"
-metadata/_custom_type_script = "uid://2412583x8gql"

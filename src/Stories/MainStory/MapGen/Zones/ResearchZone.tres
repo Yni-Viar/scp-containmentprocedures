@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="MapGenZone" format=3 uid="uid://cun2vc23fmbsb"]
+
+[ext_resource type="PackedScene" uid="uid://cgwv4o2dj2tp6" path="res://Assets/Doors/empty_door.tscn" id="1_7l0cq"]
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="2_wy5iy"]
+[ext_resource type="Resource" uid="uid://dd38ave42ap1i" path="res://MapGen/Resources/ResearchZone/room2_checkpoint.tres" id="3_ompfg"]
+[ext_resource type="Resource" uid="uid://tgxe2303s02g" path="res://MapGen/Resources/ResearchZone/room2C_redux.tres" id="4_wh27x"]
+[ext_resource type="Resource" uid="uid://dqdtklri5tu2" path="res://MapGen/Resources/ResearchZone/Optional/cont2C_178.tres" id="5_e43fb"]
+[ext_resource type="Resource" uid="uid://dkax2pgmsnpbr" path="res://MapGen/Resources/ResearchZone/room2C_special.tres" id="6_njsjp"]
+[ext_resource type="Resource" uid="uid://defw3e0yk60rh" path="res://MapGen/Resources/ResearchZone/room4.tres" id="7_r5act"]
+[ext_resource type="PackedScene" uid="uid://cksrh1gkj38dw" path="res://Assets/Doors/rz_door.tscn" id="8_4xmn4"]
+[ext_resource type="Resource" uid="uid://fnhc6t0nwt4o" path="res://MapGen/Resources/ResearchZone/room1_redux.tres" id="9_s7x17"]
+[ext_resource type="Resource" uid="uid://rwvg2r7pstmc" path="res://MapGen/Resources/ResearchZone/Optional/exit1.tres" id="10_1ysll"]
+[ext_resource type="Resource" uid="uid://b63g1e6h6rtov" path="res://Stories/MainStory/MapGen/Rooms/ResearchZone/cont1_classd.tres" id="11_7l0cq"]
+[ext_resource type="Resource" uid="uid://bb5gms1d7xk25" path="res://Stories/MainStory/MapGen/Rooms/ResearchZone/cont1_173.tres" id="12_7l0cq"]
+[ext_resource type="Resource" uid="uid://d252rpvlfw68a" path="res://MapGen/Resources/ResearchZone/cont1_testroom.tres" id="12_u8sj0"]
+[ext_resource type="Resource" uid="uid://dp62g03gg7w04" path="res://MapGen/Resources/ResearchZone/cont1_1507.tres" id="13_p2b4c"]
+[ext_resource type="Resource" uid="uid://chpcupul4vxhj" path="res://MapGen/Resources/ResearchZone/cont1_162.tres" id="14_7qg70"]
+[ext_resource type="Resource" uid="uid://74j2l3m5ybvh" path="res://MapGen/Resources/ResearchZone/cont1_522.tres" id="15_bbgoc"]
+[ext_resource type="Resource" uid="uid://0snk44wfi3lh" path="res://Stories/MainStory/MapGen/Rooms/ResearchZone/cont1_914.tres" id="17_7l0cq"]
+[ext_resource type="Resource" uid="uid://b5iorkkrwdl3m" path="res://MapGen/Resources/ResearchZone/room2_walkway_redux.tres" id="18_4ei8i"]
+[ext_resource type="Resource" uid="uid://cgh78us53op5w" path="res://MapGen/Resources/ResearchZone/room2_redux.tres" id="19_c0eir"]
+[ext_resource type="Resource" uid="uid://cwn3flxx1e8ho" path="res://MapGen/Resources/ResearchZone/rz_exit2_gatec.tres" id="20_caa2v"]
+[ext_resource type="Resource" uid="uid://da43aoalrw56x" path="res://MapGen/Resources/ResearchZone/cont2_650.tres" id="21_u8xnr"]
+[ext_resource type="Resource" uid="uid://dwy6qiei1wti0" path="res://MapGen/Resources/ResearchZone/room2_wc.tres" id="22_8lcrt"]
+[ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="23_ugpk6"]
+[ext_resource type="Resource" uid="uid://clxj5wm4henr0" path="res://MapGen/Resources/ResearchZone/room3_redux.tres" id="24_v5eqy"]
+
+[resource]
+script = ExtResource("23_ugpk6")
+endrooms = Array[ExtResource("2_wy5iy")]([ExtResource("9_s7x17")])
+endrooms_single = Array[ExtResource("2_wy5iy")]([ExtResource("10_1ysll"), ExtResource("11_7l0cq"), ExtResource("12_7l0cq"), ExtResource("12_u8sj0"), ExtResource("13_p2b4c"), ExtResource("14_7qg70"), ExtResource("15_bbgoc")])
+endrooms_single_large = Array[ExtResource("2_wy5iy")]([ExtResource("17_7l0cq")])
+hallways = Array[ExtResource("2_wy5iy")]([ExtResource("18_4ei8i"), ExtResource("19_c0eir")])
+hallways_single = Array[ExtResource("2_wy5iy")]([ExtResource("20_caa2v"), ExtResource("21_u8xnr"), ExtResource("22_8lcrt")])
+checkpoint_hallway = Array[ExtResource("2_wy5iy")]([ExtResource("3_ompfg")])
+corners = Array[ExtResource("2_wy5iy")]([ExtResource("4_wh27x")])
+corners_single = Array[ExtResource("2_wy5iy")]([ExtResource("5_e43fb"), ExtResource("6_njsjp")])
+trooms = Array[ExtResource("2_wy5iy")]([ExtResource("24_v5eqy")])
+crossrooms = Array[ExtResource("2_wy5iy")]([ExtResource("7_r5act")])
+door_frames = Array[PackedScene]([ExtResource("8_4xmn4")])
+checkpoint_door_frames = Array[PackedScene]([ExtResource("1_7l0cq")])

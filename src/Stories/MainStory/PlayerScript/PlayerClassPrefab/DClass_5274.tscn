@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c8v7yj8fivrtv"]
+
+[ext_resource type="Script" uid="uid://wge3t35qfwck" path="res://Stories/MainStory/PlayerScript/PlayerClassScript/S_DClass_5274_PuppetScript.gd" id="1_e32bo"]
+[ext_resource type="Texture2D" uid="uid://cbnqk6cs45gd3" path="res://Assets/HUD/talk.png" id="2_e32bo"]
+
+[node name="Puppet" type="Node3D" unique_id=467781983]
+script = ExtResource("1_e32bo")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/DClass/DClass_SL.tscn": 0
+})
+vision_class_detect = Array[int]([2, 3])
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1527171694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = ExtResource("2_e32bo")

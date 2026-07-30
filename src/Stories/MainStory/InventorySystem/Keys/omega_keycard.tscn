@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://ddyhirv0yekc8"]
+
+[ext_resource type="Script" uid="uid://cuteifogseump" path="res://Scripts/Interactables/Key.gd" id="1_l72m7"]
+[ext_resource type="Texture2D" uid="uid://c6uek2p2r7yin" path="res://Stories/MainStory/InventorySystem/Keys/OmegaKeycard_level_omega.png" id="1_xdrvc"]
+[ext_resource type="Shader" uid="uid://cyawkqumpaf1e" path="res://Shaders/ItemShader/item.gdshader" id="3_ho6r1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nskwc"]
+render_priority = 0
+shader = ExtResource("3_ho6r1")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urfsr"]
+resource_name = "Material"
+next_pass = SubResource("ShaderMaterial_nskwc")
+cull_mode = 2
+albedo_texture = ExtResource("1_xdrvc")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qur55"]
+resource_name = "OmegaKeycard_Cube"
+_surfaces = [{
+"aabb": AABB(-0.15000004, -0.006096645, -0.10956691, 0.30000007, 0.01219329, 0.21913382),
+"attribute_data": PackedByteArray("zwczFi/4zAvPB8wLL/gzFlAqMxau1cwLUCrMC67VMxYv+DMWzwfMCy/4zAvPBzMWrtUzFlAqzAuu1cwLUCozFi/4rtXPB1AqL/hQKs8HrtUv+K7VzwdQKi/4UCrPB67VqhozFlTlzAvTwjMWVOWAIgAAKz1U5YAiqhrMC1TlMxbTwswLKz0zFtPCzAsrPcwLqhozFqoazAtU5TMWVOXMC///08KqGoAiVOV+3aoaft3//9PC//8rPaoagCJU5X7dqhp+3QAAKz12EDMWdhDMC4jvzAuI7zMWCM0zFgjNzAvTwjMWKz3MC/YyMxb2MswLCM0zFgjNzAsrPTMW9jLMC/YyMxZ2EMwLdhAzFojvMxaI78wL9/32Mv//Kz2I74gkdhCIJPf9CM2I73bbBwL2MgcCCM0AANPCdhB22/f99jKI74gkdhCIJPf9CM2I73bbBwL2MgcCCM0AANPCdhB22w=="),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("HgAyABgAHgAzADIAMwAAADIAMwACAAAAGAAZAB4AGAAfABkANAAZAB8ANAAfADUAAQA0ADUAAQA1AAMABQA2AAcABQA3ADYANwA4ADYANwAgADgAIQA4ACAAIQAgADkAOgAhADkAOgA5ADsABAA6ADsABAA7AAYAIgA8ABoAIgA9ADwAPQAMADwAPQAOAAwAGgAjACIAGgA+ACMAPwAjAD4APwA+AEAADQA/AEAADQBAAA8AJABBACUAJABCAEEAQgAJAEEAQgALAAkAJgAkACUAJgAlACcAJwBDACYAJwBEAEMARAAIAEMARAAKAAgAKABFAEYARQBHABIAKABHAEUARwApABsARwARACkAKAARAEcAKQARAEgAEAAoAEkAKgAoABAAEQAoACoAKgAQAEoAEQAcAEsAEQBMABwAEQAqAEwAHABMAE0ATAAqAE4ATgAqACsATABOABMALABPAC0ATwBQABYALABQAE8AUAAuAB0AUAAVAC4ALAAVAFAALgAVAFEAFAAsAFIALwAsABQAFQAsAC8ALwAUAFMAFQAxAFQAFQBVADEAFQAvAFUAMQBVAFYAVQAvAFcAVwAvADAAVQBXABcA"),
+"lods": [0.021358963, PackedByteArray("HgACABgAAgAAABgAGAAZAB4AGAAfABkAGQAfAAMAAQAZAAMABQAgAAcAIQAHACAAIQAgAAYABAAhAAYAIgAOABoADgAMABoAGgAjACIAGgAPACMADQAjAA8AJAALACUACwAJACUAJgAkACUAJgAlACcAJwAKACYACgAIACYAKAAbABIAKAARABsAGwARACkAEQAoACoAKgAoABAAEQAqABMAEwAqACsAEQATABwALAAWAC0ALAAdABYALAAVAB0AHQAVAC4AFQAsAC8ALwAsABQAFQAvABcAFwAvADAAFQAXADEA"), 0.03603538, PackedByteArray("AgAAABgAGAAZAAIAGAADABkAAQAZAAMADgAMABoAGgANAA4AGgAPAA0ABAAFAAYABAAHAAUACAAJAAoACAALAAkAEAAbABIAEAARABsAEQAQABMAEQATABwAFAAdABYAFAAVAB0AFQAUABcA"), 0.054053072, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEQAQABMAFAAVABYAFQAUABcA")],
+"material": SubResource("StandardMaterial3D_urfsr"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 88,
+"vertex_data": PackedByteArray("zwcAALEKAAAv+P//sQoAAM8H//+xCgAAL/gAALEKAADPBwAATfUAAM8H//+xCgAAzwf//031AADPBwAAsQoAAC/4AABN9f+fzwf//031/58v+P//TfX/n88HAABN9f+fL/gAALEK/98v+P//TfX/ny/4//+xCv/fL/gAAE31/5/PBwAATfX//y/4AACxCv//zwcAALEK//8v+AAATfX//y/4//9N9f+/zwf//7EK/78v+P//sQr/v88H//9N9f+/qhoAAAAAAABU5f//AAAAAP//AACBJP/DqhoAAAAA/////wAAgST//1Tl//8AAP+/qhr//wAAAABU5QAAAAAAAAAA//+BJAAAAAAAAH3bAAD/////gST/w/////992/+7qhoAAP///4OqGv//////g1TlAAD///+DVOX//////4MAAAAAfdv//1TlAAAAAP//qhoAAP////9U5QAA//////////992/+//////4Ek/7+qGv//AAD/v1Tl//////+/qhr//////78AAP//gST/v3YQAADHAgAAdhD//8cCAACI7///xwIAAIjvAADHAgAABwIAAIkWAAAHAv//iRYAAAAAAACBJAAAAAD//33bAAAHAgAAdekAAAcC//916QAA9/0AAIkW/8/3/f//iRb/z///AAB92/+79/3//3Xp/6/3/QAAden/r3YQ//83/f+PdhAAADf9/4+I7wAAN/3/j4jv//83/f+PBwIAAIkW//8AAAAAgST//3YQAADHAv//iO8AAMcC//8HAgAAden//3YQAAA3/f//9/0AAIkW///3/QAAden/////AAB92///iO8AADf9///3/f//iRb/v4jv///HAv+/dhD//8cC/7/3/f//den/v4jv//83/f+/BwL//4kW/78HAv//den/vwAA//992/+/dhD//zf9/7///3ylgdr/f///fKWB2v9/glr/f///fKWCWv9///98pf9/AAD/f////38AAP9/////fwAA/38AAP9/AAD/fwAA/3//P/9//z//f/8//3//P////3/+//9//v//f/7//3////2FAPr/f/9/AAD/f/8//3//P////3////2FAPr/f///2rwkQ/9//38AAP9/AAD/f////3////9/AAD/fwAA/3//P/9//z//f/8//3//P/7//3////9/////f////3////9//v//f///PJX//zyVwur/f8Lq/3///0Sz//9Es///2rwkQ/9/ukz/f7pM/3//fwAA/38AAP9/AAD/fwAA/38AAP9/////f////38AAP9/AAD/f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8/////f////3////9//v//f////3/+//9/////f////3////9/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntbkr"]
+size = Vector3(0.28265762, 0.042129517, 0.21551514)
+
+[node name="OmegaKeycard" type="RigidBody3D" unique_id=294382081]
+collision_layer = 8
+freeze = true
+continuous_cd = true
+script = ExtResource("1_l72m7")
+keycard_access = -2584
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=910622649]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qur55")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=934415967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014705658, 0.0008621216, -3.0517578e-05)
+shape = SubResource("BoxShape3D_ntbkr")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://by5c7g15ljuta"]
+[gd_scene format=3 uid="uid://by5c7g15ljuta"]
 
 [ext_resource type="Script" uid="uid://coqykxns1k055" path="res://PlayerScript/StaticPlayer.gd" id="1_cfg1l"]
 [ext_resource type="Script" uid="uid://cehby8ygncffm" path="res://Scripts/GDShaderCompositor/GDShaderCompositorResource.gd" id="3_ejqts"]
@@ -23,36 +23,36 @@ height = 96.0
 [sub_resource type="QuadMesh" id="QuadMesh_roo0c"]
 size = Vector2(2, 2)
 
-[node name="StaticPlayer" type="Node3D"]
+[node name="StaticPlayer" type="Node3D" unique_id=1172382677]
 script = ExtResource("1_cfg1l")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=1503279647]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 
-[node name="UpperLook" type="Marker3D" parent="Head"]
+[node name="UpperLook" type="Marker3D" parent="Head" unique_id=664127889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
 
-[node name="ThirdPerson" type="Marker3D" parent="Head"]
+[node name="ThirdPerson" type="Marker3D" parent="Head" unique_id=26426894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.875)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2011246397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
 cull_mask = 524287
 near = 0.031
 far = 60.0
 
-[node name="Optimizator" type="Area3D" parent="Head/Camera3D"]
+[node name="Optimizator" type="Area3D" parent="Head/Camera3D" unique_id=1610079605]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -16)
 collision_layer = 11
 collision_mask = 11
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Optimizator"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Optimizator" unique_id=692297801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
 shape = SubResource("CapsuleShape3D_j77eh")
 
-[node name="Overlays" type="Node3D" parent="Head/Camera3D"]
+[node name="Overlays" type="Node3D" parent="Head/Camera3D" unique_id=1945423887]
 
-[node name="OverlayCompositor" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+[node name="OverlayCompositor" type="MeshInstance3D" parent="Head/Camera3D/Overlays" unique_id=301700308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
 visible = false
 mesh = SubResource("QuadMesh_roo0c")
@@ -60,7 +60,7 @@ skeleton = NodePath("../..")
 script = ExtResource("3_tenen")
 shaders = Array[ExtResource("3_ejqts")]([ExtResource("4_jpt06"), ExtResource("5_6ukt2"), ExtResource("6_n5xyg"), ExtResource("7_qjmps"), ExtResource("8_djicr")])
 
-[node name="TintCompositor" type="MeshInstance3D" parent="Head/Camera3D/Overlays"]
+[node name="TintCompositor" type="MeshInstance3D" parent="Head/Camera3D/Overlays" unique_id=137808533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.035)
 visible = false
 mesh = SubResource("QuadMesh_roo0c")
@@ -74,12 +74,12 @@ shaders = Dictionary[String, ShaderMaterial]({
 "Scp261Orange": ExtResource("13_dlstf")
 })
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1777601234]
 size = Vector2i(256, 256)
 render_target_update_mode = 0
 script = ExtResource("7_831vx")
 
-[node name="LightDetector" type="Camera3D" parent="SubViewport"]
+[node name="LightDetector" type="Camera3D" parent="SubViewport" unique_id=1671526570]
 far = 48.0
 
 [connection signal="body_entered" from="Head/Camera3D/Optimizator" to="." method="_on_optimizator_body_entered"]

@@ -4,7 +4,7 @@
 
 [node name="Puppet" type="Node3D" unique_id=1648854867]
 script = ExtResource("1_prx31")
-secondary_state = 5
+secondary_state = 6
 resistance_scp178 = true
 resistance_scp686 = true
 default_puppet_to_spawn = 0

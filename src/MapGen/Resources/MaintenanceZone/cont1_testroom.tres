@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapGenRoom" format=3 uid="uid://i7dv4g0tnkdn"]
+
+[ext_resource type="Texture2D" uid="uid://js7y3logs2g8" path="res://Assets/HUD/room1_90.png" id="1_kwckg"]
+[ext_resource type="Texture2D" uid="uid://b8nf0gvd62sem" path="res://Assets/HUD/room1_270.png" id="2_3v8v6"]
+[ext_resource type="Texture2D" uid="uid://b7pofqfywnjd4" path="res://Assets/HUD/room1_180.png" id="3_ei6cc"]
+[ext_resource type="Texture2D" uid="uid://bmbn1pgwlfdri" path="res://Assets/HUD/room1.png" id="4_ri310"]
+[ext_resource type="PackedScene" uid="uid://kb5so0w2xj5k" path="res://Assets/Rooms/room1/mt_cont1_testroom.tscn" id="5_kwckg"]
+[ext_resource type="Script" uid="uid://b15b7mhits7ot" path="res://MapGen/MapGenRoom.gd" id="6_gg36t"]
+
+[resource]
+script = ExtResource("6_gg36t")
+name = "cont1_446"
+prefab = ExtResource("5_kwckg")
+icon_0_degrees = ExtResource("1_kwckg")
+icon_90_degrees = ExtResource("4_ri310")
+icon_180_degrees = ExtResource("2_3v8v6")
+icon_270_degrees = ExtResource("3_ei6cc")
+spawn_chance = 60.0

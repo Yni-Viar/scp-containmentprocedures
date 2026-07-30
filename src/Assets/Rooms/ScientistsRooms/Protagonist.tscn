@@ -32,5 +32,5 @@ mesh = SubResource("TextMesh_4lnpe")
 [node name="Couch" parent="." unique_id=454142516 instance=ExtResource("4_y0nny")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11272335, -1.2628438, -5.460823)
 
-[node name="entityspawn" type="Marker3D" parent="." unique_id=1608962033 groups=["PlayerSpawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.301283, -0.7791447, -0.1236248)
+[node name="entityspawn" type="Marker3D" parent="." unique_id=1608962033 groups=["PlayerSpawn", "StoryStart"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9892216, -1.8364516, -0.103936434)

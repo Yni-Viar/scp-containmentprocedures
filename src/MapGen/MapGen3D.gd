@@ -453,7 +453,7 @@ func spawn_doors() -> void:
 				var available_frames: Array[PackedScene] = rooms[zone_index].door_frames
 				if mapgen[i][j].coordinate & 1 << 2:
 					var door: Node3D
-					# Skip double rooms
+					# Skip double rooms and checkpoints
 					if (mapgen[i+1][j].double_room && mapgen[i][j].double_room) || i == size_x / (map_size_x + 1) * zone_counter.x - 1:
 						continue
 					if mapgen[i+1][j].resource.door_type >= 0: # Spawn specific door frame

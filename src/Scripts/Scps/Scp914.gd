@@ -7,6 +7,7 @@ extends StaticBody3D
 ## SCP: Continued Procedures.
 ##
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp914
 
 enum Scp914Mode {ROUGH, COARSE, ONE_TO_ONE, FINE, VERY_FINE}
 

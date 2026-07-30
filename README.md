@@ -26,25 +26,33 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
    - display resolution > 1280x720 (except Android) recommended
    - Mouse/touch support
 
-### Included SCPs
-#### Casual mode
+### Included content
+
+#### Stories
+
+> All Stories are not included in Lite/Web versions
+
+| Component | Supported versions |
+|-----------|--------------------|
+|Main Story|✅, >10.0.0|
+
+#### Included SCPs
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
 |🟢SCP-005|❓, > 6.0.0/7.0.4|✅, > 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
 |🟡SCP-018|✅, > 7.0.0|✅, > 7.0.0|✅ Full|
 |🟡SCP-023|✅, > 3.0.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-067|✅, > 5.2.0|✅, > 5.7.0|✅ Full|
+|🟡SCP-079|✅, > 10.0.0|✅, > 10.0.0|❌ None|
 |🟡SCP-080|✅, > 9.0.0|❌|✅ Full|
 |🟡SCP-109\*|✅, > 4.3.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-131|✅, > 8.0.0/9.0.0|❓, > 8.0.0|❓ Partial, supports custom models|
 |🟡SCP-162|✅, > 1.0.0|✅, > 5.8.0|✅ Full|
 |🟡SCP-173|✅, > 1.0.0|❓, > 5.7.0|✅ Full, supports custom models|
 |🟡SCP-178|✅, > 5.2.0|❌|✅ Full|
-|🟢SCP-181\*|☑️, > 10.0.0|☑️ > 10.0.0|❌ Story mode only character|
 |🟡SCP-249|✅, > 6.0.0|✅, > 6.0.0|✅ Full|
 |🟢SCP-261|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
 |🟡SCP-347|✅, > 1.0.0|✅, 5.7.x-5.8.x only, > 9.0.0|❓ Partial|
-|🟠SCP-417\*|❓, > 8.0.0|❓, > 8.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-458\*|✅, > 5.1.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-522|✅, > 5.8.0|✅, > 5.8.0|✅ Full|
 |🟢SCP-649|⛄, 5.5.x-5.7.x, > 9.0.0|⛄, 5.7.x only, > 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
@@ -58,19 +66,36 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 |🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only|✅ Full|
 |🟢SCP-1223\*|✅, > 6.1.0|✅, > 6.1.0|✅ Full|
 |🟡SCP-1507|✅, > 9.0.0|✅, > 9.0.0|✅ Full, supports custom models|
-|🟡SCP-1657|❓, > 10.0.0|❓, > 10.0.0|❓ Cameo / Only available via SCP-261|
 |🟢SCP-2028|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
 |🟢SCP-2306|✅, > 8.1.0|✅, > 8.1.0|📃 Task only/repairs SCP-5270|
 |🟢SCP-2471\*|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
 |🟢SCP-5270|✅, > 8.1.0|✅, > 8.1.0|❓ Implemented only one event out of three|
 
+##### Story mode-exclusive SCPs
+> All Stories are not included in Lite/Web versions
+> All of these SCPs will not give an achievement
+
+| SCP# | Supported versions | Story |
+|------|--------------------|-------|
+|🟢SCP-181|✅, > 10.0.0|Main story|
+
+##### SCP-261-only SCPs
+> All mentioned SCPs exist in both Lite and Full versions, as SCP-261
+> All of these SCPs will not give an achievement
+
+| SCP# | Supported versions |
+|------|--------------------|
+|🟠SCP-417|✅, > 8.0.0|
+|🟡SCP-1657|✅, > 10.0.0|
+|🟢SCP-3238|✅, > 10.0.0|
+
 ##### Removed SCPs
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
-|🟡SCP-266|❎, 1.0.0-9.1.3|❌, 5.7.x only|❌ Awaiting re-implementation|
-|🟢SCP-446\*|❎, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
+|🟡SCP-266|❌, 1.0.0-9.1.3|❌, 5.7.x only|❌ Awaiting re-implementation|
+|🟢SCP-446\*|❌, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
 
-#### Object class
+##### Object class
 🟢 - Safe
 🟡 - Euclid
 🟠 - Euclid/Potentially Keter
@@ -78,10 +103,8 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 <!-- 🟣 - Thaumiel -->
 <!-- 🔵 - Esoteric -->
 
-#### Availability
+##### Availability
 ✅ - Available in all modes.
-☑️ - Available only in Story mode
-✔️ - Available only in Casual mode
 🫙 - Testing needed.
 ❓ - Partial availability.
 ❎ - Available in files, unavailable in gameplay.
@@ -92,43 +115,47 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 ⛔ - Deprecated for Lite version only, and will be removed, if 200 MB limit (for Web version) is exceeded.
 
 
-#### Functionality
+##### Functionality
 ✅ - SCP object is fully implemented
 ❓ - SCP object is partly implemented
 📃 - SCP object is implemented only for a task
 ❌ - SCP object is not compatible with SCP article
 
-#### Achievements
+##### Achievements
 \* means that no achievement is given for this SCP
 > Achievements are also not given, if this SCP does not exist in this build (e.g. SCP-791, which is missing in Lite version) or season (e.g. SCP-649 is available only in December, so is achievement for it).
 
-<!--## Note to Google Android users:
+## Note to Google Android users:
 Please, check [tutorial to install apps without Google verification (effective since Sep 2026)](https://android-developers.googleblog.com/2026/03/android-developer-verification.html), since I don't plan to give all data and pay a fee to Google.
 
-We **do not** distribute dangerous things in this app!-->
+We **do not** distribute dangerous things in this app!
 
 ## Development
 
 ### Requirements to build
 
-The project uses Godot 4.5.x as a base (since 5.0/5.8.3 - Expansion update part 2).
-Godot 4.4 is not supported anymore since 6.0 - Cleanlight update.
+The project uses Godot 4.7.x as a base (since 10.0 - Megarework update).
+Godot 4.5 is no longer supported anymore since 10.0 - Megarework update.
+Godot 4.4 is no longer supported anymore since 6.0 - Cleanlight update.
 
-> Godot 4.6 was used in 5.8.0-5.8.2 and, while downgraded to 4.5 in 5.8.3 (the reason is in changelog), can be used without risk **in your own forks**, since official builds use Godot 4.5!
+> Godot 4.6 was used in 5.8.0-5.8.2
 
 ### Building regular version
 
 1. Project->Export
 2. Choose your platform (e.g. Windows/Linux/Android)
 3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`
+4. Navigate to Features tab and type in "Custom (comma separated)": `SLFeature` (if you want to include SCP:SL easter egg)
 
-### Building lite version (for Web)
+### Feature flags
+#### Building lite version (for Web)
 **In Lite version, some components are missing:**
 There are no SCP-080, SCP-178 (item exists, but has no effect), *SCP: Unity* SCP-173 model, SCP-266, SCP-791, SCP-914, SCP-938.
 1. Project->Export
 2. Choose your platform (e.g. Web)
-3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*`
+3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*, res://Stories/*`
 4. Navigate to Features tab and type in "Custom (comma separated)": `Lite`
+
 
 ### How to quickly replace NPC model
 
@@ -156,7 +183,7 @@ The game is based on SCP Foundation community.
 
 [SCP Foundation community content are licensed under CC-BY-SA 3.0](https://scp-wiki.wikidot.com/licensing-guide)
 
-The game is made in 2025 by Yni Viar.
+The game is made in 2025-2026 by Yni Viar.
 
 This project, as a whole is dual-licensed.
 
@@ -167,6 +194,8 @@ use them under [GNU GPL 3 License](/LICENSE.GPL), as it is required by SCP Found
 
 The parts of the project can be used under license, mentioned in header (as of code and shaders),
 as for assets, check corresponding to assets `readme.*`, `license.*` or check the folder naming for CC license.
+
+[Full list of authors can be accessed here](./src/CreditList.json)
 
 ## Contributing
 

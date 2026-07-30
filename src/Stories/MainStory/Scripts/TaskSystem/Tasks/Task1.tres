@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://cm64fq8jej14x"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_f4ahi"]
+
+[resource]
+script = ExtResource("1_f4ahi")
+internal_name = "s_task_1"
+public_name = "S_TASK_1"
+required_groups = Array[String](["mt_testroom"])
+metadata/_custom_type_script = "uid://2412583x8gql"

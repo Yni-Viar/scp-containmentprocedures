@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://deps0pm04fvof"]
+
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_1d8q1"]
+[ext_resource type="Texture2D" uid="uid://4hlsottnuhon" path="res://Assets/HUD/Dialogue/PanJanusz.png" id="1_un2pe"]
+
+[resource]
+script = ExtResource("1_1d8q1")
+name = "PAN_JANUSZ"
+image = ExtResource("1_un2pe")
+color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

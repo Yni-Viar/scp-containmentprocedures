@@ -63,6 +63,7 @@
 [ext_resource type="Resource" uid="uid://cdlwr1y5gkw5" path="res://Scripts/TaskSystem/Tasks/Scp173Task.tres" id="49_6v7pd"]
 [ext_resource type="Resource" uid="uid://dfoo1haub0n52" path="res://Scripts/StatusEffects/StatusEffects/Scp261Orange.tres" id="50_8jdxb"]
 [ext_resource type="Resource" uid="uid://8w5evo6p3hmj" path="res://Scripts/StatusEffects/StatusEffects/Scp261KleinBottle.tres" id="51_2osqv"]
+[ext_resource type="Resource" uid="uid://dp5a3j32mc0fl" path="res://Scripts/StatusEffects/StatusEffects/EdgeVision.tres" id="57_wcs1m"]
 [ext_resource type="Resource" uid="uid://bfiwkhemjuc38" path="res://Scripts/StatusEffects/StatusEffects/Fatigue.tres" id="59_rlmdi"]
 [ext_resource type="Resource" uid="uid://6620y8j00bvt" path="res://Scripts/TaskSystem/Tasks/Scp5270_2306Task.tres" id="64_wcs1m"]
 
@@ -75,6 +76,7 @@ items = Array[ExtResource("2_hd4oy")]([ExtResource("3_ty3px"), ExtResource("4_2w
 custom_scientists_offices = Array[PackedScene]([ExtResource("1_qrvya"), ExtResource("2_o7hre")])
 status_effects = Dictionary[String, ExtResource("32_12mq7")]({
 "Amnesia": ExtResource("33_sco4s"),
+"EdgeVision": ExtResource("57_wcs1m"),
 "Electrocuted": ExtResource("39_1vkh7"),
 "Fatigue": ExtResource("59_rlmdi"),
 "Frozen": ExtResource("34_ofkmr"),

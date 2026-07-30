@@ -169,6 +169,7 @@ transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49
 transform = Transform3D(0.7071068, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071068, -8.673354, 0.2292887, 1.6285892)
 
 [node name="Christmas" type="Node3D" parent="Seasonal" unique_id=923911314]
+visible = false
 script = ExtResource("11_fv1qb")
 current_season = 5
 

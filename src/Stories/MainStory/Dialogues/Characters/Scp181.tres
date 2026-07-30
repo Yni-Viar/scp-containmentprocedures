@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bdrwa2g3pn0sg"]
+
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_psmda"]
+[ext_resource type="Texture2D" uid="uid://dj0cxtebjm0v7" path="res://Stories/MainStory/Assets/HUD/Dialogues/Scp181-914.png" id="1_s5s01"]
+
+[resource]
+script = ExtResource("1_psmda")
+name = "SCP-181-914"
+image = ExtResource("1_s5s01")
+color = Color(0.99999994, 0.7588113, 0.60684836, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

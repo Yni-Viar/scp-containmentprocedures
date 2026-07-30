@@ -278,7 +278,11 @@ func health_manage(health_to_add: float, health_type: int = 0, deplete_reason: S
 			ragdoll.global_position = global_position
 			get_parent().add_child(ragdoll)
 		# Remove one live
-		get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE" if deplete_reason.is_empty() else deplete_reason)
+		if is_player:
+			# Fun fact - there was a stupid mistake in v10.0-alpha1 till v10.0-alpha3,
+			# if EVERY NPC dies, you receive gameover.
+			# I just forgot to put if is_player: sentence [-_-]
+			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE" if deplete_reason.is_empty() else deplete_reason)
 		queue_free()
 
 func _call_function(node_path: String, method_caller: String, amount: Array):

@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="5_idohh"]
 [ext_resource type="Texture2D" uid="uid://cj5anigj1kj5y" path="res://UI/MainMenu/Modes/storymode.png" id="7_a8aa6"]
 [ext_resource type="Texture2D" uid="uid://26abh1a6pa33" path="res://UI/MainMenu/Modes/settings.png" id="7_x0ao6"]
+[ext_resource type="PackedScene" uid="uid://o4i7m11yonpo" path="res://Scenes/CreditsContainer.tscn" id="9_qki4b"]
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
@@ -68,9 +69,6 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krje8"]
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_a8aa6"]
 colors = PackedColorArray(0, 0, 0, 1, 0.27387273, 0.27387273, 0.27387273, 1)
@@ -141,7 +139,6 @@ theme = ExtResource("2_syfuq")
 placeholder_text = "CUSTOM_SEED"
 
 [node name="StoryMode" type="Button" parent="HBoxContainer" unique_id=1207079172]
-visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
@@ -151,6 +148,7 @@ text = "STORY_MODE"
 icon = ExtResource("7_a8aa6")
 
 [node name="Play" type="Button" parent="HBoxContainer" unique_id=1873414667]
+visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
@@ -167,6 +165,14 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
 theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "SETTINGS"
 icon = ExtResource("7_x0ao6")
+
+[node name="StoryList" type="ItemList" parent="." unique_id=1542535955]
+visible = false
+layout_mode = 0
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 576.0
 
 [node name="AchievementContainer" type="FoldableContainer" parent="." unique_id=498651892]
 layout_mode = 1
@@ -217,392 +223,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_sjh0l")
 
-[node name="CreditsContainer" type="Panel" parent="." unique_id=1040339160]
+[node name="CreditsContainer" parent="." unique_id=2077770643 instance=ExtResource("9_qki4b")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_krje8")
-
-[node name="CreditsContainer2" type="ScrollContainer" parent="CreditsContainer" unique_id=240773504]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.007
-anchor_bottom = 1.003
-offset_top = 2.0
-offset_right = -8.063965
-offset_bottom = 0.22399902
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("2_syfuq")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/CreditsContainer2" unique_id=1185979234]
-layout_mode = 2
-
-[node name="CreditsLabel" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=33113196]
-layout_mode = 2
-text = "SCP: Continued Procedures
--------------------------
-Made by Yni Viar at 2025-2026.
-License: GPL3 / MIT License / CC-BY-SA 3.0-4.0
-(see individual files)
--------------------------
-See third-party credits below:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FoldableContainer" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1781868907]
-layout_mode = 2
-folded = true
-title = "Godot Engine"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer" unique_id=261126833]
-visible = false
-layout_mode = 2
-text = "Godot Engine, SSAO fallback shader
-and various code snippets:
-Copyright (c) 2014-present Godot Engine contributors 
-Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-License: MIT License."
-
-[node name="FoldableContainer2" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=185792652]
-layout_mode = 2
-folded = true
-title = "Camera Gimbal"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer2" unique_id=901787544]
-visible = false
-layout_mode = 2
-text = "Camera Gimbal by kidscancode 
-License: MIT License."
-
-[node name="FoldableContainer16" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1084381418]
-layout_mode = 2
-folded = true
-title = "Neural Network AI"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer16" unique_id=1411092303]
-visible = false
-layout_mode = 2
-text = "Copyright (c) 2022 Ryash
-Uses portions of code by Greaby
-License: MIT License."
-
-[node name="FoldableContainer3" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1754957648]
-layout_mode = 2
-folded = true
-title = "Scanning shader"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer3" unique_id=577600353]
-visible = false
-layout_mode = 2
-text = "Scanning Shader by Yui Kinomoto @arlez80 
-License: MIT License"
-
-[node name="FoldableContainer4" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1483520250]
-layout_mode = 2
-folded = true
-title = "Bottle shader"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer4" unique_id=530022149]
-visible = false
-layout_mode = 2
-text = "Bottle shader and script by Lexpartizan
-Licensed under MIT License"
-
-[node name="FoldableContainer15" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1290032590]
-layout_mode = 2
-folded = true
-title = "SCP-Wiki"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer15" unique_id=79166561]
-visible = false
-layout_mode = 2
-text = "Mentioned SCP objects:
-SCP-005 by unknown author
-SCP-018 by Epic Phail Spy
-SCP-023 by Pig_catapult
-SCP-067 by FritzWillie
-SCP-109 by unknown author
-SCP-131 by Lt Masipag
-SCP-162 by Dr Gears
-SCP-173 by Moto42
-SCP-178 by Dr Wartheim
-SCP-249 by Dr Gerald
-SCP-261 by Dr Gears
-SCP-266 by Dr Kondraki
-SCP-347 by yellowdrakex
-SCP-446 by Rehevkor
-SCP-458 by Palhinuk
-SCP-522 by Felgraf
-SCP-649 by AsmodeusDark, Roget, Sirslash47
-SCP-650 by Dr Talson
-SCP-686 by BeeDee
-SCP-791 by Dr Gears
-SCP-812 by HK-016
-SCP-914 by Dr Gears
-SCP-938 by Adam Smascher
-SCP-939 by Adam Smascher
-SCP-983 by NekoChris
-SCP-1223 by Wildt
-SCP-1507 by anonymous user,
-rewritten by Rex Atlas
-SCP-2028 by GibberingEloquence
-SCP-2306 by Jacob Conwell
-SCP-2471 by WrongJohnSilver
-SCP-5270 by penguin6, gerrymanderbassist
-\"Experiment Log 261 Ad De\"
-by Dr Gears
-License: SCP-Wiki CC-BY-SA 3.0"
-
-[node name="FoldableContainer5" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1673327885]
-layout_mode = 2
-folded = true
-title = "SCP: Secret Laboratory assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer5" unique_id=270412808]
-visible = false
-layout_mode = 2
-text = "Scientist, guard, class-D, MTF and
-Chaos insurgency models are made
-by PurpleGoop and rigged by DrPri
-Room textures by Foodeater / Jamie
-License: CC-BY-SA 4.0
-------------------------
-Light Containment Zone Ambient by Jacek \"Fragik\" Rogal
-License: CC-BY-SA 4.0
-------------------------
-SCP-173 trigger sounds
-are made by Keirdan Jenson
-for SCP: Secret Lab
-License: CC-BY-SA 4.0"
-
-[node name="FoldableContainer17" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=2008752331]
-layout_mode = 2
-folded = true
-title = "SCP: SL Blender Community assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer17" unique_id=1706809392]
-visible = false
-layout_mode = 2
-text = "SCP: SL Scientist modification by OOD.
-Based on PurpleGoop Scientist model.
-License - CC-BY-SA 4.0*
-------------------------
-MTF Halloween and Christmas textures
-made by YAN_NN
-License - CC-BY-SA 4.0*
----
-*since it was based on
-CC-BY-SA 4.0 asset, the
-license continue to apply"
-
-[node name="FoldableContainer6" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=203776439]
-layout_mode = 2
-folded = true
-title = "Assets by pop_pop_icard"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer6" unique_id=312026209]
-visible = false
-layout_mode = 2
-text = "Small elevator model
-(used in SCP-938 containment chamber
-and Gates B and C),
-SCP-686 model, hanging light,
-Personnel Zone rooms (some are edited
-by Yni Viar to fit the game),
-some Maintenace Zone rooms,
-originally made for SCP: Echoes
-and Surface Zone
-are made by pop_pop_icard
-License: SCP-Wiki CC-BY-SA 3.0"
-
-[node name="FoldableContainer7" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=540430133]
-layout_mode = 2
-folded = true
-title = "SCP: Unity assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer7" unique_id=1693253403]
-visible = false
-layout_mode = 2
-text = "SCP-131 - Aruspice (model, textures),
-Shakles (rig, animation)
-License: SCP-Wiki CC-BY-SA 3.0
-------------------------
-SCP-173 (version 2) - Aruspice (model, textures),
-Shakles (rig, animation), PixelPuffin (concept art)
-License: SCP-Wiki CC-BY-SA 3.0
-------------------------
-SCP-650 - Shadowscale(model, textures)
-License: SCP-Wiki CC-BY-SA 3.0
-------------------------
-SCP-914 - Apocryphos (model, texture, rig and
-animations), Aruspice (new dial model and textures)
-License: SCP-Wiki CC-BY-SA 3.0
-------------------------
-SCP-983 item - Aruspice (model, textures, rig, animation)
-License: SCP-Wiki CC-BY-SA 3.0
------------------------
-SCP-939 - Apocryphos (model), Shadowscale (textures),
-Shakles (rig and animation)
-License: SCP-Wiki CC-BY-SA 3.0
------------------------
-PDA item - Model and textures by Shadowscale
-License: SCP-Wiki CC-BY-SA 3.0"
-
-[node name="FoldableContainer8" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=228092589]
-layout_mode = 2
-folded = true
-title = "SCP: Sigil assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer8" unique_id=1373910377]
-visible = false
-layout_mode = 2
-text = "Alternate SCP-005 is made by
-aruspice (https://sketchfab.com/vtomioka)
-License: CC-BY-4.0"
-
-[node name="FoldableContainer9" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=427331158]
-layout_mode = 2
-folded = true
-title = "Go Home Annie: SCP assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer9" unique_id=788967389]
-visible = false
-layout_mode = 2
-text = "SCP-131 The Eye Pods created for the SCP game
-Go Home Annie by Mateja Olujić.
-License: CC-BY-4.0
-------------------------
-SCP-5270 Press X To Bear
-(GameBear Advice) Handheld Console
-created for the SCP game Go Home Annie
-by Mateja Olujić.
-License: CC-BY-4.0
-------------------------
-SCP-1507 (Pink Flamingos) created for
-the SCP game Go Home Annie by
-Franjo Badurina.
-License: CC-BY-4.0"
-
-[node name="FoldableContainer13" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1809094503]
-layout_mode = 2
-folded = true
-title = "SCP-Godot assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer13" unique_id=1254980190]
-visible = false
-layout_mode = 2
-text = "SCP-173 neck snap sound
-and door sounds are
-made by Daniel Nesov for SCP: Godot
-License: MIT License"
-
-[node name="FoldableContainer11" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=20546416]
-layout_mode = 2
-folded = true
-title = "SCP-CB Community assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer11" unique_id=32170711]
-visible = false
-layout_mode = 2
-text = "SCP-178-1 model
-made by Kenneth crooker
-License: CC-BY-SA 3.0"
-
-[node name="FoldableContainer10" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=608730898]
-layout_mode = 2
-folded = true
-title = "Other assets"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer10" unique_id=1157815487]
-visible = false
-layout_mode = 2
-text = "SCP-347 model is made using Makehuman model.
-(License - CC0)
-------------------------
-SCP-023 model is based on \"wolf low poly rigged\" by
-victory_mirosya (https://sketchfab.com/victory_mirosya)
-License: CC-BY 4.0
-(http://creativecommons.org/licenses/by/4.0/)
-------------------------
-SCP-522 texture is based on \"1950s chair fabric\"
-Author: Mr ThinkTank
-License: CC-BY 2.0
-------------------------
-Couch 3D model is made by J-Toastie
-License: CC-BY 3.0
-(https://creativecommons.org/licenses/by/3.0/)
-Used from https://poly.pizza/m/obMPe0AheB
-------------------------
-Mattress model is made by Arthur Glushko , Saritasa
-License - CC-BY 4.0
-------------------------
-SCP-446 model
-was created with MakeHuman.
-MakeHuman content is licensed under CC0.
-SCP-446 clothes models are made by punkduck
-License: CC-BY
-------------------------
-Logicer weapon 3D model is made by
-Kendrick Russell
-License: CC-BY 4.0
-------------------------
-COM-16 weapon model is based on
-Glock made by J-Toastie
-License: CC-BY 3.0
-Used from https://poly.pizza/m/q3lsX3tSta
-------------------------
-Beetle bot 3D model is made by
-GDQuest 
-License: CC-BY 4.0.
-------------------------
-\"Local Forecast - Elevator\"
-by Kevin MacLeod (incompetech.com)
-Licensed under
-Creative Commons: By
-Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/ "
-
-[node name="FoldableContainer12" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=500271034]
-layout_mode = 2
-folded = true
-title = "Personnel office props"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer12" unique_id=1284257739]
-visible = false
-layout_mode = 2
-text = "[Yni Viar Personnel Office] SuperTuxKart nitro model
-nitro.gltf && nitro.bin
-stk_mod_nitroBarrel.png
-stk_mod_nitroBottle.png
-Copyright 2011, 2013 Jean-Manuel Clémençon
-License: CC-BY-SA 4.0
-Comment: Nitro textures assumed to be
-done by Jean-Manuel Clémençon, model
-was rotated by Yni.
-------------------------
-[Yni Viar Personnel Office] Human models
-Made by Clint Bellanger
-Licensed under CC-BY 3.0
-Edited by Yni."
-
-[node name="FoldableContainer14" type="FoldableContainer" parent="CreditsContainer/CreditsContainer2/VBoxContainer" unique_id=1437984532]
-layout_mode = 2
-folded = true
-title = "Fonts"
-
-[node name="Label" type="Label" parent="CreditsContainer/CreditsContainer2/VBoxContainer/FoldableContainer14" unique_id=1867000371]
-visible = false
-layout_mode = 2
-text = "Fonts:
-Cousine by Steve Matteson
-SansNormalcy by SCP-Wiki
-SpecialElite by Brian J. Bonislawsky and
-Lomzz"
 
 [node name="Credits" type="Button" parent="." unique_id=1497812691]
 layout_mode = 1
@@ -699,5 +322,6 @@ text = "LITE_VERSION_WARNING"
 [connection signal="pressed" from="HBoxContainer/StoryMode" to="." method="_on_story_mode_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="item_clicked" from="StoryList" to="." method="_on_story_list_item_clicked"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]

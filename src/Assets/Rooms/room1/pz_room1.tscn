@@ -121,7 +121,7 @@ current_season = 5
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10898614, -2.966152, 0.7271519)
 
 [node name="FireExtinguisher" parent="." unique_id=1726326878 instance=ExtResource("15_jj045")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.446401, -0.64267474, -9.250343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6631155, -0.64267474, 8.524505)
 
 [node name="Chair2" parent="." unique_id=817924770 instance=ExtResource("14_s3f2k")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.823995, -1.2602062, 5.537041)

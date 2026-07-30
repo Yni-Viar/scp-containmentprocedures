@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3egvdq5mmysx"]
+
+[ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_66fkp"]
+
+[node name="Puppet" type="Node3D" unique_id=487243278]
+script = ExtResource("1_66fkp")
+default_puppet_to_spawn = 0
+available_puppets = Dictionary[String, int]({
+"res://Stories/MainStory/PlayerScript/PlayerClassPrefab/Variations/Scp181/Scp181_DClass_SL.tscn": 0
+})
+vision_class_detect = Array[int]([2, 3])

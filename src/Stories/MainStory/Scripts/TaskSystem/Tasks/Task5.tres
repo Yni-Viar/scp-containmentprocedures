@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://dvl7qq7eykk1m"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_goh18"]
+
+[resource]
+script = ExtResource("1_goh18")
+internal_name = "s_task_5"
+public_name = "S_TASK_5"
+required_groups = Array[String](["Scp173Spawn"])
+metadata/_custom_type_script = "uid://2412583x8gql"

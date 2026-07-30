@@ -6,7 +6,7 @@ class_name GameData
 @export var player_class: Array[PuppetClass] = []
 ## Puppet class
 @export var puppet_classes: Array[PuppetClass] = []
-## Legacy (pre-10.0) tasks.
+## Game tasks.
 @export var tasks: Array[GameTaskResource] = []
 ## All items.
 @export var items: Array[Item] = []

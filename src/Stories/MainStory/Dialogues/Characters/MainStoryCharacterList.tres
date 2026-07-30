@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://cb7b6mhsl221o"]
+
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_c800f"]
+[ext_resource type="Script" uid="uid://bqqa8okdheslq" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_d4f4o"]
+[ext_resource type="Resource" uid="uid://deps0pm04fvof" path="res://Stories/MainStory/Dialogues/Characters/PanJanusz.tres" id="2_irhsc"]
+[ext_resource type="Resource" uid="uid://4dbhspfgqt7n" path="res://Stories/MainStory/Dialogues/Characters/D-5274.tres" id="3_871t6"]
+[ext_resource type="Resource" uid="uid://bhwlgfhqqsr6m" path="res://Stories/MainStory/Dialogues/Characters/Scp347.tres" id="4_ah3o4"]
+[ext_resource type="Resource" uid="uid://b0dm702x43w5e" path="res://Stories/MainStory/Dialogues/Characters/AndrewWhite.tres" id="5_ldnci"]
+[ext_resource type="Resource" uid="uid://dyv00ekt13ntq" path="res://Stories/MainStory/Dialogues/Characters/JohnCrow.tres" id="6_ah3o4"]
+[ext_resource type="Resource" uid="uid://bdrwa2g3pn0sg" path="res://Stories/MainStory/Dialogues/Characters/Scp181.tres" id="7_ldnci"]
+
+[resource]
+script = ExtResource("2_d4f4o")
+characters = Array[ExtResource("1_c800f")]([ExtResource("2_irhsc"), ExtResource("3_871t6"), ExtResource("4_ah3o4"), ExtResource("5_ldnci"), ExtResource("6_ah3o4"), ExtResource("7_ldnci")])
+metadata/_custom_type_script = "uid://bqqa8okdheslq"

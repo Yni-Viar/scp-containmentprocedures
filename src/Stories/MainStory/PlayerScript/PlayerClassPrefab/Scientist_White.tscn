@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://nc4akflqbhw0"]
+
+[ext_resource type="Script" uid="uid://cia37crcaps0t" path="res://Stories/MainStory/PlayerScript/PlayerClassScript/S_ScientistWhitePuppetScript.gd" id="1_jh4i3"]
+[ext_resource type="Texture2D" uid="uid://cbnqk6cs45gd3" path="res://Assets/HUD/talk.png" id="2_kpqof"]
+
+[node name="Puppet" type="Node3D" unique_id=686231767 groups=["ScientistWhite"]]
+script = ExtResource("1_jh4i3")
+torso_node_path = NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0")
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/Optional/scientist_1_SL_OOD.tscn": 1,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_2_SL_OOD.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_3_SL_OOD.tscn": 0
+})
+enable_vision_scan = true
+vision_class_detect = Array[int]([2, 3])
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=612666516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+pixel_size = 0.005
+billboard = 1
+double_sided = false
+texture = ExtResource("2_kpqof")

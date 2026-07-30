@@ -1,0 +1,394 @@
+{
+	"_template": [
+		{
+			"author": "",
+			"project": "",
+			"copyright year": "",
+			"license": ""
+		}
+	],
+	"FirstParty": {
+		"Programming, music (except elevator music), some SFX, some assets, most rooms": [
+			{
+				"author": "Yni Viar",
+				"copyright year": "2025-2026",
+				"license": "GPL3 / MIT License / CC-BY-SA 3.0-4.0 (see individual files)"
+			}
+		],
+		 
+		"Main Story":[ 
+			{
+				"author": "Yni Viar, Moofta",
+				"copyright year": "2026",
+				"license": "CC-BY-SA 3.0"
+			}
+		]
+	},
+	"ThirdParty": {
+		"Godot Engine, SSAO fallback shader, Sky shader and various code snippets": [
+			{
+				"author": "Godot Engine contributors",
+				"copyright year": "2014-present",
+				"license": "MIT License"
+			}, {
+				"author": "Juan Linietsky, Ariel Manzur",
+				"copyright year": "2007-2014",
+				"license": "MIT License"
+			}
+		],
+		"Camera Gimbal": [
+			{
+				"author": "kidscancode",
+				"license": "MIT License"
+			}
+		],
+		"Simple Neural Network AI": [
+			{
+				"author": "Ryash",
+				"copyright year": "2022",
+				"license": "MIT License"
+			},
+			{
+				"author": "Greaby (portions of Simple Neural Network code)",
+				"license": "MIT License"
+			}
+		],
+		"Scanning shader": [
+			{
+				"author": "Yui Kinomoto @arlez80",
+				"license": "MIT License"
+			}
+		],
+		"Bottle shader and script": [
+			{
+				"author": "Lexpartizan",
+				"license": "MIT License"
+			}
+		],
+		"Dialogue Nodes": [
+			{
+				"author": "Bhgt",
+				"copyright year": "2020",
+				"license": "MIT License"
+			}
+		],
+		"Godot PCK Manager": [
+			{
+				"author": "MrJustreborn",
+				"copyright year": "2017",
+				"license": "MIT License"
+			}
+		],
+		"GOMPL": [
+			{
+				"author": "ratrogue",
+				"copyright year": "2025",
+				"license": "MIT License"
+			}
+		],
+		"Protagonist scientist, guard, Class-D, MTF, Chaos Insurgency models": [
+			{
+				"author": "PurpleGoop (modelling)",
+				"project": "SCP: Secret Laboratory by Northwood Studios",
+				"license": "CC-BY-SA 4.0"
+			},
+			{
+				"author": "DrPri (rigging)",
+				"project": "SCP: Secret Laboratory by Northwood Studios",
+				"license": "CC-BY-SA 4.0"
+			}
+		], 
+		"SCP: Secret Laboratory room textures": [
+			{
+				"author": "Foodeater / Jamie",
+				"project": "SCP: Secret Laboratory by Northwood Studios",
+				"license": "CC-BY-SA 4.0"
+			}
+		],
+		"SCP: Secret Laboratory LCZ Ambient": [
+			{
+				"author": "Jacek \"Fragik\" Rogal",
+				"project": "SCP: Secret Laboratory by Northwood Studios",
+				"license": "CC-BY-SA 4.0"
+			}
+		],
+		"SCP-173 trigger sounds": [
+			{
+				"author": "Keirdan Jenson",
+				"project": "SCP: Secret Laboratory by Northwood Studios",
+				"license": "CC-BY-SA 4.0"
+			}
+		],
+		"Other assets, made for SCP: Secret Laboratory": [
+			{
+				"author": "Northwood Studios",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP: Secret Laboratory scientists models modification": [
+			{
+				"author": "OOD",
+				"license": "CC-BY-SA 4.0, as required by SCP:SL scientists model license"
+			}
+		],
+		"MTF Halloween and Christmas textures": [
+			{
+				"author": "YAN_NN",
+				"license": "CC-BY-SA 4.0, as required by SCP:SL scientists model license"
+			}
+		],
+		"SCP-686 model, hanging light and Surface Zone": [
+			{
+				"author": "pop_pop_icard",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"Some Personnel Zone rooms": [
+			{
+				"author": "pop_pop_icard, Yni (latter edits)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"Storage Zone rooms": [
+			{
+				"author": "pop_pop_icard, Yni (latter edits for SCP: Continued Procedures)",
+				"project": "SCP:Echoes",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-131 model (Go Home Annie variant)": [
+			{
+				"author": "Mateja Olujić",
+				"project": "SCP game Go Home Annie",
+				"license": "CC-BY-4.0"
+			}
+		],
+		"SCP-5270 model": [
+			{
+				"author": "Mateja Olujić",
+				"project": "SCP game Go Home Annie",
+				"license": "CC-BY-4.0"
+			}
+		],
+		"SCP-1507 model": [
+			{
+				"author": "Franjo Badurina",
+				"project": "SCP game Go Home Annie",
+				"license": "CC-BY-4.0"
+			}
+		],
+		"SCP-131 model (SCP: Unity variant)": [
+			{
+				"author": "Aruspice (model, textures)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "Shakles (rig, animation)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-173 model (SCP: Unity variant)": [
+			{
+				"author": "Aruspice (model, textures)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "Shakles (rig, animation)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "PixelPuffin (concept art)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-650 model": [
+			{
+				"author": "Shadowscale (model, textures)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-914 model": [
+			{
+				"author": "Apocryphos (model, texture, rig and animations)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "Aruspice (new dial model and textures)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-939 model": [
+			{
+				"author": "Apocryphos (model)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "Shadowscale (textures)",
+				"license": "CC-BY-SA 3.0"
+			},
+			{
+				"author": "Shakles (rig, animation)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-983 model": [
+			{
+				"author": "Aruspice (model, textures, rig, animation)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"PDA model": [
+			{
+				"author": "Shadowscale (model, textures)",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-005 model (used the key model from SCP:Sigil)": [
+			{
+				"author": "aruspice (https://sketchfab.com/vtomioka)",
+				"license": "CC-BY-4.0"
+			}
+		],
+		"SCP-173 neck snap, door sounds": [
+			{
+				"author": "Daniel Nesov",
+				"project": "SCP: Godot",
+				"license": "MIT License"
+			}
+		],
+		"SCP-079 model (NOT the face texture)": [
+			{
+				"author": "Hakkla (models, textures (some of textures are edited by Yni))",
+				"project": "SCP: Containment Breach",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-178-1 model":[
+			{
+				"author": "Kenneth crooker",
+				"license": "CC-BY-SA 3.0"
+			}
+		],
+		"SCP-347 model": [
+			{
+				"author": "Yni, generated from MakeHuman",
+				"license": "CC0"
+			}
+		],
+		"wolf low poly rigged (SCP-023 model)": [
+			{
+				"author": "victory_mirosya (https://sketchfab.com/victory_mirosya)",
+				"license": "CC-BY 4.0"
+			}
+		],
+		"SCP-522 texture (1950s chair fabric)": [
+			{
+				"author": "Mr ThinkTank",
+				"license": "CC-BY 2.0"
+			}
+		],
+		"Couch model": [
+			{
+				"author": " J-Toastie (https://poly.pizza/m/obMPe0AheB)",
+				"license": "CC-BY 3.0"
+			}
+		],
+		"Mattress model": [
+			{
+				"author": "Arthur Glushko , Saritasa",
+				"license": "CC-BY 4.0"
+			}
+		],
+		"Logicer weapon model": [
+			{
+				"author": "Kendrick Russell",
+				"license": "CC-BY 4.0"
+			}
+		],
+		"COM-16 / Glock model": [
+			{
+				"author": "J-Toastie (https://poly.pizza/m/q3lsX3tSta)",
+				"license": "CC-BY 3.0"
+			}
+		],
+		"Beetle bot 3D model": [
+			{
+				"author": "GDQuest",
+				"license": "CC-BY 4.0"
+			}
+		],
+		"\"Local Forecast - Elevator\"": [
+			{
+				"author": "Kevin MacLeod (incompetech.com)",
+				"license": "Creative Commons: By Attribution 4.0 License"
+			}
+		],
+		"[Yni Viar personnel office] SuperTuxKart Nitro model": [
+			{
+				"author": "Jean-Manuel Clémençon",
+				"project": "SuperTuxKart",
+				"copyright year": "2011, 2013",
+				"license": "CC-BY-SA 4.0"
+			}
+		],
+		"[Yni Viar Personnel Office] Human models": [
+			{
+				"author": "Clint Bellanger (edited by Yni)",
+				"license": "CC-BY 3.0"
+			}
+		]
+	},
+	"Fonts": [
+		"Cousine by Steve Matteson",
+		"Farabee by Dimitri Antonov / Blue Curve Designstudio",
+		"SansNormalcy by SCP-Wiki",
+		"SpecialElite by Brian J. Bonislawsky , edited by Lomzz"
+	],
+	"SCP-Wiki content": [
+		"All SCP-Wiki content is licensed under CC-BY-SA 3.0",
+		"SCP-005 by unknown author",
+		"SCP-018 by Epic Phail Spy",
+		"SCP-023 by Pig_catapult",
+		"SCP-067 by FritzWillie",
+		"SCP-079 by unknown author",
+		"SCP-080 by Ryebox",
+		"SCP-109 by unknown author",
+		"SCP-131 by Lt Masipag",
+		"SCP-162 by Dr Gears",
+		"SCP-173 by Moto42",
+		"SCP-178 by Dr Wartheim",
+		"SCP-249 by Dr Gerald",
+		"SCP-261 by Dr Gears",
+		"SCP-347 by yellowdrakex",
+		"SCP-458 by Palhinuk",
+		"SCP-522 by Felgraf",
+		"SCP-649 by AsmodeusDark, Roget, Sirslash47",
+		"SCP-650 by Dr Talson",
+		"SCP-686 by BeeDee",
+		"SCP-791 by Dr Gears",
+		"SCP-812 by HK-016",
+		"SCP-914 by Dr Gears",
+		"SCP-938 by Adam Smascher",
+		"SCP-939 by Adam Smascher",
+		"SCP-983 by NekoChris",
+		"SCP-1223 by Wildt",
+		"SCP-1507 by anonymous user, rewritten by Rex Atlas",
+		"SCP-2028 by GibberingEloquence",
+		"SCP-2306 by Jacob Conwell",
+		"SCP-2471 by WrongJohnSilver",
+		"SCP-5270 by penguin6, gerrymanderbassist",
+		"\"Experiment Log 261 Ad De\" by Dr Gears",
+		"Serpent's Hand logo by Zyn",
+		"---",
+		"SCP-261 SCP cameos",
+		"---",
+		"SCP-417 by yellowdrakex",
+		"SCP-1657 by azzleflux",
+		"SCP-3238 by DrConnors",
+		"---",
+		"Story mode-only SCPs",
+		"---",
+		"SCP-181 by cyrus013, pooryoric"
+	],
+	"Epilogue": "More public-domain third-party assets can be found in https://github.com/Yni-Viar/scp-continued-procedures\nJanusz Krzystofski was inspired from Pan Janusz from early SCP: Secret Lab days."
+}

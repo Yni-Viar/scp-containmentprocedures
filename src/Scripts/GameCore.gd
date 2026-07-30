@@ -9,23 +9,17 @@ signal round_started
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 ## Presets for game ##
 var map_seed: int = -1
-## Time limit enabled
-var time_limited: bool = true
 ## Current hours (is set by Surface Zone)
 var hours: int = 8
 ## Current minutes (is set by Surface Zone)
 var minutes: int = 0
 ## End presets for game ##
 
-var mtf_cooldown: float = 35.0:
-	set(val):
-		mtf_cooldown = val
-		if mtf_cooldown <= 0.0:
-			$UI/HBoxContainer/CallMtfButton.disabled = false
+var mtf_cooldown: float = 35.0
 ## Protagonist tracker
 var protagonist: MovableNpc
 ## Map seed public name
-var map_seed_name: String
+var map_seed_name: String = ""
 ## Check if the game was finished
 var game_ended: bool = false
 
@@ -38,11 +32,28 @@ func _ready() -> void:
 	
 	if OS.has_feature("Lite"):
 		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
-		var rooms: Array[MapGenZone] = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), load("res://MapGen/Lite/StorageZoneLite.tres"), load("res://MapGen/Lite/ResearchZoneLite.tres"), load("res://MapGen/Lite/PersonnelZoneLite.tres")]
+		var rooms: Array[MapGenZone] = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
+		  load("res://MapGen/Lite/StorageZoneLite.tres"), \
+		  load("res://MapGen/Lite/ResearchZoneLite.tres"), \
+		  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
+		if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"):
+			rooms = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
+			  load("res://MapGen/Lite/SLFEature/StorageZoneLite.tres"), \
+			  load("res://MapGen/Lite/ResearchZoneLite.tres"), \
+			  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
 		$FacilityGenerator.rooms = rooms
+		
 	else:
 		gamedata = load("res://Scripts/GameData/Optional/DefaultGame.tres")
-		var rooms: Array[MapGenZone] = [load("res://MapGen/Optional/MaintenanceZone.tres"), load("res://MapGen/Optional/StorageZone.tres"), load("res://MapGen/Optional/ResearchZone.tres"), load("res://MapGen/Optional/PersonnelZone.tres")]
+		var rooms: Array[MapGenZone] = [load("res://MapGen/Optional/MaintenanceZone.tres"), 
+		   load("res://MapGen/Optional/StorageZone.tres"), 
+		   load("res://MapGen/Optional/ResearchZone.tres"), 
+		   load("res://MapGen/Optional/PersonnelZone.tres")]
+		if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Optional/SLFeature/StorageZone.tres"):
+			rooms = [load("res://MapGen/Optional/MaintenanceZone.tres"), 
+		   load("res://MapGen/Optional/SLFeature/StorageZone.tres"), 
+		   load("res://MapGen/Optional/ResearchZone.tres"), 
+		   load("res://MapGen/Optional/PersonnelZone.tres")]
 		$FacilityGenerator.rooms = rooms
 	# Choose seed
 	$FacilityGenerator.rng = rng
@@ -60,9 +71,6 @@ func _ready() -> void:
 	if RenderingServer.get_current_rendering_method() == "forward_plus" || \
 	 RenderingServer.get_current_rendering_method() == "gl_compatibility":
 		$WorldEnvironment.environment.ssao_enabled = Settings.setting_res.ssao
-	if RenderingServer.get_current_rendering_method() == "forward_plus" && \
-	 Settings.setting_res.lighting == SettingsResource.Lighting.REALTIME:
-		$WorldEnvironment.environment.sdfgi_enabled = true
 	
 	$WorldEnvironment.environment.tonemap_mode = Settings.setting_res.tonemapper
 	if Settings.setting_res.tonemapper != Environment.TONE_MAPPER_LINEAR || \
@@ -89,26 +97,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (get_tree().root.get_node_or_null("Game/StoryModeNode") != null || Settings.setting_res.casual_mode_hunger) && protagonist != null:
+	if Settings.setting_res.casual_mode_hunger && protagonist != null:
 		# Hunger and thirst mechanic
 		protagonist.health_manage(-delta * 0.25, 2, "GAME_OVER_THIRST")
 		protagonist.health_manage(-delta * 0.1875, 3, "GAME_OVER_HUNGER")
 
 
 func _on_facility_generator_generated() -> void:
-	# Spawn surface zone
-	#var sz: Node3D = load("res://Assets/Rooms/sublevels/External/subl_sz.tscn").instantiate()
-	#sz.position.y = 256.0
-	#add_child(sz, true)
-	
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
 	spawn_player()
 	spawn_puppets()
 	
-	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
-		$FoundationTask.initialize()
-		$UI._on_foundation_task_task_done()
+	$FoundationTask.initialize()
+	$UI._on_foundation_task_task_done()
 	$SZ.set_time(8, 0)
 	
 	await get_tree().create_timer(5.0).timeout
@@ -126,8 +128,7 @@ func spawn_player():
 	protagonist.global_position = selected_spawn.global_position
 	$NPCs.add_child(protagonist)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
-	if get_tree().root.get_node_or_null("Game/StoryModeNode") == null:
-		protagonist.keycards.append(16)
+	protagonist.keycards.append_array([-2584])
 
 ## Start-round spawn
 func spawn_puppets():

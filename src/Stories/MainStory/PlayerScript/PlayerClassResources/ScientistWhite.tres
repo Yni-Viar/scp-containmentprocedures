@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://cnm2qfuahmt4e"]
+
+[ext_resource type="PackedScene" uid="uid://nc4akflqbhw0" path="res://Stories/MainStory/PlayerScript/PlayerClassPrefab/Scientist_White.tscn" id="1_hbnjw"]
+[ext_resource type="PackedScene" uid="uid://drb0cxknhdcwu" path="res://PlayerScript/PlayerClassRagdoll/Scientist.tscn" id="2_32iq0"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_wh667"]
+
+[resource]
+script = ExtResource("3_wh667")
+puppet_class_name = "SCIENCE_PERSONNEL"
+prefab = ExtResource("1_hbnjw")
+spawn_point_group = "ScientistWhiteSpawn"
+initial_amount = 6
+interacting_action = 2
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg")
+}
+apply_height_bugfix = false
+special_wandering_group = "ScientistPoint"
+enable_wander = false
+health = Array[float]([100.0, 50.0, 50.0, 50.0])
+team = 1
+puppet_navigation_layers = 3
+ragdoll_prefab = ExtResource("2_32iq0")
+start_items = Array[int]([7])
+start_money = Dictionary[String, int]({
+"DOLLARS": 1000
+})
+enable_advanced_ai = true

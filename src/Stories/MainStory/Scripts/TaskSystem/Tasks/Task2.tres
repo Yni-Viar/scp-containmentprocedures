@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameTaskResource" format=3 uid="uid://blynsaane2l50"]
+
+[ext_resource type="Script" uid="uid://2412583x8gql" path="res://Scripts/TaskSystem/GameTaskResource.gd" id="1_vyhll"]
+
+[resource]
+script = ExtResource("1_vyhll")
+internal_name = "s_task_2"
+public_name = "S_TASK_2"
+required_groups = Array[String](["DClassSpawn"])
+metadata/_custom_type_script = "uid://2412583x8gql"

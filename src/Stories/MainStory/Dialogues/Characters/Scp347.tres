@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bhwlgfhqqsr6m"]
+
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_8yrd4"]
+
+[resource]
+script = ExtResource("1_8yrd4")
+name = "SCP-347"
+color = Color(0.6742678, 0.4993018, 0.7464985, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

@@ -32,7 +32,7 @@ msgstr ""
 "You need to do tasks.\n"
 "Some tasks require to come close to the subject of testing (812, partly "
 "938).\n"
-"Some tasks require to bring Class-D (080, 162, 173, 266, 522, 939, partly "
+"Some tasks require to bring Class-D (080, 162, 173, 522, 939, partly "
 "938).\n"
 "Some tasks require to bring object/item to special place (347, 914).\n"
 "Some tasks require to come with special item (791).\n"
@@ -544,6 +544,38 @@ msgstr "Storage Zone"
 
 msgid "CASUAL_MODE_HUNGER_ENABLE"
 msgstr "Enable hunger in casual mode"
+
+msgid "MOVE_FORWARD"
+msgstr "Go forward"
+
+msgid "MOVE_BACKWARD"
+msgstr "Go backward"
+
+msgid "MOVE_RIGHT"
+msgstr "Go right"
+
+msgid "MOVE_LEFT"
+msgstr "Go left"
+
+msgid "THANKS_FOR_PLAYING"
+msgstr "Thank you for playing game!"
+
+msgid "PAN_JANUSZ"
+msgstr "Janusz Krzystofski"
+
+msgid "DAY"
+msgstr "Day"
+
+msgid "OOPS"
+msgstr "Oops!"
+
+msgid "GAME_IMPASSABLE"
+msgstr ""
+"The game is impassable!\n"
+"The reason of this may be bad seed\n"
+"in Story mode, when required rooms\n"
+"cannot spawn.\n"
+"For this case, you should try another seed."
 
 #~ msgid "ZEN_MODE"
 #~ msgstr "Safe mode"

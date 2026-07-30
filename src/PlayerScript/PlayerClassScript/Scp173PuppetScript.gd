@@ -6,8 +6,8 @@ class_name Scp173PuppetScript
 
 @export var invincibility: bool = false
 @export var blink_timer_default: float = 4.7
+@export var is_blinking: bool = false
 var blink_timer: float = blink_timer_default
-var is_blinking: bool = false
 var current_human: Node3D:
 	set(val):
 		if current_human == null: 

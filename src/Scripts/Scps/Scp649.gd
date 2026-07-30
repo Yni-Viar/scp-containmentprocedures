@@ -1,6 +1,7 @@
 extends InteractableStatic
 ## SCP-649 function
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp649
 
 ## The main toggle.
 @export var is_opened: bool = false

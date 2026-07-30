@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://6l8r5fy0ymqt"]
 
-[ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_7lihs"]
+[ext_resource type="Script" uid="uid://k3xvlffr17rf" path="res://Scripts/GameCore.gd" id="1_jn8rg"]
 [ext_resource type="Script" uid="uid://dms1jwf47a2um" path="res://Scripts/GDShCommands.gd" id="2_umnjm"]
 [ext_resource type="Script" uid="uid://bu7shnqhd7um8" path="res://MapGen/MapGen3D.gd" id="3_2irst"]
 [ext_resource type="Script" uid="uid://do7w8u202622b" path="res://Scripts/InGameCommands.gd" id="3_4eqlp"]
 [ext_resource type="PackedScene" uid="uid://by5c7g15ljuta" path="res://PlayerScript/StaticPlayer.tscn" id="3_bf53h"]
-[ext_resource type="Script" uid="uid://b0ej0tfj8q3yq" path="res://Scripts/StoryMode/StoryModeNode.gd" id="6_18uti"]
 [ext_resource type="Script" uid="uid://brnmrs6xlpyic" path="res://Scripts/UI.gd" id="6_dahhg"]
 [ext_resource type="PackedScene" uid="uid://c52ew0y5rt6s7" path="res://Assets/Rooms/sublevels/pd_basement.tscn" id="6_jn8rg"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="7_fgofq"]
@@ -15,7 +14,6 @@
 [ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="10_3so38"]
 [ext_resource type="Texture2D" uid="uid://dkgyet63cgaaa" path="res://Assets/HUD/healthbar.png" id="10_71axn"]
 [ext_resource type="Environment" uid="uid://mkrxfq7uvngm" path="res://Assets/Environment/Default.tres" id="10_khs3t"]
-[ext_resource type="AudioStream" uid="uid://0gapate5fity" path="res://Sounds/Music/Third_party/lcz_ambient.ogg" id="11_dahhg"]
 [ext_resource type="Texture2D" uid="uid://vgfshvfqvegj" path="res://Assets/HUD/waterbar.svg" id="12_umnjm"]
 [ext_resource type="Texture2D" uid="uid://c4r3nfc05454" path="res://Assets/HUD/foodbar.svg" id="13_4eqlp"]
 [ext_resource type="Script" uid="uid://dxam3jgydqblf" path="res://Scripts/FPSCounter.gd" id="13_acvyw"]
@@ -30,12 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://cia0vdqonir34" path="res://Assets/HUD/Touch/call_mtf_disabled.png" id="20_lbihj"]
 [ext_resource type="Texture2D" uid="uid://cu0ojgep33hl5" path="res://Assets/HUD/Touch/use_914.png" id="22_i0vto"]
 [ext_resource type="Texture2D" uid="uid://dgim1llh2qq3l" path="res://Assets/HUD/Touch/use_914_click.png" id="23_3jf1l"]
-[ext_resource type="Texture2D" uid="uid://doh88081wemgb" path="res://UI/outro_game_ui.png" id="23_i4lct"]
 [ext_resource type="Texture2D" uid="uid://dsbo3crdre1v4" path="res://Assets/HUD/Touch/use_914_disabled.png" id="24_356ba"]
 [ext_resource type="Texture2D" uid="uid://b2lonnmtkdn4e" path="res://Assets/HUD/Touch/call_elevator.png" id="26_356ba"]
-[ext_resource type="Texture2D" uid="uid://c8y4oka7p08v6" path="res://UI/icon_192_dark.png" id="26_iyesh"]
 [ext_resource type="Texture2D" uid="uid://cx0pyayxian80" path="res://Assets/HUD/Touch/call_elevator_click.png" id="27_i4lct"]
-[ext_resource type="FontFile" uid="uid://df7jbkqjjvyuv" path="res://Assets/Fonts/Special_Elite_with_Cyrillic_by_Lomzz/SpecialElite.ttf" id="29_18uti"]
+[ext_resource type="FontFile" uid="uid://df7jbkqjjvyuv" path="res://Assets/Fonts/Special_Elite/SpecialElite.ttf" id="29_18uti"]
+[ext_resource type="AudioStream" uid="uid://6eaqqqa6f7pc" path="res://Sounds/Music/Original/facility_drone.ogg" id="33_khs3t"]
 
 [sub_resource type="Animation" id="Animation_i1pr2"]
 length = 0.001
@@ -118,12 +115,19 @@ texture = ExtResource("14_8e0uq")
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_i4lct"]
 color = Color(1, 1, 1, 1)
 
+[sub_resource type="Gradient" id="Gradient_0iyqm"]
+colors = PackedColorArray(0.1728327, 0.17283267, 0.17283267, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qsl1r"]
+gradient = SubResource("Gradient_0iyqm")
+fill_from = Vector2(1, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyesh"]
-texture = ExtResource("23_i4lct")
+texture = SubResource("GradientTexture2D_qsl1r")
 
 [node name="Game" type="Node3D" unique_id=1603466621]
 process_mode = 1
-script = ExtResource("1_7lihs")
+script = ExtResource("1_jn8rg")
 
 [node name="DebugCommands" type="Node3D" parent="." unique_id=693733768]
 script = ExtResource("2_umnjm")
@@ -142,9 +146,6 @@ large_rooms = true
 room_amount = 0.875
 better_zone_generation_min_amount = 5
 checkpoints_enabled = true
-
-[node name="StoryModeNodeInDev" type="Node" parent="." unique_id=476135099]
-script = ExtResource("6_18uti")
 
 [node name="FoundationTask" type="Node" parent="." unique_id=1040541537]
 script = ExtResource("7_wxwew")
@@ -301,7 +302,8 @@ anchor_right = 0.333
 offset_left = -255.616
 offset_right = 256.384
 offset_bottom = 64.0
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("9_bf53h")
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 
 [node name="PlayingArea" type="Panel" parent="UI" unique_id=248152008]
@@ -607,15 +609,16 @@ text = "ELEVATOR_WHAT_FLOOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CurrentTime" type="Label" parent="UI" unique_id=195240627]
+[node name="CurrentTime" type="Label" parent="UI" unique_id=1773942895]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = 0.333
+anchor_right = 0.333
+offset_left = -255.616
+offset_right = 256.384
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("9_bf53h")
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 
 [node name="Condition" type="Panel" parent="UI" unique_id=133768397]
@@ -680,25 +683,8 @@ localize_numeral_system = false
 theme = ExtResource("10_3so38")
 text = "BACK_TO_MENU"
 
-[node name="TextureRect" type="TextureRect" parent="UI/Condition" unique_id=1296362591]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -216.0
-offset_top = -200.0
-offset_right = -24.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("26_iyesh")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1041800695]
-stream = ExtResource("11_dahhg")
-volume_db = -4.0
+stream = ExtResource("33_khs3t")
 autoplay = true
 bus = &"Music"
 

@@ -270,6 +270,7 @@ mesh = SubResource("TextMesh_fgqcq")
 script = ExtResource("13_moykc")
 waypoints_and_groups = Dictionary[String, String]({
 "SCP-067": "Scp067Spawn",
+"SCP-079": "Scp079",
 "SCP-109": "st_testroom",
 "SCP-1223": "st_testroom",
 "SCP-2028": "Scp2028",

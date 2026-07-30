@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://4dbhspfgqt7n"]
+
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_hepxb"]
+[ext_resource type="Texture2D" uid="uid://c81ftgoaynfn6" path="res://Assets/HUD/Dialogue/DClass.png" id="1_l5omf"]
+
+[resource]
+script = ExtResource("1_hepxb")
+name = "D-5274"
+image = ExtResource("1_l5omf")
+color = Color(0.86926854, 0.42057905, 5.7756904e-07, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://b0dm702x43w5e"]
+
+[ext_resource type="Texture2D" uid="uid://dsswhg1g6akmg" path="res://Assets/HUD/Dialogue/Scientist.png" id="1_kgc0h"]
+[ext_resource type="Script" uid="uid://urh5p4atyoyi" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_umtnp"]
+
+[resource]
+script = ExtResource("1_umtnp")
+name = "S_ANDREW_WHITE"
+image = ExtResource("1_kgc0h")
+color = Color(0.40831092, 0.59053636, 0.5265351, 1)
+metadata/_custom_type_script = "uid://urh5p4atyoyi"

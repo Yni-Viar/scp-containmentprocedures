@@ -1,4 +1,7 @@
 extends InteractableStatic
+## SCP-249 script
+## Made by Yni, licensed under GPLv3.
+class_name Scp249
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 

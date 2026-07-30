@@ -1,4 +1,7 @@
 extends DoorBase
+## Door, that can be opened by player
+## Made by Yni, licensed under MIT License.
+class_name OpenableDoor
 
 var current_person: NodePath = NodePath()
 

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://ta820aguqs0e"]
+
+[ext_resource type="PackedScene" uid="uid://c8v7yj8fivrtv" path="res://Stories/MainStory/PlayerScript/PlayerClassPrefab/DClass_5274.tscn" id="1_1c5sl"]
+[ext_resource type="PackedScene" uid="uid://cu7wp81iabpkp" path="res://PlayerScript/PlayerClassRagdoll/DClass.tscn" id="2_qq23o"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_3jlqh"]
+
+[resource]
+script = ExtResource("3_3jlqh")
+puppet_class_name = "DCLASS"
+prefab = ExtResource("1_1c5sl")
+spawn_point_group = "DClass5274Spawn"
+initial_amount = 1
+interacting_action = 2
+footstep_sounds = {
+"run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),
+"walk": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg")
+}
+apply_height_bugfix = false
+enable_wander = false
+health = Array[float]([100.0, 50.0, 50.0, 50.0])
+team = 2
+puppet_navigation_layers = 3
+ragdoll_prefab = ExtResource("2_qq23o")

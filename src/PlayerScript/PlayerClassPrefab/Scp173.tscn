@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ehb4w8qwxc47"]
+[gd_scene format=3 uid="uid://ehb4w8qwxc47"]
 
 [ext_resource type="Script" uid="uid://c3kn53huxivav" path="res://PlayerScript/PlayerClassScript/Scp173PuppetScript.gd" id="1_b0s8h"]
 
-[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp173", "SinglePuppet"]]
+[node name="Puppet" type="Node3D" unique_id=712812146 groups=["CustomizablePuppet", "Scp173", "SinglePuppet"]]
 script = ExtResource("1_b0s8h")
 single_type_per_group = true
 single_type_group_name = "Scp173"

@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="12_b5rm0"]
 [ext_resource type="PackedScene" uid="uid://brouvfjjcatxw" path="res://Assets/ExternalModels/3d_lamp.tscn" id="13_bj0vu"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="13_lpoic"]
-[ext_resource type="PackedScene" uid="uid://cjmvqohuuhvtc" path="res://Assets/OriginalModels/chair.tscn" id="14_2v4eo"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="14_hnseh"]
 [ext_resource type="LightmapGIData" uid="uid://c74yk3jesokyk" path="res://Assets/Rooms/room1/Lm/pz_cont1_347.lmbake" id="14_oim4h"]
 [ext_resource type="Shader" uid="uid://c1hpglwywqlnh" path="res://Shaders/NoiseShader/noise.gdshader" id="15_oim4h"]
@@ -238,19 +237,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5162997, -0.78577, 6.280979
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8961468, -1.260206, -1.220326)
 
 [node name="Armchair_16" parent="." unique_id=1607061479 instance=ExtResource("24_nx1xh")]
-transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -4.474941, -1.260206, -0.2992512)
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -3.5856366, -1.260206, -0.9793029)
 
 [node name="Armchair_17" parent="." unique_id=2126593925 instance=ExtResource("24_nx1xh")]
-transform = Transform3D(-0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -0.99999994, -4.7574477, -1.260206, 3.0984578)
+transform = Transform3D(-0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -0.99999994, -5.34419, -1.260206, 1.9663584)
 
 [node name="laptop" parent="." unique_id=1360354049 instance=ExtResource("26_lpoic")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.62183, 0.23979318, -1.5234241)
-
-[node name="Chair" parent="." unique_id=54967582 instance=ExtResource("14_2v4eo")]
-transform = Transform3D(-0.9945073, 0, -0.10466738, 0, 1, 0, 0.10466738, 0, -0.9945073, 2.4840696, -1.260206, 3.4103098)
-
-[node name="Chair2" parent="." unique_id=630889520 instance=ExtResource("14_2v4eo")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.5494232, -1.260206, 3.4846838)
 
 [node name="entityspawn2" type="Marker3D" parent="." unique_id=998803744 groups=["Scp347Spawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7892466, -1.24029, 1.2559805)

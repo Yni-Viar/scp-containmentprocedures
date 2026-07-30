@@ -307,7 +307,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.5
 [node name="Entityspawn" type="Marker3D" parent="." unique_id=1362649055 groups=["Scp080Spawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.279024, -0.78577095, 3.6582994)
 
-[node name="Entityspawn2" type="Marker3D" parent="." unique_id=573641244 groups=["Scp181Spawn"]]
+[node name="Entityspawn2" type="Marker3D" parent="." unique_id=573641244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3684387, -0.78577095, -7.7547336)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118151431]

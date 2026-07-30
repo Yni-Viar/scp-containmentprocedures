@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpmocngv0mdlh"]
+[gd_scene format=3 uid="uid://dpmocngv0mdlh"]
 
 [ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_wmcpi"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" unique_id=2021053751]
 script = ExtResource("1_wmcpi")
 default_puppet_to_spawn = 0
 available_puppets = Dictionary[String, int]({

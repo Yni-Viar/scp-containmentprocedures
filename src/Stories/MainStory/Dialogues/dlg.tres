@@ -1,0 +1,1036 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dmhotb8oslaeo"]
+
+[ext_resource type="Script" uid="uid://bnjsf7gdri5lq" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_wapa8"]
+
+[resource]
+script = ExtResource("1_wapa8")
+starts = {
+"dlg_347_scp": &"0_4",
+"dlg_347_sh": &"0_8",
+"dlg_classd": &"0_3",
+"dlg_final_sh": &"0_9",
+"dlg_key_not_found": &"0_2",
+"dlg_start": &"0_1",
+"dlg_there_is_181": &"0_7",
+"dlg_where_is_181": &"0_6",
+"dlg_white_scp": &"0_5"
+}
+nodes = {
+&"0_1": {
+"link": &"4_1",
+"offset": Vector2(-780, -80),
+"start_id": "dlg_start"
+},
+&"0_2": {
+"link": &"1_14",
+"offset": Vector2(-780, 260),
+"start_id": "dlg_key_not_found"
+},
+&"0_3": {
+"link": &"1_16",
+"offset": Vector2(-780, 620),
+"start_id": "dlg_classd"
+},
+&"0_4": {
+"link": &"1_22",
+"offset": Vector2(-771.6669, 893.71204),
+"start_id": "dlg_347_scp"
+},
+&"0_5": {
+"link": &"1_27",
+"offset": Vector2(-780, 1180),
+"start_id": "dlg_white_scp"
+},
+&"0_6": {
+"link": &"1_33",
+"offset": Vector2(-760, 1500),
+"start_id": "dlg_where_is_181"
+},
+&"0_7": {
+"link": &"4_3",
+"offset": Vector2(-760, 1780),
+"start_id": "dlg_there_is_181"
+},
+&"0_8": {
+"link": &"1_62",
+"offset": Vector2(-760, 2340),
+"start_id": "dlg_347_sh"
+},
+&"0_9": {
+"link": &"1_65",
+"offset": Vector2(-760, 2680),
+"start_id": "dlg_final_sh"
+},
+&"1_1": {
+"dialogue": "S_INTRO_DLG_1",
+"offset": Vector2(-120, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_10": {
+"dialogue": "S_INTRO_DLG_10",
+"offset": Vector2(3320, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 4
+},
+&"1_11": {
+"dialogue": "S_INTRO_DLG_11",
+"offset": Vector2(3640, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 4
+},
+&"1_12": {
+"dialogue": "S_INTRO_DLG_12",
+"offset": Vector2(3960, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300.00146, 240),
+"speaker": 4
+},
+&"1_13": {
+"dialogue": "S_INTRO_DLG_13",
+"offset": Vector2(4280, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_14": {
+"dialogue": "S_KEYNOTFOUND_DLG_1",
+"offset": Vector2(-540, 180),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_15": {
+"dialogue": "S_KEYNOTFOUND_DLG_2",
+"offset": Vector2(-220, 180),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_16": {
+"dialogue": "S_CLASSD_DLG_1",
+"offset": Vector2(-540, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_17": {
+"dialogue": "S_CLASSD_DLG_2",
+"offset": Vector2(-220, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_18": {
+"dialogue": "S_CLASSD_DLG_3",
+"offset": Vector2(100, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 1
+},
+&"1_19": {
+"dialogue": "S_CLASSD_DLG_4",
+"offset": Vector2(440, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300.00146, 240.00012),
+"speaker": 0
+},
+&"1_2": {
+"dialogue": "S_INTRO_DLG_2",
+"offset": Vector2(200, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_20": {
+"dialogue": "S_CLASSD_DLG_5",
+"offset": Vector2(780, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 1
+},
+&"1_21": {
+"dialogue": "S_CLASSD_DLG_6",
+"offset": Vector2(1120, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 1
+},
+&"1_22": {
+"dialogue": "S_347_SCP_DLG_1",
+"offset": Vector2(-540, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_23": {
+"dialogue": "S_347_SCP_DLG_2",
+"offset": Vector2(-220, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 2
+},
+&"1_24": {
+"dialogue": "S_347_SCP_DLG_3",
+"offset": Vector2(100, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_25": {
+"dialogue": "S_347_SCP_DLG_4",
+"offset": Vector2(440, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240.00012),
+"speaker": 2
+},
+&"1_26": {
+"dialogue": "S_347_SCP_DLG_5",
+"offset": Vector2(760, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 2
+},
+&"1_27": {
+"dialogue": "S_WHITE_SCP_DLG_1",
+"offset": Vector2(-540, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_28",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 0
+},
+&"1_28": {
+"dialogue": "S_WHITE_SCP_DLG_2",
+"offset": Vector2(-220, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_29",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 0
+},
+&"1_29": {
+"dialogue": "S_WHITE_SCP_DLG_3",
+"offset": Vector2(120, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_30",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 3
+},
+&"1_3": {
+"dialogue": "S_INTRO_DLG_3",
+"offset": Vector2(520, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300.00195, 240),
+"speaker": ""
+},
+&"1_30": {
+"dialogue": "S_WHITE_SCP_DLG_4",
+"offset": Vector2(460, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_31",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 3
+},
+&"1_31": {
+"dialogue": "S_WHITE_SCP_DLG_5",
+"offset": Vector2(780, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 3
+},
+&"1_32": {
+"dialogue": "S_WHITE_SCP_DLG_6",
+"offset": Vector2(1120, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 0
+},
+&"1_33": {
+"dialogue": "S_WHERE_IS_181",
+"offset": Vector2(-520, 1440),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240),
+"speaker": 0
+},
+&"1_34": {
+"dialogue": "S_THERE_IS_181_914_1",
+"offset": Vector2(-200, 1720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_35",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_35": {
+"dialogue": "S_THERE_IS_181_914_2",
+"offset": Vector2(120, 1720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+&"1_36": {
+"dialogue": "S_THERE_IS_181_914_3",
+"offset": Vector2(460, 1720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_37": {
+"dialogue": "S_THERE_IS_181_914_4",
+"offset": Vector2(800, 1720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": "S_THERE_IS_181_914_4_SCP"
+},
+1: {
+"condition": {},
+"link": &"4_4",
+"text": "S_THERE_IS_181_914_4_SH"
+}
+},
+"size": Vector2(300.0005, 320),
+"speaker": 3
+},
+&"1_38": {
+"dialogue": "S_THERE_IS_181_914_SCP_1",
+"offset": Vector2(8000, 1500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_39",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240.00037),
+"speaker": 3
+},
+&"1_39": {
+"dialogue": "S_THERE_IS_181_914_SCP_2",
+"offset": Vector2(8340, 1500),
+"options": {
+0: {
+"condition": {},
+"link": &"3_7",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240.00037),
+"speaker": 3
+},
+&"1_4": {
+"dialogue": "S_INTRO_DLG_4",
+"offset": Vector2(840, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_40": {
+"dialogue": "S_THERE_IS_181_914_5",
+"offset": Vector2(1580, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_41",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240),
+"speaker": 3
+},
+&"1_41": {
+"dialogue": "S_THERE_IS_181_914_6",
+"offset": Vector2(1900, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_42": {
+"dialogue": "S_THERE_IS_181_914_7",
+"offset": Vector2(2220, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_43",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240),
+"speaker": 3
+},
+&"1_43": {
+"dialogue": "S_THERE_IS_181_914_8",
+"offset": Vector2(2540, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_44",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240),
+"speaker": 3
+},
+&"1_44": {
+"dialogue": "S_THERE_IS_181_914_9",
+"offset": Vector2(2860, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_45",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_45": {
+"dialogue": "S_THERE_IS_181_914_10",
+"offset": Vector2(3180, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_46": {
+"dialogue": "S_THERE_IS_181_914_11",
+"offset": Vector2(3500, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_47",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_47": {
+"dialogue": "S_THERE_IS_181_914_12",
+"offset": Vector2(3820, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_48",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_48": {
+"dialogue": "S_THERE_IS_181_914_13",
+"offset": Vector2(4140, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_49",
+"text": ""
+}
+},
+"size": Vector2(300.00073, 240),
+"speaker": 0
+},
+&"1_49": {
+"dialogue": "S_THERE_IS_181_914_14",
+"offset": Vector2(4460, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_50",
+"text": ""
+}
+},
+"size": Vector2(300.00073, 240),
+"speaker": 3
+},
+&"1_5": {
+"dialogue": "S_INTRO_DLG_5",
+"offset": Vector2(1160, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_50": {
+"dialogue": "S_THERE_IS_181_914_15",
+"offset": Vector2(4780, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_51",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_51": {
+"dialogue": "S_THERE_IS_181_914_16",
+"offset": Vector2(5100, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_52",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_52": {
+"dialogue": "S_THERE_IS_181_914_17",
+"offset": Vector2(5440, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_53",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 3
+},
+&"1_53": {
+"dialogue": "S_THERE_IS_181_914_18",
+"offset": Vector2(5760, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 3
+},
+&"1_54": {
+"dialogue": "S_THERE_IS_181_914_19",
+"offset": Vector2(6080, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_55",
+"text": ""
+}
+},
+"size": Vector2(300.00195, 240),
+"speaker": 3
+},
+&"1_55": {
+"dialogue": "S_THERE_IS_181_914_20",
+"offset": Vector2(6400, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_56",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 3
+},
+&"1_56": {
+"dialogue": "S_THERE_IS_181_914_21",
+"offset": Vector2(6720, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_57",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_57": {
+"dialogue": "S_THERE_IS_181_914_22",
+"offset": Vector2(7060, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_58",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_58": {
+"dialogue": "S_THERE_IS_181_914_23",
+"offset": Vector2(7380, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": "S_THERE_IS_181_914_23_SCP"
+},
+1: {
+"condition": {},
+"link": &"4_5",
+"text": "S_THERE_IS_181_914_23_SH"
+}
+},
+"size": Vector2(300.0005, 304),
+"speaker": 3
+},
+&"1_59": {
+"dialogue": "S_THERE_IS_181_914_SH_1",
+"offset": Vector2(8040, 2160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"size": Vector2(300.00244, 240.00024),
+"speaker": 0
+},
+&"1_6": {
+"dialogue": "S_INTRO_DLG_6",
+"offset": Vector2(1480, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"4_2",
+"text": ""
+}
+},
+"size": Vector2(300.00098, 240),
+"speaker": ""
+},
+&"1_60": {
+"dialogue": "S_THERE_IS_181_914_SH_2",
+"offset": Vector2(8360, 2160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_61",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 3
+},
+&"1_61": {
+"dialogue": "S_THERE_IS_181_914_SH_3",
+"offset": Vector2(8680, 2160),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00024),
+"speaker": 3
+},
+&"1_62": {
+"dialogue": "S_347_SH_DLG_1",
+"offset": Vector2(-520, 2280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_63",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_63": {
+"dialogue": "S_347_SH_DLG_2",
+"offset": Vector2(-200, 2280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_64",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 0
+},
+&"1_64": {
+"dialogue": "S_347_SH_DLG_3",
+"offset": Vector2(120, 2280),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00012),
+"speaker": 2
+},
+&"1_65": {
+"dialogue": "S_FINAL_SH_DLG_1",
+"offset": Vector2(-500, 2600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_66",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+&"1_66": {
+"dialogue": "S_FINAL_SH_DLG_2",
+"offset": Vector2(-180, 2600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_67",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+&"1_67": {
+"dialogue": "S_FINAL_SH_DLG_3",
+"offset": Vector2(140, 2600),
+"options": {
+0: {
+"condition": {},
+"link": &"3_9",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 3
+},
+&"1_7": {
+"dialogue": "S_INTRO_DLG_7",
+"offset": Vector2(2360, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 4
+},
+&"1_8": {
+"dialogue": "S_INTRO_DLG_8",
+"offset": Vector2(2680, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300.00244, 240),
+"speaker": 4
+},
+&"1_9": {
+"dialogue": "S_INTRO_DLG_9",
+"offset": Vector2(3000, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240),
+"speaker": 4
+},
+&"3_1": {
+"link": "END",
+"offset": Vector2(120, 200),
+"signalValue": "next_task"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(4600, -80),
+"signalValue": "next_task"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(1483.848, 549.972),
+"signalValue": "next_task"
+},
+&"3_4": {
+"link": "END",
+"offset": Vector2(1100, 840),
+"signalValue": "next_task"
+},
+&"3_5": {
+"link": "END",
+"offset": Vector2(1460, 1140),
+"signalValue": "next_task"
+},
+&"3_6": {
+"link": "END",
+"offset": Vector2(-180, 1420),
+"signalValue": "next_task"
+},
+&"3_7": {
+"link": "END",
+"offset": Vector2(8680, 1500),
+"signalValue": "end_game"
+},
+&"3_8": {
+"link": "END",
+"offset": Vector2(9020, 2160),
+"signalValue": "next_task"
+},
+&"3_9": {
+"link": "END",
+"offset": Vector2(460, 2600),
+"signalValue": "next_task"
+},
+&"4_1": {
+"link": &"1_1",
+"offset": Vector2(-520, -80),
+"type": 0,
+"value": "res://Stories/MainStory/Assets/HUD/UI/home_office.png",
+"variable": "background"
+},
+&"4_2": {
+"link": &"1_7",
+"offset": Vector2(1841.3438, -20.857727),
+"type": 0,
+"value": "res://Stories/MainStory/Assets/HUD/UI/home_office_note.png",
+"variable": "background"
+},
+&"4_3": {
+"link": &"1_34",
+"offset": Vector2(-529.4652, 1777.4912),
+"type": 0,
+"value": "res://Stories/MainStory/Assets/HUD/UI/Scp914_181-914.png",
+"variable": "background"
+},
+&"4_4": {
+"link": &"1_40",
+"offset": Vector2(1160, 2020),
+"type": 2,
+"value": "5",
+"variable": "scp"
+},
+&"4_5": {
+"link": &"1_59",
+"offset": Vector2(7720, 2280),
+"type": 2,
+"value": "5",
+"variable": "scp"
+}
+}
+variables = {
+"background": {
+"type": 4,
+"value": "empty"
+},
+"scp": {
+"type": 2,
+"value": 10
+}
+}
+characters = "res://Stories/MainStory/Dialogues/Characters/MainStoryCharacterList.tres"

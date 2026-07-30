@@ -1,6 +1,7 @@
 extends Node3D
 ## SCP-162
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp162
 
 ## Targets. Keys are NPC, values - are NPC hypnotized
 var targets: Array[MovableNpc] = []

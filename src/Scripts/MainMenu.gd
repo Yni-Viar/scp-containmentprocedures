@@ -24,7 +24,7 @@ func _enter_tree() -> void:
 				var label: Label = Label.new()
 				label.text = progress
 				$AchievementContainer/Achievements/ScrollContainer/HBoxContainer.add_child(label)
-		if randf() > 0.75:
+		if randf() > 0.75 && Settings.setting_res.casual_mode_unlocked:
 			$AudioStreamPlayer.stream = load("res://Sounds/Music/Original/Optional/SCP_MainTheme_v2.ogg")
 	
 	$AchievementContainer/Achievements/ProgressBar.max_value = total_amount
@@ -36,6 +36,14 @@ func _enter_tree() -> void:
 		#node.visible = (Settings.setting_res.secrets >> index) % 2 == 1
 		#index += 1
 	
+	var available_stories: PackedStringArray = DirAccess.get_directories_at("res://Stories/")
+	for story in available_stories:
+		if ResourceLoader.exists("res://Stories/".path_join(story).path_join("Scenes/Game.tscn")):
+			$StoryList.add_item(story, load("res://UI/MainMenu/Modes/storymode_select.png"))
+	
+	if Settings.setting_res.casual_mode_unlocked || OS.has_feature("Lite"):
+		$HBoxContainer/Play.show()
+	
 	
 	# Display game ratings in main menu in some countries, this will replace the game logo.
 	if Settings.legal_req && !Settings.IS_STORE_BUILD:
@@ -46,13 +54,11 @@ func _enter_tree() -> void:
 	
 	await get_tree().physics_frame
 	
-	if Settings.setting_res.casual_mode_unlocked:
-		$HBoxContainer/Play.show()
-		$GameSettingsContainer.show()
-	
 	if completed_amount == total_amount:
 		$AchievementContainer/Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
 		$AchievementContainer/Achievements/ScrollContainer.hide()
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -72,16 +78,6 @@ func play():
 		"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else -1,
 		"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else "random"
 	})
-	
-	#$FakeLoadingScreen.show()
-	#
-	#var game: GameCore = load("res://Scenes/Game.tscn").instantiate()
-	#if !$HBoxContainer/Seed.text.is_empty():
-		#game.map_seed = hash($HBoxContainer/Seed.text)
-	#game.time_limited = $GameSettingsContainer/GameSettings/TimeLimited.button_pressed
-	#get_tree().root.add_child(game)
-	#Settings.call_deferred("override_main_scene", game)
-	#queue_free()
 
 
 func _on_help_button_pressed() -> void:
@@ -109,14 +105,7 @@ func _on_enable_sound_toggled(toggled_on: bool) -> void:
 
 
 func _on_story_mode_pressed() -> void:
-	if $HBoxContainer/Seed.text == "yenjeai":
-		$StoryUI.show()
-	else:
-		Settings.loader("res://Scenes/Game.tscn", {
-			"story_mode": true,
-			"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else -1,
-			"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else "random"
-		})
+	$StoryList.visible = !$StoryList.visible
 
 
 func _on_story_back_pressed() -> void:
@@ -126,6 +115,20 @@ func _on_story_back_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	$Settings.show()
 
+func random_seed() -> String:
+	var result_string: String = ""
+	for i in range(16):
+		result_string += char(randi_range(0x41, 0x7A))
+	return result_string
 
-func _on_seed_text_changed(new_text: String) -> void:
-	pass
+
+func _on_story_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	if mouse_button_index == 1:
+		if $HBoxContainer/Seed.text == "yenjeai":
+			$StoryUI.show()
+		else:
+			var rnd_seed: String = random_seed()
+			Settings.loader("res://Stories/" + $StoryList.get_item_text(index) + "/Scenes/Game.tscn", {
+				"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else hash(rnd_seed),
+				"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else rnd_seed
+			})

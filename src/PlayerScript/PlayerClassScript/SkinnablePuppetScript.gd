@@ -124,7 +124,7 @@ func get_static_preset() -> int:
 	return default_class_presets[single_type_group_name]
 
 ## Assign a puppet variation to the puppet script
-## Has optional parameter, which can force specific
+## Has optional parameter, which can force spawning specific entity
 func assign_puppet(idx: int = -1) -> void:
 	if puppet_node != null:
 		puppet_node.queue_free()
@@ -185,6 +185,7 @@ func check_availability(idx: int) -> bool:
 func _initiate_puppet(idx: int):
 	if !available_puppets.keys()[idx].begins_with("empty"):
 		var prefab: Node3D = load(available_puppets.keys()[idx]).instantiate()
+		prefab.scale = Vector3(1.5, 1.5, 1.5)
 		add_child(prefab)
 		selected_puppet = idx
 		puppet_node = prefab

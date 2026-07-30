@@ -1,6 +1,7 @@
 extends Node3D
-class_name DoorBase
 ## Made by Yni, licensed under MIT License.
+class_name DoorBase
+
 
 ## The player can open the door.
 @export var can_open: bool = true
@@ -17,6 +18,8 @@ class_name DoorBase
 @export var check_keycards: bool = false
 ## Which keycard can open this door
 @export var required_keycards: Array[int] = []
+## Item, that overrides door access (SCP-005)
+@export var override_item_access: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,9 +69,11 @@ func door_close():
 func check_keycard(player_path: String) -> bool:
 	var player = get_node(player_path)
 	if player is MovableNpc:
-		# 0 is SCP-005 and 16 is Casual mode keycard
-		if player.keycards.has(0) || player.keycards.has(16):
-			return true
+		var puppet: BasePuppetScript = player.get_node_or_null("PlayerModel").get_child(0)
+		if puppet is SkinnableHumanPuppetScript:
+			# Enable for SCP-005
+			if puppet.current_item == 15:
+				return true
 		for key in player.keycards:
 			if required_keycards.has(key):
 				return true

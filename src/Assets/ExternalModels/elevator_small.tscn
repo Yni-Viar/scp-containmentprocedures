@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://cqset7w3gmd5"]
+[gd_scene format=4 uid="uid://cqset7w3gmd5"]
 
 [ext_resource type="Script" uid="uid://blproyl2vump2" path="res://Scripts/ElevatorSystem/ElevatorSystem.gd" id="1_cs2rt"]
 [ext_resource type="Texture2D" uid="uid://dymcum0c1ufle" path="res://Assets/ExternalModels/SCP/PopPopIcard/Elevator_1-0_ExitWall_unbake_BaseColor.png" id="2_g6v4j"]
@@ -117,13 +117,13 @@ data = PackedVector3Array(-1.3399999, 3.35, 2.412, 2.6799998, 3.35, -2.412, -1.3
 backface_collision = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_np1vv"]
-size = Vector3(0.3713379, 4.726074, 1.368042)
+size = Vector3(0.6246338, 4.726074, 1.368042)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpt57"]
-size = Vector3(4.19281, 4.6832886, 0.31854248)
+size = Vector3(4.19281, 4.6832886, 0.67336273)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1psn"]
-size = Vector3(0.3569336, 4.705353, 4.8031006)
+size = Vector3(0.6367798, 4.705353, 4.8031006)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fmvo3"]
 size = Vector3(4.1987915, 0.73828125, 4.830078)
@@ -310,81 +310,81 @@ _data = {
 &"door_open": SubResource("Animation_f8wcs")
 }
 
-[node name="elevator" type="Node3D"]
+[node name="elevator" type="Node3D" unique_id=2013298137]
 script = ExtResource("1_cs2rt")
 speed = 12.0
 open_door_sounds = PackedStringArray("res://Sounds/Door/DoorOpen.ogg")
 close_door_sounds = PackedStringArray("res://Sounds/Door/DoorClose.ogg")
 navigation_link = NodePath("NavigationLink3D")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1565614939]
 sync_to_physics = false
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="AnimatableBody3D"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="AnimatableBody3D" unique_id=1582468012]
 navigation_mesh = SubResource("NavigationMesh_3erjc")
 
-[node name="Cube" type="MeshInstance3D" parent="AnimatableBody3D/NavigationRegion3D"]
+[node name="Cube" type="MeshInstance3D" parent="AnimatableBody3D/NavigationRegion3D" unique_id=379423151]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5759001, -1.3120033, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_cff2g")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=64885491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.033783, 0)
 visibility_range_end = 64.0
 mesh = SubResource("PlaneMesh_guu0a")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=975210421]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5759001, -1.3120033, 0)
 shape = SubResource("ConcavePolygonShape3D_2rkvl")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9129775, -0.31323242, -1.7389331)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1942542133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7863295, -0.31323242, -1.7389331)
 shape = SubResource("BoxShape3D_np1vv")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9129775, -0.31323242, 1.7406065)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1846582396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.773, -0.31323242, 1.7406065)
 shape = SubResource("BoxShape3D_np1vv")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007659912, -0.31687474, 2.2568665)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1897830450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007659912, -0.31687474, 2.1072655)
 shape = SubResource("BoxShape3D_jpt57")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007659912, -0.3041687, -2.2297587)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=729546324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007659912, -0.3041687, -2.0894141)
 shape = SubResource("BoxShape3D_jpt57")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9162598, -0.31111145, 0.0021362305)
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1202823869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7763367, -0.31111145, 0.0021362305)
 shape = SubResource("BoxShape3D_w1psn")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="AnimatableBody3D"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1885913564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007171631, -3.014626, 0)
 shape = SubResource("BoxShape3D_fmvo3")
 
-[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+[node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=853603908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973238, -2.1565657, 0)
 enabled = false
 end_position = Vector3(2, 0, 0)
 
-[node name="DoorSound" type="AudioStreamPlayer3D" parent="."]
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="." unique_id=2079701753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9016125, 0, 0)
 max_distance = 40.0
 
-[node name="Move" type="AudioStreamPlayer3D" parent="."]
+[node name="Move" type="AudioStreamPlayer3D" parent="." unique_id=376923714]
 stream = ExtResource("11_w1psn")
 max_distance = 48.0
 bus = &"Music"
 
-[node name="PlayerArea" type="Area3D" parent="."]
+[node name="PlayerArea" type="Area3D" parent="." unique_id=487011977]
 collision_layer = 11
 collision_mask = 11
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea" unique_id=942073117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08729422, 0.0229888, -0.006750345)
 shape = SubResource("BoxShape3D_olfai")
 
-[node name="LightmapGI" type="LightmapGI" parent="." groups=["Lightmap"]]
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=581721083 groups=["Lightmap"]]
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
@@ -394,62 +394,60 @@ texel_scale = 0.5
 generate_probes_subdiv = 1
 light_data = ExtResource("4_mc2j4")
 
-[node name="LczDoor" type="Node3D" parent="."]
+[node name="LczDoor" type="Node3D" parent="." unique_id=1665763083]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9130875, -2.6523993, 0.005761683)
 script = ExtResource("12_np1vv")
 
-[node name="Cube_003" type="MeshInstance3D" parent="LczDoor"]
+[node name="Cube_003" type="MeshInstance3D" parent="LczDoor" unique_id=177958088]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_gdd3j")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_003" unique_id=142848906]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_003/StaticBody3D" unique_id=1359779216]
 shape = SubResource("ConcavePolygonShape3D_f8wcs")
 
-[node name="Cube_001" type="MeshInstance3D" parent="LczDoor"]
+[node name="Cube_001" type="MeshInstance3D" parent="LczDoor" unique_id=630881064]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.003067013, 0, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_fal7a")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_001" unique_id=374030400]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_001/StaticBody3D" unique_id=1920083103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48974568, 1.6488402, 0.0014650822)
 shape = SubResource("BoxShape3D_2sqeg")
 
-[node name="Cube_002" type="MeshInstance3D" parent="LczDoor"]
+[node name="Cube_002" type="MeshInstance3D" parent="LczDoor" unique_id=258728787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003067013, 0, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_1670q")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LczDoor/Cube_002" unique_id=604873256]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LczDoor/Cube_002/StaticBody3D" unique_id=1200106441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48974586, 1.6502984, 0.0014650822)
 shape = SubResource("BoxShape3D_2sqeg")
 
-[node name="DoorSound" type="AudioStreamPlayer3D" parent="LczDoor"]
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="LczDoor" unique_id=303467119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9390855, 0)
 max_distance = 40.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=114684006]
 root_node = NodePath("../LczDoor")
-libraries = {
-&"": SubResource("AnimationLibrary_dhd7e")
-}
+libraries/ = SubResource("AnimationLibrary_dhd7e")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1401113883]
 wait_time = 5.0
 one_shot = true
 
-[node name="DebugLights" type="Node3D" parent="."]
+[node name="DebugLights" type="Node3D" parent="." unique_id=640413356]
 script = ExtResource("20_jpt57")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="DebugLights"]
+[node name="OmniLight3D" type="OmniLight3D" parent="DebugLights" unique_id=916656857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3398225, 0)
 visible = false
 

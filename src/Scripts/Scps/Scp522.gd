@@ -1,6 +1,7 @@
 extends Node3D
 ## SCP-522 base script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name Scp522
 
 signal finished(has_body: PackedInt32Array)
 
