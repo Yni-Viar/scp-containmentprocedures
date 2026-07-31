@@ -23,11 +23,10 @@ This list contains all features, added in the game, or will be added in upcoming
 - [x] Add support for custom stories/DLCs.
 
 ### Plugin System
-- [ ] Plugin System, based on GOMPL, a dialect of IMP Language
-  - [ ] Add modding manager node (child of Game), which auto-loads mods.
-  - [ ] Add modding support to:
-    - [ ] SkinnablePuppetScripts (limited to static meshes)
-    - [ ] Items
+- [x] Plugin System, based on GOMPL, a dialect of IMP Language
+  - [x] Add modding manager node (child of Game), which auto-loads mods.
+  - [x] Add modding support to:
+    - [x] SkinnablePuppetScripts (limited to static meshes)
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone

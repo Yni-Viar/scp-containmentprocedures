@@ -1,19 +1,19 @@
 {
-	"name": "SamplePlugin",
+	"name": "Scp104",
 	"author": "Yni Viar",
 	"year": 2026,
-	"license": "CC-BY 4.0",
+	"license": "CC-BY-SA 3.0",
 	"plugin_type": "puppet",
 	"gltf": {
-		"gltf_file_prefix": "Sample",
-		"gltf_file_suffix": "",
-		"gltf_path_to_find": "Sample"
+		"gltf_file_prefix": "scp104",
+		"gltf_file_suffix": "test",
+		"gltf_path_to_find": "scp104test"
 	},
 	"puppet_resource": {
 		"speed": 10.0,
-		"spawn_point_group": "",
+		"spawn_point_group": "ScientistPoint",
 		"initial_amount": 1,
-		"interacting_action": 0,
+		"interacting_action": 1,
 		"fraction": 0,
 		"team": 0,
 		"wandering_system": 0,
@@ -28,12 +28,12 @@
 		"spawn_on_start": true,
 		"puppet_navigation_layers": 3,
 		"enable_ik":false,
-		"disable_move_on_slide": false,
-		"can_ride": true,
+		"disable_move_on_slide": true,
+		"can_ride": false,
 		"start_items": [],
 		"start_money": {},
 		"enable_advanced_ai": false,
-		"immortal": false,
+		"immortal": true,
 		"keycards": []
 	}
 }

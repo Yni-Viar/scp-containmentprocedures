@@ -8,9 +8,9 @@ class_name PuppetClass
 ## Special action - Other player will do something if you interact (e.g. SCP-023 or SCP-1507)
 enum InteractAction {NONE, FOLLOW, SPECIAL}
 
+## None - player will not wander at all.
 ## Generic wander is MovableNpc wander implementation
-## Special wander is limited wander - just moving from point to point.
-## If they leave containment chamber, wandering system will be switched to generic wander.
+## Limited wander - just moving from point to point.
 enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 
 @export var puppet_class_name: String
@@ -26,6 +26,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var fraction: int
 @export var apply_height_bugfix: bool = true
 @export var wandering_system: WanderingSystem = WanderingSystem.NONE
+## Group of points for WanderingSystem.LIMITED_WANDER
 @export var special_wandering_group: String = ""
 ## Will the puppet stay on this point, or it will wander.
 ## @deprecated Use `wandering_system` instead

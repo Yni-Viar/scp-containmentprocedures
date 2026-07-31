@@ -1,36 +1,39 @@
 extends SkinnablePuppetScript
 ## Plugin-based puppet script
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+class_name CustomPuppetScript
 
 ## Trigger type
-enum TriggerShape {SPHERE, BOX, CAPSULE, CYLINDER}
+enum TriggerShape {SPHERE = 0, BOX = 1, CAPSULE = 2, CYLINDER = 3}
+
+@export var custom_global_vars: Dictionary[String, Variant] = {}
 
 ## Trigger path. If trigger does not exist, there is empty string
 var trigger: NodePath = ""
 
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
-	plugin_api_function("on_start")
+	plugin_api_function("start", custom_global_vars)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	plugin_api_function("on_update")
+	plugin_api_function("update", custom_global_vars)
 
 func action_1() -> void:
-	plugin_api_function("on_custom_action_1")
+	plugin_api_function("custom_action_1", custom_global_vars)
 
 func action_2() -> void:
-	plugin_api_function("on_custom_action_2")
+	plugin_api_function("custom_action_2", custom_global_vars)
 
 func action_3() -> void:
-	plugin_api_function("on_custom_action_3")
+	plugin_api_function("custom_action_3", custom_global_vars)
 
 func action_4() -> void:
-	plugin_api_function("on_custom_action_4")
+	plugin_api_function("custom_action_4", custom_global_vars)
 
 ## Creates trigger, if it does not exist
-func spawn_trigger(shape: TriggerShape, function: String, size: float, collider_rotation: Vector3 = Vector3.ZERO, position_from_center: Vector3 = Vector3.ZERO, height: float = 1.0) -> void:
+func spawn_trigger(shape: TriggerShape, size: float, collider_rotation_x: float = 0, collider_rotation_y: float = 0, collider_rotation_z: float = 0, position_from_center_x: float = 0, position_from_center_y: float = 0, position_from_center_z: float = 0, height: float = 1.0) -> void:
 	if trigger == null:
 		Console.print_error("[Plugin system] Triggers are disabled for this puppet.", true)
 		return
@@ -41,7 +44,7 @@ func spawn_trigger(shape: TriggerShape, function: String, size: float, collider_
 	area_3d.collision_layer = 15
 	area_3d.collision_mask = 15
 	add_child(area_3d)
-	area_3d.position = position_from_center
+	area_3d.position = Vector3(position_from_center_x, position_from_center_y, position_from_center_z)
 	var collision_shape: CollisionShape3D = CollisionShape3D.new()
 	match shape:
 		TriggerShape.SPHERE:
@@ -58,7 +61,7 @@ func spawn_trigger(shape: TriggerShape, function: String, size: float, collider_
 			collision_shape.shape = CylinderShape3D.new()
 			collision_shape.shape.radius = size
 			collision_shape.shape.height = height
-	collision_shape.rotation = collider_rotation
+	collision_shape.rotation = Vector3(collider_rotation_x, collider_rotation_y, collider_rotation_z)
 	area_3d.add_child(collision_shape)
 	area_3d.body_entered.connect(_on_trigger_body_entered)
 	area_3d.body_exited.connect(_on_trigger_body_exited)
@@ -66,26 +69,81 @@ func spawn_trigger(shape: TriggerShape, function: String, size: float, collider_
 func _on_trigger_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
-			plugin_api_function("on_player_entered_trigger")
+			plugin_api_function("player_entered_trigger", custom_global_vars)
 		else:
-			plugin_api_function("on_puppet_entered_trigger")
+			plugin_api_function("puppet_entered_trigger", custom_global_vars)
 
 func _on_trigger_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
-			plugin_api_function("on_player_exited_trigger")
+			plugin_api_function("player_exited_trigger", custom_global_vars)
 		else:
-			plugin_api_function("on_puppet_exited_trigger")
+			plugin_api_function("puppet_exited_trigger", custom_global_vars)
 
 func on_vision_area_body_entered(body: Node3D):
 	if body is MovableNpc:
 		for puppet_class in vision_class_detect:
 			if body.fraction == puppet_class:
 				active_puppets.append(body)
-				plugin_api_function("on_player_entered_vision_area")
+				plugin_api_function("player_entered_vision_area", custom_global_vars)
 
 func on_vision_area_body_exited(body: Node3D):
 	if body is MovableNpc:
 		if active_puppets.has(body):
 			active_puppets.erase(body)
-			plugin_api_function("on_player_exited_vision_area")
+			plugin_api_function("player_exited_vision_area", custom_global_vars)
+
+func special_action():
+	plugin_api_function("special_action", custom_global_vars)
+
+
+
+### Plugin API
+
+func get_distance_to_player() -> void:
+	custom_global_vars["builtin_distance_to_player"] = get_parent().get_parent().global_position.distance_to(get_tree().root.get_node("Game").protagonist.global_position)
+
+func get_player_front_facing() -> void:
+	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_transform.basis.z
+	custom_global_vars["builtin_player_front_facing_x"] = pos.x
+	custom_global_vars["builtin_player_front_facing_y"] = pos.y
+	custom_global_vars["builtin_player_front_facing_z"] = pos.z
+
+func get_front_facing() -> void:
+	var pos: Vector3 = get_parent().get_parent().global_transform.basis.z
+	custom_global_vars["builtin_front_facing_x"] = pos.x
+	custom_global_vars["builtin_front_facing_y"] = pos.y
+	custom_global_vars["builtin_front_facing_z"] = pos.z
+
+func get_player_global_position() -> void:
+	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_position
+	custom_global_vars["builtin_player_global_pos_x"] = pos.x
+	custom_global_vars["builtin_player_global_pos_y"] = pos.y
+	custom_global_vars["builtin_player_global_pos_z"] = pos.z
+
+func get_global_pos() -> void:
+	var pos: Vector3 = get_parent().get_parent().global_position
+	custom_global_vars["builtin_global_pos_x"] = pos.x
+	custom_global_vars["builtin_global_pos_y"] = pos.y
+	custom_global_vars["builtin_global_pos_z"] = pos.z
+
+func set_global_pos(x: float, y: float, z: float) -> void:
+	get_parent().get_parent().global_position = Vector3(x, y, z)
+
+func get_follow() -> void:
+	custom_global_vars["builtin_follow"] = get_parent().get_parent().follow_target
+
+func set_follow(path: String) -> void:
+	get_parent().get_parent().follow_target = path
+
+func get_immortal() -> void:
+	custom_global_vars["builtin_immortal"] = get_parent().get_parent().immortal
+
+func set_immortal(value: bool) -> void:
+	get_parent().get_parent().immortal = value
+
+func get_movement_freeze() -> void:
+	custom_global_vars["builtin_movement_freeze"] = get_parent().get_parent().movement_freeze
+
+func set_movement_freeze(value: bool) -> void:
+	get_parent().get_parent().movement_freeze = value

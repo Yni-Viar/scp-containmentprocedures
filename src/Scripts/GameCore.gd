@@ -55,6 +55,11 @@ func _ready() -> void:
 		   load("res://MapGen/Optional/ResearchZone.tres"), 
 		   load("res://MapGen/Optional/PersonnelZone.tres")]
 		$FacilityGenerator.rooms = rooms
+	
+	if get_node_or_null("PluginManager") != null:
+		gamedata = gamedata.duplicate(true)
+		$PluginManager._load_plugins()
+	
 	# Choose seed
 	$FacilityGenerator.rng = rng
 	if map_seed != -1:

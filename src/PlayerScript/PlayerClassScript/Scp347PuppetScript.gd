@@ -26,10 +26,10 @@ func scp_347_infrared_blink(delta: float):
 		blink_timer -= delta
 	elif !infrared_visibility:
 		infrared_visibility = true
-		plugin_api_function("on_blink_started")
+		plugin_api_function("blink_started")
 		await get_tree().create_timer(0.5).timeout
 		infrared_visibility = false
-		plugin_api_function("on_blink_ended")
+		plugin_api_function("blink_ended")
 		blink_timer = 8.0
 
 

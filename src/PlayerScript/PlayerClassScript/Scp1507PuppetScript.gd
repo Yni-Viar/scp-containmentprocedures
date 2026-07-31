@@ -24,12 +24,12 @@ func on_spawned() -> void:
 	  !puppet_node.get_node("AnimationPlayer").has_animation("move"):
 			has_animations = false
 	get_parent().get_parent().follow_target = get_tree().get_first_node_in_group("PoI1507").get_path()
-	plugin_api_function("on_start")
+	plugin_api_function("start")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	plugin_api_function("on_update")
+	plugin_api_function("update")
 	if has_animations:
 		match state:
 			States.IDLE:
@@ -59,7 +59,7 @@ func special_action():
 func attack(collider_path: String):
 	var test = get_node(collider_path)
 	if test != null:
-		plugin_api_function("on_attack")
+		plugin_api_function("attack")
 		test.health_manage(-5.0, 0, "GAME_OVER_SCP_1507")
 
 func _on_attack_body_entered(body: Node3D) -> void:

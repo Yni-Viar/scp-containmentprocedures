@@ -13,7 +13,7 @@ class_name SkinnablePuppetScript
 @export var default_puppet_to_spawn: int = -1
 ## All available puppet variations
 @export var available_puppets: Dictionary[String, BaseSpawner.Availability] = {}
-@export_group("GLTF loader")
+@export_group("Plugin API")
 ## Enables GLTF loading
 ## /!\ Use only if the puppet has no animations, or does not use AnimationTree
 ## Better works with single_type_per_group = true
@@ -24,10 +24,16 @@ class_name SkinnablePuppetScript
 ## File suffix, separated by _ , just before extension
 ## Not necessary, unlike prefix
 @export var gltf_file_suffix: String = ""
-## Path to find GLTF models
+## Path to find GLTF models AND plugin scripts.
+## /!\ If you want to support modding, you MUST define this
+## parameter (despite the name of the parameter)!!!
 @export var gltf_path_to_find: String = ""
 ## Required animations to function
 #@export var gltf_required_animations: Array[String] = []
+
+## This setting determines, if the class is custom.
+## /!\ It is NOT recommended to use for built in classes, leave it false!!!
+@export var custom: bool = false
 
 @export_group("Technical - do not touch")
 ## Technical puppet ID
@@ -36,6 +42,11 @@ class_name SkinnablePuppetScript
 @export var puppet_node: Node3D
 ## Check if single type had spawned.
 @export var single_type_spawned: bool = false
+
+var plugin_scripts: Dictionary[String, String] = {}
+
+var gompl: Gompl = Gompl.new(self)
+
 ## Default index for single puppets
 static var default_class_presets: Dictionary[String, int]
 ## GLTF model cache
@@ -45,6 +56,15 @@ static var default_class_presets_gltf_extension: Dictionary[String, String]
 
 # Called when the node enters the scene tree for the first time.
 func on_start() -> void:
+	var file_search: String = "user://mods/puppets/"
+	if custom:
+		#if custom class, use custom directory
+		file_search = file_search.path_join("custom")
+	else:
+		#if built-in class (that is bundled with the build of game),
+		#use builtin directory
+		file_search = file_search.path_join("builtin")
+	file_search = file_search.path_join(gltf_path_to_find)
 	# Checking for mods
 	if enable_gltf_loading && OS.get_name() != "Web" && gltf_file_prefix != null:
 		var suffix_exists: bool = false
@@ -62,17 +82,17 @@ func on_start() -> void:
 		if gltf_file_suffix != null:
 			if !gltf_file_suffix.is_empty():
 				suffix_exists = true
-		if !DirAccess.dir_exists_absolute("user://mods/puppets/" + gltf_path_to_find):
-			DirAccess.make_dir_recursive_absolute("user://mods/puppets/" + gltf_path_to_find)
+		if !DirAccess.dir_exists_absolute(file_search):
+			DirAccess.make_dir_recursive_absolute(file_search)
 		# Add all GLB files
-		var dir: DirAccess = DirAccess.open("user://mods/puppets/" + gltf_path_to_find)
+		var dir: DirAccess = DirAccess.open(file_search)
 		for file in dir.get_files():
 			if file.get_extension() == "glb" && file.begins_with(gltf_file_prefix):
 				if suffix_exists && !file.get_slice(".", 0).ends_with(gltf_file_suffix):
 					continue
 				
 				# Load GLTF
-				gltf_cache[file] = Settings.load_gltf("user://mods/puppets/" + gltf_path_to_find + "/" + file)
+				gltf_cache[file] = Settings.load_gltf(file_search.path_join(file))
 				if gltf_cache[file] == null:
 					continue
 				# If has animation - check if all required animations exists,
@@ -97,10 +117,7 @@ func _set_up_puppet() -> void:
 	if default_puppet_to_spawn < 0:
 		if single_type_per_group && get_tree().has_group(single_type_group_name):
 			selected_puppet = get_static_preset()
-			if enable_gltf_loading && default_class_presets_gltf_extension.has(gltf_file_prefix):
-				assign_puppet_gltf()
-			else:
-				get_tree().call_group(single_type_group_name, "assign_puppet", selected_puppet)
+			get_tree().call_group(single_type_group_name, "assign_puppet", selected_puppet)
 		else:
 			assign_puppet()
 	else:
@@ -149,7 +166,10 @@ func assign_puppet(idx: int = -1) -> void:
 					continue
 				
 				if check_availability(random_number):
-					_initiate_puppet(random_number)
+					if available_puppets.keys()[random_number].ends_with(".glb"):
+						_initiate_puppet_gltf(available_puppets.keys()[random_number])
+					else:
+						_initiate_puppet(random_number)
 					return
 				else:
 					used_spawns.append(random_number)
@@ -191,6 +211,22 @@ func _initiate_puppet(idx: int):
 		puppet_node = prefab
 		on_spawned()
 
+func _initiate_puppet_gltf(key: String):
+	var prefab: Node3D
+	if gltf_file_suffix != null && !gltf_file_suffix.is_empty():
+		if !gltf_cache.has(gltf_file_prefix + "_" + gltf_file_suffix + ".glb"):
+			get_parent().get_parent().health_manage(-16777216)
+			return
+		prefab = gltf_cache[gltf_file_prefix + "_" + gltf_file_suffix + ".glb"].instantiate()
+	else:
+		if !gltf_cache.has(gltf_file_prefix + ".glb"):
+			get_parent().get_parent().health_manage(-16777216)
+			return
+		prefab = gltf_cache[gltf_file_prefix + ".glb"].instantiate()
+	add_child(prefab)
+	puppet_node = prefab
+	on_spawned()
+
 func _exit_tree() -> void:
 	if !gltf_cache.is_empty() && get_tree().get_node_count_in_group("CustomizablePuppet") == 1:
 		gltf_cache.clear()
@@ -199,17 +235,40 @@ func _exit_tree() -> void:
 		default_class_presets.clear()
 
 ## Loads custom scripts for SkinnablePuppetScript
-func plugin_api_function(function_name: String):
+func plugin_api_function(function_name: String, env: Variant = null):
+	# If script is already cached
+	if plugin_scripts.has(function_name):
+		if !plugin_scripts[function_name].is_empty():
+			#Run it!
+			gompl.eval(plugin_scripts[function_name], env)
+			return
 	if gltf_path_to_find == null:
+		plugin_scripts[function_name] = ""
 		return
 	if gltf_path_to_find.is_empty():
+		plugin_scripts[function_name] = ""
 		return
-	var file_to_load: String = "user://mods/puppets/".path_join(gltf_path_to_find).path_join("Scripts").path_join(function_name + ".gompl")
+	var file_search: String = "user://mods/puppets/"
+	if custom:
+		#if custom class, use custom directory
+		file_search = file_search.path_join("custom")
+	else:
+		#if built-in class (that is bundled with the build of game),
+		#use builtin directory
+		file_search = file_search.path_join("builtin")
+	file_search = file_search.path_join(gltf_path_to_find)
+	var file_to_load: String = file_search.path_join("scripts").path_join(function_name + ".gompl")
 	if FileAccess.file_exists(file_to_load):
 		var file: FileAccess = FileAccess.open(file_to_load, FileAccess.READ)
 		var file_string: String = file.get_as_text()
-		var gompl: Gompl = Gompl.new(self)
-		gompl.eval(file_string)
+		gompl.eval(file_string, env)
+		plugin_scripts[function_name] = file_string
+		file.close()
+	else:
+		if !enable_gltf_loading:
+			if !DirAccess.dir_exists_absolute(file_search):
+				DirAccess.make_dir_recursive_absolute(file_search)
+		plugin_scripts[function_name] = ""
 
-func plugin_api_output(something: String):
+func write_line(something: String):
 	Console.print_info("[Plugin system] " + something, true)
