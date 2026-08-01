@@ -2,7 +2,7 @@
 	"name": "Scp104",
 	"author": "Yni Viar",
 	"year": 2026,
-	"license": "CC-BY-SA 3.0",
+	"license": "CC-BY-SA 3.0 (assets), GPLv3 or MIT license (code)",
 	"plugin_type": "puppet",
 	"gltf": {
 		"gltf_file_prefix": "scp104",

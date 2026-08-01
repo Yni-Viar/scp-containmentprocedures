@@ -48,6 +48,7 @@ func _input(event: InputEvent) -> void:
 		$HBoxContainer.visible = !$HBoxContainer.visible
 		#if Settings.touchscreen:
 		$Back.visible = !$Back.visible
+		$CurrentTime.visible = !$CurrentTime.visible
 		$FPSCounter.visible = !$FPSCounter.visible
 	if event.is_action_pressed("ui_cancel"):
 		_on_back_pressed()

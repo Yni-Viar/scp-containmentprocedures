@@ -7,4 +7,3 @@ if builtin_follow != "" then
         set_global_pos(builtin_player_global_pos_x + builtin_player_front_facing_x * 2, builtin_player_global_pos_y + builtin_player_front_facing_y * 2, builtin_player_global_pos_z + builtin_player_front_facing_z * 2)
     end
 end
-        

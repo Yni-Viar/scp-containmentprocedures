@@ -45,7 +45,7 @@ msgstr ""
 msgid "GAME_SETTINGS_INFO"
 msgstr ""
 
-msgid "STORY_MAIN"
+msgid "MainStory"
 msgstr ""
 
 msgid "SETTINGS"
@@ -366,7 +366,7 @@ msgstr ""
 msgid "TASK_5270_2306_FIX"
 msgstr ""
 
-msgid "CASUAL_MODE_PROGRESS"
+msgid "PROGRESS_SCP_STUDY"
 msgstr ""
 
 msgid "GAME_OVER_ASLEEP"
@@ -375,7 +375,7 @@ msgstr ""
 msgid "TASK_080_CHECK"
 msgstr ""
 
-msgid "CASUAL_MODE_PROGRESS_2"
+msgid "PROGRESS_SCP_STUDY_2"
 msgstr ""
 
 msgid "GAME_OVER_SCP_983"
@@ -460,4 +460,31 @@ msgid "OOPS"
 msgstr ""
 
 msgid "GAME_IMPASSABLE"
+msgstr ""
+
+msgid "PLUGINS"
+msgstr ""
+
+msgid "PLUGIN_NAME"
+msgstr ""
+
+msgid "PLUGIN_AUTHOR"
+msgstr ""
+
+msgid "PLUGIN_TYPE"
+msgstr ""
+
+msgid "PLUGIN_INSTALL"
+msgstr ""
+
+msgid "PLUGIN_DESCR"
+msgstr ""
+
+msgid "puppet"
+msgstr ""
+
+msgid "CONTRIBUTE"
+msgstr ""
+
+msgid "SUPPORT_THE_DEVELOPER"
 msgstr ""

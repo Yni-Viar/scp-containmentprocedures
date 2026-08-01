@@ -48,6 +48,7 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"SCP-018": false,
 	"SCP-023": false,
 	"SCP-067": false,
+	"SCP-079": false,
 	"SCP-131": false,
 	"SCP-162": false,
 	"SCP-173": false,

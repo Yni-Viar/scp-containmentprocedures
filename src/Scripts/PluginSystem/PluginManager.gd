@@ -1,4 +1,6 @@
 extends Node
+## Loads plugins from user folder.
+## Made by Yni, licensed under MIT license.
 
 const VALIDATION_PUPPET_PLUGIN: Dictionary = {
 	"gltf": {

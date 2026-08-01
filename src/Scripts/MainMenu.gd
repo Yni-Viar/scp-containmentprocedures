@@ -55,7 +55,7 @@ func _enter_tree() -> void:
 	await get_tree().physics_frame
 	
 	if completed_amount == total_amount:
-		$AchievementContainer/Achievements/Info2.text = "CASUAL_MODE_PROGRESS_2"
+		$AchievementContainer/Achievements/Info2.text = "PROGRESS_SCP_STUDY_2"
 		$AchievementContainer/Achievements/ScrollContainer.hide()
 	
 	
@@ -70,7 +70,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	$CreditsContainer.visible = $Credits.button_pressed
+	$CreditsContainer.visible = $ProjectInfo/Credits.button_pressed
 
 
 func play():
@@ -109,7 +109,7 @@ func _on_story_mode_pressed() -> void:
 
 
 func _on_story_back_pressed() -> void:
-	$StoryUI.hide()
+	$EasterEgg.hide()
 
 
 func _on_settings_button_pressed() -> void:
@@ -125,10 +125,14 @@ func random_seed() -> String:
 func _on_story_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	if mouse_button_index == 1:
 		if $HBoxContainer/Seed.text == "yenjeai":
-			$StoryUI.show()
+			$EasterEgg.show()
 		else:
 			var rnd_seed: String = random_seed()
 			Settings.loader("res://Stories/" + $StoryList.get_item_text(index) + "/Scenes/Game.tscn", {
 				"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else hash(rnd_seed),
 				"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else rnd_seed
 			})
+
+
+func _on_contribute_pressed() -> void:
+	OS.shell_open("https://github.com/Yni-Viar/scp-continued-procedures")

@@ -226,25 +226,43 @@ texture = ExtResource("10_sjh0l")
 [node name="CreditsContainer" parent="." unique_id=2077770643 instance=ExtResource("9_qki4b")]
 visible = false
 layout_mode = 1
-
-[node name="Credits" type="Button" parent="." unique_id=1497812691]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -136.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 48.0
-grow_horizontal = 0
-theme = ExtResource("2_syfuq")
-toggle_mode = true
-text = "CREDITS"
+anchors_preset = -1
+anchor_right = 0.77800006
+offset_right = -0.25604248
 
 [node name="Settings" parent="." unique_id=752566435 instance=ExtResource("11_a8aa6")]
 visible = false
 
-[node name="StoryUI" type="Control" parent="." unique_id=1773573092]
+[node name="ProjectInfo" type="VBoxContainer" parent="." unique_id=1664983544]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_bottom = 320.0
+grow_horizontal = 0
+
+[node name="Credits" type="Button" parent="ProjectInfo" unique_id=1497812691]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+toggle_mode = true
+text = "CREDITS"
+autowrap_mode = 3
+
+[node name="Contribute" type="Button" parent="ProjectInfo" unique_id=1372753325]
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+text = "CONTRIBUTE"
+autowrap_mode = 3
+
+[node name="Support" type="Button" parent="ProjectInfo" unique_id=756071551]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+text = "SUPPORT_THE_DEVELOPER"
+autowrap_mode = 3
+
+[node name="EasterEgg" type="Control" parent="." unique_id=1773573092]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -253,7 +271,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="StoryUI" unique_id=275025668]
+[node name="TextureRect" type="TextureRect" parent="EasterEgg" unique_id=275025668]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -263,7 +281,7 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_dd46u")
 expand_mode = 1
 
-[node name="EasterEgg" type="Control" parent="StoryUI" unique_id=1340542050]
+[node name="EasterEgg" type="Control" parent="EasterEgg" unique_id=1340542050]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -271,13 +289,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="StoryUI/EasterEgg" unique_id=1126803951]
+[node name="Panel" type="Panel" parent="EasterEgg/EasterEgg" unique_id=1126803951]
 layout_mode = 0
 offset_top = 320.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="RichTextLabel" parent="StoryUI/EasterEgg/Panel" unique_id=1382961702]
+[node name="Label" type="RichTextLabel" parent="EasterEgg/EasterEgg/Panel" unique_id=1382961702]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -296,7 +314,7 @@ Some hikkikomori decided to get out from home.
 But can they actually do it?
 Interesting question..."
 
-[node name="Back" type="TextureButton" parent="StoryUI" unique_id=560038280]
+[node name="Back" type="TextureButton" parent="EasterEgg" unique_id=560038280]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -323,5 +341,6 @@ text = "LITE_VERSION_WARNING"
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="item_clicked" from="StoryList" to="." method="_on_story_list_item_clicked"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="StoryUI/Back" to="." method="_on_story_back_pressed"]
+[connection signal="pressed" from="ProjectInfo/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="ProjectInfo/Contribute" to="." method="_on_contribute_pressed"]
+[connection signal="pressed" from="EasterEgg/Back" to="." method="_on_story_back_pressed"]

@@ -27,6 +27,7 @@ This list contains all features, added in the game, or will be added in upcoming
   - [x] Add modding manager node (child of Game), which auto-loads mods.
   - [x] Add modding support to:
     - [x] SkinnablePuppetScripts (limited to static meshes)
+- [x] Added plugin installer
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bnsyjuugv2ut5"]
 
-[ext_resource type="Script" uid="uid://b2tk168o7ghg2" path="res://Scripts/Interactables/InteractableStatic.gd" id="1_o452s"]
+[ext_resource type="Script" uid="uid://c61sqjvo6a8cg" path="res://Scripts/Scps/Scp079.gd" id="1_o452s"]
 [ext_resource type="Texture2D" uid="uid://crqequk63ms1y" path="res://Assets/ExternalModels/SCP/Scp079/079_computer_1_nocopyright.png" id="1_su4a7"]
 [ext_resource type="Texture2D" uid="uid://bw8edhpde3wma" path="res://Assets/ExternalModels/SCP/Scp079/079_computer_2.jpg" id="2_o452s"]
 [ext_resource type="Texture2D" uid="uid://cgj2yo3cqoq5v" path="res://Assets/ExternalModels/SCP/Scp079/079_peripherals.jpg" id="3_i12ha"]
@@ -259,3 +259,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=457884066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014953613, 0.31270197, 0.014831543)
 shape = SubResource("BoxShape3D_ntbkr")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=506419444]
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]

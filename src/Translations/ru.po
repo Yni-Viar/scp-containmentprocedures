@@ -56,7 +56,7 @@ msgid "CASUAL_MODE"
 msgstr "Свободная игра"
 
 msgid "STORY_MODE"
-msgstr "???"
+msgstr "История"
 
 msgid "HELP_BUTTON"
 msgstr "Подсказка"
@@ -64,10 +64,8 @@ msgstr "Подсказка"
 msgid "GAME_SETTINGS_INFO"
 msgstr "Эти настройки работают только в \"свободной игре\"."
 
-msgid "STORY_MAIN"
-msgstr ""
-"Основная история\n"
-"Автор: Yni Viar"
+msgid "MainStory"
+msgstr "Основная история"
 
 msgid "SETTINGS"
 msgstr "Настройки"
@@ -219,9 +217,7 @@ msgid "TASK_812_RESEARCH"
 msgstr "Проверьте, правильно ли закрыт SCP-812."
 
 msgid "TASK_266_TEST"
-msgstr ""
-"Прикажите Классу-Д измерить температуру\n"
-"SCP-266."
+msgstr "-"
 
 msgid "TASK_CI_INVASION"
 msgstr ""
@@ -505,7 +501,7 @@ msgstr ""
 "Обрадуйте мишку из SCP-5270 с\n"
 "помощью SCP-2306"
 
-msgid "CASUAL_MODE_PROGRESS"
+msgid "PROGRESS_SCP_STUDY"
 msgstr "Оставшиеся неизученные SCP:"
 
 msgid "GAME_OVER_ASLEEP"
@@ -516,7 +512,7 @@ msgstr ""
 "Прикажите персоналу Класса-Д проверить\n"
 "присутствие SCP-080"
 
-msgid "CASUAL_MODE_PROGRESS_2"
+msgid "PROGRESS_SCP_STUDY_2"
 msgstr "Вы изучили здесь всех SCP!"
 
 msgid "GAME_OVER_SCP_983"
@@ -618,6 +614,50 @@ msgstr ""
 "зерно карты в Сюжетном режиме,\n"
 "когда необходимые комнаты не могут быть заспавнены.\n"
 "В этом случае, пробуйте другое зерно карты."
+
+msgid "PLUGINS"
+msgstr "Дополнения"
+
+msgid "PLUGIN_NAME"
+msgstr "Название"
+
+msgid "PLUGIN_AUTHOR"
+msgstr "Автор"
+
+msgid "PLUGIN_TYPE"
+msgstr "Тип дополнения"
+
+msgid "PLUGIN_INSTALL"
+msgstr "Установить дополнение"
+
+msgid "PLUGIN_DESCR"
+msgstr ""
+"Дополнения дают возможность добавить контент к основной игре,\n"
+"написанное на скриптовом языке GOMPL.\n"
+"Текущие ограничения:\n"
+"- Поддерживаются только дополнения для персонажей/NPC.\n"
+"- API пока что ограничен.\n"
+"- Список отображает только кастомные дополнения. \n"
+"Дополнения, которые модифицируют встроенные NPC, такие как SCP-173,\n"
+"здесь не отображены.\n"
+"- Вы не можете удалять дополнения прямо из игры.\n"
+"Больше информации:\n"
+"https://github.com/Yni-Viar/scp-continued-procedures/tree/main/plugins/"
+"README.md"
+
+msgid "puppet"
+msgstr "Персонаж/NPC"
+
+msgid "CONTRIBUTE"
+msgstr "Участвовать в разработке или отправить баги"
+
+msgid "SUPPORT_THE_DEVELOPER"
+msgstr "Поддержите разработчика"
+
+#~ msgid "STORY_MAIN"
+#~ msgstr ""
+#~ "Основная история\n"
+#~ "Автор: Yni Viar"
 
 #~ msgid "ZEN_MODE"
 #~ msgstr "Безопасный режим"

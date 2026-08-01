@@ -1,6 +1,6 @@
 extends SkinnablePuppetScript
 ## Plugin-based puppet script
-## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
+## Made by Yni, licensed under MIT license.
 class_name CustomPuppetScript
 
 ## Trigger type
@@ -147,3 +147,21 @@ func get_movement_freeze() -> void:
 
 func set_movement_freeze(value: bool) -> void:
 	get_parent().get_parent().movement_freeze = value
+
+func player_health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "") -> void:
+	get_tree().root.get_node("Game").protagonist.health_manage(health_to_add, health_type, deplete_reason)
+
+func health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "") -> void:
+	get_parent().get_parent().health_manage(health_to_add, health_type, deplete_reason)
+
+func add_item(item_id: int) -> void:
+	get_parent().get_parent().get_node("UI/Inventory/Inventory").add_item(item_id)
+
+func remove_item(item_id: int, drop: bool = false) -> void:
+	get_parent().get_parent().get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)
+
+func player_add_item(item_id: int) -> void:
+	get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
+
+func player_remove_item(item_id: int, drop: bool = false) -> void:
+	get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)

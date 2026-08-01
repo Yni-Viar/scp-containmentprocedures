@@ -4,11 +4,13 @@ var pck_path_impl : Dictionary[int, Callable] = {
 	0 : _pck_path_v0,
 	2 : _pck_path_v2,
 	3 : _pck_path_v3,
+	4 : _pck_path_v3
 }
 
 var pck_get_file_impl : Dictionary[int, Callable] = {
 	2 : _pck_get_file_v2,
 	3 : _pck_get_file_v3,
+	4 : _pck_get_file_v3
 }
 
 var file : FileAccess

@@ -1,12 +1,12 @@
 # How to create plugin for SCP: Continued Procedures?
 ⚠️ Currently, only puppets are supported!
-## Mod structure
-Mods are stored in %APPDATA%\SCPContPr\mods\puppets\custom\ (on Windows) or ~/.local/share/SCPContPr/mods/puppets/custom/ (on ^nix/Linux)
+## Plugin structure
+Plugins are stored in %APPDATA%\SCPContPr\mods\puppets\custom\ (on Windows) or ~/.local/share/SCPContPr/mods/puppets/custom/ (on ^nix/Linux)
 
-Structure of a mod:
+Structure of a plugin:
 ```
 ~/mods/puppets/custom/:
-|- 📁<mod_name>
+|- 📁<plugin_name>
 |  |- 📁scripts
 |  |  |- <your scripts with .gompl extension>
 |  |- 📄plugin.json
@@ -153,3 +153,15 @@ All files must have extension `.gompl`
 `get_movement_freeze()` - Gets movement freeze of self (`builtin_movement_freeze`)
 
 `set_movement_freeze(value: bool)` - Sets movement freeze on self
+
+`player_health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "")` - Adds or depletes health for player
+
+`health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "")` - Adds or depletes health for self
+
+`add_item(item_id: int)` - Adds item to self
+
+`player_add_item(item_id: int)` - Adds item to player
+
+`remove_item(item_id: int, drop: bool = false)` - Remove item from self
+
+`player_remove_item(item_id: int, drop: bool = false)` - Remove item from player

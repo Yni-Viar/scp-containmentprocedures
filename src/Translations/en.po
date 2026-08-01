@@ -55,7 +55,7 @@ msgid "CASUAL_MODE"
 msgstr "Casual mode"
 
 msgid "STORY_MODE"
-msgstr "Play"
+msgstr "Story"
 
 msgid "HELP_BUTTON"
 msgstr "Hint"
@@ -63,10 +63,8 @@ msgstr "Hint"
 msgid "GAME_SETTINGS_INFO"
 msgstr "These settings only work in \"casual mode\""
 
-msgid "STORY_MAIN"
-msgstr ""
-"Main Story\n"
-"Author: Yni Viar"
+msgid "MainStory"
+msgstr "Main Story"
 
 msgid "SETTINGS"
 msgstr "Settings"
@@ -466,7 +464,7 @@ msgstr ""
 "Make the bear inside SCP-5270 happy,\n"
 "using SCP-2306"
 
-msgid "CASUAL_MODE_PROGRESS"
+msgid "PROGRESS_SCP_STUDY"
 msgstr "Remaining SCPs to study:"
 
 msgid "GAME_OVER_ASLEEP"
@@ -475,7 +473,7 @@ msgstr "Instead of doing your job, you felt asleep."
 msgid "TASK_080_CHECK"
 msgstr "Order Class-D personnel to check SCP-080's existence"
 
-msgid "CASUAL_MODE_PROGRESS_2"
+msgid "PROGRESS_SCP_STUDY_2"
 msgstr "You studied all SCPs here!"
 
 msgid "GAME_OVER_SCP_983"
@@ -576,6 +574,49 @@ msgstr ""
 "in Story mode, when required rooms\n"
 "cannot spawn.\n"
 "For this case, you should try another seed."
+
+msgid "PLUGINS"
+msgstr "Plugins"
+
+msgid "PLUGIN_NAME"
+msgstr "Name"
+
+msgid "PLUGIN_AUTHOR"
+msgstr "Author"
+
+msgid "PLUGIN_TYPE"
+msgstr "Type"
+
+msgid "PLUGIN_INSTALL"
+msgstr "Install plugin"
+
+msgid "PLUGIN_DESCR"
+msgstr ""
+"Plugins are extensions to the base game, made in scripting language "
+"GOMPL.\n"
+"Current limitations:\n"
+"- Only character/NPC plugins are supported.\n"
+"- API is very limited.\n"
+"- This list shows only external plugins.\n"
+"Plugins, that modify internal NPCs, such as SCP-173, do not show here.\n"
+"- You cannot delete plugin ingame.\n"
+"More information on\n"
+"https://github.com/Yni-Viar/scp-continued-procedures/tree/main/plugins/"
+"README.md"
+
+msgid "puppet"
+msgstr "Character/NPC"
+
+msgid "CONTRIBUTE"
+msgstr "Contribute to the development or report bugs"
+
+msgid "SUPPORT_THE_DEVELOPER"
+msgstr "Support the developer"
+
+#~ msgid "STORY_MAIN"
+#~ msgstr ""
+#~ "Main Story\n"
+#~ "Author: Yni Viar"
 
 #~ msgid "ZEN_MODE"
 #~ msgstr "Safe mode"
