@@ -17,6 +17,49 @@ Structure of a plugin:
 ## GOMPL
 SCP: Continued Procedures uses [GOMPL](https://github.com/ratkingsminion/gompl) as scripting language.
 
+GOMPL syntax
+```
+a = 0 //variable
+
+//if-elif-else
+
+if a == 0 then
+    print("null")
+elif a == 5 then
+    print("it can't be")
+else
+    print("can this be")
+end
+
+//while
+
+x = 0
+while x < 10 do
+	x = x + 1
+	if x == 3 then
+		print("no three for thee")
+		skip
+	elif x == 6 then
+		stop with x // the "with" part is optional
+	end
+	print(x)
+end
+
+//THERE IS NO FOR LOOP!
+
+func() //function call
+fun(a) //function call with parameters
+
+//function can return builtin values, via defining <builtin_*> variables!
+
+//local function
+function funk()
+    b = 2
+    a = b
+end
+
+```
+
 
 
 ## plugin.json structure

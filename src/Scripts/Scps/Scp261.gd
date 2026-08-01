@@ -37,7 +37,7 @@ func _ready() -> void:
 		else:
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.READ)
 			var meals_text: String = file.get_as_text()
-			if meals_text.contains("{") && meals_text.contains("}"):
+			if meals_text.begins_with("{"):
 				var result_meals: Dictionary = JSON.parse_string(meals_text)
 				if !result_meals.has("version"):
 					# New versioning system, if loading SCP-261 data from 9.x.x (SCP-261 1.x)

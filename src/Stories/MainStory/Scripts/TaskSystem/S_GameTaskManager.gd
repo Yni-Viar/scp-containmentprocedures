@@ -10,4 +10,5 @@ func do_story_task() -> void:
 	do_task("s_task_" + str(get_tree().root.get_node("Game/StoryModeNode").save_data["quest_progress"]))
 	get_tree().root.get_node("Game/StoryModeNode").save_data["quest_progress"] += 1
 	add_task("s_task_" + str(get_tree().root.get_node("Game/StoryModeNode").save_data["quest_progress"]))
+	get_tree().root.get_node("Game/StoryModeNode").save_game()
 	story_next_task.emit()

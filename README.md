@@ -28,13 +28,12 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 ### Included content
 
-#### Stories
+#### Components
 
-> All Stories are not included in Lite/Web versions
-
-| Component | Supported versions |
-|-----------|--------------------|
-|Main Story|✅, >10.0.0|
+| Component | Full | Lite/Web version |
+|-----------|------|------------------|
+|Stories|✅, >10.0.0|❌|
+|Plugins|✅, >10.0.0|❓, >10.0.0|
 
 #### Included SCPs
 | SCP# | Full | Lite/Web version | Functionality |

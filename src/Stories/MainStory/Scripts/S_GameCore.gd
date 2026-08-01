@@ -24,7 +24,10 @@ var mtf_cooldown: float = 35.0
 ## Protagonist tracker
 var protagonist: MovableNpc
 ## Map seed public name
-var map_seed_name: String = ""
+var map_seed_name: String = "":
+	set(val):
+		map_seed_name = val
+		map_seed = hash(val)
 ## Check if the game was finished
 var game_ended: bool = false
 
@@ -34,6 +37,9 @@ var showable_res: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	RenderingServer.viewport_set_measure_render_time(get_tree().root.get_viewport_rid(), true)
+	
+	if $StoryModeNode.load_game():
+		map_seed_name = $StoryModeNode.save_data["map_seed"]
 	
 	gamedata = load("res://Stories/MainStory/Scripts/GameData/DefaultGame.tres")
 	var rooms: Array[MapGenZone] = [load("res://Stories/MainStory/MapGen/Zones/MaintenanceZone.tres"), 
@@ -102,8 +108,6 @@ func _on_facility_generator_generated() -> void:
 	#sz.position.y = 256.0
 	#add_child(sz, true)
 	
-	$StoryModeNode.load_game()
-	
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
 	spawn_player()
@@ -148,6 +152,9 @@ Seed name: """ + map_seed_name, true)
 		$UI/DialoguePanel/DialogueBox.start("dlg_start")
 		$UI/DialoguePanel.show()
 	else:
+		$SZ.set_time($StoryModeNode.save_data["hour"], 0) 
+		$FoundationTask.add_task("s_task_" + str($StoryModeNode.save_data["quest_progress"]))
+		$UI._on_foundation_task_task_done()
 		protagonist.global_position = $StoryModeNode.save_data["location"]
 	$NPCs.add_child(protagonist)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()

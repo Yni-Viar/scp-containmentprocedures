@@ -4,8 +4,9 @@ This list contains all features, added in the game, or will be added in upcoming
 
 ## v10.0.0 (Megarework update)
 ### Gameplay rework / Story mode
-- [x] Add support for timed tasks
-- [x] Add whole story
+- [x] Added support for timed tasks
+- [x] Added whole story
+  - [x] Added save system
 - [x] Remove hard mode
 - [x] Remove CI and MTF, re-introduce MTF Agent.
 - [x] Remove wave subsystem (until proper re-implementation)
