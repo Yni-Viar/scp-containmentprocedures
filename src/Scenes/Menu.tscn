@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="5_idohh"]
 [ext_resource type="Texture2D" uid="uid://cj5anigj1kj5y" path="res://UI/MainMenu/Modes/storymode.png" id="7_a8aa6"]
 [ext_resource type="Texture2D" uid="uid://26abh1a6pa33" path="res://UI/MainMenu/Modes/settings.png" id="7_x0ao6"]
+[ext_resource type="Texture2D" uid="uid://b5s001lwjm0xb" path="res://UI/MainMenu/Modes/exit.png" id="8_byewe"]
 [ext_resource type="PackedScene" uid="uid://o4i7m11yonpo" path="res://Scenes/CreditsContainer.tscn" id="9_qki4b"]
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
@@ -165,6 +166,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
 theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
 text = "SETTINGS"
 icon = ExtResource("7_x0ao6")
+
+[node name="Exit" type="Button" parent="HBoxContainer" unique_id=782580836]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd46u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n3nbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm44m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_du1yi")
+text = "EXIT"
+icon = ExtResource("8_byewe")
 
 [node name="StoryList" type="ItemList" parent="." unique_id=1542535955]
 visible = false
@@ -340,6 +350,7 @@ text = "LITE_VERSION_WARNING"
 [connection signal="pressed" from="HBoxContainer/StoryMode" to="." method="_on_story_mode_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="item_clicked" from="StoryList" to="." method="_on_story_list_item_clicked"]
 [connection signal="pressed" from="ProjectInfo/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ProjectInfo/Contribute" to="." method="_on_contribute_pressed"]

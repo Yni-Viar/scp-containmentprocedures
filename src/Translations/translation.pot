@@ -488,3 +488,6 @@ msgstr ""
 
 msgid "SUPPORT_THE_DEVELOPER"
 msgstr ""
+
+msgid "EXIT"
+msgstr ""

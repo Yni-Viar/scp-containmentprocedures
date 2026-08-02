@@ -18,7 +18,11 @@ extends Node
 		50.0,
 		50.0
 	],
-	"items": []
+	"items": [],
+	"money": {
+		"DOLLARS": 1000,
+		"YEN": 3000
+	}
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -49,6 +53,7 @@ func save_game():
 	save_data["items"] = []
 	for item in get_parent().protagonist.get_node("UI/Inventory/Inventory").get_all_items():
 		save_data["items"].append(item.id)
+	save_data["money"] = get_parent().protagonist.money
 	save_data["map_seed"] = get_parent().map_seed_name
 	save_data["player_health"] = get_parent().protagonist.current_health
 	save_data["location"] = get_parent().protagonist.global_position
@@ -74,7 +79,8 @@ func validate_save(save: Dictionary) -> bool:
 	   save.has("scp_347_sh") && \
 	   save.has("scp_914_cutscene") && \
 	   save.has("player_health") && \
-	   save.has("items"):
+	   save.has("items") && \
+	   save.has("money"):
 		if save["map_seed"] is String && \
 		   save["location"] is Vector3 && \
 		   save["quest_progress"] is int && \
@@ -85,6 +91,7 @@ func validate_save(save: Dictionary) -> bool:
 		   save["scp_347_sh"] is bool && \
 		   save["scp_914_cutscene"] is int && \
 		   save["player_health"] is Array && \
-		   save["items"] is Array:
+		   save["items"] is Array && \
+		   save["money"] is Dictionary:
 			return true
 	return false

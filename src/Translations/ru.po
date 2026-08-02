@@ -654,6 +654,9 @@ msgstr "Участвовать в разработке или отправить
 msgid "SUPPORT_THE_DEVELOPER"
 msgstr "Поддержите разработчика"
 
+msgid "EXIT"
+msgstr "Выход"
+
 #~ msgid "STORY_MAIN"
 #~ msgstr ""
 #~ "Основная история\n"

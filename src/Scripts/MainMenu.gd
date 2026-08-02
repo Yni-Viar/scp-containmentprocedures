@@ -46,6 +46,8 @@ func _enter_tree() -> void:
 		if OS.has_feature("Lite"):
 			$HBoxContainer/StoryMode.hide()
 	
+	if OS.get_name() == "Web":
+		$HBoxContainer/Exit.queue_free()
 	
 	# Display game ratings in main menu in some countries, this will replace the game logo.
 	if Settings.legal_req && !Settings.IS_STORE_BUILD:
@@ -59,8 +61,7 @@ func _enter_tree() -> void:
 	if completed_amount == total_amount:
 		$AchievementContainer/Achievements/Info2.text = "PROGRESS_SCP_STUDY_2"
 		$AchievementContainer/Achievements/ScrollContainer.hide()
-	
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -147,3 +148,7 @@ func _on_story_list_item_clicked(index: int, at_position: Vector2, mouse_button_
 
 func _on_contribute_pressed() -> void:
 	OS.shell_open("https://github.com/Yni-Viar/scp-continued-procedures")
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()

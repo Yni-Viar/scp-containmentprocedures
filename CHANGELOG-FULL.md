@@ -45,6 +45,7 @@ This list contains all features, added in the game, or will be added in upcoming
 - [x] Rework SCP-261 to support translations.
 
 ### Other changes
+- [x] Updated toolbar icons.
 - [x] Fix crash with empty SCP-261.json cache file
 - [x] UI theme update
 - [x] Added easter egg.

@@ -208,3 +208,5 @@ All files must have extension `.gompl`
 `remove_item(item_id: int, drop: bool = false)` - Remove item from self
 
 `player_remove_item(item_id: int, drop: bool = false)` - Remove item from player
+
+`interaction_sound(sound_path: String)` - Plays custom sound, that is placed in `mod_path`/sounds/

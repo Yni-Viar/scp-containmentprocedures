@@ -165,3 +165,11 @@ func player_add_item(item_id: int) -> void:
 
 func player_remove_item(item_id: int, drop: bool = false) -> void:
 	get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)
+
+func interaction_sound(sound_path: String) -> void:
+	var full_path: String = "user://mods/puppets/custom/".path_join(gltf_path_to_find).path_join("sounds").path_join(sound_path)
+	if FileAccess.file_exists(full_path):
+		var resource: Resource = load(full_path)
+		if resource is AudioStream:
+			get_parent().get_parent().get_node("InteractSound").stream = load(full_path)
+			get_parent().get_parent().get_node("InteractSound").play()

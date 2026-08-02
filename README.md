@@ -14,10 +14,10 @@ If Chaos Insurgency will raid your Site, call MTF using the button (in other tim
 
 - 🐧Linux distribution from 2024 and newer
 - 🪟Windows 10 (all updates) and 11 (all updates)
-   > Windows 8.1 is not supported since v10.0 (natively)
-   > Windows 7 is not supported since v5.0 (natively)
+   > Windows 8.1 is not natively supported since v10.0
+   > Windows 7 and 8 is not natively supported since v5.0
    > You can still access Web version for Windows 7 - 8.1 by using Supermium.
-- 🤖Android 7.0 and newer (varies by device)
+- 🤖Android 7.0 and newer (mid-range device)
    > Android 5.0-6.0 is not supported since v5.0
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)

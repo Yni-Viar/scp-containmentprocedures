@@ -228,10 +228,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.446401, -0.64267474, 5.6354
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01253587, -0.78577, 8.419325)
 
 [node name="Entityspawn" type="Marker3D" parent="." unique_id=1849442723 groups=["Scp131BSpawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.641001, -0.78577, 6.2400055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8312435, -0.78577, 7.2033916)
 
 [node name="Entityspawn2" type="Marker3D" parent="." unique_id=1396568135 groups=["Scp131ASpawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5162997, -0.78577, 6.2809796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.859399, -0.78577024, 7.1704307)
 
 [node name="Armchair_15" parent="." unique_id=1716910857 instance=ExtResource("24_nx1xh")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8961468, -1.260206, -1.220326)

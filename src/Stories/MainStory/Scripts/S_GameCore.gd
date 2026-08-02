@@ -124,7 +124,7 @@ func spawn_player():
 	protagonist = load("res://PlayerScript/NPCBase.tscn").instantiate()
 	protagonist.puppet_class = gamedata.player_class[0]
 	protagonist.is_player = true
-	
+	$NPCs.add_child(protagonist)
 	# Load location from save or start game
 	if $StoryModeNode.save_data["quest_progress"] < 0 || \
 	   $StoryModeNode.save_data["scp"] < 0 || \
@@ -152,21 +152,21 @@ Seed name: """ + map_seed_name, true)
 		$SZ.set_time(8, 0)
 		$UI/DialoguePanel/DialogueBox.start("dlg_start")
 		$UI/DialoguePanel.show()
-	else:
+	else: #load save
 		$SZ.set_time($StoryModeNode.save_data["hour"], 0) 
 		$FoundationTask.add_task("s_task_" + str($StoryModeNode.save_data["quest_progress"]))
 		$UI._on_foundation_task_task_done()
 		protagonist.global_position = $StoryModeNode.save_data["location"]
-	$NPCs.add_child(protagonist)
-	for i in range($StoryModeNode.save_data["player_health"].size()):
-		if i != 0 && $StoryModeNode.save_data["player_health"][i] < protagonist.health[i] / 4:
-			protagonist.current_health[i] = protagonist.health[i] / 4
-		else:
-			protagonist.current_health[i] = $StoryModeNode.save_data["player_health"][i]
-	if $StoryModeNode.save_data["quest_progress"] >= 6:
-		protagonist.keycards.append(-2584)
-	for item_id in $StoryModeNode.save_data["items"]:
-		protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
+		protagonist.money = $StoryModeNode.save_data["money"]
+		for i in range($StoryModeNode.save_data["player_health"].size()):
+			if i != 0 && $StoryModeNode.save_data["player_health"][i] < protagonist.health[i] / 4:
+				protagonist.current_health[i] = protagonist.health[i] / 4
+			else:
+				protagonist.current_health[i] = $StoryModeNode.save_data["player_health"][i]
+		if $StoryModeNode.save_data["quest_progress"] >= 6:
+			protagonist.keycards.append(-2584)
+		for item_id in $StoryModeNode.save_data["items"]:
+			protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
 
 ## Start-round spawn
