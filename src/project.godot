@@ -88,6 +88,7 @@ audio/channel_defaults={
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/size/mode.release=2
 
 [editor]
 

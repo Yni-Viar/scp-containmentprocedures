@@ -235,7 +235,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12274337, 0.38583493, -9.404863)
 
 [node name="laptop" parent="." unique_id=358986486 instance=ExtResource("13_lt88h")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.130383, 0.2330761, 2.5567222)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.419255, 0.2330761, 2.5567222)
 
 [node name="Chair2" parent="." unique_id=1402121717 instance=ExtResource("14_8aoyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0104175, -1.2193711, 0.9911825)

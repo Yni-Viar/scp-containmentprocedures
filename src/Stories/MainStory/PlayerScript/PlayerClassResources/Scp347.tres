@@ -10,7 +10,7 @@ puppet_class_name = "SCP-347"
 speed = 8.0
 prefab = ExtResource("1_omyle")
 spawn_point_group = "Scp347Spawn"
-initial_amount = 5
+initial_amount = 1
 interacting_action = 2
 footstep_sounds = {
 "run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),

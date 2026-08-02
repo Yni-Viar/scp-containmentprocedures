@@ -25,10 +25,10 @@ func _on_body_entered(body: Node3D) -> void:
 						apply_environment(load("res://Assets/Environment/Outside_MQ_Default.tres"))
 				_:
 					apply_environment(load("res://Assets/Environment/Outside_HQ_Default.tres"))
-		entered_surface = true
+			entered_surface = true
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			apply_environment(load("res://Assets/Environment/Default.tres"), true)
-		entered_surface = false
+			entered_surface = false

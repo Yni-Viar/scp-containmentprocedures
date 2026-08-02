@@ -36,7 +36,6 @@ func _physics_process(delta: float) -> void:
 			$DirectionalLight3D.hide()
 	
 	get_tree().root.get_node("Game").hours = wrap($DirectionalLight3D.rotation_degrees.x / 15.0 - 6, 0, 24)
-			
 
 func set_time(hours: int, minutes: int):
 	$DirectionalLight3D.rotation.x = deg_to_rad(15.0 * (hours + 6) + minutes / 60.0 * 15.0)

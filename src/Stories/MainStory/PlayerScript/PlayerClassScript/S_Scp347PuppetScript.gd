@@ -4,6 +4,19 @@ class_name S_Scp347PuppetScript
 
 var task_9_talk_finished: bool = false
 
+func on_start_human() -> void:
+	super.on_start_human()
+	await get_tree().physics_frame
+	if get_tree().root.get_node("Game/StoryModeNode").save_data["scp_347_sh"]:
+		task_9_talk_finished = true
+		var scp_347_gate: Node = get_tree().get_first_node_in_group("Scp347ShGate")
+		if scp_347_gate is NavigationLink3D:
+			scp_347_gate.enabled = true
+		get_parent().get_parent().follow_target = get_tree().root.get_node("Game/StaticPlayer").target_puppet_path
+		var scp_914_room: Node = get_tree().get_first_node_in_group("Scp914Room")
+		if scp_914_room is S_Cont1_914:
+			get_parent().get_parent().global_position = scp_914_room.get_node("Scp347SaveSpawn").global_position
+
 func special_action():
 	match get_tree().root.get_node("Game/StoryModeNode").save_data["quest_progress"]:
 		3:
@@ -18,3 +31,4 @@ func special_action():
 					scp_347_gate.enabled = true
 				task_9_talk_finished = true
 				get_parent().get_parent().follow_target = get_tree().root.get_node("Game/StaticPlayer").target_puppet_path
+				get_tree().root.get_node("Game/StoryModeNode").save_data["scp_347_sh"] = true

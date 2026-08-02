@@ -9,7 +9,16 @@ extends Node
 	"scp": 10,
 	"current_day": 0,
 	"scp_023": false,
-	"hour": 8
+	"hour": 8,
+	"scp_347_sh": false,
+	"scp_914_cutscene": 0,
+	"player_health": [
+		100.0,
+		50.0,
+		50.0,
+		50.0
+	],
+	"items": []
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -29,10 +38,6 @@ func load_game() -> bool:
 		if save_text.begins_with("{"):
 			var save: Dictionary = JSON.to_native(JSON.parse_string(save_text))
 			if validate_save(save):
-				save["quest_progress"] = int(save["quest_progress"])
-				save["scp"] = int(save["scp"])
-				save["current_day"] = int(save["current_day"])
-				save["hour"] = int(save["hour"])
 				save_data = save
 				save_file.close()
 				return true
@@ -41,7 +46,11 @@ func load_game() -> bool:
 
 ## Saves game
 func save_game():
+	save_data["items"] = []
+	for item in get_parent().protagonist.get_node("UI/Inventory/Inventory").get_all_items():
+		save_data["items"].append(item.id)
 	save_data["map_seed"] = get_parent().map_seed_name
+	save_data["player_health"] = get_parent().protagonist.current_health
 	save_data["location"] = get_parent().protagonist.global_position
 	save_data["hour"] = get_parent().hours
 	var save_file: FileAccess = FileAccess.open("user://save.sav", FileAccess.WRITE)
@@ -61,13 +70,21 @@ func validate_save(save: Dictionary) -> bool:
 	   save.has("scp") && \
 	   save.has("current_day") && \
 	   save.has("scp_023") && \
-	   save.has("hour"):
+	   save.has("hour") && \
+	   save.has("scp_347_sh") && \
+	   save.has("scp_914_cutscene") && \
+	   save.has("player_health") && \
+	   save.has("items"):
 		if save["map_seed"] is String && \
 		   save["location"] is Vector3 && \
 		   save["quest_progress"] is int && \
 		   save["scp"] is int && \
 		   save["current_day"] is int && \
 		   save["scp_023"] is bool && \
-		   save["hour"] is int:
+		   save["hour"] is int && \
+		   save["scp_347_sh"] is bool && \
+		   save["scp_914_cutscene"] is int && \
+		   save["player_health"] is Array && \
+		   save["items"] is Array:
 			return true
 	return false

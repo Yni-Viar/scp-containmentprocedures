@@ -149,7 +149,10 @@ func assign_puppet(idx: int = -1) -> void:
 		if !available_puppets.is_empty():
 			if idx >= 0 && idx < available_puppets.size():
 				if check_availability(idx):
-					_initiate_puppet(idx)
+					if available_puppets.keys()[idx].ends_with(".glb"):
+						_initiate_puppet_gltf()
+					else:
+						_initiate_puppet(idx)
 					return
 				else:
 					get_parent().get_parent().health_manage(-16777216)
@@ -167,7 +170,7 @@ func assign_puppet(idx: int = -1) -> void:
 				
 				if check_availability(random_number):
 					if available_puppets.keys()[random_number].ends_with(".glb"):
-						_initiate_puppet_gltf(available_puppets.keys()[random_number])
+						_initiate_puppet_gltf()
 					else:
 						_initiate_puppet(random_number)
 					return
@@ -176,6 +179,7 @@ func assign_puppet(idx: int = -1) -> void:
 					continue
 	get_parent().get_parent().health_manage(-16777216)
 
+## @deprecated Please, use _initiate_puppet_gltf() to spawn gltf model!
 func assign_puppet_gltf() -> void:
 	var prefab: Node3D
 	if gltf_file_suffix != null && !gltf_file_suffix.is_empty():
@@ -211,7 +215,8 @@ func _initiate_puppet(idx: int):
 		puppet_node = prefab
 		on_spawned()
 
-func _initiate_puppet_gltf(key: String):
+## Technical function - spawns GLTF puppet
+func _initiate_puppet_gltf():
 	var prefab: Node3D
 	if gltf_file_suffix != null && !gltf_file_suffix.is_empty():
 		if !gltf_cache.has(gltf_file_prefix + "_" + gltf_file_suffix + ".glb"):

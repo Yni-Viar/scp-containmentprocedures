@@ -156,6 +156,13 @@ func get_items(item_id: int) -> Array[Item]:
 			result.append(item.item)
 	return result
 
+## Gets all items in inventory
+func get_all_items() -> Array[Item]:
+	var result: Array[Item] = []
+	for item in _items:
+		result.append(item.item)
+	return result
+
 ## the item could be dropped only inside inventory
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true

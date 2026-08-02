@@ -13,7 +13,7 @@ var map_seed: int = -1
 var hours: int = 8:
 	set(val):
 		hours = val
-		if hours == 20:
+		if hours >= 20:
 			$SZ.set_time(8, 0)
 			$StoryModeNode.save_data["current_day"] += 1
 ## Current minutes (is set by Surface Zone)
@@ -107,13 +107,13 @@ func _on_facility_generator_generated() -> void:
 	#var sz: Node3D = load("res://Assets/Rooms/sublevels/External/subl_sz.tscn").instantiate()
 	#sz.position.y = 256.0
 	#add_child(sz, true)
+	$SZ.set_time(8, 0)
 	
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
-	spawn_player()
 	spawn_puppets()
+	spawn_player()
 	
-	$SZ.set_time(8, 0)
 	
 	await get_tree().create_timer(5.0).timeout
 	$LoadingScreen.call_deferred("hide")
@@ -149,6 +149,7 @@ Seed name: """ + map_seed_name, true)
 			spawns = get_tree().get_nodes_in_group("PlayerSpawn")
 		var selected_spawn: Marker3D = spawns[rng.randi_range(0, spawns.size() - 1)]
 		protagonist.global_position = selected_spawn.global_position
+		$SZ.set_time(8, 0)
 		$UI/DialoguePanel/DialogueBox.start("dlg_start")
 		$UI/DialoguePanel.show()
 	else:
@@ -157,6 +158,15 @@ Seed name: """ + map_seed_name, true)
 		$UI._on_foundation_task_task_done()
 		protagonist.global_position = $StoryModeNode.save_data["location"]
 	$NPCs.add_child(protagonist)
+	for i in range($StoryModeNode.save_data["player_health"].size()):
+		if i != 0 && $StoryModeNode.save_data["player_health"][i] < protagonist.health[i] / 4:
+			protagonist.current_health[i] = protagonist.health[i] / 4
+		else:
+			protagonist.current_health[i] = $StoryModeNode.save_data["player_health"][i]
+	if $StoryModeNode.save_data["quest_progress"] >= 6:
+		protagonist.keycards.append(-2584)
+	for item_id in $StoryModeNode.save_data["items"]:
+		protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
 
 ## Start-round spawn

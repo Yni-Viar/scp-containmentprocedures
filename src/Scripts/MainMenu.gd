@@ -43,6 +43,8 @@ func _enter_tree() -> void:
 	
 	if Settings.setting_res.casual_mode_unlocked || OS.has_feature("Lite"):
 		$HBoxContainer/Play.show()
+		if OS.has_feature("Lite"):
+			$HBoxContainer/StoryMode.hide()
 	
 	
 	# Display game ratings in main menu in some countries, this will replace the game logo.
@@ -105,7 +107,16 @@ func _on_enable_sound_toggled(toggled_on: bool) -> void:
 
 
 func _on_story_mode_pressed() -> void:
-	$StoryList.visible = !$StoryList.visible
+	# Since there are no DLC (yet), load Main Story automatically
+	#$StoryList.visible = !$StoryList.visible
+	if $HBoxContainer/Seed.text == "yenjeai":
+		$EasterEgg.show()
+	else:
+		var rnd_seed: String = random_seed()
+		Settings.loader("res://Stories/MainStory/Scenes/Game.tscn", {
+			"map_seed": hash($HBoxContainer/Seed.text) if !$HBoxContainer/Seed.text.is_empty() else hash(rnd_seed),
+			"map_seed_name": $HBoxContainer/Seed.text if !$HBoxContainer/Seed.text.is_empty() else rnd_seed
+		})
 
 
 func _on_story_back_pressed() -> void:
