@@ -4,11 +4,12 @@
 
 ## About
 
-Do your daily job at Site-\[REDACTED\].
+Play the game about Janusz Krzystofski...
+Or do your daily job at Site-19.
 
 Click/Tap - move/pick items (if you tap on character, they will go with you).
 
-If Chaos Insurgency will raid your Site, call MTF using the button (in other times, the button won't work)
+More gestures you can see in the in-game settings.
 
 ## Requirements to play
 
