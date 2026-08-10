@@ -26,7 +26,7 @@ func _ready() -> void:
 				if availability == 0 || (availability == 1 && !OS.has_feature("Lite")) || (availability == 2 && OS.has_feature("Lite")):
 					if !items.keys()[random_number].begins_with("empty"):
 						var prefab: Node3D = load(items.keys()[random_number]).instantiate()
-						add_child(prefab)
+						add_child(prefab, true)
 					return
 				else:
 					used_spawns.append(random_number)

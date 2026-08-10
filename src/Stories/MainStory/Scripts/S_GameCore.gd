@@ -40,6 +40,7 @@ func _ready() -> void:
 	
 	if $StoryModeNode.load_game():
 		map_seed_name = $StoryModeNode.save_data["map_seed"]
+		$Items.loading_startup = true
 	
 	gamedata = load("res://Stories/MainStory/Scripts/GameData/DefaultGame.tres")
 	var rooms: Array[MapGenZone] = [load("res://Stories/MainStory/MapGen/Zones/MaintenanceZone.tres"), 
@@ -97,6 +98,7 @@ func _process(delta: float) -> void:
 	if get_tree().root.get_node("Game/FoundationTask").get_amount_of_active_tasks() > 0:
 		if $StoryModeNode.save_data["current_day"] == 5 && $StoryModeNode.save_data["quest_progress"] <= 7:
 			finish_game(false, "S_GAMEOVER_TIMES_UP")
+			$StoryModeNode.reset_save()
 			set_process(false)
 			return
 		
@@ -107,14 +109,20 @@ func _on_facility_generator_generated() -> void:
 	#var sz: Node3D = load("res://Assets/Rooms/sublevels/External/subl_sz.tscn").instantiate()
 	#sz.position.y = 256.0
 	#add_child(sz, true)
+	await get_tree().create_timer(0.375).timeout
+	$LoadingScreen/LoadProgress.value = 75.0
+	
 	$SZ.set_time(8, 0)
 	
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
 	spawn_puppets()
+	
 	spawn_player()
 	
-	
+	$Items.loading_startup = false
+	await get_tree().create_timer(0.375).timeout
+	$LoadingScreen/LoadProgress.value = 100.0
 	await get_tree().create_timer(5.0).timeout
 	$LoadingScreen.call_deferred("hide")
 	
@@ -126,19 +134,12 @@ func spawn_player():
 	protagonist.is_player = true
 	$NPCs.add_child(protagonist)
 	# Load location from save or start game
-	if $StoryModeNode.save_data["quest_progress"] < 0 || \
-	   $StoryModeNode.save_data["scp"] < 0 || \
-	   $StoryModeNode.save_data["current_day"] < 0:
+	if ($StoryModeNode.save_data["quest_progress"] < 0 || $StoryModeNode.save_data["scp"] < 0 || $StoryModeNode.save_data["current_day"] < 0) || \
+	   ($StoryModeNode.save_data["quest_progress"] >= 9 && $StoryModeNode.save_data["scp"] > 0) || \
+	   ($StoryModeNode.save_data["quest_progress"] < 9 && $StoryModeNode.save_data["scp_347_sh"]):
 		Console.print_info("""If you found this message, you either modified save of the game,
 or you encountered a bug,
 that should be reported on https://github.com/Yni-Viar/scp-continued-procedures""", true)
-		Console.print_info("save values below zero and/or current_day below 1")
-		protagonist.global_position = $PD_basement/spawnpoint.global_position
-	elif $StoryModeNode.save_data["quest_progress"] >= 9 && $StoryModeNode.save_data["scp"] > 0:
-		Console.print_info("""If you found this message, you either modified save of the game,
-or you encountered a bug,
-that should be reported on https://github.com/Yni-Viar/scp-continued-procedures""", true)
-		Console.print_info("quest_progress for SCP Foundation route is limited by 8", true)
 		protagonist.global_position = $PD_basement/spawnpoint.global_position
 	elif $StoryModeNode.save_data["location"].is_equal_approx(Vector3.ZERO) && $StoryModeNode.save_data["quest_progress"] == 0:
 		var spawns = get_tree().get_nodes_in_group("StoryStart")
@@ -167,26 +168,46 @@ Seed name: """ + map_seed_name, true)
 			protagonist.keycards.append(-2584)
 		for item_id in $StoryModeNode.save_data["items"]:
 			protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
+		
+		for removed_item_path in $StoryModeNode.save_data["removed_map_items"]:
+			get_node(removed_item_path).queue_free()
+		for added_item_path in $StoryModeNode.save_data["added_map_items"]:
+			if $StoryModeNode.save_data["added_map_items"][added_item_path] is Array:
+				if $StoryModeNode.save_data["added_map_items"][added_item_path].size() == 3:
+					if gamedata.items.size() > $StoryModeNode.save_data["added_map_items"][added_item_path][0]:
+						var pickable: Pickable = load(gamedata.items[$StoryModeNode.save_data["added_map_items"][added_item_path][0]].pickable_path).instantiate()
+						$Items.add_child(pickable)
+						if $StoryModeNode.save_data["added_map_items"][added_item_path][2] != null:
+							if $StoryModeNode.save_data["added_map_items"][added_item_path][2] != {}:
+								pickable.name = added_item_path.rsplit("/", true, 1)[1]
+								pickable.item_id = -1
+								pickable.item = gamedata.items[$StoryModeNode.save_data["added_map_items"][added_item_path][0]]
+								pickable.item.custom_properties = $StoryModeNode.save_data["added_map_items"][added_item_path][2]
+								pickable.global_position = $StoryModeNode.save_data["added_map_items"][added_item_path][1]
+								continue
+						pickable.name = added_item_path.rsplit("/", true, 1)[1]
+						pickable.item_id = $StoryModeNode.save_data["added_map_items"][added_item_path][0]
+						pickable.global_position = $StoryModeNode.save_data["added_map_items"][added_item_path][1]
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
 
-## Start-round spawn
 func spawn_puppets():
 	for puppet_res in gamedata.puppet_classes:
 		var spawn_point_group = get_tree().get_nodes_in_group(puppet_res.spawn_point_group)
-		var used_spawns: Array[int] = []
+		spawn_point_group.shuffle()
+		#var used_spawns: Array[int] = []
 		if get_tree().get_nodes_in_group(puppet_res.spawn_point_group).size() == 0:
 			continue
 		for i in range(puppet_res.initial_amount):
 			if i > spawn_point_group.size() - 1:
 				break
-			var random_number: int = rng.randi_range(0, spawn_point_group.size() - 1)
-			if used_spawns.has(random_number):
-				continue
+			#var random_number: int = rng.randi_range(0, spawn_point_group.size() - 1)
+			#if used_spawns.has(random_number):
+				#continue
 			var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
 			npc.puppet_class = puppet_res
-			npc.position = spawn_point_group[random_number].global_position
+			npc.position = spawn_point_group[i].global_position
 			$NPCs.add_child(npc)
-			used_spawns.append(random_number)
+			#used_spawns.append(i)
 
 ## Personnel office spawner
 func spawn_offices(default_office_path: String, spawn_group: String):

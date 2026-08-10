@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="2_nvxeq"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="3_vv27k"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="4_moykc"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="5_fgqcq"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="5_fgqcq"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_fgqcq"]
 [ext_resource type="LightmapGIData" uid="uid://btsy6ajlsl012" path="res://Assets/Rooms/room2/Lm/st_ckpt2.lmbake" id="6_nvxeq"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="6_vv27k"]
@@ -274,6 +274,8 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-109": "st_testroom",
 "SCP-1223": "st_testroom",
 "SCP-2028": "Scp2028",
+"SCP-249": "Scp249",
 "SCP-5270": "st_testroom",
 "SCP-686": "st_testroom"
 })
+delimiter_after = 1

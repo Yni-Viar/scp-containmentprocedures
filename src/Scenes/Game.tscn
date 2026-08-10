@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="7_fgofq"]
 [ext_resource type="Script" uid="uid://h8d12qstq0k3" path="res://Scripts/TaskSystem/GameTaskManager.gd" id="7_wxwew"]
 [ext_resource type="PackedScene" uid="uid://bcuxste3wvmc3" path="res://Assets/Rooms/sublevels/External/subl_sz.tscn" id="8_4eqlp"]
+[ext_resource type="Script" uid="uid://bde6w15svshoh" path="res://Scripts/ItemManager.gd" id="8_jn8rg"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="9_bf53h"]
 [ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="10_3so38"]
 [ext_resource type="Texture2D" uid="uid://dkgyet63cgaaa" path="res://Assets/HUD/healthbar.png" id="10_71axn"]
@@ -126,6 +127,8 @@ fill_from = Vector2(1, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyesh"]
 texture = SubResource("GradientTexture2D_qsl1r")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4ol6"]
+
 [node name="Game" type="Node3D" unique_id=1603466621]
 process_mode = 1
 script = ExtResource("1_jn8rg")
@@ -140,6 +143,7 @@ script = ExtResource("2_umnjm")
 script = ExtResource("3_4eqlp")
 
 [node name="StaticPlayer" parent="." unique_id=200405598 instance=ExtResource("3_bf53h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5991573, 261.7222, 22.246147)
 
 [node name="FacilityGenerator" type="Node3D" parent="." unique_id=168294583]
 script = ExtResource("3_2irst")
@@ -155,6 +159,7 @@ checkpoints_enabled = true
 script = ExtResource("7_wxwew")
 
 [node name="Items" type="Node3D" parent="." unique_id=1145051518]
+script = ExtResource("8_jn8rg")
 
 [node name="Particles" type="Node3D" parent="." unique_id=1529506185]
 
@@ -689,7 +694,6 @@ text = "BACK_TO_MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1041800695]
 stream = ExtResource("33_khs3t")
-autoplay = true
 bus = &"Music"
 
 [node name="SoundStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=647892800]
@@ -763,11 +767,13 @@ offset_right = 192.0
 offset_bottom = 13.447968
 grow_horizontal = 2
 grow_vertical = 2
-value = 100.0
-show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxEmpty_i4ol6")
+value = 50.0
 
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
+[connection signal="room_spawned" from="FacilityGenerator" to="." method="_on_facility_generator_room_spawned"]
 [connection signal="task_done" from="FoundationTask" to="UI" method="_on_foundation_task_task_done"]
+[connection signal="child_entered_tree" from="Items" to="Items" method="_on_child_entered_tree"]
 [connection signal="gui_input" from="UI/PlayingArea" to="UI" method="_on_playing_area_gui_input"]
 [connection signal="pressed" from="UI/HBoxContainer/InventoryButton" to="UI" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer/SwitchCameraButton" to="UI" method="_on_switch_camera_button_pressed"]

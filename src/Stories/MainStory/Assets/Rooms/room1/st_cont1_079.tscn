@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_8boro"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="2_4iqol"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="3_1aidb"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="3_1aidb"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_xbjba"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="5_8e3y1"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="6_p0qnl"]

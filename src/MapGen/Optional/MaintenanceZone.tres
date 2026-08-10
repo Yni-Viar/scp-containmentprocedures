@@ -13,23 +13,22 @@
 [ext_resource type="Resource" uid="uid://ch0bxsompxx5d" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_walkway.tres" id="9_bt36h"]
 [ext_resource type="Resource" uid="uid://c28c54bngkuhi" path="res://MapGen/Resources/MaintenanceZone/room2_large.tres" id="10_3un6p"]
 [ext_resource type="Resource" uid="uid://c0ohfy6nbwkv3" path="res://MapGen/Resources/MaintenanceZone/room2_middle.tres" id="10_qfdjr"]
-[ext_resource type="Resource" uid="uid://cmcap7nf4h15i" path="res://MapGen/Resources/MaintenanceZone/cont1_249.tres" id="10_wv3ou"]
 [ext_resource type="Resource" uid="uid://budusfvk76l2u" path="res://MapGen/Resources/MaintenanceZone/room2_wc.tres" id="12_pdafb"]
 [ext_resource type="Resource" uid="uid://0d70qmpl37gq" path="res://MapGen/Resources/MaintenanceZone/room3.tres" id="12_phv2b"]
 [ext_resource type="Resource" uid="uid://bwospyj2g7rgv" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_791_812.tres" id="12_yphfd"]
 [ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="13_icpll"]
-[ext_resource type="Resource" uid="uid://bgor15quhx77p" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_elevators.tres" id="13_mnhla"]
 [ext_resource type="Resource" uid="uid://i7dv4g0tnkdn" path="res://MapGen/Resources/MaintenanceZone/cont1_testroom.tres" id="13_wv3ou"]
 [ext_resource type="Resource" uid="uid://bpfldgimo3k8j" path="res://MapGen/Resources/MaintenanceZone/cont2_testroom.tres" id="16_6rvoo"]
 [ext_resource type="Resource" uid="uid://b8vekd1a2jiy" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_080.tres" id="16_mgn5q"]
+[ext_resource type="Resource" uid="uid://trbpc6rh6v4f" path="res://MapGen/Resources/MaintenanceZone/room2_elevators_lite.tres" id="19_f6ln2"]
 
 [resource]
 script = ExtResource("13_icpll")
 endrooms = Array[ExtResource("1_2euw7")]([ExtResource("4_3un6p")])
-endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("10_wv3ou"), ExtResource("7_7ovle"), ExtResource("16_mgn5q"), ExtResource("13_wv3ou")])
+endrooms_single = Array[ExtResource("1_2euw7")]([ExtResource("5_2euw7"), ExtResource("7_7ovle"), ExtResource("16_mgn5q"), ExtResource("13_wv3ou")])
 endrooms_single_large = Array[ExtResource("1_2euw7")]([ExtResource("12_yphfd")])
 hallways = Array[ExtResource("1_2euw7")]([ExtResource("9_bt36h"), ExtResource("10_qfdjr"), ExtResource("10_3un6p")])
-hallways_single = Array[ExtResource("1_2euw7")]([ExtResource("12_pdafb"), ExtResource("16_6rvoo"), ExtResource("13_mnhla")])
+hallways_single = Array[ExtResource("1_2euw7")]([ExtResource("12_pdafb"), ExtResource("16_6rvoo"), ExtResource("19_f6ln2")])
 checkpoint_hallway = Array[ExtResource("1_2euw7")]([ExtResource("2_8nfe0")])
 corners = Array[ExtResource("1_2euw7")]([ExtResource("2_bt36h")])
 corners_single = Array[ExtResource("1_2euw7")]([ExtResource("4_h50gj")])

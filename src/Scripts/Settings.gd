@@ -8,7 +8,11 @@ enum Season {NONE, WINTER, SPRING, SUMMER, AUTUMN, CHRISTMAS, HALLOWEEN}
 
 signal settings_saved
 
+## Is this build is for official store?
 const IS_STORE_BUILD: bool = false
+## Enables or disables plugin system in Web
+## Enabling it may raise security concerns.
+const ALLOW_PLUGINS_IN_WEB: bool = false
 ## Game's data compatibility for modding.
 const DATA_COMPATIBILITY: String = "10.0.0"
 ## Game's data compatibility for modding.
@@ -63,7 +67,8 @@ func _ready() -> void:
 	change_renderer()
 	if OS.get_name() == "Web":
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
-	elif !DirAccess.dir_exists_absolute("user://mods/puppets/"):
+	if !DirAccess.dir_exists_absolute("user://mods/puppets/") && \
+		 (OS.get_name() != "Web" || Settings.ALLOW_PLUGINS_IN_WEB):
 		DirAccess.make_dir_recursive_absolute("user://mods/puppets/")
 	touchscreen = DisplayServer.is_touchscreen_available()
 	

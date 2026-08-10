@@ -5,6 +5,7 @@ class_name FacilityGenerator3D
 
 signal generated
 signal parameter_changed
+signal room_spawned
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -101,12 +102,15 @@ enum RoomTypes {EMPTY, ROOM1, ROOM2, ROOM2C, ROOM3, ROOM4}
 	set(val):
 		double_room_support = val
 		parameter_changed.emit()
+## Forces readable names on spawn
+## Affects performance if true!
+@export var force_readable_names: bool = false
 @export_group("External loading settings")
 ## Setting to optimize GLTF loading. Is not necessary for map generation
 @export var use_gltf_optimizator = false
 ## Range, after which room will be hidden.
 @export_range(8.0, 256.0) var gltf_visibility_radius: float = 64.0
-## Enable havy room unloading performance
+## Enable heavy room unloading performance
 ## Enabling affect performance on each re-generate
 #@export var enable_heavy_room_unloading_pause: bool = false
 
@@ -329,7 +333,7 @@ func add_room_to_the_map(x: int, y: int) -> void:
 	
 	room.position = Vector3(x * grid_size, 0, y * grid_size)
 	room.rotation_degrees = Vector3(room.rotation_degrees.x, mapgen[x][y].angle, room.rotation_degrees.z)
-	add_child(room)
+	add_child(room, force_readable_names)
 	mapgen[x][y].room_name = mapgen[x][y].resource.name
 
 func room_select(type: RoomTypes, zone_index: int, n: int, o: int) -> void:

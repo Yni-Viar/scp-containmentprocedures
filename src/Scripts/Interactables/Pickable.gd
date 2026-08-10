@@ -9,6 +9,6 @@ class_name Pickable
 ## Leave this FALSE in inspector - needed only for anti-dupe
 @export var picked: bool = false
 ## Leave this empty in inspector - needed for SCP-5270 to function
-@export var item_properties: Array[String] = []
+#@export var item_properties: Dictionary[String, Variant] = {}
 ## Item, attached to prefab (automatically does when adding item to inventory)
 @export var item: Item

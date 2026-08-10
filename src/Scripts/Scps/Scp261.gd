@@ -28,7 +28,7 @@ func _ready() -> void:
 		var internal_file: FileAccess = FileAccess.open("res://Scripts/Scps/Scp261Data/Scp261_en.json", FileAccess.READ)
 		meals = JSON.parse_string(internal_file.get_as_text())
 	
-	if OS.get_name() != "Web":
+	if OS.get_name() == "Web" && !Settings.ALLOW_PLUGINS_IN_WEB:
 		if !FileAccess.file_exists("user://Scp261.json"):
 			var result_json: String = JSON.stringify(meals)
 			var file: FileAccess = FileAccess.open("user://Scp261.json", FileAccess.WRITE)

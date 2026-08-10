@@ -6,6 +6,8 @@ class_name GameCore
 signal round_started
 
 @export var gamedata: GameData
+
+@export var mapgen_room_amount_web: float = 0.75
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 ## Presets for game ##
 var map_seed: int = -1
@@ -29,7 +31,7 @@ var showable_res: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	RenderingServer.viewport_set_measure_render_time(get_tree().root.get_viewport_rid(), true)
-	
+	$StaticPlayer.set_physics_process(false)
 	if OS.has_feature("Lite"):
 		gamedata = load("res://Scripts/GameData/Lite/LiteGame.tres")
 		var rooms: Array[MapGenZone] = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
@@ -38,7 +40,7 @@ func _ready() -> void:
 		  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
 		if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"):
 			rooms = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
-			  load("res://MapGen/Lite/SLFEature/StorageZoneLite.tres"), \
+			  load("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"), \
 			  load("res://MapGen/Lite/ResearchZoneLite.tres"), \
 			  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
 		$FacilityGenerator.rooms = rooms
@@ -57,6 +59,8 @@ func _ready() -> void:
 		$FacilityGenerator.rooms = rooms
 	
 	if get_node_or_null("PluginManager") != null:
+		await get_tree().create_timer(0.375).timeout
+		$LoadingScreen/LoadProgress.value = 55.0
 		gamedata = gamedata.duplicate(true)
 		$PluginManager._load_plugins()
 	
@@ -109,16 +113,29 @@ func _process(delta: float) -> void:
 
 
 func _on_facility_generator_generated() -> void:
+	await get_tree().create_timer(0.375).timeout
+	$LoadingScreen/LoadProgress.value = 75.0
+	set_process(false)
+	$UI/FPSCounter.set_process(false)
 	spawn_offices("res://Assets/Rooms/ScientistsRooms/Default.tscn", "OfficeSpawn")
 	
 	spawn_player()
-	spawn_puppets()
 	
+	spawn_puppets()
+	set_process(true)
+	$UI/FPSCounter.set_process(true)
+	await get_tree().create_timer(0.375).timeout
+	$LoadingScreen/LoadProgress.value = 87.5
+	$AudioStreamPlayer.play()
 	$FoundationTask.initialize()
 	$UI._on_foundation_task_task_done()
 	$SZ.set_time(8, 0)
+	$StaticPlayer.set_physics_process(true)
 	
+	await get_tree().create_timer(0.375).timeout
+	$LoadingScreen/LoadProgress.value = 100.0
 	await get_tree().create_timer(5.0).timeout
+	
 	$LoadingScreen.call_deferred("hide")
 	
 ## Spawns player-protagonist
@@ -133,26 +150,27 @@ func spawn_player():
 	protagonist.global_position = selected_spawn.global_position
 	$NPCs.add_child(protagonist)
 	$StaticPlayer.target_puppet_path = protagonist.get_path()
-	protagonist.keycards.append_array([-2584])
+	#protagonist.keycards.append_array([-2584])
 
 ## Start-round spawn
 func spawn_puppets():
 	for puppet_res in gamedata.puppet_classes:
-		var spawn_point_group = get_tree().get_nodes_in_group(puppet_res.spawn_point_group)
-		var used_spawns: Array[int] = []
 		if get_tree().get_nodes_in_group(puppet_res.spawn_point_group).size() == 0:
 			continue
+		var spawn_point_group: Array[Node] = get_tree().get_nodes_in_group(puppet_res.spawn_point_group)
+		spawn_point_group.shuffle()
+		#var used_spawns: Array[int] = []
 		for i in range(puppet_res.initial_amount):
 			if i > spawn_point_group.size() - 1:
 				break
-			var random_number: int = rng.randi_range(0, spawn_point_group.size() - 1)
-			if used_spawns.has(random_number):
-				continue
+			#var random_number: int = rng.randi_range(0, spawn_point_group.size() - 1)
+			#if used_spawns.has(random_number):
+				#continue
 			var npc: MovableNpc = load("res://PlayerScript/NPCBase.tscn").instantiate()
 			npc.puppet_class = puppet_res
-			npc.position = spawn_point_group[random_number].global_position
+			npc.position = spawn_point_group[i].global_position
 			$NPCs.add_child(npc)
-			used_spawns.append(random_number)
+			#used_spawns.append(i)
 
 ## Personnel office spawner
 func spawn_offices(default_office_path: String, spawn_group: String):
@@ -239,3 +257,8 @@ func call_mtf():
 	#if get_node("FoundationTask").has_task("task_ci") && mtf_cooldown <= 0.0:
 		#spawn_wave_entity(0)
 		#mtf_cooldown = 50.0
+
+
+func _on_facility_generator_room_spawned() -> void:
+	if OS.get_name() == "Web":
+		await get_tree().create_timer(0.375).timeout

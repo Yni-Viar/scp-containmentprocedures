@@ -599,7 +599,7 @@ msgstr ""
 "- API is very limited.\n"
 "- This list shows only external plugins.\n"
 "Plugins, that modify internal NPCs, such as SCP-173, do not show here.\n"
-"- You cannot delete plugin ingame.\n"
+"- You cannot delete plugin ingame on all OSes, except Android.\n"
 "More information on\n"
 "https://github.com/Yni-Viar/scp-continued-procedures/tree/main/plugins/"
 "README.md"
@@ -615,6 +615,9 @@ msgstr "Support the developer"
 
 msgid "EXIT"
 msgstr "Exit"
+
+msgid "PLUGIN_DELETE"
+msgstr "Delete selected plugin"
 
 #~ msgid "STORY_MAIN"
 #~ msgstr ""

@@ -19,6 +19,7 @@ func _on_story_trigger_body_entered(body: Node3D) -> void:
 		if body.is_player && get_tree().root.get_node("Game/StoryModeNode").save_data["quest_progress"] == 8:
 			get_tree().root.get_node("Game/UI/DialoguePanel/DialogueBox").start("dlg_there_is_181")
 			get_tree().root.get_node("Game/UI/DialoguePanel").show()
+			get_node(get_tree().root.get_node("Game/StaticPlayer").target_puppet_path + "/UI/Inventory").hide()
 			await get_tree().create_timer(2.0).timeout
 			var dr_white: Node = get_tree().get_first_node_in_group("ScientistWhite")
 			if dr_white is S_ScientistWhitePuppetScript:

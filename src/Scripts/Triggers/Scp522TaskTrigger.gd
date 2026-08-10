@@ -9,11 +9,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 
 func _on_scp_522_finished(has_body: PackedInt32Array) -> void:
 	if has_body.size() == 2:

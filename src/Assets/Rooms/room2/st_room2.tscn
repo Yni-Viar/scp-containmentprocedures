@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="4_eku37"]
 [ext_resource type="LightmapGIData" uid="uid://rl8wk67ffbg6" path="res://Assets/Rooms/room2/Lm/mt_room2_legacy.lmbake" id="5_na8li"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_0bfyi"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_g5cxs"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="6_g5cxs"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_8w5c4"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="10_yhn7d"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="11_4jojy"]

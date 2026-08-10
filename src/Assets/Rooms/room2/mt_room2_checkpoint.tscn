@@ -6,7 +6,7 @@
 [ext_resource type="LightmapGIData" uid="uid://csmlfon07d712" path="res://Assets/Rooms/room2/Lm/mt_room2_checkpoint.lmbake" id="4_k12ab"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="4_w20oo"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="6_3e3it"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="7_3uxqc"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="7_3uxqc"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="8_x72dv"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="9_3uxqc"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="11_n1mql"]
@@ -148,8 +148,6 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-018": "Scp018Spawn",
 "SCP-023": "Scp023Spawn",
 "SCP-080": "Scp080Spawn",
-"SCP-109": "Scp109Spawn",
-"SCP-249": "Scp249",
 "SCP-266": "Scp266Spawn",
 "SCP-649": "Scp649",
 "SCP-791": "cont1_791",
@@ -157,7 +155,7 @@ waypoints_and_groups = Dictionary[String, String]({
 "SCP-938": "Scp938Spawn",
 "SCP-939": "Scp939Spawn"
 })
-delimiter_after = 2
+delimiter_after = 1
 
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=1817110273 groups=["ReflectionProbe"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0497649, 2.3899384, -0.0816641)

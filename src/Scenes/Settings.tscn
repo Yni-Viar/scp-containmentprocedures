@@ -284,6 +284,10 @@ script = ExtResource("6_ppjuv")
 layout_mode = 2
 text = "PLUGIN_INSTALL"
 
+[node name="PluginDeleteButton" type="Button" parent="ScrollContainer/SettingsUI" unique_id=957857482]
+layout_mode = 2
+text = "PLUGIN_DELETE"
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="visibility_changed" from="." to="ScrollContainer/SettingsUI" method="_on_settings_visibility_changed"]
 [connection signal="toggled" from="ScrollContainer/SettingsUI/AI" to="ScrollContainer/SettingsUI" method="_on_ai_toggled"]
@@ -303,4 +307,6 @@ text = "PLUGIN_INSTALL"
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/PMButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_pm_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/MFButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_mf_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/SettingsUI/GridContainer/MBButton" to="ScrollContainer/SettingsUI/GridContainer" method="_on_mb_button_pressed"]
+[connection signal="item_selected" from="ScrollContainer/SettingsUI/InstalledPlugins" to="ScrollContainer/SettingsUI/InstalledPlugins" method="_on_item_selected"]
 [connection signal="pressed" from="ScrollContainer/SettingsUI/PluginInstallButton" to="ScrollContainer/SettingsUI/InstalledPlugins" method="_on_plugin_install_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/SettingsUI/PluginDeleteButton" to="ScrollContainer/SettingsUI/InstalledPlugins" method="_on_plugin_delete_button_pressed"]

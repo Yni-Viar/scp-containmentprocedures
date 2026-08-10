@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_3ehpl"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_vn67m"]
 [ext_resource type="PackedScene" uid="uid://cogri7pfu6a1e" path="res://Assets/ExternalModels/box.tscn" id="3_0ovdr"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="3_es8lr"]
 [ext_resource type="PackedScene" uid="uid://c4rphn1mij8kp" path="res://Assets/ExternalModels/pipe_1.tscn" id="3_xriwm"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="5_6yybo"]
 [ext_resource type="LightmapGIData" uid="uid://7fges3361hws" path="res://Assets/Rooms/room1/Lm/mt_room1.lmbake" id="5_rfehi"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="6_q0cx4"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="8_5qnc2"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_5qnc2"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="10_6yybo"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="10_q0cx4"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="11_xvau2"]
@@ -41,7 +39,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAUABgAHAAgABgAJAAcACgALAAwACgANAAsA"),
-"material": ExtResource("3_es8lr"),
+"material": ExtResource("1_vn67m"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 14,
@@ -63,7 +61,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 21,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABAAAAAUABgAHAAgABQAAAAkACQAAAAoA"),
-"material": ExtResource("9_5qnc2"),
+"material": ExtResource("1_vn67m"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 11,

@@ -28,9 +28,9 @@ func _process(delta: float) -> void:
 			ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
 				get_tree().quit(1)
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-				$LoadProgress.value = progress[0] * 100
+				$LoadProgress.value = progress[0] * 50
 			ResourceLoader.THREAD_LOAD_LOADED:
-				$LoadProgress.value = 100
+				$LoadProgress.value = 50
 				loading = false
 				var game: Node = ResourceLoader.load_threaded_get(file_path_to_load).instantiate()
 				for parameter in parameters:

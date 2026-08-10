@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cjmvqohuuhvtc"]
+[gd_scene format=4 uid="uid://cjmvqohuuhvtc"]
 
 [ext_resource type="Texture2D" uid="uid://b67w6loldng4p" path="res://Assets/OriginalModels/Chair/Chair_chair_base.png" id="1_rid1c"]
 [ext_resource type="Texture2D" uid="uid://dvvjqt387p5ty" path="res://Assets/OriginalModels/Chair/Chair_chair_rough.png" id="2_eidox"]
@@ -35,15 +35,16 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_rid1c"]
 size = Vector3(1.010498, 2.112854, 1.0254822)
 
-[node name="Chair" type="RigidBody3D"]
+[node name="Chair" type="RigidBody3D" unique_id=807368754]
+collision_layer = 9
 freeze = true
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1620303430]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.0281398, 0)
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_oj5ml")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290013604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014526367, 1.059967, -0.0073394775)
 shape = SubResource("BoxShape3D_rid1c")

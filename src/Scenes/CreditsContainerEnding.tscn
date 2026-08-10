@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cbbhb7243mv6c"]
 
 [ext_resource type="Script" uid="uid://bfv07th47cqle" path="res://Scripts/CreditsContainerEnding.gd" id="1_2bdg1"]
-[ext_resource type="Theme" uid="uid://1c7qxp1dlx5i" path="res://UITheme.tres" id="2_6nl00"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="3_jgl2t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krje8"]
@@ -26,52 +25,40 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="CreditsContainer" type="ScrollContainer" parent="." unique_id=1676802488]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.007
-anchor_bottom = 1.003
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1041045427]
+layout_mode = 0
 offset_top = 2.0
-offset_right = -8.063965
-offset_bottom = 0.22399902
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("2_6nl00")
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer" unique_id=1041045427]
-layout_mode = 2
+offset_right = 571.0
+offset_bottom = 639.0
 theme_override_constants/separation = 64
 
-[node name="Space" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=1591444862]
+[node name="Space" type="Label" parent="VBoxContainer" unique_id=1591444862]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="Space2" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=865475290]
+[node name="Space2" type="Label" parent="VBoxContainer" unique_id=865475290]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="Space3" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=2041282189]
+[node name="Space3" type="Label" parent="VBoxContainer" unique_id=2041282189]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="Space4" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=26903577]
+[node name="Space4" type="Label" parent="VBoxContainer" unique_id=26903577]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="Space5" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=867402664]
+[node name="Space5" type="Label" parent="VBoxContainer" unique_id=867402664]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="Space6" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=1283051061]
+[node name="Space6" type="Label" parent="VBoxContainer" unique_id=1283051061]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
-[node name="CreditsLabel" type="Label" parent="CreditsContainer/VBoxContainer" unique_id=1437015099]
+[node name="CreditsLabel" type="Label" parent="VBoxContainer" unique_id=1437015099]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jgl2t")
 theme_override_font_sizes/font_size = 48
 text = "SCP: Continued Procedures"
-horizontal_alignment = 1
 vertical_alignment = 1

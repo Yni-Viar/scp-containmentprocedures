@@ -2,13 +2,13 @@
 
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_b8ioa"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_d2sa3"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="2_axw3i"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="2_e8iy8"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="3_d2sa3"]
 [ext_resource type="LightmapGIData" uid="uid://c6pn6ns16er1m" path="res://Assets/Rooms/room4/Lm/mt_room_4.lmbake" id="3_ruuf7"]
 [ext_resource type="PackedScene" uid="uid://d206r02l87aim" path="res://Assets/Doors/maintenance_zone_door_faux.tscn" id="5_vsgnr"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="6_5kj20"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="6_vsgnr"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_yckn0"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="8_5kj20"]
 [ext_resource type="PackedScene" uid="uid://c7o5iodr55fdp" path="res://Assets/Doors/maintenance_zone_door.tscn" id="9_yckn0"]
 [ext_resource type="PackedScene" uid="uid://b60rflaalvyrk" path="res://Assets/Doors/hcz_door_openable.tscn" id="10_py5fo"]
@@ -38,7 +38,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 66,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAIQAjACQAIwAgACUAJQAgACYAIwAlACcA"),
-"material": ExtResource("2_axw3i"),
+"material": ExtResource("6_yckn0"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 40,

@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="1_xoop3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4ol6"]
+
 [node name="LoadingScreen" type="Control" unique_id=1054977105]
 process_mode = 3
 z_index = 8
@@ -70,4 +72,4 @@ offset_right = 192.0
 offset_bottom = 13.447968
 grow_horizontal = 2
 grow_vertical = 2
-show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxEmpty_i4ol6")

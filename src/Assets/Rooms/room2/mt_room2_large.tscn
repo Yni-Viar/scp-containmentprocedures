@@ -2,12 +2,11 @@
 
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="1_ff23p"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_j7vhe"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="2_j3fxc"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="5_533f6"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="5_j3fxc"]
 [ext_resource type="Texture2D" uid="uid://blt4sp0nvls3t" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_Emissive.png" id="6_0kgap"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="6_j3fxc"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_qwdp2"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_j3fxc"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="11_0kgap"]
 [ext_resource type="LightmapGIData" uid="uid://ck3aqmrve15mp" path="res://Assets/Rooms/room2/Lm/mt_room2_large.lmbake" id="11_ff0m3"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="11_j7vhe"]
@@ -122,7 +121,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 120,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABQAEAAIABQACAAYABwAFAAYACAAHAAYACAAJAAcACgALAAwACgANAAsADgAKAAwADgAMAA8AEAAOAA8AEAAPABEAEgATABQAEgAVABMAFgAVABIAFwATABUAFwAYABMAGQAXABUAFgAaABUAGQAVABoAGwAaABYAHAAZABoAGwAdABoAHAAaAB0AHgAfACAAHgAhAB8AIgAhAB4AIgAjACEAJAAjACIAJAAlACMAJgAnACgAJgApACcAKgAnACkAKwAnACoAKwAsACcALQAsACsALgAsAC0ALgAtAC8A"),
-"material": ExtResource("2_j3fxc"),
+"material": ExtResource("9_j3fxc"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 48,
@@ -133,7 +132,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 102,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABQADAAQABQAEAAYABwAEAAAABwAAAAIABwAIAAQAAQAJAAIAAQAKAAkACwAIAAcADAAIAAsADAALAA0ACwAHAA4ABwACAA4ACwAOAA8ADgAQAA8AAgARAA4ADgARABAAAgAJABEAEQASABAACQATABEAEQATABIAEgATABQAFQASABQAFQAUABYAEwAXABQACQAYABMAEwAYABcACgAYAAkACgAZABgAGAAZABcAGQAaABcAGQAbABoA"),
-"material": ExtResource("9_qwdp2"),
+"material": ExtResource("1_ff23p"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 28,

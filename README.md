@@ -14,11 +14,14 @@ More gestures you can see in the in-game settings.
 ## Requirements to play
 
 - 🐧Linux distribution from 2024 and newer
+   > x86-64 or arm64 binaries available
 - 🪟Windows 10 (all updates) and 11 (all updates)
+   > x86-64 or arm64 binaries available
    > Windows 8.1 is not natively supported since v10.0
    > Windows 7 and 8 is not natively supported since v5.0
    > You can still access Web version for Windows 7 - 8.1 by using Supermium.
 - 🤖Android 7.0 and newer (mid-range device)
+   > arm64 and armv7 binaries available
    > Android 5.0-6.0 is not supported since v5.0
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
@@ -34,12 +37,11 @@ More gestures you can see in the in-game settings.
 | Component | Full | Lite/Web version |
 |-----------|------|------------------|
 |Stories|✅, >10.0.0|❌|
-|Plugins|✅, >10.0.0|❓, >10.0.0|
+|Plugins|✅, >10.0.0|❓, >10.0.0 (Web platform **disabled by default**, and only custom plugins are supported)|
 
 #### Included SCPs
 | SCP# | Full | Lite/Web version | Functionality |
 |------|------|------------------|---------------|
-|🟢SCP-005|❓, > 6.0.0/7.0.4|✅, > 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
 |🟡SCP-018|✅, > 7.0.0|✅, > 7.0.0|✅ Full|
 |🟡SCP-023|✅, > 3.0.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-067|✅, > 5.2.0|✅, > 5.7.0|✅ Full|
@@ -61,7 +63,6 @@ More gestures you can see in the in-game settings.
 |🟢SCP-791|✅, > 6.0.0|❌|📃 Task only|
 |🟡SCP-812|✅, > 1.0.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-914|✅, > 2.0.0|❌, 5.7.x only|❓ Process only items|
-|🔴SCP-938|✅, > 5.0.0|❌|✅ Full \(> 6.0.0\)|
 |🔴SCP-939|✅, > 5.5.0|✅, > 5.8.0|✅ Full|
 |🟢SCP-983\*|✅, > 1.0.0/10.0.0|❎, 5.7.x-5.8.x only|✅ Full|
 |🟢SCP-1223\*|✅, > 6.1.0|✅, > 6.1.0|✅ Full|
@@ -71,13 +72,19 @@ More gestures you can see in the in-game settings.
 |🟢SCP-2471\*|✅, > 8.0.0|✅, > 8.0.0|✅ Full|
 |🟢SCP-5270|✅, > 8.1.0|✅, > 8.1.0|❓ Implemented only one event out of three|
 
-##### Story mode-exclusive SCPs
+##### Story mode exclusive SCPs
 > All Stories are not included in Lite/Web versions
 > All of these SCPs will not give an achievement
 
 | SCP# | Supported versions | Story |
 |------|--------------------|-------|
 |🟢SCP-181|✅, > 10.0.0|Main story|
+
+##### Casual mode exclusive SCPs
+
+| SCP# | Full | Lite/Web version | Functionality |
+|------|------|------------------|---------------|
+|🟢SCP-005|❓, > 6.0.0/7.0.4|✅, > 6.0.0/7.0.4|📃 Task/specific usage only, since there is no locked doors|
 
 ##### SCP-261-only SCPs
 > All mentioned SCPs exist in both Lite and Full versions, as SCP-261
@@ -94,6 +101,7 @@ More gestures you can see in the in-game settings.
 |------|------|------------------|---------------|
 |🟡SCP-266|❌, 1.0.0-9.1.3|❌, 5.7.x only|❌ Awaiting re-implementation|
 |🟢SCP-446\*|❌, 5.3.0-9.1.3|❌, 5.7.0-9.1.3|❌ Cameo / simple ragdoll. Awaiting re-implementation only for Full version|
+|🔴SCP-938|❌, 5.0.0-9.1.3|❌|❌ Awaiting reimplementation as environment SCP|
 
 ##### Object class
 🟢 - Safe

@@ -9,7 +9,7 @@ script = ExtResource("2_qrhx5")
 puppet_class_name = "DCLASS"
 prefab = ExtResource("1_23r42")
 spawn_point_group = "DClassSpawn"
-initial_amount = 12
+initial_amount = 6
 interacting_action = 1
 footstep_sounds = {
 "run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),

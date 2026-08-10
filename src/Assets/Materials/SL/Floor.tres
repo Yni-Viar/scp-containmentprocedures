@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b686gnhaieath"]
+
+[ext_resource type="Texture2D" uid="uid://cnh5gfcjgck5c" path="res://Assets/Materials/TextureLibraries/SLMaterials_CCBYSA4/Tile_HCZGround_Albedo.png" id="1_bsxea"]
+[ext_resource type="Texture2D" uid="uid://dk6mhid821bnn" path="res://Assets/Materials/TextureLibraries/SLMaterials_CCBYSA4/Tile_HCZCGround_Normal.png" id="2_go558"]
+
+[resource]
+resource_name = "Ceiling"
+albedo_texture = ExtResource("1_bsxea")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_go558")

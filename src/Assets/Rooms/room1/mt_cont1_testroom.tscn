@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="8_wn8ip"]
 [ext_resource type="Texture2D" uid="uid://blt4sp0nvls3t" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_Emissive.png" id="9_fed1m"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="10_tge7g"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="11_p0goq"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="11_uml13"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="12_5w0h8"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="13_s0byy"]
 [ext_resource type="LightmapGIData" uid="uid://cg8d5p62fem64" path="res://Assets/Rooms/room1/Lm/mt_cont1_446.lmbake" id="14_uml13"]
@@ -126,7 +126,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAAFAAAABgAHAAgACQAIAAcACgAIAAkABgALAAcABgAMAAsADAAGAA0ADQAGAA4ADwAOAAYAEAARABIAEQATABIAEwAUABIAEwAVABQAFQAWABQAFwAUABYAGAAZABoAGAAbABkA"),
-"material": ExtResource("11_p0goq"),
+"material": ExtResource("11_uml13"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 28,

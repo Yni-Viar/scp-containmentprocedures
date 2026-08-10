@@ -354,4 +354,5 @@ text = "LITE_VERSION_WARNING"
 [connection signal="item_clicked" from="StoryList" to="." method="_on_story_list_item_clicked"]
 [connection signal="pressed" from="ProjectInfo/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ProjectInfo/Contribute" to="." method="_on_contribute_pressed"]
+[connection signal="pressed" from="ProjectInfo/Support" to="." method="_on_support_pressed"]
 [connection signal="pressed" from="EasterEgg/Back" to="." method="_on_story_back_pressed"]

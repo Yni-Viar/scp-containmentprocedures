@@ -12,11 +12,6 @@ class_name GDShaderCompositor
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 ## Constructs full shader from `shaders` variable
 ## index is which shader snippets will be used, and remove - removes if true
 func apply_shader(index: int, remove: bool = false) -> bool:

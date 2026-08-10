@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cff5uacv07nea"]
 
-[ext_resource type="Environment" uid="uid://1c6vsgl4ua3u" path="res://Assets/Environment/Outside_HQ_Default.tres" id="1_1v1ps"]
+[ext_resource type="Environment" uid="uid://1c6vsgl4ua3u" path="res://Assets/Environment/Outside_HQ.tres" id="1_1v1ps"]
 
 [node name="Node3D" type="Node3D" unique_id=1311572318]
 transform = Transform3D(1, 0.0003427, -0.00016891, -0.000342464, 0.999999, 0.00143352, 0.000169389, -0.00143346, 0.999999, 0, 0, 0)

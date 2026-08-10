@@ -18,7 +18,7 @@ config/name="SCP: Continued Procedures"
 config/description="Play the game about Janusz Krzystofski...
 Or do your daily job at Site-19."
 config/version="10.0.0"
-config/tags=PackedStringArray("game", "scp_foundation", "singleplayer")
+config/tags=PackedStringArray("game", "scp_foundation", "singleplayer", "story")
 run/main_scene="uid://b25hrjnoos5me"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="SCPContPr"
@@ -26,6 +26,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://ca78sce3pl6wl"
 config/icon="uid://c7yat1lfp8emn"
+config/windows_native_icon="res://scp.ico"
 
 [audio]
 
@@ -270,7 +271,8 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true
+reflections/reflection_atlas/reflection_size.mobile=16
 reflections/reflection_atlas/reflection_count=256
 environment/ssao/quality=1
 lightmapping/denoising/denoiser=1
-reflections/reflection_atlas/reflection_size.web=16
+reflections/reflection_atlas/reflection_size.web=4

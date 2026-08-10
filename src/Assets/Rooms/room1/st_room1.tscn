@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlmncinh6f2q7" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_Wall_Trimming_Normal.png" id="3_3ehpl"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="4_kqv8x"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="8_ae4a1"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_5qnc2"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="9_5qnc2"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="10_q0cx4"]
 [ext_resource type="LightmapGIData" uid="uid://c76wslsq27gly" path="res://Assets/Rooms/room1/Lm/st_room1.lmbake" id="11_ba14s"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="11_xvau2"]

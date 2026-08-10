@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="2_2ryqt"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="3_f4qid"]
 [ext_resource type="Texture2D" uid="uid://btwei8ny15tbb" path="res://Assets/Materials/TextureLibraries/EchoesMaterials_CCBYSA3/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="4_7dyin"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="5_4epoy"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="5_4epoy"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_n2aix"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="7_3j2p5"]
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="8_35fjv"]

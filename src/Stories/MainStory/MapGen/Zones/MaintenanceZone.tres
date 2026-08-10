@@ -9,27 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://dm4apurgx8m7m" path="res://Assets/Doors/mt_door.tscn" id="7_40ce3"]
 [ext_resource type="Resource" uid="uid://d0en6563qst02" path="res://MapGen/Resources/MaintenanceZone/room1.tres" id="8_ffb04"]
 [ext_resource type="Resource" uid="uid://bgvcokfa5iie5" path="res://MapGen/Resources/MaintenanceZone/exit1_gateb.tres" id="9_ax2t0"]
-[ext_resource type="Resource" uid="uid://cmcap7nf4h15i" path="res://MapGen/Resources/MaintenanceZone/cont1_249.tres" id="10_7m3kp"]
 [ext_resource type="Resource" uid="uid://bw58osyjan7h8" path="res://MapGen/Resources/MaintenanceZone/cont1_023.tres" id="11_bjlxa"]
 [ext_resource type="Resource" uid="uid://b8vekd1a2jiy" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_080.tres" id="12_wfu30"]
 [ext_resource type="Resource" uid="uid://bwospyj2g7rgv" path="res://MapGen/Resources/MaintenanceZone/Optional/cont1_791_812.tres" id="13_653gu"]
-[ext_resource type="Resource" uid="uid://i7dv4g0tnkdn" path="res://MapGen/Resources/MaintenanceZone/cont1_testroom.tres" id="13_ew3a4"]
 [ext_resource type="Resource" uid="uid://ch0bxsompxx5d" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_walkway.tres" id="14_evetu"]
 [ext_resource type="Resource" uid="uid://c0ohfy6nbwkv3" path="res://MapGen/Resources/MaintenanceZone/room2_middle.tres" id="15_hkbvy"]
 [ext_resource type="Resource" uid="uid://c28c54bngkuhi" path="res://MapGen/Resources/MaintenanceZone/room2_large.tres" id="16_f0mnr"]
 [ext_resource type="Resource" uid="uid://budusfvk76l2u" path="res://MapGen/Resources/MaintenanceZone/room2_wc.tres" id="17_rfxkn"]
 [ext_resource type="Resource" uid="uid://rc8ajwf6hrxu" path="res://Stories/MainStory/MapGen/Rooms/MaintenanceZone/cont2_testroom.tres" id="18_20nm4"]
-[ext_resource type="Resource" uid="uid://bgor15quhx77p" path="res://MapGen/Resources/MaintenanceZone/Optional/room2_elevators.tres" id="19_aluqa"]
+[ext_resource type="Resource" uid="uid://trbpc6rh6v4f" path="res://MapGen/Resources/MaintenanceZone/room2_elevators_lite.tres" id="18_cx3pp"]
 [ext_resource type="Script" uid="uid://d0tlgr0c6w7gq" path="res://MapGen/MapGenZone.gd" id="20_o0krv"]
 [ext_resource type="Resource" uid="uid://0d70qmpl37gq" path="res://MapGen/Resources/MaintenanceZone/room3.tres" id="21_6yukr"]
 
 [resource]
 script = ExtResource("20_o0krv")
 endrooms = Array[ExtResource("2_ew3a4")]([ExtResource("8_ffb04")])
-endrooms_single = Array[ExtResource("2_ew3a4")]([ExtResource("9_ax2t0"), ExtResource("10_7m3kp"), ExtResource("11_bjlxa"), ExtResource("12_wfu30"), ExtResource("13_ew3a4")])
+endrooms_single = Array[ExtResource("2_ew3a4")]([ExtResource("9_ax2t0"), ExtResource("11_bjlxa"), ExtResource("12_wfu30")])
 endrooms_single_large = Array[ExtResource("2_ew3a4")]([ExtResource("13_653gu")])
 hallways = Array[ExtResource("2_ew3a4")]([ExtResource("14_evetu"), ExtResource("15_hkbvy"), ExtResource("16_f0mnr")])
-hallways_single = Array[ExtResource("2_ew3a4")]([ExtResource("17_rfxkn"), ExtResource("18_20nm4"), ExtResource("19_aluqa")])
+hallways_single = Array[ExtResource("2_ew3a4")]([ExtResource("17_rfxkn"), ExtResource("18_20nm4"), ExtResource("18_cx3pp")])
 checkpoint_hallway = Array[ExtResource("2_ew3a4")]([ExtResource("3_n00uo")])
 corners = Array[ExtResource("2_ew3a4")]([ExtResource("4_whlew")])
 corners_single = Array[ExtResource("2_ew3a4")]([ExtResource("5_7p14d")])

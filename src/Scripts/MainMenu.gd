@@ -36,10 +36,12 @@ func _enter_tree() -> void:
 		#node.visible = (Settings.setting_res.secrets >> index) % 2 == 1
 		#index += 1
 	
-	var available_stories: PackedStringArray = DirAccess.get_directories_at("res://Stories/")
-	for story in available_stories:
-		if ResourceLoader.exists("res://Stories/".path_join(story).path_join("Scenes/Game.tscn")):
-			$StoryList.add_item(story, load("res://UI/MainMenu/Modes/storymode_select.png"))
+	
+	if DirAccess.dir_exists_absolute("res://Stories/"):
+		var available_stories: PackedStringArray = DirAccess.get_directories_at("res://Stories/")
+		for story in available_stories:
+			if ResourceLoader.exists("res://Stories/".path_join(story).path_join("Scenes/Game.tscn")):
+				$StoryList.add_item(story, load("res://UI/MainMenu/Modes/storymode_select.png"))
 	
 	if Settings.setting_res.casual_mode_unlocked || OS.has_feature("Lite"):
 		$HBoxContainer/Play.show()
@@ -152,3 +154,7 @@ func _on_contribute_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_support_pressed() -> void:
+	pass # Replace with function body.

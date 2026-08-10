@@ -31,10 +31,6 @@ func _ready() -> void:
 	elif door_block_in is CollisionShape3D && door_block_out is CollisionShape3D:
 		door_block_node_type = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 ## Main SCP-914 function.
 func refine():
 	#Close doors.

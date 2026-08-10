@@ -15,10 +15,6 @@ func _ready() -> void:
 	pressed.connect(_on_click)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_click():
 	if get_tree().root.get_node_or_null("Game") != null:
 		get_tree().root.get_node("Game").protagonist._call_function(action.action_node_path, action.action_method_name, action.action_args)

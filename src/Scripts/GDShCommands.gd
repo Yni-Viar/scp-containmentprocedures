@@ -7,10 +7,6 @@ func _ready() -> void:
 	Console.add_command("spawn_npc", spawn_npc, ["index"], 1)
 	Console.add_command("add_task", add_task, ["task_name"], 1)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 ## GDSh command
 ## Adds item to your inventory
 func add_item(index: String):

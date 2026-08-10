@@ -22,7 +22,9 @@ extends Node
 	"money": {
 		"DOLLARS": 1000,
 		"YEN": 3000
-	}
+	},
+	"removed_map_items": [],
+	"added_map_items": {}
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -62,7 +64,7 @@ func save_game():
 	save_file.store_line(JSON.stringify(JSON.from_native(save_data)))
 	save_file.close()
 
-## Resets save (used after endings)
+## Resets save (used after endings and time's up gameover)
 func reset_save():
 	var save_file: FileAccess = FileAccess.open("user://save.sav", FileAccess.WRITE)
 	save_file.store_line("")
@@ -80,7 +82,9 @@ func validate_save(save: Dictionary) -> bool:
 	   save.has("scp_914_cutscene") && \
 	   save.has("player_health") && \
 	   save.has("items") && \
-	   save.has("money"):
+	   save.has("money") && \
+	   save.has("removed_map_items") && \
+	   save.has("added_map_items"):
 		if save["map_seed"] is String && \
 		   save["location"] is Vector3 && \
 		   save["quest_progress"] is int && \
@@ -92,6 +96,8 @@ func validate_save(save: Dictionary) -> bool:
 		   save["scp_914_cutscene"] is int && \
 		   save["player_health"] is Array && \
 		   save["items"] is Array && \
-		   save["money"] is Dictionary:
+		   save["money"] is Dictionary && \
+		   save["removed_map_items"] is Array && \
+		   save["added_map_items"] is Dictionary:
 			return true
 	return false

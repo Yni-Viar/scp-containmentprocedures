@@ -12,11 +12,10 @@
 [ext_resource type="ArrayMesh" uid="uid://bjse8n8cwo2e8" path="res://Assets/ExternalModels/PopPopIcard/hanging_light.mesh" id="11_f7ijq"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="11_hvoqt"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="12_350ty"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="13_b2jc6"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="13_03v0j"]
 [ext_resource type="Material" uid="uid://ct6gfuldvvvej" path="res://Assets/Materials/Wallpaper.tres" id="13_qgar8"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="14_p0np5"]
 [ext_resource type="PackedScene" uid="uid://daniqy18dv0gq" path="res://InventorySystem/Items/ItemWoodenLantern.tscn" id="14_tc0nq"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="15_vh8e0"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="17_yjs2c"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="18_ldrmm"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="19_rl3vk"]
@@ -90,7 +89,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 51,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABQAEAAYABwAGAAQABQAGAAgACQAGAAcABgAJAAgACgAFAAgACgAIAAkABQAKAAsACQAHAAwACQAMAA0ADQAMAA4ADwAOAAwADwAQAA4A"),
-"material": ExtResource("13_b2jc6"),
+"material": ExtResource("13_03v0j"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 17,
@@ -123,7 +122,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 12,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAwAEAAUA"),
-"material": ExtResource("15_vh8e0"),
+"material": ExtResource("12_350ty"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
@@ -134,7 +133,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 21,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQAAAAFAAQAAAAGAAUABQAGAAcABQAHAAgA"),
-"material": ExtResource("15_vh8e0"),
+"material": ExtResource("12_350ty"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 9,

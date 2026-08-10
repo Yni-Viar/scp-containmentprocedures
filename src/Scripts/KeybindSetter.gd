@@ -19,11 +19,6 @@ var current_setting_to_change: int = -1
 func _ready() -> void:
 	re_parse()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _unhandled_input(event: InputEvent) -> void:
 	if listen_to_keybind && current_setting_to_change >= 0 && current_setting_to_change < settings_key.size():
 		if event is InputEventKey:

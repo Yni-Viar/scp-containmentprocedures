@@ -49,4 +49,4 @@ enum Usage {NORMAL, ONE_TIME, ONE_TIME_DROP}
 @export var upgrade_very_fine: Array[int] = []
 @export_group("Custom properties")
 ## Custom properties of the item, such as SCP-5270 different states.
-@export var custom_properties: Array[String] = []
+@export var custom_properties: Dictionary[String, Variant] = {}

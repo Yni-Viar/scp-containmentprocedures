@@ -63,15 +63,14 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"SCP-1507": false,
 	"SCP-2028": false,
 	"SCP-2306": false,
-	"SCP-5270": false,
+	"SCP-5270": false
 }
 
 @export var scp_study_progress_full: Dictionary[String, bool] = {
 	"SCP-080": false,
 	"SCP-178": false,
 	"SCP-791": false,
-	"SCP-914": false,
-	"SCP-938": false,
+	"SCP-914": false
 }
 ## Casual mode unlocked
 @export var casual_mode_unlocked: bool = false

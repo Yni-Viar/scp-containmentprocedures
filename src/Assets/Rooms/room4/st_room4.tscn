@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cal5bx3gb2cii" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_4.tscn" id="3_rfnko"]
 [ext_resource type="Material" uid="uid://ckp7t4160q150" path="res://Assets/Materials/StorageZone/EchoesWall.tres" id="5_qf4on"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="6_j0nrm"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="6_lbcgt"]
+[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/SL/Floor.tres" id="6_lbcgt"]
 [ext_resource type="LightmapGIData" uid="uid://4gxrpeq367hk" path="res://Assets/Rooms/room4/Lm/mt_room4_echoes.lmbake" id="6_qf4on"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="9_mljy8"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="10_eimfv"]

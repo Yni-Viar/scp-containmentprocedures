@@ -2,19 +2,21 @@ extends ItemList
 ## Made by Yni, licensed under MIT license.
 ## Uses Godot Engine code, which is under MIT License
 
+
+@export var plugins_paths: Array[String]
 var file_dialog: FileDialog
+var selected_index: int = -1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	refresh_list()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func refresh_list() -> void:
 	clear()
+	if OS.get_name() == "Web" && !Settings.ALLOW_PLUGINS_IN_WEB:
+		return
 	if !DirAccess.dir_exists_absolute("user://mods/puppets/custom"):
 		DirAccess.make_dir_recursive_absolute("user://mods/puppets/custom")
 	# Looking for plugins
@@ -32,6 +34,7 @@ func refresh_list() -> void:
 				var plugin_name: String = plugin_dict["name"] if plugin_dict.has("name") else "unknown"
 				var plugin_author: String = plugin_dict["author"] if plugin_dict.has("author") else "unknown"
 				var plugin_type: String = plugin_dict["plugin_type"] if plugin_dict.has("plugin_type") else "unknown"
+				plugins_paths.append("user://mods/puppets/custom".path_join(sub_dir_name))
 				add_item(tr("PLUGIN_NAME") + ": " + plugin_name + "\n" + tr("PLUGIN_AUTHOR") + ": " + plugin_author + "\n" + tr("PLUGIN_TYPE") + ": " + tr(plugin_type), load("res://UI/plugin_icon.png"))
 
 func _on_plugin_install_button_pressed() -> void:
@@ -68,6 +71,8 @@ func extract_all_from_zip(path: String):
 
 	# Destination directory for the extracted files (this folder must exist before extraction).
 	var root_dir = DirAccess.open("user://mods/puppets/custom")
+	if root_dir == null:
+		return
 
 	var files = reader.get_files()
 	
@@ -90,3 +95,15 @@ func extract_all_from_zip(path: String):
 		var file = FileAccess.open(root_dir.get_current_dir().path_join(file_path), FileAccess.WRITE)
 		var buffer = reader.read_file(file_path)
 		file.store_buffer(buffer)
+
+
+func _on_item_selected(index: int) -> void:
+	selected_index = index
+
+
+func _on_plugin_delete_button_pressed() -> void:
+	if selected_index == -1:
+		return
+	elif DirAccess.dir_exists_absolute(plugins_paths[selected_index]) && OS.get_name() == "Android":
+		DirAccess.remove_absolute(plugins_paths[selected_index])
+		refresh_list()

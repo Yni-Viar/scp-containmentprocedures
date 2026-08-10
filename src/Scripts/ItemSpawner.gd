@@ -16,4 +16,4 @@ func _ready() -> void:
 		# if has chance AND is available in profile, then spawn.
 		if availability == Availability.ALL || (availability == Availability.FULL && !OS.has_feature("Lite")) || (availability == Availability.LITE && OS.has_feature("Lite")):
 			var prefab: Node3D = item.instantiate()
-			add_child(prefab)
+			add_child(prefab, true)

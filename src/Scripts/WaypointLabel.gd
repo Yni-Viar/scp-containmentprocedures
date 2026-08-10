@@ -12,10 +12,6 @@ func _ready() -> void:
 		call_deferred("waypoint_add")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func waypoint_add():
 	var index: int = 0
 	for waypoint in waypoints_and_groups:

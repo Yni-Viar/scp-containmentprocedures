@@ -30,7 +30,6 @@ const RAY_LENGTH = 512
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Head/Camera3D.current = true
-	
 	# OpenGL Compatibility renderer supports SSAO since Godot 4.6
 	# As for May 2026, we stay on 4.5 just because it is the most stable\
 	# Godot release.
@@ -72,6 +71,7 @@ func _physics_process(delta: float) -> void:
 	if !target_puppet_path.is_empty():
 		if get_node_or_null(target_puppet_path) == null:
 			get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
+			set_physics_process(false)
 		else:
 			get_tree().root.get_node("Game/UI/HealthBar").value = get_node(target_puppet_path).current_health[0]
 			if get_node(target_puppet_path).fraction == 0:
@@ -132,11 +132,17 @@ func interact(value: String) -> void:
 							#Item detected
 							if s_result["collider"] is Pickable && !s_result["collider"].picked &&\
 							 !s_result["collider"].freeze && s_result["collider"].global_position.distance_to(get_node(target_puppet_path).global_position) < 4.0:
+								# Pick up item
 								if s_result["collider"].get("item") != null:
 									get_node(target_puppet_path + "/UI/Inventory/Inventory").add_item_with_state(s_result["collider"].item)
 								else:
 									get_node(target_puppet_path + "/UI/Inventory/Inventory").add_item(s_result["collider"].item_id)
+								# Prevent dupe
 								s_result["collider"].picked = true
+								# If ItemManager exist, call removed trigger
+								if get_tree().root.get_node("Game/Items") is ItemManager:
+									get_tree().root.get_node("Game/Items")._item_removed(s_result["collider"].get_path())
+								# Remove picked prefab
 								s_result["collider"].queue_free()
 								#Use only one item
 								break
@@ -170,7 +176,7 @@ func interact(value: String) -> void:
 					if get_node_or_null(target_puppet_path) == null:
 						get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_DIE")
 					else:
-						get_node(target_puppet_path).set_target_position(get_node(target_puppet_path).global_position + $Head.global_transform.basis.z * 2 * target_keyboard_position)
+						get_node(target_puppet_path).set_target_position(get_node(target_puppet_path).global_position + $Waypoint.global_transform.basis.z * 2 * target_keyboard_position)
 					walk_timer = 0
 				else:
 					walk_timer += 1
@@ -182,6 +188,7 @@ func rotate_player(event: InputEvent):
 	var y_rotation = clamp(event.relative.y, -30, 30)
 	$Head.rotate_object_local(Vector3.RIGHT, y_rotation * mouse_sensitivity * 0.05)
 	$Head.rotation_degrees.x = clamp($Head.rotation_degrees.x, -90, 0)
+	$Waypoint.rotation = $Head.rotation
 	#rotation.y -= event.relative.x * mouse_sensitivity * 0.05
 	#rotation.x -= event.relative.y * mouse_sensitivity * 0.05
 	#rotation_degrees.y = clamp(rotation_degrees.y, -90, 90)

@@ -43,8 +43,8 @@ far = 60.0
 
 [node name="Optimizator" type="Area3D" parent="Head/Camera3D" unique_id=1610079605]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -16)
-collision_layer = 11
-collision_mask = 11
+collision_layer = 10
+collision_mask = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Optimizator" unique_id=692297801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
@@ -73,6 +73,8 @@ shaders = Dictionary[String, ShaderMaterial]({
 "Scp261KleinBottle": ExtResource("12_ih07c"),
 "Scp261Orange": ExtResource("13_dlstf")
 })
+
+[node name="Waypoint" type="Node3D" parent="." unique_id=1584282061]
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1777601234]
 size = Vector2i(256, 256)

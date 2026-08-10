@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cskradjeycmsa"]
+[gd_scene format=3 uid="uid://cskradjeycmsa"]
 
 [ext_resource type="Script" uid="uid://cl0nqk4wfplo" path="res://PlayerScript/PlayerClassScript/Scp347PuppetScript.gd" id="1_setat"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" unique_id=1995831127]
 script = ExtResource("1_setat")
 resistance_scp178 = true
 resistance_scp686 = true
@@ -13,7 +13,7 @@ armature_name = "Woman_body_rig"
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])
 
-[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="." unique_id=1559960275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1145895, -0.050662994)
 aabb = AABB(-0.42323288, -1.113152, -0.41636354, 0.84646577, 2.226304, 0.8327271)
 

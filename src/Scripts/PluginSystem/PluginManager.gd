@@ -36,13 +36,10 @@ const VALIDATION_PUPPET_PLUGIN: Dictionary = {
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 ## Loads puppet plugins
 func _load_plugins():
+	if OS.get_name() == "Web" && !Settings.ALLOW_PLUGINS_IN_WEB:
+		return
 	if !DirAccess.dir_exists_absolute("user://mods/puppets/custom"):
 		DirAccess.make_dir_recursive_absolute("user://mods/puppets/custom")
 	# Looking for plugins

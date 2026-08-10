@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 		if time_to_update > 0.0:
 			time_to_update -= delta
 		else:
-			
 			render_target_update_mode = SubViewport.UPDATE_ALWAYS
 			call_deferred("pause_rendering")
 			time_to_update = 8.0 if OS.get_name() in ["Web", "Android"] else 4.0

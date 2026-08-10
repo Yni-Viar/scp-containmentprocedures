@@ -9,9 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="7_u3fey"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="8_bxypg"]
 [ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="9_7xn6q"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="10_l8aq8"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="10_y0u3y"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="11_0qxsb"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="12_a1k7t"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="13_tf7d4"]
 [ext_resource type="LightmapGIData" uid="uid://c1lgeo74jbswj" path="res://Assets/Rooms/room2/Lm/mt_cont2_testroom.lmbake" id="14_8bug2"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="15_lcm67"]
@@ -47,7 +46,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 114,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAHAAYABQAIAAcABAAJAAUABAAKAAkABAALAAoADAAEAAYADAAGAA0ADgAMAA0ADAAOAA8ADgANABAAEQASABMAEQAUABIAFQAWABcAGAAZABoAGQAbABwAGQAdABsAGAAdABkAHQAeABsAHQAfAB4AHwAdABgAHwAYACAAIQAfACAAIgAeAB8AIwAiAB8AIQAjAB8AIwAkACIAJQAkACMAJgAjACEAJgAlACMAJgAhACcAJgAoACUAKQAmACcAKQAoACYAKQAnACoAKAApACsA"),
-"material": ExtResource("10_l8aq8"),
+"material": ExtResource("10_y0u3y"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 44,
@@ -69,7 +68,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 84,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAAFAAAABAAGAAUABAAHAAYACAAEAAIACAACAAkACgAIAAkACAAKAAsACgAJAAwADQAOAA8ADQAQAA4AEQASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAGgAcABgAGgAdABwAHgAcAB0AHgAdAB8AHwAgAB4AHwAhACAAIgAgACEAIgAjACAAIAAjACQAIAAkACUA"),
-"material": ExtResource("12_a1k7t"),
+"material": ExtResource("9_7xn6q"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 38,

@@ -4,8 +4,12 @@ extends Panel
 class_name Inventory
 
 var game_data: GameData
+## Size of the tile
 @export var tile_size: int = 96
+## Maximum amount of tiles per column/row
 @export var max_tiles: Vector2i = Vector2i(4, 4)
+## Offset
+@export_range(0, 4) var offset: int = 2
 
 var _items: Array[InventorySlot]
 var hold_on_status_effect: Array[String]
@@ -18,7 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-## Adds item
+## Adds item with its id
 func add_item(item_id: int):
 	if item_id >= game_data.items.size():
 		return
@@ -30,14 +34,9 @@ func add_item(item_id: int):
 	add_child(item_prefab)
 	item_prefab.position = Vector2(-16, -16)
 	_items.append(item_prefab)
-	# Auto-align item in inventory
-	for i in range(max_tiles.x):
-		for j in range(max_tiles.y):
-			if item_move(item_prefab, Vector2(tile_size * i + 8, tile_size * j + 8)):
-				return
-	# If there is no place - no item will be picked
-	item_remove(item_prefab, true)
+	align_item(item_prefab)
 
+## Adds item with item resource
 func add_item_with_state(item: Item):
 	var item_prefab: InventorySlot = InventorySlot.new()
 	item_prefab.mouse_entered.connect(item_prefab._inside)
@@ -47,6 +46,10 @@ func add_item_with_state(item: Item):
 	add_child(item_prefab)
 	item_prefab.position = Vector2(-16, -16)
 	_items.append(item_prefab)
+	align_item(item_prefab)
+
+## Aligns item in the inventory
+func align_item(item_prefab: InventorySlot) -> void:
 	# Auto-align item in inventory
 	for i in range(max_tiles.x):
 		for j in range(max_tiles.y):
@@ -60,7 +63,7 @@ func item_move(prefab: InventorySlot, pos: Vector2) -> bool:
 	pos = pos.snappedf(tile_size)
 	var prev_pos = prefab.position
 	prefab.position = pos
-	if prefab.get_global_rect().intersection(get_global_rect()) != prefab.get_global_rect():
+	if !prefab.get_global_rect().intersection(get_global_rect()).is_equal_approx(prefab.get_global_rect()):
 		prefab.position = prev_pos
 		return false
 	for item in _items:
@@ -96,16 +99,16 @@ func item_remove(item: InventorySlot, drop: bool) -> bool:
 				var pickable: Node3D = load(item.item.pickable_path).instantiate()
 				if pickable is Pickable:
 					pickable.item = item.item
-					pickable.item_properties = item.item.custom_properties
+					#pickable.item_properties = item.item.custom_properties
 				pickable.position = get_tree().root.get_node("Game").protagonist.get_node("ItemSpawn").global_position
-				get_tree().root.get_node("Game/Items").add_child(pickable)
+				get_tree().root.get_node("Game/Items").add_child(pickable, true)
 				pass
 			_items.erase(i)
 			i.mouse_entered.disconnect(i._inside)
 			i.mouse_exited.disconnect(i._outside)
 			i.queue_free()
 			return true
-	print("No item for delete found")
+	Console.print_error("No item for delete found", true)
 	return false
 
 func item_remove_by_id(id: int, drop: bool):
@@ -115,20 +118,29 @@ func item_remove_by_id(id: int, drop: bool):
 				item_remove(node, drop)
 
 func use_item(item: InventorySlot):
+	var action_args = item.item.action_args.duplicate(true)
 	# Apply custom properties to the item's command
-	for i in range(0, item.item.action_args.size()):
-		if item.item.action_args[i] is String:
-			# Check if ItemCustom: in string AND after ItemCustom there is valid int index of custom property
-			if item.item.action_args[i].begins_with("ItemCustom:") && item.item.action_args[i].get_slice(":", 1).is_valid_int():
-				item.item.action_args[i] = item.item.custom_properties[int(item.item.action_args[i].get_slice(":", 1))]
-		elif item.item.action_args[i] is Array:
+	for i in range(0, action_args.size()):
+		if action_args[i] is String:
+			# Check if ItemCustom: in string AND after ItemCustom there is valid key of custom property
+			if action_args[i].begins_with("ItemCustom:") && action_args[i].get_slice(":", 1) is String:
+				match action_args[i].get_slice(":", 1):
+					_:
+						action_args[i] = item.item.custom_properties[item.item.action_args[i].get_slice(":", 1)]
+		elif action_args[i] is Array:
 			for j in range(0, item.item.action_args[i].size()):
-				if item.item.action_args[i][j] is String:
-					# Check if ItemCustom: in string AND after ItemCustom there is valid int index of custom property
-					if item.item.action_args[i][j].begins_with("ItemCustom:") && item.item.action_args[i][j].get_slice(":", 1).is_valid_int():
-						item.item.action_args[i][j] = item.item.custom_properties[int(item.item.action_args[i][j].get_slice(":", 1))]
+				if action_args[i][j] is String:
+					# Check if ItemCustom: in string AND after ItemCustom there is valid key of custom property
+					if action_args[i][j].begins_with("ItemCustom:") && action_args[i][j].get_slice(":", 1) is String:
+						match action_args[i][j].get_slice(":", 1):
+							"array_index": #if array_index is the key of ItemCustom, replace the array with custom one.
+								action_args[i] = item.item.custom_properties[item.item.custom_properties["array_index"]]
+								break
+							_:
+								action_args[i][j] = item.item.custom_properties[item.item.action_args[i][j].get_slice(":", 1)]
+	
 	# Apply item command
-	get_node(get_tree().root.get_node("Game/StaticPlayer").target_puppet_path)._call_function(item.item.action_node_path, item.item.action_method_name, item.item.action_args)
+	get_node(get_tree().root.get_node("Game/StaticPlayer").target_puppet_path)._call_function(item.item.action_node_path, item.item.action_method_name, action_args)
 	# Status effect management
 	if !item.item.status_effect.is_empty():
 		if item.item.status_effect_timer > 0.375:

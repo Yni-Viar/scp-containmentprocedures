@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bebaqlty0xyn" path="res://Assets/ExternalModels/shelf.tscn" id="2_d8w4u"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="3_12hlm"]
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="3_bwprk"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="3_gngsr"]
 [ext_resource type="PackedScene" uid="uid://nccdmmocoap4" path="res://Assets/ExternalModels/laptop.tscn" id="4_12hlm"]
 [ext_resource type="Script" uid="uid://dxacesn4a1lyf" path="res://Scripts/ItemSpawner.gd" id="6_junr1"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="7_bjf0b"]
@@ -15,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="9_lckij"]
 [ext_resource type="PackedScene" uid="uid://bnekaaeua7gso" path="res://Assets/OriginalModels/christmas_lights.tscn" id="10_8r1yp"]
 [ext_resource type="PackedScene" uid="uid://d1nf3d62hds02" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_3.tscn" id="10_lon51"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="10_ribsa"]
 [ext_resource type="Script" uid="uid://6iiqswcaatwc" path="res://Scripts/Seasonal/SeasonSpawner.gd" id="13_2twp3"]
 [ext_resource type="Material" uid="uid://sx7vi58vu84" path="res://Assets/Materials/MaintenanceTunnels/Tunnels.tres" id="13_ribsa"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="14_ribsa"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="15_6uotv"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="18_1s1pe"]
 [ext_resource type="PackedScene" uid="uid://grcf1pn48ge1" path="res://Assets/Rooms/room2/Spawners/scp_649_spawn.tscn" id="20_ribsa"]
@@ -46,7 +45,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 114,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAHAAYABQAIAAcABAAJAAUABAAKAAkABAALAAoADAAEAAYADAAGAA0ADgAMAA0ADAAOAA8ADgANABAAEQASABMAEQAUABIAFQAWABcAGAAZABoAGQAbABwAGQAdABsAGAAdABkAHQAeABsAHQAfAB4AHwAdABgAHwAYACAAIQAfACAAIgAeAB8AIwAiAB8AIQAjAB8AIwAkACIAJQAkACMAJgAjACEAJgAlACMAJgAhACcAJgAoACUAKQAmACcAKQAoACYAKQAnACoAKAApACsA"),
-"material": ExtResource("3_gngsr"),
+"material": ExtResource("10_ribsa"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 44,
@@ -68,7 +67,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 84,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAAFAAAABAAGAAUABAAHAAYACAAEAAIACAACAAkACgAIAAkACAAKAAsACgAJAAwADQAOAA8ADQAQAA4AEQASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAGgAcABgAGgAdABwAHgAcAB0AHgAdAB8AHwAgAB4AHwAhACAAIgAgACEAIgAjACAAIAAjACQAIAAkACUA"),
-"material": ExtResource("14_ribsa"),
+"material": ExtResource("1_bwprk"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 38,

@@ -11,11 +11,6 @@ extends MeshInstance3D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 ## Adds (or removes if remove is set to true) a tint by it's key in `shaders` variable
 func apply_shader(effect_name: String, remove: bool = false) -> bool:
 	if !shaders.keys().has(effect_name) || (used_shaders.has(effect_name) && !remove) || \

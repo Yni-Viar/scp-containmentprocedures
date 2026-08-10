@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c5p5uc3tem55b" path="res://Scripts/Triggers/Scp812RoomTrigger.gd" id="1_b1yng"]
 [ext_resource type="PackedScene" uid="uid://7m1jswp3ru21" path="res://Assets/OriginalModels/scp_812.tscn" id="2_ed4av"]
-[ext_resource type="Material" uid="uid://b686gnhaieath" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="9_j0ue4"]
-[ext_resource type="Material" uid="uid://dlet6oq8ddpub" path="res://Assets/Materials/MaintenanceTunnels/Vents.tres" id="9_nu54h"]
+[ext_resource type="Material" uid="uid://vg6s0ft4srsj" path="res://Assets/Materials/MaintenanceTunnels/Generic.tres" id="9_ed4av"]
 [ext_resource type="PackedScene" uid="uid://c4b3u0mx3bmb" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance.tscn" id="10_53pin"]
+[ext_resource type="Material" uid="uid://dwateuv2cf27" path="res://Assets/Materials/MaintenanceTunnels/Floor.tres" id="10_p6e27"]
 [ext_resource type="PackedScene" uid="uid://div1sqhrlu8et" path="res://Assets/ExternalModels/industrial_wall_lamp_maintenance_2.tscn" id="11_0wrga"]
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="12_b1yng"]
 [ext_resource type="FontFile" uid="uid://c5notad62nmgy" path="res://Assets/Fonts/SansNormalcy/Normalcy-v0.1.7.otf" id="12_h406k"]
 [ext_resource type="PackedScene" uid="uid://cqhhycwdvhaq6" path="res://Assets/ExternalModels/hanging_light.tscn" id="13_lfmvw"]
-[ext_resource type="Material" uid="uid://5dkh77ls84l2" path="res://Assets/Materials/MaintenanceTunnels/Blocks.tres" id="14_3j8ej"]
 [ext_resource type="Material" uid="uid://drmghtc6gtff8" path="res://Assets/Materials/WaterfallMaterial.tres" id="14_drm2v"]
 [ext_resource type="LightmapGIData" uid="uid://brgo6g7kslogv" path="res://Assets/Rooms/room1/Lite/Lm/mt_cont1_812.lmbake" id="15_se668"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="16_le8uv"]
@@ -44,7 +43,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 300,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUABwAIAAUABwAJAAgACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAJQAmACcAJQAoACYAKQAqACsAKwAsACkALAAtACkALgAsACsAKgAuACsAKQAtAC8AMAApAC8ALwAxADAAMAAyACkAMAAxADIAMgAqACkAKgAyADMAKgA0AC4ALgA0ADUAKgA1ADQALgA1ADYANQAqADYAMgAxADcAOAA3ADEANwA4ADkANwA5ADoAOwA3ADoAPAA3ADsAPAA9ADcAMgA3AD0APQA8AD4APQA+AD8APQA/AEAAPQBAAEEAQQAyAD0AQgAyAEEAQwBCAEEAMgBCAEMAMgBDAEQARQBEAEMARgBEAEUARwBEAEYASABEAEcARABIAEkAMgBEAEoARABJAEsARABLAEoASwBJAEwASwBMAE0ATgBLAE0ATwBLAE4ASwBPAFAASgBLAFAAUABPAFEAUABRAFIAUABSAFMAUABTAFQAUABVAEoAUABUAFUAVgBVAFQAVQBXAEoAVgBYAFUAVQBYAFcAWQBYAFYAWgBXAFgAWQBaAFgAVwBaAFkAVwBZAFsAXABbAFkAWwBcAF0AWwBdAF4AWwAqAFcAXwBbAF4AXwAqAFsAYABfAF4AKgBfAGEAYABhAF8AKgBhAGAAKgBgAGIAYwBiAGAANgAqAGIAYgBjAGQAYgBkADYAZQBmAGcA"),
-"material": ExtResource("14_3j8ej"),
+"material": ExtResource("9_ed4av"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 104,
@@ -55,7 +54,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("9_nu54h"),
+"material": ExtResource("9_ed4av"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
@@ -66,7 +65,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 54,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAFAAQABgAHAAUABAAAAAgABAAIAAkACQAKAAsACQAMAAoACAAMAAkACAANAAwADgANAAgADgAPAA0AEAARABIAEQAQABMAEQATABQAFQAWABcA"),
-"material": ExtResource("9_j0ue4"),
+"material": ExtResource("10_p6e27"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
@@ -77,7 +76,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 369,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgADAAAABgAHAAMACAAHAAYACAAJAAcACgAIAAYACgAGAAsADAANAA4ADAAPAA0AEAAPAAwAEAARAA8AEgARABAAEgATABEAFAAVABYAFAAXABUAGAAXABQAGAAZABcAGgAZABgAGgAbABkAHAAdAB4AHAAfAB0AIAAfABwAIAAhAB8AIgAhACAAIgAjACEAJAAlACYAJAAnACUAKAAkACYAKAAmACkAKgAkACgAKgArACQALAArACoALAAtACsALQAuACsALQAvAC4AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABIAEoATABKAE0ATgBMAE0ATgBNAE8AUABRAFIAUABTAFEAVABVAFYAVwBYAFkAWgBbAFwAWgBdAFsAXQBeAFsAXQBfAF4AYABaAFwAYABcAGEAYgBaAGAAYgBjAFoAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AbwBsAHAAcQByAHMAcgB0AHMAcQB1AHIAdgB3AHgAdgB5AHcAegB7AHwAegB9AHsAfgB/AIAAfgCBAH8AggCDAIQAggCFAIMAhgCHAIgAhgCJAIcAigCJAIYAiwCMAI0AiwCOAIwAjgCPAIwAjgCQAI8AkQCSAJMAkQCUAJIAlQCWAJcAmACXAJYAlQCZAJYAmgCbAJwAmgCdAJsAngCfAKAAoQCgAJ8AngCiAJ8AowCkAKUAowCmAKQApwCoAKkApwCqAKgAqwCqAKcAqwCsAKoArQCuAK8ArQCwAK4AsQCyALMAtAC1ALYAtwC4ALkAtwC5ALoAuwC8AL0AvgC/AMAAvgDBAL8AwgDDAMQAxQDGAMcAxQDIAMYAyQDKAMsAzADNAM4A"),
-"material": ExtResource("14_3j8ej"),
+"material": ExtResource("9_ed4av"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 207,

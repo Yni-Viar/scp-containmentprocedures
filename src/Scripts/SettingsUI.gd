@@ -5,6 +5,8 @@ extends VBoxContainer
 func _ready() -> void:
 	if Settings.IS_STORE_BUILD || OS.get_name() == "Web":
 		$PluginInstallButton.queue_free()
+	if OS.get_name() != "Android":
+		$PluginDeleteButton.queue_free()
 	if Settings.feature_legality_checker("no_neural_ai"):
 		$AI.queue_free()
 	else:

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://0ubhw73il4l0" path="res://Stories/MainStory/Scripts/S_StoryModeNode.gd" id="6_cg5n6"]
 [ext_resource type="Script" uid="uid://78p7vtl240wj" path="res://Stories/MainStory/Scripts/TaskSystem/S_GameTaskManager.gd" id="7_cg5n6"]
 [ext_resource type="Environment" uid="uid://mkrxfq7uvngm" path="res://Assets/Environment/Default.tres" id="8_dosvq"]
+[ext_resource type="Script" uid="uid://dque7t1t58ypo" path="res://Stories/MainStory/Scripts/S_ItemManager.gd" id="8_latwt"]
 [ext_resource type="PackedScene" uid="uid://fl3mh30nh4it" path="res://Stories/MainStory/Assets/Rooms/sublevels/subl_sz.tscn" id="9_cg5n6"]
 [ext_resource type="PackedScene" uid="uid://c52ew0y5rt6s7" path="res://Assets/Rooms/sublevels/pd_basement.tscn" id="10_pbu8r"]
 [ext_resource type="Script" uid="uid://b6f83xqq0od77" path="res://Stories/MainStory/Scripts/S_UI.gd" id="11_u0ibu"]
@@ -268,6 +269,8 @@ fill_from = Vector2(1, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyesh"]
 texture = SubResource("GradientTexture2D_qsl1r")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dosvq"]
+
 [node name="Game" type="Node3D" unique_id=1603466621]
 process_mode = 1
 script = ExtResource("1_cg5n6")
@@ -289,6 +292,7 @@ large_rooms = true
 room_amount = 0.875
 better_zone_generation_min_amount = 5
 checkpoints_enabled = true
+force_readable_names = true
 
 [node name="StoryModeNode" type="Node" parent="." unique_id=476135099]
 script = ExtResource("6_cg5n6")
@@ -297,6 +301,7 @@ script = ExtResource("6_cg5n6")
 script = ExtResource("7_cg5n6")
 
 [node name="Items" type="Node3D" parent="." unique_id=1145051518]
+script = ExtResource("8_latwt")
 
 [node name="Particles" type="Node3D" parent="." unique_id=1529506185]
 
@@ -891,7 +896,6 @@ bus = &"Music"
 
 [node name="LoadingScreen" type="Control" parent="." unique_id=799319976]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -957,11 +961,12 @@ offset_right = 192.0
 offset_bottom = 13.447968
 grow_horizontal = 2
 grow_vertical = 2
-value = 100.0
-show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxEmpty_dosvq")
+value = 50.0
 
 [connection signal="generated" from="FacilityGenerator" to="." method="_on_facility_generator_generated"]
 [connection signal="story_next_task" from="FoundationTask" to="UI" method="_on_foundation_task_task_done"]
+[connection signal="child_entered_tree" from="Items" to="Items" method="_on_child_entered_tree"]
 [connection signal="gui_input" from="UI/PlayingArea" to="UI" method="_on_playing_area_gui_input"]
 [connection signal="pressed" from="UI/HBoxContainer/InventoryButton" to="UI" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer/SwitchCameraButton" to="UI" method="_on_switch_camera_button_pressed"]

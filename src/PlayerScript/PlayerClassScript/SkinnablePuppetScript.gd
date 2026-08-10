@@ -45,7 +45,7 @@ class_name SkinnablePuppetScript
 
 var plugin_scripts: Dictionary[String, String] = {}
 
-var gompl: Gompl = Gompl.new(self)
+var gompl: Gompl
 
 ## Default index for single puppets
 static var default_class_presets: Dictionary[String, int]
@@ -56,17 +56,19 @@ static var default_class_presets_gltf_extension: Dictionary[String, String]
 
 # Called when the node enters the scene tree for the first time.
 func on_start() -> void:
-	var file_search: String = "user://mods/puppets/"
-	if custom:
-		#if custom class, use custom directory
-		file_search = file_search.path_join("custom")
-	else:
-		#if built-in class (that is bundled with the build of game),
-		#use builtin directory
-		file_search = file_search.path_join("builtin")
-	file_search = file_search.path_join(gltf_path_to_find)
 	# Checking for mods
-	if enable_gltf_loading && OS.get_name() != "Web" && gltf_file_prefix != null:
+	if enable_gltf_loading && (OS.get_name() != "Web" || (Settings.ALLOW_PLUGINS_IN_WEB && custom)) && gltf_file_prefix != null:
+		gompl = Gompl.new(self)
+		var file_search: String = "user://mods/puppets/"
+		if custom:
+			#if custom class, use custom directory
+			file_search = file_search.path_join("custom")
+		else:
+			#if built-in class (that is bundled with the build of game),
+			#use builtin directory
+			file_search = file_search.path_join("builtin")
+		file_search = file_search.path_join(gltf_path_to_find)
+		
 		var suffix_exists: bool = false
 		# Check if file does not exist
 		if gltf_path_to_find == null:
@@ -241,11 +243,15 @@ func _exit_tree() -> void:
 
 ## Loads custom scripts for SkinnablePuppetScript
 func plugin_api_function(function_name: String, env: Variant = null):
+	if OS.get_name() == "Web" && !Settings.ALLOW_PLUGINS_IN_WEB:
+		return
 	# If script is already cached
 	if plugin_scripts.has(function_name):
 		if !plugin_scripts[function_name].is_empty():
 			#Run it!
 			gompl.eval(plugin_scripts[function_name], env)
+			return
+		else:
 			return
 	if gltf_path_to_find == null:
 		plugin_scripts[function_name] = ""

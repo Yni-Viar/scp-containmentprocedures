@@ -29,37 +29,45 @@ This list contains all features, added in the game, or will be added in upcoming
   - [x] Add modding support to:
     - [x] SkinnablePuppetScripts (limited to static meshes)
 - [x] Added plugin installer
+- [x] Added plugin uninstaller (only for Android currently)
+- [x] Added build flag for Web platform enabling support for custom SCP-261 and Plugin system (disabled by default due to security concerns)
 
 ### New Storage Zone
 - [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
-- [x] Move SCP-067, SCP-109, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone, SCP-005 - in Maintenance Zone
-- [x] Add rooms for Story mode into that zone.
+- [x] Moved SCP-067, SCP-109, SCP-249, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone, SCP-005 - in Maintenance Zone
+- [x] Added rooms for Story mode into that zone.
 
 ### Rework Personnel Zone
-- [x] Make it more comforatble for inhabitants.
+- [x] Made it more comforatble for inhabitants.
 
 ### New SCPs
 - [x] SCP-079 (as a prop)
 - [x] SCP-181 (exclusively for Story mode)
 - [x] SCP-983
-- [x] Rework SCP-261 to support translations.
+- [x] Reworked SCP-261 to support translations.
+
+### Reworked customized item system
+- [x] Reworked customized items system and SCP-5270
 
 ### Other changes
+- [x] Updated Maintenance Zone textures
+- [x] Fixed SCP-5270 being sad, even after using SCP-2306 if SCP-5270 was already used.
+- [x] Increased camera far on Surface Zone only to 128.0 (was 60.0).
 - [x] Updated toolbar icons.
 - [x] Fix crash with empty SCP-261.json cache file
 - [x] UI theme update
 - [x] Added easter egg.
 - [x] Reworked Credits system to use same base, as SCP-261
-- [x] SCP-023 will now activate in Story with 50% chance, in Casual mode it will be always dormant.
+- [x] SCP-023 will now activate in Story mode with 50% chance, in Casual mode it will be always dormant.
 - [x] Added support for moving via keyboard in third-person mode.
 - [x] Removed SCP-266, due to incompatibility with SCP article.
+- [x] Removed SCP-938, due to strange bug. Awaiting rework...
 - [x] Removed SCP-446 in both Lite and Full versions.
 - [x] Removed rain in all seasons due to new sky performance impact.
 - [x] Sound rework
-- [x] \[Full version\] Fixed overlap between SCP-938 containment chamber and Gate A
 - [x] Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
-  - [x] Temporarily disable RD renderers support due to https://github.com/godotengine/godot/issues/120534
-  - [x] Revert to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
+  - [x] Temporarily disabled RD renderers support due to https://github.com/godotengine/godot/issues/120534
+  - [x] Reverted to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
 
 ## v9.1.3 (2026.06.28, ⚠️ Last version, that unofficially supports Windows 8.1!!!)
 

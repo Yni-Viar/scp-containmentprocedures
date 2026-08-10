@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://6j3kwox735os"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://6j3kwox735os"]
 
 [ext_resource type="PackedScene" uid="uid://cqc1hcylhqdxi" path="res://PlayerScript/PlayerClassPrefab/Guard.tscn" id="1_jpx58"]
 [ext_resource type="PackedScene" uid="uid://cj8l1uqw4l0vd" path="res://PlayerScript/PlayerClassRagdoll/Guard.tscn" id="2_1cx7q"]
@@ -9,7 +9,7 @@ script = ExtResource("2_6rhsx")
 puppet_class_name = "GUARD"
 prefab = ExtResource("1_jpx58")
 spawn_point_group = "GuardOfDClassSpawn"
-initial_amount = 12
+initial_amount = 2
 interacting_action = 1
 footstep_sounds = {
 "run": PackedStringArray("res://Sounds/Character/Human/Step/step_1.ogg", "res://Sounds/Character/Human/Step/step_2.ogg", "res://Sounds/Character/Human/Step/step_3.ogg", "res://Sounds/Character/Human/Step/step_4.ogg", "res://Sounds/Character/Human/Step/step_5.ogg", "res://Sounds/Character/Human/Step/step_6.ogg", "res://Sounds/Character/Human/Step/step_7.ogg", "res://Sounds/Character/Human/Step/step_8.ogg", "res://Sounds/Character/Human/Step/step_9.ogg"),

@@ -7,28 +7,20 @@ extends EnvironmentTrigger
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			match OS.get_name():
-				"Web":
+				"Web", "Android":
 					apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
-				"Android":
-					if OS.has_feature("Lite"):
-						apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
-					else:
-						apply_environment(load("res://Assets/Environment/Outside_MQ_Default.tres"))
 				_:
-					apply_environment(load("res://Assets/Environment/Outside_HQ_Default.tres"))
+					apply_environment(load("res://Assets/Environment/Outside_HQ.tres"))
+			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 128.0
 			entered_surface = true
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
 			apply_environment(load("res://Assets/Environment/Default.tres"), true)
+			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 60.0
 			entered_surface = false

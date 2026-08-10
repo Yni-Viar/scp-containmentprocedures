@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjurcf2sdk1t5"]
+[gd_scene format=3 uid="uid://cjurcf2sdk1t5"]
 
 [ext_resource type="Texture2D" uid="uid://kf35v0d3x7sw" path="res://Assets/HUD/Touch/delete.png" id="2_2q7fl"]
 [ext_resource type="Script" uid="uid://dhau6ydwatg13" path="res://InventorySystem/TileInventory/Inventory.gd" id="2_itdby"]
@@ -11,7 +11,7 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" unique_id=1966070690]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Inventory" type="Panel" parent="."]
+[node name="Inventory" type="Panel" parent="." unique_id=1270564965]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,8 +35,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pln65")
 script = ExtResource("2_itdby")
+offset = 0
 
-[node name="Delete" type="TextureRect" parent="."]
+[node name="Delete" type="TextureRect" parent="." unique_id=457584245]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -52,7 +53,7 @@ grow_vertical = 0
 texture = ExtResource("2_2q7fl")
 script = ExtResource("3_nrxg5")
 
-[node name="Money" type="Label" parent="."]
+[node name="Money" type="Label" parent="." unique_id=194495167]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
