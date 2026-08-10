@@ -14,15 +14,24 @@ More gestures you can see in the in-game settings.
 ## Requirements to play
 
 - 🐧Linux distribution from 2024 and newer
+
    > x86-64 or arm64 binaries available
+
 - 🪟Windows 10 (all updates) and 11 (all updates)
    > x86-64 or arm64 binaries available
+
    > Windows 8.1 is not natively supported since v10.0
+
    > Windows 7 and 8 is not natively supported since v5.0
+
    > You can still access Web version for Windows 7 - 8.1 by using Supermium.
+
 - 🤖Android 7.0 and newer (mid-range device)
+
    > arm64 and armv7 binaries available
+
    > Android 5.0-6.0 is not supported since v5.0
+   
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
 - 🖥️ Hardware requirements
