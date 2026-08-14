@@ -23,7 +23,7 @@ func _on_body_exited(body: Node3D) -> void:
 		if body.is_player:
 			apply_environment(load("res://Assets/Environment/Default.tres"), true)
 
-func apply_environment(environment: Environment, default_backround: bool = false):
+func apply_environment(environment: Environment, default_background: bool = false):
 	get_tree().root.get_node("Game/WorldEnvironment").environment = environment
 	get_tree().root.get_node("Game/WorldEnvironment").environment.glow_enabled = Settings.setting_res.glow
 	# Enable SSAO in OpenGL only in Godot 4.6
@@ -37,7 +37,7 @@ func apply_environment(environment: Environment, default_backround: bool = false
 	else:
 		get_tree().root.get_node("Game/WorldEnvironment").environment.tonemap_white = 1.0
 	
-	if Settings.setting_res.lighting == SettingsResource.Lighting.NONE && default_backround:
+	if Settings.setting_res.lighting == SettingsResource.Lighting.NONE:
 		get_tree().root.get_node("Game/WorldEnvironment").environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 		get_tree().root.get_node("Game/WorldEnvironment").environment.ambient_light_color = Color(0.5, 0.5, 0.5)
 	else:

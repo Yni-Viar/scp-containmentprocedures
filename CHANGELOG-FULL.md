@@ -2,72 +2,74 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
-## v10.0.0 (Megarework update)
+## v10.0.0 (Initiation / Megarework update, 2026.08.14)
 ### Gameplay rework / Story mode
-- [x] Added support for timed tasks
-- [x] Added whole story
-  - [x] Added save system
-- [x] Remove hard mode
-- [x] Remove CI and MTF, re-introduce MTF Agent.
-- [x] Remove wave subsystem (until proper re-implementation)
-- [x] Day cycle and AAA-quality clouds
-- [x] Add door system
-- [x] Rework several rooms to support doors
-  - [x] New SCP-005 Containment chamber (in Maintenance Zone)
-  - [x] SCP-173 containment chamber
-  - [x] SCP-650 containment chamber
-  - [x] SCP-178 containment chamber
-  - [x] SCP-522 containment chamber
-  - [x] SCP-1507 containment chamber
-  - [x] Research Zone testroom
-  - [x] Research Zone endroom
-- [x] Add support for custom stories/DLCs.
+- Added support for timed tasks
+- Added whole story
+  - Added save system
+- Remove hard mode
+- Remove CI and MTF, re-introduce MTF Agent.
+- Remove wave subsystem (until proper re-implementation)
+- Day cycle and AAA-quality clouds
+- Add door system
+- Rework several rooms to support doors
+  - New SCP-005 Containment chamber (in Maintenance Zone)
+  - SCP-173 containment chamber
+  - SCP-650 containment chamber
+  - SCP-178 containment chamber
+  - SCP-522 containment chamber
+  - SCP-1507 containment chamber
+  - Research Zone testroom
+  - Research Zone endroom
+- Add support for custom stories/DLCs.
 
 ### Plugin System
-- [x] Plugin System, based on GOMPL, a dialect of IMP Language
-  - [x] Add modding manager node (child of Game), which auto-loads mods.
-  - [x] Add modding support to:
-    - [x] SkinnablePuppetScripts (limited to static meshes)
-- [x] Added plugin installer
-- [x] Added plugin uninstaller (only for Android currently)
-- [x] Added build flag for Web platform enabling support for custom SCP-261 and Plugin system (disabled by default due to security concerns)
+- Plugin System, based on GOMPL, a dialect of IMP Language
+  - Add modding manager node (child of `Game` node), which auto-loads mods.
+  - Add modding support to SkinnablePuppetScripts (or NPCs) (limited to static meshes)
+- Added plugin installer (except Web platform)
+- Added plugin uninstaller (only for Android currently)
+- Added build flag for Web platform enabling support for custom SCP-261 and Plugin system (disabled by default due to security concerns)
 
 ### New Storage Zone
-- [x] Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
-- [x] Moved SCP-067, SCP-109, SCP-249, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone, SCP-005 - in Maintenance Zone
-- [x] Added rooms for Story mode into that zone.
+- Spun off *SCP: Echoes* rooms from Maintenance Zone to new zone
+- Moved SCP-067, SCP-109, SCP-249, SCP-686, SCP-1223, SCP-2028 and SCP-5270 into Storage Zone, SCP-005 - in Maintenance Zone
+- Added rooms for Story mode into that zone.
 
 ### Rework Personnel Zone
-- [x] Made it more comforatble for inhabitants.
+- Made it more comfortable for inhabitants.
 
 ### New SCPs
-- [x] SCP-079 (as a prop)
-- [x] SCP-181 (exclusively for Story mode)
-- [x] SCP-983
-- [x] Reworked SCP-261 to support translations.
+- SCP-079 (as a prop)
+- SCP-181 (exclusively for Story mode)
+- SCP-983
+- Reworked SCP-261 to support translations.
 
 ### Reworked customized item system
-- [x] Reworked customized items system and SCP-5270
+- Reworked customized items system and SCP-5270
 
 ### Other changes
-- [x] Updated Maintenance Zone textures
-- [x] Fixed SCP-5270 being sad, even after using SCP-2306 if SCP-5270 was already used.
-- [x] Increased camera far on Surface Zone only to 128.0 (was 60.0).
-- [x] Updated toolbar icons.
-- [x] Fix crash with empty SCP-261.json cache file
-- [x] UI theme update
-- [x] Added easter egg.
-- [x] Reworked Credits system to use same base, as SCP-261
-- [x] SCP-023 will now activate in Story mode with 50% chance, in Casual mode it will be always dormant.
-- [x] Added support for moving via keyboard in third-person mode.
-- [x] Removed SCP-266, due to incompatibility with SCP article.
-- [x] Removed SCP-938, due to strange bug. Awaiting rework...
-- [x] Removed SCP-446 in both Lite and Full versions.
-- [x] Removed rain in all seasons due to new sky performance impact.
-- [x] Sound rework
-- [x] Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
-  - [x] Temporarily disabled RD renderers support due to https://github.com/godotengine/godot/issues/120534
-  - [x] Reverted to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
+- Updated Maintenance Zone textures
+- Rework setting presets for Android, Web and others.
+- \[Web\] Remove lighting in Web by-default (you can revert this change in Settings, but it may affect performance)
+- Fixed SCP-5270 being sad, even after using SCP-2306 if SCP-5270 was already used.
+- Increased camera far on Surface Zone only to 192.0 (was 60.0).
+- Updated toolbar icons.
+- Fix crash with empty SCP-261.json cache file
+- UI theme update
+- Added easter egg.
+- Reworked Credits system to use same base, as SCP-261
+- SCP-023 will now activate in Story mode with 50% chance, in Casual mode it will be always dormant.
+- Added support for moving via keyboard in third-person mode.
+- Removed SCP-266, due to incompatibility with SCP article.
+- Removed spoilers window.
+- Removed SCP-938, due to strange bug. Awaiting rework...
+- Removed SCP-446 in both Lite and Full versions.
+- Removed rain in all seasons due to new sky performance impact.
+- Sound rework
+- Moved to Godot 4.7, thus breaking partial Windows 8.1 support.
+  - Temporarily disabled RD renderers support due to https://github.com/godotengine/godot/issues/120534
+  - Reverted to single-threaded pre-5.8.0 loader, due to https://github.com/godotengine/godot/issues/121124
 
 ## v9.1.3 (2026.06.28, ⚠️ Last version, that unofficially supports Windows 8.1!!!)
 

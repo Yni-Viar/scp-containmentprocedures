@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://fl3mh30nh4it"]
 
-[ext_resource type="Script" uid="uid://tj70l2lup8er" path="res://Scripts/Seasonal/SurfaceZone.gd" id="1_pa5ax"]
+[ext_resource type="Script" uid="uid://tj70l2lup8er" path="res://Scripts/SurfaceZone.gd" id="1_pa5ax"]
 [ext_resource type="Texture2D" uid="uid://8u71sh4knsq" path="res://Assets/ExternalModels/SCP/PopPopIcard/SZ_Wall1_BaseColor.png" id="2_aav1s"]
 [ext_resource type="Texture2D" uid="uid://chvbbnpwovgtp" path="res://Assets/ExternalModels/SCP/PopPopIcard/SZ_TunnelTrimming_VirtualSurface_Wall1_Normal.png" id="3_s41bc"]
 [ext_resource type="Texture2D" uid="uid://bdvhem23lci4" path="res://Assets/ExternalModels/SCP/PopPopIcard/SZ_TunnelTrimming_VirtualSurface_TunnelFloor_BaseMap.png" id="4_3me2p"]

@@ -224,7 +224,7 @@ void sky() {
 	result_color = mix(vec3(0.0), result_color, step(0.0, EYEDIR.y));
 
 	vec4 col = vec4(0.0);
-	if (dir.y>0.0) {
+	if (dir.y>0.0 && !AT_CUBEMAP_PASS) {
 		vec3 camPos = vec3(0.0, g_radius, 0.0);
 		vec3 start = camPos + dir * intersectSphere(camPos, dir, sky_b_radius);
 		vec3 end = camPos + dir * intersectSphere(camPos, dir, sky_t_radius);

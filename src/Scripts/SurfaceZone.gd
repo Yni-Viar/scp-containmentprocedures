@@ -25,12 +25,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	$DirectionalLight3D.rotation.x += (PI / 180) * delta
+	if $DirectionalLight3D.rotation_degrees.x > 360.0:
+		$DirectionalLight3D.rotation_degrees.x = $DirectionalLight3D.rotation_degrees.x - 360.0
 	if ($DirectionalLight3D.rotation_degrees.x > -180.0 && $DirectionalLight3D.rotation_degrees.x < 0.0) || ($DirectionalLight3D.rotation_degrees.x > 180.0 && $DirectionalLight3D.rotation_degrees.x < 360.0):
-		if $SwitchEnvironmentTrigger.entered_surface:
+		if $SwitchEnvironmentTrigger.entered_surface && Settings.setting_res.lighting != SettingsResource.Lighting.NONE:
 			if !$DirectionalLight3D.visible:
 				$DirectionalLight3D.show()
 		else:
-			$DirectionalLight3D.hide()
+			if $DirectionalLight3D.visible:
+				$DirectionalLight3D.hide()
 	else:
 		if $DirectionalLight3D.visible:
 			$DirectionalLight3D.hide()

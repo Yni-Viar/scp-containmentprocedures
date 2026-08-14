@@ -15,7 +15,7 @@ func _on_body_entered(body: Node3D) -> void:
 					apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
 				_:
 					apply_environment(load("res://Assets/Environment/Outside_HQ.tres"))
-			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 128.0
+			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 192.0
 			entered_surface = true
 
 func _on_body_exited(body: Node3D) -> void:

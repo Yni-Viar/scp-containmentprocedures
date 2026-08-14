@@ -92,21 +92,26 @@ func load_resource():
 		set_default_keybinds()
 
 func load_default_settings():
-	if OS.get_name() != "Web" && OS.get_name() != "Android":
-		var res = load("res://Scripts/SettingsResource/Presets/OpenGL/Low.tres")
-		save_resource(res)
-		setting_res = res
-	else:
-		var res = load("res://Scripts/SettingsResource/Presets/OpenGL/Lowest.tres")
-		save_resource(res)
-		setting_res = res
+	match OS.get_name():
+		"Web":
+			var res = load("res://Scripts/SettingsResource/Presets/Lowest.tres")
+			save_resource(res)
+			setting_res = res
+		"Android":
+			var res = load("res://Scripts/SettingsResource/Presets/Low.tres")
+			save_resource(res)
+			setting_res = res
+		_:
+			var res = load("res://Scripts/SettingsResource/Presets/Mid.tres")
+			save_resource(res)
+			setting_res = res
 	set_default_keybinds()
 
 ## Sometimes ago it was a great function. Now it is just a stub, that calls ResourceStorage and saves settings
 func save_resource(res):
 	if OS.get_name() != "Web":
 		ResourceStorage.save_resource("user://Settings.bin", res)
-		emit_signal("settings_saved")
+	emit_signal("settings_saved")
 
 ## Check current season, based on PC time.
 func season_checker():

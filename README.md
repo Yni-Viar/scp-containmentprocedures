@@ -4,8 +4,9 @@
 
 ## About
 
-Play the game about Janusz Krzystofski...
-Or do your daily job at Site-19.
+SCP: Continued Procedures is a 3rd-person singleplayer Research-simulator SCP game.
+Enjoy the short story about Janusz Krzystofski, the senior researcher of Site-19...
+Or do your daily job in Casual Mode - you need to study anomalies, such as SCP-067, SCP-812, and others.
 
 Click/Tap - move/pick items (if you tap on character, they will go with you).
 
@@ -17,7 +18,7 @@ More gestures you can see in the in-game settings.
 
    > x86-64 or arm64 binaries available
 
-- 🪟Windows 10 (all updates) and 11 (all updates)
+- 🪟Windows 10 (all updates (build 14393 and higher is recommended)) and 11 (all updates)
    > x86-64 or arm64 binaries available
 
    > Windows 8.1 is not natively supported since v10.0
@@ -34,10 +35,15 @@ More gestures you can see in the in-game settings.
    
 
 - 🌐Modern browser (Chromium-based, Firefox and Edge)
+
+   > Web version is **experimental**!!!
+
+   > Instance, hosted on GameJolt, supports only PCs, due to the game size.
+
 - 🖥️ Hardware requirements
    - OpenGL 3.3/ES 3.0 minimum, Vulkan support recommended
    - display resolution > 1280x720 (except Android) recommended
-   - Mouse/touch support
+   - Mouse/touch or keyboard support.
 
 ### Included content
 

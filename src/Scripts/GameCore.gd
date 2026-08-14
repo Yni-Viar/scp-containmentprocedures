@@ -7,7 +7,6 @@ signal round_started
 
 @export var gamedata: GameData
 
-@export var mapgen_room_amount_web: float = 0.75
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 ## Presets for game ##
 var map_seed: int = -1

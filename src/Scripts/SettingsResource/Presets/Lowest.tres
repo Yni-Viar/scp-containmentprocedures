@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SettingsResource" format=3 uid="uid://bdftvlo16o7wt"]
+
+[ext_resource type="Script" uid="uid://dmhkb8xf7ugt1" path="res://Scripts/SettingsResource/SettingsResource.gd" id="1_xcjx5"]
+
+[resource]
+script = ExtResource("1_xcjx5")
+glow = false
+reflection_probe = false
+lighting = 0

@@ -9,6 +9,9 @@ func func_2(a, b, c := "optional param"):
 	prints("Function call test 2 -", a, b, c)
 	return "return value from func_2"
 
+func func_3() -> Array:
+	return [ 1, 2, 3 ]
+
 func print(p):
 	print("Script prints '", p, "'")
 
@@ -17,6 +20,8 @@ func print(p):
 func _ready() -> void:
 	var g := Gompl.new(self)
 	var res
+	
+	#g.debug_printing = true
 	
 	# test calling GDScript functions
 	res = g.eval('
@@ -114,18 +119,22 @@ func _ready() -> void:
 			x = 0
 			while true do
 				x = x + 1
-				if x > 100 then interrupt end // premature script exit
+				if x > 100 then
+					interrupt with x // premature script exit
+				end
 			end', null, state, max_steps)
 		print("value of X on frame ", i, ": ", state["env"]["x"], " after ", state["steps"], " steps")
 		await get_tree().process_frame
 	print("RESULT 8: ", res, "\n")
+	assert((res is int or res is float) and res == 104, "Result 8 wrong")
 	
 	# test calling Gompl functions
 	res = g.eval('
 		function test()
 			print("inside function test()")
 			if x == 0 then stop // use stop like "return"
-			elif x == 1 then 5 else 7 end
+			elif x == 1 then 5
+			else 7 end
 		end
 		print("outside function test()")
 		x = 1
@@ -134,8 +143,10 @@ func _ready() -> void:
 	print("RESULT 9: ", res, "\n")
 	assert((res is int or res is float) and res == 5, "Result 9 wrong")
 	
-	# test calling Gompl functions recusrively
-	g.debug_printing = true
+	# Attention: `g` keeps the `function test()` when the next call of `g.eval()` has the `clear_internal_funcs`
+	# parameter set to `false` (default is `true`) - this way you could reuse it
+	
+	# test calling Gompl functions recursively
 	res = g.eval('
 		function a()
 			i = i + 1
@@ -148,6 +159,16 @@ func _ready() -> void:
 	print("RESULT 10: ", res, "\n")
 	assert((res is int or res is float) and res == 2000, "Result 10 wrong")
 	
+	# test array
+	res = g.eval('
+		a = array(3, 2, -100)
+		a.sort()
+		a[0] = "first"
+		a[a.find(3)] = "last"
+		a
+	')
+	print("RESULT 11: ", res, "\n")
+	assert((res is Array) and res[0] == "first" and res[1] == 2 and res[2] == "last", "Result 11 wrong")
+	
 	# done, results in Output
-	await get_tree().process_frame
-	get_tree().quit()
+	print("done.")
