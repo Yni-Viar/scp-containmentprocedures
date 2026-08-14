@@ -105,30 +105,29 @@ func get_distance_to_player() -> void:
 
 func get_player_front_facing() -> void:
 	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_transform.basis.z
-	custom_global_vars["builtin_player_front_facing_x"] = pos.x
-	custom_global_vars["builtin_player_front_facing_y"] = pos.y
-	custom_global_vars["builtin_player_front_facing_z"] = pos.z
+	custom_global_vars["builtin_player_front_facing"] = [pos.x, pos.y, pos.z]
 
 func get_front_facing() -> void:
 	var pos: Vector3 = get_parent().get_parent().global_transform.basis.z
-	custom_global_vars["builtin_front_facing_x"] = pos.x
-	custom_global_vars["builtin_front_facing_y"] = pos.y
-	custom_global_vars["builtin_front_facing_z"] = pos.z
+	custom_global_vars["builtin_front_facing"] = [pos.x, pos.y, pos.z]
 
 func get_player_global_position() -> void:
 	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_position
-	custom_global_vars["builtin_player_global_pos_x"] = pos.x
-	custom_global_vars["builtin_player_global_pos_y"] = pos.y
-	custom_global_vars["builtin_player_global_pos_z"] = pos.z
+	custom_global_vars["builtin_player_global_pos"] = [pos.x, pos.y, pos.z]
 
 func get_global_pos() -> void:
 	var pos: Vector3 = get_parent().get_parent().global_position
-	custom_global_vars["builtin_global_pos_x"] = pos.x
-	custom_global_vars["builtin_global_pos_y"] = pos.y
-	custom_global_vars["builtin_global_pos_z"] = pos.z
+	custom_global_vars["builtin_global_pos"] = [pos.x, pos.y, pos.z]
 
-func set_global_pos(x: float, y: float, z: float) -> void:
-	get_parent().get_parent().global_position = Vector3(x, y, z)
+func set_global_pos(pos: Array) -> void:
+	if pos.size() != 3:
+		write_line("Array must have size of 3 floats")
+		return
+	for check in pos:
+		if check is not float:
+			write_line("Array must have size of 3 floats")
+			return
+	get_parent().get_parent().global_position = Vector3(pos[0], pos[1], pos[2])
 
 func get_follow() -> void:
 	custom_global_vars["builtin_follow"] = get_parent().get_parent().follow_target
@@ -173,3 +172,27 @@ func interaction_sound(sound_path: String) -> void:
 		if resource is AudioStream:
 			get_parent().get_parent().get_node("InteractSound").stream = load(full_path)
 			get_parent().get_parent().get_node("InteractSound").play()
+
+func player_get_all_items():
+	var item_array: Array[Item] = get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").get_all_items()
+	var result_array: Array[int] = []
+	result_array.resize(item_array.size())
+	for i in range(item_array.size()):
+		result_array[i] = item_array[i].id
+	custom_global_vars["builtin_player_items"] = result_array
+
+func go_to_target(primary_target: String):
+	if get_parent().get_parent().platform_moving:
+		return
+	get_parent().get_parent().follow_target = primary_target
+	await get_tree().create_timer(0.5).timeout
+	if !get_parent().get_parent().get_node("NavigationAgent3D").is_target_reachable():
+		get_parent().get_parent().follow_target = get_tree().get_nodes_in_group("WavePointUpper")[rng.randi_range(0, get_tree().get_node_count_in_group("WavePointUpper") - 1)].get_path()
+		if !get_parent().get_parent().get_node("NavigationAgent3D").is_target_reachable():
+			get_parent().get_parent().follow_target = get_tree().get_nodes_in_group("WavePointLower")[rng.randi_range(0, get_tree().get_node_count_in_group("WavePointLower") - 1)].get_path()
+
+func player_set_status_effect(effect: String, strength: float, duration: float):
+	if effect == "Frozen":
+		write_line("You cannot set Frozen status effect directly. Please, use player_health_manage(health_to_add: float, 1) for setting this status effect")
+		return
+	get_tree().root.get_node("Game").protagonist.get_node("StatusEffects").apply_status_effect(effect, strength, duration)

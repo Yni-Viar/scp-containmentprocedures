@@ -10,12 +10,11 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.is_player:
-			match OS.get_name():
-				"Web", "Android":
-					apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
-				_:
-					apply_environment(load("res://Assets/Environment/Outside_HQ.tres"))
-			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 192.0
+			if Settings.setting_res.enable_advanced_sky:
+				apply_environment(load("res://Assets/Environment/Outside_HQ.tres"))
+			else:
+				apply_environment(load("res://Assets/Environment/Outside_LQ.tres"))
+			get_tree().root.get_node("Game/StaticPlayer/Head/Camera3D").far = 160.0
 			entered_surface = true
 
 func _on_body_exited(body: Node3D) -> void:

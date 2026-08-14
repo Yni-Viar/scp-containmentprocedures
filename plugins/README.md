@@ -70,6 +70,7 @@ end
 	"author": `enter your username (string)`,
 	"year": `current year (int)`,
 	"license": `license (usually CC-BY 4.0, CC-BY-SA 4.0/3.0)`,
+    "api_version": `minimal supported API version, should be written as array with [major, minor, patch], such as [10, 1, 0]`
 	"plugin_type": `"puppet"`,
 	"gltf": {
 		"gltf_file_prefix": `model prefix (generally, model's filename) (string)`,
@@ -169,7 +170,7 @@ All files must have extension `.gompl`
 `position_from_center_x`, `position_from_center_y`, `position_from_center_z` is position of an Area3D from center (floats, defaults to 0)
 `height` - for usage with Capsule and Cylinder shapes, defaults to 1.0.
 
-#### Getters-setters
+
 > ⚠️ Due to GOMPL limitation, getters are implemented as global variables, started with `builtin_`,
 > such as `builtin_follow`, `builtin_player_global_pos_x`, etc...
 
@@ -183,11 +184,12 @@ All files must have extension `.gompl`
 
 `get_global_position()` - Gets position of self as 3 floats (`builtin_global_pos_x/y/z`)
 
-`set_global_position(x: float, y: float, z: float)` - Sets position of self
+`set_global_position(pos: Array)` - Sets position of self
+> ⚠️ API v10.1.0 compatibility breakage: use `set_global_position([x, y, z])` as Array instead of `set_global_position(x, y, z)`
 
-`get_follow()` - Gets follow path, which self follows (`builtin_follow`)
+`get_follow()` - Gets follow path, which this custom puppet follows (`builtin_follow`)
 
-`set_follow(path: String)` - Sets follow path, which self follows
+`set_follow(path: String)` - Sets follow path, which this custom puppet will follow. (For advanced scenarios, use `go_to_target(target_path)`)
 
 `get_immortal()` - Gets godmode status (`builtin_immortal`)
 
@@ -210,3 +212,12 @@ All files must have extension `.gompl`
 `player_remove_item(item_id: int, drop: bool = false)` - Remove item from player
 
 `interaction_sound(sound_path: String)` - Plays custom sound, that is placed in `mod_path`/sounds/
+
+`player_get_all_items()` - Gets all items in inventory as IDs
+> Available only in API v10.1.0 and higher
+
+`go_to_target(target_path)` - Sets follow path, which this custom puppet will follow. This puppet will use Surface Zone elevators to reach you.
+> Available only in API v10.1.0 and higher
+
+`player_set_status_effect(effect: String, strength: float, duration: float)` - Set specific status effect for puppet
+> Available only in API v10.1.0 and higher

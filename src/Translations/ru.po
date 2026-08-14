@@ -660,6 +660,9 @@ msgstr "Выход"
 msgid "PLUGIN_DELETE"
 msgstr "Удалить выбранное дополнение"
 
+msgid "API_VERSION"
+msgstr "Версия API"
+
 #~ msgid "STORY_MAIN"
 #~ msgstr ""
 #~ "Основная история\n"

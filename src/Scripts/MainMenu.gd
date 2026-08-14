@@ -57,7 +57,7 @@ func _enter_tree() -> void:
 			"ru_RU":
 				# New upcoming Russian law.
 				$Logo.texture = load("res://UI/MainMenu/LawRegulation/RU.png")
-	
+	$ProjectInfo/GameVersion.text = "v" + ProjectSettings.get_setting("application/config/version")
 	await get_tree().physics_frame
 	
 	if completed_amount == total_amount:

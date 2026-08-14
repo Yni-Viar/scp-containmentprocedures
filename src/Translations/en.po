@@ -619,6 +619,9 @@ msgstr "Exit"
 msgid "PLUGIN_DELETE"
 msgstr "Delete selected plugin"
 
+msgid "API_VERSION"
+msgstr "API version"
+
 #~ msgid "STORY_MAIN"
 #~ msgstr ""
 #~ "Main Story\n"

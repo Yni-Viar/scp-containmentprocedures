@@ -2,6 +2,7 @@ extends Node
 ## Made by Yni, licensed under MIT License.
 
 ## Stages of the developing
+## @deprecated A leftover from SCP: Site Online times...
 enum Stages {release, testing, dev}
 enum ItemType {item, map_object, npc}
 enum Season {NONE, WINTER, SPRING, SUMMER, AUTUMN, CHRISTMAS, HALLOWEEN}
@@ -14,8 +15,10 @@ const IS_STORE_BUILD: bool = false
 ## Enabling it may raise security concerns.
 const ALLOW_PLUGINS_IN_WEB: bool = false
 ## Game's data compatibility for modding.
-const DATA_COMPATIBILITY: String = "10.0.0"
+## @deprecated Please use get_game_version() for modding!
+const DATA_COMPATIBILITY: String = "10.1.0"
 ## Game's data compatibility for modding.
+## @deprecated A leftover from SCP: Site Online times...
 const CURRENT_STAGE: Stages = Stages.dev
 ## If we don't specify regions, which have additional legal requirements, we are in trouble.
 ## Available flags:
@@ -340,3 +343,7 @@ func load_gltf(path: String) -> PackedScene:
 			gltf_scene_root_node.queue_free()
 			return packed_scene
 	return null
+
+## Gets game version
+func get_game_version() -> Array:
+	return ProjectSettings.get_setting("application/config/version").split(".")

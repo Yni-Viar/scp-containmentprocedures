@@ -34,8 +34,9 @@ func refresh_list() -> void:
 				var plugin_name: String = plugin_dict["name"] if plugin_dict.has("name") else "unknown"
 				var plugin_author: String = plugin_dict["author"] if plugin_dict.has("author") else "unknown"
 				var plugin_type: String = plugin_dict["plugin_type"] if plugin_dict.has("plugin_type") else "unknown"
+				var plugin_api: String = str(int(plugin_dict["api_version"][0])) + "." + str(int(plugin_dict["api_version"][1])) + "." + str(int(plugin_dict["api_version"][2])) if plugin_dict.has("api_version") else "10.0.0 or unknown"
 				plugins_paths.append("user://mods/puppets/custom".path_join(sub_dir_name))
-				add_item(tr("PLUGIN_NAME") + ": " + plugin_name + "\n" + tr("PLUGIN_AUTHOR") + ": " + plugin_author + "\n" + tr("PLUGIN_TYPE") + ": " + tr(plugin_type), load("res://UI/plugin_icon.png"))
+				add_item(tr("PLUGIN_NAME") + ": " + plugin_name + "\n" + tr("PLUGIN_AUTHOR") + ": " + plugin_author + "\n" + tr("PLUGIN_TYPE") + ": " + tr(plugin_type) + "\n" + tr("API_VERSION") + ": " + plugin_api, load("res://UI/plugin_icon.png"))
 
 func _on_plugin_install_button_pressed() -> void:
 	if file_dialog == null:

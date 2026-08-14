@@ -494,3 +494,6 @@ msgstr ""
 
 msgid "PLUGIN_DELETE"
 msgstr ""
+
+msgid "API_VERSION"
+msgstr ""

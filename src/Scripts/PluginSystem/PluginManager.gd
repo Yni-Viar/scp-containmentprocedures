@@ -85,11 +85,25 @@ func _load_plugins():
 ## Plugin validator
 func is_plugin_valid(plugin_dict: Dictionary) -> bool:
 	if plugin_dict.has("plugin_type") && plugin_dict.has("license") && \
-	   plugin_dict.has("author") && plugin_dict.has("name"):
+	   plugin_dict.has("author") && plugin_dict.has("name") && plugin_dict.has("api_version"):
 		if plugin_dict["plugin_type"] is String && \
 		   plugin_dict["license"] is String && \
 		   plugin_dict["author"] is String && \
-		   plugin_dict["name"] is String:
+		   plugin_dict["name"] is String && \
+		   plugin_dict["api_version"] is Array:
+			# API compatibility check
+			var game_version: Array = Settings.get_game_version()
+			# Check if major version is lower but minor version is higher problem
+			var lower_api_version_check: bool = false
+			for i in range(plugin_dict["api_version"].size()):
+				if plugin_dict["api_version"][i] is float:
+					if int(plugin_dict["api_version"][i]) > int(game_version[i]) && !lower_api_version_check:
+						return false
+					elif int(plugin_dict["api_version"][i]) < int(game_version[i]):
+						lower_api_version_check = true
+				else:
+					return false
+			# Specific check
 			match plugin_dict["plugin_type"]:
 				"puppet":
 					if plugin_dict.has("gltf") && plugin_dict.has("puppet_resource"):

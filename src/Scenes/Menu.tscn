@@ -252,6 +252,10 @@ offset_left = -256.0
 offset_bottom = 320.0
 grow_horizontal = 0
 
+[node name="GameVersion" type="Label" parent="ProjectInfo" unique_id=679437551]
+layout_mode = 2
+horizontal_alignment = 2
+
 [node name="Credits" type="Button" parent="ProjectInfo" unique_id=1497812691]
 layout_mode = 2
 theme = ExtResource("2_syfuq")

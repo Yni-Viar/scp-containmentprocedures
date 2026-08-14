@@ -4,3 +4,4 @@
 
 [resource]
 script = ExtResource("1_x0ukg")
+enable_advanced_sky = true

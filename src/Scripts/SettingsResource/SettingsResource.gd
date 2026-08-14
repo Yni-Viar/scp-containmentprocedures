@@ -78,3 +78,5 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 @export var beta_mode: bool = false
 ## Enables hunger mechanics in casual mode
 @export var casual_mode_hunger: bool = true
+## Enables advanced sky
+@export var enable_advanced_sky: bool = false

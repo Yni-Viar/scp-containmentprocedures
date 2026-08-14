@@ -27,6 +27,7 @@ func _ready() -> void:
 		$Renderer.set_item_disabled(1, true)
 		$Renderer.set_item_disabled(2, true)
 		$Renderer.hide()
+		$AdvancedSky.hide()
 		$Label3.hide()
 	elif OS.get_name() == "Android" || (Engine.get_version_info()["minor"] == 7 && !Settings.setting_res.beta_mode):
 		# Disable Mobile and Forward+ renderers on Android and all of Godot 4.7.x, if beta_mode is not used.
@@ -108,4 +109,9 @@ func _on_settings_visibility_changed() -> void:
 
 func _on_hunger_in_casual_mode_toggled(toggled_on: bool) -> void:
 	Settings.setting_res.casual_mode_hunger = toggled_on
+	Settings.save_resource(Settings.setting_res)
+
+
+func _on_advanced_sky_toggled(toggled_on: bool) -> void:
+	Settings.setting_res.enable_advanced_sky = toggled_on
 	Settings.save_resource(Settings.setting_res)
