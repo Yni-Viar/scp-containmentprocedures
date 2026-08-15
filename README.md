@@ -167,7 +167,7 @@ Godot 4.4 is no longer supported anymore since 6.0 - Cleanlight update.
 
 1. Project->Export
 2. Choose your platform (e.g. Windows/Linux/Android)
-3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`
+3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`. You may also want to add `, *.ico` to that filter, if you are not building for Windows.
 
 
 ### Feature flags

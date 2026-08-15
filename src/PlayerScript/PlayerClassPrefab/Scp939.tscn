@@ -5,21 +5,16 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_3sjst"]
 radius = 10.622428
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_u18en"]
-height = 1.3369446
-radius = 0.6166992
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_nis2p"]
-radius = 5.046292
+radius = 6.0
 
 [node name="Puppet" type="Node3D" unique_id=302919309]
 script = ExtResource("1_3sjst")
 available_puppets = Dictionary[String, int]({
 "res://PlayerScript/PlayerClassPrefab/Variations/Scp939/Scp939_U.tscn": 0
 })
-gltf_path_to_find = "scp939"
+gltf_path_to_find = "Scp939"
 armature_name = "939_Rig"
-enable_vision_scan = true
 
 [node name="Trigger" type="Area3D" parent="." unique_id=464314680]
 collision_layer = 3
@@ -29,14 +24,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0379398, 0)
 shape = SubResource("SphereShape3D_3sjst")
 
-[node name="Attack" type="Area3D" parent="." unique_id=1045188767]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack" unique_id=2092027855]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5233917, 0)
-shape = SubResource("CylinderShape3D_u18en")
-
 [node name="RunTrigger" type="Area3D" parent="." unique_id=443704281]
 collision_layer = 3
 collision_mask = 3
@@ -44,10 +31,7 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RunTrigger" unique_id=879680537]
 shape = SubResource("SphereShape3D_nis2p")
 
-[connection signal="active_puppets_changed" from="." to="." method="_on_active_puppets_changed"]
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]
-[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
-[connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]
 [connection signal="body_entered" from="RunTrigger" to="." method="_on_run_trigger_body_entered"]
 [connection signal="body_exited" from="RunTrigger" to="." method="_on_run_trigger_body_exited"]

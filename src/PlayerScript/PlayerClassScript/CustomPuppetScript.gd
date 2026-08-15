@@ -101,19 +101,22 @@ func special_action():
 ### Plugin API
 
 func get_distance_to_player() -> void:
-	custom_global_vars["builtin_distance_to_player"] = get_parent().get_parent().global_position.distance_to(get_tree().root.get_node("Game").protagonist.global_position)
+	if get_tree().root.get_node("Game").protagonist != null:
+		custom_global_vars["builtin_distance_to_player"] = get_parent().get_parent().global_position.distance_to(get_tree().root.get_node("Game").protagonist.global_position)
 
 func get_player_front_facing() -> void:
-	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_transform.basis.z
-	custom_global_vars["builtin_player_front_facing"] = [pos.x, pos.y, pos.z]
+	if get_tree().root.get_node("Game").protagonist != null:
+		var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_transform.basis.z
+		custom_global_vars["builtin_player_front_facing"] = [pos.x, pos.y, pos.z]
 
 func get_front_facing() -> void:
 	var pos: Vector3 = get_parent().get_parent().global_transform.basis.z
 	custom_global_vars["builtin_front_facing"] = [pos.x, pos.y, pos.z]
 
 func get_player_global_position() -> void:
-	var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_position
-	custom_global_vars["builtin_player_global_pos"] = [pos.x, pos.y, pos.z]
+	if get_tree().root.get_node("Game").protagonist != null:
+		var pos: Vector3 = get_tree().root.get_node("Game").protagonist.global_position
+		custom_global_vars["builtin_player_global_pos"] = [pos.x, pos.y, pos.z]
 
 func get_global_pos() -> void:
 	var pos: Vector3 = get_parent().get_parent().global_position
@@ -141,7 +144,8 @@ func set_movement_freeze(value: bool) -> void:
 	get_parent().get_parent().movement_freeze = value
 
 func player_health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "") -> void:
-	get_tree().root.get_node("Game").protagonist.health_manage(health_to_add, health_type, deplete_reason)
+	if get_tree().root.get_node("Game").protagonist != null:
+		get_tree().root.get_node("Game").protagonist.health_manage(health_to_add, health_type, deplete_reason)
 
 func health_manage(health_to_add: float, health_type: int = 0, deplete_reason: String = "") -> void:
 	get_parent().get_parent().health_manage(health_to_add, health_type, deplete_reason)
@@ -153,10 +157,12 @@ func remove_item(item_id: int, drop: bool = false) -> void:
 	get_parent().get_parent().get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)
 
 func player_add_item(item_id: int) -> void:
-	get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
+	if get_tree().root.get_node("Game").protagonist != null:
+		get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").add_item(item_id)
 
 func player_remove_item(item_id: int, drop: bool = false) -> void:
-	get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)
+	if get_tree().root.get_node("Game").protagonist != null:
+		get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").item_remove_by_id(item_id, drop)
 
 func interaction_sound(sound_path: String) -> void:
 	var full_path: String = "user://mods/puppets/custom/".path_join(gltf_path_to_find).path_join("sounds").path_join(sound_path)
@@ -167,12 +173,13 @@ func interaction_sound(sound_path: String) -> void:
 			get_parent().get_parent().get_node("InteractSound").play()
 
 func player_get_all_items():
-	var item_array: Array[Item] = get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").get_all_items()
-	var result_array: Array[int] = []
-	result_array.resize(item_array.size())
-	for i in range(item_array.size()):
-		result_array[i] = item_array[i].id
-	custom_global_vars["builtin_player_items"] = result_array
+	if get_tree().root.get_node("Game").protagonist != null:
+		var item_array: Array[Item] = get_tree().root.get_node("Game").protagonist.get_node("UI/Inventory/Inventory").get_all_items()
+		var result_array: Array[int] = []
+		result_array.resize(item_array.size())
+		for i in range(item_array.size()):
+			result_array[i] = item_array[i].id
+		custom_global_vars["builtin_player_items"] = result_array
 
 func go_to_target(primary_target: String):
 	if get_parent().get_parent().platform_moving:
@@ -185,7 +192,8 @@ func go_to_target(primary_target: String):
 			get_parent().get_parent().follow_target = get_tree().get_nodes_in_group("WavePointLower")[rng.randi_range(0, get_tree().get_node_count_in_group("WavePointLower") - 1)].get_path()
 
 func player_set_status_effect(effect: String, strength: float, duration: float):
-	if effect == "Frozen":
-		write_line("You cannot set Frozen status effect directly. Please, use player_health_manage(health_to_add: float, 1) for setting this status effect")
-		return
-	get_tree().root.get_node("Game").protagonist.get_node("StatusEffects").apply_status_effect(effect, strength, duration)
+	if get_tree().root.get_node("Game").protagonist != null:
+		if effect == "Frozen":
+			write_line("You cannot set Frozen status effect directly. Please, use player_health_manage(health_to_add: float, 1) for setting this status effect")
+			return
+		get_tree().root.get_node("Game").protagonist.get_node("StatusEffects").apply_status_effect(effect, strength, duration)

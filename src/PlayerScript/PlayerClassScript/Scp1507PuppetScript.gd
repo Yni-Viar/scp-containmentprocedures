@@ -25,6 +25,8 @@ func on_spawned() -> void:
 			has_animations = false
 	get_parent().get_parent().follow_target = get_tree().get_first_node_in_group("PoI1507").get_path()
 	plugin_api_function("start")
+	get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
+	get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,13 +65,13 @@ func attack(collider_path: String):
 		plugin_api_function("attack")
 		test.health_manage(-5.0, 0, "GAME_OVER_SCP_1507")
 
-func _on_attack_body_entered(body: Node3D) -> void:
+func on_action_area_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if scp_1507_state == Scp1507State.PURSUING && body.is_player:
 			scp_1507_state = Scp1507State.ATTACKING
 
 
-func _on_attack_body_exited(body: Node3D) -> void:
+func on_action_area_body_exited(body: Node3D) -> void:
 	if body is MovableNpc:
 		if scp_1507_state == Scp1507State.ATTACKING && body.is_player:
 			scp_1507_state = Scp1507State.PURSUING

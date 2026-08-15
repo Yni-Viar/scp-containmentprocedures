@@ -15,7 +15,7 @@ height = 24.5533
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m1isr"]
 height = 3.24065
-radius = 1.50717
+radius = 2.0
 
 [node name="NPCBase" type="CharacterBody3D" unique_id=278338901 groups=["Players"]]
 collision_layer = 10

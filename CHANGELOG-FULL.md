@@ -6,6 +6,7 @@ This list contains all features, added in the game, or will be added in upcoming
 ### New and reworked SCP
 - [x] SCP-737
 - [x] SCP-939 refactor
+- [x] SCP-1507 refactor
 
 ### Plugin API expansion
 

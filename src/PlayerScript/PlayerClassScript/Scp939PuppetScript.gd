@@ -3,6 +3,8 @@ extends SkinnablePuppetScript
 ## Created by Yni, licensed under dual license: for SCP content - GPL 3, for non-SCP - MIT License
 class_name Scp939PuppetScript
 
+var heat_targets: Array[Node3D] = []
+
 ## Attack timer
 var attack_update_timer: float = 0.0
 
@@ -12,6 +14,8 @@ var current_target: Node3D
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
 	plugin_api_function("start")
+	get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
+	get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,55 +44,56 @@ func attack():
 			set_state("939_Attack" + str(rng.randi_range(1, 3)))
 			plugin_api_function("attack")
 			current_target.health_manage(-100.0, 0, "GAME_OVER_SCP_939")
-			active_puppets.erase(current_target)
+			heat_targets.erase(current_target)
 			current_target = null
-			if active_puppets.size() > 0:
-				get_parent().get_parent().follow_target = active_puppets[0].get_path()
+			if heat_targets.size() > 0:
+				get_parent().get_parent().follow_target = heat_targets[0].get_path()
 			else:
 				get_parent().get_parent().follow_target = ""
 				get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.GENERIC_WANDER
 		attack_update_timer = 2.0
 
-func _on_attack_body_entered(body: Node3D) -> void:
+## Apply amnestic and go to target
+func _on_trigger_body_entered(body: Node3D) -> void:
+	if body is MovableNpc:
+		if body.puppet_class.fraction == 0 && body.puppet_class.team < 2048:
+			if body.is_player:
+				body.get_node("StatusEffects").apply_status_effect("Amnesia", 1.0, 0.0)
+			plugin_api_function("near_trigger_entered")
+			#Achievement
+			if Settings.setting_res.scp_study_progress_all.has("SCP-939"):
+				if !Settings.setting_res.scp_study_progress_all["SCP-939"]:
+					Settings.setting_res.scp_study_progress_all["SCP-939"] = true
+					Settings.save_resource(Settings.setting_res)
+			heat_targets.append(body)
+			get_parent().get_parent().follow_target = body.get_path()
+			get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.NONE
+
+func _on_trigger_body_exited(body: Node3D) -> void:
+	if body is MovableNpc:
+		if body.puppet_class.puppet_class_name != "SCP-939":
+			if body.is_player:
+				body.get_node("StatusEffects").apply_status_effect("Amnesia", 0.0, 0.0)
+			plugin_api_function("near_trigger_exited")
+			heat_targets.erase(body)
+			if heat_targets.is_empty():
+				get_parent().get_parent().follow_target = ""
+				get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.GENERIC_WANDER
+
+func on_action_area_body_entered(body: Node3D) -> void:
 	if body is MovableNpc:
 		if body.puppet_class.puppet_class_name != "SCP-939":
 			is_attacking = true
 
-func _on_attack_body_exited(body: Node3D) -> void:
+func on_action_area_body_exited(body: Node3D) -> void:
 	if body is MovableNpc && body == get_node(get_parent().get_parent().follow_target):
 		is_attacking = false
 
 func _on_run_trigger_body_entered(body: Node3D) -> void:
-	if body is MovableNpc:
-		if active_puppets.has(body) && body.puppet_class.fraction == 0 && body.puppet_class.team < 2048:
-			get_parent().get_parent().character_speed = 12.0
+	if body is MovableNpc && heat_targets.has(body) && body.puppet_class.puppet_class_name != "SCP-939":
+		get_parent().get_parent().character_speed = 12.0
 
 
 func _on_run_trigger_body_exited(body: Node3D) -> void:
-	if body is MovableNpc:
-		if active_puppets.has(body) && body.puppet_class.fraction == 0 && body.puppet_class.team < 2048:
-			get_parent().get_parent().character_speed = 6.0
-
-
-func _on_active_puppets_changed() -> void:
-	if active_puppets.size() == 0:
-		get_parent().get_parent().follow_target = ""
-		get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.GENERIC_WANDER
-	else:
-		plugin_api_function("near_trigger_changed")
-		#Achievement
-		if Settings.setting_res.scp_study_progress_all.has("SCP-939"):
-			if !Settings.setting_res.scp_study_progress_all["SCP-939"]:
-				Settings.setting_res.scp_study_progress_all["SCP-939"] = true
-				Settings.save_resource(Settings.setting_res)
-		var player_in_area: bool = false
-		for body in active_puppets:
-			if body is MovableNpc:
-				if body.is_player:
-					player_in_area = true
-					body.get_node("StatusEffects").apply_status_effect("Amnesia", 1.0, 0.0)
-		if !player_in_area:
-			get_tree().root.get_node("Game").protagonist.get_node("StatusEffects").apply_status_effect("Amnesia", 0.0, 0.0)
-		get_parent().get_parent().follow_target = active_puppets[0].get_path()
-		get_parent().get_parent().wandering_system = MovableNpc.WanderingSystem.NONE
-			
+	if body is MovableNpc && heat_targets.has(body) && body.puppet_class.puppet_class_name != "SCP-939":
+		get_parent().get_parent().character_speed = 6.0

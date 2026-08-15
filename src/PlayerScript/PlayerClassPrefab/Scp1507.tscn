@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0n8ie5pyuli"]
+[gd_scene format=3 uid="uid://bd0n8ie5pyuli"]
 
 [ext_resource type="Script" uid="uid://dycl28rc6algd" path="res://PlayerScript/PlayerClassScript/Scp1507PuppetScript.gd" id="1_6kmpp"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_6kmpp"]
-height = 1.3369446
-radius = 0.6166992
-
-[node name="Puppet" type="Node3D" groups=["CustomizablePuppet", "Scp1507", "SinglePuppet"]]
+[node name="Puppet" type="Node3D" unique_id=523021236 groups=["CustomizablePuppet", "Scp1507", "SinglePuppet"]]
 script = ExtResource("1_6kmpp")
 single_type_per_group = true
 single_type_group_name = "Scp1507"
@@ -17,18 +13,8 @@ enable_gltf_loading = true
 gltf_file_prefix = "Scp1507"
 gltf_path_to_find = "scp1507"
 
-[node name="Attack" type="Area3D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5233917, 0)
-shape = SubResource("CylinderShape3D_6kmpp")
-
-[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="Achievement" type="VisibleOnScreenNotifier3D" parent="." unique_id=1104845676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1145895, -0.050662994)
 aabb = AABB(-0.42323288, -1.113152, -0.41636354, 0.84646577, 2.226304, 0.8327271)
 
-[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
-[connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]
 [connection signal="screen_entered" from="Achievement" to="." method="_on_achievement_screen_entered"]

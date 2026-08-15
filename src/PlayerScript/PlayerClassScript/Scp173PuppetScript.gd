@@ -26,8 +26,8 @@ var movement_reset: bool = false
 func on_spawned() -> void:
 	raycast = get_parent().get_parent().get_node("RayCastLow")
 	plugin_api_function("start")
-	#get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
-	#get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
+	#get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
+	#get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 	#set_face()
 
 

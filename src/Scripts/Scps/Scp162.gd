@@ -50,7 +50,7 @@ func spike():
 		for npc in targets:
 			if is_instance_valid(npc):
 				if npc.movement_freeze:
-					if npc.current_health[0] - 10.0 < 0.0:
+					if npc.current_health[0] - 10.0 <= 0.0:
 						npc.health_manage(-10.0, 0, "GAME_OVER_SCP_162")
 						targets.erase(npc)
 						return

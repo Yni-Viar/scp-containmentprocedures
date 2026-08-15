@@ -128,11 +128,11 @@ func _set_up_puppet() -> void:
 ## Gets (or sets, if not existing) static presets.
 func get_static_preset() -> int:
 	if !default_class_presets.has(single_type_group_name):
-		var idx: int = rng.randi_range(0, available_puppets.size() - 1)
+		var idx: int = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
 		for i in range(127):
 			if check_availability(idx):
 				break
-			idx = rng.randi_range(0, available_puppets.size() - 1)
+			idx = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
 		default_class_presets[single_type_group_name] = idx
 		# If file name is GLTF - save gltf file name without
 		# prefix and suffix
@@ -162,7 +162,7 @@ func assign_puppet(idx: int = -1) -> void:
 			
 			var used_spawns: Array[int] = []
 			for i in range(128):
-				var random_number: int = rng.randi_range(0, available_puppets.size() - 1)
+				var random_number: int = get_tree().root.get_node("Game").rng.randi_range(0, available_puppets.size() - 1)
 				if used_spawns.has(random_number):
 					i -= 1
 					# Do not let infinite cycle!
