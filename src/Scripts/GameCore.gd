@@ -37,11 +37,11 @@ func _ready() -> void:
 		  load("res://MapGen/Lite/StorageZoneLite.tres"), \
 		  load("res://MapGen/Lite/ResearchZoneLite.tres"), \
 		  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
-		if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"):
-			rooms = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
-			  load("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"), \
-			  load("res://MapGen/Lite/ResearchZoneLite.tres"), \
-			  load("res://MapGen/Lite/PersonnelZoneLite.tres")]
+		#if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"):
+			#rooms = [load("res://MapGen/Lite/MaintenanceZoneLite.tres"), \
+			  #load("res://MapGen/Lite/SLFeature/StorageZoneLite.tres"), \
+			  #load("res://MapGen/Lite/ResearchZoneLite.tres"), \
+			  #load("res://MapGen/Lite/PersonnelZoneLite.tres")]
 		$FacilityGenerator.rooms = rooms
 		
 	else:
@@ -50,11 +50,11 @@ func _ready() -> void:
 		   load("res://MapGen/Optional/StorageZone.tres"), 
 		   load("res://MapGen/Optional/ResearchZone.tres"), 
 		   load("res://MapGen/Optional/PersonnelZone.tres")]
-		if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Optional/SLFeature/StorageZone.tres"):
-			rooms = [load("res://MapGen/Optional/MaintenanceZone.tres"), 
-		   load("res://MapGen/Optional/SLFeature/StorageZone.tres"), 
-		   load("res://MapGen/Optional/ResearchZone.tres"), 
-		   load("res://MapGen/Optional/PersonnelZone.tres")]
+		#if map_seed_name.containsn("scpsl") && ResourceLoader.exists("res://MapGen/Optional/SLFeature/StorageZone.tres"):
+			#rooms = [load("res://MapGen/Optional/MaintenanceZone.tres"), 
+		   #load("res://MapGen/Optional/SLFeature/StorageZone.tres"), 
+		   #load("res://MapGen/Optional/ResearchZone.tres"), 
+		   #load("res://MapGen/Optional/PersonnelZone.tres")]
 		$FacilityGenerator.rooms = rooms
 	
 	if get_node_or_null("PluginManager") != null:

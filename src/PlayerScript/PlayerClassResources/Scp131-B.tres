@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://b5biaet1ehauh"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://b5biaet1ehauh"]
 
 [ext_resource type="PackedScene" uid="uid://fsrpfy4sn0vd" path="res://PlayerScript/PlayerClassPrefab/Scp131B.tscn" id="1_er4vs"]
 [ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="1_q83fi"]
@@ -19,7 +19,7 @@ apply_height_bugfix = false
 wandering_system = 1
 enable_wander = false
 health = Array[float]([400.0])
-team = 1
+team = 2048
 enable_avoidance = false
 enable_ik = false
 ragdoll_prefab = ExtResource("1_q83fi")

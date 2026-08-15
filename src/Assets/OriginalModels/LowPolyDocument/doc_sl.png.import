@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn37m0ag4qdk0"
-path.s3tc="res://.godot/imported/Trim_Electronic_AlbedoTransparency.png-2ee7ed2146c1737cb2f80a1888baecb6.s3tc.ctex"
-path.etc2="res://.godot/imported/Trim_Electronic_AlbedoTransparency.png-2ee7ed2146c1737cb2f80a1888baecb6.etc2.ctex"
+uid="uid://bivgq333mdnis"
+path.s3tc="res://.godot/imported/doc_sl.png-cb875b4ab18ff1ea7c7fcd822a6dc02b.s3tc.ctex"
+path.etc2="res://.godot/imported/doc_sl.png-cb875b4ab18ff1ea7c7fcd822a6dc02b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ee5a525c1ea7ea61163435db3f3e24ae"
-}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/SLFeature/Trim_Electronic_AlbedoTransparency.png"
-dest_files=["res://.godot/imported/Trim_Electronic_AlbedoTransparency.png-2ee7ed2146c1737cb2f80a1888baecb6.s3tc.ctex", "res://.godot/imported/Trim_Electronic_AlbedoTransparency.png-2ee7ed2146c1737cb2f80a1888baecb6.etc2.ctex"]
+source_file="res://Assets/OriginalModels/LowPolyDocument/doc_sl.png"
+dest_files=["res://.godot/imported/doc_sl.png-cb875b4ab18ff1ea7c7fcd822a6dc02b.s3tc.ctex", "res://.godot/imported/doc_sl.png-cb875b4ab18ff1ea7c7fcd822a6dc02b.etc2.ctex"]
 
 [params]
 
@@ -41,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=512
+process/size_limit=0
 detect_3d/compress_to=0

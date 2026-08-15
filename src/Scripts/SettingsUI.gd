@@ -19,6 +19,7 @@ func _ready() -> void:
 	$SSAO.button_pressed = Settings.setting_res.ssao
 	$Music/MusicVolume.value = Settings.setting_res.music_volume
 	$Tonemapper.selected = Settings.setting_res.tonemapper
+	$AdvancedSky.button_pressed = Settings.setting_res.enable_advanced_sky
 	if OS.get_name() == "Web":
 		# Disable advanced tonemappers and non-WebGL renderers
 		$Tonemapper.set_item_disabled(2, true)

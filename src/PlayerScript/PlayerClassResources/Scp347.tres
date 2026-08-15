@@ -18,6 +18,7 @@ footstep_sounds = {
 apply_height_bugfix = false
 wandering_system = 1
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
+team = 2048
 enable_avoidance = false
 puppet_navigation_layers = 17
 ragdoll_prefab = ExtResource("2_uv2pt")

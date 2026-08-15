@@ -622,6 +622,22 @@ msgstr "Delete selected plugin"
 msgid "API_VERSION"
 msgstr "API version"
 
+msgid "GAME_OVER_SCP_737"
+msgstr "SCP-737 ate you."
+
+msgid "GAME_OVER_SCP_737_BREACH"
+msgstr ""
+"You started SCP-737 containment breach. You will be demoted to Class-D "
+"personnel."
+
+msgid "ADVANCED_SKY"
+msgstr "Advanced sky"
+
+msgid "ADVANCED_SKY_INFO"
+msgstr ""
+"Advanced sky is resource-expensive feature!\n"
+"It is recommended on mid-end and high-end PCs only."
+
 #~ msgid "STORY_MAIN"
 #~ msgstr ""
 #~ "Main Story\n"

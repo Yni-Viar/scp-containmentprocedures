@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u2ba3n6oulaf"
-path.s3tc="res://.godot/imported/Tile_WireFence_Mask.png-29823f793b8ca9cd5b4813c56245cb66.s3tc.ctex"
-path.etc2="res://.godot/imported/Tile_WireFence_Mask.png-29823f793b8ca9cd5b4813c56245cb66.etc2.ctex"
+uid="uid://hd5qqr8j5lwt"
+path.s3tc="res://.godot/imported/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png-a547d05df7e1f32f3dfdb88786987fea.s3tc.ctex"
+path.etc2="res://.godot/imported/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png-a547d05df7e1f32f3dfdb88786987fea.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "73d46b52e3a18eef042bdeedcb98b702"
-}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/SLFeature/Tile_WireFence_Mask.png"
-dest_files=["res://.godot/imported/Tile_WireFence_Mask.png-29823f793b8ca9cd5b4813c56245cb66.s3tc.ctex", "res://.godot/imported/Tile_WireFence_Mask.png-29823f793b8ca9cd5b4813c56245cb66.etc2.ctex"]
+source_file="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png"
+dest_files=["res://.godot/imported/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png-a547d05df7e1f32f3dfdb88786987fea.s3tc.ctex", "res://.godot/imported/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png-a547d05df7e1f32f3dfdb88786987fea.etc2.ctex"]
 
 [params]
 

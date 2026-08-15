@@ -36,7 +36,7 @@ enum WanderingSystem {NONE, GENERIC_WANDER, LIMITED_WANDER}
 @export var health: Array[float] = [100]
 ## Only for humans currently.
 ## 0 is none team, 1 is Foundation personnel, 2 is Class-D personnel,
-## 3 is Chaos Insurgency
+## 3 is Chaos Insurgency, 2048 is friendly SCPs
 @export var team: int = 0
 ## Enables avoidance
 @export var enable_avoidance: bool = true

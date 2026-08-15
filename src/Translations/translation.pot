@@ -497,3 +497,15 @@ msgstr ""
 
 msgid "API_VERSION"
 msgstr ""
+
+msgid "GAME_OVER_SCP_737"
+msgstr ""
+
+msgid "GAME_OVER_SCP_737_BREACH"
+msgstr ""
+
+msgid "ADVANCED_SKY"
+msgstr ""
+
+msgid "ADVANCED_SKY_INFO"
+msgstr ""

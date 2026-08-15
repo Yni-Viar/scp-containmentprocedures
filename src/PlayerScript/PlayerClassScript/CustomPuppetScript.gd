@@ -119,15 +119,8 @@ func get_global_pos() -> void:
 	var pos: Vector3 = get_parent().get_parent().global_position
 	custom_global_vars["builtin_global_pos"] = [pos.x, pos.y, pos.z]
 
-func set_global_pos(pos: Array) -> void:
-	if pos.size() != 3:
-		write_line("Array must have size of 3 floats")
-		return
-	for check in pos:
-		if check is not float:
-			write_line("Array must have size of 3 floats")
-			return
-	get_parent().get_parent().global_position = Vector3(pos[0], pos[1], pos[2])
+func set_global_pos(x: float, y: float, z: float) -> void:
+	get_parent().get_parent().global_position = Vector3(x, y, z)
 
 func get_follow() -> void:
 	custom_global_vars["builtin_follow"] = get_parent().get_parent().follow_target

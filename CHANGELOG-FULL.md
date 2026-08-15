@@ -3,12 +3,9 @@
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
 ## v10.1.0
-### New SCP
-- [ ] SCP-737
-  - [ ] SCP-737 Containment chamber
-  - [ ] Task for Casual mode
-  - [x] Model
-  - [ ] Code
+### New and reworked SCP
+- [x] SCP-737
+- [x] SCP-939 refactor
 
 ### Plugin API expansion
 
@@ -19,6 +16,7 @@ This list contains all features, added in the game, or will be added in upcoming
 
 ### Other changes
 
+- [x] SCP-173 and SCP-939 now cannot kill SCP-131 instances and SCP-347, by specifying `team = 2048`
 - [x] \[Technical\] Deprecate `Settings.DATA_COMPATIBILITY` in favor of `Settings.get_game_version()`
 - [x] Added version info in main menu
 - [x] Decreased camera far on Surface Zone only to 160.0 (was 192.0).

@@ -2,6 +2,7 @@ extends Node3D
 ## Made by Yni, licensed under CC0.
 class_name BasePuppetScript
 
+signal active_puppets_changed
 
 ## Armature name
 @export var armature_name: String = "HumanRig"
@@ -51,11 +52,13 @@ func on_vision_area_body_entered(body: Node3D):
 		for puppet_class in vision_class_detect:
 			if body.fraction == puppet_class:
 				active_puppets.append(body)
+				active_puppets_changed.emit()
 
 func on_vision_area_body_exited(body: Node3D):
 	if body is MovableNpc:
 		if active_puppets.has(body):
 			active_puppets.erase(body)
+			active_puppets_changed.emit()
 
 func special_action():
 	pass

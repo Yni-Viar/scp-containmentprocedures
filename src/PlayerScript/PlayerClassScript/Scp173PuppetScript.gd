@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider is MovableNpc:
-				if collider.fraction == 0:
+				if collider.fraction == 0 && collider.puppet_class.team < 2048:
 					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
 					get_parent().get_parent().get_node("InteractSound").play()
 					plugin_api_function("crunch")

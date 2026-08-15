@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://c32hwf66e1ihj"]
+[gd_scene format=4 uid="uid://c32hwf66e1ihj"]
 
-[ext_resource type="Texture2D" uid="uid://fsrp4561wnd6" path="res://Assets/OriginalModels/ScpCage/Metal047B_2K-PNG_Color.png" id="1_gk1ki"]
-[ext_resource type="Texture2D" uid="uid://hd5qqr8j5lwt" path="res://Assets/OriginalModels/ScpCage/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png" id="2_4e8pp"]
-[ext_resource type="Texture2D" uid="uid://c2omqkpyyql8" path="res://Assets/OriginalModels/ScpCage/Metal047B_2K-PNG_NormalGL.png" id="3_ou2vr"]
+[ext_resource type="Texture2D" uid="uid://fsrp4561wnd6" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_Color.png" id="1_gk1ki"]
+[ext_resource type="Texture2D" uid="uid://hd5qqr8j5lwt" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_Metalness-Metal047B_2K-PNG_Roughness.png" id="2_4e8pp"]
+[ext_resource type="Texture2D" uid="uid://c2omqkpyyql8" path="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_NormalGL.png" id="3_ou2vr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6q4a"]
 resource_name = "Material.001"

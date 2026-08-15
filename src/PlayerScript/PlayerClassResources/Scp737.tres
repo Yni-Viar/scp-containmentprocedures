@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://cy4ct4io6jq6c"]
+
+[ext_resource type="PackedScene" uid="uid://cocgmgpce3hhw" path="res://PlayerScript/PlayerClassPrefab/Scp737.tscn" id="1_epukk"]
+[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_btyc8"]
+[ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_eixp6"]
+
+[resource]
+script = ExtResource("3_eixp6")
+puppet_class_name = "SCP-737"
+speed = 11.0
+prefab = ExtResource("1_epukk")
+spawn_point_group = "Scp737Spawn"
+initial_amount = 1
+interacting_action = 2
+footstep_sounds = {
+"run": PackedStringArray(),
+"walk": PackedStringArray()
+}
+fraction = 1
+apply_height_bugfix = false
+health = Array[float]([1100.0])
+enable_avoidance = false
+puppet_navigation_layers = 17
+ragdoll_prefab = ExtResource("2_btyc8")
+can_ride = false

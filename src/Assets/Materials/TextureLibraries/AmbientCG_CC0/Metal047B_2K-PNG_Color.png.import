@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fm686ccvc3we"
-path.s3tc="res://.godot/imported/Tile_WireFence_Albedo.png-9992bb7543e3bcfe2aaee8b54776f570.s3tc.ctex"
-path.etc2="res://.godot/imported/Tile_WireFence_Albedo.png-9992bb7543e3bcfe2aaee8b54776f570.etc2.ctex"
+uid="uid://fsrp4561wnd6"
+path.s3tc="res://.godot/imported/Metal047B_2K-PNG_Color.png-86b70bb1ada35c022ef5307ca0b909ea.s3tc.ctex"
+path.etc2="res://.godot/imported/Metal047B_2K-PNG_Color.png-86b70bb1ada35c022ef5307ca0b909ea.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "0f62c09600cee57b1dca4f77eea9f951"
-}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/SLFeature/Tile_WireFence_Albedo.png"
-dest_files=["res://.godot/imported/Tile_WireFence_Albedo.png-9992bb7543e3bcfe2aaee8b54776f570.s3tc.ctex", "res://.godot/imported/Tile_WireFence_Albedo.png-9992bb7543e3bcfe2aaee8b54776f570.etc2.ctex"]
+source_file="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_Color.png"
+dest_files=["res://.godot/imported/Metal047B_2K-PNG_Color.png-86b70bb1ada35c022ef5307ca0b909ea.s3tc.ctex", "res://.godot/imported/Metal047B_2K-PNG_Color.png-86b70bb1ada35c022ef5307ca0b909ea.etc2.ctex"]
 
 [params]
 
@@ -35,7 +32,7 @@ roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
-process/channel_remap/alpha=8
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

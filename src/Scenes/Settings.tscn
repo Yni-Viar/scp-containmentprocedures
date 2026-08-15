@@ -163,6 +163,16 @@ layout_mode = 2
 layout_mode = 2
 text = "ADVANCED_SKY"
 
+[node name="FoldableContainer4" type="FoldableContainer" parent="ScrollContainer/SettingsUI" unique_id=1362193451]
+layout_mode = 2
+folded = true
+title = "INFO"
+
+[node name="Label" type="Label" parent="ScrollContainer/SettingsUI/FoldableContainer4" unique_id=736248038]
+visible = false
+layout_mode = 2
+text = "ADVANCED_SKY_INFO"
+
 [node name="HSeparator5" type="HSeparator" parent="ScrollContainer/SettingsUI" unique_id=405439181]
 layout_mode = 2
 

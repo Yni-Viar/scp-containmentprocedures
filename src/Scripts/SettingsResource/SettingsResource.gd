@@ -58,6 +58,7 @@ enum Renderer {OPENGL, RD_MOBILE, RD_FORWARD_PLUS}
 	"SCP-522": false,
 	"SCP-650": false,
 	"SCP-686": false,
+	"SCP-737": false,
 	"SCP-812": false,
 	"SCP-939": false,
 	"SCP-1507": false,

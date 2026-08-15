@@ -44,6 +44,7 @@ func _on_timer_timeout() -> void:
 	get_tree().root.get_node("Game").finish_game(false, "GAME_OVER_SCP_023")
 
 func special_action():
+	plugin_api_function("special_action")
 	if glow_enabled:
 		eye_glow_strength = 0.25
 		timer.stop()

@@ -168,7 +168,7 @@ Godot 4.4 is no longer supported anymore since 6.0 - Cleanlight update.
 1. Project->Export
 2. Choose your platform (e.g. Windows/Linux/Android)
 3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Lite/*`
-4. Navigate to Features tab and type in "Custom (comma separated)": `SLFeature` (if you want to include SCP:SL easter egg)
+
 
 ### Feature flags
 #### Building lite version (for Web)
@@ -176,27 +176,8 @@ Godot 4.4 is no longer supported anymore since 6.0 - Cleanlight update.
 There are no SCP-080, SCP-178 (item exists, but has no effect), *SCP: Unity* SCP-173 model, SCP-266, SCP-791, SCP-914, SCP-938.
 1. Project->Export
 2. Choose your platform (e.g. Web)
-3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*, res://Stories/*`
+3. Navigate to Resource tab and type in "Filter to exclude files/folders": `*.glb, *.gltf, Assets/*.bin, */Optional/*, res://Stories/*`. You may also want to add `, *.ico` to that filter, if you are not building for Windows.
 4. Navigate to Features tab and type in "Custom (comma separated)": `Lite`
-
-
-### How to quickly replace NPC model
-
-**Requirements**
-
-- Your filename should be .GLB file
-- Only SCP-131, SCP-173, SCP-650 or SCP-1507 is supported.
-- Your filename should be in this format:
-   - For SCP-131: `Scp`*number*`_`*your_name*`_`*A or B*`.glb`
-   - For other SCPs: `Scp`*number*`_`*your_name*`.glb`
-- Your model should face (or be rotated to) +Y (in Blender) coordinate
-
-**Steps**
-
-1🪟. Windows-specific - Go to `%APPDATA%\\ScpContPr\\mods\\puppets\\`
-1🐧. Linux-specific - Go to `~/.local/share/ScpContPr/mods/puppets/`
-2. Copy your renamed file into one of these folders (if they exist) - `scp`*number*
-3. Your SCP will likely spawn in one of the rounds
 
 ## Why this name?
 - It is a recursive acronym - **S**CP: **C**ontinued **P**rocedures
@@ -268,7 +249,8 @@ You can:
    - 📁 ElevatorSystem - Here is a place for the elevator stuff
    - 📁 GameData - Here is a place for the game registry
    - 📁 GDShaderCompositor - Here is a place for the GDShaderCompositor, which manages shaders
-   - 📁 Interactable - Here is a place for the interactive stuff (e.g. item)
+   - 📁 Interactables - Here is a place for the interactive stuff (e.g. item)
+   - 📁 PluginSystem - Here is a place to custom plugin subsystem (here custom plugin validator is stored)
    - 📁 Scps - Here is a place for mostly static SCPs, such as SCP-249
    - 📁 Seasonal - Here is a place for the season stuff
    - 📁 SettingResource - Here is a place for the settings file and it's presets
@@ -283,5 +265,6 @@ You can:
    - 📁 Environment - Here is a place for room/sublevel based sounds
    - 📁 Item - Here is a place for item-related sounds
    - 📁 Music - Here is a place for all music
+- 📁 Stories - Here is a place for Stories and/or DLCs
 - 📁 Translations - Here is a place for gettext translations
 - 📁 UI - Here is a place for most 2D UI assets

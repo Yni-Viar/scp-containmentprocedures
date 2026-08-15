@@ -663,6 +663,22 @@ msgstr "Удалить выбранное дополнение"
 msgid "API_VERSION"
 msgstr "Версия API"
 
+msgid "GAME_OVER_SCP_737"
+msgstr "SCP-737 скушал Вас."
+
+msgid "GAME_OVER_SCP_737_BREACH"
+msgstr ""
+"Вы запустили нарушение условий содержания\n"
+"SCP-737. Вы будете переведены в Класс-Д."
+
+msgid "ADVANCED_SKY"
+msgstr "Продвинутое небо"
+
+msgid "ADVANCED_SKY_INFO"
+msgstr ""
+"Продвинутое небо это ресрусозатратная функция!\n"
+"Она рекомендована только для средних и высокопроизводительных ПК."
+
 #~ msgid "STORY_MAIN"
 #~ msgstr ""
 #~ "Основная история\n"

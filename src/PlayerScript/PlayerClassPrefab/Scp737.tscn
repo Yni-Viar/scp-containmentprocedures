@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cocgmgpce3hhw"]
+
+[ext_resource type="Script" uid="uid://deupgmsonu4yh" path="res://PlayerScript/PlayerClassScript/Scp737PuppetScript.gd" id="1_16g7a"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_16g7a"]
+height = 1.3369446
+radius = 0.6166992
+
+[node name="Puppet" type="Node3D" unique_id=1674538391 groups=["CustomizablePuppet", "Scp737", "SinglePuppet"]]
+script = ExtResource("1_16g7a")
+single_type_per_group = true
+single_type_group_name = "Scp737"
+available_puppets = Dictionary[String, int]({
+"res://PlayerScript/PlayerClassPrefab/Variations/Scp737/Scp737_OWN.tscn": 0
+})
+enable_gltf_loading = true
+gltf_file_prefix = "Scp737"
+gltf_path_to_find = "scp737"
+enable_vision_scan = true
+
+[node name="Attack" type="Area3D" parent="." unique_id=758533883]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack" unique_id=423006771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5233917, 0)
+shape = SubResource("CylinderShape3D_16g7a")
+
+[connection signal="active_puppets_changed" from="." to="." method="_on_active_puppets_changed"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="Attack" to="." method="_on_attack_body_exited"]

@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl8rw77sxlk0d"
-path.s3tc="res://.godot/imported/Trim_Electronic_Normal.png-07216a77509d21a841ff3f54db91c112.s3tc.ctex"
-path.etc2="res://.godot/imported/Trim_Electronic_Normal.png-07216a77509d21a841ff3f54db91c112.etc2.ctex"
+uid="uid://c2omqkpyyql8"
+path.s3tc="res://.godot/imported/Metal047B_2K-PNG_NormalGL.png-27ad4e34c88beee2ee942e7fff0597f4.s3tc.ctex"
+path.etc2="res://.godot/imported/Metal047B_2K-PNG_NormalGL.png-27ad4e34c88beee2ee942e7fff0597f4.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "529bef0e737b88a7ef3f52a5cbafaa9a"
-}
 
 [deps]
 
-source_file="res://Assets/Materials/TextureLibraries/SLFeature/Trim_Electronic_Normal.png"
-dest_files=["res://.godot/imported/Trim_Electronic_Normal.png-07216a77509d21a841ff3f54db91c112.s3tc.ctex", "res://.godot/imported/Trim_Electronic_Normal.png-07216a77509d21a841ff3f54db91c112.etc2.ctex"]
+source_file="res://Assets/Materials/TextureLibraries/AmbientCG_CC0/Metal047B_2K-PNG_NormalGL.png"
+dest_files=["res://.godot/imported/Metal047B_2K-PNG_NormalGL.png-27ad4e34c88beee2ee942e7fff0597f4.s3tc.ctex", "res://.godot/imported/Metal047B_2K-PNG_NormalGL.png-27ad4e34c88beee2ee942e7fff0597f4.etc2.ctex"]
 
 [params]
 
@@ -31,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/Rooms/room1/SL/HC_cont1_079_Trim_Electronic_Normal.png"
+roughness/src_normal="res://Assets/OriginalModels/ItemScpCage/Metal047B_2K-PNG_NormalGL.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

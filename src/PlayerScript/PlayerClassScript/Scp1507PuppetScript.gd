@@ -52,6 +52,7 @@ func set_state(anim: String):
 
 ## If tapped on SCP-1507, they will attack
 func special_action():
+	plugin_api_function("special_action")
 	scp_1507_state = Scp1507State.PURSUING
 	get_parent().get_parent().follow_target = get_tree().root.get_node("Game").protagonist.get_path()
 
