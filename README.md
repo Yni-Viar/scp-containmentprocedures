@@ -75,6 +75,7 @@ More gestures you can see in the in-game settings.
 |🟢SCP-649|⛄, 5.5.x-5.7.x, > 9.0.0|⛄, 5.7.x only, > 9.0.0|✅ Full, Christmas-exclusive SCP, broken in 5.8.0-8.1.0|
 |🟡SCP-650|✅, > 1.0.0|✅, > 5.7.0|✅ Full \(only if breached\), supports custom models|
 |🟢SCP-686|✅, > 5.1.0|✅, > 5.7.0|❓ Partial \(hidden NSFW parts\)|
+|🟢SCP-737|✅, > 10.1.0|✅, > 10.1.0|❓ Partial|
 |🟢SCP-791|✅, > 6.0.0|❌|📃 Task only|
 |🟡SCP-812|✅, > 1.0.0|✅, > 5.7.0|✅ Full|
 |🟢SCP-914|✅, > 2.0.0|❌, 5.7.x only|❓ Process only items|
