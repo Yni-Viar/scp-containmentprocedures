@@ -16,11 +16,15 @@ var current_human: Node3D:
 		elif val != null:
 			if current_human.get_path() != val.get_path():
 				on_human_watches()
+		#elif current_human != null && val == null && !crunched_trigger:
+			#on_human_leaves()
+			#crunched_trigger = false
 		current_human = val
 		
 var raycast: RayCast3D
 var player_direction: Vector3
 var movement_reset: bool = false
+var crunched_trigger: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
@@ -42,10 +46,14 @@ func _physics_process(delta: float) -> void:
 			var collider = raycast.get_collider()
 			if collider is MovableNpc:
 				if collider.fraction == 0 && collider.puppet_class.team < 2048:
-					get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
+					# little SL easter egg
+					get_parent().get_parent().get_node("InteractSound").stream = \
+					 load("res://Sounds/Character/Scp173/SCPSL/173_Hume_Shield_Break.ogg") if rng.randi_range(0, 15) == 15 else \
+					 load("res://Sounds/Character/Scp173/DNesov/NeckSnap.ogg")
 					get_parent().get_parent().get_node("InteractSound").play()
 					plugin_api_function("crunch")
 					collider.health_manage(-16777216, 0, "GAME_OVER_SCP_173")
+					crunched_trigger = true
 					active_puppets.erase(current_human)
 					current_human = null
 					movement_reset = false
@@ -62,6 +70,8 @@ func scp_173_blink(delta: float):
 			if !active_puppets.has(current_human):
 				current_human = active_puppets[rng.randi_range(0, active_puppets.size() - 1)]
 		else:
+			if current_human != null:
+				on_human_leaves()
 			current_human = null
 		
 		#Achievement
@@ -96,4 +106,8 @@ func on_first_human_watches() -> void:
 ## Plays trigger sound
 func on_human_watches() -> void:
 	get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/SCPSL/173_Its_Still_Here_Ambient.ogg")
+	get_parent().get_parent().get_node("InteractSound").play()
+
+func on_human_leaves() -> void:
+	get_parent().get_parent().get_node("InteractSound").stream = load("res://Sounds/Character/Scp173/SCPSL/173_Its_Gone_Ambient.ogg")
 	get_parent().get_parent().get_node("InteractSound").play()

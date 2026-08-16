@@ -2,26 +2,29 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
-## v10.1.0
+## v10.1.0 (2026.08.16)
 ### New and reworked SCP
-- [x] SCP-737
-- [x] SCP-939 refactor
-- [x] SCP-1507 refactor
+- SCP-737
+- SCP-939 refactor
+- SCP-1507 refactor
 
 ### Plugin API expansion
 
-- [x] \[⚠️ Compatibility breakage!\] Implement mandatory API versions.
-- [x] Add status effect applying function
-- [x] Add get_all_items function
-- [x] Add go_to_target function, previously available for CI and MTF puppets
+- \[⚠️ Compatibility breakage!\] Implement mandatory API versions.
+- Add status effect applying function
+- Add get_all_items function
+- Add go_to_target function, previously available for CI and MTF puppets
+- NPCs can have more than 1 custom models again (was broken in 10.0.0)!
 
 ### Other changes
 
-- [x] SCP-173 and SCP-939 now cannot kill SCP-131 instances and SCP-347, by specifying `team = 2048`
-- [x] \[Technical\] Deprecate `Settings.DATA_COMPATIBILITY` in favor of `Settings.get_game_version()`
-- [x] Added version info in main menu
-- [x] Decreased camera far on Surface Zone only to 160.0 (was 192.0).
-- [x] Implement Sky as a setting, since not all PCs can run advanced sky, and that was default for 10.0
+- Removed easter egg.
+- SCP-173 now has more audio cues, one of them plays rarely. Find them!
+- SCP-173 and SCP-939 now cannot kill SCP-131 instances and SCP-347, by specifying `team = 2048`
+- Added version info in main menu
+- Decreased camera far on Surface Zone only to 160.0 (was 192.0).
+- Implement Sky as a setting, since not all PCs can run advanced sky, and that was default for 10.0
+- \[Technical\] Deprecate `Settings.DATA_COMPATIBILITY` in favor of `Settings.get_game_version()`
 
 ## v10.0.0 (Initiation / Megarework update, 2026.08.14)
 ### Gameplay rework / Story mode

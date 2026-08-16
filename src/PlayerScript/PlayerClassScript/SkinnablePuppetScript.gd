@@ -152,7 +152,7 @@ func assign_puppet(idx: int = -1) -> void:
 			if idx >= 0 && idx < available_puppets.size():
 				if check_availability(idx):
 					if available_puppets.keys()[idx].ends_with(".glb"):
-						_initiate_puppet_gltf()
+						_initiate_puppet_gltf(available_puppets.keys()[idx])
 					else:
 						_initiate_puppet(idx)
 					return
@@ -172,7 +172,7 @@ func assign_puppet(idx: int = -1) -> void:
 				
 				if check_availability(random_number):
 					if available_puppets.keys()[random_number].ends_with(".glb"):
-						_initiate_puppet_gltf()
+						_initiate_puppet_gltf(available_puppets.keys()[random_number])
 					else:
 						_initiate_puppet(random_number)
 					return
@@ -218,19 +218,23 @@ func _initiate_puppet(idx: int):
 		on_spawned()
 
 ## Technical function - spawns GLTF puppet
-func _initiate_puppet_gltf():
+func _initiate_puppet_gltf(gltf_file: String):
 	var prefab: Node3D
-	if gltf_file_suffix != null && !gltf_file_suffix.is_empty():
-		if !gltf_cache.has(gltf_file_prefix + "_" + gltf_file_suffix + ".glb"):
-			get_parent().get_parent().health_manage(-16777216)
-			return
-		prefab = gltf_cache[gltf_file_prefix + "_" + gltf_file_suffix + ".glb"].instantiate()
-	else:
-		
-		if !gltf_cache.has(gltf_file_prefix + ".glb"):
-			get_parent().get_parent().health_manage(-16777216)
-			return
-		prefab = gltf_cache[gltf_file_prefix + ".glb"].instantiate()
+	if !gltf_cache.has(gltf_file):
+		get_parent().get_parent().health_manage(-16777216)
+		return
+	prefab = gltf_cache[gltf_file].instantiate()
+	#if gltf_file_suffix != null && !gltf_file_suffix.is_empty():
+		#if !gltf_cache.has(gltf_file_prefix + "_" + gltf_file_suffix + ".glb"):
+			#get_parent().get_parent().health_manage(-16777216)
+			#return
+		#prefab = gltf_cache[gltf_file_prefix + "_" + gltf_file_suffix + ".glb"].instantiate()
+	#else:
+		#
+		#if !gltf_cache.has(gltf_file_prefix + ".glb"):
+			#get_parent().get_parent().health_manage(-16777216)
+			#return
+		#prefab = gltf_cache[gltf_file_prefix + ".glb"].instantiate()
 	add_child(prefab)
 	puppet_node = prefab
 	on_spawned()
