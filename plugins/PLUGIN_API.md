@@ -6,7 +6,7 @@ Structure of a plugin:
 ~/mods/puppets/custom/:
 |- 📁<plugin_name>
 |  |- 📁scripts
-|  |  |- <your scripts with .gompl extension>
+|  |  |- <your scripts with .script extension>
 |  |- 📄plugin.json
 |  |- 📄<your_3d_model>.glb
 
@@ -14,10 +14,10 @@ Structure of a plugin:
 
 [Where to find that folder?](./README.md)
 
-## GOMPL
-SCP: Continued Procedures uses [GOMPL](https://github.com/ratkingsminion/gompl) as scripting language.
+## SLang.GD
+SCP: Continued Procedures uses [SLang.GD](https://codeberg.org/ratrogue/slang.gd) (previously GOMPL) as scripting language.
 
-GOMPL syntax
+SLang.GD syntax
 ```
 a = 0 //variable
 
@@ -58,6 +58,7 @@ function funk()
     a = b
 end
 
+a = dictionary("name": "Klapauzius", "age": 10000, "weight": 123.4)
 ```
 
 
@@ -70,7 +71,7 @@ end
 	"author": `enter your username (string)`,
 	"year": `current year (int)`,
 	"license": `license (usually CC-BY 4.0, CC-BY-SA 4.0/3.0)`,
-    "api_version": `minimal supported API version, should be written as array with [major, minor, patch], such as [10, 1, 0]`
+    "api_version": `minimal supported API version, should be written as array with [major, minor, patch], such as [10, 2, 0]`
 	"plugin_type": `"puppet"`,
 	"gltf": {
 		"gltf_file_prefix": `model prefix (generally, model's filename) (string)`,

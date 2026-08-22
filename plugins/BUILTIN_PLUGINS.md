@@ -31,4 +31,4 @@
 
 2. Move into your NPC folder
 3. If `📁 scripts` folder was not created - you should create it.
-4. Create and program a script with defined name.
+4. Create and program a script with defined name and `.script` extension. For more information - please look at [Plugin API](./PLUGIN_API.md)
