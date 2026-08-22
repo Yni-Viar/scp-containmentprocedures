@@ -270,7 +270,6 @@ text = "CONTRIBUTE"
 autowrap_mode = 3
 
 [node name="Support" type="Button" parent="ProjectInfo" unique_id=756071551]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_syfuq")
 text = "SUPPORT_THE_DEVELOPER"

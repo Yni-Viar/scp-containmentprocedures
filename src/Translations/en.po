@@ -317,7 +317,6 @@ msgstr "Cafeteria"
 
 msgid "TRAPPED_IN_YNI_BASEMENT"
 msgstr ""
-"You tried to open SCP-249 with SCP-005 in hands.\n"
 "You were teleported to a unknown basement.\n"
 "There may or may not be exits from this basement, which also\n"
 "can be another dimension.\n"

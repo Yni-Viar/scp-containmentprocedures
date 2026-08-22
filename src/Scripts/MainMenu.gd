@@ -157,4 +157,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_support_pressed() -> void:
-	pass # Replace with function body.
+	OS.shell_open("https://boosty.to/yniviar")

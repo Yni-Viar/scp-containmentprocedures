@@ -409,8 +409,7 @@ visible = false
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1666127319 groups=["Lightmap"]]
 quality = 0
 bounce_indirect_energy = 2.0
-directional = true
-texel_scale = 0.25
+texel_scale = 0.5
 light_data = ExtResource("16_5njnc")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1139405735 groups=["ReflectionProbe"]]

@@ -2,6 +2,13 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.1.1 (2026.08.22)
+
+- Added new easter egg
+- Make WC room in Storage Zone spawn.
+- Optimize some lightmaps.
+- Added link to support the author.
+
 ## v10.1.0 (2026.08.16)
 ### New and reworked SCP
 - SCP-737

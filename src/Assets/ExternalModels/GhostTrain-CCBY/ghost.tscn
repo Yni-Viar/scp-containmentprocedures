@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dauaojil4kylg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cg7qqqdnycffj" path="res://Assets/ExternalModels/GhostTrain-CCBY/train.mesh" id="1_duwlc"]
+
+[node name="ghost" type="Node3D" unique_id=1216075511]
+
+[node name="body" type="MeshInstance3D" parent="." unique_id=269032818]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.0856705, 0)
+mesh = ExtResource("1_duwlc")
+skeleton = NodePath("")

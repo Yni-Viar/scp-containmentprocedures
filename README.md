@@ -12,6 +12,8 @@ Click/Tap - move/pick items (if you tap on character, they will go with you).
 
 More gestures you can see in the in-game settings.
 
+[💳Support the author financially!](https://boosty.to/yniviar)
+
 ## Requirements to play
 
 - 🐧Linux distribution from 2024 and newer

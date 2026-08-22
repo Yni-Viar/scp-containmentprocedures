@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://cghjsdm6328ko" path="res://Assets/Materials/ResearchZone/Floor.tres" id="4_56bol"]
 [ext_resource type="PackedScene" uid="uid://do5cs06dn8kvm" path="res://Assets/ExternalModels/ScientistOfficeProps/YniViar/HikkanHuman/hikkan_andrew.tscn" id="8_56bol"]
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="8_q4m1k"]
+[ext_resource type="PackedScene" uid="uid://dauaojil4kylg" path="res://Assets/ExternalModels/GhostTrain-CCBY/ghost.tscn" id="9_a125m"]
 [ext_resource type="Material" uid="uid://drdixxgiv4gv4" path="res://Assets/Materials/ResearchZone/Ceiling.tres" id="10_sekwe"]
 [ext_resource type="LightmapGIData" uid="uid://brwfuu3fl0515" path="res://Assets/Rooms/sublevels/Lm/pd_basement.lmbake" id="12_3wtbx"]
 
@@ -269,3 +270,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77687, 0.50189704, 6.02178
 
 [node name="Andrew" parent="." unique_id=1730819941 instance=ExtResource("8_56bol")]
 transform = Transform3D(-0.9203584, 0, 0.3910759, 0, 1, 0, -0.3910759, 0, -0.9203584, 2.3824446, 0.010046601, -21.82934)
+
+[node name="ghost" parent="." unique_id=1216075511 instance=ExtResource("9_a125m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -64, 0)
