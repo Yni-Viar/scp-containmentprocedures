@@ -250,7 +250,7 @@ shape = SubResource("ConcavePolygonShape3D_wwgxo")
 bounces = 1
 bounce_indirect_energy = 2.0
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("10_eyuk1")
 
 [node name="entityspawn" type="Marker3D" parent="." unique_id=616195411 groups=["Scp939Spawn"]]

@@ -2,10 +2,14 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
-## v10.2.0
+## v10.2.0 (2026.08.22)
 ### Plugin API
-- [x] \[⚠️ Compatibility breakage!\] Plugin system's base `GOMPL`, was renamed to  `slang.gd`. File extension was changed to `.script` instead of `.gompl`. While custom scripts are automatically upgraded, builtin ones need manual file rename.
-  - [x] Bumped minimum version for built-in scripts to v10.2.0 (was v10.1.0). **Custom scripts are not affected to this change**, and still require 10.1.0 as a minimum version.
+- \[⚠️ Compatibility breakage!\] Plugin system's base `GOMPL`, was renamed to  `slang.gd`. File extension was changed to `.script` instead of `.gompl`. While custom scripts are automatically upgraded, builtin ones need manual file rename.
+  - Bumped minimum version for built-in scripts to v10.2.0 (was v10.1.0). **Custom scripts are not affected to this change**, and still require 10.1.0 as a minimum version.
+
+### Misc changes
+
+- Optimized game size
 
 ## v10.1.1 (2026.08.22)
 

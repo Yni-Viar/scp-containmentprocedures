@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://dd38ave42ap1i" path="res://MapGen/Resources/ResearchZone/room2_checkpoint.tres" id="3_ompfg"]
 [ext_resource type="Resource" uid="uid://tgxe2303s02g" path="res://MapGen/Resources/ResearchZone/room2C_redux.tres" id="4_wh27x"]
 [ext_resource type="Resource" uid="uid://dqdtklri5tu2" path="res://MapGen/Resources/ResearchZone/Optional/cont2C_178.tres" id="5_e43fb"]
-[ext_resource type="Resource" uid="uid://dkax2pgmsnpbr" path="res://MapGen/Resources/ResearchZone/room2C_special.tres" id="6_njsjp"]
+[ext_resource type="Resource" uid="uid://dkax2pgmsnpbr" path="res://MapGen/Resources/ResearchZone/Optional/room2C_special.tres" id="6_njsjp"]
 [ext_resource type="Resource" uid="uid://defw3e0yk60rh" path="res://MapGen/Resources/ResearchZone/room4.tres" id="7_r5act"]
 [ext_resource type="PackedScene" uid="uid://cksrh1gkj38dw" path="res://Assets/Doors/rz_door.tscn" id="8_4xmn4"]
 [ext_resource type="Resource" uid="uid://fnhc6t0nwt4o" path="res://MapGen/Resources/ResearchZone/room1_redux.tres" id="9_s7x17"]

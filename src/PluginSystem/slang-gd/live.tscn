@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dj75gqru45j7p"]
 
-[ext_resource type="Texture2D" uid="uid://doy0pjxrug361" path="res://icon.svg" id="1_yhsjk"]
-[ext_resource type="Script" uid="uid://umlvbfw71pqq" path="res://live.gd" id="2_o8brj"]
+[ext_resource type="Texture2D" uid="uid://c7yat1lfp8emn" path="res://icon.png" id="1_yhsjk"]
+[ext_resource type="Script" uid="uid://bcw3k5fcy5aba" path="res://PluginSystem/slang-gd/live.gd" id="2_o8brj"]
 
 [node name="Live" type="Node2D" unique_id=54324533]
 

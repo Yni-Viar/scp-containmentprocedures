@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cht8u13ej0wfa" path="res://Scripts/RoomMesh.gd" id="5_ceb16"]
 [ext_resource type="Material" uid="uid://emi0dvvkx1lb" path="res://Assets/Materials/ResearchZone/Redux/Ventilation_Wall.tres" id="5_knu6h"]
 [ext_resource type="PackedScene" uid="uid://p7fq70bvncja" path="res://Assets/ExternalModels/hanging_light_rz.tscn" id="5_tsku5"]
-[ext_resource type="LightmapGIData" uid="uid://di8iii0836774" path="res://Assets/Rooms/room2c/Lm/room2c_special.lmbake" id="6_knu6h"]
+[ext_resource type="LightmapGIData" uid="uid://di8iii0836774" path="res://Assets/Rooms/room2c/Optional/Lm/room2c_special.lmbake" id="6_knu6h"]
 [ext_resource type="Script" uid="uid://b0s17mch0hh6s" path="res://Scripts/Seasonal/SeasonSwitcher.gd" id="8_5augc"]
 [ext_resource type="PackedScene" uid="uid://c88xvl7f3pq8b" path="res://Assets/OriginalModels/FireExtinguisher.tscn" id="8_bm7kj"]
 [ext_resource type="PackedScene" uid="uid://wgwkw8qa0ag8" path="res://Assets/ExternalModels/jackolantern.tscn" id="9_tsku5"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://3d8pol4t4u8f"]
+[gd_scene format=4 uid="uid://3d8pol4t4u8f"]
 
 [ext_resource type="Texture2D" uid="uid://cf34ogpagkyxb" path="res://Assets/ExternalModels/SCP/Keys/keys_scp_sigil_keysmat_keys1_baseColor.png" id="1_pnuco"]
 [ext_resource type="Texture2D" uid="uid://lmggjia1u2cb" path="res://Assets/ExternalModels/SCP/Keys/keys_scp_sigil_keysmat_keys1_metallicRoughness.png" id="2_016nr"]
@@ -52,8 +52,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iduur")
 
-[node name="Key1" type="Node3D"]
+[node name="Key1" type="Node3D" unique_id=1267361081]
 
-[node name="keys_key4_link1_keys_mat_keys1_0_002" type="MeshInstance3D" parent="."]
+[node name="keys_key4_link1_keys_mat_keys1_0_002" type="MeshInstance3D" parent="." unique_id=1754641607]
 mesh = SubResource("ArrayMesh_4vr1m")
 skeleton = NodePath("")
