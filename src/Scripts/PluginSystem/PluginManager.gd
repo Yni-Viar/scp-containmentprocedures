@@ -32,6 +32,8 @@ const VALIDATION_PUPPET_PLUGIN: Dictionary = {
 	}
 }
 
+const MINIMUM_VALIDATED_VERSION: Array[int] = [10, 1, 0]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -49,13 +51,23 @@ func _load_plugins():
 		var sub_dir: DirAccess = DirAccess.open("user://mods/puppets/custom".path_join(sub_dir_name))
 		if sub_dir.get_files().has("plugin.json"):
 			# Found plugin!
-			var file: FileAccess = FileAccess.open("user://mods/puppets/custom".path_join(sub_dir_name).path_join("plugin.json"), FileAccess.READ)
+			var file: FileAccess = FileAccess.open("user://mods/puppets/custom".path_join(sub_dir_name).path_join("plugin.json"), FileAccess.READ_WRITE)
 			var file_content: String = file.get_as_text()
 			# If is valid JSON
 			if file_content.contains("{") && file_content.contains("}"):
 				var plugin_dict: Dictionary = JSON.parse_string(file_content)
 				#If plugin is valid plugin
 				if is_plugin_valid(plugin_dict):
+					# Compatibility - handle extension change in 10.2.0
+					if int(plugin_dict["api_version"][0]) == 10 && int(plugin_dict["api_version"][1]) == 1 && sub_dir.dir_exists("scripts"):
+						Console.print_info("[Plugin system] Detected scripts, created for SCP: Continued Procedures 10.1.0. Upgrading them to 10.2.0", true)
+						var scripts_dir: DirAccess = DirAccess.open("user://mods/puppets/custom".path_join(sub_dir_name).path_join("scripts"))
+						for script_file in scripts_dir.get_files():
+							if script_file.ends_with(".gompl"):
+								scripts_dir.rename(script_file, script_file.get_basename() + ".script")
+						plugin_dict["api_version"] = [10, 2, 0]
+						file.resize(0)
+						file.store_line(JSON.stringify(plugin_dict))
 					#Currently, the only option
 					if plugin_dict["plugin_type"] == "puppet":
 						# Creating custom puppet prefab
@@ -99,7 +111,7 @@ func is_plugin_valid(plugin_dict: Dictionary) -> bool:
 				if plugin_dict["api_version"][i] is float:
 					if int(plugin_dict["api_version"][i]) > int(game_version[i]) && !lower_api_version_check:
 						return false
-					elif int(plugin_dict["api_version"][i]) < int(game_version[i]):
+					elif int(plugin_dict["api_version"][i]) < int(game_version[i]) && int(plugin_dict["api_version"][i]) >= MINIMUM_VALIDATED_VERSION[i]:
 						lower_api_version_check = true
 				else:
 					return false
