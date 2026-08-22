@@ -1,7 +1,8 @@
-class_name Gompl
+class_name SLang
 extends RefCounted
 
 ## A simple interpreted scripting language for Godot
+## Codeberg repo: https://codeberg.org/ratrogue/slang.gd
 ## Based on https://jayconrod.com/posts/37/a-simple-interpreter-from-scratch-in-python--part-1-
 ## and https://jayconrod.com/posts/65/how-to-build-a-parser-by-hand
 ## and https://craftinginterpreters.com/parsing-expressions.html
@@ -17,8 +18,9 @@ const _ID := "ID"
 const _TOKEN_EXPRESSIONS: Array[String] = [
 	r"[ \n\t]+", _IGNORE, r"#[^\n]*", _IGNORE, # whitespaces
 	r"\/\/[^\n]*", _IGNORE, # comments
-	r",", _RESERVED, # separator
+	r",", _RESERVED, r":", _RESERVED, # separator
 	r"\.", _RESERVED, r"\[", _RESERVED, r"\]", _RESERVED, # access
+	r"\+=", _RESERVED, r"-=", _RESERVED, r"\*=", _RESERVED, r"/=>", _RESERVED, r"\%=>", _RESERVED,
 	r"\+", _RESERVED, r"-", _RESERVED, r"\*", _RESERVED, r"/", _RESERVED, r"\%", _RESERVED,
 	r"<=", _RESERVED, r"<", _RESERVED, r">=", _RESERVED, r">", _RESERVED,
 	r"==", _RESERVED, r"!=", _RESERVED,
@@ -34,27 +36,34 @@ const _TOKEN_COMPARISON: Array[String] = [ "<=", "<", ">=", ">" ]
 const _TOKEN_TERM: Array[String] = [ "-", "+" ]
 const _TOKEN_FACTOR: Array[String] = [ "/", "*", "%" ]
 const _TOKEN_UNARY: Array[String] = [ "not", "-" ]
-const _TOKEN_ASSIGNMENT: Array[String] = [ "=" ]
-const _TOKEN_ACCESSOR: Array[String] = [ "." ]
+const _TOKEN_ASSIGNMENT: Array[String] = [ "=", "+=", "-=", "*=", "/=", "%=" ]
+const _TOKEN_PAIR: Array[String] = [ ":" ]
+const _TOKEN_ACCESS: Array[String] = [ "." ]
+const _TOKEN_ITERATE: Array[String] = [ "of" ]
 const _TOKEN_BINARY_OPERATOR: Array[String] = [ "+", "-", "*", "/", "%" ]
-const _TOKEN_BINARY_OPERATOR_ALLOWING_UNDEFINED: Array[String] = [ "+", "%" ]
+const _TOKEN_BINARY_OPERATOR_ALLOWING_UNDEFINED: Array[String] = [ "+", "-", "/", "%" ]
 const _TOKEN_FLOW_CONTROL: Array[String] = [ "stop", "skip", "interrupt" ]
-const _TOKEN_KEYWORDS: Array[String] = [ "and", "or", "not", "if", "then", "else", "elif", "while", "do", "end", "stop", "skip", "interrupt", "with", "function", "array" ]
+const _TOKEN_KEYWORDS: Array[String] = [ "and", "or", "not", "if", "then", "else", "elif", "while", "of",
+	"do", "end", "stop", "skip", "interrupt", "with", "function", "array", "dictionary" ]
 const _TOKEN_UNDEFINED: Array[String] = [ "undefined" ]
 const _TOKEN_BOOLS: Array[String] = [ "true", "false" ]
 
-enum Instruction { UNDEFINED, BINARY_LOGIC, BINARY_LOGIC_END, BINARY, UNARY, ASSIGN, ASSIGN_ARR, LITERAL, POP,
-	IDENTIFIER, CHECK, JUMP, INTERRUPT, CALL_METHOD, CALL_INTERNAL, RETURN, CALL_EXTERNAL, ARRAY, ACCESS_ARR }
+enum Instruction { UNDEFINED, BINARY_LOGIC, BINARY_LOGIC_END, BINARY, UNARY, ASSIGN, ASSIGN_IDX, PAIR, LITERAL,
+	POP, IDENTIFIER, CHECK, JUMP, INTERRUPT, CALL_METHOD, CALL_INTERNAL, RETURN, CALL_EXTERNAL, ARRAY, DICTIONARY,
+	ACCESS_IDX, ITERATE }
 
 var debug_printing := false
 var err: String
 var target: Object
+
+var cur_state: Dictionary
 
 const T_ANY = &"any"
 const T_NUMBER = &"number"
 const T_STRING = &"string"
 const T_BOOL = &"bool"
 const T_ARRAY = &"array"
+const T_DICTIONARY = &"dictionary"
 const T_UNDEFINED = &"undefined"
 
 var _registered_in_funcs: Dictionary
@@ -94,7 +103,7 @@ func tokenize_code(code: String) -> Array[Array]:
 	err = ""
 	var tokens := _lex(code)
 	if err: printerr(err); return []
-	if debug_printing and tokens: print("TOKENS: ", tokens)
+	if debug_printing and tokens: print("TOKENS (", tokens.size(), "): ", tokens)
 	return tokens
 
 ## Step 2 - returns the AST (abstract syntax tree) of the tokens
@@ -108,7 +117,7 @@ func parse_tokens(tokens: Array[Array], clear_internal_funcs := true) -> Expr:
 	if debug_printing: print("AST: ", ast)
 	return ast
 	
-## Step 3 - compile the AST to an arry of instructions, compiled via the AST
+## Step 3 - compile the AST to an arry of instructions
 func compile(ast: Expr) -> Array[Array]:
 	err = ""
 	var it: Array[Array]
@@ -121,25 +130,29 @@ func compile(ast: Expr) -> Array[Array]:
 		for f: Expr.Function in _registered_in_funcs.values(): f.compile_deferred(self, it)
 	scope.init_stops(it.size())
 	if err: printerr(err); return []
-	if debug_printing and it: print("INSTRUCTIONS: ", it)
+	if debug_printing and it: print("INSTRUCTIONS (", it.size(), "): ", it.map(func(a: Array) -> Array: var b: Array = a.duplicate(); b[1] = Instruction.keys()[b[1]]; return b))
 	return it
 
 ## Step 4 - iterate over the array of instructions, using it as a lower level language
 ## env is a Dictionary that contains all the variables assigned in the code
-## If you don't provide env, a temporary one will be created
+## If you don't provide env, the one from state will be used (if it exists), or a temporary one will be created 
 ## If you provide a state Dictionary, it can be re-used to continue the execution after it was interrupted
+## (but you can also use the cur_state member for that)
 func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant:
 	err = ""
 	if env == null: env = {} if state is not Dictionary else state.get(&"env", {})
 	elif env is not Dictionary: _set_err("Environment must be a Dictionary"); env = {}
 	
+	if state is not Dictionary: state = {}
+	cur_state = state
+	
 	var step: int = 0
-	var stack: Array = [] if state is not Dictionary else state.get(&"stack", [])
-	var returns: Array = [] if state is not Dictionary else state.get(&"returns", [])
-	var pos: int = 0 if state is not Dictionary else state.get(&"pos", 0)
+	var stack: Array = state.get(&"stack", [])
+	var returns: Array = state.get(&"returns", [])
+	var pos: int = state.get(&"pos", 0)
 	
 	while not err and pos < it.size():
-		if state is Dictionary and &"interrupted" in state:
+		if &"interrupted" in state:
 			break
 		var line: int = it[pos][0]
 		#print("run ", pos, ") ", it[pos], " - stack:", stack, " env:", env)
@@ -156,8 +169,9 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 				var r = stack.pop_back()
 				stack.push_back(r and r is not Undefined)
 			Instruction.BINARY:
-				var l = stack.pop_back()
 				var r = stack.pop_back()
+				var l = stack.pop_back()
+				var incomp := false
 				if it[pos][2] == "==":
 					if _is_string(l) and _is_string(r): stack.push_back(l == r)
 					elif _is_number(l) and _is_number(r): stack.push_back(l == r)
@@ -168,44 +182,45 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 					elif _is_number(l) and _is_number(r): stack.push_back(l != r)
 					elif l is Undefined and r is Undefined: stack.push_back(false)
 					else: stack.push_back(typeof(l) != typeof(r) or l != r)
-				elif (l is Undefined or r is Undefined) and it[pos][2] not in _TOKEN_BINARY_OPERATOR_ALLOWING_UNDEFINED:
-					_set_err_runtime(it[pos], "Can't use undefined variable in binary op '" + it[pos][2] + "'")
-					stack.push_back(Undefined.new(line))
+				elif (l is Undefined or r is Undefined):
+					if it[pos][2] not in _TOKEN_BINARY_OPERATOR_ALLOWING_UNDEFINED: _set_err_runtime(stack, it[pos], str("Can't use undefined variable in binary op '", it[pos][2], "'"))
+					else: stack.push_back(Undefined.new(line))
 				elif it[pos][2] in _TOKEN_BINARY_OPERATOR:
 					match it[pos][2]:
 						"+":
-							if _is_string(l) or _is_string(r): stack.push_back(str(l, r))
-							elif l is Undefined or r is Undefined: stack.push_back(Undefined.new(line))
-							else: stack.push_back(l + r)
+							if _is_number(l) and _is_number(r): stack.push_back(l + r)
+							elif _is_string(l) or _is_string(r): stack.push_back(str(l, r))
+							else: incomp = true
 						"-":
-							if _is_string(l): stack.push_back(l.replace(str(r), ""))
-							elif _is_string(r): _set_err_runtime(it[pos], "Incompatible types in binary op '-'"); stack.push_back(Undefined.new(line))
-							elif l is Undefined or r is Undefined: stack.push_back(Undefined.new(line))
-							else: stack.push_back(l - r)
+							if _is_number(l) and _is_number(r): stack.push_back(l - r)
+							elif _is_string(l): stack.push_back(l.replace(str(r), ""))
+							else: incomp = true
 						"*":
-							if _is_string(l) and _is_number(r): stack.push_back(l.repeat(r))
+							if _is_number(l) and _is_number(r): stack.push_back(l * r)
+							elif _is_string(l) and _is_number(r): stack.push_back(l.repeat(r))
 							elif _is_number(l) and _is_string(r): stack.push_back(r.repeat(l))
-							elif _is_string(l) and _is_string(r): _set_err_runtime(it[pos], "Incompatible types in binary op '*'"); stack.push_back(Undefined.new(line))
-							else: stack.push_back(l * r)
+							else: incomp = true
 						"/":
-							if _is_string(l) or _is_string(r): _set_err_runtime(it[pos], "Incompatible types in binary op '/'"); stack.push_back(Undefined.new(line))
-							elif l is Undefined or r is Undefined: stack.push_back(Undefined.new(line))
-							elif _is_number(r) and r == 0: _set_err_runtime(it[pos], "Division by zero"); stack.push_back(Undefined.new(line))
-							else: stack.push_back(l / r)
+							if _is_number(l) and _is_number(r):
+								if r == 0: _set_err_runtime(stack, it[pos], "Division by zero")
+								else: stack.push_back(l / r)
+							else: incomp = true
 						"%":
-							if _is_string(r) and not _is_string(l): _set_err_runtime(it[pos], "Incompatible types in binary op '%'"); stack.push_back(Undefined.new(line))
-							elif l is Undefined or r is Undefined: stack.push_back(Undefined.new(line))
-							elif _is_number(r) and r == 0: _set_err_runtime(it[pos], "Division by zero"); stack.push_back(Undefined.new(line))
-							else: stack.push_back(l % r)
+							if _is_number(l) and _is_number(r):
+								if r == 0: _set_err_runtime(stack, it[pos], "Division by zero")
+								else: stack.push_back(l % r)
+							elif _is_string(l) and _is_container(r): stack.push_back(l.format(r))
+							else: incomp = true
 				else:
-					if _is_string(l) != _is_string(r):
-						_set_err_runtime(it[pos], "Incompatible types for binary op '" + it[pos][2] + "'"); stack.push_back(Undefined.new(line))
-					else:
+					if (_is_number(l) and _is_number(r)) or (_is_string(l) and _is_string(r)):
 						match it[pos][2]:
 							"<": stack.push_back(l < r)
 							"<=": stack.push_back(l <= r)
 							">": stack.push_back(l > r)
 							">=": stack.push_back(l >= r)
+					else:
+						incomp = true
+				if incomp: _set_err_runtime(stack, it[pos], str("Incompatible types for binary op '", it[pos][2], "'"))
 			Instruction.UNARY:
 				var r = stack.pop_back()
 				match it[pos][2]:
@@ -213,31 +228,41 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 						stack.push_back(r is Undefined or not r)
 					"-":
 						if r is Undefined: stack.push_back(Undefined.new(line))
-						elif not _is_number(r): _set_err_runtime(it[pos], "Incompatible type for unary op '-'"); stack.push_back(Undefined.new(line))
+						elif not _is_number(r): _set_err_runtime(stack, it[pos], "Incompatible type for unary op '-'")
 						else: stack.push_back(-r)
 			Instruction.ASSIGN:
-				var res = stack.pop_back()
-				if res == null or res is Undefined:
-					env.erase(it[pos][2])
+				if env.get(it[pos][2], 0) is Iterator:
+					_set_err_runtime(stack, it[pos], "Can't assign value to iterator")
 					stack.push_back(Undefined.new(line))
 				else:
-					env[it[pos][2]] = res
-					stack.push_back(res)
-			Instruction.ASSIGN_ARR:
-				var arr = stack.pop_back()
+					var res = stack.pop_back()
+					if res == null or res is Undefined:
+						env.erase(it[pos][2])
+						stack.push_back(Undefined.new(line))
+					else:
+						env[it[pos][2]] = res
+						stack.push_back(res)
+			Instruction.ASSIGN_IDX:
+				var obj = stack.pop_back()
 				var idx = stack.pop_back()
 				var res = stack.back()
 				if res is Undefined: res = null
-				if idx >= arr.size() or idx < -arr.size(): _set_err_runtime(it[pos], str("Array access out of bounds")); stack.push_back(Undefined.new(line)) 
-				else: arr[idx] = res
+				if obj is Array and (idx >= obj.size() or idx < -obj.size()): _set_err_runtime(stack, it[pos], "Array access out of bounds")
+				else: obj[idx] = res
+			Instruction.PAIR:
+				var value = stack.pop_back()
+				var key = stack.pop_back()
+				stack.push_back(KeyValuePairProxy.new(key, value))
 			Instruction.LITERAL:
 				stack.push_back(it[pos][2])
 			Instruction.POP:
 				stack.pop_back()
 			Instruction.IDENTIFIER:
-				stack.push_back(env.get(it[pos][2], Undefined.new(line)))
+				var res = env.get(it[pos][2], Undefined.new(line))
+				if res is Iterator: stack.push_back(res.get_cur_value())
+				else: stack.push_back(res)
 			Instruction.CHECK: # conditional jump
-				if stack: # and stack.back() is not Undefined:
+				if stack:
 					var r = stack.pop_back()
 					if r and r is not Undefined: stack.pop_back()
 					else: pos = it[pos][2] - 1
@@ -247,15 +272,17 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 				pos = it[pos][2] - 1
 			Instruction.INTERRUPT:
 				var res = stack.pop_back() if it[pos][2] else null
-				if state is Dictionary: state[&"interrupted"] = res
-				else: state = { &"interrupted": res }
+				state[&"interrupted"] = res
 			Instruction.CALL_METHOD:
 				var obj = stack.pop_back() # get the object to access with a method
 				var f: String = it[pos][2]
 				match typeof(obj):
-					TYPE_OBJECT: _excall(stack, line, it[pos], obj)
 					TYPE_ARRAY: _excall(stack, line, it[pos], ArrayProxy.new(obj))
-					_:_set_err_runtime(it[pos], str("Invalid target object for method '", f, "'")); stack.push_back(Undefined.new(line)) 
+					TYPE_DICTIONARY: _excall(stack, line, it[pos], DictionaryProxy.new(obj))
+					TYPE_OBJECT:
+						if obj is Proxy: _excall(stack, line, it[pos], obj)
+						#else: _excall(stack, line, it[pos], obj) # unsafe!
+					_: _set_err_runtime(stack, it[pos], str("Invalid target object for method '", f, "'"))
 			Instruction.CALL_INTERNAL:
 				var rf: Expr.Function = _registered_in_funcs.get(it[pos][2])
 				returns.push_back(pos)
@@ -271,30 +298,57 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 					var elem = stack.pop_back()
 					res[i] = elem if elem is not Undefined else null
 				stack.push_back(res)
-			Instruction.ACCESS_ARR:
-				var idx := int(stack.pop_back())
-				var arr = stack.pop_back()
-				if arr is Array or arr is String:
-					if idx >= len(arr) or idx < -len(arr): _set_err_runtime(it[pos], str("Array access out of bounds")); stack.push_back(Undefined.new(line)) 
-					elif it[pos][2] and arr is Array: stack.push_back(idx); stack.push_back(arr) # is left side
-					elif it[pos][2]: _set_err_runtime(it[pos], str("Can't use String array access on left side")); stack.push_back(Undefined.new(line)) 
-					else: stack.push_back(arr[idx])
-				else: _set_err_runtime(it[pos], str("Invalid array access")); stack.push_back(Undefined.new(line)) 
-
+			Instruction.DICTIONARY:
+				var res: Dictionary
+				for i: int in it[pos][2]:
+					var entry = stack.pop_back()
+					if entry is KeyValuePairProxy: res[entry.key if entry.key is not Undefined else null] = entry.value if entry.value is not Undefined else null
+					else: res[entry if entry is not Undefined else null] = null
+				stack.push_back(res)
+			Instruction.ACCESS_IDX:
+				var idx = stack.pop_back()
+				var obj = stack.pop_back()
+				var is_str_or_arr := _is_str_or_arr(obj)
+				var is_container := _is_container(obj)
+				if is_str_or_arr or is_container:
+					if is_str_or_arr and not _is_number(idx): _set_err_runtime(stack, it[pos], "Index access must be a number")
+					elif is_str_or_arr and (idx >= len(obj) or idx < -len(obj)): _set_err_runtime(stack, it[pos], "Index access out of bounds")
+					elif not it[pos][2] and obj is Dictionary and idx not in obj: _set_err_runtime(stack, it[pos], "Dictionary index access needs existing key")
+					elif it[pos][2] and is_container: stack.push_back(idx); stack.push_back(obj) # is left side
+					elif it[pos][2]: _set_err_runtime(stack, it[pos], "Can't use String index access on left side")
+					else: stack.push_back(obj[idx])
+				else: _set_err_runtime(stack, it[pos], "Invalid index access")
+			Instruction.ITERATE:
+				var obj = stack.pop_back()
+				if obj == null or obj is Undefined:
+					env.erase(it[pos][2])
+					stack.push_back(Undefined.new(line))
+				elif not _is_iterable(obj):
+					_set_err_runtime(stack, it[pos], "Iteration via 'of' only possible over numbers, arrays, dictionaries and strings")
+				else:
+					var iter = env.get(it[pos][2], 0)
+					if iter is not Iterator or not iter.update_target(obj):
+						if _is_number(obj): iter = NumberIterator.new(obj)
+						elif _is_string(obj): iter = StringIterator.new(obj)
+						else: iter = ContainerIterator.new(obj)
+						env[it[pos][2]] = iter
+					var res: bool = iter.iterate()
+					if not res: env.erase(it[pos][2])
+					stack.push_back(res)
 		pos += 1
 		step += 1
 		if max_steps > 0 and step >= max_steps:
-			if state is Dictionary: state[&"interrupted"] = null
-			else: state = { &"interrupted": null }
+			state[&"interrupted"] = null
+	
+	state[&"stack"] = stack
+	state[&"returns"] = returns
+	state[&"pos"] = pos
+	state[&"env"] = env
+	state[&"step"] = step
 	
 	if err: printerr(err); return null
 	
-	if state is Dictionary and &"interrupted" in state:
-		state[&"stack"] = stack
-		state[&"returns"] = returns
-		state[&"pos"] = pos
-		state[&"env"] = env
-		state[&"steps"] = step
+	if &"interrupted" in state:
 		var res = state[&"interrupted"]
 		state.erase(&"interrupted")
 		return res
@@ -305,22 +359,18 @@ func run(it: Array[Array], env = null, state = null, max_steps := -1) -> Variant
 
 func _excall(stack: Array, line: int, it_at_pos: Array, t, rf = null):
 	var res
-	if not rf and not (t and t.has_method(it_at_pos[2])): # check existence of method again - TODO always?
-		_set_err_runtime(it_at_pos, str("Method '", it_at_pos[2], "' not found"))
-		stack.push_back(Undefined.new(line))
-	#elif not it_at_pos[3]: # no arguments
-		#if rf: res = rf[0].call()
-		#else: res = t.call(it_at_pos[2])
-	#else:
+	var mn: String = it_at_pos[2]
+	if t is Proxy: mn = str(t._prefix, mn) # proxy call for safe object access
+	if not rf and not (t and t.has_method(mn)): # check existence of method again - TODO always?
+		_set_err_runtime(stack, it_at_pos, str("Method '", it_at_pos[2], "' not found"))
+		return null
 	var args = []
-	var mlm = null if rf else t.get_method_list().filter(func(m: Dictionary) -> bool: return m.name == it_at_pos[2])[0]
+	var mlm = null if rf else t.get_method_list().filter(func(m: Dictionary) -> bool: return m.name == mn)[0]
 	if not rf: # check argument count again - TODO always?
 		if it_at_pos[3] > mlm.args.size():
-			_set_err_runtime(it_at_pos, str("Too many parameters for method '", it_at_pos[2], "'"))
-			stack.push_back(Undefined.new(line))
+			_set_err_runtime(stack, it_at_pos, str("Too many parameters for method '", mn, "'"))
 		elif it_at_pos[3] < mlm.args.size() - mlm.default_args.size():
-			_set_err_runtime(it_at_pos, str("Too few parameters for method '", it_at_pos[2], "'"))
-			stack.push_back(Undefined.new(line))
+			_set_err_runtime(stack, it_at_pos, str("Too few parameters for method '", mn, "'"))
 	if not err:
 		for i: int in it_at_pos[3]:
 			var arg = stack.pop_back()
@@ -328,28 +378,27 @@ func _excall(stack: Array, line: int, it_at_pos: Array, t, rf = null):
 			var incomp := false
 			if rf:
 				match rf[1][i]:
-					T_NUMBER: if a is not int and a is not float: incomp = true
-					T_STRING: if a is not String and a is not StringName: incomp = true
+					T_NUMBER: if not _is_number(a): incomp = true
+					T_STRING: if not _is_string(a): incomp = true
 					T_BOOL: if a is not bool: incomp = true
 					T_ARRAY: if a is not Array: incomp = true
+					T_DICTIONARY: if a is not Dictionary: incomp = true
 				if incomp:
-					_set_err_runtime(it_at_pos, str("Incompatible type '", type_string(typeof(a)).to_lower(), "' for parameter ", i + 1, ", wants '", rf[1][i], "'"))
-					stack.push_back(Undefined.new(line))
+					_set_err_runtime(stack, it_at_pos, str("Incompatible type '", type_string(typeof(a)).to_lower(), "' for parameter ", i + 1, ", wants '", rf[1][i], "'"))
 					break
 			else:
 				match mlm.args[i].type:
-					TYPE_INT, TYPE_FLOAT: if a is not int and a is not float: incomp = true
-					TYPE_STRING, TYPE_STRING_NAME: if a is not String and a is not StringName: incomp = true
+					TYPE_INT, TYPE_FLOAT: if not _is_number(a): incomp = true
+					TYPE_STRING, TYPE_STRING_NAME: if not _is_string(a): incomp = true
 					TYPE_ARRAY: if a is not Array: incomp = true
 					_: if typeof(a) != mlm.args[i].type and mlm.args[i].type != TYPE_NIL: incomp = true
 				if incomp:
-					_set_err_runtime(it_at_pos, str("Incompatible type '", type_string(typeof(a)).to_lower(), "' for parameter ", i + 1, ", wants '", type_string(mlm.args[i].type), "'"))
-					stack.push_back(Undefined.new(line))
+					_set_err_runtime(stack, it_at_pos, str("Incompatible type '", type_string(typeof(a)).to_lower(), "' for parameter ", i + 1, ", wants '", type_string(mlm.args[i].type), "'"))
 					break
 			args.append(a)
 		if not err:
 			if rf: res = rf[0].callv(args)
-			else: res = t.callv(it_at_pos[2], args)
+			else: res = t.callv(mn, args)
 	stack.push_back(res if res != null else Undefined.new(line))
 	return res
 
@@ -359,15 +408,154 @@ func _set_err(e, overwrite := false) -> void:
 	if err and not overwrite: return
 	err = str(e)
 	
-func _set_err_runtime(instruction: Array, e: String) -> void:
+func _set_err_runtime(stack: Array, instruction: Array, e: String) -> void:
 	var error := str("[Runtime] [Line ", instruction[0], "] ", e)
 	_set_err(error, false)
+	stack.push_back(Undefined.new(instruction[0]))
 
 func _is_string(v) -> bool:
 	return v is String or v is StringName
 
 func _is_number(v) -> bool:
 	return v is int or v is float
+
+func _is_iterable(v) -> bool:
+	return v is int or v is float or v is Array or v is Dictionary or v is String or v is StringName
+
+func _is_str_or_arr(v) -> bool:
+	return v is Array or v is String or v is StringName
+
+func _is_container(v) -> bool:
+	return v is Array or v is Dictionary
+
+### PROXIES
+
+class Proxy:
+	var _prefix: String
+	func _init(prefix := "_proxy_") -> void: _prefix = prefix
+
+class ArrayProxy extends Proxy:
+	var array: Array
+	# no filter, map, reduce
+	func _init(a: Array) -> void: super(); array = a
+	func _to_string() -> String: return str(array)
+	func _proxy_append(e) -> Array: array.append(e); return array
+	func _proxy_append_array(a: Array) -> Array: array.append_array(a); return array
+	func _proxy_assign(a: Array) -> Array: array.assign(a); return array
+	func _proxy_back(): return array[-1] if array else null
+	func _proxy_bsearh(val, before := true) -> int: return array.bsearch(val, before)
+	func _proxy_clear() -> Array: array.clear(); return array
+	func _proxy_count(val) -> int: return array.count(val)
+	func _proxy_duplicate(deep := false) -> Array: return array.duplicate(deep)
+	func _proxy_erase(val) -> Array: array.erase(val); return array
+	func _proxy_fill(val) -> Array: array.fill(val); return array
+	func _proxy_find(val, from := 0) -> int: return array.find(val, from)
+	func _proxy_front(): return array[0] if array else null
+	func _proxy_get(idx: int): return array[idx] if idx < array.size() and idx >= -array.size() else null
+	func _proxy_has(val) -> bool: return val in array
+	func _proxy_hash() -> int: return array.hash()
+	func _proxy_insert(idx: int, val) -> Array: array.insert(idx, val); return array # TODO error check?
+	func _proxy_is_empty() -> bool: return array.is_empty()
+	func _proxy_max(): return array.max()
+	func _proxy_min(): return array.min()
+	func _proxy_pick_random(): return array.pick_random()
+	func _proxy_pop_at(idx: int): return array.pop_at(idx) if idx < array.size() and idx >= -array.size() else null
+	func _proxy_pop_back(): return array.pop_back()
+	func _proxy_pop_front(): return array.pop_front()
+	func _proxy_push_back(val) -> Array: array.push_back(val); return array
+	func _proxy_push_front(val) -> Array: array.push_front(val); return array
+	func _proxy_remove_at(idx: int) -> Array:
+		if idx < array.size() and idx >= -array.size(): array.remove_at(idx);
+		return array
+	func _proxy_resize(sz: int) -> Array: array.resize(sz); return array
+	func _proxy_reverse() -> Array: array.reverse(); return array
+	func _proxy_rfind(val, from := 0) -> int: return array.rfind(val, from)
+	func _proxy_set(idx: int, val) -> Array:
+		if idx < array.size() and idx >= -array.size(): array[idx] = val
+		return array
+	func _proxy_shuffle() -> Array: array.shuffle(); return array
+	func _proxy_size() -> int: return array.size()
+	func _proxy_slice(begin: int, end := 0x7FFFFFFF, step := 1, deep := false) -> Array: return array.slice(begin, end, step, deep)
+	func _proxy_sort() -> Array: array.sort(); return array
+
+class DictionaryProxy extends Proxy:
+	var dict: Dictionary
+	func _init(d: Dictionary) -> void: super(); dict = d
+	func _to_string() -> String: return str(dict)
+	func _proxy_assign(d: Dictionary) -> Dictionary: dict.assign(d); return dict
+	func _proxy_clear() -> Dictionary: dict.clear(); return dict
+	func _proxy_duplicate(deep := false) -> Dictionary: return dict.duplicate(deep)
+	func _proxy_erase(key) -> Dictionary: dict.erase(key); return dict
+	func _proxy_find_key(val): return dict.find_key(val)
+	func _proxy_get(key, default = null): return dict.get(key, default)
+	func _proxy_get_or_add(key, default = null): return dict.get_or_add(key, default)
+	func _proxy_has(key) -> bool: return dict.has(key)
+	func _proxy_has_all(keys: Array) -> bool: return dict.has_all(keys)
+	func _proxy_hash() -> int: return dict.hash()
+	func _proxy_is_empty() -> bool: return dict.is_empty()
+	func _proxy_keys() -> Array: return dict.keys()
+	func _proxy_merge(d: Dictionary, overwrite := false) -> Dictionary: dict.merge(d, overwrite); return dict
+	func _proxy_merged(d: Dictionary, overwrite := false) -> Dictionary: return dict.merged(d, overwrite)
+	func _proxy_recursive_equal(d: Dictionary, recursion_count := 100) -> bool: return dict.recursive_equal(d, recursion_count)
+	func _proxy_set(entry) -> Dictionary:
+		if entry is KeyValuePairProxy: dict.set(entry.key, entry.value)
+		else: dict.set(entry, null)
+		return dict # changes argument and return value of set()
+	func _proxy_size() -> int: return dict.size()
+	func _proxy_sort() -> Dictionary: dict.sort(); return dict
+	func _proxy_values() -> Array: return dict.values()
+
+class KeyValuePairProxy extends Proxy:
+	var key
+	var value
+	func _init(k, v) -> void: super(); key = k; value = v
+	func _to_string() -> String: return str("(", key, ": ", value, ")")
+	func _proxy_key(): return key
+	func _proxy_value(): return value
+
+class Iterator:
+	var target
+	var cur_idx := -1
+	func _init(t) -> void: target = t
+	func _to_string() -> String: return str(get_cur_value())
+	func iterate() -> bool: return false
+	func get_cur_value(): return null
+	func update_target(other) -> bool: return typeof(target) == typeof(other)
+
+class NumberIterator extends Iterator:
+	func iterate() -> bool:
+		cur_idx += 1
+		return cur_idx < target
+	func get_cur_value():
+		return cur_idx
+	func update_target(other) -> bool:
+		if not other is int and not other is float: return false
+		target = other
+		return true
+
+class StringIterator extends Iterator:
+	func iterate() -> bool:
+		cur_idx += 1
+		return cur_idx < len(target)
+	func get_cur_value():
+		if not target or cur_idx < 0 or cur_idx >= len(target): return null
+		return target[cur_idx]
+	func update_target(other) -> bool:
+		if not other is String and not other is StringName: return false
+		target = other
+		return true
+
+class ContainerIterator extends Iterator:
+	var iter_target
+	func _init(t) -> void: super(t); iter_target = t.keys() if t is Dictionary else t
+	func iterate() -> bool:
+		cur_idx += 1
+		return cur_idx < len(iter_target)
+	func get_cur_value():
+		if not iter_target or cur_idx < 0 or cur_idx >= len(iter_target): return null
+		return iter_target[cur_idx]
+	func update_target(other) -> bool:
+		return super(other) and (target == other)
 
 ### LEXER
 
@@ -392,8 +580,7 @@ func _lex(code: String) -> Array[Array]:
 					if value in _TOKEN_KEYWORDS: tag = _RESERVED
 					elif value in _TOKEN_BOOLS: tag = _BOOL
 					elif value in _TOKEN_UNDEFINED: tag = _UNDEFINED
-				var token: Array = [ value, tag, line ]
-				tokens.append(token)
+				tokens.append([ value, tag, line ])
 				break
 			else:
 				res = null
@@ -405,7 +592,7 @@ func _lex(code: String) -> Array[Array]:
 
 class Undefined extends Expr:
 	func _to_string() -> String: return "undefined"
-	func compile(_gompl: Gompl, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void: it.append([ _line, Instruction.UNDEFINED ])
+	func compile(_slg: SLang, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void: it.append([ _line, Instruction.UNDEFINED ])
 
 class Scope:
 	var start_pos: int
@@ -413,57 +600,17 @@ class Scope:
 	func _init(p: int) -> void: start_pos = p
 	func init_stops(p: int) -> void: for s: Array in stops: s.append(p) # jump targets of stops
 
-class ArrayProxy:
-	var array: Array
-	# no filter, map, reduce
-	# no get or set, use element access
-	func _init(a: Array) -> void: array = a
-	func append(e) -> Array: array.append(e); return array
-	func append_array(a: Array) -> Array: array.append_array(a); return array
-	func assign(a: Array) -> Array: array.assign(a); return array
-	func back(): return array[-1] if array else null
-	func bsearh(val, before := true) -> int: return array.bsearch(val, before)
-	func clear() -> Array: array.clear(); return array
-	func count(val) -> int: return array.count(val)
-	func duplicate(deep := false) -> Array: return array.duplicate(deep)
-	func erase(val) -> Array: array.erase(val); return array
-	func fill(val) -> Array: array.fill(val); return array
-	func find(val, from := 0) -> int: return array.find(val, from)
-	func front(): return array[0] if array else null
-	func has(val) -> bool: return val in array
-	func hash() -> int: return array.hash()
-	func insert(idx: int, val) -> Array: array.insert(idx, val); return array # TODO error check?
-	func is_empty() -> bool: return array.is_empty()
-	func max(): return array.max()
-	func min(): return array.min()
-	func pick_random(): return array.pick_random()
-	func pop_at(idx: int): return array.pop_at(idx) if idx < array.size() and idx >= -array.size() else null
-	func pop_back(): return array.pop_back()
-	func pop_front(): return array.pop_front()
-	func push_back(val) -> Array: array.push_back(val); return array
-	func push_front(val) -> Array: array.push_front(val); return array
-	func remove_at(idx: int) -> Array:
-		if idx < array.size() and idx >= -array.size(): array.remove_at(idx);
-		return array
-	func resize(sz: int) -> Array: array.resize(sz); return array
-	func reverse() -> Array: array.reverse(); return array
-	func rfind(val, from := 0) -> int: return array.rfind(val, from)
-	func shuffle() -> Array: array.shuffle(); return array
-	func size() -> int: return array.size()
-	func slice(begin: int, end := 0x7FFFFFFF, step := 1, deep := false) -> Array: return array.slice(begin, end, step, deep)
-	func sort() -> Array: array.sort(); return array
-
 class Expr:
 	var _line: int
 	
-	func _set_err(gompl: Gompl, e: String) -> void:
+	func _set_err(slg: SLang, e: String) -> void:
 		var error := str("[Compiler] [Line ", _line, "] ", e)
-		gompl._set_err(error, false)
+		slg._set_err(error, false)
 		
 	func _init(l: int) -> void:
 		_line = l
 	
-	func compile(_gompl: Gompl, _it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
+	func compile(_slg: SLang, _it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
 		pass
 	
 	# TODO make the operations more robust for different types
@@ -473,84 +620,102 @@ class Expr:
 		var right: Expr
 		func _init(ln: int, l: Expr, o: String, r: Expr) -> void: super(ln); left = l; op = o; right = r
 		func _to_string() -> String: return str("Binary(", left, ", '", op, "', ", right, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
-			if left == null: _set_err(gompl, str("Binary op '", op, "' missing left operand")); return
-			if right == null: _set_err(gompl, str("Binary op '", op, "' missing right operand")); return
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			if left == null: _set_err(slg, str("Binary op '", op, "' missing left operand")); return
+			if right == null: _set_err(slg, str("Binary op '", op, "' missing right operand")); return
 			if op == "and" or op == "or":
-				left.compile(gompl, it, scope_stack)
+				left.compile(slg, it, scope_stack)
 				var d = [ _line, Instruction.BINARY_LOGIC, op ]; it.append(d)
-				right.compile(gompl, it, scope_stack)
+				right.compile(slg, it, scope_stack)
 				it.append([ _line, Instruction.BINARY_LOGIC_END ])
 				d.append(it.size())
 			else:
-				right.compile(gompl, it, scope_stack)
-				left.compile(gompl, it, scope_stack)
+				left.compile(slg, it, scope_stack)
+				right.compile(slg, it, scope_stack)
 				it.append([ _line, Instruction.BINARY, op ])
 	class Unary extends Expr:
 		var op: String
 		var right: Expr
 		func _init(ln: int, o: String, r: Expr) -> void: super(ln); op = o; right = r
 		func _to_string() -> String: return str("Unary('", op, "', ", right, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
-			right.compile(gompl, it, scope_stack)
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			right.compile(slg, it, scope_stack)
 			it.append([ _line, Instruction.UNARY, op ])
 	class Accessor extends Expr:
 		var left: Expr
 		var right: Expr
 		func _init(ln: int, l: Expr, r: Expr) -> void: super(ln); left = l; right = r
 		func _to_string() -> String: return str("Accessor(", left, ", ", right, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
-			if left == null: _set_err(gompl, str("Accessor missing left operand")); return
-			if right == null: _set_err(gompl, str("Accessor missing right operand")); return
-			right.compile(gompl, it, scope_stack, left)
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			if left == null: _set_err(slg, "Accessor missing left operand"); return
+			if right == null: _set_err(slg, "Accessor missing right operand"); return
+			right.compile(slg, it, scope_stack, left)
+	class Iterate extends Expr:
+		var ident: Identifier
+		var expr: Expr
+		func _init(ln: int, i: Identifier, e: Expr) -> void: super(ln); ident = i; expr = e
+		func _to_string() -> String: return str("Iterate(", ident, ", ", expr, ")")
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			expr.compile(slg, it, scope_stack)
+			it.append([ _line, Instruction.ITERATE, ident.name ])
 	class Assignment extends Expr:
 		var left: Expr
 		var op: String
 		var right: Expr
 		func _init(ln: int, l: Expr, o: String, r: Expr) -> void: super(ln); left = l; op = o; right = r
 		func _to_string() -> String: return str("Assignment(", left, ", '", op, "', ", right, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
-			right.compile(gompl, it, scope_stack)
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			right.compile(slg, it, scope_stack)
 			if left is Expr.Identifier: it.append([ _line, Instruction.ASSIGN, left.name ])
-			elif left is Expr.ArrayAccess: left.compile(gompl, it, scope_stack); it.append([ _line, Instruction.ASSIGN_ARR ])
+			elif left is Expr.IdxAccess: left.compile(slg, it, scope_stack); it.append([ _line, Instruction.ASSIGN_IDX ])
+	class Pair extends Expr:
+		var key: Expr
+		var value: Expr
+		func _init(ln: int, k: Expr, v: Expr) -> void: super(ln); key = k; value = v
+		func _to_string() -> String: return str("Pair(", key, ", ", value, ")")
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			key.compile(slg, it, scope_stack)
+			value.compile(slg, it, scope_stack)
+			it.append([ _line, Instruction.PAIR ])
 	class Literal extends Expr:
 		var lit
 		func _init(ln: int, l) -> void: super(ln); lit = l
 		func _to_string() -> String: return str("Literal(", lit, ", ", type_string(typeof(lit)), ")")
-		func compile(_gompl: Gompl, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(_slg: SLang, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			it.append([ _line, Instruction.LITERAL, lit ])
 	class List extends Expr:
 		var exprs: Array[Expr]
 		func _init(ln: int, a: Array[Expr]) -> void: super(ln); exprs = a
 		func _to_string() -> String: return str("List(", exprs.map(func(i): return i), ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			var p := 0
 			for i: int in exprs.size():
 				if exprs[i] is not Function:
 					if p != 0: it.append([ _line, Instruction.POP ])
 					p += 1
-				exprs[i].compile(gompl, it, scope_stack)
+				exprs[i].compile(slg, it, scope_stack)
 	class Identifier extends Expr:
 		var name: String
 		func _init(ln: int, n: String) -> void: super(ln); name = n
 		func _to_string() -> String: return str("Identifier('", name, "')")
-		func compile(_gompl: Gompl, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(_slg: SLang, it: Array[Array], _scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			it.append([ _line, Instruction.IDENTIFIER, name ])
+		func cloned() -> Identifier: return Identifier.new(_line, name)
 	class If extends Expr:
 		var conds: Array[Expr]
 		var bodies: Array[Expr]
 		func _init(ln: int, c: Array[Expr], b: Array[Expr]) -> void: super(ln); conds = c; bodies = b
 		func _to_string() -> String: return str("If(", conds, ", ", bodies.map(func(i): return i), ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			var jumps: Array[Array]
 			for i: int in conds.size():
-				conds[i].compile(gompl, it, scope_stack)
+				conds[i].compile(slg, it, scope_stack)
 				var check := [ _line, Instruction.CHECK ]; it.append(check)
-				bodies[i].compile(gompl, it, scope_stack)
+				bodies[i].compile(slg, it, scope_stack)
 				jumps.append([ _line, Instruction.JUMP ]); it.append(jumps[-1])
 				check.append(it.size())
 			if bodies.size() > conds.size():
-				bodies[-1].compile(gompl, it, scope_stack)
+				bodies[-1].compile(slg, it, scope_stack)
 			for j in jumps:
 				j.append(it.size())
 	class While extends Expr:
@@ -558,13 +723,13 @@ class Expr:
 		var body: Expr
 		func _init(ln: int, c: Expr, b: Expr) -> void: super(ln); cond = c; body = b
 		func _to_string() -> String: return str("While(", cond, ", ", body, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			var start_pos := it.size()
 			var scope := Scope.new(start_pos)
 			scope_stack.push_back(scope)
-			cond.compile(gompl, it, scope_stack)
+			cond.compile(slg, it, scope_stack)
 			var check := [ _line, Instruction.CHECK ]; it.append(check)
-			body.compile(gompl, it, scope_stack)
+			body.compile(slg, it, scope_stack)
 			it.append([ _line, Instruction.JUMP, start_pos ])
 			check.append(it.size())
 			scope.init_stops(it.size())
@@ -574,19 +739,19 @@ class Expr:
 		var op: String
 		func _init(ln: int, o: String, w: Expr) -> void: super(ln); op = o; with = w
 		func _to_string() -> String: return str("Stop(", str(with) if with else "", ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			if op == "interrupt":
-				if with: with.compile(gompl, it, [])
+				if with: with.compile(slg, it, [])
 				it.append([ _line, Instruction.INTERRUPT, true if with else false ])
 			elif not scope_stack:
-				_set_err(gompl, "Unexpected '" + op + "'")
+				_set_err(slg, "Unexpected '" + op + "'")
 			else: 
 				var jump := [ _line, Instruction.JUMP ]
 				if op == "stop":
-					if with: with.compile(gompl, it, [])
+					if with: with.compile(slg, it, [])
 					scope_stack.back().stops.append(jump)
 				elif op == "skip":
-					if with: with.compile(gompl, it, [])
+					if with: with.compile(slg, it, [])
 					jump.append(scope_stack.back().start_pos)
 				it.append(jump)
 	class Function extends Expr:
@@ -594,10 +759,10 @@ class Expr:
 		var start_pos: int
 		func _init(ln: int, b: Expr) -> void: super(ln); body = b
 		func _to_string() -> String: return str("Function(", body, ")")
-		func compile_deferred(gompl: Gompl, it: Array[Array]) -> void:
+		func compile_deferred(slg: SLang, it: Array[Array]) -> void:
 			start_pos = it.size()
 			var scope := Scope.new(start_pos)
-			body.compile(gompl, it, [ scope ])
+			body.compile(slg, it, [ scope ])
 			scope.init_stops(it.size())
 			it.append([ _line, Instruction.RETURN ])
 	class FnCall extends Expr:
@@ -605,70 +770,79 @@ class Expr:
 		var params: Array[Expr]
 		func _init(ln: int, m: String, p: Array[Expr]) -> void: super(ln); method = m; params = p
 		func _to_string() -> String: return str("FnCall('", method, "', ", params.map(func(i): return i), ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], parent: Expr = null) -> void:
 			if parent:
 				# method calls can't validate argument count during compilation
 				for i: int in range(params.size() -1, -1, -1):
-					params[i].compile(gompl, it, scope_stack)
-				parent.compile(gompl, it, scope_stack)
+					params[i].compile(slg, it, scope_stack)
+				parent.compile(slg, it, scope_stack)
 				it.append([ _line, Instruction.CALL_METHOD, method, params.size() ])
 			else:
-				var rf = gompl._registered_in_funcs.get(method)
+				var rf = slg._registered_in_funcs.get(method)
 				if rf: # internal call
-					if params.size() > 0: _set_err(gompl, str("Too many parameters for function '", method, "'")); return
+					if params.size() > 0: _set_err(slg, str("Too many parameters for function '", method, "'")); return
 					it.append([ _line, Instruction.CALL_INTERNAL, method, params.size() ])
 				else:
-					rf = gompl._registered_ex_funcs.get(method)
+					rf = slg._registered_ex_funcs.get(method)
 					var res
 					if rf: # external call
-						if params.size() > rf[1].size(): _set_err(gompl, str("Too many parameters for function '", method, "'"))
-						elif params.size() < rf[1].size() - rf[2]: _set_err(gompl, str("Too few parameters for function '", method, "'"))
+						if params.size() > rf[1].size(): _set_err(slg, str("Too many parameters for function '", method, "'"))
+						elif params.size() < rf[1].size() - rf[2]: _set_err(slg, str("Too few parameters for function '", method, "'"))
 						else: res = [ _line, Instruction.CALL_EXTERNAL, method, params.size() ]
-					elif gompl.target and gompl.target.has_method(method): # target method call
-						var f: Dictionary = gompl.target.get_method_list().filter(func(m: Dictionary) -> bool: return m.name == method)[0]
-						if params.size() > f.args.size(): _set_err(gompl, str("Too many parameters for function '", method, "'"))
-						elif params.size() < f.args.size() - f.default_args.size(): _set_err(gompl, str("Too few parameters for function '", method, "'"))
+					elif slg.target and slg.target.has_method(method): # target method call
+						var f: Dictionary = slg.target.get_method_list().filter(func(m: Dictionary) -> bool: return m.name == method)[0]
+						if params.size() > f.args.size(): _set_err(slg, str("Too many parameters for function '", method, "'"))
+						elif params.size() < f.args.size() - f.default_args.size(): _set_err(slg, str("Too few parameters for function '", method, "'"))
 						else: res = [ _line, Instruction.CALL_EXTERNAL, method, params.size() ]
 					else:
-						_set_err(gompl, str("Invalid usage of function call for '", method, "'"))
+						_set_err(slg, str("Invalid usage of function call for '", method, "'"))
 					if res:
-						for i: int in range(params.size() -1, -1, -1): params[i].compile(gompl, it, scope_stack)
+						for i: int in range(params.size() -1, -1, -1): params[i].compile(slg, it, scope_stack)
 						it.append(res)
 	class NewArray extends Expr:
 		var params: Array[Expr]
 		func _init(ln: int, p: Array[Expr]) -> void: super(ln); params = p
 		func _to_string() -> String: return str("NewArray(", params.map(func(i): return i), ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
 			for i: int in range(params.size() -1, -1, -1):
-				params[i].compile(gompl, it, scope_stack)
+				params[i].compile(slg, it, scope_stack)
 			it.append([ _line, Instruction.ARRAY, params.size() ])
-	class ArrayAccess extends Expr:
-		var arr: Expr
+	class NewDictionary extends Expr:
+		var params: Array[Expr]
+		func _init(ln: int, p: Array[Expr]) -> void: super(ln); params = p
+		func _to_string() -> String: return str("NewDictionary(", params.map(func(i): return i), ")")
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			for i: int in range(params.size() -1, -1, -1):
+				params[i].compile(slg, it, scope_stack)
+			it.append([ _line, Instruction.DICTIONARY, params.size() ])
+	class IdxAccess extends Expr:
+		var obj: Expr
 		var idx: Expr
 		var is_left_side := false
-		func _init(ln: int, a: Expr, i: Expr) -> void: super(ln); arr = a; idx = i
-		func _to_string() -> String: return str("ArrayAccess('", idx, ")")
-		func compile(gompl: Gompl, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
-			arr.compile(gompl, it, scope_stack)
-			idx.compile(gompl, it, scope_stack)
-			it.append([ _line, Instruction.ACCESS_ARR, is_left_side ])
+		func _init(ln: int, o: Expr, i: Expr) -> void: super(ln); obj = o; idx = i
+		func _to_string() -> String: return str("IdxAccess('", idx, ")")
+		func compile(slg: SLang, it: Array[Array], scope_stack: Array[Scope], _parent: Expr = null) -> void:
+			obj.compile(slg, it, scope_stack)
+			idx.compile(slg, it, scope_stack)
+			it.append([ _line, Instruction.ACCESS_IDX, is_left_side ])
+		func cloned() -> IdxAccess: return IdxAccess.new(_line, obj, idx) # without is_left_side!
 
 ### PARSER
 
 class Parser:
-	var gompl: Gompl
+	var slg: SLang
 	var tokens: Array[Array]
 	var exprs: Array[Expr]
 	var pos := 0
 	var _err_pos := 0
 	
-	func _init(g: Gompl, t: Array[Array]) -> void:
-		gompl = g
+	func _init(g: SLang, t: Array[Array]) -> void:
+		slg = g
 		tokens = t
 	
 	func _set_err(e: String) -> void:
 		var error := str("[Parser] [Line ", tokens[mini(_err_pos, tokens.size() - 1)][2], "] ", e)
-		gompl._set_err(error, false)
+		slg._set_err(error, false)
 	
 	func expressions(expected_reserved = null) -> Expr:
 		var expr: Expr = null
@@ -677,7 +851,7 @@ class Parser:
 		while pos < tokens.size():
 			if expected_reserved and tokens[pos][0] in expected_reserved: break
 			var e := expression()
-			if gompl.err: return null
+			if slg.err: return null
 			if not e: break
 			array.append(e)
 			expr = e
@@ -687,18 +861,29 @@ class Parser:
 		return assignment()
 	
 	func assignment() -> Expr:
-		var expr := op_and()
+		var expr := pair()
 		while pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] in _TOKEN_ASSIGNMENT:
-			if expr is not Expr.Identifier and expr is not Expr.ArrayAccess:
+			if expr is not Expr.Identifier and expr is not Expr.IdxAccess:
 				_set_err("Assignment missing left side identifier"); return null
-			elif expr is Expr.ArrayAccess:
+			elif expr is Expr.IdxAccess:
 				expr.is_left_side = true
 			var ln: int = tokens[pos][2]
 			var operator: String = tokens[pos][0]
 			pos += 1
 			var right := expression()
 			if not right: _set_err("Assignment missing right side expression"); return null
-			expr = Expr.Assignment.new(ln, expr, operator, right)
+			if operator == "=": expr = Expr.Assignment.new(ln, expr, operator, right)
+			else: expr = Expr.Assignment.new(ln, expr, operator, Expr.Binary.new(ln, expr.cloned(), operator.replace("=", ""), right))
+		return expr
+	
+	func pair() -> Expr:
+		var expr := op_and()
+		if pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] in _TOKEN_PAIR:
+			var ln: int = tokens[pos][2]
+			pos += 1
+			var value := expression()
+			if not value: _set_err("Pair missing value expression"); return null
+			expr = Expr.Pair.new(ln, expr, value)
 		return expr
 	
 	func op_and() -> Expr:
@@ -775,19 +960,30 @@ class Parser:
 			var right := unary()
 			if not right: _set_err("Unary op '" + operator + "' has wrong right side"); return null
 			return Expr.Unary.new(ln, operator, right)
-		return accessor()
+		return iterate()
+	
+	func iterate() -> Expr:
+		var expr := accessor()
+		while pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] in _TOKEN_ITERATE:
+			if expr is not Expr.Identifier: _set_err("Keyword 'of' expects identifier on left side"); return null
+			var ln: int = tokens[pos][2]
+			pos += 1
+			var right := expression()
+			if not right: _set_err("Keyword 'of' expects expression on right side"); return null
+			return Expr.Iterate.new(ln, expr, right)
+		return expr
 	
 	func accessor() -> Expr:
-		var expr := array_access()
-		while pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] in _TOKEN_ACCESSOR:
+		var expr := index_access()
+		while pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] in _TOKEN_ACCESS:
 			var ln: int = tokens[pos][2]
 			pos += 1
 			var right := primary()
-			if not right: _set_err("Accessor has wrong right side"); return null
+			if not right: _set_err("Access operator has wrong right side"); return null
 			expr = Expr.Accessor.new(ln, expr, right)
 		return expr
 	
-	func array_access() -> Expr:
+	func index_access() -> Expr:
 		var expr := primary()
 		while pos < tokens.size() and tokens[pos][1] == _RESERVED and tokens[pos][0] == "[":
 			var ln: int = tokens[pos][2]
@@ -796,7 +992,7 @@ class Parser:
 			if not idx: _set_err("Expect expression inside array access")
 			elif pos >= tokens.size(): _set_err("Expect ']' after expression, early EOF")
 			elif tokens[pos][0] != "]": _set_err("Expect ']' after expression")
-			else: pos += 1; expr = Expr.ArrayAccess.new(ln, expr, idx)
+			else: pos += 1; expr = Expr.IdxAccess.new(ln, expr, idx)
 		return expr
 
 	func primary() -> Expr:
@@ -815,7 +1011,7 @@ class Parser:
 				var ident = tokens[pos][0]
 				var params = _group()
 				if params != null: res = Expr.FnCall.new(ln, ident, params)
-				elif not gompl.err: res = Expr.Identifier.new(ln, ident)
+				elif not slg.err: res = Expr.Identifier.new(ln, ident)
 			_RESERVED:
 				if tokens[pos][0] == "(":
 					pos += 1
@@ -847,7 +1043,7 @@ class Parser:
 						if not body_else: _set_err("Expect body after 'else'")
 						elif pos >= tcount : _set_err("Expect 'end' after else-body, early EOF")
 						else: bodies.append(body_else)
-					if not gompl.err:
+					if not slg.err:
 						res = Expr.If.new(ln, conds, bodies)
 				elif tokens[pos][0] == "while":
 					pos += 1
@@ -869,7 +1065,7 @@ class Parser:
 						with = expression()
 						if not with: _set_err("Expect expression after 'with'")
 						else: pos -= 1
-					if not gompl.err:
+					if not slg.err:
 						res = Expr.FlowControl.new(ln, fc, with)
 				elif tokens[pos][0] == "function":
 					pos += 1
@@ -890,11 +1086,15 @@ class Parser:
 								elif pos >= tcount: _set_err("Expect 'end' after function-body, early EOF")
 								else:
 									res = Expr.Function.new(ln, body)
-									gompl._registered_in_funcs[ident] = res
+									slg._registered_in_funcs[ident] = res
 				elif tokens[pos][0] == "array":
 					var params = _group()
 					if params != null: res = Expr.NewArray.new(ln, params)
-					else: _set_err("Expect '(' after 'array'.")
+					else: _set_err("Expect '(' after 'array'")
+				elif tokens[pos][0] == "dictionary":
+					var params = _group()
+					if params != null: res = Expr.NewDictionary.new(ln, params)
+					else: _set_err("Expect '(' after 'dictionary'")
 				else:
 					_set_err("Unexpected keyword '" + tokens[pos][0] + "'")
 					pos += 1
@@ -913,12 +1113,12 @@ class Parser:
 				if pos >= tcount: _set_err("Expect ',' or ')' in params list, early EOF"); break
 				elif tokens[pos][0] == ",": pos += 1; continue
 				elif tokens[pos][0] != ")": _set_err("Expect ',' or ')' in params list"); break
-			if not gompl.err:
+			if not slg.err:
 				if pos >= tcount: _set_err("Expect ',' or ')' in params list, early EOF")
 				else: return params
 		return null
 
 	func parse() -> Expr:
 		var res := expressions()
-		if gompl.err: return null
+		if slg.err: return null
 		return res

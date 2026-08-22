@@ -45,7 +45,7 @@ class_name SkinnablePuppetScript
 
 var plugin_scripts: Dictionary[String, String] = {}
 
-var gompl: Gompl
+var gompl: SLang
 
 ## Default index for single puppets
 static var default_class_presets: Dictionary[String, int]
@@ -58,7 +58,7 @@ static var default_class_presets_gltf_extension: Dictionary[String, String]
 func on_start() -> void:
 	# Checking for mods
 	if enable_gltf_loading && (OS.get_name() != "Web" || (Settings.ALLOW_PLUGINS_IN_WEB && custom)) && gltf_file_prefix != null:
-		gompl = Gompl.new(self)
+		gompl = SLang.new(self)
 		var file_search: String = "user://mods/puppets/"
 		if custom:
 			#if custom class, use custom directory
@@ -273,7 +273,7 @@ func plugin_api_function(function_name: String, env: Variant = null):
 		#use builtin directory
 		file_search = file_search.path_join("builtin")
 	file_search = file_search.path_join(gltf_path_to_find)
-	var file_to_load: String = file_search.path_join("scripts").path_join(function_name + ".gompl")
+	var file_to_load: String = file_search.path_join("scripts").path_join(function_name + ".script")
 	if FileAccess.file_exists(file_to_load):
 		var file: FileAccess = FileAccess.open(file_to_load, FileAccess.READ)
 		var file_string: String = file.get_as_text()

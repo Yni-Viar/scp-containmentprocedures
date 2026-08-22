@@ -18,7 +18,7 @@ func print(p):
 ###
 
 func _ready() -> void:
-	var g := Gompl.new(self)
+	var g := SLang.new(self)
 	var res
 	
 	#g.debug_printing = true
@@ -29,7 +29,7 @@ func _ready() -> void:
 		func_1()
 		func_2("foo", ifif)
 	')
-	print("RESULT 1: ", res, "\n") # "return value from func_2"
+	print("RESULT 1 (external func call): ", res, "\n") # "return value from func_2"
 	assert(res is String and res == "return value from func_2", "Result 1 wrong")
 	
 	# test factorial code
@@ -37,27 +37,27 @@ func _ready() -> void:
 		n = 5 // no ; needed, or even line-breaks
 		p = 1
 		while n > 0 do
-		  p = p * n
-		  n = n - 1
+			p *= n // compound assignments +=, -=, *=, /= and %= are supported
+			n -= 1
 		end
 		p // the last expression is the result of the eval() call
 	')
-	print("RESULT 2: ", res, "\n") # 120
+	print("RESULT 2 (factorial): ", res, "\n") # 120
 	assert((res is int or res is float) and res == 120, "Result 2 wrong")
 	
 	# test custom env Dictionary, and some assignments
-	var env = {}
+	var env := { "test": "str" }
 	res = g.eval('
-		test = "str"
-		t = if test != "str" then 100 else 50 end // if-then-else and while-do can be used as expressions
+		// test is defined already through the env Dictionary
+		t = if test != "str" then 100 else 50 end // if-then-elif-then-else and while-do can be used as expressions
 		r = s = -5 // assignments are expressions too
 		w = false
-		r = undefined // r will be removed from env
+		r = undefined // r will be removed from env!
 		t - 50 == 0
 	', env)
-	print("RESULT 3: ", res) # true
+	print("RESULT 3 (custom env): ", res) # true
 	print("-> WITH ENVIRONMENT: ", env, "\n")
-	assert((res is bool) and res == true, "Result 3 wrong")
+	assert((res is bool) and res == true and "r" not in env, "Result 3 wrong")
 	
 	# test undefined (similar to null in GDScript)
 	res = g.eval('
@@ -65,14 +65,14 @@ func _ready() -> void:
 		if y == undefined then print("y is not defined") end
 		y // will return undefined
 	')
-	print("RESULT 4: ", res, "\n") # undefined
-	assert(res is Object and res is Gompl.Undefined, "Result 4 wrong")
+	print("RESULT 4 (undefined): ", res, "\n") # undefined
+	assert(res is Object and res is SLang.Undefined, "Result 4 wrong")
 	
 	# test conditions, skip and stop
 	res = g.eval('
 		x = -1
 		while x < 10 do
-			x = x + 1
+			x += 1
 			if x == 3 then
 				print("no three for thee")
 				skip
@@ -82,7 +82,7 @@ func _ready() -> void:
 			print(x)
 		end
 	')
-	print("RESULT 5: ", res, "\n") # 6
+	print("RESULT 5 (condition, skip, stop): ", res, "\n") # 6
 	assert((res is int or res is float) and res == 6, "Result 5 wrong")
 	
 	# test string stuff
@@ -92,7 +92,7 @@ func _ready() -> void:
 		"number test: " + 3.141 + " " + 1000
 	')
 	print("RESULT 6: ", res, "\n") # number test: 3.141 1000
-	assert((res is String) and res == "number test: 3.141 1000", "Result 6 wrong")
+	assert((res is String) and res == "number test: 3.141 1000", "Result 6 (string stuff) wrong")
 	
 	# test function
 	res = g.eval('
@@ -106,15 +106,14 @@ func _ready() -> void:
 			x
 		end
 	')
-	print("RESULT 7: ", res, "\n") # 13
+	print("RESULT 7 (internal func): ", res, "\n") # 13
 	assert((res is int or res is float) and res == 13, "Result 7 wrong")
 	
 	# test endless loop and max steps of code execution
-	var max_steps := 200
-	var state = {}
+	var max_steps := 185
+	var state := {} # could also use g.cur_state for this
 	for i in 10:
-		# this compiles the code again on every step, which is wasteful
-		# better use g.run() instead
+		# this compiles the code again on every step, which is wasteful - better use g.run() instead
 		res = g.eval('
 			x = 0
 			while true do
@@ -123,12 +122,12 @@ func _ready() -> void:
 					interrupt with x // premature script exit
 				end
 			end', null, state, max_steps)
-		print("value of X on frame ", i, ": ", state["env"]["x"], " after ", state["steps"], " steps")
+		print("value of X on frame ", i, ": ", state.env["x"], " after ", state["step"], " steps")
 		await get_tree().process_frame
-	print("RESULT 8: ", res, "\n")
+	print("RESULT 8 (endless loop and interrupt): ", res, "\n")
 	assert((res is int or res is float) and res == 104, "Result 8 wrong")
 	
-	# test calling Gompl functions
+	# test calling slang.gd functions
 	res = g.eval('
 		function test()
 			print("inside function test()")
@@ -140,13 +139,13 @@ func _ready() -> void:
 		x = 1
 		test()
 	', null, null, 200)
-	print("RESULT 9: ", res, "\n")
+	print("RESULT 9 (internal func): ", res, "\n")
 	assert((res is int or res is float) and res == 5, "Result 9 wrong")
 	
 	# Attention: `g` keeps the `function test()` when the next call of `g.eval()` has the `clear_internal_funcs`
 	# parameter set to `false` (default is `true`) - this way you could reuse it
 	
-	# test calling Gompl functions recursively
+	# test calling slang.gd functions recursively
 	res = g.eval('
 		function a()
 			i = i + 1
@@ -156,7 +155,7 @@ func _ready() -> void:
 		i = 0
 		a()
 	')
-	print("RESULT 10: ", res, "\n")
+	print("RESULT 10 (recursive func): ", res, "\n")
 	assert((res is int or res is float) and res == 2000, "Result 10 wrong")
 	
 	# test array
@@ -167,8 +166,40 @@ func _ready() -> void:
 		a[a.find(3)] = "last"
 		a
 	')
-	print("RESULT 11: ", res, "\n")
+	print("RESULT 11 (array): ", res, "\n")
 	assert((res is Array) and res[0] == "first" and res[1] == 2 and res[2] == "last", "Result 11 wrong")
+	
+	# test dictionary
+	res = g.eval('
+		d = dictionary("c": 3, "b": 2, "a": 1).set("d": 4).sort()
+		d["e"] = 5
+		print(d)
+		d.get_or_add("f", 6)
+	')
+	print("RESULT 12 (dictionary): ", res, "\n")
+	assert((res is int or res is float) and res == 6, "Result 12 wrong")
+	
+	# test iterating
+	res = g.eval('
+		sum = 0
+		while i of 101 do
+			sum = sum + i
+		end
+		print("sum of 1 to 100: " + sum)
+		
+		// "of" works outside of while loops too
+		print((s of "STR") + " -> " + s) // S
+		print((s of "STR") + " -> " + s) // T
+		print((s of "STR") + " -> " + s) // R
+		print((s of "STR") + " -> " + s) // undefined
+		
+		while value of array(3, 5, 7, 9, 11) do
+			print(value + " * 2 = " + (value * 2))
+			if value == 7 then stop with value end
+		end
+	')
+	print("RESULT 13 (iterating): ", res, "\n")
+	assert((res is int or res is float) and res == 7, "Result 13 wrong")
 	
 	# done, results in Output
 	print("done.")
