@@ -13,8 +13,10 @@ var current_target: Node3D
 # Called when the node enters the scene tree for the first time.
 func on_spawned() -> void:
 	plugin_api_function("start")
-	get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
-	get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
+	if !get_parent().get_parent().get_node("ActionArea").body_entered.is_connected(on_action_area_body_entered):
+		get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
+	if !get_parent().get_parent().get_node("ActionArea").body_exited.is_connected(on_action_area_body_exited):
+		get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

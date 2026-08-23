@@ -25,8 +25,10 @@ func on_spawned() -> void:
 			has_animations = false
 	get_parent().get_parent().follow_target = get_tree().get_first_node_in_group("PoI1507").get_path()
 	plugin_api_function("start")
-	get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
-	get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
+	if !get_parent().get_parent().get_node("ActionArea").body_entered.is_connected(on_action_area_body_entered):
+		get_parent().get_parent().get_node("ActionArea").connect("body_entered", on_action_area_body_entered)
+	if !get_parent().get_parent().get_node("ActionArea").body_exited.is_connected(on_action_area_body_exited):
+		get_parent().get_parent().get_node("ActionArea").connect("body_exited", on_action_area_body_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

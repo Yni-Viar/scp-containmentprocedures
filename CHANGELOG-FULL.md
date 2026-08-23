@@ -2,6 +2,10 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.2.1 (2026.08.23)
+
+- Fixed error spam for some SCPs' signals.
+
 ## v10.2.0 (2026.08.22)
 ### Plugin API
 - \[⚠️ Compatibility breakage!\] Plugin system's base `GOMPL`, was renamed to  `slang.gd`. File extension was changed to `.script` instead of `.gompl`. While custom scripts are automatically upgraded, builtin ones need manual file rename.
