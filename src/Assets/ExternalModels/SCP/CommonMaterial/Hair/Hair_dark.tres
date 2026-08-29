@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cb2xu14lbffnr"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cb2xu14lbffnr"]
 
 [ext_resource type="Texture2D" uid="uid://br08rhmwhsavv" path="res://Assets/ExternalModels/SCP/CommonMaterial/Hair/hairAtlas_Albedo_transparency_dark.png" id="1_u6m1y"]
 

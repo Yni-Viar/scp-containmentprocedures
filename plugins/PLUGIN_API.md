@@ -14,8 +14,8 @@ Structure of a plugin:
 
 [Where to find that folder?](./README.md)
 
-## SLang.GD
-SCP: Continued Procedures uses [SLang.GD](https://codeberg.org/ratrogue/slang.gd) (previously GOMPL) as scripting language.
+## mila.gd
+SCP: Continued Procedures uses [mila.gd](https://codeberg.org/ratrogue/mila.gd) (previously GOMPL or SLang.GD) as scripting language.
 
 SLang.GD syntax
 ```

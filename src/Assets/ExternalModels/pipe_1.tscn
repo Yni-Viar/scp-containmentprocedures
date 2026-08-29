@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4rphn1mij8kp"]
+[gd_scene format=4 uid="uid://c4rphn1mij8kp"]
 
 [ext_resource type="Texture2D" uid="uid://oytd7ujaik4n" path="res://Assets/ExternalModels/ModularPipes_CC0_Jorge_Camacho/textures/modular_industrial_pipes_01_group01_diff_2k.jpg" id="1_x35j7"]
 [ext_resource type="Texture2D" uid="uid://cllerlg5y7sdo" path="res://Assets/ExternalModels/ModularPipes_CC0_Jorge_Camacho/textures/modular_industrial_pipes_01_group01_arm_2k.jpg" id="2_76d56"]

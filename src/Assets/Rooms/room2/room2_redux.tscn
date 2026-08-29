@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b8x58lkcnq726"]
+[gd_scene format=4 uid="uid://b8x58lkcnq726"]
 
 [ext_resource type="PackedScene" uid="uid://d2lho474tfbe4" path="res://Assets/OriginalModels/table.tscn" id="1_cg23l"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_g4gw2"]

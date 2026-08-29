@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://cnm2qfuahmt4e"]
 
 [ext_resource type="PackedScene" uid="uid://nc4akflqbhw0" path="res://Stories/MainStory/PlayerScript/PlayerClassPrefab/Scientist_White.tscn" id="1_hbnjw"]
-[ext_resource type="PackedScene" uid="uid://drb0cxknhdcwu" path="res://PlayerScript/PlayerClassRagdoll/Scientist.tscn" id="2_32iq0"]
+[ext_resource type="PackedScene" uid="uid://drb0cxknhdcwu" path="res://PlayerScript/PlayerClassRagdoll/Optional/Scientist.tscn" id="2_32iq0"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_wh667"]
 
 [resource]

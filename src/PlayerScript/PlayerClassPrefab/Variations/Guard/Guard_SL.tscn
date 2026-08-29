@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://ihodfda7bvaa"]
+[gd_scene format=4 uid="uid://ihodfda7bvaa"]
 
 [ext_resource type="Script" uid="uid://g43drwoxudqr" path="res://PlayerScript/PlayerClassScript/Puppet/HumanPuppet.gd" id="1_p6qst"]
 [ext_resource type="Texture2D" uid="uid://b8y4n5er4bqsw" path="res://Assets/ExternalModels/SCP/Guard-fixed/Belt_guard_AlbedoTransparency_png.png" id="4_v0ifm"]

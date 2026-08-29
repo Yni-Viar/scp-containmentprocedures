@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://3htvhayjbon0"]
+[gd_scene format=4 uid="uid://3htvhayjbon0"]
 
 [ext_resource type="Texture2D" uid="uid://dpyt80svvvgq2" path="res://Assets/ExternalModels/GDQuest-Beetle-CC-BY/beetle_bot_fused_beetle_albedo.png" id="1_e87m3"]
 [ext_resource type="Texture2D" uid="uid://difbvdgvgv4qo" path="res://Assets/ExternalModels/GDQuest-Beetle-CC-BY/beetle_bot_fused_beetle_roughness.png" id="2_l4ijy"]

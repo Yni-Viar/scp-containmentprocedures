@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dkwag2wk40gpi"]
+[gd_scene format=4 uid="uid://dkwag2wk40gpi"]
 
 [ext_resource type="Texture2D" uid="uid://dm014vdrgd8wd" path="res://Assets/ExternalModels/STKNitroBottle/stk_mod_nitroBarrel.png" id="1_t7v0b"]
 [ext_resource type="Texture2D" uid="uid://binam7cnxae4q" path="res://Assets/ExternalModels/STKNitroBottle/stk_mod_nitroLogo.png" id="2_w0lvb"]

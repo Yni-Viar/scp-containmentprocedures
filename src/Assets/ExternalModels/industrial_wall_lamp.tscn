@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dtsp4kwbblbxw"]
+[gd_scene format=4 uid="uid://dtsp4kwbblbxw"]
 
 [ext_resource type="Texture2D" uid="uid://d20f2cnlootqj" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_diff_2k.jpg" id="1_fn4ko"]
 [ext_resource type="Texture2D" uid="uid://clamhl4keqtms" path="res://Assets/ExternalModels/Industrial_wall_lamp_CC0_Kuutti_Siitonen/textures/industrial_wall_lamp_emissive_2k.jpg" id="2_lf2wm"]

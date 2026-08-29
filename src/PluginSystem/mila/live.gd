@@ -13,15 +13,15 @@ var is_looping := true
 var executing := true
 
 @onready var orig_transform := self.transform
-@onready var slg := SLang.new(self)
+@onready var mila := Mila.new(self)
 
 ###
 
 func _ready() -> void:
-	slg.register_func("print", func(a): code_error.text += str(a, "\n"), [ SLang.T_ANY ])
-	slg.register_func("rnd", func(): return randf())
-	slg.register_func("mouse_pos", func() -> Vector2: return get_viewport().get_mouse_position())
-	slg.register_func("v2", func(x: float, y: float) -> Vector2: return Vector2(x, y), [ SLang.T_NUMBER, SLang.T_NUMBER ])
+	mila.register_func("print", func(a): code_error.text += str(a, "\n"); return str(a), [ Mila.T_ANY ])
+	mila.register_func("rnd", func(): return randf())
+	mila.register_func("mouse_pos", func() -> Vector2: return get_viewport().get_mouse_position())
+	mila.register_func("v2", func(x: float, y: float) -> Vector2: return Vector2(x, y), [ Mila.T_NUMBER, Mila.T_NUMBER ])
 	
 	code_editor.text = code
 	code_compile.button_down.connect(on_code_compile)
@@ -33,11 +33,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if executing:
 		code_error.text = ""
-		if not slg.err:
+		if not mila.err:
 			# the code is compiled every frame, this is wasteful, but okay for this small example
-			slg.eval(code, null, state, maxsteps)
-			if slg.err: code_error.text = "ERROR! " + slg.err ; executing = false
-			#slg.debug_printing = false
+			mila.eval(code, null, state, maxsteps)
+			if mila.err: code_error.text = "ERROR! " + mila.err ; executing = false
+			#mila.debug_printing = false
 	if not is_looping:
 		executing = false
 
@@ -45,10 +45,10 @@ func _process(_delta: float) -> void:
 
 func on_code_compile() -> void:
 	code_error.text = ""
-	#slg.debug_printing = true
+	#mila.debug_printing = true
 	state.clear()
 	code = code_editor.text
-	slg.err = ""
+	mila.err = ""
 	transform = orig_transform
 	executing = true
 

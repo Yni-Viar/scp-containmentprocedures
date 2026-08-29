@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cqsat881jn5qo"]
+[gd_scene format=4 uid="uid://cqsat881jn5qo"]
 
 [ext_resource type="Texture2D" uid="uid://buivicpa7u4ch" path="res://Assets/ExternalModels/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_diff_2k.jpg" id="1_pdpec"]
 [ext_resource type="Texture2D" uid="uid://cefe5ffb3ji0w" path="res://Assets/ExternalModels/SteelFrameShelves_JamesRayCock_CC0/textures/steel_frame_shelves_01_arm_2k.jpg" id="2_inuhi"]

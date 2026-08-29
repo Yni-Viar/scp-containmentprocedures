@@ -2,6 +2,11 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.2.2
+
+- [x] Added D-Girl
+- [x] Plugin system's base `slang.gd`, was renamed \(again\) to  `Mila`.
+
 ## v10.2.1 (2026.08.23)
 
 - Fixed error spam for some SCPs' signals.

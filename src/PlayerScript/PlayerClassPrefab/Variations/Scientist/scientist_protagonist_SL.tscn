@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://cbq4c31l4cg2r"]
+[gd_scene format=4 uid="uid://cbq4c31l4cg2r"]
 
 [ext_resource type="Material" uid="uid://jl2l6yfgmg64" path="res://Assets/ExternalModels/SCP/CommonMaterial/Eyes/eye.tres" id="1_kbla1"]
 [ext_resource type="Script" uid="uid://g43drwoxudqr" path="res://PlayerScript/PlayerClassScript/Puppet/HumanPuppet.gd" id="1_lwgwg"]

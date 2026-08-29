@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://bj613ydrpykdw"]
+[gd_scene format=3 uid="uid://bj613ydrpykdw"]
 
 [ext_resource type="Script" uid="uid://crbiqf8o03ge1" path="res://Scripts/Scps/Scp914.gd" id="1_5v64r"]
 [ext_resource type="ArrayMesh" uid="uid://xbfs6huynna" path="res://Assets/ExternalModels/SCP/Optional/scp914/914_part3.mesh" id="2_hcf60"]

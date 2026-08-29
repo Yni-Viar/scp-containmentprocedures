@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://wgwkw8qa0ag8"]
+[gd_scene format=4 uid="uid://wgwkw8qa0ag8"]
 
 [ext_resource type="Texture2D" uid="uid://bjciuqgeisenv" path="res://Assets/ExternalModels/Pumpkin_CC0_GGBotNet/pumpkinface.png" id="1_gr0vd"]
 [ext_resource type="Texture2D" uid="uid://rorolxdf2aux" path="res://Assets/ExternalModels/Pumpkin_CC0_GGBotNet/pumpkinface_emission.png" id="2_morc1"]

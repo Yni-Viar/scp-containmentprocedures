@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cm2t3dmc62e73"]
+
+[ext_resource type="Texture2D" uid="uid://cvytou4n12tr4" path="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/mouth_col_1006.png" id="1_5jpyt"]
+[ext_resource type="Texture2D" uid="uid://cka83qrbub6h8" path="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/mouth_rough_1006.png" id="2_k36op"]
+
+[resource]
+resource_name = "Mouth_001"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_5jpyt")
+metallic_texture = ExtResource("2_k36op")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_k36op")
+roughness_texture_channel = 1
+metadata/_gltf_primary_texture_coord = 0

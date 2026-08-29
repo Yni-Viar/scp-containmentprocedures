@@ -1,4 +1,4 @@
-[gd_scene load_steps=1317 format=4 uid="uid://xcscr0xn5o6o"]
+[gd_scene format=4 uid="uid://xcscr0xn5o6o"]
 
 [ext_resource type="Texture2D" uid="uid://gbwe7pgijx31" path="res://Assets/ExternalModels/Optional/Christmas_tree_CC0/textures/decorations_baseColor.png" id="1_e3mnv"]
 [ext_resource type="Texture2D" uid="uid://dilptu5hgryem" path="res://Assets/ExternalModels/Optional/Christmas_tree_CC0/textures/decorations_emissive.png" id="2_wg31i"]

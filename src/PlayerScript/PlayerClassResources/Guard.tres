@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cqc1hcylhqdxi" path="res://PlayerScript/PlayerClassPrefab/Guard.tscn" id="1_32mue"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="1_ud8hk"]
-[ext_resource type="PackedScene" uid="uid://cj8l1uqw4l0vd" path="res://PlayerScript/PlayerClassRagdoll/Guard.tscn" id="2_exppa"]
+[ext_resource type="PackedScene" uid="uid://dw1v17i2xihl5" path="res://PlayerScript/PlayerClassRagdoll/Foundation.tscn" id="2_exppa"]
 
 [resource]
 script = ExtResource("1_ud8hk")

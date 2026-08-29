@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://p7fq70bvncja"]
+[gd_scene format=4 uid="uid://p7fq70bvncja"]
 
 [ext_resource type="Script" uid="uid://5e6exenq1ehs" path="res://Scripts/Light.gd" id="1_emytc"]
 [ext_resource type="Texture2D" uid="uid://dehueffswdiuk" path="res://Assets/ExternalModels/SCP/PopPopIcard/Light_VirtLargeLight_LargeHanhingCeilingLight_BaseMap.png" id="1_mf8mg"]

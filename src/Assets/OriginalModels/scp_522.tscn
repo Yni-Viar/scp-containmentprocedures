@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dlpgutdspohq2"]
+[gd_scene format=4 uid="uid://dlpgutdspohq2"]
 
 [ext_resource type="Texture2D" uid="uid://dhiekyi46uc7k" path="res://Assets/ExternalModels/Scp522/Scp522_SCP-522.png" id="1_5vxcq"]
 [ext_resource type="Script" uid="uid://dxmasty17lhgs" path="res://Scripts/Scps/Scp522.gd" id="1_l4iyc"]

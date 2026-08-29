@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://nccdmmocoap4"]
+[gd_scene format=4 uid="uid://nccdmmocoap4"]
 
 [ext_resource type="Texture2D" uid="uid://bfbwpjb07k06l" path="res://Assets/ExternalModels/Laptop_MobileReady/keyboard.png" id="1_yd80n"]
 [ext_resource type="Texture2D" uid="uid://by0tvu8lqsba1" path="res://Assets/ExternalModels/Laptop_MobileReady/blank.png" id="3_0t50w"]

@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dyoe4nkpbdidw"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyoe4nkpbdidw"]
 
 [ext_resource type="Texture2D" uid="uid://r0cws3rckkm4" path="res://Assets/ExternalModels/SCP/Guard-fixed/christmas/Torso_guard_AlbedoTransparency_png.png" id="1_aulkf"]
 [ext_resource type="Texture2D" uid="uid://dwwgqhfpep6ut" path="res://Assets/ExternalModels/SCP/Guard-fixed/Torso_guard_Normal_png.png" id="2_o1smf"]

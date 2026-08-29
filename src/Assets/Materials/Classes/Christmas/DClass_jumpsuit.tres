@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dsxkxasbkkhkb"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dsxkxasbkkhkb"]
 
 [ext_resource type="Shader" uid="uid://dg5tinl2kmhhk" path="res://Shaders/SuitShader/suit.gdshader" id="1_lo6ia"]
 [ext_resource type="Texture2D" uid="uid://djog8wqe0utj7" path="res://Assets/ExternalModels/SCP/DClass/christmas/ClassD_jumpsuit_AlbedoTransparency.png" id="2_lo6ia"]

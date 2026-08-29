@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://dg1mhd0yoqjnb"]
 
 [ext_resource type="PackedScene" uid="uid://dydmr2ip8qg0u" path="res://PlayerScript/PlayerClassPrefab/Scp131A.tscn" id="1_2isih"]
-[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="1_nvoro"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_2isih"]
+[ext_resource type="PackedScene" uid="uid://khgaevi8d33y" path="res://PlayerScript/PlayerClassRagdoll/Scp.tscn" id="2_wtnyi"]
 
 [resource]
 script = ExtResource("2_2isih")
@@ -22,5 +22,5 @@ health = Array[float]([400.0])
 team = 2048
 enable_avoidance = false
 enable_ik = false
-ragdoll_prefab = ExtResource("1_nvoro")
+ragdoll_prefab = ExtResource("2_wtnyi")
 can_ride = false

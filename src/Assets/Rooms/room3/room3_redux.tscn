@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cer4f28tf2elv"]
+[gd_scene format=4 uid="uid://cer4f28tf2elv"]
 
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_fxrmn"]
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_pat0x"]

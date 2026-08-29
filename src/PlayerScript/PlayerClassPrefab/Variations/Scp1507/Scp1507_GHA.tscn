@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cn5dx5r688iip"]
+[gd_scene format=4 uid="uid://cn5dx5r688iip"]
 
 [ext_resource type="Texture2D" uid="uid://b51j831natb2v" path="res://Assets/ExternalModels/SCP/scp1507/textures/PinkFlamingo_m_baseColor.png" id="1_gdim0"]
 [ext_resource type="Texture2D" uid="uid://fwoobjxy8s1k" path="res://Assets/ExternalModels/SCP/scp1507/textures/PinkFlamingo_m_metallicRoughness.png" id="2_spshs"]

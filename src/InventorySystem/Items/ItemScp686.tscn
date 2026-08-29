@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bf3i3ic0mu7ks"]
+[gd_scene format=4 uid="uid://bf3i3ic0mu7ks"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_3b7dh"]
 [ext_resource type="Texture2D" uid="uid://dw0vbpefsrt08" path="res://Assets/ExternalModels/SCP/PopPopIcard/scp686/Scp686_Scp686_Yni_Edit.png" id="1_rjkgq"]

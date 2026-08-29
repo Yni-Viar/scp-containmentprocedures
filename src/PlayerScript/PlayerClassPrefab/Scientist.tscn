@@ -1,14 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://citkd65dmhf8b"]
+[gd_scene format=3 uid="uid://citkd65dmhf8b"]
 
 [ext_resource type="Script" uid="uid://b2afn2ox8mroe" path="res://PlayerScript/PlayerClassScript/SkinnableHumanPuppetScript.gd" id="1_ptkqp"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" unique_id=1704098138]
 script = ExtResource("1_ptkqp")
 torso_node_path = NodePath("HumanRig/Skeleton3D/Scientist_torso_LOD0")
 available_puppets = Dictionary[String, int]({
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/Optional/scientist_1_SL_OOD.tscn": 1,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_2_SL_OOD.tscn": 0,
-"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_3_SL_OOD.tscn": 0
+"res://PlayerScript/PlayerClassPrefab/Variations/ExtendedHumanPack/Scientist/Optional/scientist_1_SL_OOD.tscn": 1,
+"res://PlayerScript/PlayerClassPrefab/Variations/ExtendedHumanPack/Scientist/scientist_3_SL_OOD.tscn": 0,
+"res://PlayerScript/PlayerClassPrefab/Variations/Scientist/scientist_2_SL_OOD.tscn": 0
 })
 enable_vision_scan = true
 vision_class_detect = Array[int]([2, 3])

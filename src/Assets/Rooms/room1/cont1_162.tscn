@@ -388,7 +388,6 @@ visible = false
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
-directional = true
 interior = true
 texel_scale = 0.25
 light_data = ExtResource("16_pbojt")

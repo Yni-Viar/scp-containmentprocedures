@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dig02xllan7ya"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dig02xllan7ya"]
 
 [ext_resource type="Texture2D" uid="uid://bl4gfts1p76re" path="res://Assets/ExternalModels/SCP/DClass/christmas/ClassD_shoe_AlbedoTransparency.png" id="1_x5ajf"]
 [ext_resource type="Texture2D" uid="uid://dy1pipv3i3jol" path="res://Assets/ExternalModels/SCP/DClass/ClassD_shoe_Normal.png" id="2_1y50v"]

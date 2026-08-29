@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://64djjvvfffyd"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://64djjvvfffyd"]
 
 [ext_resource type="Texture2D" uid="uid://cd0e0inonpg8e" path="res://Assets/ExternalModels/SCP/scp939/halloween/Scp939_939-2_Material_AlbedoTransparency.png" id="1_hqa5v"]
 [ext_resource type="Texture2D" uid="uid://cyp7mgwubor1u" path="res://Assets/ExternalModels/SCP/scp939/halloween/Scp939_939-2_Material_Emission.png" id="2_swwmj"]

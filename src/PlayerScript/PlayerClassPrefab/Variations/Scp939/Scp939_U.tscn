@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cufxk1a1ubbbb"]
+[gd_scene format=4 uid="uid://cufxk1a1ubbbb"]
 
 [ext_resource type="Script" uid="uid://c7x8jm7kgh7ie" path="res://PlayerScript/PlayerClassScript/Outfits/GenericOutfits.gd" id="3_edo40"]
 [ext_resource type="Material" uid="uid://d3eys447g61cy" path="res://Assets/Materials/Classes/Regular/Scp939.tres" id="4_g60sn"]

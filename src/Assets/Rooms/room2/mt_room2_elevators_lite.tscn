@@ -205,7 +205,7 @@ bounces = 1
 bounce_indirect_energy = 1.5
 directional = true
 interior = true
-texel_scale = 0.5
+texel_scale = 0.25
 light_data = ExtResource("8_rq2ya")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1352172246 groups=["ReflectionProbe"]]

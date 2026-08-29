@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://ckdbmedjp0ohc"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://ckdbmedjp0ohc"]
 
 [ext_resource type="PackedScene" uid="uid://b4tnnec2j1ijb" path="res://PlayerScript/PlayerClassPrefab/Scp939.tscn" id="1_e8ne2"]
-[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_iqe45"]
+[ext_resource type="PackedScene" uid="uid://khgaevi8d33y" path="res://PlayerScript/PlayerClassRagdoll/Scp.tscn" id="2_e8ne2"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_4e3h4"]
 
 [resource]
@@ -19,5 +19,5 @@ enable_wander = false
 health = Array[float]([1200.0])
 enable_avoidance = false
 enable_ik = false
-ragdoll_prefab = ExtResource("2_iqe45")
+ragdoll_prefab = ExtResource("2_e8ne2")
 can_ride = false

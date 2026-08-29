@@ -45,7 +45,7 @@ class_name SkinnablePuppetScript
 
 var plugin_scripts: Dictionary[String, String] = {}
 
-var gompl: SLang
+var gompl: Mila
 
 ## Default index for single puppets
 static var default_class_presets: Dictionary[String, int]
@@ -58,7 +58,7 @@ static var default_class_presets_gltf_extension: Dictionary[String, String]
 func on_start() -> void:
 	# Checking for mods
 	if enable_gltf_loading && (OS.get_name() != "Web" || (Settings.ALLOW_PLUGINS_IN_WEB && custom)) && gltf_file_prefix != null:
-		gompl = SLang.new(self)
+		gompl = Mila.new(self)
 		var file_search: String = "user://mods/puppets/"
 		if custom:
 			#if custom class, use custom directory
@@ -200,7 +200,11 @@ func assign_puppet_gltf() -> void:
 
 ## if has chance AND is available in profile, then return true else false.
 func check_availability(idx: int) -> bool:
+	var path: String = available_puppets.keys()[idx]
 	var availability: BaseSpawner.Availability = available_puppets[available_puppets.keys()[idx]]
+	
+	if !ResourceLoader.exists(path):
+		return false
 	
 	if availability == 0 || (availability == 1 && !OS.has_feature("Lite")) || (availability == 2 && OS.has_feature("Lite")):
 		return true

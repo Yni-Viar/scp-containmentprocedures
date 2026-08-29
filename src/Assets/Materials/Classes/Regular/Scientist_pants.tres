@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://oba2bcy3xvrf"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://oba2bcy3xvrf"]
 
 [ext_resource type="Texture2D" uid="uid://d15a2nxo5aa5c" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_pants_AlbedoTransparency.png" id="1_uj22k"]
 [ext_resource type="Texture2D" uid="uid://d38o0i4c62fso" path="res://Assets/ExternalModels/SCP/Scientist/Scientist_pants_Normal.png" id="2_s3rha"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://gaj0bixy1vq3"]
+[gd_scene format=4 uid="uid://gaj0bixy1vq3"]
 
 [ext_resource type="Texture2D" uid="uid://cf34ogpagkyxb" path="res://Assets/ExternalModels/SCP/Keys/keys_scp_sigil_keysmat_keys1_baseColor.png" id="1_ip2mh"]
 [ext_resource type="Texture2D" uid="uid://lmggjia1u2cb" path="res://Assets/ExternalModels/SCP/Keys/keys_scp_sigil_keysmat_keys1_metallicRoughness.png" id="2_j12ja"]

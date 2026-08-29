@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://dw2gy521qn835"]
 
 [ext_resource type="PackedScene" uid="uid://cwnj6i40ixiwe" path="res://PlayerScript/PlayerClassPrefab/MTFAgent.tscn" id="1_foh3x"]
-[ext_resource type="PackedScene" uid="uid://dtphgs8i61fd5" path="res://PlayerScript/PlayerClassRagdoll/MTF.tscn" id="2_wi0pu"]
+[ext_resource type="PackedScene" uid="uid://dw1v17i2xihl5" path="res://PlayerScript/PlayerClassRagdoll/Foundation.tscn" id="2_j0vml"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_7r7bn"]
 
 [resource]
@@ -19,7 +19,7 @@ enable_wander = false
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 1
 spawn_on_start = false
-ragdoll_prefab = ExtResource("2_wi0pu")
+ragdoll_prefab = ExtResource("2_j0vml")
 disable_move_on_slide = true
 start_money = Dictionary[String, int]({
 "DOLLARS": 2000

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bryvc4gi6dhiq"]
+[gd_scene format=4 uid="uid://bryvc4gi6dhiq"]
 
 [ext_resource type="Script" uid="uid://cj1asomajykvp" path="res://PlayerScript/PlayerClassScript/Outfits/Scp173Outfits.gd" id="1_05nad"]
 [ext_resource type="Texture2D" uid="uid://1sgnh0lopypb" path="res://Assets/ExternalModels/SCP/Optional/scp173/Faces/face_1.png" id="2_6qfg3"]

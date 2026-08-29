@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PuppetClass" load_steps=4 format=3 uid="uid://dthnqm8mknn1y"]
+[gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://dthnqm8mknn1y"]
 
 [ext_resource type="PackedScene" uid="uid://bqoqnyepfa104" path="res://PlayerScript/PlayerClassPrefab/default.tscn" id="1_5efab"]
 [ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_wo7ct"]

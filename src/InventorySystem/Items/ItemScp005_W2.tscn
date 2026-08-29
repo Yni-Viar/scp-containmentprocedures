@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://wb6xr6eoc501"]
+[gd_scene format=4 uid="uid://wb6xr6eoc501"]
 
 [ext_resource type="Script" uid="uid://52ha8ji1d1q3" path="res://Scripts/Interactables/Pickable.gd" id="1_e8qxq"]
 [ext_resource type="Texture2D" uid="uid://cf34ogpagkyxb" path="res://Assets/ExternalModels/SCP/Keys/keys_scp_sigil_keysmat_keys1_baseColor.png" id="2_e8qxq"]

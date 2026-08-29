@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bot3mpfa0nf75"]
+[gd_scene format=4 uid="uid://bot3mpfa0nf75"]
 
 [ext_resource type="Texture2D" uid="uid://b4an4o731msi" path="res://Assets/ExternalModels/SCP/Scp131_f/Scp131A_material_baseColor.png" id="2_8573r"]
 [ext_resource type="Texture2D" uid="uid://bnk2y3j8tiq32" path="res://Assets/ExternalModels/SCP/Scp131_f/Scp131A_material_metallicRoughness.png" id="3_otye0"]

@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://osaixqx57tie"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://osaixqx57tie"]
 
 [ext_resource type="Texture2D" uid="uid://c3u3gen326kxp" path="res://Assets/ExternalModels/SCP/scp650/650_Base_Color.png" id="1_37mkx"]
 [ext_resource type="Texture2D" uid="uid://b4afqfog2qtu2" path="res://Assets/ExternalModels/SCP/scp650/650_Metallic-650_Roughness.png" id="2_oco44"]

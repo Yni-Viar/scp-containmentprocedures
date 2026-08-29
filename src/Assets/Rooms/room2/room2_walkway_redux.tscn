@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://3nk4aude758p"]
+[gd_scene format=4 uid="uid://3nk4aude758p"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_k5spb"]
 [ext_resource type="Material" uid="uid://cn06h7ro4lomm" path="res://Assets/Materials/ResearchZone/Redux/Ventilation.tres" id="1_oo7ax"]

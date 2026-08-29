@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://eiw8l30vmo1t"]
+[gd_scene format=4 uid="uid://eiw8l30vmo1t"]
 
 [ext_resource type="Texture2D" uid="uid://dauhug1utd0ua" path="res://Assets/ExternalModels/Pallet_CC0_Taha_Arslan/3D_pallet_1_wood pallet_basecolor-1K.png" id="1_3o4bh"]
 [ext_resource type="Texture2D" uid="uid://e8jqky8jjup5" path="res://Assets/ExternalModels/Pallet_CC0_Taha_Arslan/3D_pallet_1_wood pallet_metallic-1K-wood pallet_roughness-1K.png" id="2_aolv7"]

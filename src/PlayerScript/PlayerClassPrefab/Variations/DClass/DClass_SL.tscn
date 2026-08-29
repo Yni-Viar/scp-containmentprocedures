@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://du0oc330cxlq3"]
+[gd_scene format=4 uid="uid://du0oc330cxlq3"]
 
 [ext_resource type="Script" uid="uid://g43drwoxudqr" path="res://PlayerScript/PlayerClassScript/Puppet/HumanPuppet.gd" id="1_ip4nr"]
 [ext_resource type="Texture2D" uid="uid://c0xql5p5bukxw" path="res://Assets/ExternalModels/SCP/DClass/ClassD_benie_AlbedoTransparency.png" id="4_sfv3q"]
@@ -675,13 +675,13 @@ nodes/run_scale/node = SubResource("AnimationNodeTimeScale_lwgwg")
 nodes/run_scale/position = Vector2(-720, 300)
 node_connections = [&"output", 0, &"items_blend", &"items_blend", 0, &"state_machine", &"items_blend", 1, &"secondary_state", &"secondary_state", 0, &"item_anim", &"secondary_state", 1, &"cuffed_anim", &"secondary_state", 2, &"jailbird_attack_anim", &"secondary_state", 3, &"interact", &"secondary_state", 4, &"ci_rifle", &"secondary_state", 5, &"hat", &"secondary_state", 6, &"mtf_rifle", &"state_machine", 0, &"idle", &"state_machine", 1, &"walk_scale", &"state_machine", 2, &"run_scale", &"walk_scale", 0, &"walk_anim", &"run_scale", 0, &"run_anim"]
 
-[node name="Puppet" type="Node3D"]
+[node name="Puppet" type="Node3D" unique_id=1815935359]
 script = ExtResource("1_ip4nr")
 
-[node name="HumanRig" type="Node3D" parent="."]
+[node name="HumanRig" type="Node3D" parent="." unique_id=575971273]
 transform = Transform3D(-0.61, 0, -5.3327895e-08, 0, 0.61, 0, 5.3327895e-08, 0, -0.61, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="HumanRig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="HumanRig" unique_id=217002199]
 bones/0/name = "IKswitch.R"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58936, 2.56086, -0.62031)
@@ -1369,12 +1369,12 @@ bones/97/position = Vector3(0, 0, 0)
 bones/97/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
 bones/97/scale = Vector3(1, 1, 1)
 
-[node name="beanie_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="beanie_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=434454863]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_vqrgi")
 skin = SubResource("Skin_xjd7t")
 
-[node name="ClassD_head_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="ClassD_head_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=874872124]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_xshks")
 skin = SubResource("Skin_xjd7t")
@@ -1401,54 +1401,54 @@ blend_shapes/shrek = 0.0
 blend_shapes/chad = 0.0
 blend_shapes/MIX_eyestap = 0.0
 
-[node name="Eye_L_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="Eye_L_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=1921624248]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_j4yjh")
 skin = SubResource("Skin_xjd7t")
 
-[node name="Eye_R_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="Eye_R_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=1970204968]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_skkms")
 skin = SubResource("Skin_xjd7t")
 
-[node name="hand_L_001" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="hand_L_001" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=2035869252]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_rtx10")
 skin = SubResource("Skin_xjd7t")
 
-[node name="hand_R_001" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="hand_R_001" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=1616741742]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_56sjp")
 skin = SubResource("Skin_xjd7t")
 
-[node name="jumpsuit_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="jumpsuit_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=2079343248]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_jebrn")
 skin = SubResource("Skin_xjd7t")
 script = ExtResource("10_oi2gq")
 christmas_material = Array[Material]([ExtResource("11_30n66")])
 
-[node name="shoes_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="shoes_LOD0" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=1306949955]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_tf5ya")
 skin = SubResource("Skin_xjd7t")
 script = ExtResource("10_oi2gq")
 christmas_material = Array[Material]([ExtResource("13_a607a")])
 
-[node name="zipperPart" type="MeshInstance3D" parent="HumanRig/Skeleton3D"]
+[node name="zipperPart" type="MeshInstance3D" parent="HumanRig/Skeleton3D" unique_id=1016348140]
 visibility_range_end = 64.0
 mesh = SubResource("ArrayMesh_03knq")
 skin = SubResource("Skin_xjd7t")
 
-[node name="ItemAttachment" type="BoneAttachment3D" parent="HumanRig/Skeleton3D"]
+[node name="ItemAttachment" type="BoneAttachment3D" parent="HumanRig/Skeleton3D" unique_id=685860384]
 transform = Transform3D(0.8824731, -0.32251835, -0.34237832, -0.382424, -0.9157566, -0.12305288, -0.27384844, 0.2395247, -0.93146926, -0.511692, 1.5777539, 0.012203336)
 bone_name = "Hand.R"
 bone_idx = 48
 
-[node name="Marker3D" type="Marker3D" parent="HumanRig/Skeleton3D/ItemAttachment"]
+[node name="Marker3D" type="Marker3D" parent="HumanRig/Skeleton3D/ItemAttachment" unique_id=950432347]
 transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 2.98023e-08, 0, 1, 0.0656693, 0.149479, 0.0120466)
 
-[node name="LookAtModifier3D" type="LookAtModifier3D" parent="HumanRig/Skeleton3D"]
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="HumanRig/Skeleton3D" unique_id=2127441442]
 bone_name = "Head"
 bone = 20
 use_angle_limitation = true
@@ -1458,24 +1458,22 @@ primary_damp_threshold = 1.0
 secondary_limit_angle = 6.28319
 secondary_damp_threshold = 1.0
 
-[node name="HeadAttachment" type="BoneAttachment3D" parent="HumanRig/Skeleton3D"]
+[node name="HeadAttachment" type="BoneAttachment3D" parent="HumanRig/Skeleton3D" unique_id=296972861]
 transform = Transform3D(0.9999992, -0.0010171551, 0.00042018294, 0.0010647152, 0.99078274, -0.1354573, -0.0002785474, 0.13545763, 0.9907831, -0.015928678, 2.7297854, 0.061450552)
 bone_name = "Head"
 bone_idx = 20
 
-[node name="Marker3D" type="Marker3D" parent="HumanRig/Skeleton3D/HeadAttachment"]
+[node name="Marker3D" type="Marker3D" parent="HumanRig/Skeleton3D/HeadAttachment" unique_id=1695055236]
 
-[node name="PumpkinSpawner" type="Marker3D" parent="HumanRig/Skeleton3D/HeadAttachment"]
+[node name="PumpkinSpawner" type="Marker3D" parent="HumanRig/Skeleton3D/HeadAttachment" unique_id=329363466]
 transform = Transform3D(1, 2.6059155e-12, -1.5560886e-12, -1.0214052e-13, 0.99999994, 0, -1.0871304e-12, 0, 0.99999994, 6.5639615e-06, -0.08615017, 0.011782572)
 script = ExtResource("16_6l85g")
 current_season = 6
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": ExtResource("17_tdybn")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1366043841]
+libraries/ = ExtResource("17_tdybn")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=238917147]
 active = false
 tree_root = SubResource("AnimationNodeBlendTree_ip4nr")
 anim_player = NodePath("../AnimationPlayer")

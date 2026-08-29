@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bebaqlty0xyn"]
+[gd_scene format=4 uid="uid://bebaqlty0xyn"]
 
 [ext_resource type="Texture2D" uid="uid://jtfma7uv5ebm" path="res://Assets/ExternalModels/Shelves_CC0_Taha_Arslan/3D_shelf_4_industrial_shelving_01_basecolor-1K.png" id="1_vhaq8"]
 [ext_resource type="Texture2D" uid="uid://fpy0d2bio5mr" path="res://Assets/ExternalModels/Shelves_CC0_Taha_Arslan/3D_shelf_4_industrial_shelving_01_metallic-1K-industrial_shelving_01_roughness-1K.png" id="2_b22wr"]

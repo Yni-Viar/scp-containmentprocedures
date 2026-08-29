@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cskradjeycmsa" path="res://PlayerScript/PlayerClassPrefab/Scp347.tscn" id="1_hvvu0"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="2_feh0c"]
-[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_uv2pt"]
+[ext_resource type="PackedScene" uid="uid://khgaevi8d33y" path="res://PlayerScript/PlayerClassRagdoll/Scp.tscn" id="2_uv2pt"]
 
 [resource]
 script = ExtResource("2_feh0c")

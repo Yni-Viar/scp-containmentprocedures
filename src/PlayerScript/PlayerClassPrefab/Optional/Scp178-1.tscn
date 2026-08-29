@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bb5i1c58f5kyw"]
+[gd_scene format=4 uid="uid://bb5i1c58f5kyw"]
 
 [ext_resource type="Script" uid="uid://dn8gr08dlug11" path="res://PlayerScript/PlayerClassScript/Scp178APuppetScript.gd" id="1_krk5t"]
 [ext_resource type="Texture2D" uid="uid://cgdxukieekbj1" path="res://Assets/ExternalModels/Optional/CB178-1/Scp178-1_scp_178_1.png" id="2_yp4gv"]

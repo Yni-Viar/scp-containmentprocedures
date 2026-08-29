@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cogri7pfu6a1e"]
+[gd_scene format=4 uid="uid://cogri7pfu6a1e"]
 
 [ext_resource type="Texture2D" uid="uid://b0nl1xsyltxwf" path="res://Assets/ExternalModels/WoodenCrate_CC0_Taha_Arslan/3D_woodencrate_6_Woodencrate_6_basecolor-1K.png" id="1_grlbd"]
 [ext_resource type="Texture2D" uid="uid://curthut4cljxu" path="res://Assets/ExternalModels/WoodenCrate_CC0_Taha_Arslan/3D_woodencrate_6_Woodencrate_6_metallic-1K-Woodencrate_6_roughness-1K.png" id="2_edhr1"]

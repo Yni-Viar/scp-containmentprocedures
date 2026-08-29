@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://drpl4u07st7oq"]
+[gd_scene format=4 uid="uid://drpl4u07st7oq"]
 
 [ext_resource type="Texture2D" uid="uid://bhd5u2doynak6" path="res://Assets/ExternalModels/ArmChair_Taha_Arslan_CC0/3D_armchair_14_basecolor-1K.png" id="1_p6xcn"]
 [ext_resource type="Texture2D" uid="uid://c5joe415qamb1" path="res://Assets/ExternalModels/ArmChair_Taha_Arslan_CC0/3D_armchair_14_metallic-1K-3D_armchair_14_roughness-1K.png" id="2_qlwye"]

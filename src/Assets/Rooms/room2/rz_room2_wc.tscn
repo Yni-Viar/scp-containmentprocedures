@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://djsvlp6wwwcpl"]
+[gd_scene format=4 uid="uid://djsvlp6wwwcpl"]
 
 [ext_resource type="Script" uid="uid://mgkymeey0jda" path="res://Scripts/RoomPrefab.gd" id="1_epfj1"]
 [ext_resource type="Material" uid="uid://bx6svntie8yke" path="res://Assets/Materials/ResearchZone/Walls.tres" id="1_wkxox"]

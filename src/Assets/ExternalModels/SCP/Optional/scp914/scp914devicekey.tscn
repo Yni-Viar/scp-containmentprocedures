@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cwmgt3p5s0o4a"]
+[gd_scene format=4 uid="uid://cwmgt3p5s0o4a"]
 
 [ext_resource type="Material" uid="uid://dmh4hbn40ktyj" path="res://Assets/ExternalModels/SCP/Optional/scp914/scp914_device_key/windupkey.material" id="2_3taku"]
 

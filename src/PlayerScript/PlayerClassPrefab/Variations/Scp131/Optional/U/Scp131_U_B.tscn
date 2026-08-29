@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://b0y36dlauls16"]
+[gd_scene format=4 uid="uid://b0y36dlauls16"]
 
 [ext_resource type="Texture2D" uid="uid://cptck4tga7axn" path="res://Assets/ExternalModels/SCP/Optional/Scp131_U/Scp131Yellow_scp131_low_1001_AlbedoTransparency_yellow.png" id="1_wkv7g"]
 [ext_resource type="Texture2D" uid="uid://djgdy4n2ov7dc" path="res://Assets/ExternalModels/SCP/Optional/Scp131_U/Scp131Yellow_scp131_low_1001_Emission.png" id="2_8j8vk"]
