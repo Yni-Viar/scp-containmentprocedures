@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3ekr033jgrqi"]
+
+[ext_resource type="Texture2D" uid="uid://dier7i6tjukn8" path="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/sclera_col_1005.png" id="1_huftc"]
+[ext_resource type="Texture2D" uid="uid://bix35q6bdorcb" path="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/sclera_rough_1005.png" id="2_pb7dg"]
+
+[resource]
+resource_name = "Sclera_Cornea_001"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.6784314)
+albedo_texture = ExtResource("1_huftc")
+metallic_texture = ExtResource("2_pb7dg")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_pb7dg")
+roughness_texture_channel = 1
+metadata/_gltf_primary_texture_coord = 0

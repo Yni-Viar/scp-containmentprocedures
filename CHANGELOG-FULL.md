@@ -2,10 +2,11 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
-## v10.2.2
+## v10.2.2 (2026.08.29)
 
-- [x] Added D-Girl
-- [x] Plugin system's base `slang.gd`, was renamed \(again\) to  `Mila`.
+- Added D-Girl
+- Plugin system's base `slang.gd`, was renamed \(again\) to  `Mila.gd`.
+- Added class-defined tombstones instead of ragdolls.
 
 ## v10.2.1 (2026.08.23)
 

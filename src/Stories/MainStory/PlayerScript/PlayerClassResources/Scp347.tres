@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://dc261j6vhe7mm"]
 
 [ext_resource type="PackedScene" uid="uid://bl6vns1m7gc8" path="res://Stories/MainStory/PlayerScript/PlayerClassPrefab/Scp347.tscn" id="1_omyle"]
-[ext_resource type="PackedScene" uid="uid://djohnqatfc8ec" path="res://PlayerScript/PlayerClassRagdoll/Default.tscn" id="2_osbcy"]
+[ext_resource type="PackedScene" uid="uid://khgaevi8d33y" path="res://PlayerScript/PlayerClassRagdoll/Scp.tscn" id="2_omyle"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_4od72"]
 
 [resource]
@@ -21,4 +21,4 @@ wandering_system = 1
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
 enable_avoidance = false
 puppet_navigation_layers = 17
-ragdoll_prefab = ExtResource("2_osbcy")
+ragdoll_prefab = ExtResource("2_omyle")

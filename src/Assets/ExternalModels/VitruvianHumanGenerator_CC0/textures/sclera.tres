@@ -5,10 +5,8 @@
 
 [resource]
 resource_name = "Sclera_Cornea_001"
-transparency = 4
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 0.6784314)
 albedo_texture = ExtResource("1_mfil4")
 metallic_texture = ExtResource("2_h0rio")
 metallic_texture_channel = 2

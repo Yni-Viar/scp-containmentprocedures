@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PuppetClass" format=3 uid="uid://ta820aguqs0e"]
 
 [ext_resource type="PackedScene" uid="uid://c8v7yj8fivrtv" path="res://Stories/MainStory/PlayerScript/PlayerClassPrefab/DClass_5274.tscn" id="1_1c5sl"]
-[ext_resource type="PackedScene" uid="uid://cu7wp81iabpkp" path="res://PlayerScript/PlayerClassRagdoll/Optional/DClass.tscn" id="2_qq23o"]
+[ext_resource type="PackedScene" uid="uid://bu6j7dgmy4xmh" path="res://PlayerScript/PlayerClassRagdoll/DClass.tscn" id="2_1c5sl"]
 [ext_resource type="Script" uid="uid://d08svv1nclb1r" path="res://PlayerScript/PlayerClassResources/PuppetResource.gd" id="3_3jlqh"]
 
 [resource]
@@ -20,4 +20,4 @@ enable_wander = false
 health = Array[float]([100.0, 50.0, 50.0, 50.0])
 team = 2
 puppet_navigation_layers = 3
-ragdoll_prefab = ExtResource("2_qq23o")
+ragdoll_prefab = ExtResource("2_1c5sl")

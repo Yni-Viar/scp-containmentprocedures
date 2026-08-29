@@ -1,0 +1,28 @@
+[gd_scene format=4 uid="uid://cnpsqw06xileu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyy11"]
+shading_mode = 0
+albedo_color = Color(1, 0.4113074, 0.27274886, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rub88"]
+_surfaces = [{
+"aabb": AABB(-1, -1.5, -0.25, 2, 3, 0.5),
+"attribute_data": PackedByteArray("rhkWAq4ZJmdqABYCagAmZzbMlP82zBdYeuUduHrlF1h65ZT/agDJ72oA/GewVZT/emX8Z1DmlP9Q5jiJlP+U/5T/OIkbdpT/UGb8Z2DL/Gd65XLONsxyzjbMHbg2zB24euUduJT/P+lQ5j/pNRCU/3plye9Q5j/plP8/6TbMcs565XLOUGbJ75W7lP9gy8nv"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAFAAVAAYABgAVABYAFwAFABgAGAAFAAcADwANABkAGQANABoACQAKABsAGwAKAAsACwAKABwAHAAKAAwAHQAOAB4AHgAOABAABAAfAAgACAAfACAAIQASABEAEQASACIAIgASACMAIwASABMA"),
+"lods": [1.1029801, PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAEAAYACQAKAAsACwAKAAwADQAOAA8ADwAOABAAEQASABMA")],
+"material": SubResource("StandardMaterial3D_pyy11"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("//8AAAAAVNUAAAAAAABU1f//AAD//1TVAAAAAP//VNX/J///AABU1f//AAAAAP////9U5f//qun//wAA//////8n/////1TV//9U5f///////wAA//////8n////////AAAAAP//////J/////+q6QAAAAD//////yf//wAAqukAAAAAAAD///8n//8AAP//AAAAAAAA/////wAAAAD////X/////6rp/9f//wAAqun//1TlAACq6f//VOUAAP////9U5f////8AAFTlAACq6QAAVOX//6rp/9f///////8AAFTl/////wAAVOX/////AABU5QAA////1///AABU1f/X/////1TVAABU5QAA////1///AAD/////VOUAAP//VFVUVVRVVFVUVVRVVFVUVaqqqqr/v/9/BLX1lf+//3+qqqqq/3//f/9//3//f/9//3//fwjqBDX/P/9/COoENf8//3/+//9/////f////38EtfWVBLX1lQS19ZX/v/9//7//fwjqBDUI6gQ1/3//f/9//3//P/9//z//f6qqqqqqqqqq/v//f/7//3/+//9/")
+}]
+blend_shape_mode = 0
+
+[node name="Default" type="Node3D" unique_id=1003753321]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2079531180]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0.56796634, 0)
+mesh = SubResource("ArrayMesh_rub88")

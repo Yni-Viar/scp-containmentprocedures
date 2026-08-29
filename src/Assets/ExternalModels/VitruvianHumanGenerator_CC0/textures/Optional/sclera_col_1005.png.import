@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dier7i6tjukn8"
-path.s3tc="res://.godot/imported/sclera_col_1005.png-9574d7494f9e6afa84fca4db9252695d.s3tc.ctex"
-path.etc2="res://.godot/imported/sclera_col_1005.png-9574d7494f9e6afa84fca4db9252695d.etc2.ctex"
+uid="uid://dlgf2orsa4m64"
+path.s3tc="res://.godot/imported/sclera_col_1005.png-35ff9fcd19400721f9c9eab0634e65ec.s3tc.ctex"
+path.etc2="res://.godot/imported/sclera_col_1005.png-35ff9fcd19400721f9c9eab0634e65ec.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/sclera_col_1005.png"
-dest_files=["res://.godot/imported/sclera_col_1005.png-9574d7494f9e6afa84fca4db9252695d.s3tc.ctex", "res://.godot/imported/sclera_col_1005.png-9574d7494f9e6afa84fca4db9252695d.etc2.ctex"]
+source_file="res://Assets/ExternalModels/VitruvianHumanGenerator_CC0/textures/Optional/sclera_col_1005.png"
+dest_files=["res://.godot/imported/sclera_col_1005.png-35ff9fcd19400721f9c9eab0634e65ec.s3tc.ctex", "res://.godot/imported/sclera_col_1005.png-35ff9fcd19400721f9c9eab0634e65ec.etc2.ctex"]
 
 [params]
 
@@ -32,7 +32,7 @@ roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
-process/channel_remap/alpha=8
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

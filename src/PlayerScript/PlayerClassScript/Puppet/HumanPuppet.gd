@@ -1,6 +1,7 @@
 extends Node3D
 ## Human and SCP-347 model-to-skinnablepuppetscript shim
-## Made by Yni, licensed under CC0.
+## Made by Yni, licensed under CC0
+class_name HumanPuppet
 
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
