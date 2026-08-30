@@ -40,11 +40,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_cold_area_body_entered(body: Node3D) -> void:
 	if body is RoomPrefab:
-		#Achievement
-		if Settings.setting_res.scp_study_progress_christmas.has("SCP-649"):
-			if !Settings.setting_res.scp_study_progress_christmas["SCP-649"]:
-				Settings.setting_res.scp_study_progress_christmas["SCP-649"] = true
-				Settings.save_resource(Settings.setting_res)
 		body.scp_649_activate(true)
 	if body is MovableNpc:
 		if body.current_health.size() >= 2:

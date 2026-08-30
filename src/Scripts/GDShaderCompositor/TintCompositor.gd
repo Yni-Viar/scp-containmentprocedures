@@ -13,6 +13,8 @@ func _ready() -> void:
 
 ## Adds (or removes if remove is set to true) a tint by it's key in `shaders` variable
 func apply_shader(effect_name: String, remove: bool = false) -> bool:
+	if OS.get_name() == "Web":
+		return false
 	if !shaders.keys().has(effect_name) || (used_shaders.has(effect_name) && !remove) || \
 	 (!used_shaders.has(effect_name) && remove):
 		return false

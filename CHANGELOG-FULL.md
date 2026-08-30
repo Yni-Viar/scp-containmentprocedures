@@ -2,6 +2,12 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.2.3 (2026.08.30)
+
+- Forced vertex shading on Web to imporve performance.
+- Fixed D-Girl animations distorting her body.
+- \[Christmas\] Fixed SCP-649 crashing the game due to removed parameter.
+
 ## v10.2.2 (2026.08.29)
 
 - Added D-Girl

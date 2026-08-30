@@ -160,7 +160,7 @@ data = PackedVector3Array(6.5724998, -9.5866995, 0.76049995, 9.4123, -6.7468996,
 
 [node name="mt_cont1_446" type="StaticBody3D" unique_id=1610450988]
 script = ExtResource("1_s42iu")
-mesh_paths = Array[NodePath]([NodePath("")])
+mesh_paths = Array[NodePath]([NodePath("NavigationRegion3D/Cylinder_002")])
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=799316498]
 navigation_mesh = SubResource("NavigationMesh_6571d")
