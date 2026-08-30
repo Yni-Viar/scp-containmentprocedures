@@ -45,6 +45,7 @@ func _enter_tree() -> void:
 	
 	if Settings.setting_res.casual_mode_unlocked || OS.has_feature("Lite"):
 		$HBoxContainer/Play.show()
+		$ProjectInfo/HelpButton.show()
 		if OS.has_feature("Lite"):
 			$HBoxContainer/StoryMode.hide()
 	

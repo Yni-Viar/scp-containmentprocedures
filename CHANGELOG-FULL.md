@@ -2,6 +2,10 @@
 
 This list contains all features, added in the game, or will be added in upcoming version, that is in development.
 
+## v10.2.4 (2026.08.30)
+
+- \[Feedback\] Returned hints for Casual mode (enabled if Casual mode is unlocked or if is Lite/Web version)
+
 ## v10.2.3 (2026.08.30)
 
 - Forced vertex shading on Web to improve performance.

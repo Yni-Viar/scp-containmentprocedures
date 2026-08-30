@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://o4i7m11yonpo" path="res://Scenes/CreditsContainer.tscn" id="9_qki4b"]
 [ext_resource type="Texture2D" uid="uid://cjb5vwpp8o0ug" path="res://icon_192_foreground.png" id="10_sjh0l"]
 [ext_resource type="PackedScene" uid="uid://dyo4u3ig5wr1p" path="res://Scenes/Settings.tscn" id="11_a8aa6"]
+[ext_resource type="Script" uid="uid://c8axhj303g8f2" path="res://Scripts/BaseWindow.gd" id="14_a8aa6"]
 [ext_resource type="Texture2D" uid="uid://baspe0tu45lrg" path="res://UI/back_button.png" id="14_dsmso"]
 [ext_resource type="AudioStream" uid="uid://bfi3taei3rspy" path="res://Sounds/Music/Original/SCP_MainTheme.ogg" id="16_dsmso"]
 
@@ -263,6 +264,12 @@ toggle_mode = true
 text = "CREDITS"
 autowrap_mode = 3
 
+[node name="HelpButton" type="Button" parent="ProjectInfo" unique_id=1887051890]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_syfuq")
+text = "HELP_BUTTON"
+
 [node name="Contribute" type="Button" parent="ProjectInfo" unique_id=1372753325]
 layout_mode = 2
 theme = ExtResource("2_syfuq")
@@ -350,12 +357,48 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "LITE_VERSION_WARNING"
 
+[node name="Tutorial" type="Window" parent="." unique_id=224238850]
+oversampling_override = 1.0
+title = "Help"
+initial_position = 2
+size = Vector2i(768, 384)
+visible = false
+theme = ExtResource("2_syfuq")
+script = ExtResource("14_a8aa6")
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial" unique_id=39995228]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Tutorial" unique_id=2118127235]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial/ScrollContainer" unique_id=614798222]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tutorial/ScrollContainer/VBoxContainer" unique_id=2136341944]
+layout_mode = 2
+text = "HELP_TITLE"
+
+[node name="Label2" type="Label" parent="Tutorial/ScrollContainer/VBoxContainer" unique_id=726185877]
+layout_mode = 2
+text = "HELP_TASKS"
+
 [connection signal="pressed" from="HBoxContainer/StoryMode" to="." method="_on_story_mode_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="item_clicked" from="StoryList" to="." method="_on_story_list_item_clicked"]
 [connection signal="pressed" from="ProjectInfo/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="ProjectInfo/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="ProjectInfo/Contribute" to="." method="_on_contribute_pressed"]
 [connection signal="pressed" from="ProjectInfo/Support" to="." method="_on_support_pressed"]
 [connection signal="pressed" from="EasterEgg/Back" to="." method="_on_story_back_pressed"]
